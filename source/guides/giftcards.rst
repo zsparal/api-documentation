@@ -1,6 +1,9 @@
 Integrating gift cards
 ======================
 
+Supported brands
+----------------
+
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
@@ -18,7 +21,7 @@ Using the Mollie Checkout, your customer can pay part of the payment using gift 
 using the other payment methods enabled on your website profile.
 
 Contracting and settlement
-==========================
+--------------------------
 
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle contracting and settlement on
 your behalf. You will have to set up the contracting yourself via the brand owner (e.g. for Podium Cadeaukaart, contact
