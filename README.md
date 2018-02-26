@@ -7,8 +7,10 @@ format) may be found at https://docs.mollie.com.
 Contribute
 ----------
 
-- Issue Tracker: github.com/mollie/api-documentation/issues
-- Source Code: github.com/mollie/api-documentation
+- [Issue Tracker](https://github.com/mollie/api-documentation/issues)
+- [Source Code](https://github.com/mollie/api-documentation)
+
+We take pull requests on our documentation as well, if you think that something can be improved please open a PR. 
 
 Support
 -------
