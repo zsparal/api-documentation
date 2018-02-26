@@ -35,3 +35,67 @@ will automatically verify the set up with Intersolve and enable the brand on you
 everything has been set up by the various parties involved.
 
 Settlement is handled by the brand owner and not by Mollie.
+
+Technical integration
+---------------------
+Integration is handled via the Mollie Payments API. Several levels of integration are possible.
+
+Mollie supports stacking transactions, e.g. starting with a partial gift card payment and then finalizing the payment
+using more gift cards or one of the other payment methods.
+
+Integrate using Mollie Checkout
+-------------------------------
+The easiest way to integrate gift cards is to use the Mollie Checkout. This is arranged by creating the payment via our
+API without passing the method parameter. Mollie will then display a list of payment methods available for the payment
+and offer the gift card options enabled on your account.
+
+Your customer can start the payment by redeeming their gift card. If the gift card only partially covers the amount due,
+more gift cards can be entered in the checkout or a different payment method can be used to pay for the remaining
+amount.
+
+After the full amount has been paid by the customer, the customer is redirected back to your application as usual and we
+will call your webhook.
+
+Integrate method selection in your application
+----------------------------------------------
+
+The selection for the gift card brand can be integrated in your own application as well. Using the Methods API, you can
+retrieve the methods and gift cards available on your account. Use the include issuers to include the gift card brands
+available.
+
+If only a single brand is available, the issuer is optional and we will use the available issuer.
+
+Note that each method has a minimum and a maximum amount that can be processed. For gift cards, you should ignore the
+maximum amount. The maximum amount visible for gift cards is per gift card transaction.
+
+The ID for the gift cards method is ``giftcard``.
+
+Integrate initial gift card payment in your application
+-------------------------------------------------------
+
+Finally, Mollie offers the option to integrate the initial gift card payment in your application. You can provide the
+customer with a form where they can enter their voucher number and the voucher pin number. These two fields can be
+passed together with the method and issuer field as the fields voucherNumber and voucherPin.
+
+If the gift card covers the entire amount, the payment moves to the paid state immediately.
+
+If there is any amount due remaining, the payment will be created in the open state and the redirectUrl will point to
+the Mollie Checkout, where the customer can pick the next payment method (or another gift card) they would like to use
+to finish the payment.
+
+Note that some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
+
+Cancelled and abandoned payments
+--------------------------------
+If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
+the gift card will be returned to the gift card. This will show up as a refund in your Mollie Dashboard.
+
+Refunds
+-------
+You cannot perform any gift card refunds. However, if another payment method was used during the checkout, you can
+refund the payment paid with the other payment method (and optionally an additional part).
+
+Tips
+----
+As the Mollie Checkout is almost certainly used when processing gift cards, be sure to set up an attractive wallpaper
+and your logo for the checkout.
