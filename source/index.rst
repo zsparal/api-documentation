@@ -35,6 +35,11 @@ in control without reinventing the wheel.
 .. toctree::
    :caption: API v1 Reference
 
+.. toctree::
+   reference/v2/create-payment
+   :maxdepth: 1
+   :caption: API v2 Reference
+
 Indices and tables
 ==================
 

@@ -190,4 +190,6 @@ epub_copyright = copyright
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
-
+# Add custom CSS overrides of the theme.
+def setup(app):
+    app.add_stylesheet('css/overrides.css')
