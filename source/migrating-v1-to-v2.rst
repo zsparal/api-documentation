@@ -13,6 +13,11 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 Changes in v2
 -------------
 
+In general, the API has adopted the HAL specification, allowing you to discover new resources and follow links to new
+resources while working with the API.
+
+Several fields have changed too to support new features or to clear up confusing aspects of the ``v1`` API.
+
 Amount changes
 ^^^^^^^^^^^^^^
 
@@ -28,7 +33,7 @@ All amounts in the API are passed as a map containing both a ``currency`` and a 
 This would mean an amount of €10.00.
 
 Note that if you specify an amount, you must specify the correct number of decimals. We strongly recommend sending
-``value`` as a string. Note that even though most currencies use two decimals, some like JPY use none. 
+``value`` as a string. Note that even though most currencies use two decimals, some like JPY use none.
 
 All amounts returned in the ``v2`` API will use this format.
 
@@ -55,6 +60,8 @@ Renamed and changed fields
 * ``paidDatetime`` has been renamed to ``paidAt``.
 * ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one off payment (not the
   start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
+* ``redirectUrl`` and ``webhookUrl`` are now part of the top level object for Payments.
+* ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
 
 Removed fields
 ^^^^^^^^^^^^^^
