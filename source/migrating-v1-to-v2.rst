@@ -1,5 +1,5 @@
 Migrating from v1 to v2
-===============================
+=======================
 
 Why upgrade to v2?
 ----------------------
@@ -14,7 +14,7 @@ Changes in v2
 -------------
 
 Amount changes
---------------
+^^^^^^^^^^^^^^
 
 All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example::
 
@@ -33,7 +33,7 @@ Note that if you specify an amount, you must specify the correct number of decim
 All amounts returned in the ``v2`` API will use this format.
 
 Status field changes
---------------------
+^^^^^^^^^^^^^^^^^^^^
 
 The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
 
@@ -44,3 +44,18 @@ which will point you to the refunds resource where you can view the refund detai
 
 If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
 property, which will point you to the chargeback resource where you can view the refund details.
+
+Renamed fields
+^^^^^^^^^^^^^^
+
+* ``cancelledDatetime`` has been renamed to ``cancelledAt``.
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``expiredDatetime`` has been renamed to ``expiredAt``.
+* ``failedDatetime`` has been renamed to ``failedAt``.
+* ``paidDatetime`` has been renamed to ``paidAt``.
+* ``recurringType`` has been renamed to ``sequenceType``.
+
+Locale changes
+^^^^^^^^^^^^^^
+
+Only full locales with both the language and the country code are supported, e.g. `nl_NL`.

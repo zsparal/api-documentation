@@ -11,7 +11,7 @@ brands are supported:
 * Nationale EntertainmentCard
 * Nationale Kunst & Cultuur Cadeaukaart
 * Podium Cadeaukaart
-* VVV Cadeaukaart
+* `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
 * Webshop Giftcard
 * YourGift
 
@@ -44,7 +44,7 @@ Mollie supports stacking transactions, e.g. starting with a partial gift card pa
 using more gift cards or one of the other payment methods.
 
 Integrate using Mollie Checkout
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The easiest way to integrate gift cards is to use the Mollie Checkout. This is arranged by creating the payment via our
 API without passing the method parameter. Mollie will then display a list of payment methods available for the payment
 and offer the gift card options enabled on your account.
@@ -57,8 +57,7 @@ After the full amount has been paid by the customer, the customer is redirected 
 will call your webhook.
 
 Integrate method selection in your application
-----------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The selection for the gift card brand can be integrated in your own application as well. Using the Methods API, you can
 retrieve the methods and gift cards available on your account. Use the include issuers to include the gift card brands
 available.
@@ -71,8 +70,7 @@ maximum amount. The maximum amount visible for gift cards is per gift card trans
 The ID for the gift cards method is ``giftcard``.
 
 Integrate initial gift card payment in your application
--------------------------------------------------------
-
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Finally, Mollie offers the option to integrate the initial gift card payment in your application. You can provide the
 customer with a form where they can enter their voucher number and the voucher pin number. These two fields can be
 passed together with the method and issuer field as the fields voucherNumber and voucherPin.
