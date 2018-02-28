@@ -1,3 +1,5 @@
+.. _overview:
+
 Welcome to Mollie B.V's public API documentation!
 =================================================
 

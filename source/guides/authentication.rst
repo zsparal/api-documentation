@@ -21,7 +21,7 @@ rehearse different scenarios that will occur later on when you switch to real pa
 go live by using the Live API key instead of the Test API key. Going live (or going back to testing) is as easy as
 changing keys. Nothing else needs to change.
 
-Of course it's very important to keep any API-keys **secure**. Do not ever share them. However, if a key leaks you can
+Of course it's very important to keep any API-keys :ref:`secure <security>`. Do not ever share them. However, if a key leaks you can
 always regenerate it. Don't forget to apply new keys to your code. Until you do your integration will not work.
 
 Apart from the payment screen and the fact that test payments are created instead of real ones, the Mollie API behaves
