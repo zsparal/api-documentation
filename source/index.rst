@@ -18,6 +18,7 @@ in control without reinventing the wheel.
 
    Mollie API<self>
    security
+   migrating-v1-to-v2
 
 .. toctree::
    guides/authentication
