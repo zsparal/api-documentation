@@ -62,18 +62,19 @@ Renamed and changed fields
   start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
+* ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which will give you the same
+  information.
 
 Removed fields
 ^^^^^^^^^^^^^^
-* ``issuer`` has been removed from Payment responses. You can however, still pass it to the Payment Create API call.
+* ``issuer`` has been removed from Payment resource. You can however, still pass it to the Payment Create API call.
 
 New fields
 ^^^^^^^^^^
 
 * ``settlementAmount`` has been added to the Payment, Refund and Chargeback API responses. This optional field will
-  contain
-  the amount that will be settled towards your account, converted to the currency your account is settled in. It follows
-  the same syntax as the ``amount`` property.
+  contain the amount that will be settled towards your account, converted to the currency your account is settled in. It
+  follows the same syntax as the ``amount`` property.
 
   Note that for refunds and chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
 
@@ -84,3 +85,14 @@ Locale changes
 
 Only full locales with both the language and the country code are supported, e.g. ``nl_NL``. Locales are always returned
 as full locales.
+
+Combined date and time fields
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Formatting of fields such as ``createdAt`` has been updated to be strictly compliant to ISO-8601 formatting. Example
+value: ``2018-03-05T12:30:10+00:00``.
+
+Changes in refunds
+^^^^^^^^^^^^^^^^^^
+
+For refunds, the ``amount`` field is now mandatory. You must specify both ``amount.currency`` and ``amount.value``.
