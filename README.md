@@ -11,11 +11,11 @@ format) may be found at https://docs.mollie.com.
 
 We take pull requests on our documentation as well, if you think that something can be improved please open a PR. 
 
-The documentation is formatted using [reStructuredText](www.sphinx-doc.org/en/master/rest.html).
+The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html).
 
 ### Previewing local changes
 
-If you made any changes, and want to check out if it can be successfully build and how it will look, perform the 
+If you made any changes, and want to check out if it can be successfully built and how it will look, perform the 
 following steps:
 
 1. Install Sphinx, if you don't have it yet: `pip install -U sphinx`
