@@ -96,3 +96,38 @@ Changes in refunds
 ^^^^^^^^^^^^^^^^^^
 
 For refunds, the ``amount`` field is now mandatory. You must specify both ``amount.currency`` and ``amount.value``.
+
+Furthermore, the ``payment`` field, which contains the payment resource related to the refund, is no longer returned by default. Instead, the payment id is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the ``payment`` key in the ``_links`` property.
+
+Changes in error reporting
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best explained using an example. An example of error reporting in ``v1`` is the following:
+
+.. code-block:: http
+
+    {
+        "error": {
+            "type": "request",
+            "message": "Unauthorized request",
+            "links": {
+                "documentation": "https://mollie.dev/en/docs?lang=en"
+            }
+        }
+    }
+The new error reporting format in ``v2`` is the following:
+
+.. code-block:: http
+
+    {
+        "status": 401,
+        "title": "Unauthorized Request",
+        "detail": "Missing authentication, or failed to authenticate",
+        "_links": {
+            "documentation": {
+                "href": "https://www.mollie.com/en/docs/errors",
+                "type": "text/html"
+            }
+        }
+    }
+The HTTP status returned is now part of the error response, ``title`` is the default HTTP status message, the ``message`` field is renamed to ``detail``. 
