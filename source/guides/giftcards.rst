@@ -17,7 +17,7 @@ brands are supported:
 
 If you need a different brand, please reach out to your account manager or our support department.
 
-Using the Mollie Checkout, your customer can pay part of the payment using gift cards and pay any remaining amount due
+Using the :ref:`checkout`, your customer can pay part of the payment using gift cards and pay any remaining amount due
 using the other payment methods enabled on your website profile.
 
 Contracting and settlement
