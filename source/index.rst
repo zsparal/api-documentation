@@ -39,6 +39,7 @@ in control without reinventing the wheel.
 
 .. toctree::
    reference/v2/create-payment
+   reference/v2/get-payment
    :maxdepth: 2
    :caption: API v2 Reference
 

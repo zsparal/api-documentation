@@ -36,7 +36,7 @@ It mostly breaks down to HTTP-methods ``GET``, ``POST``, ``PUT`` and ``DELETE`` 
 create and delete.
 
 REST also implies a nice and clean structure for URLs or endpoints. This means you can reach any part of the Mollie API
-on ``https://api.mollie.com/v1/`` adding the name of the resource you want to interact with.
+on ``https://api.mollie.com/v2/`` adding the name of the resource you want to interact with.
 
 Example
 -------
@@ -48,9 +48,11 @@ authentication works we use the GET method on the payments Resource. This method
 really important here. Focus on how the API-key is involved.
 
 In the example below we're using the Test API Key ``test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. The response shows a result
-for a retrieved payment with the fictional id ``tr_WDqYK6vllg``.::
+for a retrieved payment with the fictional id ``tr_WDqYK6vllg``.
 
-    curl -X GET https://api.mollie.com/v1/payments/tr_WDqYK6vllg \
+.. code-block:: bash
+
+    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
