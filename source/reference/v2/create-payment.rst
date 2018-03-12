@@ -8,7 +8,7 @@ Create payment
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
 parameters are accepted for certain payment methods.
 
-To wrap your head around the payment process, an explanation and flow charts can be found in the `Overview <overview>`.
+To wrap your head around the payment process, an explanation and flow charts can be found in the :ref:`Overview <overview>`.
 
 Payments are created by sending a `JSON document <https://www.json.org/>`_ to the endpoint. The document should contain an object with the
 parameters listed below as keys and the values you want to use for the parameters as values for the object.

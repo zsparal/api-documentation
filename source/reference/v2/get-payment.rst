@@ -113,7 +113,7 @@ Response
 
       If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-      Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+      **Possible values**: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
   * - ``metadata``
     - ``mixed``
@@ -143,7 +143,7 @@ Response
     - ``string``
     - This field indicates the position of the payment in a recurring stream. Learn more about the ``sequenceType`` parameter.
 
-      Possible values ``oneoff``, ``first`` or ``recurring``.
+      **Possible values**: ``oneoff``, ``first`` or ``recurring``.
 
   * - ``mandateId``
     - ``string``
@@ -200,6 +200,41 @@ iDEAL
 
 Credit card
 ^^^^^^^^^^^
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with various credit card details.
+
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardHolder``     |``string``      |The card holder's name.                                                     |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardNumber``     |``string``      | The last four digits of the card number.                                   |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardFingerprint``|``string``      | Unique alphanumeric representation of card, usable for identifying         |
+      |                   |                | returning customers.                                                       |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardAudience``   |``string|null`` | Not always available. – The card's target audience.                        |
+      |                   |                | **Possible values**: ``consumer`` ``business`` ``null``.                   |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardLabel``      |``string|null`` | The card's label. Note that not all labels can be acquired through Mollie. |
+      |                   |                | **Possible values**: ``American Express`` ``Carta Si`` ``Carte Bleue``     |
+      |                   |                | ``Dankort`` ``Diners Club`` ``Discover`` ``JCB Laser`` ``Maestro``         |
+      |                   |                | ``Mastercard`` ``Unionpay`` ``Visa`` ``null``                              |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardCountryCode``|``string|null`` |The `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_|
+      |                   |                |country code of the country the card was issued in. For example: ``BE``.    |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardSecurity``   |``string|null`` | Only available if the payment succeeded. – The payment's security type.    |
+      |                   |                | **Possible values**: ``normal`` ``3dsecure``                               |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``feeRegion``      |``string``      | Only available if the payment succeeded. – The fee region for the payment. |
+      |                   |                | see your credit card addendum for details. ``intra-eu`` for consumer cards |
+      |                   |                | from the EU, and ``other`` for all other cards.                            |
+      +-------------------+----------------+----------------------------------------------------------------------------+
 
 Bank transfer
 ^^^^^^^^^^^^^

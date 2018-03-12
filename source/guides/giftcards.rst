@@ -30,7 +30,7 @@ provide the brand owner with your Mollie Partner ID to use as the PSPID.
 
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
-Once your account has been set up with the brand owner and you have enabled the gift card brand in the Dashboard, Mollie
+Once your account has been set up with the brand owner and you have enabled the gift card brand in the `Dashboard <https://www.mollie.com/dashboard>`_, Mollie
 will automatically verify the set up with Intersolve and enable the brand on your selected web site profiles once
 everything has been set up by the various parties involved.
 
@@ -86,7 +86,7 @@ Note that some cards don’t have a PIN printed on them. If the card does have a
 Cancelled and abandoned payments
 --------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
-the gift card will be returned to the gift card. This will show up as a refund in your Mollie Dashboard.
+the gift card will be returned to the gift card. This will show up as a refund in your `Dashboard <https://www.mollie.com/dashboard>`_.
 
 Refunds
 -------
