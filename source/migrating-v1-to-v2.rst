@@ -117,6 +117,7 @@ The HAL specification has been adopted for error reporting as well. The differen
             }
         }
     }
+
 The new error reporting format in ``v2`` is the following:
 
 .. code-block:: json
@@ -127,9 +128,10 @@ The new error reporting format in ``v2`` is the following:
         "detail": "Missing authentication, or failed to authenticate",
         "_links": {
             "documentation": {
-                "href": "https://www.mollie.com/en/docs/errors",
+                "href": "https://www.mollie.com/en/docs/authentication",
                 "type": "text/html"
             }
         }
     }
-The HTTP status returned is now part of the error response, ``title`` is the default HTTP status message, the ``message`` field is renamed to ``detail``. 
+
+The HTTP status returned is now part of the error response, ``title`` is the default HTTP status message, the ``message`` field is renamed to ``detail``.

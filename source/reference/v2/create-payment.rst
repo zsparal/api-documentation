@@ -1,7 +1,7 @@
 .. _v2/payment-create:
 
-Create payment Payments API
-===========================
+Create payment
+==============
 
 ``POST https://api.mollie.com/v1/payments``
 
@@ -10,7 +10,7 @@ parameters are accepted for certain payment methods.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the `Overview <overview>`.
 
-Payments are created by sending a JSON document to the endpoint. The document should contain an object with the
+Payments are created by sending a `JSON document <https://www.json.org/>`_ to the endpoint. The document should contain an object with the
 parameters listed below as keys and the values you want to use for the parameters as values for the object.
 
 Parameters

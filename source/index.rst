@@ -24,6 +24,7 @@ in control without reinventing the wheel.
 
 .. toctree::
    guides/authentication
+   guides/handling-errors
    guides/payment-status-changes
    guides/multicurrency
    guides/giftcards
@@ -38,7 +39,7 @@ in control without reinventing the wheel.
 
 .. toctree::
    reference/v2/create-payment
-   :maxdepth: 1
+   :maxdepth: 2
    :caption: API v2 Reference
 
 Indices and tables
