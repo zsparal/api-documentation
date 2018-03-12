@@ -60,30 +60,33 @@ The response will be JSON.
 .. code-block:: http
 
     HTTP/1.1 200 OK
-    Content-Type: application/json; charset=utf-8
+    Content-Type: application/hal+json; charset=utf-8
 
     {
         "resource": "payment",
         "id": "tr_WDqYK6vllg",
         "mode": "test",
-        "createdDatetime": "2018-02-26T11:52:37.0Z",
-        "status": "paid",
-        "paidDatetime": "2014-09-05T14:37:35.0Z",
-        "amount": "35.07",
-        "description": "Order 33",
-        "method": "ideal",
-        "metadata": {
-            "order_id": "33"
+        "createdAt": "2018-03-12T11:51:35+00:00",
+        "amount": {
+            "value": "1.00",
+            "currency": "EUR"
         },
-        "details": {
-            "consumerName": "Hr E G H K\u00fcppers en\/of MW M.J. K\u00fcppers-Veeneman",
-            "consumerAccount": "NL53INGB0618365937",
-            "consumerBic": "INGBNL2A"
-        },
-        "locale": "nl",
-        "profileId": "pfl_QkEhN94Ba",
-        "links": {
-            "webhookUrl": "https://webshop.example.org/payments/webhook",
-            "redirectUrl": "https://webshop.example.org/order/33/"
+        "description": "Order 66",
+        "method": null,
+        "metadata": null,
+        "status": "open",
+        "canBeCancelled": false,
+        "expiresAt": "2018-03-12T12:06:35+00:00",
+        "details": null,
+        "profileId": "pfl_7N5qjbu42V",
+        "sequenceType": "oneoff",
+        "redirectUrl": "https://www.example.org/payment/completed",
+        "_links": {
+            "self": {
+                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg"
+            },
+            "checkout": {
+                "href": "https://www.mollie.com/payscreen/select-method/WDqYK6vllg"
+            }
         }
     }
