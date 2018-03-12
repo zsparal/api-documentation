@@ -6,7 +6,9 @@ Why upgrade to v2?
 
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports multi-currency, e.g. you can create payments in non ``EUR`` currencies.
+* Fully supports :ref:`multi currency <multi-currency>`, e.g. you can create payments in non ``EUR`` currencies. Your
+  account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement amount
+  for various resources.
 * Improved support for accessing large sets of objects, now uses cursor based pagination instead of count and offset
   based pagination.
 
@@ -30,10 +32,10 @@ All amounts in the API are passed as a map containing both a ``currency`` and a 
    }
  }
 
-This would mean an amount of €10.00.
+This would indicate an amount of €10.00.
 
 Note that if you specify an amount, you must specify the correct number of decimals. We strongly recommend sending
-``value`` as a string. Note that even though most currencies use two decimals, some like JPY use none.
+``value`` as a string. Note that even though most currencies use two decimals, some like ``JPY`` use none.
 
 All amounts returned in the ``v2`` API will use this format.
 
@@ -104,7 +106,7 @@ Changes in error reporting
 
 The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best explained using an example. An example of error reporting in ``v1`` is the following:
 
-.. code-block:: http
+.. code-block:: json
 
     {
         "error": {
@@ -117,7 +119,7 @@ The HAL specification has been adopted for error reporting as well. The differen
     }
 The new error reporting format in ``v2`` is the following:
 
-.. code-block:: http
+.. code-block:: json
 
     {
         "status": 401,

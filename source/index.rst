@@ -25,6 +25,7 @@ in control without reinventing the wheel.
 .. toctree::
    guides/authentication
    guides/payment-status-changes
+   guides/multicurrency
    guides/giftcards
    :maxdepth: 1
    :caption: Guides

@@ -1,3 +1,5 @@
+.. _v2/payment-create:
+
 Create payment Payments API
 ===========================
 
