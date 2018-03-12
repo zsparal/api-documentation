@@ -64,8 +64,8 @@ available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.
 
-Note that each method has a minimum and a maximum amount that can be processed. For gift cards, you should ignore the
-maximum amount. The maximum amount visible for gift cards is per gift card transaction.
+.. note:: Each method has a minimum and a maximum amount that can be processed. For gift cards, you should ignore the
+          maximum amount. The maximum amount visible for gift cards is per gift card transaction.
 
 The ID for the gift cards method is ``giftcard``.
 
@@ -81,7 +81,7 @@ If there is any amount due remaining, the payment will be created in the open st
 the Mollie Checkout, where the customer can pick the next payment method (or another gift card) they would like to use
 to finish the payment.
 
-Note that some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
+.. note:: Some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
 
 Cancelled and abandoned payments
 --------------------------------

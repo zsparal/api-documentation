@@ -7,8 +7,8 @@ Get payment
 
 Retrieve a single payment object by its payment token.
 
-Please note: we call your webhook when the `payment status changes <guides/payment-status-changes>`, so there's no need
-to poll this endpoint for status changes.
+.. note:: We call your webhook when the `payment status changes <guides/payment-status-changes>`, so there's no need
+          to poll this endpoint for status changes.
 
 Parameters
 ----------
@@ -179,8 +179,34 @@ If you specify the ``method`` parameter, optional parameters may be available fo
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
-iDEAL
-^^^^^
+Bancontact
+^^^^^^^^^^
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with various Bancontact details.
+
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardNumber``     |``string``      | The last four digits of the card number.                                   |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``cardFingerprint``|``string``      | Unique alphanumeric representation of card, usable for identifying         |
+      |                   |                | returning customers.                                                       |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+      |``qrCode``         |``object``      | A QR code that can be scanned by the mobile Bancontact application. This   |
+      |                   |                | enables the desktop to mobile feature.                                     |
+      +-------------------+----------------+----------------------------------------------------------------------------+
+
+Bank transfer
+^^^^^^^^^^^^^
+
+Belfius Pay Button
+^^^^^^^^^^^^^^^^^^
+
+.. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
   :header-rows: 0
@@ -195,8 +221,11 @@ iDEAL
       +-------------------+----------+---------------------------------------------------------------------------------+
       |``consumerAccount``|``string``|Only available if the payment has been completed – The consumer's IBAN.          |
       +-------------------+----------+---------------------------------------------------------------------------------+
-      |``consumerBic``    |``string``|Only available if the payment has been completed – The consumer's bank's BIC.    |
+      |``consumerBic``    |``string``|Only available if the payment has been completed – ``GKCCBEBB``                  |
       +-------------------+----------+---------------------------------------------------------------------------------+
+
+Bitcoin
+^^^^^^^
 
 Credit card
 ^^^^^^^^^^^
@@ -236,23 +265,126 @@ Credit card
       |                   |                | from the EU, and ``other`` for all other cards.                            |
       +-------------------+----------------+----------------------------------------------------------------------------+
 
-Bank transfer
-^^^^^^^^^^^^^
+Gift cards
+^^^^^^^^^^
+
+todo
+
+iDEAL
+^^^^^
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with the consumer bank account details.
+
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerName``   |``string``|Only available if the payment has been completed – The consumer's name.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerAccount``|``string``|Only available if the payment has been completed – The consumer's IBAN.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerBic``    |``string``|Only available if the payment has been completed – The consumer's bank's BIC.    |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+
+ING Home'Pay
+^^^^^^^^^^^^
+
+.. note:: Note that this information is only available one banking day after the payment has been completed.
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with the consumer bank account details.
+
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerName``   |``string``|Only available if the payment has been completed – The consumer's name.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerAccount``|``string``|Only available if the payment has been completed – The consumer's IBAN.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerBic``    |``string``|Only available if the payment has been completed – ``BBRUBEBB``                  |
+      +-------------------+----------+---------------------------------------------------------------------------------+
 
 KBC/CBC Payment Button
 ^^^^^^^^^^^^^^^^^^^^^^
 
-SEPA Direct Debit
-^^^^^^^^^^^^^^^^^
+.. note:: Note that this information is only available one banking day after the payment has been completed.
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with the consumer bank account details.
+
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerName``   |``string``|Only available if the payment has been completed – The consumer's name.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerAccount``|``string``|Only available if the payment has been completed – The consumer's IBAN.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerBic``    |``string``|Only available if the payment has been completed – The consumer's bank's BIC.    |
+      +-------------------+----------+---------------------------------------------------------------------------------+
 
 PayPal
 ^^^^^^
 
-Bitcoin
-^^^^^^^
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - An object with PayPal details.
+
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerName``   |``string``|The consumer's first and last name.                                              |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerAccount``|``string``|The consumer's email address.                                                    |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``paypalReference``|``string``|PayPal's reference for the transaction, for instance ``9AL35361CF606152E``.      |
+      +-------------------+----------+---------------------------------------------------------------------------------+
 
 paysafecard
 ^^^^^^^^^^^
 
-Gift cards
-^^^^^^^^^^
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - An object with paysafecard details.
+
+      +---------------------+----------+-------------------------------------------------------------------------------+
+      |``customerReference``|``string``|The consumer identification supplied when the payment was created.             |
+      +---------------------+----------+-------------------------------------------------------------------------------+
+
+SEPA Direct Debit
+^^^^^^^^^^^^^^^^^
+todo
+
+SOFORT Banking
+^^^^^^^^^^^^^^
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - Optional – only for paid payments. An object with the consumer bank account details.
+
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerName``   |``string``|Only available if the payment has been completed – The consumer's name.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerAccount``|``string``|Only available if the payment has been completed – The consumer's IBAN.          |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+      |``consumerBic``    |``string``|Only available if the payment has been completed – The consumer's bank's BIC.    |
+      +-------------------+----------+---------------------------------------------------------------------------------+
+

@@ -57,5 +57,6 @@ When your customer doesn't make an actual payment, the payment will at some poin
 ``open`` payment will become ``expired``. This could happen when a consumer decides not to make a payment after all, and
 abandons it. The expiry time is different for each payment method.
 
-Note that it's not a good idea to predict payment expiry. Best wait until your webhook is called and fetch the status as
-usual. This is the most reliable way to keep your system in sync with Mollie, also in the case of expiring payments.
+.. note:: It is not a good idea to predict payment expiry. Best wait until your webhook is called and fetch the status as
+          usual. This is the most reliable way to keep your system in sync with Mollie, also in the case of expiring
+          payments.
