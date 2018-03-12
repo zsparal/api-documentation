@@ -27,7 +27,7 @@ Request
 Response
 ^^^^^^^^
 
-.. code-block:: json
+.. code-block:: http
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
@@ -77,7 +77,7 @@ Request
 Response
 ^^^^^^^^
 
-.. code-block:: json
+.. code-block:: http
 
     HTTP/1.1 401 Authorization Required
     Content-Type: application/hal+json; charset=utf-8
@@ -110,7 +110,7 @@ Request
 Response
 ^^^^^^^^
 
-.. code-block:: json
+.. code-block:: http
 
     HTTP/1.1 404 Not Found
     Content-Type: application/json; charset=utf-8
@@ -144,7 +144,7 @@ Request
 Response
 ~~~~~~~~
 
-.. code-block:: json
+.. code-block:: http
 
     HTTP/1.1 422 Unprocessable Entity
     Content-Type: application/hal+json; charset=utf-8
@@ -209,7 +209,7 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 |429|Too Many Requests – Your request has hit a rate limit. Please wait for a bit and retry.                           |
 +---+------------------------------------------------------------------------------------------------------------------+
 |500|Internal Server Error – An internal server error occurred while processing your request. Our developers are       |
-|   |notified automatically, but if you have any information on how you triggered the problem, please contact us.     |
+|   |notified automatically, but if you have any information on how you triggered the problem, please contact us.      |
 +---+------------------------------------------------------------------------------------------------------------------+
 |502|Bad Gateway – The service is temporarily unavailable, either due to calamity or (planned) maintenance. Please     |
 |   |retry the request at a later time.                                                                                |

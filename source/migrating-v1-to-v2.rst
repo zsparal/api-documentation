@@ -23,14 +23,16 @@ Several fields have changed too to support new features or to clear up confusing
 Amount changes
 ^^^^^^^^^^^^^^
 
-All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example::
+All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example:
 
- {
-   "amount": {
-     "currency": "EUR",
-     "value": "10.00"
-   }
- }
+.. code-block:: json
+
+    {
+        "amount": {
+            "currency": "EUR",
+            "value": "10.00"
+        }
+    }
 
 This would indicate an amount of €10.00.
 
@@ -104,19 +106,7 @@ Furthermore, the ``payment`` field, which contains the payment resource related 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best explained using an example. An example of error reporting in ``v1`` is the following:
-
-.. code-block:: json
-
-    {
-        "error": {
-            "type": "request",
-            "message": "Unauthorized request",
-            "links": {
-                "documentation": "https://mollie.dev/en/docs?lang=en"
-            }
-        }
-    }
+The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best explained using an example.
 
 The new error reporting format in ``v2`` is the following:
 

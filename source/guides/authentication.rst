@@ -55,7 +55,9 @@ for a retrieved payment with the fictional id ``tr_WDqYK6vllg``.::
 
 Response
 --------
-The response will be JSON.::
+The response will be JSON.
+
+.. code-block:: http
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
