@@ -21,7 +21,7 @@ some syntax highlighting.
 If you made any changes, and want to check out if it can be successfully built and how it will look, perform the 
 following steps:
 
-1. Install Sphinx, if you don't have it yet: `pip install -U sphinx sphinx_rtd_theme`
+1. Install Sphinx, if you don't have it yet: `pip install -U -r requirements.txt`
 2. Run `make html` to create the HTML files that make up the documentation. 
 
 ## Support

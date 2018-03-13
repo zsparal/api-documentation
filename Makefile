@@ -2,7 +2,7 @@
 #
 
 # You can set these variables from the command line.
-SPHINXOPTS    = -W
+SPHINXOPTS    = -W -j auto
 SPHINXBUILD   = python -msphinx
 SPHINXPROJ    = api-documentation
 SOURCEDIR     = source
