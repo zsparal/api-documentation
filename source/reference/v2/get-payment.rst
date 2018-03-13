@@ -3,11 +3,11 @@
 Get payment
 ===========
 
-``GET https://api.mollie.com/v2/payments/id``
+``GET https://api.mollie.com/v2/payments/*id*``
 
 Retrieve a single payment object by its payment token.
 
-.. note:: We call your webhook when the `payment status changes <guides/payment-status-changes>`, so there's no need
+.. note:: We call your webhook when the :ref:`payment status changes <payment-status-changes>`, so there's no need
           to poll this endpoint for status changes.
 
 Parameters

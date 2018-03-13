@@ -1,3 +1,5 @@
+.. _payment-status-changes:
+
 Payment status changes
 ======================
 
@@ -24,24 +26,14 @@ them. Then we will show you how the statuses are connected.
     to expire depends on the payment method. We explain this in more detail below.
 
 ``failed``
-    The payment has failed and cannot be completed with a different payment method. This status is used for failed
-    ``directdebit`` payments for example.
+    The payment has failed and cannot be completed with a different payment method.
 
 ``paid``
     This status occurs whenever a payment is successfully paid. When this status occurs we'll call your webhook.
 
-``paidout``
-    This status occurs for payments we've transferred to your bank account. We don't call your webhook when this status
-    occurs.
-
-``refunded``
-    When you issue a refund for a payment, it gets this status. When this status occurs we call your webhook.
-
-``charged_back``
-    ``creditcard``, ``directdebit``, ``paypal`` and ``sofort`` provide your customers with the ability to dispute
-    payments which could ultimately lead to a chargeback. You will find payments that have been charged back to have
-    this status.
-
+.. note:: In the ``v1`` API, there wer also statuses for refunded, charge backs and paid out (settled). These statuses
+          have been removed in ``v2``. You can get the same information from other properties on the
+          :ref:`Payment resource <v2/payment-get>`.
 
 How does one status lead to another?
 ------------------------------------
