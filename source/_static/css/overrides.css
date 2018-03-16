@@ -1,9 +1,13 @@
 /* override table no-wrap */
 .wy-table-responsive table td,
 .wy-table-responsive table th {
-	white-space: normal;
+    white-space: normal;
 }
 
 .rst-content table.docutils td {
-	vertical-align: top;
+    vertical-align: top;
+}
+
+table.docutils table.docutils p {
+    font-size: inherit;
 }

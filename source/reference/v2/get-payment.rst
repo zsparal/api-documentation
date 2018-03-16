@@ -224,8 +224,44 @@ Belfius Pay Button
       |``consumerBic``    |``string``|Only available if the payment has been completed – ``GKCCBEBB``                  |
       +-------------------+----------+---------------------------------------------------------------------------------+
 
+
+
 Bitcoin
 ^^^^^^^
+
+.. list-table::
+  :header-rows: 0
+  :widths: auto
+
+  * - ``details``
+    - ``object|null``
+    - An object with the Bitcoin transaction details details.
+
+      +-------------------+----------+--------------------------------------------------------------------------------------+
+      |``bitcoinAddress`` |``string``|Only available if the payment has been completed – The bitcoin address the            |
+      |                   |          |bitcoins were transferred to..                                                        |
+      +-------------------+----------+--------------------------------------------------------------------------------------+
+      |``bitcoinAmount``  |``object``|The amount transferred in BTC. An object consisting of two properties:                |
+      |                   |          |``currency`` (always``XBT``), and ``value``. For example:                             |
+      |                   |          |                                                                                      |
+      |                   |          |.. code-block:: json                                                                  |
+      |                   |          |                                                                                      |
+      |                   |          |      {                                                                               |
+      |                   |          |          "currency": "XBT",                                                          |
+      |                   |          |          "value": "0.87034846"                                                       |
+      |                   |          |      }                                                                               |
+      |                   |          |                                                                                      |
+      |                   |          |Note that both are a ``string``.                                                      |
+      +-------------------+----------+--------------------------------------------------------------------------------------+
+      |``bitcoinUri``     |``string``|Optional – Only available if the payment has not been finalized. An URI that is       |
+      |                   |          |understood by Bitcoin wallet clients and will cause such clients to prepare           |
+      |                   |          |the transaction. Follows the                                                          |
+      |                   |          |`BIP 21 URI scheme <https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki>`_.|
+      +-------------------+----------+--------------------------------------------------------------------------------------+
+      |``qrCode``         |``object``|Only available when explicitly included, and when the payment has not been            |
+      |                   |          |finalized – A QR code that can be scanned by Bitcoin wallet clients and will          |
+      |                   |          |cause such clients to prepare the transaction.                                        |
+      +-------------------+----------+--------------------------------------------------------------------------------------+
 
 Credit card
 ^^^^^^^^^^^
