@@ -45,7 +45,7 @@ At the top of documentation pages you can select a **platform** like PHP, Ruby, 
 page will be shown for that platform.
 
 Any API action you want to execute requires a valid *Test API key* or *Live API key*. In order to show you how
-authentication works we use the ``GET`` method on the ``payments`` :ref:`resource <_v2/payment-get>`. This method
+authentication works we use the ``GET`` method on the ``payments`` :ref:`resource <v2/payments-get>`. This method
 fetches a payment, but that's not really important here. Focus on how the API key is involved.
 
 In the example below we're using the *Test API Key* ``test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. The response shows a result

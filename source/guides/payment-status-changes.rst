@@ -34,7 +34,7 @@ them. Then we will show you how the statuses are connected.
 
 .. note:: In the ``v1`` API, there were statuses for when payments were refunded, charged back, or paid out (settled).
           These statuses have been removed in ``v2``. You can get the same information from other properties on the
-          :ref:`Payment object <v2/payment-get>`.
+          :ref:`Payment object <v2/payments-get>`.
 
 How does one status lead to another?
 ------------------------------------

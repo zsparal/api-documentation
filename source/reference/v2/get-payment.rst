@@ -1,8 +1,7 @@
-.. _v2/payment-get:
+.. _v2/payments-get:
 
 Get payment
 ===========
-
 ``GET https://api.mollie.com/v2/payments/*id*``
 
 Retrieve a single payment object by its payment token.
@@ -12,13 +11,11 @@ Retrieve a single payment object by its payment token.
 
 Parameters
 ----------
-
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
 
 Mollie Connect/OAuth parameters
 -------------------------------
-
 If you are creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is available. You must pass this as a
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
@@ -32,7 +29,6 @@ parameter in the query string if you want to retrieve a payment that was created
 
 Response
 --------
-
 ``200 application/hal+json; charset=utf-8``
 
 .. list-table::
@@ -174,14 +170,12 @@ Response
 
 Payment method specific parameters
 ----------------------------------
-
 If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
 Bancontact
 ^^^^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -205,7 +199,6 @@ Bank transfer
 
 Belfius Pay Button
 ^^^^^^^^^^^^^^^^^^
-
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
@@ -228,7 +221,6 @@ Belfius Pay Button
 
 Bitcoin
 ^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -265,7 +257,6 @@ Bitcoin
 
 Credit card
 ^^^^^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -304,11 +295,8 @@ Credit card
 Gift cards
 ^^^^^^^^^^
 
-todo
-
 iDEAL
 ^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -327,7 +315,6 @@ iDEAL
 
 ING Home'Pay
 ^^^^^^^^^^^^
-
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
@@ -348,7 +335,6 @@ ING Home'Pay
 
 KBC/CBC Payment Button
 ^^^^^^^^^^^^^^^^^^^^^^
-
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
@@ -369,7 +355,6 @@ KBC/CBC Payment Button
 
 PayPal
 ^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -388,7 +373,6 @@ PayPal
 
 paysafecard
 ^^^^^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -403,11 +387,9 @@ paysafecard
 
 SEPA Direct Debit
 ^^^^^^^^^^^^^^^^^
-todo
 
 SOFORT Banking
 ^^^^^^^^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -423,4 +405,3 @@ SOFORT Banking
       +-------------------+----------+---------------------------------------------------------------------------------+
       |``consumerBic``    |``string``|Only available if the payment has been completed – The consumer's bank's BIC.    |
       +-------------------+----------+---------------------------------------------------------------------------------+
-

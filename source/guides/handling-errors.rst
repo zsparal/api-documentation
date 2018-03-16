@@ -13,7 +13,7 @@ A successful request
 --------------------
 An HTTP status ``200 OK``, ``201 Created`` or ``204 No Content``  is issued whenever your request was a success. You see
 this type of response in our examples like this one below where we successfully
-:ref:`retrieve a payment <_v2/payments-get>`.
+:ref:`retrieve a payment <v2/payments-get>`.
 
 Request
 ^^^^^^^

@@ -1,8 +1,7 @@
-.. _v2/payment-create:
+.. _v2/payments-create:
 
 Create payment
 ==============
-
 ``POST https://api.mollie.com/v1/payments``
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
@@ -15,7 +14,6 @@ parameters listed below as keys and the values you want to use for the parameter
 
 Parameters
 ----------
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -87,14 +85,12 @@ Parameters
 
 Payment method specific parameters
 ----------------------------------
-
 If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
 iDEAL
 ^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto
@@ -122,7 +118,6 @@ PayPal
 
 Bitcoin
 ^^^^^^^
-
 .. list-table::
   :header-rows: 0
   :widths: auto

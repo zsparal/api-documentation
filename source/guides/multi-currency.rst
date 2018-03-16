@@ -8,7 +8,7 @@ the conversion. You can retrieve the settlement amount via the API or view it in
 `Dashboard <https://www.mollie.com/dashboard>`_.
 
 Creating payments in a different currency than ``EUR`` is only possible via the ``v2`` API. Review the
-:ref:`Payments API reference <v2/payment-create>` for more information.
+:ref:`Payments API reference <v2/payments-create>` for more information.
 
 Supported currencies
 --------------------

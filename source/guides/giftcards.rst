@@ -36,7 +36,7 @@ Settlement is handled by the brand owner and not by Mollie.
 
 Technical integration
 ---------------------
-Integration is handled via the :ref:`Payments API <_v2/payments-create>`. Several levels of integration are possible.
+Integration is handled via the :ref:`Payments API <v2/payments-create>`. Several levels of integration are possible.
 
 Mollie supports stacking transactions, e.g. starting with a partial gift card payment and then finalizing the payment
 using more gift cards or one of the other payment methods.
@@ -57,7 +57,7 @@ will call your webhook.
 Integrate method selection in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The selection for the gift card brand can be integrated in your own application as well. Using the
-:ref:`Methods API <_v1/methods-list>`, you can retrieve the methods and gift cards available on your account. Use the
+:ref:`Methods API <v1/methods-list>`, you can retrieve the methods and gift cards available on your account. Use the
 include ``issuers`` to include the gift card brands available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.

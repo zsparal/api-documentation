@@ -40,7 +40,7 @@ Single Click payments increase conversion. This feature allows your customers wh
 recognizable credit card with information gathered from previous payments is presented securely through unique customer
 and device detection.
 
-#. Create a unique customer using the :ref:`Customers API <_v1/customers-create>`.
+#. Create a unique customer using the :ref:`Customers API <v1/customers-create>`.
 #. Store the customer's ``id`` safely in your database. It's needed for performing Payments API calls for the customer.
 #. Specify the ``customerId`` parameter each time you create a payment for this customer.
 #. Returning customers are now shown the credit cards they have used in the past, enabling them to charge their card of
