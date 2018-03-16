@@ -2,7 +2,7 @@
 
 Create payment
 ==============
-``POST https://api.mollie.com/v1/payments``
+``POST https://api.mollie.com/v2/payments``
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
 parameters are accepted for certain payment methods.
