@@ -21,39 +21,40 @@ rehearse different scenarios that will occur later on when you switch to real pa
 go live by using the Live API key instead of the Test API key. Going live (or going back to testing) is as easy as
 changing keys. Nothing else needs to change.
 
-Of course it's very important to keep any API-keys :ref:`secure <security>`. Do not ever share them. However, if a key leaks you can
-always regenerate it. Don't forget to apply new keys to your code. Until you do your integration will not work.
+Of course it's very important to keep any API-keys :ref:`secure <security>`. Do not ever share them. However, if a key
+leaks you can always `regenerate <https://www.mollie.com/dashboard/settings/profiles>`_ it. Don't forget to apply new
+keys to your code. Until you do your integration will not work.
 
 Apart from the payment screen and the fact that test payments are created instead of real ones, the Mollie API behaves
 the same way regardless of whether the Test API key or the Live API key is used. Because of this, there won't be any
-technical surprises upon going live. Make a note: don't forget to start using the Live API key when your site goes
+technical surprises upon going live. Make a note: don't forget to start using the *Live API key* when your site goes
 public or your customers could be getting a free ride.
 
 The Mollie REST API
 -------------------
-The API implements a **Representational state transfer** (REST) architecture. Sounds technical but it's really quite easy.
-It mostly breaks down to HTTP-methods ``GET``, ``POST``, ``PUT`` and ``DELETE`` matching the operations to read, update,
-create and delete.
+The API implements a **Representational state transfer** (REST) architecture. Sounds technical, but it's really quite
+easy. It mainly breaks down to HTTP-methods ``GET``, ``POST``, ``PUT`` and ``DELETE`` matching the operations to
+**read**, **update**, **create** and **delete**.
 
 REST also implies a nice and clean structure for URLs or endpoints. This means you can reach any part of the Mollie API
 on ``https://api.mollie.com/v2/`` adding the name of the resource you want to interact with.
 
 Example
 -------
-At the top of documentation pages you can select a platform like PHP, Ruby, Python or cURL. Any code examples on the
+At the top of documentation pages you can select a **platform** like PHP, Ruby, Python or cURL. Any code examples on the
 page will be shown for that platform.
 
-Any API action you want to execute requires a valid Test API key or Live API key. In order to show you how
-authentication works we use the GET method on the payments Resource. This method fetches a payment, but that's not
-really important here. Focus on how the API-key is involved.
+Any API action you want to execute requires a valid *Test API key* or *Live API key*. In order to show you how
+authentication works we use the ``GET`` method on the ``payments`` :ref:`resource <_v2/payment-get>`. This method
+fetches a payment, but that's not really important here. Focus on how the API key is involved.
 
-In the example below we're using the Test API Key ``test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. The response shows a result
-for a retrieved payment with the fictional id ``tr_WDqYK6vllg``.
+In the example below we're using the *Test API Key* ``test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. The response shows a result
+for a retrieved payment with fictional ``id=tr_WDqYK6vllg``.
 
 .. code-block:: bash
 
     curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
-      -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 --------

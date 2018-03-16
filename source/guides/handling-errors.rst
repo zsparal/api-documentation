@@ -3,7 +3,6 @@ Handling errors
 
 HTTP status codes
 -----------------
-
 Whenever you send a request to the Mollie API you'll get a response in **JSON (JavaScript Object Notation)** format.
 This is a standard for data communication that's `easy to read for humans <https://json.org>`_ as well as machines.
 Alongside the JSON-response an HTTP status code is sent that shows whether the request was successful or not. If it
@@ -12,13 +11,12 @@ is something you can do about it.
 
 A successful request
 --------------------
-
-An HTTP status ``200 OK``, ``201 Created`` or ``204 No Content``  is issued whenever your request was a success. You
-see this type of response in our examples like this one below where we successfully retrieve a payment.
+An HTTP status ``200 OK``, ``201 Created`` or ``204 No Content``  is issued whenever your request was a success. You see
+this type of response in our examples like this one below where we successfully
+:ref:`retrieve a payment <_v2/payments-get>`.
 
 Request
 ^^^^^^^
-
 .. code-block:: bash
 
     curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
@@ -26,7 +24,6 @@ Request
 
 Response
 ^^^^^^^^
-
 .. code-block:: http
 
     HTTP/1.1 200 OK
@@ -63,8 +60,8 @@ Response
 
 Examples of error responses
 ---------------------------
-
-Things will sometimes go wrong. For instance when a request is made with the wrong API key, this error will be the result:
+Things will sometimes go wrong. For instance when a request is made with the wrong API key, this error will be the
+result:
 
 Request
 ^^^^^^^
@@ -94,7 +91,8 @@ Response
             }
         }
 
-The HTTP status ``401 Authorization Required`` indicates missing or incorrect authorization to execute the desired action.
+The HTTP status ``401 Authorization Required`` indicates missing or incorrect authorization to execute the desired
+action.
 
 Another error that occurs often, is the well known HTTP status ``404 Not Found``, which indicates the object you're
 trying to retrieve or manipulate does not exist:
@@ -128,8 +126,8 @@ Response
     }
 
 Sometimes a status HTTP ``422 Unprocessable Entity`` is returned. When it occurs there is extra information in the JSON
-about what part or field of your request is likely to be causing the error. In these cases you will find the response has
-the parameter ``field``. In the example below we deliberately used an amount that was too high:
+about what part or field of your request is likely to be causing the error. In these cases you will find the response
+has the parameter ``field``. In the example below we deliberately used an amount that was too high:
 
 Request
 ~~~~~~~

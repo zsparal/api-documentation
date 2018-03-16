@@ -3,7 +3,6 @@ Integrating gift cards
 
 Supported brands
 ----------------
-
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
@@ -22,7 +21,6 @@ using the other payment methods enabled on your website profile.
 
 Contracting and settlement
 --------------------------
-
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle contracting and settlement on
 your behalf. You will have to set up the contracting yourself via the brand owner (e.g. for Podium Cadeaukaart, contact
 Stichting Promotie Theater- en Concertbezoek). The brand owner will ask for your PSPID, a unique identifier. You should
@@ -30,15 +28,15 @@ provide the brand owner with your Mollie Partner ID to use as the PSPID.
 
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
-Once your account has been set up with the brand owner and you have enabled the gift card brand in the `Dashboard <https://www.mollie.com/dashboard>`_, Mollie
-will automatically verify the set up with Intersolve and enable the brand on your selected web site profiles once
-everything has been set up by the various parties involved.
+Once your account has been set up with the brand owner and you have enabled the gift card brand in the
+`Dashboard <https://www.mollie.com/dashboard>`_, Mollie will automatically verify the set up with Intersolve and enable
+the brand on your selected web site profiles once everything has been set up by the various parties involved.
 
 Settlement is handled by the brand owner and not by Mollie.
 
 Technical integration
 ---------------------
-Integration is handled via the Mollie Payments API. Several levels of integration are possible.
+Integration is handled via the :ref:`Payments API <_v2/payments-create>`. Several levels of integration are possible.
 
 Mollie supports stacking transactions, e.g. starting with a partial gift card payment and then finalizing the payment
 using more gift cards or one of the other payment methods.
@@ -58,9 +56,9 @@ will call your webhook.
 
 Integrate method selection in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The selection for the gift card brand can be integrated in your own application as well. Using the Methods API, you can
-retrieve the methods and gift cards available on your account. Use the include issuers to include the gift card brands
-available.
+The selection for the gift card brand can be integrated in your own application as well. Using the
+:ref:`Methods API <_v1/methods-list>`, you can retrieve the methods and gift cards available on your account. Use the
+include ``issuers`` to include the gift card brands available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.
 
@@ -72,21 +70,22 @@ The ID for the gift cards method is ``giftcard``.
 Integrate initial gift card payment in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Finally, Mollie offers the option to integrate the initial gift card payment in your application. You can provide the
-customer with a form where they can enter their voucher number and the voucher pin number. These two fields can be
-passed together with the method and issuer field as the fields voucherNumber and voucherPin.
+customer with a form where they can enter their voucher number and the voucher PIN. These two fields can be passed
+together with the ``method`` and ``issuer`` fields as ``voucherNumber`` and ``voucherPin``.
 
-If the gift card covers the entire amount, the payment moves to the paid state immediately.
+If the gift card covers the entire amount, the payment moves to the ``paid`` state immediately.
 
-If there is any amount due remaining, the payment will be created in the open state and the redirectUrl will point to
-the Mollie Checkout, where the customer can pick the next payment method (or another gift card) they would like to use
-to finish the payment.
+If there is any amount due remaining, the payment will be created in the open state and the ``redirectUrl`` will point
+to the Mollie Checkout, where the customer can pick the next payment method (or another gift card) they would like to
+use to finish the payment.
 
 .. note:: Some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
 
 Cancelled and abandoned payments
 --------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
-the gift card will be returned to the gift card. This will show up as a refund in your `Dashboard <https://www.mollie.com/dashboard>`_.
+the gift card will be returned to the gift card. This will show up as a refund in your
+`Dashboard <https://www.mollie.com/dashboard>`_.
 
 Refunds
 -------
@@ -95,5 +94,5 @@ refund the payment paid with the other payment method (and optionally an additio
 
 Tips
 ----
-As the Mollie Checkout is almost certainly used when processing gift cards, be sure to set up an attractive wallpaper
-and your logo for the checkout.
+In most common integrations the Mollie Checkout is used when processing gift cards, so be sure to configure an
+attractive wallpaper and logo for the checkout.
