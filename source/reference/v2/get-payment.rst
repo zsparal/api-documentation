@@ -242,7 +242,7 @@ Bitcoin
       |                   |          |bitcoins were transferred to..                                                        |
       +-------------------+----------+--------------------------------------------------------------------------------------+
       |``bitcoinAmount``  |``object``|The amount transferred in BTC. An object consisting of two properties:                |
-      |                   |          |``currency`` (always``XBT``), and ``value``. For example:                             |
+      |                   |          |``currency`` (always ``XBT``), and ``value``. For example:                            |
       |                   |          |                                                                                      |
       |                   |          |.. code-block:: json                                                                  |
       |                   |          |                                                                                      |
