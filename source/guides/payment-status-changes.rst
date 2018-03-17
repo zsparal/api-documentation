@@ -1,4 +1,4 @@
-.. _payment-status-changes:
+.. _guides/payment-status-changes:
 
 Payment status changes
 ======================

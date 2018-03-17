@@ -86,14 +86,22 @@ the metadata is included in the response. This is another way to connect orders 
 .. toctree::
    guides/authentication
    guides/handling-errors
+   guides/pagination
+   guides/webhooks
    guides/payment-status-changes
    guides/checkout
-   guides/multicurrency
-   guides/giftcards
+   guides/recurring
+   guides/multi-currency
+   guides/gift-cards
+   guides/qr-codes
    :maxdepth: 1
    :caption: Guides
 
 .. toctree::
+   oauth/overview
+   oauth/getting-started
+   oauth/permissions
+   :maxdepth: 1
    :caption: Mollie Connect
 
 .. toctree::

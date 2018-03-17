@@ -1,3 +1,5 @@
+.. _guides/handling-errors:
+
 Handling errors
 ===============
 

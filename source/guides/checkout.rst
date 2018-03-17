@@ -1,4 +1,4 @@
-.. _checkout:
+.. _guides/checkout:
 
 Mollie Checkout
 ===============

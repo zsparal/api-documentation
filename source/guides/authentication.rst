@@ -1,3 +1,5 @@
+.. _guides/authentication:
+
 Authentication
 ==============
 
@@ -53,8 +55,8 @@ for a retrieved payment with fictional ``id=tr_WDqYK6vllg``.
 
 .. code-block:: bash
 
-    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 --------
@@ -62,34 +64,34 @@ The response will be JSON.
 
 .. code-block:: http
 
-    HTTP/1.1 200 OK
-    Content-Type: application/hal+json; charset=utf-8
+   HTTP/1.1 200 OK
+   Content-Type: application/hal+json; charset=utf-8
 
-    {
-        "resource": "payment",
-        "id": "tr_WDqYK6vllg",
-        "mode": "test",
-        "createdAt": "2018-03-12T11:51:35+00:00",
-        "amount": {
-            "value": "1.00",
-            "currency": "EUR"
-        },
-        "description": "Order 66",
-        "method": null,
-        "metadata": null,
-        "status": "open",
-        "canBeCancelled": false,
-        "expiresAt": "2018-03-12T12:06:35+00:00",
-        "details": null,
-        "profileId": "pfl_7N5qjbu42V",
-        "sequenceType": "oneoff",
-        "redirectUrl": "https://www.example.org/payment/completed",
-        "_links": {
-            "self": {
-                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg"
-            },
-            "checkout": {
-                "href": "https://www.mollie.com/payscreen/select-method/WDqYK6vllg"
-            }
-        }
-    }
+   {
+       "resource": "payment",
+       "id": "tr_WDqYK6vllg",
+       "mode": "test",
+       "createdAt": "2018-03-12T11:51:35+00:00",
+       "amount": {
+           "value": "1.00",
+           "currency": "EUR"
+       },
+       "description": "Order 66",
+       "method": null,
+       "metadata": null,
+       "status": "open",
+       "canBeCancelled": false,
+       "expiresAt": "2018-03-12T12:06:35+00:00",
+       "details": null,
+       "profileId": "pfl_7N5qjbu42V",
+       "sequenceType": "oneoff",
+       "redirectUrl": "https://www.example.org/payment/completed",
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg"
+           },
+           "checkout": {
+               "href": "https://www.mollie.com/payscreen/select-method/WDqYK6vllg"
+           }
+       }
+   }

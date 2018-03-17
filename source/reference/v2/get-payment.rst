@@ -6,13 +6,12 @@ Get payment
 
 Retrieve a single payment object by its payment token.
 
-.. note:: We call your webhook when the :ref:`payment status changes <payment-status-changes>`, so there's no need
-          to poll this endpoint for status changes.
+.. note:: We call your webhook when the :ref:`payment status changes <guides/payment-status-changes>`, so there's no
+          need to poll this endpoint for status changes.
 
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
-
 
 Mollie Connect/OAuth parameters
 -------------------------------

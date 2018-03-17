@@ -1,4 +1,4 @@
-.. _multi-currency:
+.. _guides/multi-currency:
 
 Multi-currency
 ==============

@@ -1,3 +1,5 @@
+.. _guides/gift-cards:
+
 Integrating gift cards
 ======================
 
