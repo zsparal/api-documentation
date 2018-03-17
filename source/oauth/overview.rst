@@ -1,4 +1,4 @@
-.. _oauth/index:
+.. _oauth/overview:
 
 Mollie Connect: Overview
 ========================
