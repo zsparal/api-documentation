@@ -199,6 +199,15 @@ API v2 Reference
    reference/v2/create-payment
    reference/v2/get-payment
 
+Connect API Reference
+=====================
+.. toctree::
+   :maxdepth: 1
+   :caption: Connect API
+
+   Authorize <reference/oauth2/authorize>
+   Tokens <reference/oauth2/tokens>
+
 Indices and tables
 ==================
 * :ref:`genindex`
