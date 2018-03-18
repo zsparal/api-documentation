@@ -160,6 +160,18 @@ API v1 Reference
    Get chargeback <reference/v1/chargebacks-api/get-chargeback>
    List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Customers API v1
+
+   Create customer <reference/v1/customers-api/create-customer>
+   Get customer <reference/v1/customers-api/get-customer>
+   Update customer <reference/v1/customers-api/update-customer>
+   Delete customer <reference/v1/customers-api/delete-customer>
+   List customers <reference/v1/customers-api/list-customers>
+   Create customer payment <reference/v1/customers-api/create-customer-payment>
+   List customer payments <reference/v1/customers-api/list-customer-payments>
+
 API v2 Reference
 ================
 .. toctree::
