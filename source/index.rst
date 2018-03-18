@@ -87,6 +87,8 @@ would be a good candidate. Mollie stores the metadata for you, when you fetch th
 the metadata is included in the response. This is another way to connect orders and payments. We advise to use the
 ``metadata`` approach. This is the most popular approach and it's easiest to implement.
 
+Overview
+========
 .. toctree::
    :hidden:
 
@@ -117,9 +119,11 @@ the metadata is included in the response. This is another way to connect orders 
    Getting started <oauth/getting-started>
    Permissions <oauth/permissions>
 
+API v1 Reference
+================
 .. toctree::
    :maxdepth: 1
-   :caption: API v1 Reference
+   :caption: Payments API v1
 
    Create payment <reference/v1/payments-api/create-payment>
    Get payment <reference/v1/payments-api/get-payment>
@@ -128,7 +132,16 @@ the metadata is included in the response. This is another way to connect orders 
 
 .. toctree::
    :maxdepth: 1
-   :caption: API v2 Reference
+   :caption: Methods API v1
+
+   Get payment method <reference/v1/methods-api/get-method>
+   List payment methods <reference/v1/methods-api/list-methods>
+
+API v2 Reference
+================
+.. toctree::
+   :maxdepth: 1
+   :caption: Payments API v2
 
    reference/v2/create-payment
    reference/v2/get-payment
