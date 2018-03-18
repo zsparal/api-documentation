@@ -176,10 +176,19 @@ API v1 Reference
    :maxdepth: 1
    :caption: Mandates API v1
 
-   Create customer mandate <reference/v1/mandates-api/create-mandate>
-   Get customer mandate <reference/v1/mandates-api/get-mandate>
-   Revoke customer mandate <reference/v1/mandates-api/revoke-mandate>
-   List customer mandates <reference/v1/mandates-api/list-mandates>
+   Create mandate <reference/v1/mandates-api/create-mandate>
+   Get mandate <reference/v1/mandates-api/get-mandate>
+   Revoke mandate <reference/v1/mandates-api/revoke-mandate>
+   List mandates <reference/v1/mandates-api/list-mandates>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Subscriptions API v1
+
+   Create subscription <reference/v1/subscriptions-api/create-subscription>
+   Get subscription <reference/v1/subscriptions-api/get-subscription>
+   Revoke subscription <reference/v1/subscriptions-api/cancel-subscription>
+   List subscriptions <reference/v1/subscriptions-api/list-subscriptions>
 
 API v2 Reference
 ================
