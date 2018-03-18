@@ -208,6 +208,13 @@ Connect API Reference
    Authorize <reference/oauth2/authorize>
    Tokens <reference/oauth2/tokens>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Permissions API v1
+
+   Get permission <reference/v1/permissions-api/get-permission>
+   List permissions <reference/v1/permissions-api/list-permissions>
+
 Indices and tables
 ==================
 * :ref:`genindex`
