@@ -18,7 +18,8 @@ TODO: Add documentation on v2 pagination.
 
 Pagination in v1 API endpoints
 ------------------------------
-.. warning:: This is documentation of an older API version.
+.. warning:: This is the documentation of the v1 API. The documentation for pagination in the new v2 API can be found
+             above. For more information on the v2 API, refer to our :ref:`v2 migration guide <migrate-to-v2>`.
 
 Using the ``count`` parameter you can set the page size up to a maximum of 250 objects. The result will be paginated
 accordingly, presuming your request would otherwise have resulted in more than ``count`` objects. The ``offset``
@@ -33,45 +34,45 @@ Response object
    :header-rows: 0
    :widths: auto
 
-   * - ``totalCount``
-     - ``integer``
+   * - | ``totalCount``
+       | integer
      - The total number of objects available.
 
-   * - ``offset``
-     - ``integer``
+   * - | ``offset``
+       | integer
      - The number of skipped objects as requested.
 
-   * - ``count``
-     - ``integer``
+   * - | ``count``
+       | integer
      - The number of objects found in data, which is either the requested number (with a maximum of 250) or the default
        number.
 
-   * - ``data``
-     - ``array``
+   * - | ``data``
+       | array
      - The actual data you're looking for.
 
-   * - ``links``
-     - ``object|null``
+   * - | ``links``
+       | object
      - Optional – Links to help navigate through the lists of objects, based on the given offset.
 
        .. list-table::
           :header-rows: 0
           :widths: auto
 
-          * - ``previous``
-            - ``string|null``
+          * - | ``previous``
+              | string
             - Optional – The previous set of objects, if available.
 
-          * - ``next``
-            - ``string|null``
+          * - | ``next``
+              | string
             - Optional – The next set of objects, if available.
 
-          * - ``first``
-            - ``string|null``
+          * - | ``first``
+              | string
             - Optional – The first set of objects, if available.
 
-          * - ``last``
-            - ``string|null``
+          * - | ``last``
+              | string
             - Optional – The last set of objects, if available.
 
 Example

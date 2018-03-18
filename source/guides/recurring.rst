@@ -117,7 +117,7 @@ frequency, and will show up in your Dashboard.
    .. code-block:: bash
 
       curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates \
-          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"require 'mollie-api-ruby'
+          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 #. Continue if there's a mandate with its ``status`` being either ``pending`` or ``valid``, otherwise set up a *first*
    payment for the customer first.

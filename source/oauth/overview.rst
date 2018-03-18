@@ -49,6 +49,6 @@ To keep the user experience consistent, we recommend using one of the buttons be
 
 .. image:: images/button-small@2x.png
 
-`**Download files** <https://www.mollie.com/assets/images/branding/connect-button/connect-with-mollie.zip>`_
+`Download files <https://www.mollie.com/assets/images/branding/connect-button/connect-with-mollie.zip>`_
 
 The download includes a Sketch file and retina PNGs.

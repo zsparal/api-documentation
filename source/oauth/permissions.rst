@@ -1,7 +1,7 @@
 .. _oauth/permissions:
 
-OAuth: Permissions
-==================
+Mollie Connect: Permissions
+===========================
 
 Accessing merchant data
 -----------------------
@@ -15,66 +15,66 @@ the requested permissions in the ``scope`` parameter.
    :header-rows: 0
    :widths: auto
 
-   * - ``payments.read``
-       Payments API
+   * - | ``payments.read``
+       | Payments API
      - View the merchant's payments.
 
-   * - ``payments.write``
-       Payments API
+   * - | ``payments.write``
+       | Payments API
      - Create payments for the merchant. The received payment will be added to the merchant's balance.
 
-   * - ``refunds.read``
-       Refunds API
+   * - | ``refunds.read``
+       | Refunds API
      - View the merchant's refunds.
 
-   * - ``refunds.write``
-       Refunds API
+   * - | ``refunds.write``
+       | Refunds API
      - Refund the merchant's payments to consumers.
 
-   * - ``customers.read``
-       Customers API
+   * - | ``customers.read``
+       | Customers API
      - View the merchant's customers.
 
-   * - ``customers.write``
-       Customers API
+   * - | ``customers.write``
+       | Customers API
      - Manage the merchant's customers.
 
-   * - ``mandates.read``
-       Mandates API
+   * - | ``mandates.read``
+       | Mandates API
      - View the merchant's mandates.
 
-   * - ``mandates.write``
-       Mandates API
+   * - | ``mandates.write``
+       | Mandates API
      - Manage the merchant's mandates.
 
-   * - ``subscriptions.read``
-       Subscriptions API
+   * - | ``subscriptions.read``
+       | Subscriptions API
      - View the merchant's subscriptions.
 
-   * - ``subscriptions.write``
-       Subscriptions API
+   * - | ``subscriptions.write``
+       | Subscriptions API
      - Manage the merchant's subscriptions.
 
-   * - ``profiles.read``
-       Profiles API
+   * - | ``profiles.read``
+       | Profiles API
      - View the merchant's website profiles.
 
-   * - ``profiles.write``
-       Profiles API
+   * - | ``profiles.write``
+       | Profiles API
      - Manage the merchant's website profiles.
 
-   * - ``invoices.read``
-       Invoices API
+   * - | ``invoices.read``
+       | Invoices API
      - View the merchant's invoices.
 
-   * - ``settlements.read``
-       Settlements API
+   * - | ``settlements.read``
+       | Settlements API
      - View the merchant's settlements.
 
-   * - ``organizations.read``
-       Organizations API
+   * - | ``organizations.read``
+       | Organizations API
      - View the merchant's organizational details.
 
-   * - ``organizations.write``
-       Organizations API
+   * - | ``organizations.write``
+       | Organizations API
      - Change the merchant's organizational details.

@@ -1,11 +1,10 @@
 .. _overview:
 
-Welcome to Mollie B.V's public API documentation!
-=================================================
+Welcome to Mollie's public API documentation!
+=============================================
 
 Mollie API: simple & powerful
 -----------------------------
-
 Use the Mollie API to integrate online payments by Mollie directly into your website or app. Mollie and your website
 will communicate by sending HTTP requests back and forth.
 
@@ -19,7 +18,6 @@ allows you to still be in control without reinventing the wheel.
 
 Clients, modules and plugins
 ----------------------------
-
 Well begun is half done. Save time and build on solid foundations. Mollie API clients are available for
 `PHP <https://github.com/mollie/mollie-api-php>`_, `Ruby <https://github.com/mollie/mollie-api-ruby>`_,
 `Node.js <https://github.com/mollie/mollie-api-node>`_ and `Python <https://github.com/mollie/mollie-api-python>`_.
@@ -28,7 +26,6 @@ Of course we also provide modules and plugins for about every web shop software 
 
 Payment methods
 ---------------
-
 Mollie is always adding new payment methods. The Mollie API currently supports these payments methods:
 
 * `Bancontact <https://www.mollie.com/en/payments/bancontact>`_
@@ -37,7 +34,8 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Bitcoin <https://www.mollie.com/en/payments/bitcoin>`_
 * `Credit card <https://www.mollie.com/en/payments/credit-card>`_ (VISA, MasterCard, Maestro and American Express)
 * `SEPA Direct Debit <https://www.mollie.com/en/payments/direct-debit>`_
-* `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart, YourGift etc.)
+* `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart,
+  YourGift etc.)
 * `iDEAL <https://www.mollie.com/en/payments/ideal>`_
 * `ING Home'Pay <https://www.mollie.com/en/payments/ing-homepay>`_
 * `KBC/CBC Payment Button <https://www.mollie.com/en/payments/kbc-cbc>`_
@@ -50,21 +48,34 @@ using the `Dashboard <https://www.mollie.com/dashboard>`_.
 
 How does the Mollie API work?
 -----------------------------
-
 .. image:: guides/images/api-overview-flow@2x.png
 
 #. A customer on your website decides to checkout.
-#. Your website :ref:`creates a payment <v2/payment-create>` on the Mollie platform by calling the Mollie API with the amount, a payment description and a URL we should redirect the customer to after the payment is made.
-   The API responds with the unique id and the ``_links.checkout`` URL for the newly created payment. Your website stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``checkout`` property from the Mollie API response. This is the URL to the payment screen for this specific payment.
-#. The customer reaches the :ref:`checkout`, chooses a payment method and makes the payment. This process is entirely taken care of by Mollie. You don't need to do anything here.
-#. When the payment is made Mollie will call your webhook informing your website about the payment's status change. You should define one when creating the payment.
-   In response to you webhook being called your website just needs to issue a ``200 OK`` status. From that response Mollie can tell that your processing the new status was successful – for any other response we keep trying.
-#. Processing the webhook request your website fetches the payment status using the Mollie API. This fetched status serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the customer.
-#. At this point Mollie returns the visitor to your website using the ``redirectUrl`` specified when the payment was created. Your website knows the payment was successful and thanks the customer.
+
+#. Your website :ref:`creates a payment <v2/payments-create>` on the Mollie platform by calling the Mollie API with the
+   amount, a payment description and a URL we should redirect the customer to after the payment is made.
+
+   The API responds with the unique id and the ``_links.checkout`` URL for the newly created payment. Your website
+   stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``checkout``
+   property from the Mollie API response. This is the URL to the payment screen for this specific payment.
+
+#. The customer reaches the :ref:`checkout <guides/checkout>`, chooses a payment method and makes the payment. This
+   process is entirely taken care of by Mollie. You don't need to do anything here.
+
+#. When the payment is made Mollie will call your webhook informing your website about the payment's status change. You
+   should define one when creating the payment.
+
+   In response to you webhook being called your website just needs to issue a ``200 OK`` status. From that response
+   Mollie can tell that your processing the new status was successful – for any other response we keep trying.
+
+#. Processing the webhook request your website fetches the payment status using the Mollie API. This fetched status
+   serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the customer.
+
+#. At this point Mollie returns the visitor to your website using the ``redirectUrl`` specified when the payment was
+   created. Your website knows the payment was successful and thanks the customer.
 
 Connecting orders and payments
 ------------------------------
-
 In the example above we suppose you will store the ``id`` that's unique to the payment in your order table. This way
 your website is able to look-up the order for this payment when the webhook is triggered by Mollie. Your website is
 keeping track of the payment, effectively bringing about the connection between order and payment. This approach is
@@ -116,7 +127,6 @@ the metadata is included in the response. This is another way to connect orders 
 
 Indices and tables
 ==================
-
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
