@@ -137,6 +137,13 @@ API v1 Reference
    Get payment method <reference/v1/methods-api/get-method>
    List payment methods <reference/v1/methods-api/list-methods>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Issuers API v1
+
+   Get issuer <reference/v1/issuers-api/get-issuer>
+   List issuers <reference/v1/issuers-api/list-issuers>
+
 API v2 Reference
 ================
 .. toctree::
