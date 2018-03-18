@@ -144,6 +144,15 @@ API v1 Reference
    Get issuer <reference/v1/issuers-api/get-issuer>
    List issuers <reference/v1/issuers-api/list-issuers>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Refunds API v1
+
+   Create refund <reference/v1/refunds-api/create-refund>
+   Get refund <reference/v1/refunds-api/get-refund>
+   Cancel refund <reference/v1/refunds-api/cancel-refund>
+   List refunds <reference/v1/refunds-api/list-refunds>
+
 API v2 Reference
 ================
 .. toctree::
