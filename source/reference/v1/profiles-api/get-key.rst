@@ -1,0 +1,69 @@
+.. _v1/keys-get:
+
+Profiles API v1: Get API key
+============================
+``GET`` ``https://api.mollie.com/v1/profiles/*profileId*/apikeys/*mode*``
+
+Authentication: :ref:`OAuth access tokens <oauth/overview>`
+
+Get the API key for the given payment profile and profile mode.
+
+**Note that you cannot retrieve API keys for a different account than your own, even if you have a valid OAuth token.**
+
+If you wish to create a payment on behalf of a different merchant, use your app's access token and the ``profileId`` of
+one of the merchant's payment profiles when :ref:`creating a payment <v1/payments-create>`.
+
+Parameters
+----------
+Replace ``id`` in the endpoint URL by the payment profile's ID, and replace ``mode`` by ``live`` or ``test``. For
+example: ``/v1/profiles/pfl_v9hTwCvYqw/apikeys/live``.
+
+Response
+--------
+``200`` ``application/json; charset=utf-8``
+
+.. list-table::
+   :widths: auto
+
+   * - | ``resource``
+       | string
+     - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
+
+   * - | ``id``
+       | string
+     - The API key's identifier.
+
+       Possible values: ``live`` ``test``
+
+   * - | ``key``
+       | string
+     - The actual API key, which you'll use when creating payments or when otherwise communicating with the API. Never
+       share the API key with anyone.
+
+   * - | ``createdDatetime``
+       | datetime
+     - The API key's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+Example
+-------
+
+Request
+^^^^^^^
+.. code-block:: bash
+
+   curl -X GET https://api.mollie.com/v1/profiles/pfl_v9hTwCvYqw/apikeys/live \
+       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
+Response
+^^^^^^^^
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json; charset=utf-8
+
+   {
+       "resource": "profile_api_key",
+       "id": "live",
+       "key": "live_eSf9fQRwpsdfPY8y3tUFFmqjADRKyA",
+       "createdDatetime": "2018-03-17T01:47:48.0Z"
+   }

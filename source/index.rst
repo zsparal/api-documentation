@@ -212,6 +212,19 @@ Mollie Connect
 
    Get organization <reference/v1/organizations-api/get-organization>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Profiles API
+
+   Create profile <reference/v1/profiles-api/create-profile>
+   Get profile <reference/v1/profiles-api/get-profile>
+   Update profile <reference/v1/profiles-api/update-profile>
+   Delete profile <reference/v1/profiles-api/delete-profile>
+   List profiles <reference/v1/profiles-api/list-profiles>
+   Get API key <reference/v1/profiles-api/get-key>
+   Reset API key <reference/v1/profiles-api/reset-key>
+   List API keys <reference/v1/profiles-api/list-keys>
+
 Deprecated APIs
 ===============
 .. toctree::
