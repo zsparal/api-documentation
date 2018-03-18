@@ -119,34 +119,32 @@ Overview
    Getting started <oauth/getting-started>
    Permissions <oauth/permissions>
 
-API v1 Reference
-================
+Payments
+========
 .. toctree::
    :maxdepth: 1
-   :caption: Payments API v1
+   :caption: Payments API
 
-   Create payment <reference/v1/payments-api/create-payment>
-   Get payment <reference/v1/payments-api/get-payment>
-   Cancel payment <reference/v1/payments-api/cancel-payment>
-   List payments <reference/v1/payments-api/list-payments>
+   reference/v2/create-payment
+   reference/v2/get-payment
 
 .. toctree::
    :maxdepth: 1
-   :caption: Methods API v1
+   :caption: Methods API
 
    Get payment method <reference/v1/methods-api/get-method>
    List payment methods <reference/v1/methods-api/list-methods>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Issuers API v1
+   :caption: Issuers API
 
    Get issuer <reference/v1/issuers-api/get-issuer>
    List issuers <reference/v1/issuers-api/list-issuers>
 
 .. toctree::
    :maxdepth: 1
-   :caption: Refunds API v1
+   :caption: Refunds API
 
    Create refund <reference/v1/refunds-api/create-refund>
    Get refund <reference/v1/refunds-api/get-refund>
@@ -155,14 +153,16 @@ API v1 Reference
 
 .. toctree::
    :maxdepth: 1
-   :caption: Chargebacks API v1
+   :caption: Chargebacks API
 
    Get chargeback <reference/v1/chargebacks-api/get-chargeback>
    List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
 
+Recurring
+=========
 .. toctree::
    :maxdepth: 1
-   :caption: Customers API v1
+   :caption: Customers API
 
    Create customer <reference/v1/customers-api/create-customer>
    Get customer <reference/v1/customers-api/get-customer>
@@ -174,7 +174,7 @@ API v1 Reference
 
 .. toctree::
    :maxdepth: 1
-   :caption: Mandates API v1
+   :caption: Mandates API
 
    Create mandate <reference/v1/mandates-api/create-mandate>
    Get mandate <reference/v1/mandates-api/get-mandate>
@@ -183,24 +183,15 @@ API v1 Reference
 
 .. toctree::
    :maxdepth: 1
-   :caption: Subscriptions API v1
+   :caption: Subscriptions API
 
    Create subscription <reference/v1/subscriptions-api/create-subscription>
    Get subscription <reference/v1/subscriptions-api/get-subscription>
    Revoke subscription <reference/v1/subscriptions-api/cancel-subscription>
    List subscriptions <reference/v1/subscriptions-api/list-subscriptions>
 
-API v2 Reference
-================
-.. toctree::
-   :maxdepth: 1
-   :caption: Payments API v2
-
-   reference/v2/create-payment
-   reference/v2/get-payment
-
-Connect API Reference
-=====================
+Mollie Connect
+==============
 .. toctree::
    :maxdepth: 1
    :caption: Connect API
@@ -210,10 +201,27 @@ Connect API Reference
 
 .. toctree::
    :maxdepth: 1
-   :caption: Permissions API v1
+   :caption: Permissions API
 
    Get permission <reference/v1/permissions-api/get-permission>
    List permissions <reference/v1/permissions-api/list-permissions>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Organizations API
+
+   Get organization <reference/v1/organizations-api/get-organization>
+
+Deprecated APIs
+===============
+.. toctree::
+   :maxdepth: 1
+   :caption: Payments API v1 (deprecated)
+
+   Create payment <reference/v1/payments-api/create-payment>
+   Get payment <reference/v1/payments-api/get-payment>
+   Cancel payment <reference/v1/payments-api/cancel-payment>
+   List payments <reference/v1/payments-api/list-payments>
 
 Indices and tables
 ==================
