@@ -172,6 +172,15 @@ API v1 Reference
    Create customer payment <reference/v1/customers-api/create-customer-payment>
    List customer payments <reference/v1/customers-api/list-customer-payments>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Mandates API v1
+
+   Create customer mandate <reference/v1/mandates-api/create-mandate>
+   Get customer mandate <reference/v1/mandates-api/get-mandate>
+   Revoke customer mandate <reference/v1/mandates-api/revoke-mandate>
+   List customer mandates <reference/v1/mandates-api/list-mandates>
+
 API v2 Reference
 ================
 .. toctree::
