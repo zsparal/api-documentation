@@ -44,7 +44,7 @@ querystring parameter.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/json; charset=utf-8``
 
 .. list-table::
    :header-rows: 0
