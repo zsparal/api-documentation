@@ -153,6 +153,13 @@ API v1 Reference
    Cancel refund <reference/v1/refunds-api/cancel-refund>
    List refunds <reference/v1/refunds-api/list-refunds>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Chargebacks API v1
+
+   Get chargeback <reference/v1/chargebacks-api/get-chargeback>
+   List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
+
 API v2 Reference
 ================
 .. toctree::
