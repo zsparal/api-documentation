@@ -90,11 +90,14 @@ the metadata is included in the response. This is another way to connect orders 
 .. toctree::
    :hidden:
 
-   Mollie API<self>
+   Mollie API <self>
    security
    migrating-v1-to-v2
 
 .. toctree::
+   :maxdepth: 1
+   :caption: Guides
+
    guides/authentication
    guides/handling-errors
    guides/pagination
@@ -105,25 +108,30 @@ the metadata is included in the response. This is another way to connect orders 
    guides/multi-currency
    guides/gift-cards
    guides/qr-codes
-   :maxdepth: 1
-   :caption: Guides
 
 .. toctree::
-   oauth/overview
-   oauth/getting-started
-   oauth/permissions
    :maxdepth: 1
    :caption: Mollie Connect
+
+   Overview <oauth/overview>
+   Getting started <oauth/getting-started>
+   Permissions <oauth/permissions>
 
 .. toctree::
    :maxdepth: 1
    :caption: API v1 Reference
 
+   Create payment <reference/v1/payments-api/create-payment>
+   Get payment <reference/v1/payments-api/get-payment>
+   Cancel payment <reference/v1/payments-api/cancel-payment>
+   List payments <reference/v1/payments-api/list-payments>
+
 .. toctree::
-   reference/v2/create-payment
-   reference/v2/get-payment
    :maxdepth: 1
    :caption: API v2 Reference
+
+   reference/v2/create-payment
+   reference/v2/get-payment
 
 Indices and tables
 ==================
