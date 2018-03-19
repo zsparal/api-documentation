@@ -237,6 +237,13 @@ Mollie Connect
    List settlement refunds <reference/v1/settlements-api/list-settlement-refunds>
    List settlement chargebacks <reference/v1/settlements-api/list-settlement-chargebacks>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Invoices API
+
+   Get invoice <reference/v1/invoices-api/get-invoice>
+   List invoices <reference/v1/invoices-api/list-invoices>
+
 Deprecated APIs
 ===============
 .. toctree::
