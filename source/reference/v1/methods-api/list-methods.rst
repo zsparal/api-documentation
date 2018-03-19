@@ -4,7 +4,7 @@ Methods API v1: List payment methods
 ====================================
 ``GET`` ``https://api.mollie.com/v1/methods``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve all payment methods activated on the payment profile.
 
@@ -13,7 +13,6 @@ The results are paginated. See :ref:`pagination <guides/pagination>` for more in
 Parameters
 ----------
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``include``
@@ -38,11 +37,11 @@ Parameters
 
    * - | ``offset``
        | integer
-     - Optional – The number of objects to skip.
+     - Optional – The number of payment methods to skip.
 
    * - | ``count``
        | integer
-     - Optional – The number of objects to return (with a maximum of 250).
+     - Optional – The number of payment methods to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -51,7 +50,6 @@ With it, you can specify which profile you want to list the methods of. Organiza
 each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``profileId``
@@ -75,7 +73,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -88,8 +85,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of payment methods found in data, which is either the requested number (with a maximum of 250) or the
-       default number.
+     - The number of payment methods found in ``data``, which is either the requested number (with a maximum of 250) or
+       the default number.
 
    * - | ``data``
        | array
@@ -100,7 +97,6 @@ Response
      - Optional – Links to help navigate through the lists of payment methods, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

@@ -1,4 +1,4 @@
-.. _v1/refunds-create:
+.. _v1/refunds-cancel:
 
 Refunds API v1: Cancel refund
 =============================
@@ -19,7 +19,7 @@ Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`
 
 Response
 --------
-``204`` ``No Content``
+``204 No Content``
 
 Example
 -------

@@ -12,7 +12,6 @@ Permissions can be requested by redirecting the resource owner to the :ref:`Auth
 the requested permissions in the ``scope`` parameter.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``payments.read``

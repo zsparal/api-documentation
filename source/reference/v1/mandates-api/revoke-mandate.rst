@@ -1,7 +1,7 @@
 .. _v1/mandates-revoke:
 
-Mandates API v1: Revoke customer mandate
-========================================
+Mandates API v1: Revoke mandate
+===============================
 ``DELETE`` ``https://api.mollie.com/v1/customers/*customerId*/mandates/*id*``
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`

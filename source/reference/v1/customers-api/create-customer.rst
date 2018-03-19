@@ -14,7 +14,6 @@ subscriptions.
 Parameters
 ----------
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``name``
@@ -43,7 +42,6 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``

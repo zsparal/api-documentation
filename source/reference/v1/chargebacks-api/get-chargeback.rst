@@ -4,7 +4,7 @@ Chargebacks API v1: Get chargeback
 ==================================
 ``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/chargebacks/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
@@ -27,7 +27,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``id``

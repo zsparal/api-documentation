@@ -31,7 +31,6 @@ the last page. The following overview lists all response fields:
 Response object
 ^^^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -44,8 +43,8 @@ Response object
 
    * - | ``count``
        | integer
-     - The number of objects found in data, which is either the requested number (with a maximum of 250) or the default
-       number.
+     - The number of objects found in ``data``, which is either the requested number (with a maximum of 250) or the
+       default number.
 
    * - | ``data``
        | array
@@ -56,7 +55,6 @@ Response object
      - Optional – Links to help navigate through the lists of objects, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

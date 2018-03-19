@@ -1,10 +1,10 @@
 .. _v1/mandates-get:
 
-Mandates API v1: Get customer mandate
-=====================================
+Mandates API v1: Get mandate
+============================
 ``GET`` ``https://api.mollie.com/v1/customers/*customerId*/mandates/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a mandate by its ID and its customer's ID. The mandate will either contain IBAN or credit card details,
 depending on the type of mandate.
@@ -35,6 +35,11 @@ Response
    * - | ``resource``
        | string
      - Indicates the response contains a mandate object. Will always contain ``mandate`` for this endpoint.
+
+   * - | ``id``
+       | string
+     - The identifier uniquely referring to this mandate. Mollie assigns this identifier at mandate creation time. For
+       example ``mdt_pWUnw6pkBN``.
 
    * - | ``status``
        | string

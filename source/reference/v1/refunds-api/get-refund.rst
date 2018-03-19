@@ -4,7 +4,7 @@ Refunds API v1: Get refund
 ==========================
 ``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
@@ -20,7 +20,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``id``
@@ -33,7 +32,6 @@ Response
        following refund related fields.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``amountRefunded``

@@ -16,8 +16,7 @@ By supplying the optional ``amount`` parameter, you can issue a partial refund w
 fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,
 for example to refund costs for returnment shipping.
 
-Refunds support ``description``s, which we will show in the dashboard, your exports and pass to the consumer if
-possible.
+Refunds support descriptions, which we will show in the Dashboard, your exports and pass to the consumer if possible.
 
 If you have insufficient balance with Mollie to perform the refund, the refund will be ``queued``. We will automatically
 process the refund once your balance increases.
@@ -47,7 +46,6 @@ Parameters
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``amount``
@@ -61,11 +59,10 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
        bank statement when possible. Max. 140 characters.
 
 Mollie Connect/OAuth parameters
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``

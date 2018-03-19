@@ -4,7 +4,7 @@ Issuers API v1: Get issuer
 ==========================
 ``GET`` ``https://api.mollie.com/v1/issuers/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a payment method issuer by its issuer identifier.
 
@@ -19,7 +19,6 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``
@@ -31,7 +30,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``resource``
@@ -58,7 +56,6 @@ Response
      - URLs of images representing the payment method issuer.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``normal``

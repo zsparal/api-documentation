@@ -4,7 +4,7 @@ Subscriptions API v1: Get subscription
 ======================================
 ``GET`` ``https://api.mollie.com/v1/customers/*customerId*/subscriptions/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a subscription by its ID and its customer's ID.
 

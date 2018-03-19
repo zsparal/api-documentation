@@ -27,7 +27,6 @@ This endpoint accepts the same parameters as the :ref:`Create payment <v1/paymen
 payments, the following parameters have notable differences in comparison to regular payments:
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``recurringType``

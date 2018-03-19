@@ -15,7 +15,6 @@ parameters listed below as keys and the values you want to use for the parameter
 Parameters
 ----------
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``amount``
@@ -92,7 +91,6 @@ payment method.
 iDEAL
 ^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``issuer``
@@ -119,7 +117,6 @@ PayPal
 Bitcoin
 ^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``billingEmail``

@@ -4,7 +4,7 @@ Issuers API v1: List issuers
 ============================
 ``GET`` ``https://api.mollie.com/v1/issuers``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve all available iDEAL issuers. This endpoint enables you to integrate iDEAL's bank selection screen into your own
 payment flow.
@@ -16,7 +16,6 @@ The results are paginated. See :ref:`pagination <guides/pagination>` for more in
 Parameters
 ----------
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``offset``
@@ -32,7 +31,6 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``
@@ -44,7 +42,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -57,8 +54,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of issuers found in data, which is either the requested number (with a maximum of 250) or the default
-       number.
+     - The number of issuers found in ``data``, which is either the requested number (with a maximum of 250) or the
+       default number.
 
    * - | ``data``
        | array
@@ -69,7 +66,6 @@ Response
      - Optional – Links to help navigate through the lists of issuers, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

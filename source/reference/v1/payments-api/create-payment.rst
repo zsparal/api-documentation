@@ -19,12 +19,11 @@ To wrap your head around the payment process, an explanation and flow charts can
 Parameters
 ----------
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``amount``
        | decimal
-     - The amount in EURO that you want to charge, e.g. 100.00 if you would want to charge €100.00.
+     - The amount in EUR that you want to charge, e.g. 100.00 if you would want to charge €100.00.
 
    * - | ``description``
        | string
@@ -75,8 +74,8 @@ Parameters
 
    * - | ``recurringType``
        | string
-     - Optional – Enables recurring payments. If set to first, a first payment for the customer is created, allowing the
-       customer to agree to automatic recurring charges taking place on their account in the future. If set to
+     - Optional – Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
+       the customer to agree to automatic recurring charges taking place on their account in the future. If set to
        ``recurring``, the customer's card is charged automatically.
 
        Possible values: ``first`` ``recurring``
@@ -92,15 +91,14 @@ Parameters
        supplied to indicate which of the consumer's accounts should be credited.
 
 Payment method specific parameters
-----------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
 Bank transfer
-^^^^^^^^^^^^^
+"""""""""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``billingEmail``
@@ -124,9 +122,8 @@ Bank transfer
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
 Bitcoin
-^^^^^^^
+"""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``billingEmail``
@@ -135,9 +132,8 @@ Bitcoin
        transferred, transfer of expired or cancelled payments, et cetera).
 
 Credit card
-^^^^^^^^^^^
+"""""""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``billingAddress``
@@ -185,9 +181,8 @@ Credit card
        `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 Gift cards
-^^^^^^^^^^
+""""""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``issuer``
@@ -209,9 +204,8 @@ Gift cards
      - Optional – The PIN code on the gift card. Only required if there is a PIN code printed on the gift card.
 
 iDEAL
-^^^^^
+"""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``issuer``
@@ -221,9 +215,8 @@ iDEAL
        :ref:`Issuers API <v1/issuers-list>`.
 
 KBC/CBC Payment Button
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``description``
@@ -238,9 +231,8 @@ KBC/CBC Payment Button
        Possible values: ``kbc`` ``cbc``
 
 PayPal
-^^^^^^
+""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``shippingAddress``
@@ -268,9 +260,8 @@ PayPal
        `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 paysafecard
-^^^^^^^^^^^
+"""""""""""
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``customerReference``
@@ -278,14 +269,13 @@ paysafecard
      - Optional – Used for consumer identification. For example, you could use the consumer's IP address.
 
 SEPA Direct Debit
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 **One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account.** In
 general, it is not very useful for web shops but may be useful for charities.
 
 If you want to use recurring payments, take a look at our :ref:`Recurring payments guide <guides/recurring>`.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``consumerName``
@@ -299,13 +289,12 @@ If you want to use recurring payments, take a look at our :ref:`Recurring paymen
        pre-fill the IBAN in the checkout screen if present.
 
 Mollie Connect/OAuth parameters
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile the payment belongs to. Organizations can have multiple profiles for each of
 their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``profileId``
@@ -324,7 +313,6 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
        parameter.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``amount``
@@ -339,7 +327,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
 QR codes
---------
+^^^^^^^^
 To create a payment with a QR code embedded in the API response, call the API endpoint with an
 include request for ``details.qrCode`` in the query string:
 

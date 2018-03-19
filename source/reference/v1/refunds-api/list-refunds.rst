@@ -1,12 +1,12 @@
-.. _v1/methods-list:
+.. _v1/refunds-list:
 
 Methods API v1: List refunds
-====================================
+============================
 ``GET`` ``https://api.mollie.com/v1/refunds``
 
 ``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/refunds``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
 
@@ -18,7 +18,6 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 ``tr_7UhSN1zuXS``.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``offset``
@@ -34,7 +33,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -47,8 +45,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of refunds found in data, which is either the requested number (with a maximum of 250) or the default
-       number.
+     - The number of refunds found in ``data``, which is either the requested number (with a maximum of 250) or the
+       default number.
 
    * - | ``data``
        | array
@@ -59,7 +57,6 @@ Response
      - Optional – Links to help navigate through the lists of refunds, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

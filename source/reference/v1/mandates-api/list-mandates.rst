@@ -1,7 +1,7 @@
 .. _v1/mandates-list:
 
-Mandates API v1: List customer mandates
-=======================================
+Mandates API v1: List mandates
+==============================
 ``GET`` ``https://api.mollie.com/v1/customers/*customerId*/mandates``
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
@@ -51,8 +51,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of mandates found in data, which is either the requested number (with a maximum of 250) or the default
-       number.
+     - The number of mandates found in ``data``, which is either the requested number (with a maximum of 250) or the
+       default number.
 
    * - | ``data``
        | array

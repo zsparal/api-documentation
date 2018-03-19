@@ -57,8 +57,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of subscriptions found in data, which is either the requested number (with a maximum of 250) or the
-       default number.
+     - The number of subscriptions found in ``data``, which is either the requested number (with a maximum of 250) or
+       the default number.
 
    * - | ``data``
        | array

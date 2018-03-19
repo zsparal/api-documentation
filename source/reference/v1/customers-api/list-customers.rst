@@ -4,7 +4,7 @@ Customers API v1: List customers
 ================================
 ``GET`` ``https://api.mollie.com/v1/customers``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve all customers created.
 
@@ -13,7 +13,6 @@ The results are paginated. See :ref:`pagination <guides/pagination>` for more in
 Parameters
 ----------
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``offset``
@@ -29,7 +28,6 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
     
    * - | ``testmode``
@@ -41,7 +39,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -54,7 +51,7 @@ Response
 
    * - | ``count``
        | integer
-     - The number of customers found in data, which is either the requested number (with a maximum of 250) or the
+     - The number of customers found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
@@ -66,7 +63,6 @@ Response
      - Optional – Links to help navigate through the lists of customers, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

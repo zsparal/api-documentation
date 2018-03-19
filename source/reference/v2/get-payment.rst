@@ -14,12 +14,11 @@ Parameters
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
 Mollie Connect/OAuth parameters
--------------------------------
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you are creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is available. You must pass this as a
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``testmode``
@@ -31,7 +30,6 @@ Response
 ``200 application/hal+json; charset=utf-8``
 
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``resource``
@@ -176,7 +174,6 @@ payment method.
 Bancontact
 ^^^^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -201,7 +198,6 @@ Belfius Pay Button
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -221,7 +217,6 @@ Belfius Pay Button
 Bitcoin
 ^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -257,7 +252,6 @@ Bitcoin
 Credit card
 ^^^^^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -297,7 +291,6 @@ Gift cards
 iDEAL
 ^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -317,7 +310,6 @@ ING Home'Pay
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -337,7 +329,6 @@ KBC/CBC Payment Button
 .. note:: Note that this information is only available one banking day after the payment has been completed.
 
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -355,7 +346,6 @@ KBC/CBC Payment Button
 PayPal
 ^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -373,7 +363,6 @@ PayPal
 paysafecard
 ^^^^^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``
@@ -390,7 +379,6 @@ SEPA Direct Debit
 SOFORT Banking
 ^^^^^^^^^^^^^^
 .. list-table::
-  :header-rows: 0
   :widths: auto
 
   * - ``details``

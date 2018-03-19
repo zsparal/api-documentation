@@ -8,7 +8,7 @@ Payments API v1: Get payment
 
 ``GET`` ``https://api.mollie.com/v1/payments/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a single payment object by its payment token.
 
@@ -25,7 +25,6 @@ If you are creating an app with Mollie Connect (OAuth), the ``testmode`` paramet
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``
@@ -47,7 +46,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``resource``
@@ -106,7 +104,7 @@ Response
 
    * - | ``amount``
        | decimal
-     - The amount in EURO.
+     - The amount in EUR.
 
    * - | ``amountRefunded``
        | decimal
@@ -195,7 +193,6 @@ Response
      - Optional – The application fee, if the payment was created with one.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``amount``
@@ -211,7 +208,6 @@ Response
      - An object with several URLs important to the payment process.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``paymentUrl``
@@ -252,7 +248,6 @@ payment method.
 Bancontact
 ^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -260,7 +255,6 @@ Bancontact
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``cardNumber``
@@ -280,7 +274,6 @@ Bancontact
 Bank transfer
 ^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -288,7 +281,6 @@ Bank transfer
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``bankName``
@@ -329,7 +321,6 @@ Bank transfer
 Belfius Pay Button
 ^^^^^^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -337,7 +328,6 @@ Belfius Pay Button
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -356,7 +346,6 @@ Belfius Pay Button
 Bitcoin
 ^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -364,7 +353,6 @@ Bitcoin
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``bitcoinAddress``
@@ -389,7 +377,6 @@ Bitcoin
 Credit card
 ^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -397,7 +384,6 @@ Credit card
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``cardHolder``
@@ -450,7 +436,6 @@ Credit card
 Gift cards
 ^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -458,7 +443,6 @@ Gift cards
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``voucherNumber``
@@ -472,7 +456,6 @@ Gift cards
               properties.
 
               .. list-table::
-                 :header-rows: 0
                  :widths: auto
 
                  * - | ``issuer``
@@ -481,7 +464,7 @@ Gift cards
 
                  * - | ``amount``
                      | decimal
-                   - The amount in EURO that was paid with this gift card.
+                   - The amount in EUR that was paid with this gift card.
 
                  * - | ``voucherNumber``
                      | string
@@ -489,7 +472,7 @@ Gift cards
 
           * - | ``remainderAmount``
               | decimal
-            - Only available if another payment method was used to pay the remainder amount – The amount in EURO that
+            - Only available if another payment method was used to pay the remainder amount – The amount in EUR that
               was paid with another payment method for the remainder amount.
 
           * - | ``remainderMethod``
@@ -500,7 +483,6 @@ Gift cards
 iDEAL
 ^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -508,7 +490,6 @@ iDEAL
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -526,7 +507,6 @@ iDEAL
 ING Home'Pay
 ^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -534,7 +514,6 @@ ING Home'Pay
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -552,7 +531,6 @@ ING Home'Pay
 KBC/CBC Payment Button
 ^^^^^^^^^^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -560,7 +538,6 @@ KBC/CBC Payment Button
      - Optional – An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -578,7 +555,6 @@ KBC/CBC Payment Button
 PayPal
 ^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -586,7 +562,6 @@ PayPal
      - An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -604,7 +579,6 @@ PayPal
 paysafecard
 ^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -612,7 +586,6 @@ paysafecard
      - An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -622,7 +595,6 @@ paysafecard
 SEPA Direct Debit
 ^^^^^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -630,7 +602,6 @@ SEPA Direct Debit
      - An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``transferReference``
@@ -693,7 +664,6 @@ SEPA Direct Debit
 SOFORT Banking
 ^^^^^^^^^^^^^^
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``details``
@@ -701,7 +671,6 @@ SOFORT Banking
      - An object with payment details.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``consumerName``
@@ -724,7 +693,6 @@ A QR code object with payment method specific values is available for certain pa
 The ``qrCode`` key in the ``details`` object will then become available. The key will contain this object:
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``height``

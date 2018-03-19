@@ -4,7 +4,7 @@ Methods API v1: Get payment method
 ==================================
 ``GET`` ``https://api.mollie.com/v1/methods/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a payment method object by its payment method identifier.
 
@@ -13,7 +13,6 @@ Parameters
 Replace ``id`` in the endpoint URL by the payment method's ID, for example ``creditcard``.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``include``
@@ -33,7 +32,6 @@ With it, you can specify which profile you want to retrieve a method for. Organi
 each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``profileId``
@@ -56,7 +54,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``resource``
@@ -77,7 +74,6 @@ Response
      - The minimum and maximum allowed payment amount will differ between payment methods.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``minimum``
@@ -94,7 +90,6 @@ Response
      - URLs of images representing the payment method.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``normal``

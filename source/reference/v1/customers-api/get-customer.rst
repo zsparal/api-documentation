@@ -4,7 +4,7 @@ Customers API v1: Get customer
 ==============================
 ``GET`` ``https://api.mollie.com/v1/customers/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve a single customer by its ID.
 
@@ -17,7 +17,6 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``testmode``
@@ -29,7 +28,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``resource``

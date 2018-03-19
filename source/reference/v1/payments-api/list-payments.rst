@@ -8,7 +8,7 @@ Payments API v1: List payments
 
 ``GET`` ``https://api.mollie.com/v1/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`. :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
@@ -19,16 +19,15 @@ Parameters
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``offset``
        | integer
-     - Optional – The number of objects to skip.
+     - Optional – The number of payments to skip.
 
    * - | ``count``
        | integer
-     - Optional – The number of objects to return (with a maximum of 250).
+     - Optional – The number of payments to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,7 +37,6 @@ parameter, you will get all payments on the organization. Organizations can have
 websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``profileId``
@@ -64,7 +62,6 @@ Response
 ``200`` ``application/json; charset=utf-8``
 
 .. list-table::
-   :header-rows: 0
    :widths: auto
 
    * - | ``totalCount``
@@ -77,8 +74,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of payments found in data, which is either the requested number (with a maximum of 250) or the default
-       number.
+     - The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
+       default number.
 
    * - | ``data``
        | array
@@ -89,7 +86,6 @@ Response
      - Optional – Links to help navigate through the lists of payments, based on the given offset.
 
        .. list-table::
-          :header-rows: 0
           :widths: auto
 
           * - | ``previous``

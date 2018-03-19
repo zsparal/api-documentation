@@ -1,7 +1,7 @@
 .. _v1/mandates-create:
 
-Mandates API v1: Create customer mandate
-========================================
+Mandates API v1: Create mandate
+===============================
 ``POST`` ``https://api.mollie.com/v1/customers/*customerId*/mandates``
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
