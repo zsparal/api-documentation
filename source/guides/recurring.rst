@@ -44,7 +44,7 @@ periodically through *subscriptions*.
           -d "name=Customer A" \
           -d "email=customer@example.com"
 
-#. Save the customer's ``id`` in your database. You need it when performing :ref:`Payments API <v2/payments-reate>`
+#. Save the customer's ``id`` in your database. You need it when performing :ref:`Payments API <v2/payments-create>`
    calls.
 
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``recurringType`` parameter to
