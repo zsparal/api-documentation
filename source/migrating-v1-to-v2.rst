@@ -8,7 +8,7 @@ Why upgrade to v2?
 
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <multi-currency>`, e.g. you can create payments in non ``EUR`` currencies. Your
+* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non ``EUR`` currencies. Your
   account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement amount
   for various resources.
 * Improved support for accessing large sets of objects, now uses cursor based pagination instead of count and offset
@@ -74,6 +74,7 @@ Renamed and changed fields
 Removed fields
 ^^^^^^^^^^^^^^
 * ``issuer`` has been removed from Payment resource. You can however, still pass it to the Payment Create API call.
+* ``bitcoinRate`` has been removed from the Bitcoin Payment detail resource.
 
 New fields
 ^^^^^^^^^^
