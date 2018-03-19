@@ -1,0 +1,99 @@
+.. _v1/settlements-get-next:
+
+Settlements API v1: Get next settlement
+=======================================
+``GET`` ``https://api.mollie.com/v1/settlements/next``
+
+Authentication: :ref:`OAuth access tokens <oauth/overview>`
+
+Retrieve the details of the current settlement that has not yet been paid out.
+
+Response
+--------
+``200`` ``application/json; charset=utf-8``
+
+The next settlement is returned in the same fashion as the :ref:`Get settlement <v1/settlements-get>` endpoint.
+
+Example
+-------
+
+Request
+^^^^^^^
+.. code-block:: bash
+
+   curl -X GET https://api.mollie.com/v1/settlements/next \
+       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
+Response
+^^^^^^^^
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   Content-Type: application/json; charset=utf-8
+
+   {
+       "resource": "settlement",
+       "id": "next",
+       "reference": null,
+       "createdDatetime": "2015-11-06T06:00:01.0Z",
+       "settledDatetime": null,
+       "amount": "39.75",
+       "periods": {
+           "2015": {
+               "11": {
+                   "revenue": [
+                       {
+                           "description": "iDEAL",
+                           "method": "ideal",
+                           "count": 6,
+                           "amount": {
+                               "net": "86.1000",
+                               "vat": null,
+                               "gross": "86.1000"
+                           }
+                       },
+                       {
+                           "description": "Refunds iDEAL",
+                           "method": "refund",
+                           "count": 2,
+                           "amount": {
+                               "net": "-43.2000",
+                               "vat": null,
+                               "gross": "-43.2000"
+                           }
+                       }
+                   ],
+                   "costs": [
+                       {
+                           "description": "iDEAL",
+                           "method": "ideal",
+                           "count": 6,
+                           "rate": {
+                               "fixed": "0.3500",
+                               "percentage": null
+                           },
+                           "amount": {
+                               "net": "2.1000",
+                               "vat": "0.4410",
+                               "gross": "2.5410"
+                           }
+                       },
+                       {
+                           "description": "Refunds iDEAL",
+                           "method": "refund",
+                           "count": 2,
+                           "rate": {
+                               "fixed": "0.2500",
+                               "percentage": null
+                           },
+                           "amount": {
+                               "net": "0.5000",
+                               "vat": "0.1050",
+                               "gross": "0.6050"
+                           }
+                       }
+                   ]
+               }
+           }
+       }
+   }

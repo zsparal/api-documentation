@@ -225,6 +225,18 @@ Mollie Connect
    Reset API key <reference/v1/profiles-api/reset-key>
    List API keys <reference/v1/profiles-api/list-keys>
 
+.. toctree::
+   :maxdepth: 1
+   :caption: Settlements API
+
+   Get settlement <reference/v1/settlements-api/get-settlement>
+   Get next settlement <reference/v1/settlements-api/get-next-settlement>
+   Get open settlement <reference/v1/settlements-api/get-open-settlement>
+   List settlements <reference/v1/settlements-api/list-settlements>
+   List settlement payments <reference/v1/settlements-api/list-settlement-payments>
+   List settlement refunds <reference/v1/settlements-api/list-settlement-refunds>
+   List settlement chargebacks <reference/v1/settlements-api/list-settlement-chargebacks>
+
 Deprecated APIs
 ===============
 .. toctree::
