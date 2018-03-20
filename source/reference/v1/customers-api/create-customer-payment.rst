@@ -81,7 +81,7 @@ Response
        "amount": "10.00",
        "description": "My first payment",
        "metadata": null,
-       "locale": "nl",
+       "locale": "nl_NL",
        "profileId": "pfl_QkEhN94Ba",
        "customerId": "cst_8wmqcHMN4U",
        "links": {

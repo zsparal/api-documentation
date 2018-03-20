@@ -54,7 +54,7 @@ Response
                "metadata": {
                    "order_id": "12345"
                },
-               "locale": "nl",
+               "locale": "nl_NL",
                "profileId": "pfl_QkEhN94Ba",
                "customerId": "cst_8wmqcHMN4U",
                "links": {

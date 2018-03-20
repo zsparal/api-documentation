@@ -378,7 +378,7 @@ Response
        "metadata": {
            "order_id": "12345"
        },
-       "locale": "nl",
+       "locale": "nl_NL",
        "profileId": "pfl_QkEhN94Ba",
        "links": {
            "paymentUrl": "https://www.mollie.com/payscreen/select-method/7UhSN1zuXS",
