@@ -125,8 +125,10 @@ Payments
    :maxdepth: 1
    :caption: Payments API
 
-   reference/v2/create-payment
-   reference/v2/get-payment
+   Create payment <reference/v2/payments-api/create-payment>
+   Get payment <reference/v2/payments-api/get-payment>
+   Cancel payment <reference/v2/payments-api/cancel-payment>
+   List payments <reference/v2/payments-api/list-payments>
 
 .. toctree::
    :maxdepth: 1
