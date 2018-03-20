@@ -8,9 +8,9 @@ Why upgrade to v2?
 
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non ``EUR`` currencies. Your
-  account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement amount
-  for various resources.
+* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non ``EUR`` currencies.
+  Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
+  amount for various resources.
 * Improved support for accessing large sets of objects, now uses cursor based pagination instead of count and offset
   based pagination.
 

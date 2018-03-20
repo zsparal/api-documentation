@@ -11,9 +11,9 @@ required.
 
 Secure connection required
 --------------------------
-Mollie uses the API-key as :ref:`means of authentication <authentication>` and requires HTTPS connections to guarantee
-security. This means the Mollie API can only be accessed through the secure ``https`` protocol. All of the API clients
-we publish use HTTPS.
+Mollie uses the API-key as :ref:`means of authentication <guides/authentication>` and requires HTTPS connections to
+guarantee security. This means the Mollie API can only be accessed through the secure ``https`` protocol. All of the API
+clients we publish use HTTPS.
 
 End-to-end safety on the transport level is guaranteed by the HTTPS-requirement. No need to encrypt the data itself
 again.
