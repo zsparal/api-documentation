@@ -1,6 +1,6 @@
 .. _v1/refunds-list:
 
-Methods API v1: List refunds
+Refunds API v1: List refunds
 ============================
 ``GET`` ``https://api.mollie.com/v1/refunds``
 
