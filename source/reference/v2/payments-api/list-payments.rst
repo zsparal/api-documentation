@@ -17,7 +17,8 @@ Parameters
 
    * - | ``from``
        | string
-     - Optional – Return the results from the payment with this ID forward.
+     - Optional – Offset the result set to the payment with this ID. The payment with this ID is included in the result
+       set as well.
 
    * - | ``limit``
        | integer
