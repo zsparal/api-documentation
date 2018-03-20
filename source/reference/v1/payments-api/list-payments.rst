@@ -16,8 +16,6 @@ The results are paginated. See :ref:`pagination <guides/pagination>` for more in
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
-
 .. list-table::
    :widths: auto
 
