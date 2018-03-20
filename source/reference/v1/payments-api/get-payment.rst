@@ -133,7 +133,8 @@ Response
 
    * - | ``metadata``
        | object
-     - The optional metadata you provided upon payment creation. Metadata can be used to link an order to a payment.
+     - The optional metadata you provided upon payment creation. Metadata can for example be used to link an order to a
+       payment.
 
    * - | ``locale``
        | string
