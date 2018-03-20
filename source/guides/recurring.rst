@@ -52,14 +52,17 @@ periodically through *subscriptions*.
 
    .. code-block:: bash
 
-      curl -X POST https://api.mollie.com/v1/payments \
+      curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-          -d "amount=0.01" \
-          -d "customerId=cst_Ok2DlrJe5" \
-          -d "recurringType=first" \
-          -d "description=First payment" \
-          -d "redirectUrl=https://webshop.example.org/order/12345/" \
-          -d "webhookUrl=https://webshop.example.org/payments/webhook/"
+          -d \
+          "{
+              \"amount\": {\"currency\":\"EUR\", \"value\":\"0.01\"},
+              \"customerId\": \"cst_Ok2DlrJe5\",
+              \"sequenceType\": \"first\",
+              \"description\": \"First payment\",
+              \"redirectUrl\": \"https://webshop.example.org/order/12345/\",
+              \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
+          }"
 
 #. Redirect the customer to the ``paymentUrl`` to complete the first payment. Make sure to use an HTTP ``GET`` redirect.
 
@@ -94,13 +97,15 @@ Please note that in order to do recurring payments, direct debit or credit card 
 
    .. code-block:: bash
 
-      curl -X POST https://api.mollie.com/v1/payments \
+      curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-          -d "amount=10.00" \
-          -d "customerId=cst_Ok2DlrJe5" \
-          -d "recurringType=recurring" \
-          -d "description=Background payment" \
-          -d "redirectUrl=https://webshop.example.org/order/12345/"
+          -d \
+          "{
+              \"amount\": {\"currency\": \"EUR\", \"value\": \"10.00\"},
+              \"customerId\": \"cst_Ok2DlrJe5\",
+              \"sequenceType\": \"recurring\",
+              \"description\": \"Background payment\"
+          }"
 
 #. Like regular payments your :ref:`webhook <guides/webhooks>` is called for retrieving status updates.
 

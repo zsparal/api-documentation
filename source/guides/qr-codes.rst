@@ -56,9 +56,9 @@ The QR code flow is largely similar to normal payment flow.
 Retrieving QR codes
 -------------------
 The QR code can be retrieved by adding the ``details.qrCode`` include to the payment creation API call, as detailed in
-the :ref:`Create payment <v1/payments-create>` reference.
+the :ref:`Create payment <v2/payments-create>` reference.
 
-``POST https://api.mollie.com/v1/payments?include=details.qrCode``
+``POST https://api.mollie.com/v2/payments?include=details.qrCode``
 
 The API will return a ``qrCode`` object in the ``details`` object. The QR code can contain either a ``data:image/`` or a
 ``https://`` URL, depending on the payment method. You should support both.
