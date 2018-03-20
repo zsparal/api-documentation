@@ -114,8 +114,8 @@ Response
            "value": "5.95"
        },
        "status": "pending",
-       "createdAt": "2018-03-14T17:09:02.0Z"
-       "description: "Order",
+       "createdAt": "2018-03-14T17:09:02.0Z",
+       "description": "Order",
        "paymentId": "tr_WDqYK6vllg",
        "_links": {
            "self": {

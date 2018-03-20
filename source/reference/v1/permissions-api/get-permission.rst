@@ -65,9 +65,9 @@ Response
    Content-Type: application/json; charset=utf-8
 
    {
-       resource: "permission",
-       id: "payments.read",
-       description: "View your payments",
-       warning: null,
-       granted: true
+       "resource": "permission",
+       "id": "payments.read",
+       "description": "View your payments",
+       "warning": null,
+       "granted": true
    }

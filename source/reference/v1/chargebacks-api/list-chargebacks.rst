@@ -113,7 +113,7 @@ Response
                "chargebackDatetime": "2018-03-14T17:00:53.0Z",
                "reversedDatetime": null
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ]
    }

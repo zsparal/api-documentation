@@ -62,8 +62,8 @@ Response
                    "redirectUrl": "https://webshop.example.org/order/12345/"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/payments?count=10&offset=0",

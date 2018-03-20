@@ -91,14 +91,14 @@ Response
        "count": 9,
        "data": [
            {
-               resource: "permission",
-               id: "payments.read",
-               description: "View your payments",
-               warning: null,
-               granted: true
+               "resource": "permission",
+               "id": "payments.read",
+               "description": "View your payments",
+               "warning": null,
+               "granted": true
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/permissions?count=10&offset=0",

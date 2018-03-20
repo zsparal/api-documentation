@@ -121,6 +121,6 @@ Response
            }
        },
        "amount": "5.95",
-       "description: "Order",
+       "description": "Order",
        "refundedDatetime": "2018-03-14T17:09:02.0Z"
    }

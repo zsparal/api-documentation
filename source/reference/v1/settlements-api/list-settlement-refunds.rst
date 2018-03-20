@@ -74,8 +74,8 @@ Response
                    "self": "http://api.mollie.com/v1/payments/tr_2qkhcMzypH/refunds/re_CkS3qkJ8Ny"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/settlements/stl_QM8w7JDEhU/refunds?count=10&offset=0",

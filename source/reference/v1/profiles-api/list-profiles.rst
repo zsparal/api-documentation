@@ -127,7 +127,7 @@ Response
                    "apikeys": "https://api.mollie.com/v1/profiles/pfl_tqWEcAdnjG/apikeys"
                }
            },
-           { ... }
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/profiles?count=10&offset=0",

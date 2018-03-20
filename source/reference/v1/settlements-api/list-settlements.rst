@@ -197,11 +197,11 @@ Response
                    "tr_s3cMndA7dg",
                    "tr_Vs3cPTdtj5",
                    "tr_Q3cEnMReAz",
-                   ...
+                   "..."
                ]
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/settlements?count=10&offset=0",

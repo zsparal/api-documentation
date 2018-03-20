@@ -126,7 +126,7 @@ Response
                    "webhookUrl": "https://webshop.example.org/payments/webhook"
                }
            }
-           { ... },
-           { ... }
+           { },
+           { }
        ]
    }

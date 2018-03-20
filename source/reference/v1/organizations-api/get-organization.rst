@@ -99,18 +99,18 @@ Response
    Content-Type: application/json; charset=utf-8
 
    {
-       resource: "organization",
-       id: "org_1234567",
-       name: "Mollie B.V.",
-       email: "info@mollie.com",
-       address: "Keizersgracht 313",
-       postalCode: "1016EE",
-       city: "Amsterdam",
-       country: "Netherlands",
-       countryCode: "NL",
-       registrationType: "bv",
-       registrationNumber: "30204462",
-       registrationDatetime: "2004-04-01T09:41:00.0Z",
-       vatNumber: "NL123456789B01",
-       verifiedDatetime: "2007-06-29T09:41:00.0Z"
+       "resource": "organization",
+       "id": "org_1234567",
+       "name": "Mollie B.V.",
+       "email": "info@mollie.com",
+       "address": "Keizersgracht 313",
+       "postalCode": "1016EE",
+       "city": "Amsterdam",
+       "country": "Netherlands",
+       "countryCode": "NL",
+       "registrationType": "bv",
+       "registrationNumber": "30204462",
+       "registrationDatetime": "2004-04-01T09:41:00.0Z",
+       "vatNumber": "NL123456789B01",
+       "verifiedDatetime": "2007-06-29T09:41:00.0Z"
    }

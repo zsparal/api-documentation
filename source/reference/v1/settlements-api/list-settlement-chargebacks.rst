@@ -55,8 +55,8 @@ Response
                    "self": "https://api.mollie.com/v1/payments/tr_2qkhcMzypH/chargebacks/chb_n9z0tp"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/settlements/stl_QM8w7JDEhU/chargebacks?count=10&offset=0",

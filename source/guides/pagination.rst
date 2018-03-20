@@ -107,8 +107,8 @@ Response
                        }
                    }
                },
-               { ... },
-               { ... }
+               { },
+               { }
            ]
        },
        "_links": {
@@ -225,8 +225,8 @@ Response
                    "redirectUrl": "https://webshop.example.org/order/12345/"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ],
        "links": {
            "first": "https://api.mollie.com/v1/payments?count=10&offset=0",

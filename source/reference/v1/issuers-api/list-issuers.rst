@@ -115,6 +115,7 @@ Response
                    "normal": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A.png",
                    "bigger": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A%402x.png"
                }
+           },
            {
                "resource": "issuer",
                "id": "ideal_ASNBNL21",
@@ -135,7 +136,7 @@ Response
                    "bigger": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/INGBNL2A%402x.png"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ]
    }

@@ -163,7 +163,7 @@ Response
                    "bigger": "https://www.mollie.com/images/payscreen/methods/paypal%402x.png"
                }
            },
-           { ... },
-           { ... }
+           { },
+           { }
        ]
    }
