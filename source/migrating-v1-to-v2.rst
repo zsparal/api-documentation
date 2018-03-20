@@ -55,7 +55,6 @@ property, which will point you to the chargeback resource where you can view the
 
 Renamed and changed fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 * ``cancelledDatetime`` has been renamed to ``cancelledAt``.
 * ``createdDatetime`` has been renamed to ``createdAt``.
 * ``expiredDatetime`` has been renamed to ``expiredAt``.
