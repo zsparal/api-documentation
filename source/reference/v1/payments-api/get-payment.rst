@@ -239,14 +239,14 @@ Response
               | string
             - The API resource URL of the chargebacks that belong to this payment.
 
-Payment method specific parameters
-----------------------------------
-If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
-specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
-payment method.
+Payment method specific details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If the payment has been created with a ``method``, or if the customer selected a method in the payment method selection
+screen, a ``details`` object becomes available on the payment object. This object contains detail fields specific to the
+selected payment method.
 
 Bancontact
-^^^^^^^^^^
+""""""""""
 .. list-table::
    :widths: auto
 
@@ -272,7 +272,7 @@ Bancontact
               Bancontact application. This enables the desktop to mobile feature.
 
 Bank transfer
-^^^^^^^^^^^^^
+"""""""""""""
 .. list-table::
    :widths: auto
 
@@ -319,7 +319,7 @@ Bank transfer
               the payment instructions to be sent to.
 
 Belfius Pay Button
-^^^^^^^^^^^^^^^^^^
+""""""""""""""""""
 .. list-table::
    :widths: auto
 
@@ -344,7 +344,7 @@ Belfius Pay Button
             - Only available one banking day after the payment has been completed – ``GKCCBEBB``.
 
 Bitcoin
-^^^^^^^
+"""""""
 .. list-table::
    :widths: auto
 
@@ -375,7 +375,7 @@ Bitcoin
               clients and will cause such clients to prepare the transaction.
 
 Credit card
-^^^^^^^^^^^
+"""""""""""
 .. list-table::
    :widths: auto
 
@@ -434,7 +434,7 @@ Credit card
               Possible values: ``intra-eu`` ``other``
 
 Gift cards
-^^^^^^^^^^
+""""""""""
 .. list-table::
    :widths: auto
 
@@ -481,7 +481,7 @@ Gift cards
               was used to pay the remainder amount.
 
 iDEAL
-^^^^^
+"""""
 .. list-table::
    :widths: auto
 
@@ -505,7 +505,7 @@ iDEAL
             - Only available if the payment has been completed – The consumer's bank's BIC.
 
 ING Home'Pay
-^^^^^^^^^^^^
+""""""""""""
 .. list-table::
    :widths: auto
 
@@ -529,7 +529,7 @@ ING Home'Pay
             - Only available one banking day after the payment has been completed – ``BBRUBEBB``.
 
 KBC/CBC Payment Button
-^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""
 .. list-table::
    :widths: auto
 
@@ -553,7 +553,7 @@ KBC/CBC Payment Button
             - Only available one banking day after the payment has been completed – The consumer's bank's BIC.
 
 PayPal
-^^^^^^
+""""""
 .. list-table::
    :widths: auto
 
@@ -577,7 +577,7 @@ PayPal
             - PayPal's reference for the transaction, for instance ``9AL35361CF606152E``.
 
 paysafecard
-^^^^^^^^^^^
+"""""""""""
 .. list-table::
    :widths: auto
 
@@ -593,7 +593,7 @@ paysafecard
             - The consumer identification supplied when the payment was created.
 
 SEPA Direct Debit
-^^^^^^^^^^^^^^^^^
+"""""""""""""""""
 .. list-table::
    :widths: auto
 
@@ -662,7 +662,7 @@ SEPA Direct Debit
             - Only available for batch transactions – The original file reference that you've specified in your batch.
 
 SOFORT Banking
-^^^^^^^^^^^^^^
+""""""""""""""
 .. list-table::
    :widths: auto
 
@@ -686,7 +686,7 @@ SOFORT Banking
             - Only available if the payment has been completed – The consumer's bank's BIC.
 
 QR codes (optional)
--------------------
+^^^^^^^^^^^^^^^^^^^
 A QR code object with payment method specific values is available for certain payment methods if you pass the include
 ``details.qrCode`` to the resource endpoint.
 
