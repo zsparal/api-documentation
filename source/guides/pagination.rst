@@ -12,9 +12,121 @@ chops the result of a certain API method call into pages you're able to programm
 Pagination in v2 API endpoints
 ------------------------------
 The ``v2`` API endpoints use the so-called cursor pagination method. In short, this ensures the objects in a page do not
-get shifted when a new object is created with the same account in the meantime.
+get shifted when a new object is created with the same account in the meantime, by paginating by object ID rather than
+by page number.
 
-TODO: Add documentation on v2 pagination.
+Response object
+^^^^^^^^^^^^^^^
+.. list-table::
+   :widths: auto
+
+   * - | ``count``
+       | integer
+     - The number of objects found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
+       default number.
+
+   * - | ``_embedded``
+       | object
+     - The actual data you're looking for.
+
+   * - | ``_links``
+       | object
+     - Links to help navigate through the lists of objects. Every URL object will contain an ``href`` and a ``type``
+       field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | object
+            - The URL to the current set of objects.
+
+          * - | ``previous``
+              | object
+            - Optional – The previous set of objects, if available.
+
+          * - | ``next``
+              | object
+            - Optional – The next set of objects, if available.
+
+          * - | ``documentation``
+              | object
+            - The URL to the current list endpoint documentation.
+
+Example of v2 pagination
+^^^^^^^^^^^^^^^^^^^^^^^^
+
+Request
+"""""""
+.. code-block:: bash
+
+   curl -X GET https://api.mollie.com/v2/payments \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+
+Response
+""""""""
+.. code-block:: http
+
+   HTTP/1.1 200 OK
+   Content-Type: application/hal+json; charset=utf-8
+
+   {
+       "count": 10,
+       "_embedded": {
+           "payments": [
+               {
+                   "resource": "payment",
+                   "id": "tr_7UhSN1zuXS",
+                   "mode": "test",
+                   "createdAt": "2018-02-12T11:58:35.0Z",
+                   "expiresAt": "2018-02-12T12:13:35.0Z",
+                   "status": "open",
+                   "canBeCancelled": false,
+                   "amount": {
+                       "value": "75.00",
+                       "currency": "GBP"
+                   },
+                   "description": "test",
+                   "method": "ideal",
+                   "metadata": null,
+                   "details": null,
+                   "profileId": "pfl_QkEhN94Ba",
+                   "redirectUrl": "https://webshop.example.org/order/12345/",
+                   "_links": {
+                       "checkout": {
+                           "href": "https://www.mollie.com/paymentscreen/issuer/select/ideal/7UhSN1zuXS",
+                           "type": "text/html"
+                       },
+                       "self": {
+                           "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
+                           "type": "application/hal+json"
+                       },
+                       "documentation": {
+                           "href": "https://docs.mollie.com/reference/v2/payment-get",
+                           "type": "text/html"
+                       }
+                   }
+               },
+               { ... },
+               { ... }
+           ]
+       },
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/payments?limit=10",
+               "type": "application/hal+json"
+           },
+           "previous": null,
+           "next": {
+               "href": "https://api.mollie.com/v2/payments?from=tr_SDkzMggpvx&limit=10",
+               "type": "application/hal+json"
+           },
+           "documentation": {
+               "href": "https://docs.mollie.com/reference/v2/payments-list",
+               "type": "text/html"
+           }
+       }
+   }
 
 Pagination in v1 API endpoints
 ------------------------------
@@ -73,18 +185,18 @@ Response object
               | string
             - Optional – The last set of objects, if available.
 
-Example
--------
+Example of v1 pagination
+^^^^^^^^^^^^^^^^^^^^^^^^
 
 Request
-^^^^^^^
+"""""""
 .. code-block:: bash
 
    curl -X GET https://api.mollie.com/v1/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
-^^^^^^^^
+""""""""
 .. code-block:: http
 
    HTTP/1.1 200 OK

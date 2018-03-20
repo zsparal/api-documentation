@@ -150,7 +150,7 @@ Response
                            "href": "https://docs.mollie.com/reference/v2/payment-get",
                            "type": "text/html"
                        }
-                   }            
+                   }
                },
                { ... },
                { ... }
