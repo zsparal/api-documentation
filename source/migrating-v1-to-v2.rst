@@ -53,7 +53,6 @@ value: ``2018-03-05T12:30:10+00:00``.
 
 Changes in the Payments API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The following changes have been made in regards to the status of payments:
 
 * The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
@@ -96,7 +95,6 @@ These new fields are added:
 
 Changes in the Refunds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The following fields are changed, renamed or moved:
 
 * ``amount`` is now mandatory when creating a refund. You must specify both ``amount.currency`` and ``amount.value``.
@@ -110,7 +108,6 @@ These new fields are added:
 
 Changes in the Chargebacks API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 The following fields are changed, renamed or moved:
 
 * ``chargebackDatetime`` has been renamed to ``createdAt``.
