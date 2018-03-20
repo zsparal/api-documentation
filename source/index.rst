@@ -148,10 +148,10 @@ Payments
    :maxdepth: 1
    :caption: Refunds API
 
-   Create refund <reference/v1/refunds-api/create-refund>
-   Get refund <reference/v1/refunds-api/get-refund>
-   Cancel refund <reference/v1/refunds-api/cancel-refund>
-   List refunds <reference/v1/refunds-api/list-refunds>
+   Create refund <reference/v2/refunds-api/create-refund>
+   Get refund <reference/v2/refunds-api/get-refund>
+   Cancel refund <reference/v2/refunds-api/cancel-refund>
+   List refunds <reference/v2/refunds-api/list-refunds>
 
 .. toctree::
    :maxdepth: 1
@@ -256,6 +256,15 @@ Deprecated APIs
    Get payment <reference/v1/payments-api/get-payment>
    Cancel payment <reference/v1/payments-api/cancel-payment>
    List payments <reference/v1/payments-api/list-payments>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Refunds API v1 (deprecated)
+
+   Create refund <reference/v1/refunds-api/create-refund>
+   Get refund <reference/v1/refunds-api/get-refund>
+   Cancel refund <reference/v1/refunds-api/cancel-refund>
+   List refunds <reference/v1/refunds-api/list-refunds>
 
 Indices and tables
 ==================
