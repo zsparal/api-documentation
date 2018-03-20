@@ -102,7 +102,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/v2/payment-get",
+                           "href": "https://www.mollie.com/en/docs/reference/payments/get",
                            "type": "text/html"
                        }
                    }
@@ -122,7 +122,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/payments-list",
+               "href": "https://www.mollie.com/en/docs/reference/payments/list",
                "type": "text/html"
            }
        }
