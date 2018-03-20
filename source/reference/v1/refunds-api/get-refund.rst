@@ -118,6 +118,6 @@ Response
        "refundedDatetime": "2018-03-14T17:00:50.0Z",
        "description": "Refund of order",
        "links": {
-           "self": "https://api.mollie.dev/v1/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT"
+           "self": "https://api.mollie.com/v1/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT"
        }
    }
