@@ -41,47 +41,6 @@ This example object describes an amount of €10.00.
 
 All amounts returned in the ``v2`` API will use this format.
 
-Status field changes
-^^^^^^^^^^^^^^^^^^^^
-The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
-
-If you want to see if a payment has been paid out, it will contain the ``settlementId`` property.
-
-If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
-which will point you to the refunds resource where you can view the refund details.
-
-If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
-property, which will point you to the chargeback resource where you can view the refund details.
-
-Renamed and changed fields
-^^^^^^^^^^^^^^^^^^^^^^^^^^
-* ``cancelledDatetime`` has been renamed to ``cancelledAt``.
-* ``createdDatetime`` has been renamed to ``createdAt``.
-* ``expiredDatetime`` has been renamed to ``expiredAt``.
-* ``failedDatetime`` has been renamed to ``failedAt``.
-* ``paidDatetime`` has been renamed to ``paidAt``.
-* ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
-  start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
-* ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
-* ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
-* ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
-  information.
-
-Removed fields
-^^^^^^^^^^^^^^
-* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the Create payment call.
-* ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
-
-New fields
-^^^^^^^^^^
-* ``settlementAmount`` has been added to the responses of the Payments API, the Refunds API and the Chargebacks API.
-  This optional field will contain the amount that will be settled to your account, converted to the currency your
-  account is settled in. It follows the same syntax as the ``amount`` property.
-
-  Note that for refunds and chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
-
-  Any amounts not settled by Mollie will be not be reflected in this amount, e.g. PayPal or gift cards.
-
 Locale changes
 ^^^^^^^^^^^^^^
 Only full locales with both the language and the country code are supported, e.g. ``nl_NL``. Locales are always returned
@@ -92,13 +51,77 @@ Combined date and time fields
 Formatting of fields such as ``createdAt`` has been updated to be strictly compliant to ISO-8601 formatting. Example
 value: ``2018-03-05T12:30:10+00:00``.
 
-Changes in refunds
-^^^^^^^^^^^^^^^^^^
-For refunds, the ``amount`` field is now mandatory. You must specify both ``amount.currency`` and ``amount.value``.
+Changes in the Payments API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Furthermore, the ``payment`` field, which contains the payment resource related to the refund, is no longer returned by
-default. Instead, the payment ID is returned by default, in the ``paymentId`` field. The payment resource can still
-easily be accessed using the ``payment`` key in the ``_links`` property.
+The following changes have been made in regards to the status of payments:
+
+* The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
+* If you want to see if a payment has been paid out, it will contain the ``settlementId`` property.
+* If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
+  which will point you to the refunds resource where you can view the refund details.
+* If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
+  property, which will point you to the chargeback resource where you can view the refund details.
+
+The following fields are changed, renamed or moved:
+
+* ``cancelledDatetime`` has been renamed to ``cancelledAt``.
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``expiredDatetime`` has been renamed to ``expiredAt``.
+* ``failedDatetime`` has been renamed to ``failedAt``.
+* ``paidDatetime`` has been renamed to ``paidAt``.
+* ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
+  start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
+* ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
+* ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
+
+The following fields are removed:
+
+* ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
+  information.
+* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the Create payment call.
+* ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
+
+These new fields are added:
+
+.. _settlementAmount:
+
+* ``settlementAmount`` has been added to the responses of the Payments API, the Refunds API and the Chargebacks API.
+  This optional field will contain the amount that will be settled to your account, converted to the currency your
+  account is settled in. It follows the same syntax as the ``amount`` property.
+
+  Note that for refunds and chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
+
+  Any amounts not settled by Mollie will be not be reflected in this amount, e.g. PayPal or gift cards.
+
+Changes in the Refunds API
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following fields are changed, renamed or moved:
+
+* ``amount`` is now mandatory when creating a refund. You must specify both ``amount.currency`` and ``amount.value``.
+* ``payment``, which contained the payment resource related to the refund, is no longer returned. Instead, the payment
+  ID is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the
+  ``payment`` key in the ``_links`` property.
+
+These new fields are added:
+
+* ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
+
+Changes in the Chargebacks API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following fields are changed, renamed or moved:
+
+* ``chargebackDatetime`` has been renamed to ``createdAt``.
+* ``reversedDatetime`` has been renamed to ``reversedAt``. This field is now only returned if the chargeback is
+  reversed.
+* ``payment``, which contained the payment ID related to the chargeback, has been renamed to ``paymentId``. The payment
+  resource can easily be accessed using the ``payment`` key in the ``_links`` property.
+
+These new fields are added:
+
+* ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
