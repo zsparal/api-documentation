@@ -84,19 +84,19 @@ Response
           :widths: auto
 
           * - | ``self``
-              | object
+              | URL object
             - The URL to the current set of payments.
 
           * - | ``previous``
-              | object
+              | URL object
             - Optional – The previous set of payments, if available.
 
           * - | ``next``
-              | object
+              | URL object
             - Optional – The next set of payments, if available.
 
           * - | ``documentation``
-              | object
+              | URL object
             - The URL to the payments list endpoint documentation.
 
 Example

@@ -98,7 +98,7 @@ Response
        This parameter is omitted if the payment did not fail (yet).
 
    * - | ``amount``
-       | object
+       | amount object
      - The amount of the payment, e.g. ``{"currency":"EUR", "value":"100.00"}`` for a €100.00 payment.
 
        .. list-table::
@@ -113,7 +113,7 @@ Response
             - A string containing the exact amount of the payment in the given currency.
 
    * - | ``amountRefunded``
-       | object
+       | amount object
      - Optional - The total amount that is already refunded. Only available when refunds are available for this payment.
        For some payment methods, this amount may be higher than the payment amount, for example to allow reimbursement
        of the costs for a return shipment to the customer.
@@ -234,7 +234,7 @@ Response
           :widths: auto
 
           * - | ``amount``
-              | object
+              | amount object
             - The application fee amount as specified during payment creation.
 
               .. list-table::
@@ -261,22 +261,22 @@ Response
           :widths: auto
 
           * - | ``checkout``
-              | object
+              | URL object
             - Optional - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to. Make sure you redirect using the HTTP ``GET`` method.
 
               Note the URL will not be present for recurring payments.
 
           * - | ``refunds``
-              | object
+              | URL object
             - The API resource URL of the refunds that belong to this payment.
 
           * - | ``chargebacks``
-              | object
+              | URL object
             - The API resource URL of the chargebacks that belong to this payment.
 
           * - | ``documentation``
-              | object
+              | URL object
             - The URL to the payment retrieval endpoint documentation.
 
 Payment method specific details
@@ -307,7 +307,7 @@ Bancontact
               identifying returning customers.
 
           * - | ``qrCode``
-              | object
+              | QR code object
             - Only available if requested during payment creation - The QR code that can be scanned by the mobile
               Bancontact application. This enables the desktop to mobile feature.
 
@@ -400,7 +400,7 @@ Bitcoin
             - Only available if the payment has been completed – The bitcoin address the bitcoins were transferred to.
 
           * - | ``bitcoinAmount``
-              | object
+              | amount object
             - The amount transferred in BTC.
 
           * - | ``bitcoinUri``
@@ -410,7 +410,7 @@ Bitcoin
               `BIP 21 URI scheme <https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki>`_.
 
           * - | ``qrCode``
-              | object
+              | QR code object
             - Only available if requested during payment creation - The QR code that can be scanned by Bitcoin wallet
               clients and will cause such clients to prepare the transaction.
 
@@ -503,7 +503,7 @@ Gift cards
                    - The ID of the gift card brand that was used during the payment.
 
                  * - | ``amount``
-                     | object
+                     | amount object
                    - The amount in EUR that was paid with this gift card.
 
                      .. list-table::
@@ -522,7 +522,7 @@ Gift cards
                    - The voucher number, with the last four digits masked. Example: ``606436353088147****``
 
           * - | ``remainderAmount``
-              | object
+              | amount object
             - Only available if another payment method was used to pay the remainder amount – The amount that was paid
               with another payment method for the remainder amount.
 

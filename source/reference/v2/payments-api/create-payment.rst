@@ -18,7 +18,7 @@ Parameters
    :widths: auto
 
    * - | ``amount``
-       | object
+       | amount object
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
        €100.00.
 
@@ -330,11 +330,24 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
           :widths: auto
 
           * - | ``amount``
-              | decimal
-            - The amount in EUR that the app wants to charge, e.g. ``10.00`` if the app would want to charge €10.00.
+              | amount object
+            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
+              want to charge €10.00.
 
               Note that you will need to invoice the merchant yourself. We will only collect the amount from the
               merchant and settle the amount with you.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - | ``currency``
+                     | string
+                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                 * - | ``value``
+                     | string
+                   - A string containing the exact amount you want to charge in the given currency. Make sure to send
+                     the right amount of decimals. Non-string values are not accepted.
 
           * - | ``description``
               | string

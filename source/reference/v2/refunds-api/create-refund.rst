@@ -49,7 +49,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
    :widths: auto
 
    * - | ``amount``
-       | object
+       | amount object
      - Optional – The amount to refund. When ommitted, the full amount is refunded. Can be up to €25.00 more than the
        original transaction amount.
 

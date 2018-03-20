@@ -31,7 +31,7 @@ Response
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
    * - | ``amount``
-       | object
+       | amount object
      - The amount refunded to the consumer with this refund.
 
        .. list-table::

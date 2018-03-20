@@ -110,6 +110,7 @@ Overview
    guides/multi-currency
    guides/gift-cards
    guides/qr-codes
+   guides/common-data-types
 
 .. toctree::
    :maxdepth: 1
