@@ -219,13 +219,6 @@ Response
      - Optional – When implementing the Subscriptions API, any recurring charges resulting from the subscription will
        hold the ID of the subscription that triggered the payment.
 
-   * - | ``failureReason``
-       | string
-     - Optional - Only available for failed Bancontact and credit card payments. Contains a failure reason code.
-
-       Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
-       ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card``
-
    * - | ``applicationFee``
        | object
      - Optional – The application fee, if the payment was created with one.
@@ -472,6 +465,13 @@ Credit card
               consumer cards from the EU, and ``other`` for all other cards.
 
               Possible values: ``intra-eu`` ``other``
+
+          * - | ``failureReason``
+              | string
+            - Optional - Only available for failed payments. Contains a failure reason code.
+
+              Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
+              ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card``
 
 Gift cards
 """"""""""
