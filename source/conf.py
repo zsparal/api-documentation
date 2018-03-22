@@ -89,7 +89,21 @@ html_theme = 'sphinx_rtd_theme'
 # further.  For a list of options available for each theme, see the
 # documentation.
 #
-# html_theme_options = {}
+html_theme_options = {
+    'display_version': False,
+    'logo_only': True,
+}
+
+html_context = {
+    'display_github': True,
+    'github_user': 'mollie',
+    'github_repo': 'api-documentation',
+    'github_version': 'master/source/',
+}
+
+html_logo = '_static/img/mollie-logo.png'
+
+html_favicon = '_static/img/favicon.ico'
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
