@@ -73,7 +73,7 @@ The following fields are changed, renamed or moved:
   start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
-* ``failureReason`` has been moved from the Payment resource to the creditcard detail object, and is not available
+* ``failureReason`` has been moved from the Payment resource to the credit card detail object, and is not available
   anymore for Bancontact payments.
 
 The following fields are removed:

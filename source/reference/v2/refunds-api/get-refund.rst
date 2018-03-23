@@ -46,6 +46,21 @@ Response
               | string
             - A string containing the exact amount that was refunded in the given currency.
 
+   * - | ``settlementAmount``
+       | amount object
+     - The amount deducted from the settlement, in the settlement's currency.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``currency``
+              | string
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+          * - | ``value``
+              | string
+            - A string containing the exact amount that was deducted from the settlement in the given currency.
+
    * - | ``description``
        | string
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
@@ -69,7 +84,8 @@ Response
 
    * - | ``paymentId``
        | string
-     - The payment profile's unique identifier, for example ``tr_7UhSN1zuXS``.
+     - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
+       payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
 Example
 -------
