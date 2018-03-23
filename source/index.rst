@@ -158,8 +158,8 @@ Payments
    :maxdepth: 1
    :caption: Chargebacks API
 
-   Get chargeback <reference/v1/chargebacks-api/get-chargeback>
-   List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
+   Get chargeback <reference/v2/chargebacks-api/get-chargeback>
+   List chargebacks <reference/v2/chargebacks-api/list-chargebacks>
 
 Recurring
 =========
@@ -266,6 +266,13 @@ Deprecated APIs
    Get refund <reference/v1/refunds-api/get-refund>
    Cancel refund <reference/v1/refunds-api/cancel-refund>
    List refunds <reference/v1/refunds-api/list-refunds>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Chargebacks API v1 (deprecated)
+
+   Get chargeback <reference/v1/chargebacks-api/get-chargeback>
+   List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
 
 Indices and tables
 ==================
