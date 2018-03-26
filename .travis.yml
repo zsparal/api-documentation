@@ -1,13 +1,21 @@
 language: python
 python:
-  - "3.6"
-
+- '3.6'
 cache: pip
-
-# command to install dependencies
 install:
   - pip install -r requirements.txt
-
-# command to run tests
 script:
   - make html
+deploy:
+  on:
+    branch: master
+  provider: s3
+  access_key_id:
+    secure: nk8xuMqmQnULItO45XDyPkZ7+0hG6Dc6s0SOC5el6JRAmnzhvn3gM7V6OJl2WYosjkwBRskLz3ffxkT3vMKS/TymAHs+G0DUKtxgUzZWaZLfqWCr9KhtF8Y9dWBIyH9wx8xLeR+tQ1jnjEOVq65OuNvxO5JtM3UKXsUiw7TNJwR/TDb84h35k+ncXxKtPESwiQghchO7BRF5MVlLEankMlEYBJKveU7W8ho6Xa/bhJC1KDMbiquRG2NpmxMGxXFknELUf2gviT6GkEnsRTNCp6mzwG79uYO8S//RioiysuvkRZqQiKAe5fy3xPszFes/xHCYLQIQ7O7t9mrDAFy7qJjz/d57zs/5jVSmAIp2UcdJWaVtBHOJw8Z9DR2dGCaqvr9SliLmYJFv1KJs5AOJ7vN9jLQAr3XUXmeB6u7Hlwh+H/MHr0/cuU0NFhN+68HKVyKXL6gN0vxay8+7Hnem1ySRVBDm0A6Wvrwq60zw/2ZZPPVcr4d65fMdZnUxkqXTGy9A6raVXE412bZojKLOAGfWoAgVQllzMy2bsHuKQGkhFRKHBlQrr/+nFXARG6SxPik29ozcM3VOgG2BRbXqk6YP58eocOUiKjIhzqYBpaJDI3o6mBAyfR6817rRjfZcXdyGnn2A+Y4eOK7wNlCCumRHrm2M6qJ7SME7ktMOl4g=
+  secret_access_key:
+    secure: T9y6WCrt5PPGLC8EHzKhTqhMXilFsNyONI1kDW3pLwDxbRlLmysr1PmP5RY6fLRH2c3stz/aFMQcmeOqrOYGRDHLEwCAQeXlHUW7ehQdIISSE2WXrpFUxSCi6dvc7dUbNTDniGpPZNtRBcYnUESKrNcw34fI0lo4316DnSE+V0FAuvAeaHegexxkZchUW3Fv6+LNuJZ11L+KX03jg2eSnnclb1984jmoDKRnosjslN4pcaN/fCb20xEHmisX7d7vcvcUT2oLLtGN6OXjg59v1kiDQfk0kCC4rUZnEvO540oo5THRpiiG8v3B9G3Ud0575mzzQja43MQIy+6jjLitTYBPZazLH+j/FbULJAqgTNqNufYB2KmHCTQ2vqYwZsJ7ydTQCf4faW7bOz+8AMFbwW3Dt7rRtrazga9vKpdCXkXYALUlx4ZMKiGDVN+y2gVpFdLls4uBxMO13KL7SCPTDN8E1Gbksqj8VJzTVt2HwsvFW1Nxpw9sEhJFLIwNc93jtHcRLpQvRu8QKkghCkqsOECCRkTIZDM+FFjS3ozja63iox4oBLW0k15nxkRfFqziBtBd/9z/9tOZ+BQRWAIZrlMIpM/5naOzso1xijR4/z9MnFMmYgY6m2Sl1L9R4ubFsPbE//X+QOjX0sY3ubw4/syadnIG3TA7drz9BCSscwM=
+  bucket: 20180313-docs
+  region: eu-central-1
+  skip_cleanup: true
+  local_dir: build/html
+  cache_control: max-age=21600
