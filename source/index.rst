@@ -135,8 +135,8 @@ Payments
    :maxdepth: 1
    :caption: Methods API
 
-   Get payment method <reference/v1/methods-api/get-method>
-   List payment methods <reference/v1/methods-api/list-methods>
+   Get payment method <reference/v2/methods-api/get-method>
+   List payment methods <reference/v2/methods-api/list-methods>
 
 .. toctree::
    :maxdepth: 1
@@ -273,6 +273,13 @@ Deprecated APIs
 
    Get chargeback <reference/v1/chargebacks-api/get-chargeback>
    List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Methods API v1 (deprecated)
+
+   Get chargeback <reference/v1/methods-api/get-method>
+   List chargebacks <reference/v1/methods-api/list-methods>
 
 Indices and tables
 ==================

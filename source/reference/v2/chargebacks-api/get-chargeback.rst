@@ -13,7 +13,7 @@ If you do not know the original payment's ID, you can use the :ref:`chargebacks 
 Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the chargeback's ID. For example:
-``/v1/payments/tr_7UhSN1zuXS/chargebacks/chb_n9z0tp``.
+``/v2/payments/tr_7UhSN1zuXS/chargebacks/chb_n9z0tp``.
 
 Includes
 ^^^^^^^^

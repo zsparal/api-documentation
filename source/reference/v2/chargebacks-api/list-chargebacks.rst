@@ -9,24 +9,12 @@ Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access toke
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are not paginated.
 
 Parameters
 ----------
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
-
-.. list-table::
-   :widths: auto
-
-   * - | ``from``
-       | string
-     - Optional – Offset the result set to the chargeback with this ID. The chargeback with this ID is included in the
-       result set as well.
-
-   * - | ``limit``
-       | integer
-     - Optional – The number of chargebacks to return (with a maximum of 250).
 
 Response
 --------
@@ -37,8 +25,7 @@ Response
 
    * - | ``count``
        | integer
-     - The number of chargebacks found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+     - The number of chargebacks found in ``_embedded``.
 
    * - | ``_embedded``
        | object
@@ -53,7 +40,7 @@ Response
 
    * - | ``_links``
        | object
-     - Links to help navigate through the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
+     - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
        field.
 
        .. list-table::
@@ -62,14 +49,6 @@ Response
           * - | ``self``
               | object
             - The URL to the current set of chargebacks.
-
-          * - | ``previous``
-              | object
-            - Optional – The previous set of chargebacks, if available.
-
-          * - | ``next``
-              | object
-            - Optional – The next set of chargebacks, if available.
 
           * - | ``documentation``
               | object
@@ -93,7 +72,7 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "count": 5,
+       "count": 3,
        "_embedded": {
            "chargebacks": [
                {
@@ -117,12 +96,7 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks?limit=5",
-               "type": "application/hal+json"
-           },
-           "previous": null,
-           "next": {
-               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks?from=chb_n9z0tp&limit=5",
+               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks",
                "type": "application/hal+json"
            },
            "documentation": {

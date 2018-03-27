@@ -10,8 +10,8 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 * Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non-``EUR`` currencies.
   Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
   amount for various resources.
-* Improved support for accessing large sets of objects, now uses cursor-based pagination instead of pagination based on
-  counts and offsets.
+* Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
+  instead of pagination based on counts and offsets.
 
 Changes in v2
 -------------
@@ -118,10 +118,29 @@ The following fields are changed, renamed or moved:
   reversed.
 * ``payment``, which contained the payment ID related to the chargeback, has been renamed to ``paymentId``. The payment
   resource can easily be accessed using the ``payment`` key in the ``_links`` property.
+* Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
+  return all chargebacks.
 
 These new fields are added:
 
 * ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
+
+Changes in the Methods API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields are changed, renamed or moved:
+
+* ``amount`` including ``minimum`` and ``maximum`` have been removed.
+* The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``@1x`` and ``@2x``.
+* Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
+  return all payment methods.
+
+The following parameters are changed or added:
+
+* The parameter ``recurringType`` has been renamed to ``sequenceType``. Possible values are ``oneoff``, ``first`` or
+  ``recurring``.
+* The parameter ``amount`` has been added. This should be an object containing ``value`` and ``currency``. Only payment
+  methods that support the amount/currency will be returned.
+  Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
