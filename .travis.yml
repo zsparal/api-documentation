@@ -24,7 +24,7 @@ deploy:
   skip_cleanup: true
   local_dir: build/html
   # The cache_control property sets the length of time that files should be cached in the Cloudfront Edge location _and_ the user browser.
-  cache_control: max-age=21600
+  cache_control: max-age=3600
 after_deploy:
   # Bust the cloudfront edge cache, invalidate every object in the distribution
   - aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
