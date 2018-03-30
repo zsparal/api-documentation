@@ -2,7 +2,15 @@
 
 
 This project contains the source of all of Mollie's public API documentation. The full documentation (in an easy to use
-format) may be found at https://docs.mollie.com.
+format) in the future may be found at https://docs.mollie.com.
+
+**Before we go live:**
+You can find the docs on https://d12nhbpjotbqmy.cloudfront.net/, automatically deployed by Travis to S3, and cached by Cloudfront.
+During the development phase it is secured with basic auth using an AWS Lambda function:
+```
+Username: polder
+Password: approved
+```
 
 ## Contribute
 
