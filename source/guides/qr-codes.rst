@@ -5,7 +5,7 @@ QR codes
 In the context of payments, `QR codes <https://en.wikipedia.org/wiki/QR_code>`_ enable customers to transfer the payment
 flow from their desktop or laptop computer to their mobile device. This is the so-called *desktop-to-mobile* flow.
 
-QR codes allow your customers to pay without requiring manual input leading to lower error rates.
+QR codes also allow your customers to pay without requiring manual input leading to lower error rates.
 
 In most cases, this works by scanning a QR code during the payment using a dedicated app on a phone. For example,
 Bitcoin payments support a QR code that can be scanned using a wallet app. The customer then completes the transaction
@@ -40,8 +40,9 @@ Implementation options
 Two options for implementation are available:
 
 +---------------------+------------------------------------------------------------------------------------------------+
-|Mollie Checkout      |Mollie Checkout contains QR codes at all the right places and handles the QR code logic for your|
-|                     |application. It supports real-time feedback to the customer after he / she finishes the payment.|
+|Mollie Checkout      |:ref:`Mollie Checkout <guides/checkout>` contains QR codes at all the right places and handles  |
+|                     |the QR code logic for your application. It supports real-time feedback to the customer after he |
+|                     |/ she finishes the payment.                                                                     |
 +---------------------+------------------------------------------------------------------------------------------------+
 |Custom implementation|Should you want to, you can implement QR codes in your own application using the Mollie API.    |
 |                     |Some special considerations need to be taken into account, they are listed below.               |

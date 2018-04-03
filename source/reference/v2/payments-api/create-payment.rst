@@ -284,10 +284,11 @@ paysafecard
 
 SEPA Direct Debit
 """""""""""""""""
-**One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account.** In
-general, it is not very useful for web shops but may be useful for charities.
+.. note::
+    One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
+    general, it is not very useful for web shops but may be useful for charities.
 
-If you want to use recurring payments, take a look at our :ref:`Recurring payments guide <guides/recurring>`.
+    If you want to use recurring payments, take a look at our :ref:`Recurring payments guide <guides/recurring>`.
 
 .. list-table::
    :widths: auto

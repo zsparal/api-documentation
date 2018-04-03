@@ -56,23 +56,25 @@ How does the Mollie API work?
    amount, a payment description and a URL we should redirect the customer to after the payment is made.
 
    The API responds with the unique id and the ``_links.checkout`` URL for the newly created payment. Your website
-   stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``checkout``
-   property from the Mollie API response. This is the URL to the payment screen for this specific payment.
+   stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``_links.checkout``
+   property from the Mollie API response. This is the URL to the hosted payment page for this specific payment.
 
 #. The customer reaches the :ref:`checkout <guides/checkout>`, chooses a payment method and makes the payment. This
    process is entirely taken care of by Mollie. You don't need to do anything here.
 
-#. When the payment is made Mollie will call your webhook informing your website about the payment's status change. You
-   should define one when creating the payment.
+#. When the payment is made Mollie will call your :ref:`webhook <guides/webhooks>` informing your website about the
+   :ref:`payment's status change <guides/payment-status-changes>`. You should define a webhook when creating the
+   payment.
 
-   In response to you webhook being called your website just needs to issue a ``200 OK`` status. From that response
+   In response to you webhook being called your application just needs to issue a ``200 OK`` status. From that response
    Mollie can tell that your processing the new status was successful – for any other response we keep trying.
 
-#. Processing the webhook request your website fetches the payment status using the Mollie API. This fetched status
-   serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the customer.
+#. Processing the webhook request your website :ref:`fetches the payment status <v2/payments-get>` using the Mollie API.
+   This fetched status serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the
+   customer.
 
 #. At this point Mollie returns the visitor to your website using the ``redirectUrl`` specified when the payment was
-   created. Your website knows the payment was successful and thanks the customer.
+   created. Your website already knows the payment was successful and thanks the customer.
 
 Connecting orders and payments
 ------------------------------

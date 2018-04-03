@@ -3,18 +3,10 @@
 Mollie Checkout
 ===============
 
-Personalize your checkout
--------------------------
-It is possible to customize your `Mollie Checkout <https://www.mollie.com/en/features/checkout>`_ by adding your own
-brand images. You can upload a logo and a wallpaper. The example below shows a fully branded checkout page.
+**Mollie Checkout** is a collection of *hosted payment pages* that allow your customers to pick payment methods or view
+payment details for various methods. Using Mollie Checkout is optional but recommended.
 
-#. Go to your `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_.
-#. Click on a **Personalize Checkout** button.
-#. Upload images within the specified restrictions.
-
-.. figure:: images/mollie-checkout-example-a@2x.jpg
-
-   ETQ's Checkout with their logo (up top) and wallpaper (background).
+For more information, visit our product page on `Mollie Checkout <https://www.mollie.com/en/checkout>`_.
 
 Benefits of payments via the Mollie Checkout
 --------------------------------------------
@@ -27,11 +19,24 @@ Benefits of payments via the Mollie Checkout
   another one. If a customer appears to not have sufficient credit on a checking account a retry by credit card could
   easily be attempted. We handle this for you without asking you to implement any extra APIs.
 
-* Full support for QR codes and other conversion rate improving features.
+* Full support for :ref:`QR codes <guides/qr-codes>` and other conversion rate improving features.
 
 * Mollie optimizes the order of payment methods. For Dutch customers we know to list iDEAL at the top while for Belgians
   we start off with the payment method Bancontact. A lot of effort goes into this and we optimize this using
   A/B-testing. This way we improve your conversion without your effort.
+
+Personalize your checkout
+-------------------------
+It is possible to customize the checkout by adding your own brand images. You can upload a logo and a wallpaper. The
+example below shows a fully branded checkout page.
+
+#. Go to your `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_.
+#. Click on a **Personalize Checkout** button.
+#. Upload images within the specified restrictions.
+
+.. figure:: images/mollie-checkout-example-a@2x.jpg
+
+   ETQ's Checkout with their logo (up top) and wallpaper (background).
 
 Single Click payments for returning customers
 ---------------------------------------------

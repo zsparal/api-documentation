@@ -23,6 +23,13 @@ In v2 endpoints, an amount object is always represented as follows.
        | string
      - A string containing the exact amount in the given currency.
 
+Boolean
+-------
+
+In JSON structures, booleans should be passed as the JSON boolean type.
+
+In query string parameters (e.g. ``GET`` requests) only the strings ``true`` and ``false`` are accepted.
+
 Date
 ----
 A string representing a date in ``YYYY-MM-DD`` format.

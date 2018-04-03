@@ -45,9 +45,9 @@ using more gift cards or one of the other payment methods.
 
 Integrate using Mollie Checkout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The easiest way to integrate gift cards is to use the Mollie Checkout. This is arranged by creating the payment via our
-API without passing the method parameter. Mollie will then display a list of payment methods available for the payment
-and offer the gift card options enabled on your account.
+The easiest way to integrate gift cards is to use the :ref:`Mollie Checkout <guides/checkout>`. This is arranged by
+creating the payment via our API without passing the ``method`` parameter. Mollie will then display a list of payment
+methods available for the payment and offer the gift card options enabled on your account.
 
 Your customer can start the payment by redeeming their gift card. If the gift card only partially covers the amount due,
 more gift cards can be entered in the checkout or a different payment method can be used to pay for the remaining
