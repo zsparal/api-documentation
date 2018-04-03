@@ -62,7 +62,7 @@ The following changes have been made in regards to the status of payments:
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
   property, which will point you to the chargeback resource where you can view the refund details.
 
-The following fields are changed, renamed or moved:
+The following fields have been changed, renamed or moved:
 
 * ``cancelledDatetime`` has been renamed to ``cancelledAt``.
 * ``createdDatetime`` has been renamed to ``createdAt``.
@@ -76,7 +76,7 @@ The following fields are changed, renamed or moved:
 * ``failureReason`` has been moved from the Payment resource to the credit card detail object, and is not available
   anymore for Bancontact payments.
 
-The following fields are removed:
+The following fields have been removed:
 
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
@@ -84,7 +84,7 @@ The following fields are removed:
 * ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
 * ``cardCountry`` has been removed from the creditcard detail object on the Payment resource.
 
-These new fields are added:
+These new fields have been added:
 
 .. _settlementAmount:
 
@@ -98,20 +98,20 @@ These new fields are added:
 
 Changes in the Refunds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following fields are changed, renamed or moved:
+The following fields have been changed, renamed or moved:
 
 * ``amount`` is now mandatory when creating a refund. You must specify both ``amount.currency`` and ``amount.value``.
 * ``payment``, which contained the payment resource related to the refund, is no longer returned. Instead, the payment
   ID is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the
   ``payment`` key in the ``_links`` property.
 
-These new fields are added:
+These new fields have been added:
 
 * ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
 
 Changes in the Chargebacks API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following fields are changed, renamed or moved:
+The following fields have been changed, renamed or moved:
 
 * ``chargebackDatetime`` has been renamed to ``createdAt``.
 * ``reversedDatetime`` has been renamed to ``reversedAt``. This field is now only returned if the chargeback is
@@ -121,26 +121,32 @@ The following fields are changed, renamed or moved:
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all chargebacks.
 
-These new fields are added:
+These new fields have been added:
 
 * ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
 
 Changes in the Methods API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The following fields are changed, renamed or moved:
+The following fields have been changed, renamed or moved:
 
 * ``amount`` including ``minimum`` and ``maximum`` have been removed.
 * The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``@1x`` and ``@2x``.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all payment methods.
 
-The following parameters are changed or added:
+The following parameters have been changed or added:
 
 * The parameter ``recurringType`` has been renamed to ``sequenceType``. Possible values are ``oneoff``, ``first`` or
   ``recurring``.
 * The parameter ``amount`` has been added. This should be an object containing ``value`` and ``currency``. Only payment
   methods that support the amount/currency will be returned.
   Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
+
+Changes in the Customers API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
