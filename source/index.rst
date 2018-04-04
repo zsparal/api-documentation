@@ -66,8 +66,8 @@ How does the Mollie API work?
    :ref:`payment's status change <guides/payment-status-changes>`. You should define a webhook when creating the
    payment.
 
-   In response to you webhook being called your application just needs to issue a ``200 OK`` status. From that response
-   Mollie can tell that your processing the new status was successful – for any other response we keep trying.
+   In response to your webhook being called your application just needs to issue a ``200 OK`` status. From that response
+   Mollie can tell that your processing of the new status was successful – for any other response we keep trying.
 
 #. Processing the webhook request your website :ref:`fetches the payment status <v2/payments-get>` using the Mollie API.
    This fetched status serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the
