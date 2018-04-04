@@ -16,7 +16,7 @@ the requested permissions in the ``scope`` parameter.
 
    * - | ``payments.read``
        | Payments API
-     - View the merchant's payments.
+     - View the merchant's payments, chargebacks and payment methods.
 
    * - | ``payments.write``
        | Payments API
