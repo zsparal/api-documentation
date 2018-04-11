@@ -8,8 +8,8 @@ Mollie Connect allows you to create apps for Mollie merchants via OAuth.
 Why should I use OAuth?
 -----------------------
 Mollie Connect is built on the OAuth standard. The OAuth connection enables you to access other merchants' accounts with
-their consent, without having to exchange API keys. Whether you're just looking to improve your customer's experience,
-to automate essential business processes, or to whitelabel our platform completely, it's all possible with OAuth.
+their consent, without having to exchange API keys. Whether you are just looking to improve your customer's experience,
+to automate essential business processes, or to whitelabel our platform completely, it is all possible with OAuth.
 
 Our OAuth platform allows you to:
 
@@ -18,7 +18,7 @@ Our OAuth platform allows you to:
 * View a merchants' transaction and settlement data
 * Show the next settlement and balance at Mollie in your app
 * Integrate merchants' invoices from Mollie in your app
-* Charge merchants for payments initiated through your app (application fees)
+* Charge merchants for payments initiated through your app (:ref:`application fees <oauth/applicationfees>`)
 
 What does the Mollie OAuth flow look like?
 ------------------------------------------

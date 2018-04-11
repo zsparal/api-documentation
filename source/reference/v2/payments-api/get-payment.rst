@@ -221,7 +221,7 @@ Response
 
    * - | ``applicationFee``
        | object
-     - Optional – The application fee, if the payment was created with one.
+     - Optional – The :ref:`application fee <oauth/applicationfees>`, if the payment was created with one.
 
        .. list-table::
           :widths: auto

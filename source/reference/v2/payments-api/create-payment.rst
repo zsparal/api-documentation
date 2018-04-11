@@ -322,10 +322,8 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
    * - | ``applicationFee``
        | object
-     - Optional – Adding an Application Fee allows you to charge the merchant a small sum for the payment and transfer
-       this to your own account. Set the ``applicationFee`` parameter as a small object with it’s own amount and
-       description. The application fee amount must be at least about €1.00 less than the payment's ``amount``
-       parameter.
+     - Optional – Adding an :ref:`application fee <oauth/applicationfees>` allows you to charge the merchant a small sum
+       for the payment and transfer this to your own account.
 
        .. list-table::
           :widths: auto
@@ -334,9 +332,6 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
               | amount object
             - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
               want to charge €10.00.
-
-              Note that you will need to invoice the merchant yourself. We will only collect the amount from the
-              merchant and settle the amount with you.
 
               .. list-table::
                  :widths: auto

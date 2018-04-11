@@ -7,6 +7,9 @@ Eurozone to pay in their own currency. The payments will be settled to your acco
 the conversion. You can retrieve the settlement amount via the API or view it in your
 `Dashboard <https://www.mollie.com/dashboard>`_.
 
+When creating a payment in a non-EUR currency, we will immediately give you the amount we will settle in the API
+response.
+
 Creating payments in a different currency than ``EUR`` is only possible via the ``v2`` API. Review the
 :ref:`Payments API reference <v2/payments-create>` for more information.
 

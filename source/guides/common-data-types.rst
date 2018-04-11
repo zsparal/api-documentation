@@ -8,6 +8,8 @@ value objects.
 The API references lists the data type used for each field and parameter of every endpoint. This guide contains a list
 of all data types used, along with an explanation of the way these data types are structured.
 
+.. _amount-object:
+
 Amount object
 -------------
 In v2 endpoints, an amount object is always represented as follows.

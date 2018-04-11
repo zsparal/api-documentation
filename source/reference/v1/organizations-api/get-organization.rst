@@ -75,7 +75,7 @@ Response
 
    * - | ``vatNumber``
        | string
-     - Optional – The organization's VAT number. You can use this for invoicing Application Fees, for example.
+     - Optional – The organization's VAT number. You can use this for invoicing :ref:`application fees <oauth/applicationfees>`, for example.
 
    * - | ``verifiedDatetime``
        | datetime
