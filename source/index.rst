@@ -191,10 +191,10 @@ Recurring
    :maxdepth: 1
    :caption: Subscriptions API
 
-   Create subscription <reference/v1/subscriptions-api/create-subscription>
-   Get subscription <reference/v1/subscriptions-api/get-subscription>
-   Revoke subscription <reference/v1/subscriptions-api/cancel-subscription>
-   List subscriptions <reference/v1/subscriptions-api/list-subscriptions>
+   Create subscription <reference/v2/subscriptions-api/create-subscription>
+   Get subscription <reference/v2/subscriptions-api/get-subscription>
+   Revoke subscription <reference/v2/subscriptions-api/cancel-subscription>
+   List subscriptions <reference/v2/subscriptions-api/list-subscriptions>
 
 Mollie Connect
 ==============
@@ -283,6 +283,15 @@ Deprecated APIs
 
    Get chargeback <reference/v1/methods-api/get-method>
    List chargebacks <reference/v1/methods-api/list-methods>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Subscriptions API v1 (deprecated)
+
+   Create subscription <reference/v1/subscriptions-api/create-subscription>
+   Get subscription <reference/v1/subscriptions-api/get-subscription>
+   Revoke subscription <reference/v1/subscriptions-api/cancel-subscription>
+   List subscriptions <reference/v1/subscriptions-api/list-subscriptions>
 
 Indices and tables
 ==================

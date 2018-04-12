@@ -130,7 +130,7 @@ Changes in the Methods API
 The following fields have been changed, renamed or moved:
 
 * ``amount`` including ``minimum`` and ``maximum`` have been removed.
-* The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``@1x`` and ``@2x``.
+* The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``size1x`` and ``size2x``.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all payment methods.
 
@@ -147,6 +147,14 @@ Changes in the Customers API
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
+
+Changes in the Subscriptions API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``cancelledDatetime`` has been renamed to ``canceledAt``, and is now only returned when the subscription is canceled.
+* ``webhookUrl`` is now part of the top-level object for Subscriptions.
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
