@@ -76,11 +76,11 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``@1x``
+          * - | ``size1x``
               | string
             - The URL for a payment method icon of 55x37 pixels.
 
-          * - | ``@2x``
+          * - | ``size2x``
               | string
             - The URL for a payment method icon of 110x74 pixels.
 
@@ -106,8 +106,8 @@ Response
        "id": "ideal",
        "description": "iDEAL",
        "image": {
-           "@1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-           "@2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
+           "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
+           "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
        },
        "_links": {
            "self": {
