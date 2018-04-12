@@ -106,7 +106,7 @@ Request
 ^^^^^^^
 .. code-block:: bash
 
-   curl -X GET https://api.mollie.com/v2/payments \
+   curl -X GET https://api.mollie.com/v2/payments?limit=5 \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
@@ -146,13 +146,11 @@ Response
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
                            "type": "application/hal+json"
-                       },
-                       "documentation": {
-                           "href": "https://www.mollie.com/en/docs/reference/payments/get",
-                           "type": "text/html"
                        }
                    }
                },
+               { },
+               { },
                { },
                { }
            ]
