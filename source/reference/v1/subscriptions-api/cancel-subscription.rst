@@ -6,7 +6,7 @@ Subscriptions API v1: Cancel subscription
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
-A subscription can be cancelled any time by calling ``DELETE`` on the resource endpoint.
+A subscription can be canceled any time by calling ``DELETE`` on the resource endpoint.
 
 Parameters
 ----------

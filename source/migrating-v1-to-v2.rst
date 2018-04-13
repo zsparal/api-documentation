@@ -66,7 +66,7 @@ The following changes have been made in regards to the status of payments:
 
 The following fields have been changed, renamed or moved:
 
-* ``cancelledDatetime`` has been renamed to ``cancelledAt``.
+* ``cancelledDatetime`` has been renamed to ``canceledAt``.
 * ``createdDatetime`` has been renamed to ``createdAt``.
 * ``expiredDatetime`` has been renamed to ``expiredAt``.
 * ``failedDatetime`` has been renamed to ``failedAt``.

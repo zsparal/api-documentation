@@ -103,7 +103,7 @@ Response
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
-   * - | ``cancelledAt``
+   * - | ``canceledAt``
        | datetime
      - Optional – The subscription's date and time of cancellation, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. This parameter is omitted if the payment is not

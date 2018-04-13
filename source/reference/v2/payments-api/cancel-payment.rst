@@ -7,10 +7,10 @@ Payments API v2: Cancel payment
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
-is open. Payments may be cancelled manually from the Dashboard, or automatically by using this endpoint.
+is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
 
 The ``canBeCancelled`` property on the :ref:`Payment object <v2/payments-get>` will indicate if the payment can be
-cancelled.
+canceled.
 
 Parameters
 ----------

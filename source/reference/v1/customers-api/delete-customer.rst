@@ -6,7 +6,7 @@ Customers API v1: Delete customer
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
-Delete a customer. All mandates and subscriptions created for this customer will be cancelled as well.
+Delete a customer. All mandates and subscriptions created for this customer will be canceled as well.
 
 Parameters
 ----------

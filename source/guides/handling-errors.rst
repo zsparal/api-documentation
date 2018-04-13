@@ -186,7 +186,7 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 +---+------------------------------------------------------------------------------------------------------------------+
 |201|Created – The entity was created successfully.                                                                    |
 +---+------------------------------------------------------------------------------------------------------------------+
-|204|No Content – The requested entity was cancelled / deleted successfully.                                           |
+|204|No Content – The requested entity was canceled / deleted successfully.                                            |
 +---+------------------------------------------------------------------------------------------------------------------+
 |400|Bad Request – The Mollie API was unable to understand your request. There might be an error in your syntax.       |
 +---+------------------------------------------------------------------------------------------------------------------+

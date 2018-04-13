@@ -71,17 +71,17 @@ Response
 
    * - | ``canBeCancelled``
        | boolean
-     - Optional – Whether or not the payment can be cancelled.
+     - Optional – Whether or not the payment can be canceled.
 
    * - | ``paidAt``
        | datetime
      - Optional – The date and time the payment became paid, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
-       format. This parameter is omitted if the payment isn't completed (yet).
+       format. This parameter is omitted if the payment is not completed (yet).
 
    * - | ``cancelledAt``
        | datetime
-     - Optional – The date and time the payment was cancelled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
-       format. This parameter is omitted if the payment isn't cancelled (yet).
+     - Optional – The date and time the payment was canceled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+       format. This parameter is omitted if the payment is not canceled (yet).
 
    * - | ``expiresAt``
        | duration

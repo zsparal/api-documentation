@@ -13,7 +13,7 @@ them. Then we will show you how the statuses are connected.
     for.
 
 ``cancelled``
-    Your customer has cancelled the payment. This is a definitive status. Mollie will call your webhook when this status
+    Your customer has canceled the payment. This is a definitive status. Mollie will call your webhook when this status
     is reached.
 
 ``pending``

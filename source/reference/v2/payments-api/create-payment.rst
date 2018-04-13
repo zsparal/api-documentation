@@ -143,7 +143,7 @@ Bitcoin
    * - | ``billingEmail``
        | string
      - Optional – The email address of the customer. This is used when handling invalid transactions (wrong amount
-       transferred, transfer of expired or cancelled payments, et cetera).
+       transferred, transfer of expired or canceled payments, et cetera).
 
 Credit card
 """""""""""
