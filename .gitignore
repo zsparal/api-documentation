@@ -1,2 +1,6 @@
 /.idea
+/.cache
 /build
+source/_static/style.css
+source/_static/
+/node_modules

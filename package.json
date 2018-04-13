@@ -1,0 +1,26 @@
+{
+  "name": "api-documentation",
+  "version": "1.0.0",
+  "description": "API Documentation for all of Mollie's public APIs.",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mollie/api-documentation.git"
+  },
+  "keywords": [
+    "mollie",
+    "api",
+    "documentation"
+  ],
+  "author": "Mollie B.V. <info@mollie.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mollie/api-documentation/issues"
+  },
+  "homepage": "https://www.mollie.com",
+  "devDependencies": {
+    "node-sass": "^4.8.3",
+    "parcel-bundler": "^1.7.0"
+  }
+}

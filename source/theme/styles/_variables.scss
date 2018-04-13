@@ -1,0 +1,69 @@
+@import 'functions/strip-unit';
+@import 'functions/tint';
+
+/**
+ * Breakpoints
+ */
+$breakpoints: (
+  'small': 540px,
+  '<small': 539px,
+  'medium': 720px,
+  '<medium': 719px,
+  'large': 960px,
+  '<large': 959px,
+  'extra-large': 1160px,
+  '<extra-large': 1159px,
+  'huge': 1440px,
+  '<huge': 1439px,
+);
+
+/**
+ * Grid
+ */
+$site-width: 1680px;
+$column-width: 25%;
+$gutter-width: 50px;
+$content-width: 940px;
+
+/**
+ * Colors
+ */
+$grey-lightest: tint(#000, 98%);
+$grey-lighter: tint(#000, 90%);
+$grey-light: tint(#000, 80%);
+$grey-medium-light: tint(#000, 70%);
+$grey-medium-dark: tint(#000, 51%);
+$grey-dark: tint(#000, 35%);
+$grey-darkest: tint(#000, 20%);
+$blackish: #262626;
+
+$text-color: $blackish;
+
+$brand-primary: #0095ff;
+$brand-primary-hover: #0077cb;
+$brand-warning: #ffb100;
+
+$color-error: #ff1d1d;
+$color-success: #4cd964;
+
+$color-payments: #00acff;
+$text-color-payments: #072a4c;
+
+$color-recurring: #ffc64f;
+$text-color-recurring: #733517;
+
+/**
+ * Type
+ */
+$font-family-default: 'Calibre', sans-serif;
+
+// No max line-length for monospace fonts
+// stylelint-disable-next-line max-line-length
+$font-family-monospace: 'Roboto Mono', 'Consolas', 'Andale Mono', 'Monaco', monospace;
+
+$default-line-height: 32 / 22;
+
+$font-weight-light: 300;
+$font-weight-semibold: 800;
+
+$navigation-height: 45px;
