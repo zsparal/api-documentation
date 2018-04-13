@@ -7,11 +7,13 @@ Why upgrade to v2?
 ------------------
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non-``EUR`` currencies.
+* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments, subscriptions and refunds
+  in non-``EUR`` currencies.
   Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
   amount for various resources.
 * Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
   instead of pagination based on counts and offsets.
+* Settlement details are now available for refunds and chargebacks as well.
 * Improved error messages. Error message will contain more details to help you quickly resolve any implementation
   problems.
 
@@ -106,6 +108,8 @@ The following fields have been changed, renamed or moved:
 * ``payment``, which contained the payment resource related to the refund, is no longer returned. Instead, the payment
   ID is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the
   ``payment`` key in the ``_links`` property.
+* The resource will contain a link to the settlement if it is settled (via the ``settlement`` key in the ``_links``
+  property.
 
 These new fields have been added:
 
@@ -122,6 +126,8 @@ The following fields have been changed, renamed or moved:
   resource can easily be accessed using the ``payment`` key in the ``_links`` property.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all chargebacks.
+* The resource will contain a link to the settlement if it is settled (via the ``settlement`` key in the ``_links``
+  property.
 
 These new fields have been added:
 
@@ -165,6 +171,8 @@ The following fields have been changed, renamed or moved:
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+In general, error reporting has been improved to help you resolve any implementation errors as fast as possible.
+
 The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best
 explained using an example.
 
