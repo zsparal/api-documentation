@@ -12,6 +12,8 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
   amount for various resources.
 * Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
   instead of pagination based on counts and offsets.
+* Improved error messages. Error message will contain more details to help you quickly resolve any implementation
+  problems.
 
 Changes in v2
 -------------
