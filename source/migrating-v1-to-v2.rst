@@ -152,6 +152,11 @@ The following fields have been changed, renamed or moved:
 
 Changes in the Subscriptions API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following changes have been made in regards to the status of subscriptions:
+
+* Subscriptions that are canceled can be retrieved from the API, and will not return a HTTP status ``410 Gone``.
+* The ``canceled`` status is changed from British English to American English.
+
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
