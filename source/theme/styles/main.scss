@@ -1,6 +1,7 @@
-@import 'normalize';
-@import 'variables';
-@import 'functions/breakpoint';
+@import "fonts";
+@import "normalize";
+@import "variables";
+@import "functions/breakpoint";
 
 /**
  * Base styles
@@ -9,6 +10,8 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   line-height: 1.5;
+  font-feature-settings: "liga", "kern";
+  text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +35,7 @@ dl {
 }
 
 button,
-input[type='submit'] {
+input[type="submit"] {
   cursor: pointer;
 }
 
@@ -71,7 +74,33 @@ a:not([class]):focus {
   text-decoration: underline;
 }
 
+a.headerlink {
+  color: #999999;
+}
+
 /**
  * Typography
  */
- @import 'typography';
+@import "typography";
+
+/**
+ * Layout blocks
+ */
+@import "layout/l-layer";
+@import "layout/l-wrapper";
+
+/**
+* Components
+*/
+@import "components/main-navigation";
+@import "components/footer";
+@import "components/main";
+@import "components/sidebar";
+@import "components/content";
+@import "components/breadcrumbs";
+@import "components/endpoint";
+@import "components/authentication";
+@import "components/parameters";
+@import "components/code";
+@import "components/image";
+@import "components/highlight";

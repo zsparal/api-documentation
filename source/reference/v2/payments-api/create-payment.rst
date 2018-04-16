@@ -2,9 +2,14 @@
 
 Payments API v2: Create payment
 ===============================
-``POST`` ``https://api.mollie.com/v2/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. container:: endpoint
+
+  ``POST`` ``https://api.mollie.com/v2/payments``
+
+.. container:: authentication
+
+  Authentication: :ref:`API keys <guides/authentication>` :ref:`OAuth access tokens <oauth/overview>`
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
 parameters are accepted for certain payment methods.
@@ -19,6 +24,8 @@ Parameters
 
    * - | ``amount``
        | amount object
+       .. class:: blah
+
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
        €100.00.
 

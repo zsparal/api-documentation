@@ -1,0 +1,18 @@
+.main {
+  display: flex;
+  flex-wrap: nowrap;
+}
+
+.main__sidebar {
+  width: 300px;
+}
+
+.main__content {
+  width: 100%;
+}
+
+.main__content-inner {
+  max-width: 580px;
+  width: 90%;
+  margin: 0 auto;
+}

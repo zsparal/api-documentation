@@ -6,17 +6,10 @@
  */
 body {
   font-family: $font-family-default;
-  font-weight: 300;
-  font-size: 19px;
+  font-weight: 400;
+  font-size: 18px;
   line-height: $default-line-height;
-
-  @media (min-width: breakpoint('small')) {
-    font-size: 20px;
-  }
-
-  @media (min-width: breakpoint('medium')) {
-    font-size: 22px;
-  }
+  color: #333333;
 }
 
 h1,
@@ -31,52 +24,23 @@ h6 {
 
 h1,
 .h1 {
-  font-size: 48px;
+  font-size: 32px;
   line-height: 1;
   margin-bottom: 20px;
-
-  @media (min-width: breakpoint('small')) {
-    font-size: 65px;
-  }
-
-  @media (min-width: breakpoint('medium')) {
-    font-size: 52px;
-  }
-
-  @media (min-width: breakpoint('extra-large')) {
-    font-size: 58px;
-    line-height: (110 / 120);
-  }
 }
 
 h2,
 .h2 {
-  font-size: 34px;
+  font-size: 24px;
   line-height: 1;
   margin-bottom: 0.25em;
-
-  @media (min-width: 360px) {
-    font-size: 38px;
-  }
-
-  @media (min-width: breakpoint('small')) {
-    font-size: 42px;
-  }
-
-  @media (min-width: breakpoint('large')) {
-    font-size: 48px;
-  }
 }
 
 h3,
 .h3 {
   margin-bottom: 0.5em;
-  font-size: 24px;
-  line-height: (28 / 24);
-
-  @media (min-width: breakpoint('medium')) {
-    font-size: 32px;
-  }
+  font-size: 20;
+  line-height: 1;
 }
 
 h4,
@@ -93,7 +57,7 @@ h4,
 
 p {
   margin-top: 0;
-  margin-bottom: 1.315789474em;
+  margin-bottom: 35px;
 }
 
 code {

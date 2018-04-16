@@ -1,0 +1,91 @@
+@import "variables";
+@import "mixins/bare-list";
+
+.sidebar {
+  background: #000;
+  color: #fff;
+  position: relative;
+  padding-top: 105px;
+}
+
+.sidebar::after {
+  content: "";
+  position: absolute;
+  background: #000;
+  right: 50vw;
+  right: 0;
+  width: 100vw;
+  top: 0;
+  height: 100%;
+  z-index: -1;
+}
+
+.sidebar .toctree-l1 ul {
+  display: none;
+}
+
+.sidebar .wy-side-nav-search {
+  display: none;
+}
+
+.sidebar .caption {
+  font-size: 24px;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 30px;
+}
+
+.sidebar ul {
+  @include bare-list;
+  margin-bottom: 40px;
+}
+
+.sidebar ul li {
+  margin-bottom: 15px;
+}
+
+.sidebar ul li a {
+  color: #999999;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.sidebar ul:last-child {
+  margin-bottom: 0;
+}
+
+.sidebar ul:last-child li {
+  margin-bottom: 0;
+}
+
+.sidebar ul.current {
+  background: #fff;
+  padding: 22px 0 27px 63px;
+  margin-left: -63px;
+  border-top-left-radius: 6px;
+  border-bottom-left-radius: 6px;
+}
+
+.sidebar ul.current a.current {
+  color: $brand-primary;
+}
+
+.sidebar ul.current > li.current > ul {
+  display: block;
+}
+
+.sidebar ul.current > li.current > ul a {
+  position: relative;
+  font-size: 14px;
+  padding-left: 15px;
+}
+
+.sidebar ul.current > li.current > ul a:before {
+  content: "";
+  height: 1px;
+  width: 8px;
+  background: #666666;
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+}

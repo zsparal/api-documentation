@@ -2,7 +2,7 @@
 
 Payments API v2: List payments
 ==============================
-``GET`` ``https://api.mollie.com/v2/payments``
+  ``GET`` ``https://api.mollie.com/v2/payments``
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 

@@ -1,35 +1,31 @@
 // Light - Calibre Light
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-weight: 300;
-  src:
-    url('https://cdn.mollie.com/assets/CalibreWeb-Light.woff2') format('woff2'),
-    url('https://cdn.mollie.com/assets/CalibreWeb-Light.woff') format('woff');
+  src: url("./../../_static/fonts/calibre/CalibreWeb-Light.woff2") format("woff2"),
+    url("./../../_static/fonts/calibre/CalibreWeb-Light.woff") format("woff");
 }
 
 // Normal - Calibre Regular
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-weight: normal;
-  src:
-    url('https://cdn.mollie.com/assets/CalibreWeb-Regular.woff2') format('woff2'),
-    url('https://cdn.mollie.com/assets/CalibreWeb-Regular.woff') format('woff');
+  src: url("./../../_static/fonts/calibre/CalibreWeb-Regular.woff2") format("woff2"),
+    url("./../../_static/fonts/calibre/CalibreWeb-Regular.woff") format("woff");
 }
 
 // Semibold - Calibre Semibold
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-weight: 800;
-  src:
-    url('https://cdn.mollie.com/assets/CalibreWeb-Semibold.woff2') format('woff2'),
-    url('https://cdn.mollie.com/assets/CalibreWeb-Semibold.woff') format('woff');
+  src: url("./../../_static/fonts/calibre/CalibreWeb-Semibold.woff2") format("woff2"),
+    url("./../../_static/fonts/calibre/CalibreWeb-Semibold.woff") format("woff");
 }
 
 // Bold - Calibre Medium
 @font-face {
-  font-family: 'Calibre';
+  font-family: "Calibre";
   font-weight: bold;
-  src:
-    url('https://cdn.mollie.com/assets/CalibreWeb-Medium.woff2') format('woff2'),
-    url('https://cdn.mollie.com/assets/CalibreWeb-Medium.woff') format('woff');
+  src: url("./../../_static/fonts/calibre/CalibreWeb-Medium.woff2") format("woff2"),
+    url("./../../_static/fonts/calibre/CalibreWeb-Medium.woff") format("woff");
 }

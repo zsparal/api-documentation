@@ -1,20 +1,20 @@
-@import 'functions/strip-unit';
-@import 'functions/tint';
+@import "functions/strip-unit";
+@import "functions/tint";
 
 /**
  * Breakpoints
  */
 $breakpoints: (
-  'small': 540px,
-  '<small': 539px,
-  'medium': 720px,
-  '<medium': 719px,
-  'large': 960px,
-  '<large': 959px,
-  'extra-large': 1160px,
-  '<extra-large': 1159px,
-  'huge': 1440px,
-  '<huge': 1439px,
+  "small": 540px,
+  "<small": 539px,
+  "medium": 720px,
+  "<medium": 719px,
+  "large": 960px,
+  "<large": 959px,
+  "extra-large": 1160px,
+  "<extra-large": 1159px,
+  "huge": 1440px,
+  "<huge": 1439px
 );
 
 /**
@@ -55,13 +55,13 @@ $text-color-recurring: #733517;
 /**
  * Type
  */
-$font-family-default: 'Calibre', sans-serif;
+$font-family-default: "Calibre", sans-serif;
 
 // No max line-length for monospace fonts
 // stylelint-disable-next-line max-line-length
-$font-family-monospace: 'Roboto Mono', 'Consolas', 'Andale Mono', 'Monaco', monospace;
+$font-family-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
-$default-line-height: 32 / 22;
+$default-line-height: 24px;
 
 $font-weight-light: 300;
 $font-weight-semibold: 800;
