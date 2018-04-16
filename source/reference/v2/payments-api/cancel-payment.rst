@@ -9,7 +9,7 @@ Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access toke
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
 is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
 
-The ``canBeCancelled`` property on the :ref:`Payment object <v2/payments-get>` will indicate if the payment can be
+The ``isCancelable`` property on the :ref:`Payment object <v2/payments-get>` will indicate if the payment can be
 canceled.
 
 Parameters
@@ -51,8 +51,8 @@ Response
        "description": "Order 33",
        "method": "banktransfer",
        "metadata": null,
-       "status": "cancelled",
-       "cancelledAt": "2018-03-19T10:19:15+00:00",
+       "status": "canceled",
+       "canceledAt": "2018-03-19T10:19:15+00:00",
        "details": {
            "bankName": "Stichting Mollie Payments",
            "bankAccount": "NL53ABNA0627535577",

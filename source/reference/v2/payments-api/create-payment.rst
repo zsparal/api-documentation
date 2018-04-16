@@ -408,7 +408,7 @@ Response
            "order_id": "12345"
        },
        "status": "open",
-       "canBeCancelled": false,
+       "isCancelable": false,
        "expiresAt": "2018-03-20T09:28:37+00:00",
        "details": null,
        "profileId": "pfl_QkEhN94Ba",

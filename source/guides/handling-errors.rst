@@ -44,7 +44,7 @@ Response
         "method": null,
         "metadata": null,
         "status": "open",
-        "canBeCancelled": false,
+        "isCancelable": false,
         "expiresAt": "2018-03-12T11:11:15+00:00",
         "details": null,
         "profileId": "pfl_7N5qjbu42V",

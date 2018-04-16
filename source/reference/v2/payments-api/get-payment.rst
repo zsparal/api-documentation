@@ -69,7 +69,7 @@ Response
      - The payment's status. Please refer to the documentation regarding statuses for more info about which statuses
        occur at what point.
 
-   * - | ``canBeCancelled``
+   * - | ``isCancelable``
        | boolean
      - Optional – Whether or not the payment can be canceled.
 
@@ -78,7 +78,7 @@ Response
      - Optional – The date and time the payment became paid, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not completed (yet).
 
-   * - | ``cancelledAt``
+   * - | ``canceledAt``
        | datetime
      - Optional – The date and time the payment was canceled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not canceled (yet).
@@ -804,7 +804,7 @@ Response
            "order_id": "12345"
        },
        "status": "open",
-       "canBeCancelled": false,
+       "isCancelable": false,
        "expiresAt": "2018-03-20T13:28:37+00:00",
        "details": null,
        "profileId": "pfl_QkEhN94Ba",

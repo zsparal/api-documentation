@@ -127,7 +127,7 @@ Response
                    "createdAt": "2018-02-12T11:58:35.0Z",
                    "expiresAt": "2018-02-12T12:13:35.0Z",
                    "status": "open",
-                   "canBeCancelled": false,
+                   "isCancelable": false,
                    "amount": {
                        "value": "75.00",
                        "currency": "GBP"

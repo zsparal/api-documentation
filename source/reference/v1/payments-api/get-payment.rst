@@ -73,7 +73,7 @@ Response
      - The payment's status. Please refer to the documentation regarding statuses for more info about which statuses
        occur at what point.
 
-   * - | ``canBeCancelled``
+   * - | ``isCancelable``
        | boolean
      - Optional – Whether or not the payment can be canceled.
 

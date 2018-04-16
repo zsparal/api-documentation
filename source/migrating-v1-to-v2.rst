@@ -73,6 +73,7 @@ The following fields have been changed, renamed or moved:
 * ``expiredDatetime`` has been renamed to ``expiredAt``.
 * ``failedDatetime`` has been renamed to ``failedAt``.
 * ``paidDatetime`` has been renamed to ``paidAt``.
+* ``canBeCancelled`` has been renamed to ``isCancelable``.
 * ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
   start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.

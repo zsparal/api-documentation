@@ -77,7 +77,7 @@ The response will be JSON.
        "method": null,
        "metadata": null,
        "status": "open",
-       "canBeCancelled": false,
+       "isCancelable": false,
        "expiresAt": "2018-03-12T12:06:35+00:00",
        "details": null,
        "profileId": "pfl_7N5qjbu42V",
