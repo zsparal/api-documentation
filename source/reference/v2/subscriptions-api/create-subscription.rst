@@ -6,7 +6,7 @@ Subscriptions API v2: Create subscription
 
 Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
 
-With subscriptions, you can schedule recurring payments to take place at regular intervals.
+With subscriptions, you can schedule :ref:`recurring payments <guides/recurring>` to take place at regular intervals.
 
 For example, by simply specifying an ``amount`` and an ``interval``, you can create an endless subscription to charge a
 monthly fee, until the consumer cancels their subscription.

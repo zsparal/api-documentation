@@ -143,13 +143,6 @@ Payments
 
 .. toctree::
    :maxdepth: 1
-   :caption: Issuers API
-
-   Get issuer <reference/v1/issuers-api/get-issuer>
-   List issuers <reference/v1/issuers-api/list-issuers>
-
-.. toctree::
-   :maxdepth: 1
    :caption: Refunds API
 
    Create refund <reference/v2/refunds-api/create-refund>
@@ -283,6 +276,13 @@ Deprecated APIs
 
    Get chargeback <reference/v1/methods-api/get-method>
    List chargebacks <reference/v1/methods-api/list-methods>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Issuers API
+
+   Get issuer <reference/v1/issuers-api/get-issuer>
+   List issuers <reference/v1/issuers-api/list-issuers>
 
 .. toctree::
    :maxdepth: 1

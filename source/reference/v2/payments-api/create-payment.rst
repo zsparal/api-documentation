@@ -90,14 +90,14 @@ Parameters
        to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
        customer's card is charged automatically.
 
-       Defaults to ``oneoff``, which is a regular non-recurring payment.
+       Defaults to ``oneoff``, which is a regular non-:ref:`recurring payment <guides/recurring>`.
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
    * - | ``customerId``
        | string
      - Optional – The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
-       used for recurring payments and :ref:`single click payments <guides/checkout>`.
+       used for :ref:`recurring payments <guides/recurring>` and :ref:`single click payments <guides/checkout>`.
 
    * - | ``mandateId``
        | string
