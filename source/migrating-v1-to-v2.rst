@@ -60,7 +60,8 @@ Changes in the Payments API
 The following changes have been made in regards to the status of payments:
 
 * The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
-* If you want to see if a payment has been paid out, it will contain the ``settlementId`` property.
+* The status ``cancelled`` has been renamed to `canceled` (US English spelling).
+* If you want to see if a payment has been settled to your bank account, it will contain the ``settlement`` key in the ``_links`` property.
 * If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
   which will point you to the refunds resource where you can view the refund details.
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``

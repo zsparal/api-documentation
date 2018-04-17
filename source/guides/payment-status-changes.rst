@@ -9,12 +9,14 @@ Depending on what happens payments go through a number of statuses. On this page
 them. Then we will show you how the statuses are connected.
 
 ``open``
-    The payment has been created, but nothing else has happened yet. This is not a status Mollie will call your webhook
-    for.
+    The payment has been created, but nothing else has happened yet. This is not a status Mollie will call your
+    :ref:`webhook <guides/webhooks>` for.
 
-``cancelled``
+``canceled``
     Your customer has canceled the payment. This is a definitive status. Mollie will call your webhook when this status
     is reached.
+
+    .. note:: In the ``v1`` API, this status was misspelled as ``cancelled``. This has been rectified in later versions.
 
 ``pending``
     This is a temporary status that can occur when the actual payment process has been started, but it's not complete
@@ -22,7 +24,9 @@ them. Then we will show you how the statuses are connected.
     status occurs.
 
 ``expired``
-    The payment has expired. For some payment methods like ``banktransfer`` it can take a few days for this status to
+    The payment has expired, e.g. your customer has abandoned the payment.
+
+    For some payment methods like ``banktransfer`` it can take a few days for this status to
     occur. This status is definitive and we will call your webhook when it occurs. How much time it takes for a payment
     to expire depends on the payment method. We explain this in more detail below.
 
@@ -30,7 +34,7 @@ them. Then we will show you how the statuses are connected.
     The payment has failed and cannot be completed with a different payment method.
 
 ``paid``
-    This status occurs whenever a payment is successfully paid. When this status occurs we'll call your webhook.
+    This status occurs whenever a payment is successfully paid. When this status occurs we will call your webhook.
 
 .. note:: In the ``v1`` API, there were statuses for when payments were refunded, charged back, or paid out (settled).
           These statuses have been removed in ``v2``. You can get the same information from other properties on the
