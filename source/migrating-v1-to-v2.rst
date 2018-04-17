@@ -107,6 +107,7 @@ Changes in the Refunds API
 The following fields have been changed, renamed or moved:
 
 * ``amount`` is now mandatory when creating a refund. You must specify both ``amount.currency`` and ``amount.value``.
+* The ``amount`` field is now of the ``amount`` type and contains a ``value`` and a ``currency``.
 * ``payment``, which contained the payment resource related to the refund, is no longer returned. Instead, the payment
   ID is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the
   ``payment`` key in the ``_links`` property.
@@ -121,6 +122,7 @@ Changes in the Chargebacks API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
+* The ``amount`` field is now of the ``amount`` type and contains a ``value`` and a ``currency``.
 * ``chargebackDatetime`` has been renamed to ``createdAt``.
 * ``reversedDatetime`` has been renamed to ``reversedAt``. This field is now only returned if the chargeback is
   reversed.
@@ -153,7 +155,7 @@ The following parameters have been changed or added:
   Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
 
 Changes in the Customers API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
@@ -170,6 +172,19 @@ The following fields have been changed, renamed or moved:
 * ``createdDatetime`` has been renamed to ``createdAt``.
 * ``cancelledDatetime`` has been renamed to ``canceledAt``, and is now only returned when the subscription is canceled.
 * ``webhookUrl`` is now part of the top-level object for Subscriptions.
+
+Changes in the Settlements API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``paidDatetime`` has been renamed to ``paidAt``.
+* The fields ``paymentIds``, ``refundIds`` and ``chargebackIds`` has been removed.
+* All amounts have been changed to the amount type. Note that the ``costs.amount*`` fields can have more decimals than
+  you would expect. The same goes for ``rate.fixed``, which can contain fractional cents.
+* ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
+  ``amountGross``.
+* If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
