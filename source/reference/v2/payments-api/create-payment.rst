@@ -22,9 +22,15 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
-       | amount object
-       .. class:: blah
+   * - ``amount``
+
+       .. container:: type
+
+        object
+
+       .. container:: required
+
+        required
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
        €100.00.
@@ -32,13 +38,21 @@ Parameters
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
-              | string
+          * - ``currency``
+
+              .. container:: type
+
+               string
+
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
               the payment methods that are enabled on your account.
 
-          * - | ``value``
-              | string
+          * - ``value``
+
+              .. container:: type
+
+               string
+
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals. Non-string values are not accepted.
 

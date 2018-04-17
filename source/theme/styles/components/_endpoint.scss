@@ -2,7 +2,7 @@
 
 $border-color: #E6E6E6;
 
-.endpoint {
+.rst-content .endpoint {
   border-radius: 4px;
   background: #FCFCFC;
   font-size: 14px;
@@ -11,23 +11,26 @@ $border-color: #E6E6E6;
   border: 1px solid $border-color;
 }
 
-.endpoint code {
+.rst-content .endpoint code.docutils {
   display: inline-block;
+  background: none;
+  border: none;
+  padding: 0;
 }
 
-.endpoint code span {
+.rst-content .endpoint code span {
   padding: 10px 16px;
   display: inline-block;
 }
 
 // Endpoint method
-.endpoint code:first-child {
+.rst-content .endpoint code:first-child {
   font-weight: bold;
   color: $brand-primary;
   border-right: 1px solid $border-color;
 }
 
 // Endpoint URL
-.endpoint code:last-child {
+.rst-content .endpoint code:last-child {
   font-family: $font-family-monospace;
 }

@@ -76,6 +76,7 @@ a:not([class]):focus {
 
 a.headerlink {
   color: #999999;
+  display: none;
 }
 
 /**
@@ -104,3 +105,4 @@ a.headerlink {
 @import "components/code";
 @import "components/image";
 @import "components/highlight";
+@import "components/search";

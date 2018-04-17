@@ -1,6 +1,6 @@
-@import 'variables';
-@import 'functions/breakpoint';
-@import 'mixins/bare-list';
+@import "variables";
+@import "functions/breakpoint";
+@import "mixins/bare-list";
 $max-navigation-width: 915px;
 
 .main-navigation {
@@ -9,7 +9,6 @@ $max-navigation-width: 915px;
   width: 100%;
   background: #fff;
   font-weight: normal;
-  border-bottom: 1px solid $grey-lighter;
   box-sizing: border-box;
   transition: transform 0.3s;
   will-change: transform;
@@ -17,69 +16,54 @@ $max-navigation-width: 915px;
   position: fixed;
   top: 0;
   left: 0;
-}
-
-.main-navigation.headroom {
-  position: fixed;
-}
-
-.main-navigation.headroom--unpinned {
-  transform: translateY(-100%);
-}
-
-.main-navigation__wrapper--dark .main-navigation {
-  background-color: lighten(#000, 8%);
-  border-color: #222;
-  color: #fff;
+  background: #fcfcfc;
 }
 
 .main-navigation__inner {
-  max-height: $navigation-height;
-}
-
-/**
- * List with items
- */
-.main-navigation__items {
-  @include bare-list;
-  flex: 0 0 100%;
-  position: relative;
   display: flex;
-  justify-content: space-between;
-  max-width: $max-navigation-width;
-  margin: 0 auto;
-  padding: 0 15px;
-
-  @media (min-width: breakpoint('medium')) {
-    justify-content: space-around;
-  }
-
-  @media (min-width: breakpoint('large')) {
-    padding: 0;
-  }
-}
-
-.main-navigation__item {
+  height: 45px;
   align-items: center;
+}
+
+/*
+ * Logo
+ */
+.main-navigation__logo {
   display: flex;
-  height: $navigation-height;
+  align-items: center;
 }
 
-.main-navigation__item:nth-child(4) {
-  @media (max-width: 374px) {
-    display: none;
-  }
+.main-navigation__logo-wrapper {
+  padding-left: 0;
+  display: flex;
+  background: #333;
+  width: 300px;
+  min-width: 300px;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+  position: relative;
 }
 
-.main-navigation__item--mobile {
-  @media (min-width: breakpoint('medium')) {
-    display: none;
-  }
+.main-navigation__logo-wrapper::after {
+  content: "";
+  position: absolute;
+  background: #333;
+  right: 0;
+  width: 100vw;
+  top: 0;
+  height: 100%;
+  z-index: -1;
 }
 
-.main-navigation__item--desktop {
-  @media (max-width: breakpoint('<medium')) {
-    display: none;
+.main-navigation__logo svg {
+  width: 55px;
+  height: 15px;
+  fill: #fff;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 60px;
+    height: 17px;
   }
 }
 
@@ -100,7 +84,7 @@ $max-navigation-width: 915px;
   transition: opacity 0.1s ease;
   outline: 0;
 
-  @media (min-width: breakpoint('medium')) {
+  @media (min-width: breakpoint("medium")) {
     padding: 0 20px;
   }
 }
@@ -110,102 +94,25 @@ $max-navigation-width: 915px;
   opacity: 0.5;
 }
 
-.main-navigation__link.is-active {
-  color: #000;
-  font-weight: bold;
-}
-
-.main-navigation__link--products {
-  outline: none;
-}
-
-.main-navigation__wrapper--dark .main-navigation__link {
-  color: #fff;
-  opacity: 0.7;
-}
-
-.main-navigation__wrapper--dark .main-navigation__link.is-active,
-.main-navigation__wrapper--dark .main-navigation__link:focus,
-.main-navigation__wrapper--dark .main-navigation__link:hover {
-  opacity: 1;
-}
-
-.main-navigation__link--more {
-  height: 100%;
-  padding-right: 0;
-  outline: none;
-  text-indent: -9999px;
-}
-
-.main-navigation__link--more span {
-  height: 1px;
-  width: 14px;
-  box-shadow: inset 0 0 0 1px, 0 -5px, 0 5px;
-  pointer-events: none;
-
-  @media (min-width: breakpoint('medium')) {
-    display: none;
-  }
-}
-
-/*
- * Logo
- */
-.main-navigation__logo {
-  flex: 0 0 auto;
-  padding-left: 0;
-  transition: none;
-}
-
-.main-navigation__logo svg {
-  width: 55px;
-  height: 15px;
-
-  @media (min-width: breakpoint('medium')) {
-    width: 60px;
-    height: 17px;
-  }
-}
-
-.main-navigation__wrapper--dark .main-navigation__logo svg {
-  fill: #fff;
-}
-
-/*
- * Signup
- */
-.main-navigation__signup {
-  color: $brand-primary;
-  font-weight: bold;
-}
-
-.main-navigation__signup:focus,
-.main-navigation__signup:hover,
-.main-navigation__wrapper--dark .main-navigation__signup:focus,
-.main-navigation__wrapper--dark .main-navigation__signup:hover {
-  opacity: 0.8;
-}
-
-.main-navigation__wrapper--dark .main-navigation__signup {
-  opacity: 1;
-  // Cheating and making the blue a little lighter on the black background
-  color: tint($brand-primary, 15%);
-}
-
-.main-navigation__wrapper {
-  z-index: 10;
-  position: absolute;
-  top: 0;
-  height: $navigation-height;
-  width: 100%;
-}
-
-.main-navigation__wrapper--dark.headroom::after {
-  position: static;
+.main-navigation__search-wrapper {
+  height: 45px;
   display: block;
-  height: $navigation-height;
   width: 100%;
-  background-color: #000;
-  content: '';
+  position: relative;
+}
+
+.main-navigation__search-wrapper::after {
+  content: "";
+  border-bottom: 1px solid #e6e6e6;
+  height: 46px;
+  width: 100vw;
+  position: absolute;
+  left: 0;
+  top: 0;
   z-index: -1;
+}
+
+.main-navigation__search-wrapper-inner {
+  width: 580px;
+  margin: 0 auto;
 }

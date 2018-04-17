@@ -21,6 +21,7 @@
 # import sys
 # sys.path.insert(0, os.path.abspath('.'))
 
+import pygments
 
 # -- General configuration ------------------------------------------------
 
@@ -34,7 +35,7 @@
 extensions = []
 
 # Add any paths that contain templates here, relative to this directory.
-templates_path = ['_templates']
+templates_path = ['_templates', 'theme/_templates']
 
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
@@ -43,7 +44,7 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'index'
+master_doc = 'sitemap'
 
 # General information about the project.
 project = 'Mollie API'
@@ -76,7 +77,6 @@ pygments_style = 'sphinx'
 
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
-
 
 # -- Options for HTML output ----------------------------------------------
 
@@ -117,12 +117,10 @@ html_sidebars = {
     ]
 }
 
-
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
 htmlhelp_basename = 'api-documentationdoc'
-
 
 # -- Options for LaTeX output ---------------------------------------------
 
@@ -152,16 +150,12 @@ latex_documents = [
      'Mollie B.V. \\textless{}info@mollie.com\\textgreater{}', 'manual'),
 ]
 
-
 # -- Options for manual page output ---------------------------------------
 
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
-man_pages = [
-    (master_doc, 'api-documentation', 'api-documentation Documentation',
-     [author], 1)
-]
-
+man_pages = [(master_doc, 'api-documentation',
+              'api-documentation Documentation', [author], 1)]
 
 # -- Options for Texinfo output -------------------------------------------
 
@@ -173,8 +167,6 @@ texinfo_documents = [
      author, 'api-documentation', 'One line description of project.',
      'Miscellaneous'),
 ]
-
-
 
 # -- Options for Epub output ----------------------------------------------
 
@@ -196,11 +188,11 @@ epub_copyright = copyright
 # A list of files that should not be packed into the epub file.
 epub_exclude_files = ['search.html']
 
+
 # Add custom CSS overrides of the theme.
 def setup(app):
     # enable Pygments json lexer
     try:
-        import pygments
         if pygments.__version__ >= '1.5':
             # use JSON lexer included in recent versions of Pygments
             from pygments.lexers import JsonLexer
