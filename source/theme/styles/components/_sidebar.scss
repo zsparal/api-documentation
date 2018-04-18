@@ -12,11 +12,10 @@
   content: "";
   position: absolute;
   background: #000;
-  right: 50vw;
   right: 0;
   width: 100vw;
-  top: 0;
-  height: 100%;
+  top: -100px;
+  height: calc(100% + 100px);
   z-index: -1;
 }
 
