@@ -1,11 +1,20 @@
 @import "variables";
 @import "mixins/bare-list";
+@import "functions/breakpoint";
 
 .sidebar {
   background: #000;
   color: #fff;
   position: relative;
-  padding-top: 105px;
+  padding-top: 60px;
+  padding-left: 60px;
+  padding-right: 60px;
+
+  @media (min-width: breakpoint("medium")) {
+    padding-left: 0;
+    padding-right: 0;
+    padding-top: 70px;
+  }
 }
 
 .sidebar::after {
@@ -30,7 +39,11 @@
 .sidebar .caption {
   font-size: 24px;
   font-weight: $font-weight-semibold;
-  margin-bottom: 30px;
+  margin-bottom: 15px;
+
+  @media (min-width: breakpoint('medium')) {
+    margin-bottom: 30px;
+  }
 }
 
 .sidebar ul {

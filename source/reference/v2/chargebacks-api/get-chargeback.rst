@@ -57,11 +57,12 @@ Response
 
           * - | ``currency``
               | string
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+            - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
               | string
-            - A string containing the exact amount that was deducted from the settlement in the given currency.
+            - A string containing the exact amount that was deducted for the chargeback from your account balance in the
+              settlement currency. Note that this will be negative.
 
    * - | ``createdAt``
        | datetime

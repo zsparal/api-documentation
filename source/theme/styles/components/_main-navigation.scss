@@ -1,6 +1,5 @@
 @import "variables";
 @import "functions/breakpoint";
-@import "mixins/bare-list";
 $max-navigation-width: 915px;
 
 .main-navigation {
@@ -17,6 +16,11 @@ $max-navigation-width: 915px;
   top: 0;
   left: 0;
   background: #fcfcfc;
+  width: 200vw;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 100%;
+  }
 }
 
 .main-navigation__inner {
@@ -34,15 +38,21 @@ $max-navigation-width: 915px;
 }
 
 .main-navigation__logo-wrapper {
-  padding-left: 0;
   display: flex;
   background: #333;
-  width: 300px;
-  min-width: 300px;
   height: 100%;
   align-items: center;
-  justify-content: center;
   position: relative;
+  width: 100vw;
+  padding-left: 60px;
+  justify-content: flex-start;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 300px;
+    min-width: 300px;
+    justify-content: center;
+    padding-left: 0;
+  }
 }
 
 .main-navigation__logo-wrapper::after {
@@ -54,6 +64,11 @@ $max-navigation-width: 915px;
   top: 0;
   height: 100%;
   z-index: -1;
+  display: none;
+
+  @media (min-width: breakpoint("medium")) {
+    display: block;
+  }
 }
 
 .main-navigation__logo svg {
@@ -95,10 +110,14 @@ $max-navigation-width: 915px;
 }
 
 .main-navigation__search-wrapper {
-  height: 45px;
+  max-height: 45px;
   display: block;
-  width: 100%;
   position: relative;
+  width: 100vw;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 100%;
+  }
 }
 
 .main-navigation__search-wrapper::after {
@@ -113,6 +132,14 @@ $max-navigation-width: 915px;
 }
 
 .main-navigation__search-wrapper-inner {
-  width: 580px;
+  max-width: 580px;
   margin: 0 auto;
+  padding-left: 30px;
+  padding-right: 30px;
+  display: flex;
+
+  @media (min-width: breakpoint("medium")) {
+    padding-right: 0;
+    padding-left: 0;
+  }
 }

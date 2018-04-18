@@ -10,7 +10,7 @@
 
 <head>
   <meta charset="utf-8"> {{ metatags }}
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> {% block htmltitle %}
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {% block htmltitle %}
   <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
   {% endblock %} {# FAVICON #} {% if favicon %}
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" /> {% endif %} {# CANONICAL URL #} {% if theme_canonical_url %}
@@ -37,7 +37,7 @@
 <body>
 
   {% include 'navigation.html' %} {% block extrabody %} {% endblock %}
-  <div class="l-wrapper">
+  <div class="l-wrapper l-wrapper--fluid">
     <div class="main">
       {# SIDE NAV, TOGGLES ON MOBILE #}
       <nav data-toggle="wy-nav-shift" class="main__sidebar">

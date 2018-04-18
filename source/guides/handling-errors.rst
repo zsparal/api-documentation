@@ -44,7 +44,7 @@ Response
         "method": null,
         "metadata": null,
         "status": "open",
-        "canBeCancelled": false,
+        "isCancelable": false,
         "expiresAt": "2018-03-12T11:11:15+00:00",
         "details": null,
         "profileId": "pfl_7N5qjbu42V",
@@ -186,7 +186,7 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 +---+------------------------------------------------------------------------------------------------------------------+
 |201|Created – The entity was created successfully.                                                                    |
 +---+------------------------------------------------------------------------------------------------------------------+
-|204|No Content – The requested entity was cancelled / deleted successfully.                                           |
+|204|No Content – The requested entity was canceled / deleted successfully.                                            |
 +---+------------------------------------------------------------------------------------------------------------------+
 |400|Bad Request – The Mollie API was unable to understand your request. There might be an error in your syntax.       |
 +---+------------------------------------------------------------------------------------------------------------------+
@@ -199,6 +199,8 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 +---+------------------------------------------------------------------------------------------------------------------+
 |405|Method Not Allowed – You're trying to use an HTTP method that is not applicable on this URL or resource. Refer to |
 |   |the ``Allow`` header to see which methods the endpoint supports.                                                  |
++---+------------------------------------------------------------------------------------------------------------------+
+|410|Gone – You are trying to access an object, which has previously been deleted (only in v2).                        |
 +---+------------------------------------------------------------------------------------------------------------------+
 |415|Unsupported Media Type – Your request's encoding is not supported or is incorrectly understood. Please always use |
 |   |JSON.                                                                                                             |

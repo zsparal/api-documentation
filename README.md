@@ -19,7 +19,8 @@ Password: approved
 
 We take pull requests on our documentation as well, if you think that something can be improved please open a PR. 
 
-The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html).
+The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). All documentation
+should be written in US English. 
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
 some syntax highlighting. 
@@ -30,7 +31,7 @@ If you made any changes, and want to check out if it can be successfully built a
 following steps:
 
 1. Install Sphinx, if you don't have it yet: `pip install -U -r requirements.txt`
-2. Run `make html` to create the HTML files that make up the documentation. 
+2. Run `make` to create the HTML files that make up the documentation. 
 
 ## Support
 

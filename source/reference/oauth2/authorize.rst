@@ -71,7 +71,7 @@ Response
 
    * - | ``error``
        | string
-     - Optional – If the request is cancelled by the merchant, or fails for any other reason, the merchant will be
+     - Optional – If the request is canceled by the merchant, or fails for any other reason, the merchant will be
        redirected back with an ``error`` field. The field will contain a code indicating the type of error.
 
    * - | ``error_description``

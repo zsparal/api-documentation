@@ -1,3 +1,5 @@
+.DEFAULT_GOAL := html
+
 # Minimal makefile for Sphinx documentation
 #
 

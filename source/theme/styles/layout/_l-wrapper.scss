@@ -5,19 +5,26 @@
   padding-left: 25px;
   padding-right: 25px;
 
-  @media (min-width: breakpoint('small')) {
+  @media (min-width: breakpoint("small")) {
     padding-left: 30px;
     padding-right: 30px;
   }
 
-  @media (min-width: breakpoint('medium')) {
+  @media (min-width: breakpoint("medium")) {
     padding-left: 80px;
     padding-right: 80px;
   }
 
-  @media (min-width: breakpoint('large')) {
+  @media (min-width: breakpoint("large")) {
     padding-left: 120px;
     padding-right: 120px;
+  }
+}
+
+@media (max-width: breakpoint("<medium")) {
+  .l-wrapper--fluid {
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 

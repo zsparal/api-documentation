@@ -20,6 +20,8 @@ html {
 *::before,
 *::after {
   box-sizing: inherit;
+  outline-width: thin;
+  outline-color: $brand-primary;
 }
 
 body {
@@ -106,3 +108,4 @@ a.headerlink {
 @import "components/image";
 @import "components/highlight";
 @import "components/searchbox";
+@import "components/hamburger-menu";

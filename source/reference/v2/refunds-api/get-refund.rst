@@ -47,7 +47,7 @@ Response
             - A string containing the exact amount that was refunded in the given currency.
 
    * - | ``settlementAmount``
-       | amount object
+       | amount object|null
      - The amount deducted from the settlement, in the settlement's currency.
 
        .. list-table::
@@ -55,11 +55,15 @@ Response
 
           * - | ``currency``
               | string
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+            - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
               | string
-            - A string containing the exact amount that was deducted from the settlement in the given currency.
+            - A string containing the exact amount that was deducted for the refund from your account balance in the
+              settlement currency. Note that this will be negative.
+
+              If the refund is queued and in a different currency than the settlement currency, the settlement amount
+              will be ``null`` as the exchange rates may change until the refund is finally executed.
 
    * - | ``description``
        | string

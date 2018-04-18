@@ -1,19 +1,46 @@
+@import "functions/breakpoint";
+
 .main {
   display: flex;
   flex-wrap: nowrap;
+  width: 200vw;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 100%;
+  }
 }
 
 .main__sidebar {
-  width: 300px;
+  width: 100vw;
   min-width: 300px;
+  max-height: 100vh;
+  overflow: scroll;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 300px;
+    max-height: none;
+    overflow: visible;
+  }
 }
 
 .main__content {
-  width: 100%;
+  width: 100vw;
+  padding-left: 30px;
+  padding-right: 30px;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 100%;
+    padding-left: 0;
+    padding-right: 0;
+  }
 }
 
 .main__content-inner {
   max-width: 580px;
-  width: 90%;
+  width: 100%;
   margin: 0 auto;
+
+  @media (min-width: breakpoint("medium")) {
+    width: 90%;
+  }
 }

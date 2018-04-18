@@ -7,11 +7,15 @@ Why upgrade to v2?
 ------------------
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments in non-``EUR`` currencies.
+* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments, subscriptions and refunds
+  in non-``EUR`` currencies.
   Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
   amount for various resources.
 * Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
   instead of pagination based on counts and offsets.
+* Settlement details are now available for refunds and chargebacks as well.
+* Improved error messages. Error message will contain more details to help you quickly resolve any implementation
+  problems.
 
 Changes in v2
 -------------
@@ -56,7 +60,8 @@ Changes in the Payments API
 The following changes have been made in regards to the status of payments:
 
 * The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
-* If you want to see if a payment has been paid out, it will contain the ``settlementId`` property.
+* The status ``cancelled`` has been renamed to `canceled` (US English spelling).
+* If you want to see if a payment has been settled to your bank account, it will contain the ``settlement`` key in the ``_links`` property.
 * If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
   which will point you to the refunds resource where you can view the refund details.
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
@@ -64,13 +69,14 @@ The following changes have been made in regards to the status of payments:
 
 The following fields have been changed, renamed or moved:
 
-* ``cancelledDatetime`` has been renamed to ``cancelledAt``.
+* ``cancelledDatetime`` has been renamed to ``canceledAt``.
 * ``createdDatetime`` has been renamed to ``createdAt``.
 * ``expiredDatetime`` has been renamed to ``expiredAt``.
 * ``failedDatetime`` has been renamed to ``failedAt``.
 * ``paidDatetime`` has been renamed to ``paidAt``.
+* ``canBeCancelled`` has been renamed to ``isCancelable``.
 * ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
-  start of a recurring sequence and not a recurring payment) will have the value ``oneoff``.
+  start of a recurring sequence and not a :ref:`recurring payment <guides/recurring>`) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
 * ``failureReason`` has been moved from the Payment resource to the credit card detail object, and is not available
@@ -101,9 +107,12 @@ Changes in the Refunds API
 The following fields have been changed, renamed or moved:
 
 * ``amount`` is now mandatory when creating a refund. You must specify both ``amount.currency`` and ``amount.value``.
+* The ``amount`` field is now of the ``amount`` type and contains a ``value`` and a ``currency``.
 * ``payment``, which contained the payment resource related to the refund, is no longer returned. Instead, the payment
   ID is returned by default, in the ``paymentId`` field. The payment resource can still easily be accessed using the
   ``payment`` key in the ``_links`` property.
+* The resource will contain a link to the settlement if it is settled (via the ``settlement`` key in the ``_links``
+  property.
 
 These new fields have been added:
 
@@ -113,6 +122,7 @@ Changes in the Chargebacks API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
+* The ``amount`` field is now of the ``amount`` type and contains a ``value`` and a ``currency``.
 * ``chargebackDatetime`` has been renamed to ``createdAt``.
 * ``reversedDatetime`` has been renamed to ``reversedAt``. This field is now only returned if the chargeback is
   reversed.
@@ -120,6 +130,8 @@ The following fields have been changed, renamed or moved:
   resource can easily be accessed using the ``payment`` key in the ``_links`` property.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all chargebacks.
+* The resource will contain a link to the settlement if it is settled (via the ``settlement`` key in the ``_links``
+  property.
 
 These new fields have been added:
 
@@ -130,7 +142,7 @@ Changes in the Methods API
 The following fields have been changed, renamed or moved:
 
 * ``amount`` including ``minimum`` and ``maximum`` have been removed.
-* The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``@1x`` and ``@2x``.
+* The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``size1x`` and ``size2x``.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all payment methods.
 
@@ -143,13 +155,41 @@ The following parameters have been changed or added:
   Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
 
 Changes in the Customers API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
 
+Changes in the Subscriptions API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following changes have been made in regards to the status of subscriptions:
+
+* Subscriptions that are canceled can be retrieved from the API, and will not return a HTTP status ``410 Gone``.
+* The ``canceled`` status is changed from British English to American English.
+
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``cancelledDatetime`` has been renamed to ``canceledAt``, and is now only returned when the subscription is canceled.
+* ``webhookUrl`` is now part of the top-level object for Subscriptions.
+
+Changes in the Settlements API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``paidDatetime`` has been renamed to ``paidAt``.
+* The fields ``paymentIds``, ``refundIds`` and ``chargebackIds`` has been removed.
+* All amounts have been changed to the amount type. Note that the ``costs.amount*`` fields can have more decimals than
+  you would expect. The same goes for ``rate.fixed``, which can contain fractional cents.
+* ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
+  ``amountGross``.
+* If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
+
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
+In general, error reporting has been improved to help you resolve any implementation errors as fast as possible.
+
 The HAL specification has been adopted for error reporting as well. The difference between ``v1`` and ``v2`` is best
 explained using an example.
 

@@ -124,8 +124,8 @@ Response
                     "id": "ideal",
                     "description": "iDEAL",
                     "image": {
-                        "@1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-                        "@2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
+                        "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
+                        "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
                     },
                     "_links": {
                         "self": {
