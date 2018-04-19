@@ -30,15 +30,14 @@
   <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" /> {%- endif %} {%- if prev %}
   <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" /> {%- endif %} {%- endblock %} {%- block extrahead %} {% endblock %} {# Keep modernizr in head - http://modernizr.com/docs/#installing
   #}
-  <script src="{{ pathto('_static/js/modernizr.min.js', 1) }}"></script>
 
 </head>
 
 <body>
 
   {% include 'navigation.html' %} {% block extrabody %} {% endblock %}
-  <div class="l-wrapper l-wrapper--fluid">
-    <div class="main">
+  <div class="l-wrapper l-wrapper--fluid main">
+    <div class="main__inner">
       {# SIDE NAV, TOGGLES ON MOBILE #}
       <nav data-toggle="wy-nav-shift" class="main__sidebar">
         <div class="sidebar">
@@ -99,26 +98,9 @@
       </section>
       </div>
     </div>
-    {% include "versions.html" %} {% if not embedded %} {% include "footer.html" %}
+    {% include "versions.html" %} {% include "footer.html" %}
 
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT: '{{ url_root }}',
-        VERSION: '{{ release|e }}',
-        LANGUAGE: '{{ language }}',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
-        HAS_SOURCE: {{ has_source| lower }},
-      SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
-        };
-    </script> {%- for scriptfile in script_files %}
-    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script> {%- endfor %} {% endif %} {# RTD hosts this file, so just load on non RTD builds #} {% if not READTHEDOCS %}
-    <script type="text/javascript" src="{{ pathto('_static/js/theme.js', 1) }}"></script> {% endif %} {%- block footer %} {% endblock %}
-
-    <script type="text/javascript">
-      jQuery(function () {
-        SphinxRtdTheme.StickyNav.enable()
-      });
+    <script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}">
     </script>
 
 </body>
