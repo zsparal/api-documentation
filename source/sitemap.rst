@@ -1,9 +1,9 @@
 Overview
 ========
 .. toctree::
-   :hidden:
+   :caption: Mollie API
 
-   Mollie API <index>
+   Overview <index>
    security
    migrating-v1-to-v2
 
