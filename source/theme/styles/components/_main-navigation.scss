@@ -53,7 +53,8 @@ $max-navigation-width: 915px;
   height: 15px;
   line-height: 1;
   right: -50px;
-  top: 2px;
+  top: 50%;
+  transform: translateY(-50%);
 }
 
 .main-navigation__logo-wrapper {
@@ -134,12 +135,13 @@ $max-navigation-width: 915px;
 
 .main-navigation__search-wrapper {
   max-height: 45px;
-  display: block;
   position: relative;
   width: 100vw;
+  display: none;
 
   @media (min-width: breakpoint("medium")) {
     width: 100%;
+    display: block;
   }
 }
 

@@ -1,0 +1,49 @@
+@import "functions/breakpoint";
+
+.mobile-navigation {
+  background: #000;
+  position: fixed;
+  right: 0;
+  top: 0;
+  height: 87px;
+  width: 100vw;
+  left: 100vw;
+
+  @media (min-width: breakpoint("medium")) {
+    display: none;
+  }
+}
+
+.mobile-navigation__logo-wrapper {
+  display: flex;
+  padding: 0 30px;
+  height: 52px;
+  width: 100%;
+  justify-content: space-between;
+  align-content: center;
+}
+
+.mobile-navigation__logo-wrapper > a {
+  width: 55px;
+}
+
+.mobile-navigation__page-select {
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  font-size: 16px;
+  color: #fff;
+  background: #000;
+  border-radius: 3px;
+  height: 30px;
+  width: calc(100% - 150px);
+  margin-top: 10px;
+}
+
+.mobile-navigation__search {
+  background: #fcfcfc;
+  border-bottom: 1px solid #e6e6e6;
+  display: block;
+  width: 100%;
+  position: relative;
+  top: 0;
+  padding: 0 30px;
+}
