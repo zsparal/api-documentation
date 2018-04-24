@@ -50,8 +50,8 @@ Response
 
    * - | ``count``
        | integer
-     - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+     - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
+       or the default number.
 
    * - | ``_embedded``
        | object
@@ -66,8 +66,8 @@ Response
 
    * - | ``_links``
        | object
-     - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a ``type``
-       field.
+     - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto

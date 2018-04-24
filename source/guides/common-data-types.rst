@@ -56,9 +56,10 @@ In the v2 endpoints, an address object is always represented as follows.
 
 When providing an address object as parameter to a request, the following conditions must be met:
 
-* If any of the fields is provided, all fields have to be provided, with exception of the ``region`` field.
-* If only the ``region`` field is given, one should provide all the other fields, per the previous condition.
-* In the case of certain PayPal payments, the ``region`` field is required, please see the :ref:`Create payment documentation <v2/payments-create>`.
+* If any of the fields is provided, all fields have to be provided with exception of the ``region`` field.
+* If only the ``region`` field is given, one should provide all the other fields as per the previous condition.
+* For certain PayPal payments the ``region`` field is required. Please see the
+  :ref:`Create payment documentation <v2/payments-create>` for more information.
 
 Boolean
 -------

@@ -121,7 +121,7 @@ Overview
    Overview <oauth/overview>
    Getting started <oauth/getting-started>
    Permissions <oauth/permissions>
-   oauth/applicationfees
+   Application fees <oauth/application-fees>
 
 Payments
 ========
