@@ -169,3 +169,18 @@ $max-navigation-width: 915px;
     padding-left: 0;
   }
 }
+
+@media (max-width: breakpoint("<medium")) {
+  .main-navigation__search-wrapper::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: transparent;
+    pointer-events: none;
+    z-index: 1;
+    transition: 200ms background ease-in-out;
+  }
+}

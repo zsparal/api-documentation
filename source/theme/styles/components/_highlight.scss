@@ -25,10 +25,13 @@
   background: #fff;
 }
 
+.rst-content .highlighttable pre {
+  min-height: 0;
+}
+
 .rst-content .highlight pre {
   font-family: $font-family-monospace;
   color: #999999;
-  min-height: 0;
 }
 
 .rst-content .highlight .kc,

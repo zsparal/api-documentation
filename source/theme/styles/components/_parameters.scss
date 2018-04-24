@@ -1,4 +1,5 @@
-@import 'variables';
+@import "variables";
+@import "functions/breakpoint";
 
 .rst-content dl.docutils dd {
   padding-bottom: 30px;
@@ -56,25 +57,48 @@
   margin-top: 8px;
 }
 
-.rst-content table.docutils tbody tr td:first-child .type {
-  color: #999999;
-  font-family: $font-family-monospace;
-  font-size: 12px;
-  font-weight: normal;
-}
+@media (max-width: breakpoint("<medium")) {
+  .rst-content .section table.docutils {
+    display: flex;
+  }
 
-.rst-content table.docutils tbody tr td:first-child .required,
-.rst-content table.docutils tbody tr td:first-child .optional, {
-  font-family: $font-family-monospace;
-  font-size: 12px;
-  text-transform: uppercase;
-  font-weight: bold;
-}
+  .rst-content .section table.docutils tbody {
+    display: flex;
+    flex-direction: column;
+  }
 
-.rst-content table.docutils tbody tr td:first-child .required {
-  color: #7373FF;
-}
+  .rst-content .section table.docutils tbody tr {
+    display: flex;
+    flex-direction: column;
+  }
 
-.rst-content table.docutils tbody tr td:first-child .optional {
-  color: #E0994C;
+  .rst-content .section table.docutils tbody tr td {
+    padding: 0;
+  }
+
+  .rst-content .section table.docutils tbody tr td:last-child {
+    border-top: 0;
+    padding-bottom: 30px;
+  }
+
+  .rst-content .section table.docutils tbody tr td:first-child {
+    max-width: 100%;
+    text-align: left;
+    padding-top: 30px;
+    display: flex;
+    padding-right: 0;
+    padding-bottom: 25px;
+  }
+
+  .rst-content .section table.docutils tbody tr td:first-child p.first {
+    width: auto;
+  }
+
+  .rst-content .section table.docutils tbody tr td:first-child > .type {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    margin-top: 0;
+    margin-left: 10px;
+  }
 }

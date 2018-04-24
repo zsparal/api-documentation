@@ -3,13 +3,13 @@
 Payments API v2: Create payment
 ===============================
 
-.. container:: endpoint
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/payments
 
-  ``POST`` ``https://api.mollie.com/v2/payments``
-
-.. container:: authentication
-
-  Authentication: :ref:`API keys <guides/authentication>` :ref:`OAuth access tokens <oauth/overview>`
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
 parameters are accepted for certain payment methods.
@@ -24,13 +24,8 @@ Parameters
 
    * - ``amount``
 
-       .. container:: type
-
-        object
-
-       .. container:: required
-
-        required
+       .. type:: object
+          :required: true
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
        €100.00.
@@ -40,31 +35,24 @@ Parameters
 
           * - ``currency``
 
-              .. container:: type
-
-               string
+              .. type:: string
+                 :required: true
 
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
               the payment methods that are enabled on your account.
 
           * - ``value``
 
-              .. container:: type
-
-               string
+              .. type:: string
+                 :required: true
 
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals. Non-string values are not accepted.
 
    * - ``description``
 
-       .. container:: type
-
-        string
-
-       .. container:: optional
-
-        optional
+       .. type:: string
+          :required: true
 
      - The description of the payment you're creating. This will be shown to the consumer on their card or bank
        statement when possible, and in any exports you generate.
@@ -73,13 +61,19 @@ Parameters
        useful for bookkeeping.
 
    * - | ``redirectUrl``
-       | string
+
+       .. type:: string
+          :required: true
+
      - `The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
    * - | ``webhookUrl``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Set the webhook URL, where we will send payment status updates to.
 
        .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
@@ -88,8 +82,11 @@ Parameters
           delivered to your local machine.
 
    * - | ``locale``
-       | string
-     - Optional – Allow you to preset the language to be used in the payment screens shown to the consumer. Setting a
+
+       .. type:: string
+          :required: false
+
+     - Allow you to preset the language to be used in the payment screens shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
        browser language will be used instead if supported by the payment method. You can provide any ISO 15897 locale,
        but our payment screen currently only support the following languages:
@@ -97,8 +94,11 @@ Parameters
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
    * - | ``method``
-       | string
-     - Optional – Normally, a payment method selection screen is shown. However, when using this parameter, your
+
+       .. type:: string
+          :required: false
+
+     - Normally, a payment method selection screen is shown. However, when using this parameter, your
        customer will skip the selection screen and will be sent directly to the chosen payment method. The parameter
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
@@ -107,14 +107,20 @@ Parameters
        ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
-       | mixed
-     - Optional – Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
        payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
    * - | ``sequenceType``
-       | string
-     - Optional – Indicate which type of payment this is in a recurring sequence. If set to ``first``, a
+
+       .. type:: string
+          :required: false
+
+     - Indicate which type of payment this is in a recurring sequence. If set to ``first``, a
        :ref:`first payment <guides/recurring/first-payment>` is created for the customer, allowing the customer to agree
        to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
        customer's card is charged automatically.
@@ -124,13 +130,19 @@ Parameters
        Possible values: ``oneoff`` ``first`` ``recurring``
 
    * - | ``customerId``
-       | string
-     - Optional – The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
+
+       .. type:: string
+          :required: false
+
+     - The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
        used for :ref:`recurring payments <guides/recurring>` and :ref:`single click payments <guides/checkout>`.
 
    * - | ``mandateId``
-       | string
-     - Optional – When creating recurring payments, the ID of a specific :ref:`Mandate <v1/mandates-create>` may be
+
+       .. type:: string
+          :required: false
+
+     - When creating recurring payments, the ID of a specific :ref:`Mandate <v1/mandates-create>` may be
        supplied to indicate which of the consumer's accounts should be credited.
 
 Payment method specific parameters

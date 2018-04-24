@@ -86,6 +86,19 @@ body.mobile-menu-opened .main__sidebar {
   transform: translateX(calc(100vw - 40px));
 }
 
+body.mobile-menu-opened .main__content::before,
+body.mobile-menu-opened .main-navigation__search-wrapper::before {
+  background: #fff;
+}
+
+/**
+* Main content wrapper
+*/
+[role="main"].document {
+  max-width: 100%;
+  overflow: hidden;
+}
+
 /**
  * Typography
  */
@@ -116,3 +129,4 @@ body.mobile-menu-opened .main__sidebar {
 @import "components/hamburger-menu";
 @import "components/note";
 @import "components/github-link";
+@import "components/type";

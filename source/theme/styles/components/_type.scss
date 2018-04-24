@@ -1,0 +1,21 @@
+.type {
+    color: #999999;
+    font-family: $font-family-monospace;
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.type .condition {
+    font-family: $font-family-monospace;
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+.type.required .condition {
+    color: #7373FF;
+}
+
+.type.optional .condition {
+  color: #E0994C;
+}

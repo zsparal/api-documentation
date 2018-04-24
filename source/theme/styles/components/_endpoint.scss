@@ -1,36 +1,59 @@
-@import 'variables';
+@import "variables";
+@import "functions/breakpoint";
 
-$border-color: #E6E6E6;
+$border-color: #e6e6e6;
 
 .rst-content .endpoint {
-  border-radius: 4px;
-  background: #FCFCFC;
-  font-size: 14px;
-  display: inline-block;
-  margin: 0 0 15px;
-  border: 1px solid $border-color;
+    border-radius: 4px;
+    background: #fcfcfc;
+    font-size: 14px;
+    display: inline-block;
+    margin: 0 0 15px;
+    border: 1px solid $border-color;
+    max-width: 100%;
+    white-space: nowrap;
+    height: 45px;
+    overflow: hidden;
 }
 
 .rst-content .endpoint code.docutils {
-  display: inline-block;
-  background: none;
-  border: none;
-  padding: 0;
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
 }
 
 .rst-content .endpoint code span {
-  padding: 10px 16px;
-  display: inline-block;
+    padding: 10px 16px;
+    display: inline-block;
+}
+
+.rst-content .endpoint code {
+    margin: 0;
 }
 
 // Endpoint method
-.rst-content .endpoint code:first-child {
-  font-weight: bold;
-  color: $brand-primary;
-  border-right: 1px solid $border-color;
+.rst-content .endpoint .method {
+    font-weight: bold;
+    color: $brand-primary;
+}
+
+.rst-content .endpoint .method span {
+    border-right: 1px solid $border-color;
 }
 
 // Endpoint URL
-.rst-content .endpoint code:last-child {
-  font-family: $font-family-monospace;
+.rst-content .endpoint .url {
+    font-family: $font-family-monospace;
+}
+
+.rst-content .endpoint .url span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 90%;
+
+  @media (min-width: breakpoint('medium')) {
+    max-width: 100%;
+  }
 }
