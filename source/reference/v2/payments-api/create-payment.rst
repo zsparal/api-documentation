@@ -74,8 +74,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal``
-       ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
+       ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
        | mixed

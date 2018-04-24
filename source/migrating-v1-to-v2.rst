@@ -24,6 +24,9 @@ resources while working with the API.
 
 Several fields have changed too to support new features or to clear up confusing aspects of the ``v1`` API.
 
+The identifier for the payment method *Bancontact* has been renamed from ``mistercash`` to ``bancontact`` in the ``v2``
+API.
+
 Amount changes
 ^^^^^^^^^^^^^^
 All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example:

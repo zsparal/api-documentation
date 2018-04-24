@@ -70,7 +70,7 @@ periodically through *subscriptions*.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our Checkout. The following payment methods support a first payment and are
-          thus allowed as a value for the ``method`` parameter of a first payment: ``mistercash`` ``belfius``
+          thus allowed as a value for the ``method`` parameter of a first payment: ``bancontact`` ``belfius``
           ``creditcard`` ``ideal`` ``inghomepay`` ``kbc`` ``sofort``
 
 .. _guides/recurring/charging-on-demand:
