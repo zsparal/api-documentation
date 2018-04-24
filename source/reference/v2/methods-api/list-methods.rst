@@ -130,7 +130,7 @@ Response
                     "_links": {
                         "self": {
                             "href": "https://api.mollie.com/v2/methods/ideal",
-                            "type": "application/json"
+                            "type": "application/hal+json"
                         }
                     }
                },

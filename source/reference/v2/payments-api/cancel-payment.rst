@@ -65,7 +65,7 @@ Response
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
-               "type": "application/json"
+               "type": "application/hal+json"
            },
            "documentation": {
                "href": "https://www.mollie.com/en/docs/reference/payments/delete",

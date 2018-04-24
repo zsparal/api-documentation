@@ -17,7 +17,7 @@ Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto

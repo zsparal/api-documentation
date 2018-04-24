@@ -26,7 +26,7 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
@@ -128,7 +128,7 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json
+   Content-Type: application/hal+json
 
    {
        "resource": "subscription",
