@@ -85,7 +85,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
            "streetAndNumber": "Dorpstraat 1",
            "postalCode": "1122 AA",
            "city": "Amsterdam",
-           "region": "Noord",
+           "region": "Noord-Holland",
            "country": "NL",
        }
    }
