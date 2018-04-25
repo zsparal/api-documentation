@@ -27,6 +27,7 @@
   },
   "dependencies": {
     "client": "0.0.1",
+    "headroom.js": "^0.9.4",
     "sticky-sidebar": "^3.3.1"
   }
 }

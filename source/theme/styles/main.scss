@@ -96,7 +96,6 @@ body.mobile-menu-opened .main-navigation__search-wrapper::before {
 */
 [role="main"].document {
   max-width: 100%;
-  overflow: hidden;
 }
 
 /**
@@ -114,6 +113,11 @@ body.mobile-menu-opened .main-navigation__search-wrapper::before {
 * Components
 */
 @import "components/main-navigation";
+@import "components/sub-navigation";
+@import "components/sub-navigation-item";
+@import "components/mobile-navigation";
+@import "components/products-navigation";
+@import "components/products-navigation-items";
 @import "components/footer";
 @import "components/main";
 @import "components/sidebar";
@@ -130,4 +134,3 @@ body.mobile-menu-opened .main-navigation__search-wrapper::before {
 @import "components/github-link";
 @import "components/type";
 @import "components/figure";
-@import "components/mobile-navigation";

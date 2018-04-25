@@ -2,14 +2,14 @@
     color: #999999;
     font-family: $font-family-monospace;
     font-size: 12px;
-    font-weight: normal;
+    font-weight: 500;
 }
 
 .type .condition {
     font-family: $font-family-monospace;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 600;
 }
 
 .type.required .condition {

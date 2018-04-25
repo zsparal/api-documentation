@@ -1,0 +1,63 @@
+@import "variables";
+@import "functions/breakpoint";
+
+.sub-navigation-item__link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 70px;
+  justify-content: space-between;
+}
+
+.sub-navigation-item__text {
+  font-size: 14px;
+  color: #000;
+  opacity: 1;
+  transition: opacity 0.1s 0.05s ease;
+}
+
+.sub-navigation-item__icon {
+  transform: translateY(14px);
+  transition: transform 0.1s 0s ease;
+}
+
+.sub-navigation-item__path {
+  transition: fill 0.1s ease;
+}
+
+.sub-navigation-item--active .sub-navigation-item__path {
+  fill: $brand-primary;
+}
+
+.sub-navigation-item--active .sub-navigation-item__text {
+  color: $brand-primary;
+  font-weight: bold;
+}
+
+.sub-navigation-item__link:hover .sub-navigation-item__text {
+  color: #777777;
+}
+
+.sub-navigation-item__link:hover .sub-navigation-item__path {
+  fill: #777777;
+}
+
+.sub-navigation-item--small .sub-navigation-item__text {
+  opacity: 0;
+  transition: opacity 0.1s 0s ease;
+}
+
+.sub-navigation-item--small .sub-navigation-item__icon {
+  transform: translateY(48px);
+  transition: transform 0.1s 0.05s ease;
+}
+
+.sub-navigation:hover .sub-navigation-item__icon {
+  transform: translateY(14px);
+  transition: transform 0.1s 0s ease;
+}
+
+.sub-navigation:hover .sub-navigation-item__text {
+  opacity: 1;
+  transition: opacity 0.1s 0.05s ease;
+}

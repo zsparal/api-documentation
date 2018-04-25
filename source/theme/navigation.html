@@ -1,46 +1,198 @@
-<nav class="main-navigation">
-  <div class="l-wrapper l-wrapper--fluid">
-    <div class="main-navigation__inner">
-      <div class="main-navigation__logo-wrapper">
-        {% include 'logo.html' %}
-      </div>
-      <div class="mobile-navigation">
-        <div class="mobile-navigation__logo-wrapper">
-          {% include 'logo.html' %}
-          <select class="mobile-navigation__page-select">
-            <option>Overview</option>
-          </select>
+<div class="main-navigation__wrapper">
+  <nav class="main-navigation js-main-navigation headroom headroom--top headroom--not-bottom" data-enhancer="nav-logged-in sub-navigation"
+    data-dashboard-url="https://www.mollie.com/dashboard/">
+    <ul class="main-navigation__items">
+      <li class="main-navigation__item">
+        <a class="main-navigation__link main-navigation__logo is-active" href="https://mollie.com/en/">
+          <svg viewBox="0 0 69 20">
+            <title>Mollie</title>
+            <g stroke="none" fill-rule="evenodd">
+              <path d="M29.1397289,17.2784173 C26.9697185,17.2784173 25.2105422,15.5194245 25.2105422,13.3496403 C25.2105422,11.1798561 26.9697185,9.42086331 29.1397289,9.42086331 C31.3097393,9.42086331 33.0689155,11.1798561 33.0689155,13.3496403 C33.0689155,15.5194245 31.3097393,17.2784173 29.1397289,17.2784173 L29.1397289,17.2784173 Z M29.1397289,6.71366906 C25.4745985,6.71366906 22.5030657,9.68489209 22.5030657,13.3496403 C22.5030657,17.0143885 25.4745985,19.9856115 29.1397289,19.9856115 C32.8048592,19.9856115 35.7763921,17.0143885 35.7763921,13.3496403 C35.7763921,9.68489209 32.8048592,6.71366906 29.1397289,6.71366906 L29.1397289,6.71366906 Z"></path>
+              <path d="M54.0344108,1.87052518 C54.0344108,2.90354676 53.1968415,3.74102878 52.1637122,3.74102878 C51.1305829,3.74102878 50.2930136,2.90354676 50.2930136,1.87052518 C50.2930136,0.837503597 51.1305829,2.15827338e-05 52.1637122,2.15827338e-05 C53.1968415,2.15827338e-05 54.0344108,0.837503597 54.0344108,1.87052518"></path>
+              <path d="M20.2179353,12.5127266 L20.2179353,19.7020791 L17.4838373,19.7020791 L17.4838373,12.4164676 C17.4731168,10.7792734 16.1292357,9.4367554 14.488561,9.42236691 C12.8119114,9.40761871 11.4400417,10.8216475 11.4400417,12.4982662 L11.4400417,19.7020791 L8.70594369,19.7020791 L8.70594369,12.4358921 C8.69522315,10.7907122 7.35724192,9.44704317 5.71750261,9.43171942 C4.03703962,9.41596403 2.66214807,10.8326547 2.66214807,12.5130144 L2.66214807,19.7020791 L0,19.7020791 L0,12.4164676 C0,9.2567554 2.55997914,6.70064029 5.72074035,6.70064029 C7.47272158,6.70064029 9.04036705,7.49416547 10.0908363,8.73445324 C10.0922753,8.73589209 10.0893973,8.73589209 10.0908363,8.73445324 C11.1744025,7.45215108 12.8245746,6.64596403 14.6454838,6.69797842 C17.7623556,6.78711511 20.2179353,9.39495683 20.2179353,12.5127266"></path>
+              <polygon points="38.1334724 19.7122302 40.8675704 19.7122302 40.8675704 0.327194245 38.1334724 0.327194245"></polygon>
+              <polygon points="44.4650678 19.7122302 47.1991658 19.7122302 47.1991658 0.327194245 44.4650678 0.327194245"></polygon>
+              <polygon points="50.7966632 19.7018705 53.5307612 19.7018705 53.5307612 7.04 50.7966632 7.04"></polygon>
+              <path d="M62.6059304,9.13030216 C64.4233861,9.13030216 65.942969,10.4051223 66.3199868,12.1087194 L58.8918741,12.1087194 C59.2688919,10.4051223 60.7884748,9.13030216 62.6059304,9.13030216 M62.6573027,6.69634532 C59.0593017,6.74296403 56.153675,9.65310791 56.1112965,13.2518129 C56.0679106,16.9270647 59.0683674,19.9653381 62.7442182,19.9677122 C65.1736802,19.969295 67.298506,18.665482 68.4561088,16.7196547 C68.4577636,16.7169209 68.4566844,16.7132518 68.4537344,16.7118129 L66.239115,15.6216691 C65.537603,16.7828201 64.2635133,17.5590791 62.8079659,17.5590791 C60.8394153,17.5590791 59.2026979,16.1389353 58.8659722,14.2669928 L68.9999784,14.2669928 L68.9999784,13.0353381 C68.9999784,9.54720863 66.1455081,6.65109353 62.6573027,6.69634532"></path>
+            </g>
+          </svg>
+        </a>
+      </li>
+      <li class="main-navigation__item">
+        <a class="main-navigation__link main-navigation__link--products js-products-trigger" data-handler="toggle-class" data-target=".js-products-trigger, .js-products-navigation"
+          data-toggle-class="has-products-visible" href="https://mollie.com/en/payments">Products</a>
+      </li>
+      <li class="main-navigation__item">
+        <a class="main-navigation__link" href="https://mollie.com/en/pricing/">Pricing</a>
+      </li>
+      <li class="main-navigation__item">
+        <a class="main-navigation__link" href="https://mollie.com/en/enterprise/">Enterprise</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--desktop">
+        <a class="main-navigation__link is-active is-active" href="https://mollie.com/en/developers">Developers</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--desktop">
+        <a class="main-navigation__link" href="https://mollie.com/en/support">Support</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--desktop js-login-nav-item">
+        <a class="main-navigation__link" href="https://mollie.com/en/login">Log in</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--desktop">
+        <a class="main-navigation__link main-navigation__signup js-signup-nav-link is-dashboard" href="https://www.mollie.com/en/signup/">Sign up</a>
+      </li>
+      <li class="main-navigation__item main-navigation__item--mobile">
+        <a href="#mobile-navigation" class="main-navigation__link main-navigation__link--more" data-handler="show-mobile-nav">More
+          <span></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <div class="products-navigation js-products-navigation" data-enhancer="products-navigation">
+    <div class="products-navigation-items products-navigation-items--has-border">
+      <a class="products-navigation-items__link" href="/en/payments">
+        <div class="products-navigation-items__inner">
+          <figure class="products-navigation-items__logo">
+            <img src="//images.ctfassets.net/k4kk06v59kf0/5VYUiGuuPYO8Q0S82WMeM0/b6dd6372ee5c39261382019f3a4853f7/icon-payments.svg"
+              alt="">
+          </figure>
+          <div class="products-navigation-items__text">
+            <p class="products-navigation-items__heading">Payments</p>
+            <p class="products-navigation-items__subtitle">Accept payments online.</p>
+          </div>
         </div>
-        <div class="mobile-navigation__search">
-          {% include 'searchbox.html' %}
+      </a>
+      <a class="products-navigation-items__link" href="/en/recurring">
+        <div class="products-navigation-items__inner">
+          <figure class="products-navigation-items__logo">
+            <img src="//images.ctfassets.net/k4kk06v59kf0/5jOkarx2wwAsIukEu8AOaa/584b4d86c376b996ec85a1f508522d9c/icon-product-recurring.svg"
+              alt="">
+          </figure>
+          <div class="products-navigation-items__text">
+            <p class="products-navigation-items__heading">Recurring</p>
+            <p class="products-navigation-items__subtitle">Collect recurring payments.</p>
+          </div>
         </div>
-      </div>
-      <div class="main-navigation__search-wrapper">
-        <div role="search" class="main-navigation__search-wrapper-inner">
-          {% include 'searchbox.html' %}
-        </div>
-      </div>
+      </a>
     </div>
   </div>
+  <div id="mobile-navigation" class="mobile-navigation is-hidden js-mobile-navigation" aria-hidden="true" data-enhancer="nav-logged-in"
+    data-dashboard-url="https://www.mollie.com/dashboard/">
+    <a href="#close-navigation" class="mobile-navigation__hide" data-handler="hide-mobile-nav">Hide</a>
+    <div class="products-navigation-items products-navigation-items--small mobile-navigation__products">
+      <a class="products-navigation-items__link" href="/en/payments">
+        <div class="products-navigation-items__inner">
+          <figure class="products-navigation-items__logo">
+            <img src="//images.ctfassets.net/k4kk06v59kf0/5VYUiGuuPYO8Q0S82WMeM0/b6dd6372ee5c39261382019f3a4853f7/icon-payments.svg"
+              alt="">
+          </figure>
+          <div class="products-navigation-items__text">
+            <p class="products-navigation-items__heading">Payments</p>
+            <p class="products-navigation-items__subtitle">Accept payments online.</p>
+          </div>
+        </div>
+      </a>
+      <a class="products-navigation-items__link" href="/en/recurring">
+        <div class="products-navigation-items__inner">
+          <figure class="products-navigation-items__logo">
+            <img src="//images.ctfassets.net/k4kk06v59kf0/5jOkarx2wwAsIukEu8AOaa/584b4d86c376b996ec85a1f508522d9c/icon-product-recurring.svg"
+              alt="">
+          </figure>
+          <div class="products-navigation-items__text">
+            <p class="products-navigation-items__heading">Recurring</p>
+            <p class="products-navigation-items__subtitle">Collect recurring payments.</p>
+          </div>
+        </div>
+      </a>
+    </div>
+    <ul class="mobile-navigation__links">
+      <li class="mobile-navigation__link">
+        <a href="/en/pricing/">Pricing</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/features">Features</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/enterprise/">Enterprise</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/developers" class="is-active">Developers</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/support">Help Center</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/about">About</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="https://blog.mollie.com/">Blog</a>
+      </li>
+      <li class="mobile-navigation__link">
+        <a href="/en/contact/">Contact</a>
+      </li>
+    </ul>
+    <div class="mobile-navigation__buttons">
+      <a class="button button--theme-light button--outline button--small mobile-navigation__button js-login-nav-item" href="/en/login"
+        style="display: none;">Log in</a>
+      <a class="button button--small mobile-navigation__button js-signup-nav-link is-dashboard" href="https://www.mollie.com/dashboard/">Dashboard</a>
+    </div>
   </div>
-  <div class="github-link">
-    <svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
-      class="github-link__icon">
-      <g id="Design" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="Desktop:-huge" transform="translate(-2431.000000, -19.000000)" fill="#999999" fill-rule="nonzero">
-          <g id="Group-24" transform="translate(551.000000, 0.000000)">
-            <g id="search" transform="translate(1880.000000, 19.000000)">
-              <g id="Group-22">
-                <path d="M8,0 C3.58266667,0 0,3.67255409 0,8.20224252 C0,11.8262667 2.292,14.9007406 5.47133333,15.9854872 C5.87066667,16.0613579 6,15.8070884 6,15.591096 L6,14.0641118 C3.77466667,14.5603475 3.31133333,13.0962472 3.31133333,13.0962472 C2.94733333,12.1482047 2.42266667,11.8959857 2.42266667,11.8959857 C1.69666667,11.3867632 2.478,11.3976995 2.478,11.3976995 C3.28133333,11.4551152 3.704,12.243214 3.704,12.243214 C4.41733333,13.4967901 5.57533333,13.1345244 6.032,12.9246837 C6.10333333,12.3949555 6.31066667,12.0326898 6.54,11.8283172 C4.76333333,11.6198436 2.89533333,10.9165013 2.89533333,7.77435887 C2.89533333,6.87826388 3.208,6.14689725 3.71933333,5.57274027 C3.63666667,5.36563365 3.36266667,4.53105547 3.79733333,3.40188009 C3.79733333,3.40188009 4.46933333,3.18178658 5.998,4.24260995 C6.636,4.06079357 7.32,3.96988538 8,3.96646778 C8.68,3.96988538 9.36466667,4.06079357 10.004,4.24260995 C11.5313333,3.18178658 12.202,3.40188009 12.202,3.40188009 C12.6373333,4.53173899 12.3633333,5.36631717 12.2806667,5.57274027 C12.794,6.14689725 13.104,6.8789474 13.104,7.77435887 C13.104,10.9247035 11.2326667,11.6184765 9.45133333,11.821482 C9.738,12.0757516 10,12.5747213 10,13.3402639 L10,15.591096 C10,15.8091389 10.128,16.065459 10.534,15.9848036 C13.7106667,14.89869 16,11.8248996 16,8.20224252 C16,3.67255409 12.418,0 8,0 Z"
-                  id="Shape"></path>
-              </g>
-            </g>
-          </g>
-        </g>
-      </g>
-    </svg>
-    <a class="github-link__permalink" href="https://github.com/mollie/api-documentation" target="_blank" rel="nofollow noopener">
-      Edit on Github
-    </a>
-  </div>
-</nav>
+</div>
+<div class="sub-navigation js-sub-navigation">
+  <ul class="sub-navigation__items">
+    <li class="sub-navigation-item sub-navigation__item sub-navigation-item--active js-sub-navigation-item">
+      <a href="/" class="sub-navigation-item__link">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="sub-navigation-item__icon">
+          <path d="m15 23h6c.5522847 0 1-.4477153 1-1v-12.05224174c0-.29993313-.1346268-.58402831-.3667622-.7739573l-9-7.36363637c-.3683659-.30139027-.8981097-.30139027-1.2664756 0l-8.99999999 7.36363637c-.23213543.18992899-.36676221.47402417-.36676221.7739573v12.05224174c0 .5522847.44771525 1 1 1h6v-8c0-1.1045695.8954305-2 2-2h2c1.1045695 0 2 .8954305 2 2zm-1 0v-8c0-.5522847-.4477153-1-1-1h-2c-.5522847 0-1 .4477153-1 1v8c0 .5522847-.44771525 1-1 1h-6c-1.1045695 0-2-.8954305-2-2v-12.05224174c0-.59986626.26925355-1.16805662.73352442-1.5479146l8.99999998-7.36363637c.7367318-.60278053 1.7962194-.60278053 2.5329512 0l9 7.36363637c.4642708.37985798.7335244.94804834.7335244 1.5479146v12.05224174c0 1.1045695-.8954305 2-2 2h-6c-.5522847 0-1-.4477153-1-1z"
+            class="sub-navigation-item__path" />
+        </svg>
+        <span class="sub-navigation-item__text">
+          Overview
+        </span>
+      </a>
+    </li>
+    <li class="sub-navigation-item sub-navigation__item js-sub-navigation-item">
+      <a href="/" class="sub-navigation-item__link">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="sub-navigation-item__icon">
+          <path d="m13 17.9450712v6.0549288h-1v-6.5-.5c4.418278 0 8-3.581722 8-8s-3.581722-8-8-8-8 3.581722-8 8h-1c0-4.97056275 4.02943725-9 9-9 4.9705627 0 9 4.02943725 9 9 0 4.6325537-3.5000495 8.4476269-8 8.9450712z"
+            class="sub-navigation-item__path" fill-rule="evenodd" />
+        </svg>
+        <span class="sub-navigation-item__text">
+          Guides
+        </span>
+      </a>
+    </li>
+    <li class="sub-navigation-item sub-navigation__item js-sub-navigation-item">
+      <a href="/" class="sub-navigation-item__link">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="sub-navigation-item__icon">
+          <path d="m21 6h-5v-1-4h-11.4361148c-.66185192 0-.86340448.03892159-1.06913204.1489459-.15165746.0811073-.26469996.1941498-.34580726.34580726-.11002431.20572756-.1489459.40728012-.1489459 1.06913204v18.8722296c0 .6618519.03892159.8634045.1489459 1.069132.0811073.1516575.1941498.2647.34580726.3458073.20572756.1100243.40728012.1489459 1.06913204.1489459h14.8722296c.6618519 0 .8634045-.0389216 1.069132-.1489459.1516575-.0811073.2647-.1941498.3458073-.3458073.1100243-.2057275.1489459-.4072801.1489459-1.069132zm-.4142136-1-3.5857864-3.58578644v3.58578644zm-16.0219012-5h12.4361148l5 5v16.4361148c0 .8915187-.0928256 1.214805-.2671327 1.5407309s-.4300957.5817145-.7560216.7560216-.6492122.2671327-1.5407309.2671327h-14.8722296c-.89151874 0-1.21480498-.0928256-1.5407309-.2671327-.32592593-.1743071-.5817145-.4300957-.7560216-.7560216-.17430709-.3259259-.2671327-.6492122-.2671327-1.5407309v-18.8722296c0-.89151874.09282561-1.21480498.2671327-1.5407309.1743071-.32592593.43009567-.5817145.7560216-.7560216.32592592-.17430709.64921216-.2671327 1.5407309-.2671327z"
+            class="sub-navigation-item__path" />
+        </svg>
+        <span class="sub-navigation-item__text">
+          API Reference
+        </span>
+      </a>
+    </li>
+    <li class="sub-navigation-item sub-navigation__item js-sub-navigation-item">
+      <a href="/" class="sub-navigation-item__link">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="sub-navigation-item__icon">
+          <path d="m12 23v-3h1v3h8.4361148c.6618519 0 .8634045-.0389216 1.069132-.1489459.1516575-.0811073.2647-.1941498.3458073-.3458073.1100243-.2057275.1489459-.4072801.1489459-1.069132v-18.8722296c0-.66185192-.0389216-.86340448-.1489459-1.06913204-.0811073-.15165746-.1941498-.26469996-.3458073-.34580726-.2057275-.11002431-.4072801-.1489459-1.069132-.1489459h-8.4361148v3h-1v-3h-8.4361148c-.66185192 0-.86340448.03892159-1.06913204.1489459-.15165746.0811073-.26469996.1941498-.34580726.34580726-.11002431.20572756-.1489459.40728012-.1489459 1.06913204v18.8722296c0 .6618519.03892159.8634045.1489459 1.069132.0811073.1516575.1941498.2647.34580726.3458073.20572756.1100243.40728012.1489459 1.06913204.1489459zm-8.4361148-23h17.8722296c.8915187 0 1.214805.09282561 1.5407309.2671327.3259259.1743071.5817145.43009567.7560216.7560216.1743071.32592592.2671327.64921216.2671327 1.5407309v18.8722296c0 .8915187-.0928256 1.214805-.2671327 1.5407309s-.4300957.5817145-.7560216.7560216-.6492122.2671327-1.5407309.2671327h-17.8722296c-.89151874 0-1.21480498-.0928256-1.5407309-.2671327-.32592593-.1743071-.5817145-.4300957-.7560216-.7560216-.17430709-.3259259-.2671327-.6492122-.2671327-1.5407309v-18.8722296c0-.89151874.09282561-1.21480498.2671327-1.5407309.1743071-.32592593.43009567-.5817145.7560216-.7560216.32592592-.17430709.64921216-.2671327 1.5407309-.2671327z"
+            class="sub-navigation-item__path" />
+        </svg>
+        <span class="sub-navigation-item__text">
+          Packages
+        </span>
+      </a>
+    </li>
+    <li class="sub-navigation-item sub-navigation__item js-sub-navigation-item">
+      <a href="/" class="sub-navigation-item__link">
+        <svg height="24" viewBox="0 0 24 24" width="24" xmlns="http://www.w3.org/2000/svg" class="sub-navigation-item__icon">
+          <path d="m12 12h6v1h-6-1v-7h1zm0 12c-6.627417 0-12-5.372583-12-12s5.372583-12 12-12 12 5.372583 12 12-5.372583 12-12 12zm0-1c6.0751322 0 11-4.9248678 11-11 0-6.07513225-4.9248678-11-11-11-6.07513225 0-11 4.92486775-11 11 0 6.0751322 4.92486775 11 11 11z"
+            class="sub-navigation-item__path" />
+        </svg>
+        <span class="sub-navigation-item__text">
+          Changelog
+        </span>
+      </a>
+    </li>
+  </ul>
+</div>

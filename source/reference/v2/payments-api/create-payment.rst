@@ -428,7 +428,9 @@ QR codes
 To create a payment with a QR code embedded in the API response, call the API endpoint with an
 include request for ``details.qrCode`` in the query string:
 
-``POST https://api.mollie.com/v2/payments?include=details.qrCode``
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/payments?include=details.qrCode
 
 QR codes can be generated for iDEAL, Bitcoin, Bancontact and bank transfer payments.
 

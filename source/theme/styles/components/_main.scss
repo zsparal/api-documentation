@@ -20,14 +20,14 @@
 
 .main__sidebar {
   width: 100vw;
-  min-width: 300px;
+  min-width: 200px;
   transform: translateX(0);
   position: relative;
   z-index: 3;
   transition: 300ms transform ease-in-out;
 
   @media (min-width: breakpoint("medium")) {
-    width: 300px;
+    width: 200px;
     z-index: auto;
   }
 }
@@ -61,7 +61,7 @@
 }
 
 .main__content-inner {
-  max-width: 580px;
+  max-width: 620px;
   width: 100%;
   margin: 0 auto;
 

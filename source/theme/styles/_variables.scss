@@ -20,7 +20,7 @@ $breakpoints: (
 /**
  * Grid
  */
-$site-width: 1680px;
+$site-width: 1440px;
 $column-width: 25%;
 $gutter-width: 50px;
 $content-width: 940px;
@@ -59,9 +59,9 @@ $font-family-default: "Calibre", sans-serif;
 
 // No max line-length for monospace fonts
 // stylelint-disable-next-line max-line-length
-$font-family-monospace: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+$font-family-monospace: "SFMono", Consolas, "Liberation Mono", Menlo, Courier, monospace;
 
-$default-line-height: 24px;
+$default-line-height: 26px;
 
 $font-weight-light: 300;
 $font-weight-semibold: 800;
