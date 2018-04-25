@@ -89,6 +89,20 @@ Response
                    "createdAt": "2018-03-14T17:00:52.0Z",
                    "reversedAt": null
                    "paymentId": "tr_WDqYK6vllg",
+                   "_links": {
+                       "self": {
+                           "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp",
+                           "type": "application/hal+json"
+                       },
+                       "payment": {
+                           "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
+                           "type": "application/hal+json"
+                       },
+                       "documentation": {
+                           "href": "https://www.mollie.com/en/docs/reference/chargebacks/get",
+                           "type": "text/html"
+                       }
+                   }
                }
                { },
                { }

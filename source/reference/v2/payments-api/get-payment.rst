@@ -245,13 +245,17 @@ Response
               | string
             - The description of the application fee as specified during payment creation.
 
-   * - | ``links``
+   * - | ``_links``
        | object
-     - An object with several URL objects important to the payment process. Every URL object will contain an ``href``
-       and a ``type`` field.
+     - An object with several URL objects relevant to the payment. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the payment itself.
 
           * - | ``checkout``
               | URL object

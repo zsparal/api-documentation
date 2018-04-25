@@ -84,6 +84,22 @@ Response
               | string
             - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
+   * - | ``_links``
+       | object
+     - An object with several URL objects relevant to the payment method. Every URL object will contain an ``href`` and
+       a ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the payment method itself.
+
+          * - | ``documentation``
+              | URL object
+            - The URL to the payment method retrieval endpoint documentation.
+
 Example
 -------
 
@@ -128,87 +144,8 @@ Response
                     "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ASNBNL21.png"
                 }
             },
-            {
-                "resource": "issuer",
-                "id": "ideal_BUNQNL2A",
-                "name": "bunq",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/BUNQNL2A.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/BUNQNL2A.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_INGBNL2A",
-                "name": "ING",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/INGBNL2A.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/INGBNL2A.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_KNABNL2H",
-                "name": "Knab",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/KNABNL2H.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/KNABNL2H.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_MOYONL21",
-                "name": "Moneyou",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/MOYONL21.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/MOYONL21.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_RABONL2U",
-                "name": "Rabobank",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RABONL2U.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RABONL2U.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_RBRBNL21",
-                "name": "RegioBank",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RBRBNL21.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RBRBNL21.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_SNSBNL2A",
-                "name": "SNS Bank",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/SNSBNL2A.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/SNSBNL2A.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_TRIONL2U",
-                "name": "Triodos Bank",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/TRIONL2U.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/TRIONL2U.png"
-                }
-            },
-            {
-                "resource": "issuer",
-                "id": "ideal_FVLBNL22",
-                "name": "van Lanschot",
-                "image": {
-                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/FVLBNL22.png",
-                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/FVLBNL22.png"
-                }
-            }
+            { },
+            { }
         ],
         "_links": {
             "self": {

@@ -91,6 +91,26 @@ Response
      - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
+   * - | ``_links``
+       | object
+     - An object with several URL objects relevant to the refund. Every URL object will contain an ``href`` and a
+       ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the refund itself.
+
+          * - | ``payment``
+              | URL object
+            - The API resource URL of the payment the refund belongs to.
+
+          * - | ``documentation``
+              | URL object
+            - The URL to the refund retrieval endpoint documentation.
+
 Example
 -------
 
