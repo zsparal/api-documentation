@@ -90,8 +90,8 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
        }
    }
 
-**Please note**: the usage of the address object parameters remains optional. Please refer to the
-:ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
+.. note:: The usage of the address object parameters remains optional. Please refer to the
+          :ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
 
 The following fields have been changed, renamed or moved:
 
