@@ -180,6 +180,10 @@ The following parameters have been changed or added:
   methods that support the amount/currency will be returned.
   Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
 
+Changes in the Issuers API
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using the ``issuers`` include.
+
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:

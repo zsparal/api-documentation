@@ -67,7 +67,7 @@ Response
 
    * - | ``description``
        | string
-     - The full name of the payment method.
+     - The full name of the payment method, translated in the optional locale passed.
 
    * - | ``image``
        | image object
@@ -82,7 +82,7 @@ Response
 
           * - | ``size2x``
               | string
-            - The URL for a payment method icon of 110x74 pixels.
+            - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
 Example
 -------
@@ -91,7 +91,7 @@ Request
 ^^^^^^^
 .. code-block:: bash
 
-   curl -X GET https://api.mollie.com/v2/methods/ideal \
+   curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
        -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
@@ -102,21 +102,122 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "resource": "method",
-       "id": "ideal",
-       "description": "iDEAL",
-       "image": {
-           "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-           "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
-       },
-       "_links": {
-           "self": {
-               "href": "https://api.mollie.com/v2/methods/ideal",
-               "type": "application/hal+json"
-           },
-           "documentation": {
-               "href": "https://mollie.com/en/docs/reference/methods/get",
-               "type": "text/html"
-           }
-       }
-   }
+        "resource": "method",
+        "id": "ideal",
+        "description": "iDEAL",
+        "image": {
+            "size1x": "https://www.mollie.com/images/payscreen/methods/ideal.png",
+            "size2x": "https://www.mollie.com/images/payscreen/methods/ideal%402x.png"
+        },
+        "issuers": [
+            {
+                "resource": "issuer",
+                "id": "ideal_ABNANL2A",
+                "name": "ABN AMRO",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_ASNBNL21",
+                "name": "ASN Bank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ASNBNL21.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ASNBNL21.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_BUNQNL2A",
+                "name": "bunq",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/BUNQNL2A.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/BUNQNL2A.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_INGBNL2A",
+                "name": "ING",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/INGBNL2A.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/INGBNL2A.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_KNABNL2H",
+                "name": "Knab",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/KNABNL2H.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/KNABNL2H.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_MOYONL21",
+                "name": "Moneyou",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/MOYONL21.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/MOYONL21.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_RABONL2U",
+                "name": "Rabobank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RABONL2U.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RABONL2U.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_RBRBNL21",
+                "name": "RegioBank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RBRBNL21.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/RBRBNL21.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_SNSBNL2A",
+                "name": "SNS Bank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/SNSBNL2A.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/SNSBNL2A.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_TRIONL2U",
+                "name": "Triodos Bank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/TRIONL2U.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/TRIONL2U.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_FVLBNL22",
+                "name": "van Lanschot",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/FVLBNL22.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/FVLBNL22.png"
+                }
+            }
+        ],
+        "_links": {
+            "self": {
+                "href": "https://api.mollie.com/v2/methods/ideal",
+                "type": "application/hal+json"
+            },
+            "documentation": {
+                "href": "https://www.mollie.com/en/docs/reference/methods/get",
+                "type": "text/html"
+            }
+        }
+    }
