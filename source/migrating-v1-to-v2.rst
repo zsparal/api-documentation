@@ -182,7 +182,8 @@ The following parameters have been changed or added:
 
 Changes in the Issuers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using the ``issuers`` include.
+The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using
+the ``issuers`` include.
 
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -208,7 +209,7 @@ Changes in the Settlements API
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
-* ``paidDatetime`` has been renamed to ``paidAt``.
+* ``settledDatetime`` has been renamed to ``settledAt``.
 * The fields ``paymentIds``, ``refundIds`` and ``chargebackIds`` has been removed.
 * All amounts have been changed to the amount type. Note that the ``costs.amount*`` fields can have more decimals than
   you would expect. The same goes for ``rate.fixed``, which can contain fractional cents.
