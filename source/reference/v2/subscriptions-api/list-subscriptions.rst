@@ -135,7 +135,7 @@ Response
                            "type": "application/hal+json"
                        }
                    }
-               }
+               },
                { },
                { }
            ]

@@ -140,7 +140,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/get",
+               "href": "https://www.mollie.com/en/docs/reference/subscriptions/create",
                "type": "text/html"
            }
        }
