@@ -186,7 +186,7 @@ Recurring
 
    Create subscription <reference/v2/subscriptions-api/create-subscription>
    Get subscription <reference/v2/subscriptions-api/get-subscription>
-   Revoke subscription <reference/v2/subscriptions-api/cancel-subscription>
+   Cancel subscription <reference/v2/subscriptions-api/cancel-subscription>
    List subscriptions <reference/v2/subscriptions-api/list-subscriptions>
 
 Mollie Connect
