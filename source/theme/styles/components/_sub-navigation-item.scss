@@ -64,7 +64,17 @@
 }
 
 .sub-navigation-item--github {
+  position: relative;
+}
+
+.sub-navigation-item--github::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  height: 47px;
   border-left: 1px solid #e6e6e6;
+  transform: translateY(-50%);
 }
 
 .sub-navigation-item--github .sub-navigation-item__text {

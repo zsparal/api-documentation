@@ -18,6 +18,7 @@
   opacity: 0;
   transition: opacity 0.5s ease;
   padding-left: 50px;
+  -webkit-overflow-scrolling: touch;
 
   @media (min-width: breakpoint("medium")) {
     padding-left: 0;

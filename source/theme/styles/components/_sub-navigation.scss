@@ -43,8 +43,13 @@ $sub-navigation-height-collapsed: 80px;
   white-space: nowrap;
 }
 
+.sub-navigation__item:nth-last-child(2) {
+  margin-right: 30px;
+}
+
 .sub-navigation__item:last-child {
   margin-right: 0;
+  padding-left: 30px;
 }
 
 @media (max-width: breakpoint('medium')) {

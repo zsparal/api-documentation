@@ -8,5 +8,6 @@ export default enhance("mobile-navigation-button", () => {
     event.preventDefault();
     mobileSidebar.classList.toggle("is-visible");
     navigationTrigger.classList.toggle("is-opened");
+    document.documentElement.classList.toggle("disable-scroll");
   });
 });
