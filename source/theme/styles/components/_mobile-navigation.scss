@@ -16,6 +16,7 @@
   transition: transform 0.25s ease-out;
   will-change: transform;
   z-index: 15;
+  pointer-events: all;
 
   @media (max-width: breakpoint('<small')) {
     padding: 0 10px 50px;
@@ -29,6 +30,7 @@
 .mobile-navigation.is-hidden {
   opacity: 0;
   transition: transform 0.25s 0s ease-out, opacity 0s 0.25s;
+  pointer-events: none;
 }
 
 .mobile-navigation--dark {

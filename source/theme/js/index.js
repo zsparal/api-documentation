@@ -3,10 +3,17 @@ import { bindHandlers, executeEnhancers, makeEnhancers, makeHandlers } from "./u
 import navLoggedIn from "./navLoggedIn";
 import productsNavigation from "./productsNavigation";
 import subNavigation from "./subNavigation";
+import mobileNavigationButton from "./mobileNavigationButton";
+import * as mobileNavigation from "./mobileNavigation";
 import toggleClass from "./toggleClass";
 
-const handlers = makeHandlers([toggleClass]);
-const enhancers = makeEnhancers([navLoggedIn, productsNavigation, subNavigation]);
+const handlers = makeHandlers([toggleClass, mobileNavigation.hide, mobileNavigation.show]);
+const enhancers = makeEnhancers([
+  navLoggedIn,
+  productsNavigation,
+  subNavigation,
+  mobileNavigationButton,
+]);
 
 const main = () => {
   bindHandlers(handlers);

@@ -81,16 +81,6 @@ a.headerlink {
   display: none;
 }
 
-body.mobile-menu-opened .main-navigation__logo-wrapper,
-body.mobile-menu-opened .main__sidebar {
-  transform: translateX(calc(100vw - 40px));
-}
-
-body.mobile-menu-opened .main__content::before,
-body.mobile-menu-opened .main-navigation__search-wrapper::before {
-  background: #fff;
-}
-
 /**
 * Main content wrapper
 */
@@ -129,8 +119,8 @@ body.mobile-menu-opened .main-navigation__search-wrapper::before {
 @import "components/code";
 @import "components/highlight";
 @import "components/searchbox";
-@import "components/hamburger-menu";
 @import "components/note";
 @import "components/github-link";
 @import "components/type";
 @import "components/figure";
+@import "components/mobile-navigation-button";

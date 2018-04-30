@@ -38,7 +38,7 @@
     <div class="l-wrapper l-wrapper--fluid main">
         <div class="main__inner">
             <nav class="main__sidebar">
-                <div class="sidebar">
+                <div class="sidebar js-mobile-sidebar">
                     <div class="sidebar__inner" role="navigation" aria-label="main navigation">
                         {% block menu %} {# The singlehtml builder doesn't handle this toctree call when the toctree is empty. Skip building this
                         for now. #} {% if 'singlehtml' not in builder %} {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
@@ -79,6 +79,9 @@
             </section>
             </div>
         </div>
+
+        {% include "mobile-navigation-button.html" %}
+
         {% include "versions.html" %} {% include "footer.html" %}
 
         <script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}">

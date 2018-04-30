@@ -1,17 +1,8 @@
 @import "functions/breakpoint";
 
-.main {
-  transform: translateX(-100vw);
-
-  @media (min-width: breakpoint("medium")) {
-    transform: translateX(0);
-  }
-}
-
 .main__inner {
   display: flex;
   flex-wrap: nowrap;
-  width: 200vw;
 
   @media (min-width: breakpoint("medium")) {
     width: 100%;
@@ -19,21 +10,19 @@
 }
 
 .main__sidebar {
-  width: 100vw;
   min-width: 200px;
-  transform: translateX(0);
-  position: relative;
+  position: fixed;
   z-index: 3;
   transition: 300ms transform ease-in-out;
 
   @media (min-width: breakpoint("medium")) {
     width: 200px;
     z-index: auto;
+    position: relative;
   }
 }
 
 .main__content {
-  width: 100vw;
   padding-left: 30px;
   padding-right: 30px;
   position: relative;
