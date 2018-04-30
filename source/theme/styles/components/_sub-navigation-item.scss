@@ -62,3 +62,15 @@
   opacity: 1;
   transition: opacity 0.1s 0.05s ease;
 }
+
+.sub-navigation-item--github {
+  border-left: 1px solid #e6e6e6;
+}
+
+.sub-navigation-item--github .sub-navigation-item__text {
+  color: #999999;
+}
+
+.sub-navigation-item--github .sub-navigation-item__path {
+  fill: #999999;
+}
