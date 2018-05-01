@@ -166,8 +166,8 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal``
-       ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
+       ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
        | mixed
@@ -221,7 +221,7 @@ Response
 
    * - | ``applicationFee``
        | object
-     - Optional – The :ref:`application fee <oauth/applicationfees>`, if the payment was created with one.
+     - Optional – The :ref:`application fee <oauth/application-fees>`, if the payment was created with one.
 
        .. list-table::
           :widths: auto
@@ -245,13 +245,17 @@ Response
               | string
             - The description of the application fee as specified during payment creation.
 
-   * - | ``links``
+   * - | ``_links``
        | object
-     - An object with several URL objects important to the payment process. Every URL object will contain an ``href``
-       and a ``type`` field.
+     - An object with several URL objects relevant to the payment. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the payment itself.
 
           * - | ``checkout``
               | URL object

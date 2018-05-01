@@ -1,58 +1,26 @@
-.. _v2/chargebacks-list:
+.. _v2/settlements-get-chargebacks:
 
-Chargebacks API v2: List chargebacks
-====================================
-``GET`` ``https://api.mollie.com/v2/payments/*paymentId*/chargebacks``
+Settlements API v2: Get settlement chargebacks
+==============================================
+``GET`` ``https://api.mollie.com/v2/settlements/*settlementId*/chargebacks``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+Authentication: :ref:`OAuth access tokens <oauth/overview>`
 
-Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
-are returned.
-
-The results are not paginated.
+Retrieve all chargebacks included in a settlement.
 
 Parameters
 ----------
-When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
-``tr_7UhSN1zuXS``.
+Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
+
+This endpoint is an alias of the :ref:`List chargebacks <v2/chargebacks-list>` endpoint. All parameters for that
+endpoint can be used here as well.
 
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-.. list-table::
-   :widths: auto
-
-   * - | ``count``
-       | integer
-     - The number of chargebacks found in ``_embedded``.
-
-   * - | ``_embedded``
-       | object
-     - The object containing the queried data.
-
-       .. list-table::
-          :widths: auto
-
-          * - | ``chargebacks``
-              | array
-            - An array of chargeback objects as described in :ref:`Get chargeback <v2/chargebacks-get>`.
-
-   * - | ``_links``
-       | object
-     - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
-       field.
-
-       .. list-table::
-          :widths: auto
-
-          * - | ``self``
-              | object
-            - The URL to the current set of chargebacks.
-
-          * - | ``documentation``
-              | object
-            - The URL to the chargebacks list endpoint documentation.
+This endpoint is an alias of the :ref:`List chargebacks <v2/chargebacks-list>` endpoint. The response is therefore the
+exact same.
 
 Example
 -------
@@ -61,8 +29,8 @@ Request
 ^^^^^^^
 .. code-block:: bash
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/chargebacks \
+       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Response
 ^^^^^^^^
@@ -89,6 +57,7 @@ Response
                    "createdAt": "2018-03-14T17:00:52.0Z",
                    "reversedAt": null
                    "paymentId": "tr_WDqYK6vllg",
+                   "settlementId": "stl_jDk30akdN",
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp",
@@ -110,7 +79,7 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks",
+               "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/chargebacks",
                "type": "application/hal+json"
            },
            "documentation": {

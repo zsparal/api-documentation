@@ -26,7 +26,7 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
@@ -113,6 +113,26 @@ Response
        | string
      - The URL Mollie will call as soon a payment status change takes place.
 
+   * - | ``_links``
+       | object
+     - An object with several URL objects relevant to the subscription. Every URL object will contain an ``href`` and a
+       ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the subscription itself.
+
+          * - | ``customer``
+              | URL object
+            - The API resource URL of the customer the subscription is for.
+
+          * - | ``documentation``
+              | URL object
+            - The URL to the subscription retrieval endpoint documentation.
+
 Example
 -------
 
@@ -128,7 +148,7 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json
+   Content-Type: application/hal+json
 
    {
        "resource": "subscription",

@@ -84,7 +84,7 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/hal+json; charset=utf-8``
 
 A refund object is returned, as described in :ref:`Get refund <v2/refunds-get>`.
 

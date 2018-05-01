@@ -32,7 +32,7 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json
+   Content-Type: application/hal+json
 
    {
        "resource": "subscription",

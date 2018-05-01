@@ -84,7 +84,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/hal+json; charset=utf-8``
 
 A subscription object is returned, as described in :ref:`Get subscription <v2/subscriptions-get>`.
 
@@ -140,7 +140,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/get",
+               "href": "https://www.mollie.com/en/docs/reference/subscriptions/create",
                "type": "text/html"
            }
        }

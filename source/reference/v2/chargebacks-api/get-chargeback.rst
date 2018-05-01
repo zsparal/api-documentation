@@ -24,7 +24,7 @@ querystring parameter.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
@@ -78,6 +78,26 @@ Response
      - The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
+   * - | ``_links``
+       | object
+     - An object with several URL objects relevant to the chargeback. Every URL object will contain an ``href`` and a
+       ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the chargeback itself.
+
+          * - | ``payment``
+              | URL object
+            - The API resource URL of the payment this chargeback belongs to.
+
+          * - | ``documentation``
+              | URL object
+            - The URL to the chargeback retrieval endpoint documentation.
+
 Example
 -------
 
@@ -93,7 +113,7 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/hal+json; charset=utf-8
 
    {
        "resource": "chargeback",
@@ -109,4 +129,18 @@ Response
        "createdAt": "2018-03-14T17:00:52.0Z",
        "reversedAt": null
        "paymentId": "tr_WDqYK6vllg",
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp",
+               "type": "application/hal+json"
+           },
+           "payment": {
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
+               "type": "application/hal+json"
+           },
+           "documentation": {
+               "href": "https://www.mollie.com/en/docs/reference/chargebacks/get",
+               "type": "text/html"
+           }
+       }
    }

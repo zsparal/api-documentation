@@ -43,15 +43,15 @@ for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more i
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
 
    * - | ``count``
        | integer
-     - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+     - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
+       or the default number.
 
    * - | ``_embedded``
        | object
@@ -66,8 +66,8 @@ Response
 
    * - | ``_links``
        | object
-     - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a ``type``
-       field.
+     - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto
@@ -103,7 +103,7 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json+json
+   Content-Type: application/hal+json
 
    {
        "count": 3,
@@ -135,7 +135,7 @@ Response
                            "type": "application/hal+json"
                        }
                    }
-               }
+               },
                { },
                { }
            ]

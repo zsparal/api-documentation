@@ -3,7 +3,7 @@ Overview
 .. toctree::
    :caption: Mollie API
 
-   Overview <index>
+   Mollie API <self>
    security
    migrating-v1-to-v2
 
@@ -30,7 +30,7 @@ Overview
    Overview <oauth/overview>
    Getting started <oauth/getting-started>
    Permissions <oauth/permissions>
-   oauth/applicationfees
+   Application fees <oauth/application-fees>
 
 Payments
 ========
@@ -72,13 +72,13 @@ Recurring
    :maxdepth: 1
    :caption: Customers API
 
-   Create customer <reference/v1/customers-api/create-customer>
-   Get customer <reference/v1/customers-api/get-customer>
-   Update customer <reference/v1/customers-api/update-customer>
-   Delete customer <reference/v1/customers-api/delete-customer>
-   List customers <reference/v1/customers-api/list-customers>
-   Create customer payment <reference/v1/customers-api/create-customer-payment>
-   List customer payments <reference/v1/customers-api/list-customer-payments>
+   Create customer <reference/v2/customers-api/create-customer>
+   Get customer <reference/v2/customers-api/get-customer>
+   Update customer <reference/v2/customers-api/update-customer>
+   Delete customer <reference/v2/customers-api/delete-customer>
+   List customers <reference/v2/customers-api/list-customers>
+   Create customer payment <reference/v2/customers-api/create-customer-payment>
+   List customer payments <reference/v2/customers-api/list-customer-payments>
 
 .. toctree::
    :maxdepth: 1
@@ -95,7 +95,7 @@ Recurring
 
    Create subscription <reference/v2/subscriptions-api/create-subscription>
    Get subscription <reference/v2/subscriptions-api/get-subscription>
-   Revoke subscription <reference/v2/subscriptions-api/cancel-subscription>
+   Cancel subscription <reference/v2/subscriptions-api/cancel-subscription>
    List subscriptions <reference/v2/subscriptions-api/list-subscriptions>
 
 Mollie Connect
@@ -137,13 +137,13 @@ Mollie Connect
    :maxdepth: 1
    :caption: Settlements API
 
-   Get settlement <reference/v1/settlements-api/get-settlement>
-   Get next settlement <reference/v1/settlements-api/get-next-settlement>
-   Get open settlement <reference/v1/settlements-api/get-open-settlement>
-   List settlements <reference/v1/settlements-api/list-settlements>
-   List settlement payments <reference/v1/settlements-api/list-settlement-payments>
-   List settlement refunds <reference/v1/settlements-api/list-settlement-refunds>
-   List settlement chargebacks <reference/v1/settlements-api/list-settlement-chargebacks>
+   Get settlement <reference/v2/settlements-api/get-settlement>
+   Get next settlement <reference/v2/settlements-api/get-next-settlement>
+   Get open settlement <reference/v2/settlements-api/get-open-settlement>
+   List settlements <reference/v2/settlements-api/list-settlements>
+   List settlement payments <reference/v2/settlements-api/list-settlement-payments>
+   List settlement refunds <reference/v2/settlements-api/list-settlement-refunds>
+   List settlement chargebacks <reference/v2/settlements-api/list-settlement-chargebacks>
 
 .. toctree::
    :maxdepth: 1
@@ -195,12 +195,36 @@ Deprecated APIs
 
 .. toctree::
    :maxdepth: 1
+   :caption: Customers API v1 (deprecated)
+
+   Create customer <reference/v1/customers-api/create-customer>
+   Get customer <reference/v1/customers-api/get-customer>
+   Update customer <reference/v1/customers-api/update-customer>
+   Delete customer <reference/v1/customers-api/delete-customer>
+   List customers <reference/v1/customers-api/list-customers>
+   Create customer payment <reference/v1/customers-api/create-customer-payment>
+   List customer payments <reference/v1/customers-api/list-customer-payments>
+
+.. toctree::
+   :maxdepth: 1
    :caption: Subscriptions API v1 (deprecated)
 
    Create subscription <reference/v1/subscriptions-api/create-subscription>
    Get subscription <reference/v1/subscriptions-api/get-subscription>
    Revoke subscription <reference/v1/subscriptions-api/cancel-subscription>
    List subscriptions <reference/v1/subscriptions-api/list-subscriptions>
+
+.. toctree::
+   :maxdepth: 1
+   :caption: Settlements API v1 (deprecated)
+
+   Get settlement <reference/v1/settlements-api/get-settlement>
+   Get next settlement <reference/v1/settlements-api/get-next-settlement>
+   Get open settlement <reference/v1/settlements-api/get-open-settlement>
+   List settlements <reference/v1/settlements-api/list-settlements>
+   List settlement payments <reference/v1/settlements-api/list-settlement-payments>
+   List settlement refunds <reference/v1/settlements-api/list-settlement-refunds>
+   List settlement chargebacks <reference/v1/settlements-api/list-settlement-chargebacks>
 
 Indices and tables
 ==================

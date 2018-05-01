@@ -103,8 +103,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal``
-       ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
+       ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -252,7 +252,8 @@ Credit card
 
           * - | ``country``
               | string
-            - Optional – The country of the shipping address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+            - Optional – The country of the shipping address in
+              `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
@@ -342,7 +343,8 @@ PayPal
 
           * - | ``country``
               | string
-            - Optional – The country of the shipping address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+            - Optional – The country of the shipping address in
+              `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
@@ -396,8 +398,8 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
    * - | ``applicationFee``
        | object
-     - Optional – Adding an :ref:`application fee <oauth/applicationfees>` allows you to charge the merchant a small sum
-       for the payment and transfer this to your own account.
+     - Optional – Adding an :ref:`application fee <oauth/application-fees>` allows you to charge the merchant a small
+       sum for the payment and transfer this to your own account.
 
        .. list-table::
           :widths: auto

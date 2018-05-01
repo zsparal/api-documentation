@@ -51,7 +51,7 @@ querystring parameter.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
@@ -67,7 +67,7 @@ Response
 
    * - | ``description``
        | string
-     - The full name of the payment method.
+     - The full name of the payment method, translated in the optional locale passed.
 
    * - | ``image``
        | image object
@@ -82,7 +82,23 @@ Response
 
           * - | ``size2x``
               | string
-            - The URL for a payment method icon of 110x74 pixels.
+            - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
+
+   * - | ``_links``
+       | object
+     - An object with several URL objects relevant to the payment method. Every URL object will contain an ``href`` and
+       a ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``self``
+              | URL object
+            - The API resource URL of the payment method itself.
+
+          * - | ``documentation``
+              | URL object
+            - The URL to the payment method retrieval endpoint documentation.
 
 Example
 -------
@@ -91,7 +107,7 @@ Request
 ^^^^^^^
 .. code-block:: bash
 
-   curl -X GET https://api.mollie.com/v2/methods/ideal \
+   curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
        -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
@@ -99,24 +115,46 @@ Response
 .. code-block:: http
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/hal+json; charset=utf-8
 
    {
-       "resource": "method",
-       "id": "ideal",
-       "description": "iDEAL",
-       "image": {
-           "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-           "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
-       },
-       "_links": {
-           "self": {
-               "href": "https://api.mollie.com/v2/methods/ideal",
-               "type": "application/json"
-           },
-           "documentation": {
-               "href": "https://mollie.com/en/docs/reference/methods/get",
-               "type": "text/html"
-           }
-       }
-   }
+        "resource": "method",
+        "id": "ideal",
+        "description": "iDEAL",
+        "image": {
+            "size1x": "https://www.mollie.com/images/payscreen/methods/ideal.png",
+            "size2x": "https://www.mollie.com/images/payscreen/methods/ideal%402x.png"
+        },
+        "issuers": [
+            {
+                "resource": "issuer",
+                "id": "ideal_ABNANL2A",
+                "name": "ABN AMRO",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ABNANL2A.png"
+                }
+            },
+            {
+                "resource": "issuer",
+                "id": "ideal_ASNBNL21",
+                "name": "ASN Bank",
+                "image": {
+                    "size1x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ASNBNL21.png",
+                    "size2x": "https://www.mollie.com/images/checkout/v2/ideal-issuer-icons/ASNBNL21.png"
+                }
+            },
+            { },
+            { }
+        ],
+        "_links": {
+            "self": {
+                "href": "https://api.mollie.com/v2/methods/ideal",
+                "type": "application/hal+json"
+            },
+            "documentation": {
+                "href": "https://www.mollie.com/en/docs/reference/methods/get",
+                "type": "text/html"
+            }
+        }
+    }

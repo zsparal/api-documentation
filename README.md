@@ -5,8 +5,8 @@ This project contains the source of all of Mollie's public API documentation. Th
 format) in the future may be found at https://docs.mollie.com.
 
 **Before we go live:**
-You can find the docs on https://d12nhbpjotbqmy.cloudfront.net/, automatically deployed by Travis to S3, and cached by Cloudfront.
-During the development phase it is secured with basic auth using an AWS Lambda function:
+You can find the docs on https://d12nhbpjotbqmy.cloudfront.net/, automatically deployed by Travis to S3, and cached by
+Cloudfront. During the development phase it is secured with basic auth using an AWS Lambda function:
 ```
 Username: polder
 Password: approved
@@ -19,8 +19,8 @@ Password: approved
 
 We take pull requests on our documentation as well, if you think that something can be improved please open a PR.
 
-The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). All documentation
-should be written in US English.
+The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). All
+documentation should be written in US English.
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
 some syntax highlighting.

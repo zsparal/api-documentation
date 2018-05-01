@@ -24,6 +24,9 @@ resources while working with the API.
 
 Several fields have changed too to support new features or to clear up confusing aspects of the ``v1`` API.
 
+The identifier for the payment method *Bancontact* has been renamed from ``mistercash`` to ``bancontact`` in the ``v2``
+API.
+
 Amount changes
 ^^^^^^^^^^^^^^
 All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example:
@@ -61,29 +64,34 @@ The following changes have been made in regards to the status of payments:
 
 * The statuses ``paidout``, ``refunded`` and ``charged_back`` have been removed.
 * The status ``cancelled`` has been renamed to `canceled` (US English spelling).
-* If you want to see if a payment has been settled to your bank account, it will contain the ``settlement`` key in the ``_links`` property.
+* If you want to see if a payment has been settled to your bank account, it will contain the ``settlement`` key in the
+  ``_links`` property.
 * If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
   which will point you to the refunds resource where you can view the refund details.
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
   property, which will point you to the chargeback resource where you can view the refund details.
 
-The individual billing and shipping address parameters that can be used when creating a credit card or PayPal payment have been replaced by address objects. Instead of passing ``billingAddress``, ``billingPostal``, ``billingCity``, ``billingRegion`` and/or ``billingCountry`` (or the equivalent fields starting with ``shipping``), one should now pass a ``billingAddress`` (and/or ``shippingAddress``) object, as follows:
+The individual billing and shipping address parameters that can be used when creating a credit card or PayPal payment
+have been replaced by address objects. Instead of passing ``billingAddress``, ``billingPostal``, ``billingCity``,
+``billingRegion`` and/or ``billingCountry`` (or the equivalent fields starting with ``shipping``), one should now pass a
+``billingAddress`` (and/or ``shippingAddress``) object, as follows:
 
 .. code-block:: json
 
-    {
-        "amount": {"currency": "USD", "value": "100.00"},
-        ...
-        "billingAddress": {
-            "streetAndNumber": "Dorpstraat 1",
-            "postalCode": "1122 AA",
-            "city": "Amsterdam",
-            "region": "Noord",
-            "country": "NL",
-        }
-    }
+   {
+       "amount": {"currency": "USD", "value": "100.00"},
+       ...
+       "billingAddress": {
+           "streetAndNumber": "Dorpstraat 1",
+           "postalCode": "1122 AA",
+           "city": "Amsterdam",
+           "region": "Noord-Holland",
+           "country": "NL",
+       }
+   }
 
-**Please note**: the usage of the address object parameters remains optional. Please refer to the :ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
+.. note:: The usage of the address object parameters remains optional. Please refer to the
+          :ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
 
 The following fields have been changed, renamed or moved:
 
@@ -156,7 +164,7 @@ These new fields have been added:
 * ``settlementAmount`` has been added. See the explanation of the settlementAmount_ for the Payments API.
 
 Changes in the Methods API
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
 * ``amount`` including ``minimum`` and ``maximum`` have been removed.
@@ -171,6 +179,11 @@ The following parameters have been changed or added:
 * The parameter ``amount`` has been added. This should be an object containing ``value`` and ``currency``. Only payment
   methods that support the amount/currency will be returned.
   Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
+
+Changes in the Issuers API
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using
+the ``issuers`` include.
 
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -196,7 +209,7 @@ Changes in the Settlements API
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
-* ``paidDatetime`` has been renamed to ``paidAt``.
+* ``settledDatetime`` has been renamed to ``settledAt``.
 * The fields ``paymentIds``, ``refundIds`` and ``chargebackIds`` has been removed.
 * All amounts have been changed to the amount type. Note that the ``costs.amount*`` fields can have more decimals than
   you would expect. The same goes for ``rate.fixed``, which can contain fractional cents.
