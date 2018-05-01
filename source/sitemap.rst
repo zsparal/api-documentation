@@ -3,7 +3,7 @@ Overview
 .. toctree::
    :caption: Mollie API
 
-   Mollie API <self>
+   Mollie API <index>
    security
    migrating-v1-to-v2
 
