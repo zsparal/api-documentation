@@ -89,7 +89,7 @@ Parameters
      - Allow you to preset the language to be used in the payment screens shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
        browser language will be used instead if supported by the payment method. You can provide any ISO 15897 locale,
-       but our payment screen currently only support the following languages:
+       but our payment screen currently only supports the following languages:
 
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
