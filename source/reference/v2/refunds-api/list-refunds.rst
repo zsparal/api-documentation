@@ -29,6 +29,13 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
        | integer
      - Optional – The number of refunds to return (with a maximum of 250).
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :ref:`payments <v2/payments-get>` the refunds were created for.
+
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``

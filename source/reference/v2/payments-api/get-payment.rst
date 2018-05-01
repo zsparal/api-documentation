@@ -33,9 +33,16 @@ Includes
 This endpoint allows you to include additional information by appending the following values via the ``include``
 querystring parameter.
 
-* ``settlement`` Include the settlement this payment belongs to, when available.
 * ``details.qrCode`` Include a :ref:`QR code <guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
   and bank transfer payments.
+
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint also allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``refunds`` Include any :ref:`refunds <v2/refunds-get>` created for the payment.
+* ``chargebacks`` Include any :ref:`chargebacks <v2/chargebacks-get>` issued for the payment.
 
 Response
 --------

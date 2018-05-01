@@ -16,6 +16,13 @@ Parameters
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :ref:`payments <v2/payments-get>` these chargebacks were issued for.
+
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``

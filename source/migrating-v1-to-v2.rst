@@ -27,6 +27,10 @@ Several fields have changed too to support new features or to clear up confusing
 The identifier for the payment method *Bancontact* has been renamed from ``mistercash`` to ``bancontact`` in the ``v2``
 API.
 
+Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
+embedded by using the ``embed=refunds`` query string parameter. See the :ref:`Get payment documentation <v2/payments-get>`
+for more information.
+
 Amount changes
 ^^^^^^^^^^^^^^
 All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example:
@@ -115,6 +119,7 @@ The following fields have been removed:
 * ``issuer`` has been removed from the Payment resource. You can however, still pass it to the Create payment call.
 * ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
 * ``cardCountry`` has been removed from the creditcard detail object on the Payment resource.
+* The option to include the settlement using the ``include`` query string parameter has been removed.
 
 These new fields have been added:
 
