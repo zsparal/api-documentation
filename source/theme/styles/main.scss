@@ -1,7 +1,21 @@
-@import "fonts";
-@import "normalize";
-@import "variables";
-@import "functions/breakpoint";
+/**
+ * Global
+ */
+ @import "fonts";
+ @import "normalize";
+ @import "variables";
+
+/**
+ * Functions
+ */
+ @import 'functions/breakpoint';
+ @import 'functions/color-trans';
+ @import 'functions/px-to-em';
+ @import 'functions/shade';
+ @import 'functions/spans';
+ @import 'functions/strip-unit';
+ @import 'functions/tint';
+ @import 'functions/z';
 
 /**
  * Base styles
@@ -119,6 +133,13 @@ a.headerlink::before {
  */
 @import "layout/l-layer";
 @import "layout/l-wrapper";
+
+/**
+* Mixins
+*/
+@import 'mixins/bare-list';
+@import 'mixins/clearfix';
+@import 'mixins/visually-hidden';
 
 /**
 * Components

@@ -1,9 +1,3 @@
-@import 'variables';
-@import 'mixins/bare-list';
-@import 'mixins/clearfix';
-@import 'mixins/visually-hidden';
-@import 'functions/breakpoint';
-
 .footer {
   @include clearfix;
   // Prevent horizontal overflow in Edge

@@ -68,12 +68,6 @@ make css-reload
 make js-reload
 ```
 
-Fonts can only be downloaded from `docs.mollie.dev` or `docs.mollie.com`. Add the following line to your `/etc/hosts` file:
-
-```
-127.0.0.1 docs.mollie.dev
-```
-
 Visit http://docs.mollie.dev:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your browser.
 ## Support
 
