@@ -102,10 +102,6 @@ a.headerlink::before {
   padding-right: 22px;
 }
 
-html.disable-scroll {
-  overflow: hidden;
-}
-
 /**
 * Main content wrapper
 */
@@ -148,3 +144,8 @@ html.disable-scroll {
 @import "components/type";
 @import "components/figure";
 @import "components/mobile-navigation-button";
+
+/**
+ * Utilities
+ */
+ @import 'utilities';

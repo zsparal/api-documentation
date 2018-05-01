@@ -75,6 +75,15 @@
   height: 47px;
   border-left: 1px solid #e6e6e6;
   transform: translateY(-50%);
+  transition: opacity 0.2s ease;
+}
+
+.sub-navigation-item--small.sub-navigation-item--github::before {
+  opacity: 0;
+}
+
+.sub-navigation:hover .sub-navigation-item--github::before {
+  opacity: 1;
 }
 
 .sub-navigation-item--github .sub-navigation-item__text {
