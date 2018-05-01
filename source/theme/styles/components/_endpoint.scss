@@ -1,12 +1,10 @@
-$border-color: #e6e6e6;
-
 .rst-content .endpoint {
     border-radius: 4px;
     background: #fcfcfc;
     font-size: 14px;
     display: inline-block;
     margin: 0 0 15px;
-    border: 1px solid $border-color;
+    border: 1px solid $grey-medium;
     max-width: 100%;
     white-space: nowrap;
     height: 45px;
@@ -36,7 +34,7 @@ $border-color: #e6e6e6;
 }
 
 .rst-content .endpoint .method span {
-    border-right: 1px solid $border-color;
+    border-right: 1px solid $grey-medium;
 }
 
 // Endpoint URL
