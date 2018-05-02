@@ -1,6 +1,6 @@
 .admonition.note {
   background-color: #fffefc;
-  border: 1px solid #efcca5;
+  border: 1px solid $orange-pancho;
   padding: 11px 15px;
   color: #e0994c;
   font-size: 15px;
@@ -18,6 +18,6 @@
 }
 
 .admonition.note a {
-  color: #a25d11;
+  color: $orange-reno-sand;
   text-decoration: underline;
 }

@@ -16,7 +16,7 @@
   @media (min-width: breakpoint("medium")) {
     width: 200px;
     z-index: auto;
-    position: relative;
+    position: sticky;
   }
 }
 
@@ -33,8 +33,8 @@
   }
 }
 
-@media (max-width: breakpoint("<medium")) {
-  .main__content::before {
+.main__content::before {
+  @media (max-width: breakpoint("<medium")) {
     content: "";
     position: absolute;
     top: 0;

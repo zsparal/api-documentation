@@ -33,11 +33,11 @@
 }
 
 .sub-navigation-item__link:hover .sub-navigation-item__text {
-  color: #777777;
+  color: $grey-boulder;
 }
 
 .sub-navigation-item__link:hover .sub-navigation-item__path {
-  fill: #777777;
+  fill: $grey-boulder;
 }
 
 .sub-navigation-item--small .sub-navigation-item__text {
@@ -84,9 +84,9 @@
 }
 
 .sub-navigation-item--github .sub-navigation-item__text {
-  color: #999999;
+  color: $grey-dusty;
 }
 
 .sub-navigation-item--github .sub-navigation-item__path {
-  fill: #999999;
+  fill: $grey-dusty;
 }

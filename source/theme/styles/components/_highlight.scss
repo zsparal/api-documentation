@@ -14,7 +14,7 @@
 
 .rst-content .section .highlighttable tbody > tr > td {
   padding-bottom: 0;
-  color: #999999;
+  color: $grey-dusty;
 }
 
 .rst-content .section .highlighttable tr td.linenos {
@@ -37,14 +37,14 @@
 
 .rst-content .highlight pre {
   font-family: $font-family-monospace;
-  color: #999999;
+  color: $grey-dusty;
 }
 
 .rst-content .highlight .kc,
 .rst-content .highlight .p,
 .rst-content .highlight .l,
 .rst-content .highlight .s2 {
-  color: #999999;
+  color: $grey-dusty;
 }
 
 .rst-content .highlight .nt,

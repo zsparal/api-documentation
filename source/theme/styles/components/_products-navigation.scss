@@ -39,12 +39,6 @@
   position: fixed;
 }
 
-.products-navigation--dark {
-  background: #000;
-  border-color: $grey-darkest;
-  color: #fff;
-}
-
 .products-navigation.has-products-visible,
 .products-navigation.has-products-visible .products-navigation-items__link {
   opacity: 1;
