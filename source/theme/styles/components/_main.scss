@@ -17,6 +17,11 @@
     width: 200px;
     z-index: auto;
     position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
+    top: 80px;
   }
 }
 
