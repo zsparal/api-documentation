@@ -86,7 +86,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - Allow you to preset the language to be used in the payment screens shown to the consumer. Setting a
+     - Allows you to preset the language to be used in the payment screens shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
        browser language will be used instead if supported by the payment method. You can provide any ISO 15897 locale,
        but our payment screen currently only supports the following languages:
