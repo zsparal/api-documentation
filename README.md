@@ -60,12 +60,10 @@ open build/html/index.html
 
 ### Styling docs
 
-You can make changes to the styling by starting several hot-module reload processes:
+You can make changes to the styling by starting a webserver locally:
 
 ```
-make html-reload
-make css-reload
-make js-reload
+make start
 ```
 
 Visit http://docs.mollie.dev:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your browser.
