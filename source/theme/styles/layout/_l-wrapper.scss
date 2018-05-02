@@ -10,12 +10,7 @@
     padding-right: 30px;
   }
 
-  @media (min-width: breakpoint("medium")) {
-    padding-left: 80px;
-    padding-right: 80px;
-  }
-
-  @media (min-width: breakpoint("large")) {
+  @media (min-width: $mobile-navigation-breakpoint) {
     padding-left: 120px;
     padding-right: 120px;
   }

@@ -16,7 +16,7 @@
   padding-left: 50px;
   -webkit-overflow-scrolling: touch;
 
-  @media (min-width: breakpoint("medium")) {
+  @media (min-width: $mobile-navigation-breakpoint) {
     padding-left: 0;
     padding-right: 0;
     position: relative;

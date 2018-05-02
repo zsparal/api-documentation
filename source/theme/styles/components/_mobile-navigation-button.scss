@@ -14,7 +14,7 @@
     right: 30px;
   }
 
-  @media (min-width: breakpoint('medium')) {
+  @media (min-width: $mobile-navigation-breakpoint) {
     display: none;
   }
 }
