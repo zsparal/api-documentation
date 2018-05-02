@@ -124,6 +124,15 @@ a.headerlink::before {
 }
 
 /**
+ * Specific styles for currencies table
+ */
+#supported-currencies table tr th,
+#supported-currencies table tr td {
+  text-align: left;
+}
+
+
+/**
  * Typography
  */
 @import "typography";
