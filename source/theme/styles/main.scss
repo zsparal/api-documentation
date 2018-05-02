@@ -1,21 +1,21 @@
 /**
  * Global
  */
- @import "fonts";
- @import "normalize";
- @import "variables";
+@import "fonts";
+@import "normalize";
+@import "variables";
 
 /**
  * Functions
  */
- @import 'functions/breakpoint';
- @import 'functions/color-trans';
- @import 'functions/px-to-em';
- @import 'functions/shade';
- @import 'functions/spans';
- @import 'functions/strip-unit';
- @import 'functions/tint';
- @import 'functions/z';
+@import "functions/breakpoint";
+@import "functions/color-trans";
+@import "functions/px-to-em";
+@import "functions/shade";
+@import "functions/spans";
+@import "functions/strip-unit";
+@import "functions/tint";
+@import "functions/z";
 
 /**
  * Base styles
@@ -111,14 +111,14 @@ a.headerlink::before {
   transform: translateY(-50%);
   height: 10px;
   width: 15px;
-  background: transparent url('./../../_static/img/headerlink.svg') no-repeat center center;
+  background: transparent url("./../../_static/img/headerlink.svg") no-repeat center center;
   opacity: 0;
   padding-right: 22px;
 }
 
 /**
-* Main content wrapper
-*/
+ * Main content wrapper
+ */
 [role="main"].document {
   max-width: 100%;
 }
@@ -137,9 +137,9 @@ a.headerlink::before {
 /**
 * Mixins
 */
-@import 'mixins/bare-list';
-@import 'mixins/clearfix';
-@import 'mixins/visually-hidden';
+@import "mixins/bare-list";
+@import "mixins/clearfix";
+@import "mixins/visually-hidden";
 
 /**
 * Components
@@ -168,4 +168,4 @@ a.headerlink::before {
 /**
  * Utilities
  */
- @import 'utilities';
+@import "utilities";

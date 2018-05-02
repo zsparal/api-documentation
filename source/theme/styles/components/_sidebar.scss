@@ -20,6 +20,10 @@
     padding-left: 0;
     padding-right: 0;
     position: sticky;
+    position: -webkit-sticky;
+    position: -moz-sticky;
+    position: -ms-sticky;
+    position: -o-sticky;
     opacity: 1;
     pointer-events: auto;
     overflow: visible;
@@ -44,7 +48,21 @@
 }
 
 .sidebar__inner::-webkit-scrollbar {
-  display: none;
+  margin-top: 50px;
+  width: 6px;
+}
+
+.sidebar__inner::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.sidebar__inner::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #fff;
+}
+
+.sidebar__inner:hover::-webkit-scrollbar-thumb {
+  background: $grey-medium;
 }
 
 .sidebar .toctree-l1 ul {
