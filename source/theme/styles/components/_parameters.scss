@@ -63,9 +63,11 @@
   margin-top: 6px;
 }
 
-.rst-content .section > table.docutils > tbody > tr:last-child > td {
-  border-bottom: 1px solid #e9edef;
-  padding-bottom: 30px;
+@media (min-width: breakpoint('medium')) {
+  .rst-content .section > table.docutils > tbody > tr:last-child > td {
+    border-bottom: 1px solid #e9edef;
+    padding-bottom: 30px;
+  }
 }
 
 @media (max-width: breakpoint("<medium")) {

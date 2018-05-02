@@ -19,16 +19,12 @@
   @media (min-width: breakpoint("medium")) {
     padding-left: 0;
     padding-right: 0;
-    position: sticky;
-    position: -webkit-sticky;
-    position: -moz-sticky;
-    position: -ms-sticky;
-    position: -o-sticky;
+    position: relative;
     opacity: 1;
     pointer-events: auto;
     overflow: visible;
     left: auto;
-    top: 80px;
+    top: 0;
     right: auto;
     bottom: auto;
     z-index: 0;
@@ -42,8 +38,6 @@
 
 .sidebar__inner {
   padding-top: 80px;
-  max-height: 100vh;
-  overflow: scroll;
   padding-bottom: 80px;
 }
 
