@@ -121,7 +121,7 @@ $max-navigation-width: 915px;
   pointer-events: none;
 
   @media (min-width: breakpoint('medium')) {
-    display: none;
+    @include visually-hidden;
   }
 }
 
