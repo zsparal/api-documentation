@@ -50,7 +50,7 @@ const scrollToSection = event => {
 };
 
 export default enhance("sidebar", () => {
-  const links = document.querySelectorAll(".sidebar__inner .current a");
+  const links = document.querySelectorAll(".sidebar__inner .current a, a.headerlink");
   [].forEach.call(links, link => {
     link.addEventListener("click", scrollToSection);
   });
