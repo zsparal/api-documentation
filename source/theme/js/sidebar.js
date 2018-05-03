@@ -23,7 +23,8 @@ const easeIn = t => t ** 2;
 
 const scrollToSection = event => {
   const offset = 100;
-  const target = document.getElementById(event.target.getAttribute("href").substring(1));
+
+  const target = document.querySelector(event.target.getAttribute('href'));
   const from =
     window.pageYOffset ||
     (document.documentElement || document.body.parentNode || document.body).scrollTop;
