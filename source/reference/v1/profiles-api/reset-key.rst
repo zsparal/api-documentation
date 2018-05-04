@@ -2,9 +2,14 @@
 
 Profiles API v1: Reset API key
 ==============================
-``POST`` ``https://api.mollie.com/v1/profiles/*profileId*/apikeys/*mode*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/profiles/*profileId*/apikeys/*mode*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 You can reset the API keys, for instance when you feel your keys may have been compromised. Please note the old API key
 can no longer be used once it has been reset.
@@ -22,21 +27,33 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The (unchanged) API key's identifier.
 
        Possible values: ``live`` ``test``
 
    * - | ``key``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The newly generated API key, which immediately replaces the previous API key.
 
    * - | ``createdDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The API key's new date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 Example

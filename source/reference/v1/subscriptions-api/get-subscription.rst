@@ -2,9 +2,14 @@
 
 Subscriptions API v1: Get subscription
 ======================================
-``GET`` ``https://api.mollie.com/v1/customers/*customerId*/subscriptions/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers/*customerId*/subscriptions/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a subscription by its ID and its customer's ID.
 
@@ -21,8 +26,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to retrieve a test mode subscription.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to retrieve a test mode subscription.
 
 Response
 --------
@@ -32,78 +40,123 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a subscription object. Will always contain ``subscription`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
 
    * - | ``customerId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The customer's unique identifier, for example ``cst_8wmqcHMN4U``.
 
    * - | ``mode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The mode used to create this subscription. Mode determines whether the subscription's payments are real or test
        payments.
 
        Possible values: ``live`` ``test``
 
    * - | ``createdDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The subscription's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The subscription's current status, depends on whether the customer has a pending, valid or invalid mandate.
 
        Possible values: ``pending`` ``active`` ``cancelled`` ``suspended`` ``completed``
 
    * - | ``amount``
-       | decimal
+
+       .. type:: decimal
+          :required: true
+
      - The constant amount that is charged with each subscription payment.
 
    * - | ``times``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - Total number of charges for the subscription to complete.
 
    * - | ``interval``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
        Possible values: ``... months`` ``... weeks`` ``... days``
 
    * - | ``startDate``
-       | date
+
+       .. type:: date
+          :required: true
+
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The description specified during subscription creation. This will be included in the payment description along
        with the charge date in ``YYYY-MM-DD`` format.
 
    * - | ``method``
-       | string
-     - Optional – The payment method used for this subscription, either forced on creation or ``null`` if any of the
+
+       .. type:: string
+          :required: false
+
+     - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
    * - | ``cancelledDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The subscription's date and time of cancellation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with URLs important to the subscription.
 
        .. list-table::
           :widths: auto
 
           * - | ``webhookUrl``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL Mollie will call as soon a payment status change takes place.
 
 Example

@@ -29,12 +29,18 @@ Application fees are created by passing additional parameters to the :ref:`Creat
    :widths: auto
 
    * - | ``amount``
-       | amount object
+
+       .. type:: amount object
+          :required: true
+
      - The :ref:`amount <amount-object>` that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}``
        if the app would want to charge €10.00.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
 

@@ -2,9 +2,14 @@
 
 Subscriptions API v2: Cancel subscription
 =========================================
-``DELETE`` ``https://api.mollie.com/v2/customers/*customerId*/subscriptions/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v2/customers/*customerId*/subscriptions/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 A subscription can be canceled any time by calling ``DELETE`` on the resource endpoint.
 

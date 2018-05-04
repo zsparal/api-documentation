@@ -2,9 +2,14 @@
 
 Organizations API v1: Get organization
 ======================================
-``GET`` ``https://api.mollie.com/v1/organizations/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/organizations/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Organizations reflect the legal entities associated with the Mollie account. Payments, Refunds, Profiles, Settlements,
 all belong to an Organization, therefore it's often referred to as *Resource Owner*. The Organizations resource contains
@@ -26,60 +31,102 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains an organization object. Will always contain ``organization`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The identifier uniquely referring to this organization, for example ``org_1234567``.
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The organization's official name.
 
    * - | ``email``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The email address of the organization.
 
    * - | ``address``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The address where the organizations is established.
 
    * - | ``postalCode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The postal code of where the organization is established.
 
    * - | ``city``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The name of the city where the organization is established.
 
    * - | ``country``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The name of the country where the organization is established.
 
    * - | ``countryCode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The two-letter code of the country where the organization is established.
 
    * - | ``registrationType``
-       | string
+
+       .. type:: string
+          :required: true
+
      - National or international registration type of the organization's legal entity.
 
    * - | ``registrationNumber``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Registration number of the organization's legal entity.
 
    * - | ``registrationDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - Registration date of the organization's legal entity.
 
    * - | ``vatNumber``
-       | string
-     - Optional – The organization's VAT number. You can use this for invoicing
+
+       .. type:: string
+          :required: false
+
+     - The organization's VAT number. You can use this for invoicing
        :ref:`application fees <oauth/application-fees>`, for example.
 
    * - | ``verifiedDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - Date on which Mollie's verification of this organization completed successfully.
 
 Example

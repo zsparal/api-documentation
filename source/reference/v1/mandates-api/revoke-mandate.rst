@@ -2,9 +2,14 @@
 
 Mandates API v1: Revoke mandate
 ===============================
-``DELETE`` ``https://api.mollie.com/v1/customers/*customerId*/mandates/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v1/customers/*customerId*/mandates/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Revoke a customer's mandate. You will no longer be able to charge the consumer's bank account or credit card with this
 mandate.
