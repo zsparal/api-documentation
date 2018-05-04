@@ -14,6 +14,8 @@ the API. We recommend to read these topics entirely.
 If possible it would be wise to leave communication at this level to our ready-made :ref:`Clients <clients>`. This
 allows you to still be in control without reinventing the wheel.
 
+If you have any questions about integrating our API please `contact <https://www.mollie.com/en/contact/>` us. We're happy to help! 
+
 .. _clients:
 
 Clients, modules and plugins
