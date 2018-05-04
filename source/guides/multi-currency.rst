@@ -24,22 +24,25 @@ Support for other currencies than ``EUR`` varies per payment method.
 Currency             ISO code  Payment methods
 ==================== ======== ===================
 Australian dollar    ``AUD``  PayPal, credit card
+Bulgarian lev        ``BGN``  Credit card
 Canadian dollar      ``CAD``  PayPal, credit card
 Swiss franc          ``CHF``  PayPal, credit card
-Czech koruna         ``CZK``  PayPal
+Czech koruna         ``CZK``  PayPal, credit card
 Danish krone         ``DKK``  PayPal, credit card
 Euro                 ``EUR``  All payment methods
 British pound        ``GBP``  PayPal, credit card
 Hong Kong dollar     ``HKD``  PayPal, credit card
-Hungarian forint     ``HUF``  PayPal
-Israeli new shekel   ``ILS``  PayPal
+Croatian kuna        ``HRK``  Credit card
+Hungarian forint     ``HUF``  PayPal, credit card
+Israeli new shekel   ``ILS``  PayPal, credit card
 Icelandic króna      ``ISK``  Credit card
 Japanese yen         ``JPY``  PayPal, credit card
-Mexican peso         ``MXN``  PayPal, credit card
+Mexican peso         ``MXN``  PayPal
 Norwegian krone      ``NOK``  PayPal
 New Zealand dollar   ``NZD``  PayPal
 Philippine piso      ``PHP``  PayPal
-Polish złoty         ``PLN``  PayPal
+Polish złoty         ``PLN``  PayPal, credit card
+Romanian leu         ``RON``  Credit card
 Russian ruble        ``RUB``  PayPal
 Singapore dollar     ``SGD``  PayPal
 Swedish krona        ``SEK``  PayPal, credit card
