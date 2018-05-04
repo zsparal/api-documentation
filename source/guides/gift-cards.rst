@@ -84,7 +84,7 @@ use to finish the payment.
 .. note:: Some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
 
 Canceled and abandoned payments
---------------------------------
+-------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
 the gift card will be returned to the gift card. This will show up as a refund in your
 `Dashboard <https://www.mollie.com/dashboard>`_.
