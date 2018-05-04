@@ -157,6 +157,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Payments API v1 (deprecated)
+   :hidden:
 
    Create payment <reference/v1/payments-api/create-payment>
    Get payment <reference/v1/payments-api/get-payment>
@@ -166,6 +167,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Refunds API v1 (deprecated)
+   :hidden:
 
    Create refund <reference/v1/refunds-api/create-refund>
    Get refund <reference/v1/refunds-api/get-refund>
@@ -175,6 +177,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Chargebacks API v1 (deprecated)
+   :hidden:
 
    Get chargeback <reference/v1/chargebacks-api/get-chargeback>
    List chargebacks <reference/v1/chargebacks-api/list-chargebacks>
@@ -182,6 +185,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Methods API v1 (deprecated)
+   :hidden:
 
    Get chargeback <reference/v1/methods-api/get-method>
    List chargebacks <reference/v1/methods-api/list-methods>
@@ -189,6 +193,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Issuers API
+   :hidden:
 
    Get issuer <reference/v1/issuers-api/get-issuer>
    List issuers <reference/v1/issuers-api/list-issuers>
@@ -196,6 +201,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Customers API v1 (deprecated)
+   :hidden:
 
    Create customer <reference/v1/customers-api/create-customer>
    Get customer <reference/v1/customers-api/get-customer>
@@ -208,6 +214,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Subscriptions API v1 (deprecated)
+   :hidden:
 
    Create subscription <reference/v1/subscriptions-api/create-subscription>
    Get subscription <reference/v1/subscriptions-api/get-subscription>
@@ -217,6 +224,7 @@ Deprecated APIs
 .. toctree::
    :maxdepth: 1
    :caption: Settlements API v1 (deprecated)
+   :hidden:
 
    Get settlement <reference/v1/settlements-api/get-settlement>
    Get next settlement <reference/v1/settlements-api/get-next-settlement>
