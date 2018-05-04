@@ -53,7 +53,7 @@ How does the Mollie API work?
 #. A customer on your website decides to checkout.
 
 #. Your website :ref:`creates a payment <v2/payments-create>` on the Mollie platform by calling the Mollie API with the
-   amount, a payment description and a URL we should redirect the customer to after the payment is made.
+   amount, a payment description, a webhook URL and a URL we should redirect the customer to after the payment is made.
 
    The API responds with the unique id and the ``_links.checkout`` URL for the newly created payment. Your website
    stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``_links.checkout``
