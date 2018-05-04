@@ -2,9 +2,14 @@
 
 Methods API v2: List payment methods
 ====================================
-``GET`` ``https://api.mollie.com/v2/methods``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/methods
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all available payment methods. The results are not paginated.
 
@@ -14,8 +19,11 @@ Parameters
    :widths: auto
 
    * - | ``sequenceType``
-       | string
-     - Optional – Passing ``first`` will only show payment methods eligible for making a first payment. Passing
+
+       .. type:: string
+          :required: false
+
+     - Passing ``first`` will only show payment methods eligible for making a first payment. Passing
        ``recurring`` shows payment methods which can be used to automatically charge your customer's account when
        authorization has been given. Set to ``oneoff`` by default, which indicates the method is available for a
        regular non-recurring payment.
@@ -23,15 +31,21 @@ Parameters
        Possible values: ``oneoff`` ``first`` ``recurring``
 
    * - | ``locale``
-       | string
-     - Optional – Passing a locale will sort the payment methods in the preferred order for the country, and translate
+
+       .. type:: string
+          :required: false
+
+     - Passing a locale will sort the payment methods in the preferred order for the country, and translate
        the payment method names in the corresponding language.
 
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
    * - | ``amount``
-       | object
-     - Optional – An object containing ``value`` and ``currency``. Only methods that support the amount and currency
+
+       .. type:: object
+          :required: false
+
+     - An object containing ``value`` and ``currency``. Only methods that support the amount and currency
        are returned.
 
        Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
@@ -46,12 +60,18 @@ profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` f
    :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to list all methods available in testmode.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to list all methods available in testmode.
 
 Includes
 --------
@@ -68,22 +88,34 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of methods found in ``_embedded``.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``methods``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of methods objects as described in :ref:`Get method <v2/methods-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links related to the lists of methods. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -91,11 +123,17 @@ Response
           :widths: auto
 
           * - | ``self``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the current set of methods.
 
           * - | ``documentation``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the methods list endpoint documentation.
 
 Example

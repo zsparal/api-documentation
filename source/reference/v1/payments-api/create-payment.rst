@@ -6,9 +6,14 @@ Payments API v1: Create payment
              found :ref:`here <v2/payments-create>`. For more information on the v2 API, refer to our
              :ref:`v2 migration guide <migrate-to-v2>`.
 
-``POST`` ``https://api.mollie.com/v1/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
 parameters are accepted for certain payment methods.
@@ -22,11 +27,17 @@ Parameters
    :widths: auto
 
    * - | ``amount``
-       | decimal
+
+       .. type:: decimal
+          :required: true
+
      - The amount in EUR that you want to charge, e.g. 100.00 if you would want to charge €100.00.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The description of the payment you're creating. This will be shown to the consumer on their card or bank
        statement when possible, and in any exports you generate.
 
@@ -34,13 +45,19 @@ Parameters
        useful for bookkeeping.
 
    * - | ``redirectUrl``
-       | string
+
+       .. type:: string
+          :required: true
+
      - `The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
    * - | ``webhookUrl``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Set the webhook URL, where we will send payment status updates to.
 
        .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
@@ -49,8 +66,11 @@ Parameters
           delivered to your local machine.
 
    * - | ``locale``
-       | string
-     - Optional – Allows you to preset the language to be used in the payment screens shown to the consumer. Setting a
+
+       .. type:: string
+          :required: false
+
+     - Allows you to preset the language to be used in the payment screens shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
        browser language will be used instead if supported by the payment method. You can provide any ISO 15897 locale,
        but our payment screen currently only supports the following languages:
@@ -58,8 +78,11 @@ Parameters
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
    * - | ``method``
-       | string
-     - Optional – Normally, a payment method selection screen is shown. However, when using this parameter, your
+
+       .. type:: string
+          :required: false
+
+     - Normally, a payment method selection screen is shown. However, when using this parameter, your
        customer will skip the selection screen and will be sent directly to the chosen payment method. The parameter
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
@@ -68,26 +91,38 @@ Parameters
        ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
-       | object
-     - Optional – Provide any data you like in JSON notation, and we will save the data alongside the payment. Whenever
+
+       .. type:: object
+          :required: false
+
+     - Provide any data you like in JSON notation, and we will save the data alongside the payment. Whenever
        you fetch the payment with our API, we'll also include the metadata. You can use up to approximately 1kB.
 
    * - | ``recurringType``
-       | string
-     - Optional – Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
+
+       .. type:: string
+          :required: false
+
+     - Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
        the customer to agree to automatic recurring charges taking place on their account in the future. If set to
        ``recurring``, the customer's card is charged automatically.
 
        Possible values: ``first`` ``recurring``
 
    * - | ``customerId``
-       | string
-     - Optional – The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
+
+       .. type:: string
+          :required: false
+
+     - The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
        used for recurring payments and :ref:`single click payments <guides/checkout>`.
 
    * - | ``mandateId``
-       | string
-     - Optional – When creating recurring payments, the ID of a specific :ref:`Mandate <v1/mandates-create>` may be
+
+       .. type:: string
+          :required: false
+
+     - When creating recurring payments, the ID of a specific :ref:`Mandate <v1/mandates-create>` may be
        supplied to indicate which of the consumer's accounts should be credited.
 
 Payment method specific parameters
@@ -102,20 +137,29 @@ Bank transfer
    :widths: auto
 
    * - | ``billingEmail``
-       | string
-     - Optional – Consumer's email address, to automatically send the bank transfer details to. **Please note:** the
+
+       .. type:: string
+          :required: false
+
+     - Consumer's email address, to automatically send the bank transfer details to. **Please note:** the
        payment instructions will be sent immediately when creating the payment. If you don't specify the ``locale``
        parameter, the email will be sent in English, as we haven't yet been able to detect the consumer's browser
        language.
 
    * - | ``dueDate``
-       | string
-     - Optional - The date the payment should :ref:`expire <guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
+
+       .. type:: string
+          :required: false
+
+     - The date the payment should :ref:`expire <guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
    * - | ``locale``
-       | string
-     - Optional – The locale will determine the target bank account the customer has to transfer the money to. We have
+
+       .. type:: string
+          :required: false
+
+     - The locale will determine the target bank account the customer has to transfer the money to. We have
        dedicated bank accounts for Belgium, France, Germany and The Netherlands. Having the customer use a local bank
        account greatly increases the conversion and speed of payment.
 
@@ -127,8 +171,11 @@ Bitcoin
    :widths: auto
 
    * - | ``billingEmail``
-       | string
-     - Optional – The email address of the customer. This is used when handling invalid transactions (wrong amount
+
+       .. type:: string
+          :required: false
+
+     - The email address of the customer. This is used when handling invalid transactions (wrong amount
        transferred, transfer of expired or canceled payments, et cetera).
 
 Credit card
@@ -137,47 +184,77 @@ Credit card
    :widths: auto
 
    * - | ``billingAddress``
-       | string
-     - Optional – The card holder's address. We advise to provide these details to improve the credit card fraud
+
+       .. type:: string
+          :required: false
+
+     - The card holder's address. We advise to provide these details to improve the credit card fraud
        protection, and thus improve conversion.
 
    * - | ``billingCity``
-       | string
-     - Optional – The card holder's city.
+
+       .. type:: string
+          :required: false
+
+     - The card holder's city.
 
    * - | ``billingRegion``
-       | string
-     - Optional – The card holder's region.
+
+       .. type:: string
+          :required: false
+
+     - The card holder's region.
 
    * - | ``billingPostal``
-       | string
-     - Optional – The card holder's postal code.
+
+       .. type:: string
+          :required: false
+
+     - The card holder's postal code.
 
    * - | ``billingCountry``
-       | string
-     - Optional – The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
+
+       .. type:: string
+          :required: false
+
+     - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
        format.
 
    * - | ``shippingAddress``
-       | string
-     - Optional – The shipping address. We advise to provide these details to improve the credit card fraud protection,
+
+       .. type:: string
+          :required: false
+
+     - The shipping address. We advise to provide these details to improve the credit card fraud protection,
        and thus improve conversion.
 
    * - | ``shippingCity``
-       | string
-     - Optional – The city of the shipping address.
+
+       .. type:: string
+          :required: false
+
+     - The city of the shipping address.
 
    * - | ``shippingRegion``
-       | string
-     - Optional – The region of the shipping address.
+
+       .. type:: string
+          :required: false
+
+     - The region of the shipping address.
 
    * - | ``shippingPostal``
-       | string
-     - Optional – The postal code of the shipping address.
+
+       .. type:: string
+          :required: false
+
+     - The postal code of the shipping address.
 
    * - | ``shippingCountry``
-       | string
-     - Optional – The country of the shipping address, in
+
+       .. type:: string
+          :required: false
+
+     - The country of the shipping address, in
        `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 Gift cards
@@ -186,8 +263,11 @@ Gift cards
    :widths: auto
 
    * - | ``issuer``
-       | string
-     - Optional – The gift card brand to use for the payment. These issuers are not dynamically available through the
+
+       .. type:: string
+          :required: false
+
+     - The gift card brand to use for the payment. These issuers are not dynamically available through the
        Issuers API, but can be retrieved by using the ``issuers`` include in the Methods API. If you need a brand not in
        the list, contact our support department. If only one issuer is activated on your account, you can omit this
        parameter.
@@ -196,12 +276,18 @@ Gift cards
        ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift``
 
    * - | ``voucherNumber``
-       | string
-     - Optional – The card number on the gift card.
+
+       .. type:: string
+          :required: false
+
+     - The card number on the gift card.
 
    * - | ``voucherPin``
-       | string
-     - Optional – The PIN code on the gift card. Only required if there is a PIN code printed on the gift card.
+
+       .. type:: string
+          :required: false
+
+     - The PIN code on the gift card. Only required if there is a PIN code printed on the gift card.
 
 iDEAL
 """""
@@ -209,8 +295,11 @@ iDEAL
    :widths: auto
 
    * - | ``issuer``
-       | string
-     - Optional – An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
+
+       .. type:: string
+          :required: false
+
+     - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
        specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
        :ref:`Issuers API <v1/issuers-list>`.
 
@@ -220,12 +309,18 @@ KBC/CBC Payment Button
    :widths: auto
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - When KBC/CBC is chosen as the payment method, the description will be truncated to 13 characters.
 
    * - | ``issuer``
-       | string
-     - Optional – The issuer to use for the KBC/CBC payment. These issuers are not dynamically available through the
+
+       .. type:: string
+          :required: false
+
+     - The issuer to use for the KBC/CBC payment. These issuers are not dynamically available through the
        Issuers API, but can be retrieved by using the ``issuers`` include in the Methods API.
 
        Possible values: ``kbc`` ``cbc``
@@ -236,27 +331,42 @@ PayPal
    :widths: auto
 
    * - | ``shippingAddress``
-       | string
-     - Optional – The shipping address. We advise to provide these details to improve PayPal's fraud protection, and
+
+       .. type:: string
+          :required: false
+
+     - The shipping address. We advise to provide these details to improve PayPal's fraud protection, and
        thus improve conversion. The maximum character length is 128.
 
    * - | ``shippingCity``
-       | string
-     - Optional – The city of the shipping address. The maximum character length is 100.
+
+       .. type:: string
+          :required: false
+
+     - The city of the shipping address. The maximum character length is 100.
 
    * - | ``shippingRegion``
-       | string
-     - Optional – The region of the shipping address. The maximum character length is 100. This field is required if the
+
+       .. type:: string
+          :required: false
+
+     - The region of the shipping address. The maximum character length is 100. This field is required if the
        ``shippingCountry`` is one of the following countries: ``AR`` ``BR`` ``CA`` ``CN`` ``ID`` ``IN`` ``JP`` ``MX``
        ``TH`` ``US``
 
    * - | ``shippingPostal``
-       | string
-     - Optional – The postal code of the shipping address. The maximum character length is 20.
+
+       .. type:: string
+          :required: false
+
+     - The postal code of the shipping address. The maximum character length is 20.
 
    * - | ``shippingCountry``
-       | string
-     - Optional – The country of the shipping address, in
+
+       .. type:: string
+          :required: false
+
+     - The country of the shipping address, in
        `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 paysafecard
@@ -265,8 +375,11 @@ paysafecard
    :widths: auto
 
    * - | ``customerReference``
-       | string
-     - Optional – Used for consumer identification. For example, you could use the consumer's IP address.
+
+       .. type:: string
+          :required: false
+
+     - Used for consumer identification. For example, you could use the consumer's IP address.
 
 SEPA Direct Debit
 """""""""""""""""
@@ -281,13 +394,19 @@ SEPA Direct Debit
    :widths: auto
 
    * - | ``consumerName``
-       | string
-     - Optional - Beneficiary name of the account holder. Only available if one-off payments are enabled on your
+
+       .. type:: string
+          :required: false
+
+     - Beneficiary name of the account holder. Only available if one-off payments are enabled on your
        account. Will pre-fill the beneficiary name in the checkout screen if present.
 
    * - | ``consumerAccount``
-       | string
-     - Optional - IBAN of the account holder. Only available if one-off payments are enabled on your account. Will
+
+       .. type:: string
+          :required: false
+
+     - IBAN of the account holder. Only available if one-off payments are enabled on your account. Will
        pre-fill the IBAN in the checkout screen if present.
 
 Mollie Connect/OAuth parameters
@@ -300,16 +419,25 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
    :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to make this payment a test payment.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to make this payment a test payment.
 
    * - | ``applicationFee``
-       | object
-     - Optional – Adding an Application Fee allows you to charge the merchant a small sum for the payment and transfer
+
+       .. type:: object
+          :required: false
+
+     - Adding an Application Fee allows you to charge the merchant a small sum for the payment and transfer
        this to your own account. Set the ``applicationFee`` parameter as a small object with it’s own amount and
        description. The application fee amount must be at least about €1.00 less than the payment's ``amount``
        parameter.
@@ -318,14 +446,20 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
           :widths: auto
 
           * - | ``amount``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - The amount in EUR that the app wants to charge, e.g. ``10.00`` if the app would want to charge €10.00.
 
               Note that you will need to invoice the merchant yourself. We will only collect the amount from the
               merchant and settle the amount with you.
 
           * - | ``description``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
 QR codes

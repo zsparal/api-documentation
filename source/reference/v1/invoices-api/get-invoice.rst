@@ -2,9 +2,14 @@
 
 Invoices API v1: Get invoice
 ============================
-``GET`` ``https://api.mollie.com/v1/invoices/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/invoices/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve details of an invoice, using the invoice's identifier.
 
@@ -31,23 +36,38 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains an invoice object. Will always contain ``invoice`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The invoice's unique identifier, for example ``inv_FrvewDA3Pr``.
 
    * - | ``reference``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The reference number of the invoice. An example value would be: ``2018.10000``.
 
    * - | ``vatNumber``
-       | string
-     - Optional – The VAT number to which the invoice was issued to (if applicable).
+
+       .. type:: string
+          :required: false
+
+     - The VAT number to which the invoice was issued to (if applicable).
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Status of the invoice.
 
        Possible values:
@@ -57,79 +77,127 @@ Response
        * ``overdue`` Payment of the invoice is overdue.
 
    * - | ``issueDate``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The invoice date in ``YYYY-MM-DD`` format.
 
    * - | ``paidDate``
-       | string
-     - Optional – The date on which the invoice was paid, in ``YYYY-MM-DD`` format. Only for paid invoices.
+
+       .. type:: string
+          :required: false
+
+     - The date on which the invoice was paid, in ``YYYY-MM-DD`` format. Only for paid invoices.
 
    * - | ``dueDate``
-       | string
-     - Optional – The date on which the invoice is due, in ``YYYY-MM-DD`` format. Only for due invoices.
+
+       .. type:: string
+          :required: false
+
+     - The date on which the invoice is due, in ``YYYY-MM-DD`` format. Only for due invoices.
 
    * - | ``amount``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The total amount of the invoice with and without VAT.
 
        .. list-table::
           :widths: auto
 
           * - | ``net``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - Total amount of the invoice excluding VAT.
 
           * - | ``vat``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - VAT amount of the invoice. Only for merchants registered in the Netherlands. For EU merchants, VAT will be
               shifted to recipient; article 44 and 196 EU VAT Directive 2006/112. For merchants outside the EU, no VAT
               will be charged.
 
           * - | ``gross``
-              | decimal 
+
+              .. type:: decimal
+                 :required: true
+
             - Total amount of the invoice including VAT.
 
    * - | ``lines``
-       | array
+
+       .. type:: array
+          :required: true
+
      - Only available if you require this field to be included – The collection of products which make up the invoice.
 
        .. list-table::
           :widths: auto
 
           * - | ``period``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The administrative period in ``YYYY-MM`` on which the line should be booked.
 
           * - | ``description``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - Description of the product.
 
           * - | ``count``
-              | integer
+
+              .. type:: integer
+                 :required: true
+
             - Number of products invoiced (usually number of payments).
 
           * - | ``vatPercentage``
-              | decimal
-            - Optional – VAT percentage rate that applies to this product.
+
+              .. type:: decimal
+                 :required: false
+
+            - VAT percentage rate that applies to this product.
 
           * - | ``amount``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - Amount excluding VAT.
 
    * - | ``settlements``
-       | array
+
+       .. type:: array
+          :required: true
+
      - Only available if you require this field to be included – An array of :ref:`settlements <v1/settlements-get>`
        that were invoiced on this invoice. You need the ``settlements.read`` permission for this field.
 
    * - | ``links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Useful URLs to related resources.
 
        .. list-table::
           :widths: auto
 
           * - | ``pdf``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL to the PDF version of the invoice. The URL will expire after 60 minutes.
 
 Example

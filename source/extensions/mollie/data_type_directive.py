@@ -6,7 +6,7 @@ from source.extensions import utilities
 class DataTypeDirective(Directive):
     has_content = False
     required_arguments = 1
-    optional_arguments = 0
+    final_argument_whitespace = True
     option_spec = {
         "required": utilities.validate_bool
     }

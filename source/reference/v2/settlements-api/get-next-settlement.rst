@@ -2,9 +2,14 @@
 
 Settlements API v2: Get next settlement
 =======================================
-``GET`` ``https://api.mollie.com/v2/settlements/next``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements/next
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve the details of the current settlement that has not yet been paid out.
 

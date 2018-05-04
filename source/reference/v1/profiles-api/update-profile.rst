@@ -2,9 +2,14 @@
 
 Profiles API v1: Update profile
 ===============================
-``POST`` ``https://api.mollie.com/v1/profiles/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/profiles/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 In order to process payments, you need to create a website profile. A website profile can easily be created via the
 Dashboard manually. However, the Mollie API also allows automatic profile creation via the Profiles API.
@@ -19,23 +24,38 @@ Replace ``id`` in the endpoint URL by the payment profile's ID, for example ``pf
    :widths: auto
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The profile's new name.
 
    * - | ``website``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
    * - | ``email``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The new email address associated with the profile's tradename or brand.
 
    * - | ``phone``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The new phone number associated with the profile's tradename or brand.
 
    * - | ``categoryCode``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The new industry identifier associated with the profile's tradename or brand.
 
        Possible values:
@@ -52,8 +72,11 @@ Replace ``id`` in the endpoint URL by the payment profile's ID, for example ``pf
        * ``0`` Other
 
    * - | ``mode``
-       | string
-     - Optional – The new profile mode. Note switching from test to production mode will trigger a verification process
+
+       .. type:: string
+          :required: false
+
+     - The new profile mode. Note switching from test to production mode will trigger a verification process
        where we review the payment profile.
 
        Possible values: ``live`` ``test``

@@ -21,16 +21,25 @@ Response object
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of objects found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The actual data you're looking for.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of objects. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -38,19 +47,31 @@ Response object
           :widths: auto
 
           * - | ``self``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the current set of objects.
 
           * - | ``previous``
-              | object
-            - Optional – The previous set of objects, if available.
+
+              .. type:: object
+                 :required: false
+
+            - The previous set of objects, if available.
 
           * - | ``next``
-              | object
-            - Optional – The next set of objects, if available.
+
+              .. type:: object
+                 :required: false
+
+            - The next set of objects, if available.
 
           * - | ``documentation``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the current list endpoint documentation.
 
 Example of v2 pagination
@@ -146,44 +167,71 @@ Response object
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of objects available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped objects as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of objects found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - The actual data you're looking for.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of objects, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of objects, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of objects, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of objects, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of objects, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of objects, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of objects, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of objects, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of objects, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of objects, if available.
 
 Example of v1 pagination
 ^^^^^^^^^^^^^^^^^^^^^^^^

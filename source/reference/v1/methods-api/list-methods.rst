@@ -2,9 +2,14 @@
 
 Methods API v1: List payment methods
 ====================================
-``GET`` ``https://api.mollie.com/v1/methods``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/methods
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all payment methods activated on the payment profile.
 
@@ -16,32 +21,47 @@ Parameters
    :widths: auto
 
    * - | ``include``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Include additional data. Must be a comma separated list of one or more includes. See
        :ref:`Get method <v1/methods-get>` for available includes.
 
    * - | ``recurringType``
-       | string
-     - Optional – Passing ``first`` will only show payment methods eligible for making a
+
+       .. type:: string
+          :required: false
+
+     - Passing ``first`` will only show payment methods eligible for making a
        :ref:`first payment <guides/recurring/first-payment>`. Passing ``recurring`` shows payment methods which can be
        used to automatically charge your customer's account when authorization has been given.
 
        Possible values: ``first`` ``recurring``
 
    * - | ``locale``
-       | string
-     - Optional – Passing a locale will sort the payment methods in the preferred order for the country, and translate
+
+       .. type:: string
+          :required: false
+
+     - Passing a locale will sort the payment methods in the preferred order for the country, and translate
        the payment method names to the corresponding language.
 
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
    * - | ``offset``
-       | integer
-     - Optional – The number of payment methods to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment methods to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of payment methods to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment methods to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,12 +73,18 @@ each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more infor
    :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to true to only retrieve payment methods available in test mode. By default, only live
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve payment methods available in test mode. By default, only live
        payment methods are returned.
 
 Includes
@@ -76,44 +102,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of payment methods available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped payment methods as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of payment methods found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of payment method objects as described in :ref:`Get payment method <v1/methods-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of payment methods, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of payment methods, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of payment methods, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of payment methods, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of payment methods, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of payment methods, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of payment methods, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of payment methods, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of payment methods, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of payment methods, if available.
 
 Example
 -------

@@ -2,9 +2,14 @@
 
 Profiles API v1: Delete profile
 ===============================
-``DELETE`` ``https://api.mollie.com/v1/profiles/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v1/profiles/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 This endpoint enables profile deletions, rendering the profile unavailable for further API calls and transactions.
 

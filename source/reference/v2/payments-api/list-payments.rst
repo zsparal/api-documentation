@@ -2,9 +2,14 @@
 
 Payments API v2: List payments
 ==============================
-  ``GET`` ``https://api.mollie.com/v2/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
@@ -16,13 +21,19 @@ Parameters
    :widths: auto
 
    * - | ``from``
-       | string
-     - Optional – Offset the result set to the payment with this ID. The payment with this ID is included in the result
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the payment with this ID. The payment with this ID is included in the result
        set as well.
 
    * - | ``limit``
-       | integer
-     - Optional – The number of payments to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payments to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -35,12 +46,18 @@ websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
    :widths: auto
 
    * - | ``profileId``
-       | string
-     - Optional – The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
+       .. type:: string
+          :required: false
+
+     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to true to only retrieve payments made in test mode. By default, only live payments are
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve payments made in test mode. By default, only live payments are
        returned.
 
 Includes
@@ -60,23 +77,35 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of payments found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``payments``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of payment objects as described in :ref:`Get payment <v2/payments-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of payments. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -84,19 +113,31 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the current set of payments.
 
           * - | ``previous``
-              | URL object
-            - Optional – The previous set of payments, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The previous set of payments, if available.
 
           * - | ``next``
-              | URL object
-            - Optional – The next set of payments, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The next set of payments, if available.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the payments list endpoint documentation.
 
 Example

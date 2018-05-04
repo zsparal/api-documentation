@@ -2,9 +2,14 @@
 
 Customers API v1: List customer payments
 ========================================
-``GET`` ``https://api.mollie.com/v1/customers/*customerId*/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers/*customerId*/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all payments linked to the customer.
 

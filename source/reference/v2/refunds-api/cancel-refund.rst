@@ -2,9 +2,14 @@
 
 Refunds API v2: Cancel refund
 =============================
-``DELETE`` ``https://api.mollie.com/v2/payments/*paymentId*/refunds/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v2/payments/*paymentId*/refunds/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 For certain payment methods, like iDEAL, the underlying banking system will delay refunds until the next day. Until that
 time, refunds may be canceled manually in your Mollie account, or automatically by using this endpoint.

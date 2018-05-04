@@ -2,9 +2,14 @@
 
 Settlements API v2: Get settlement payments
 ===========================================
-``GET`` ``https://api.mollie.com/v2/settlements/*settlementId*/payments``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements/*settlementId*/payments
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all payments included in a settlement.
 
