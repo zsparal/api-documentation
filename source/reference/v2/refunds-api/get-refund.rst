@@ -164,6 +164,13 @@ Response
 
             - The API resource URL of the payment the refund belongs to.
 
+          * - | ``settlement``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
+
           * - | ``documentation``
 
               .. type:: URL object

@@ -35,20 +35,19 @@ complete the payment with the account or card that will be used for recurring ch
 payment is completed succesfully, the customer's account or card will immediately be chargeable *on-demand*, or
 periodically through *subscriptions*.
 
-#. Create a unique customer using the :ref:`Customers API <v1/customers-create>`.
+#. Create a unique customer using the :ref:`Customers API <v2/customers-create>`.
 
    .. code-block:: bash
       :linenos:
 
-      curl -X POST https://api.mollie.com/v1/customers \
+      curl -X POST https://api.mollie.com/v2/customers \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-          -d "name=Customer A" \
-          -d "email=customer@example.com"
+          -d "{\"name\":\"Customer A\",\"email\":\"customer@example.org\"}"
 
 #. Save the customer's ``id`` in your database. You need it when performing :ref:`Payments API <v2/payments-create>`
    calls.
 
-#. Create a payment for the customer by specifying the ``customerId`` and setting the ``recurringType`` parameter to
+#. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
 
    .. code-block:: bash
@@ -56,6 +55,7 @@ periodically through *subscriptions*.
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d \
           "{
               \"amount\": {\"currency\":\"EUR\", \"value\":\"0.01\"},
@@ -96,19 +96,21 @@ Please note that in order to do recurring payments, direct debit or credit card 
 
 #. If there's at least one mandate with a ``status`` set to ``valid`` then continue.
 
-#. Set the ``recurringType`` parameter to ``recurring`` to charge the customer on-demand.
+#. Set the ``sequenceType`` parameter to ``recurring`` to charge the customer on-demand.
 
    .. code-block:: bash
       :linenos:
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d \
           "{
               \"amount\": {\"currency\": \"EUR\", \"value\": \"10.00\"},
               \"customerId\": \"cst_Ok2DlrJe5\",
               \"sequenceType\": \"recurring\",
-              \"description\": \"Background payment\"
+              \"description\": \"Background payment\",
+              \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
 #. Like regular payments your :ref:`webhook <guides/webhooks>` is called for retrieving status updates.
@@ -118,7 +120,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
 Charging periodically with subscriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For simple regular recurring payments with constant amounts, you can create *subscriptions* with the
-:ref:`Subscriptions API <v1/subscriptions-create>`. Subscription payments will be spawned automatically at the specified
+:ref:`Subscriptions API <v2/subscriptions-create>`. Subscription payments will be spawned automatically at the specified
 frequency, and will show up in your Dashboard.
 
 #. Make sure the customer has a pending or valid mandate using the :ref:`Mandates API <v1/mandates-list>`.
@@ -132,20 +134,25 @@ frequency, and will show up in your Dashboard.
 #. Continue if there's a mandate with its ``status`` being either ``pending`` or ``valid``, otherwise set up a *first*
    payment for the customer first.
 
-#. Create the subscription using the :ref:`Subscriptions API <v1/subscriptions-create>`.
+#. Create the subscription using the :ref:`Subscriptions API <v2/subscriptions-create>`.
 
    .. code-block:: bash
       :linenos:
 
-      curl -X POST https://api.mollie.com/v1/customers/cst_stTC2WHAuS/subscriptions \
+      curl -X POST https://api.mollie.com/v2/customers/cst_Ok2DlrJe5/subscriptions \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-          -d "amount=25.00" \
-          -d "times=4" \
-          -d "interval=3 months" \
-          -d "description=Quarterly payment" \
-          -d "webhookUrl=https://webshop.example.org/payments/webhook"
+          -H "Content-Type: application/json" \
+          -d \
+          "{
+              \"amount\": {\"currency\":\"EUR\", \"value\":\"25.00\"},
+              \"times\": 4,
+              \"interval\": \"3 months\",
+              \"description\": \"Quarterly payment\",
+              \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
+          }"
 
-#. In the above example the customer is charged €25.00 every 3 months, starting today.
+
+#. In the above example the customer is charged €25.00 for 4 times every 3 months, starting today.
 
 #. The webhook URL will be triggered for every payment to communicate any status updates.
 
