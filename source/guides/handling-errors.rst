@@ -62,6 +62,21 @@ Response
         }
     }
 
+
+The response types
+----------------------
+
+The first digit of the status code indicates the type or class of the status. Using this first digit you can determine
+the best approach for dealing with an error. The following classes of codes are relevant to the Mollie API:
+
+* A code in the ``2xx``` range comes with a Mollie API response indicating success.
+* A code in the ``4xx`` range is an error code returned from the Mollie API where the client (your responsibility) seems
+  to be causing the error. Whenever this happens you can change your code to prevent the error from happening again. The
+  error for this specific request usually won't go away by itself.
+* A code in the ``5xx`` range is an error caused by the server (Mollie's responsibility). So caused by the Mollie API or
+  it is infrastructure related. In the rare case you get this type of error, something is wrong with the Mollie API.
+  The errors should subside without your mediation.
+
 Examples of error responses
 ---------------------------
 Things will sometimes go wrong. For instance when a request is made with the wrong API key, this error will be the
@@ -169,20 +184,6 @@ Response
             }
         }
     }
-
-All error types listed
-----------------------
-
-The first digit of the status code indicates the type or class of the status. Using this first digit you can determine
-the best approach for dealing with an error. The following classes of codes are relevant to the Mollie API:
-
-* A code in the ``2xx``` range comes with a Mollie API response indicating success.
-* A code in the ``4xx`` range is an error code returned from the Mollie API where the client (your responsibility) seems
-  to be causing the error. Whenever this happens you can change your code to prevent the error from happening again. The
-  error for this specific request usually won't go away by itself.
-* A code in the ``5xx`` range is an error caused by the server (Mollie's responsibility). So caused by the Mollie API or
-  it is infrastructure related. In the rare case you get this type of error, something is wrong with the Mollie API.
-  The errors should subside without your mediation.
 
 All possible status codes
 -------------------------
