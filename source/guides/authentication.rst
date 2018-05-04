@@ -12,9 +12,10 @@ profile has a *Live API key* and a *Test API key*. Use these keys to:
 * Select the website profile the intended communication with the Mollie API relates to.
 * Specify whether you're testing or working with real payments.
 
-The API key must be sent along with each API request, by providing it in the HTTP call's ``Authorization`` header. If
-one of our default API clients is used, the client will offer a ``setApiKey`` method that will allow you to easily
-configure the required header.
+The API key must be sent along with each API request, by providing it in the HTTP call's ``Authorization`` header. The
+API key is preceded by ``Bearer``. For example: a valid ``Authorization`` header is
+``Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. If one of our default API clients is used, the client will offer a 
+``setApiKey`` method that will allow you to easily configure the required header.
 
 While building and testing your integration you should use the *Test API key*. This will cause your code to
 (automatically) only create test payments. Test payments come with a fake payment screen that allows you to select
