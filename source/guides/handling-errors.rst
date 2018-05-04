@@ -5,8 +5,8 @@ Handling errors
 
 HTTP status codes
 -----------------
-Whenever you send a request to the Mollie API you'll get a response in **JSON (JavaScript Object Notation)** format.
-This is a standard for data communication that's `easy to read for humans <https://json.org>`_ as well as machines.
+Whenever you send a request to the Mollie API you'll get a response in `**JSON (JavaScript Object Notation)** <https://json.org>` format.
+This is a standard for data communication that's easy to read for humans as well as machines.
 Alongside the JSON-response an HTTP status code is sent that shows whether the request was successful or not. If it
 wasn't, you can tell by the code and the message in the response what went wrong, why it went wrong and whether there
 is something you can do about it.
