@@ -71,7 +71,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        .. type:: string
           :required: true
 
-     - A description unique per `ubscription . This will be included in the payment description along with the charge
+     - A description unique per subscription . This will be included in the payment description along with the charge
        date in ``YYYY-MM-DD`` format.
 
    * - | ``method``

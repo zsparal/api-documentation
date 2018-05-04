@@ -20,12 +20,12 @@ Parameters
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the chargeback's ID. For example:
 ``/v2/payments/tr_7UhSN1zuXS/chargebacks/chb_n9z0tp``.
 
-Includes
-^^^^^^^^
-This endpoint allows you to include additional information by appending the following values via the ``include``
-querystring parameter.
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
 
-* ``payment`` Include the payment object in the response.
+* ``payment`` Include the :ref:`payment <v2/payments-get>` this chargeback was issued for.
 
 Response
 --------

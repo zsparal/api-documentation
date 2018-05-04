@@ -17,10 +17,6 @@ of the refund will be withheld from your next settlement.
 Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
 please contact our support department.
 
-By supplying the optional ``amount`` parameter, you can issue a partial refund where the consumer is only refunded a
-fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,
-for example to refund costs for returnment shipping.
-
 Refunds support descriptions, which we will show in the Dashboard, your exports and pass to the consumer if possible.
 
 If you have insufficient balance with Mollie to perform the refund, the refund will be ``queued``. We will automatically
@@ -58,8 +54,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
        .. type:: amount object
           :required: false
 
-     - The amount to refund. When ommitted, the full amount is refunded. Can be up to €25.00 more than the
-       original transaction amount.
+     - The amount to refund. For some payments, it can be up to €25.00 more than the original transaction amount.
 
        .. list-table::
           :widths: auto
@@ -69,8 +64,8 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
               .. type:: string
                  :required: true
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
-              the payment methods that are enabled on your account.
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currency must be the same as
+              the corresponding payment.
 
           * - | ``value``
 
