@@ -50,7 +50,7 @@ templates_path = ['_templates', 'theme/_templates']
 source_suffix = '.rst'
 
 # The master toctree document.
-master_doc = 'sitemap'
+master_doc = 'contents'
 
 # General information about the project.
 project = 'Mollie API'
