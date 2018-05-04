@@ -60,9 +60,11 @@ after your hosting service is restored.
 
 Example
 -------
+The most important task your webhook script has to complete is to process orders whenever the status of a payment turns
+out to be ``paid``. Therefore, please note the exact working of this process really depends on your product, your
+business and your website. So we're not able to show a general example here.
+
 To get started with webhooks, please refer to the documentation of the
 `Mollie API client <https://www.mollie.com/en/modules>`_ you are using.
 
-The most important task your webhook script has to complete is to process orders whenever the status of a payment turns
-out to be ``paid``. Therefore, please note the exact working of this process really depends on your product, your
-business and your website.
+
