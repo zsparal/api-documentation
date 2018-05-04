@@ -169,4 +169,4 @@ not be known by your system yet when we call the webhook to report the payment's
 The payment object will, however, contain a ``subscriptionId`` field that contains the subscription ID you received when
 the subscription was created. This allows you to recognize where the payment belongs to.
 
-We currently do not provide webhooks specifically for status changes of a Subscription itself.
+We do not provide webhooks specifically for status changes of a Subscription itself.
