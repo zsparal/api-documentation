@@ -109,12 +109,23 @@
 
 .sidebar ul.current > li.current > ul {
   display: block;
+  margin-top: 10px;
+}
+
+.sidebar ul.current > li.current > ul li:last-child a {
+  margin-bottom: 0;
+}
+
+.sidebar ul.current > li.current > ul {
+  margin-bottom: 20px;
 }
 
 .sidebar ul.current > li.current > ul a {
   position: relative;
   font-size: 14px;
   padding-left: 15px;
+  display: inline;
+  line-height: 12px;
 }
 
 .sidebar ul.current > li.current > ul a:before {
@@ -124,6 +135,6 @@
   background: #666666;
   position: absolute;
   left: 0;
-  top: 50%;
+  top: 4px;
   transform: translateY(-50%);
 }
