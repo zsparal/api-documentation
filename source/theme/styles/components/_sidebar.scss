@@ -41,29 +41,19 @@
   padding-bottom: 80px;
 }
 
-.sidebar__inner::-webkit-scrollbar {
-  margin-top: 50px;
-  width: 6px;
+.sidebar__group {
+  margin-bottom: 20px;
 }
 
-.sidebar__inner::-webkit-scrollbar-track {
-  background: #fff;
+.sidebar__group:last-child {
+  margin-bottom: 80px;
 }
 
-.sidebar__inner::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background: #fff;
+.sidebar__group a:hover, .sidebar__group a:focus {
+  text-decoration: none;
 }
 
-.sidebar__inner:hover::-webkit-scrollbar-thumb {
-  background: $grey-medium;
-}
-
-.sidebar .toctree-l1 ul {
-  display: none;
-}
-
-.sidebar .caption {
+.sidebar__group > p {
   font-size: 24px;
   font-weight: $font-weight-semibold;
   margin-bottom: 15px;
@@ -73,16 +63,28 @@
   }
 }
 
-.sidebar ul {
+.sidebar__group > p > a {
+  color: #333333;
+}
+
+.sidebar__group > p > a:hover {
+  color: $brand-primary;
+}
+
+.sidebar__group ul {
   @include bare-list;
+  margin: 0;
+}
+
+.sidebar__group > ul {
   margin-bottom: 40px;
 }
 
-.sidebar ul li {
+.sidebar__group ul li {
   margin-bottom: 8px;
 }
 
-.sidebar ul li a {
+.sidebar__group ul li a {
   color: #666666;
   font-size: 16px;
 
@@ -95,32 +97,32 @@
   }
 }
 
-.sidebar > ul:last-child {
-  margin-bottom: 80px;
+.sidebar__group ul li a:hover {
+  color: #333333;
 }
 
-.sidebar ul:last-child li {
-  margin-bottom: 0;
-}
-
-.sidebar ul.current a.current {
+.sidebar__group > ul > li.current > a {
   color: $brand-primary;
 }
 
-.sidebar ul.current > li.current > ul {
-  display: block;
+.sidebar__group > ul > li.current > ul > li > a {
+  display: none;
+}
+
+.sidebar__group > ul > li.current > ul ul {
   margin-top: 10px;
-}
-
-.sidebar ul.current > li.current > ul li:last-child a {
-  margin-bottom: 0;
-}
-
-.sidebar ul.current > li.current > ul {
   margin-bottom: 20px;
 }
 
-.sidebar ul.current > li.current > ul a {
+.sidebar__group > ul > li.current > ul ul ul {
+  display: none;
+}
+
+.sidebar__group > ul > li.current > ul li {
+  margin: 0;
+}
+
+.sidebar__group > ul > li.current > ul a {
   position: relative;
   font-size: 14px;
   padding-left: 15px;
@@ -128,7 +130,7 @@
   line-height: 12px;
 }
 
-.sidebar ul.current > li.current > ul a:before {
+.sidebar__group > ul > li.current > ul a:before {
   content: "";
   height: 1px;
   width: 8px;
@@ -137,4 +139,12 @@
   left: 0;
   top: 4px;
   transform: translateY(-50%);
+}
+
+.sidebar__group--collapse > ul {
+  display: none;
+}
+
+.sidebar__spacing {
+  padding-bottom: 20px;
 }

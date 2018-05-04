@@ -1,0 +1,146 @@
+{% from 'macros/sidebar-item.html' import sidebar_item with context -%}
+{% from 'macros/sidebar-collapse-group.html' import sidebar_collapse_group with context -%}
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/payments-api/') }}">
+	<p><a href="javascript:void(0)">Payments API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/payments-api/create-payment', 'Create payment') }}
+		{{ sidebar_item('reference/v2/payments-api/get-payment', 'Get payment') }}
+		{{ sidebar_item('reference/v2/payments-api/cancel-payment', 'Cancel payment') }}
+		{{ sidebar_item('reference/v2/payments-api/list-payments', 'List payments') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/methods-api/') }}">
+	<p><a href="javascript:void(0)">Methods API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/methods-api/list-methods', 'List methods') }}
+		{{ sidebar_item('reference/v2/methods-api/get-method', 'Get method') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/refunds-api/') }}">
+	<p><a href="javascript:void(0)">Refunds API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/refunds-api/create-refund', 'Create refund') }}
+		{{ sidebar_item('reference/v2/refunds-api/get-refund', 'Get refund') }}
+		{{ sidebar_item('reference/v2/refunds-api/cancel-refund', 'Cancel refund') }}
+		{{ sidebar_item('reference/v2/refunds-api/list-refunds', 'List refunds') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/chargebacks-api/') }}">
+	<p><a href="javascript:void(0)">Chargebacks API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/chargebacks-api/get-chargeback', 'Get chargeback') }}
+		{{ sidebar_item('reference/v2/chargebacks-api/list-chargebacks', 'List chargebacks') }}
+	</ul>
+</div>
+
+<div class="sidebar__spacing"></div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/customers-api/') }}">
+	<p><a href="javascript:void(0)">Customers API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/customers-api/create-customer', 'Create customer') }}
+		{{ sidebar_item('reference/v2/customers-api/get-customer', 'Get customer') }}
+		{{ sidebar_item('reference/v2/customers-api/update-customer', 'Update customer') }}
+		{{ sidebar_item('reference/v2/customers-api/delete-customer', 'Delete customer') }}
+		{{ sidebar_item('reference/v2/customers-api/list-customers', 'List customers') }}
+		{{ sidebar_item('reference/v2/customers-api/create-customer-payment', 'Create customer payment') }}
+		{{ sidebar_item('reference/v2/customers-api/list-customer-payments', 'List customer payments') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/mandates-api/') }}">
+	<p><a href="javascript:void(0)">Mandates API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v1/mandates-api/create-mandate', 'Create mandate') }}
+		{{ sidebar_item('reference/v1/mandates-api/get-mandate', 'Get mandate') }}
+		{{ sidebar_item('reference/v1/mandates-api/revoke-mandate', 'Revoke mandate') }}
+		{{ sidebar_item('reference/v1/mandates-api/list-mandates', 'List mandates') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/subscriptions-api/') }}">
+	<p><a href="javascript:void(0)">Subscriptions API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/subscriptions-api/create-subscription', 'Create subscription') }}
+		{{ sidebar_item('reference/v2/subscriptions-api/get-subscription', 'Get subscription') }}
+		{{ sidebar_item('reference/v2/subscriptions-api/cancel-subscription', 'Cancel subscription') }}
+		{{ sidebar_item('reference/v2/subscriptions-api/list-subscriptions', 'List subscriptions') }}
+	</ul>
+</div>
+
+<div class="sidebar__spacing"></div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/oauth2/') }}">
+	<p><a href="javascript:void(0)">Connect API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/oauth2/authorize', 'Authorize') }}
+		{{ sidebar_item('reference/oauth2/tokens', 'Tokens') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/permissions-api/') }}">
+	<p><a href="javascript:void(0)">Permissions API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v1/permissions-api/get-permission', 'Get permission') }}
+		{{ sidebar_item('reference/v1/permissions-api/list-permissions', 'List permissions') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/organizations-api/') }}">
+	<p><a href="javascript:void(0)">Organizations API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v1/organizations-api/get-organization', 'Get organization') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/profiles-api/') }}">
+	<p><a href="javascript:void(0)">Profiles API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v1/profiles-api/create-profile', 'Create profile') }}
+		{{ sidebar_item('reference/v1/profiles-api/get-profile', 'Get profile') }}
+		{{ sidebar_item('reference/v1/profiles-api/update-profile', 'Update profile') }}
+		{{ sidebar_item('reference/v1/profiles-api/delete-profile', 'Delete profile') }}
+		{{ sidebar_item('reference/v1/profiles-api/list-profiles', 'List profiles') }}
+		{{ sidebar_item('reference/v1/profiles-api/get-key', 'Get API key') }}
+		{{ sidebar_item('reference/v1/profiles-api/reset-key', 'Reset API key') }}
+		{{ sidebar_item('reference/v1/profiles-api/list-keys', 'List API keys') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/settlements-api/') }}">
+	<p><a href="javascript:void(0)">Settlements API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v2/settlements-api/get-settlement', 'Get settlement') }}
+		{{ sidebar_item('reference/v2/settlements-api/get-next-settlement', 'Get next settlement') }}
+		{{ sidebar_item('reference/v2/settlements-api/get-open-settlement', 'Get open settlement') }}
+		{{ sidebar_item('reference/v2/settlements-api/list-settlements', 'List settlements') }}
+		{{ sidebar_item('reference/v2/settlements-api/list-settlement-payments', 'List settlement payments') }}
+		{{ sidebar_item('reference/v2/settlements-api/list-settlement-refunds', 'List settlement refunds') }}
+		{{ sidebar_item('reference/v2/settlements-api/list-settlement-chargebacks', 'List settlement chargebacks') }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/invoices-api/') }}">
+	<p><a href="javascript:void(0)">Invoices API</a></p>
+
+	<ul>
+		{{ sidebar_item('reference/v1/invoices-api/get-invoice', 'Get invoice') }}
+		{{ sidebar_item('reference/v1/invoices-api/list-invoices', 'List invoices') }}
+	</ul>
+</div>

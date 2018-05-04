@@ -49,9 +49,18 @@ const scrollToSection = event => {
   event.preventDefault();
 };
 
+const toggleSidebarGroup = event => {
+    event.target.parentNode.parentNode.classList.toggle('sidebar__group--collapse');
+};
+
 export default enhance("sidebar", () => {
   const links = document.querySelectorAll(".sidebar__inner .current a, a.headerlink");
   [].forEach.call(links, link => {
     link.addEventListener("click", scrollToSection);
+  });
+
+  const groupHeaders = document.querySelectorAll(".sidebar__group > p > a");
+  [].forEach.call(groupHeaders, groupHeader => {
+    groupHeader.addEventListener("click", toggleSidebarGroup);
   });
 });
