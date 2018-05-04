@@ -2,9 +2,14 @@
 
 Settlements API v1: List settlements
 ====================================
-``GET`` ``https://api.mollie.com/v1/settlements``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/settlements
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all settlements, ordered from new to old.
 
@@ -16,17 +21,26 @@ Parameters
    :widths: auto
 
    * - | ``reference``
-       | string
-     - Optional – Use this parameter to filter for a settlement with a specific reference. The reference is visible on
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to filter for a settlement with a specific reference. The reference is visible on
        your bank statement and in emails. An example reference would be ``1182161.1506.02``.
 
    * - | ``offset``
-       | integer
-     - Optional – The number of payment profiles to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of payment profiles to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to return (with a maximum of 250).
 
 Response
 --------
@@ -36,44 +50,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of settlements available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped settlements as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of settlements found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of settlement objects as described in :ref:`Get settlement <v1/settlements-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of settlements, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of settlements, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of settlements, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of settlements, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of settlements, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of settlements, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of settlements, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of settlements, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of settlements, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of settlements, if available.
 
 Example
 -------
@@ -81,6 +122,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/settlements \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -88,6 +130,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

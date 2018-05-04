@@ -2,7 +2,10 @@
 
 Connect API: Tokens
 ===================
-``GET`` ``https://www.mollie.com/oauth2/tokens``
+
+.. endpoint::
+   :method: GET
+   :url: https://www.mollie.com/oauth2/tokens
 
 Authentication: :ref:`OAuth client credentials <oauth/overview>`
 
@@ -15,24 +18,36 @@ Parameters
    :widths: auto
 
    * - | ``grant_type``
-       | string
+
+       .. type:: string
+          :required: true
+
      - If you wish to exchange your auth code for an access token, use grant type ``authorization_code``. If you wish to
        renew your access token with your refresh token, use grant type ``refresh_token``.
 
        Possible values: ``authorization_code`` ``refresh_token``
 
    * - | ``code``
-       | string
-     - Optional – The auth code you've received when creating the authorization. Only use this field when using grant
+
+       .. type:: string
+          :required: false
+
+     - The auth code you've received when creating the authorization. Only use this field when using grant
        type ``authorization_code``.
 
    * - | ``refresh_token``
-       | string
-     - Optional – The refresh token you've received when creating the authorization. Only use this field when using
+
+       .. type:: string
+          :required: false
+
+     - The refresh token you've received when creating the authorization. Only use this field when using
        grant type ``refresh_token``.
 
    * - | ``redirect_uri``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The URL the merchant is sent back to once the request has been authorized. It must match the URL you set when
        :ref:`registering your app <oauth/getting-started>`.
 
@@ -44,27 +59,42 @@ Response
    :widths: auto
 
    * - | ``access_token``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The access token, with which you will be able to access the Mollie API on the merchant's behalf.
 
    * - | ``refresh_token``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The refresh token, with which you will be able to retrieve new access tokens on this endpoint. Please note that
        the refresh token does not expire.
 
    * - | ``expires_in``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of seconds left before the access token expires. Be sure to renew your access token before this
        reaches zero.
 
    * - | ``token_type``
-       | string
+
+       .. type:: string
+          :required: true
+
      - As per OAuth standards, the provided access token can only be used with bearer authentication.
 
        Possible values: ``bearer``
 
    * - | ``scope``
-       | string
+
+       .. type:: string
+          :required: true
+
      - A space separated list of permissions. Please refer to :ref:`Permissions <oauth/permissions>` for the full
        permission list.
 
@@ -74,6 +104,7 @@ Example
 Initial request
 ^^^^^^^^^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
        -d "grant_type=authorization_code&code=abc123"
@@ -81,6 +112,7 @@ Initial request
 Initial response
 ^^^^^^^^^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8
@@ -98,6 +130,7 @@ Now that we have a refresh token, we should renew the access token before its ex
 Refresh request
 ^^^^^^^^^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
        -d "grant_type=refresh_token&refresh_token=refresh_FS4xc3Mgci2xQ5s5DzaLXh3HhaTZOP"
@@ -105,6 +138,7 @@ Refresh request
 Refresh response
 ^^^^^^^^^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

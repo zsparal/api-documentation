@@ -2,9 +2,14 @@
 
 Customers API v1: List customer payments
 ========================================
-``GET`` ``https://api.mollie.com/v1/customers/*customerId*/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers/*customerId*/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all payments linked to the customer.
 
@@ -26,6 +31,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/customers/cst_8wmqcHMN4U/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -33,6 +39,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

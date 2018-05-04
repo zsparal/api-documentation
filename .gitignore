@@ -1,2 +1,14 @@
 /.idea
+/.cache
 /build
+source/_static/style.css
+source/_static/
+!source/_static/img/*
+!source/_static/fonts/*
+
+# JavaScript
+/node_modules
+
+# Python
+__pycache__
+*.pyc

@@ -20,6 +20,7 @@ this type of response in our examples like this one below where we successfully
 Request
 ^^^^^^^
 .. code-block:: bash
+    :linenos:
 
     curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -27,6 +28,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+    :linenos:
 
     HTTP/1.1 200 OK
     Content-Type: application/json; charset=utf-8
@@ -69,6 +71,7 @@ Request
 ^^^^^^^
 
 .. code-block:: bash
+    :linenos:
 
     curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
         -H "Authorization: Bearer test_deliberately_invalid_key"
@@ -77,6 +80,7 @@ Response
 ^^^^^^^^
 
 .. code-block:: http
+    :linenos:
 
     HTTP/1.1 401 Authorization Required
     Content-Type: application/hal+json; charset=utf-8
@@ -103,6 +107,7 @@ Request
 ^^^^^^^
 
 .. code-block:: bash
+    :linenos:
 
     curl -X GET https://api.mollie.com/v2/payments/tr_I_dont_exist \
         -H "Authorization: Bearer test_4BBB6H4s2jGi3ajsx4E2KqY5sxSXaRV"
@@ -111,6 +116,7 @@ Response
 ^^^^^^^^
 
 .. code-block:: http
+    :linenos:
 
     HTTP/1.1 404 Not Found
     Content-Type: application/json; charset=utf-8
@@ -135,6 +141,7 @@ Request
 ~~~~~~~
 
 .. code-block:: bash
+    :linenos:
 
     curl -X POST https://api.mollie.com/v2/payments \
         -H "Content-Type: application/json" \
@@ -145,6 +152,7 @@ Response
 ~~~~~~~~
 
 .. code-block:: http
+    :linenos:
 
     HTTP/1.1 422 Unprocessable Entity
     Content-Type: application/hal+json; charset=utf-8

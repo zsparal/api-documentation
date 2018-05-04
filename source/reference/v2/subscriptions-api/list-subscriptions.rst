@@ -2,9 +2,14 @@
 
 Subscriptions API v2: List subscriptions
 ========================================
-``GET`` ``https://api.mollie.com/v2/customers/*customerId*/subscriptions``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/customers/*customerId*/subscriptions
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all subscriptions of a customer.
 
@@ -16,13 +21,19 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
    :widths: auto
 
    * - | ``from``
-       | string
-     - Optional – Offset the result set to the subscription with this ID. The subscription with this ID is included
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the subscription with this ID. The subscription with this ID is included
        in the result set as well.
 
    * - | ``limit``
-       | integer
-     - Optional – The number of subscriptions to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of subscriptions to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,12 +45,18 @@ for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more i
     :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to retrieve test mode subscriptions.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to retrieve test mode subscriptions.
 
 Response
 --------
@@ -49,23 +66,35 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
        or the default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``subscriptions``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of subscription objects as described in :ref:`Get subscription <v2/subscriptions-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a
        ``type`` field.
 
@@ -73,19 +102,31 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the current set of subscriptions.
 
           * - | ``previous``
-              | URL object
-            - Optional – The previous set of subscriptions, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The previous set of subscriptions, if available.
 
           * - | ``next``
-              | URL object
-            - Optional – The next set of subscriptions, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The next set of subscriptions, if available.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the subscriptions list endpoint documentation.
 
 Example
@@ -94,6 +135,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/subscriptions \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -101,6 +143,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json

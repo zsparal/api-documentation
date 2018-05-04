@@ -2,9 +2,14 @@
 
 Customers API v2: Get customer
 ==============================
-``GET`` ``https://api.mollie.com/v2/customers/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/customers/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single customer by its ID.
 
@@ -20,8 +25,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to retrieve a test mode customer.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to retrieve a test mode customer.
 
 Response
 --------
@@ -31,30 +39,48 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
 
    * - | ``mode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The mode used to create this customer. Mode determines whether a customer is *real* (live mode) or a *test*
        customer.
 
        Possible values: ``live`` ``test``
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The full name of the customer as provided when the customer was created.
 
    * - | ``email``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The email address of the customer as provided when the customer was created.
 
    * - | ``locale``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Allows you to preset the language to be used in the payment screens shown to the consumer. If this parameter was
        not provided when the customer was created, the browser language will be used instead in the payment flow (which
        is usually more accurate).
@@ -62,22 +88,34 @@ Response
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
    * - | ``metadata``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Data provided during the customer creation in JSON notation.
 
    * - | ``recentlyUsedMethods``
-       | array
+
+       .. type:: array
+          :required: true
+
      - Payment methods that the customer recently used for payments.
 
        Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
        ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``createdAt``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The customer record's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with several URL objects relevant to the customer. Every URL object will contain an ``href`` and a
        ``type`` field.
 
@@ -85,11 +123,17 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the customer itself.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the customer retrieval endpoint documentation.
 
 Example
@@ -98,6 +142,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/customers/cst_kEn1PlbGa \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -105,6 +150,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

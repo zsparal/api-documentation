@@ -51,6 +51,7 @@ In the example below we're using the *Test API Key* ``test_dHar4XY7LxsDOtmnkVtjN
 for a retrieved payment with fictional ``id`` ``tr_WDqYK6vllg``.
 
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -60,6 +61,7 @@ Response
 The response will be JSON.
 
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

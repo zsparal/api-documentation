@@ -2,9 +2,14 @@
 
 Methods API v2: Get payment method
 ==================================
-``GET`` ``https://api.mollie.com/v2/methods/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/methods/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single method by its ID. Note that if a method is not available on the payment profile a status
 ``404 Not found`` is returned. When the method is not enabled, a status ``403 Forbidden`` is returned.
@@ -20,8 +25,11 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
    :widths: auto
 
    * - | ``locale``
-       | string
-     - Optional – Passing a locale will translate the payment method name in the corresponding language.
+
+       .. type:: string
+          :required: false
+
+     - Passing a locale will translate the payment method name in the corresponding language.
 
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
@@ -35,12 +43,18 @@ profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` f
    :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to list all methods available in testmode.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to list all methods available in testmode.
 
 Includes
 ^^^^^^^^
@@ -57,35 +71,56 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a method object. Will always contain ``method`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The unique identifier of the payment method. When used during :ref:`payment creation <v2/payments-create>`,
        the payment method selection screen will be skipped.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The full name of the payment method, translated in the optional locale passed.
 
    * - | ``image``
-       | image object
+
+       .. type:: image object
+          :required: true
+
      - The URLs of images representing the payment method.
 
        .. list-table::
           :widths: auto
 
           * - | ``size1x``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL for a payment method icon of 55x37 pixels.
 
           * - | ``size2x``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with several URL objects relevant to the payment method. Every URL object will contain an ``href`` and
        a ``type`` field.
 
@@ -93,11 +128,17 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the payment method itself.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the payment method retrieval endpoint documentation.
 
 Example
@@ -106,6 +147,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
        -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -113,6 +155,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

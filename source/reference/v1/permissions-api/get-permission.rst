@@ -2,9 +2,14 @@
 
 Permissions API v1: Get permission
 ==================================
-``GET`` ``https://api.mollie.com/v1/permissions/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/permissions/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 All API actions through OAuth are by default protected for privacy and/or money related reasons and therefore require
 specific permissions. These permissions can be requested by apps during the OAuth authorization flow. The Permissions
@@ -23,11 +28,17 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The permission's unique identifier, for example ``payments.read``. See
        :ref:`Permissions <oauth/permissions>` for details about the available permissions.
 
@@ -36,15 +47,24 @@ Response
        ``profiles.read`` ``profiles.write`` ``refunds.read`` ``refunds.write`` ``settlements.read``
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - A short description of what the permission allows.
 
    * - | ``warning``
-       | string
-     - Optional – A mandatory warning message when necessary.
+
+       .. type:: string
+          :required: false
+
+     - A mandatory warning message when necessary.
 
    * - | ``granted``
-       | boolean
+
+       .. type:: boolean
+          :required: true
+
      - Whether this permission is granted to the app by the organization or not.
 
 Example
@@ -53,6 +73,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/permissions/payments.read \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -60,6 +81,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

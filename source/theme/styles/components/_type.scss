@@ -1,0 +1,21 @@
+.type {
+  color: $grey-dusty;
+  font-family: $font-family-monospace;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.type .condition {
+  font-family: $font-family-monospace;
+  font-size: 11px;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+
+.type.required .condition {
+  color: $blue-cornflower;
+}
+
+.type.optional .condition {
+  color: $orange-anzac;
+}

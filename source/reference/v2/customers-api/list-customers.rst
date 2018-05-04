@@ -2,9 +2,14 @@
 
 Customers API v2: List customers
 ================================
-``GET`` ``https://api.mollie.com/v2/customers``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/customers
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all customers created.
 
@@ -16,13 +21,19 @@ Parameters
    :widths: auto
 
    * - | ``from``
-       | string
-     - Optional – Offset the result set to the customer with this ID. The customer with this ID is included in the
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the customer with this ID. The customer with this ID is included in the
        result set as well.
 
    * - | ``limit``
-       | integer
-     - Optional – The number of customers to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of customers to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,10 +41,13 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
 
 .. list-table::
    :widths: auto
-    
+
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to list test mode customers.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to list test mode customers.
 
 Response
 --------
@@ -43,23 +57,35 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of customers found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``customers``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of customer objects as described in :ref:`Get customer <v2/customers-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of customers. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -67,19 +93,31 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the current set of customers.
 
           * - | ``previous``
-              | URL object
-            - Optional – The previous set of customers, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The previous set of customers, if available.
 
           * - | ``next``
-              | URL object
-            - Optional – The next set of customers, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The next set of customers, if available.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the customers list endpoint documentation.
 
 Example
@@ -88,6 +126,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/customers \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -95,6 +134,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

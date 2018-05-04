@@ -2,9 +2,14 @@
 
 Settlements API v2: Get settlement
 ==================================
-``GET`` ``https://api.mollie.com/v2/settlements/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Successful payments are collected into *settlements*, which are then paid out according to your account's payout
 schedule. By retrieving a single settlement, you can check which payments were paid out with it, when the settlement
@@ -25,29 +30,47 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a settlement object. Will always contain ``settlement`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The settlement's unique identifier, for example ``stl_jDk30akdN``.
 
    * - | ``reference``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The settlement's bank reference, as found on your invoice and in your Mollie account.
 
    * - | ``createdAt``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The date on which the settlement was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``settledAt``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The date on which the settlement was settled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        When requesting the :ref:`open settlement <v2/settlements-get-open>` or
        :ref:`next settlement <v2/settlements-get-next>` the return value is ``null``.
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The status of the settlement.
 
        Possible values:
@@ -58,22 +81,34 @@ Response
        * ``failed`` The settlement could not be paid out.
 
    * - | ``amount``
-       | amount object
+
+       .. type:: amount object
+          :required: true
+
      - The total amount paid out with this settlement.
 
        .. list-table::
           :widths: auto
 
           * - | ``currency``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - A string containing the exact amount of the settlement in the given currency.
 
    * - | ``periods``
-       | object
+
+       .. type:: object
+          :required: true
+
      - This object is a collection of Period objects, which describe the settlement by month in full detail.
 
        Please note the periods are sorted by date. For example, the field may contain an object called ``2018``, which
@@ -83,7 +118,10 @@ Response
           :widths: auto
 
           * - | ``revenue``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of revenue objects containing the total revenue for each payment method during this period. Each
               object has the following fields.
 
@@ -91,31 +129,52 @@ Response
                  :widths: auto
 
                  * - | ``description``
-                     | string
+
+                     .. type:: string
+                        :required: true
+
                    - A description of the revenue subtotal.
 
                  * - | ``amountNet``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The net total of received funds for this payment method (excludes VAT).
 
                  * - | ``amountVat``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The VAT amount applicable to the revenue.
 
                  * - | ``amountGross``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The gross total of received funds for this payment method (includes VAT).
 
                  * - | ``count``
-                     | integer
+
+                     .. type:: integer
+                        :required: true
+
                    - The number of payments received for this payment method.
 
                  * - | ``method``
-                     | string
+
+                     .. type:: string
+                        :required: true
+
                    - The payment method ID, if applicable.
 
           * - | ``costs``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of Cost objects, describing the fees withheld for each payment method during this period. Each
               object has the following fields.
 
@@ -123,46 +182,76 @@ Response
                  :widths: auto
 
                  * - | ``description``
-                     | string
+
+                     .. type:: string
+                        :required: true
+
                    - A description of the subtotal.
 
                  * - | ``amountNet``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The net total costs for this payment method (excludes VAT).
 
                  * - | ``amountVat``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The VAT amount applicable to the costs.
 
                  * - | ``amountGross``
-                     | amount object
+
+                     .. type:: amount object
+                        :required: true
+
                    - The gross total costs for this payment method (includes VAT).
 
                  * - | ``count``
-                     | integer
+
+                     .. type:: integer
+                        :required: true
+
                    - The number of times costs were made for this payment method.
 
                  * - | ``rate``
-                     | object
+
+                     .. type:: object
+                        :required: true
+
                    - The service rates, further divided into ``fixed`` and ``percentage`` costs.
 
                      .. list-table::
                         :widths: auto
 
                         * - | ``fixed``
-                            | amount object
+
+                            .. type:: amount object
+                               :required: true
+
                           - An amount object describing the fixed costs.
 
                         * - | ``variable``
-                            | string
+
+                            .. type:: string
+                               :required: true
+
                           - A string describing the variable costs as a percentage.
 
                  * - | ``method``
-                     | string
+
+                     .. type:: string
+                        :required: true
+
                    - The payment method ID, if applicable.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with several URL objects relevant to the settlement. Every URL object will contain an ``href`` and a
        ``type`` field.
 
@@ -170,23 +259,38 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the settlement itself.
 
           * - | ``payments``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the payments that are included in this settlement.
 
           * - | ``refunds``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the refunds that are included in this settlement.
 
           * - | ``chargebacks``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the chargebacks that are included in this settlement.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the settlement retrieval endpoint documentation.
 
 Example
@@ -195,6 +299,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -202,6 +307,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

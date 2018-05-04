@@ -2,9 +2,14 @@
 
 Subscriptions API v2: Create subscription
 =========================================
-``POST`` ``https://api.mollie.com/v2/customers/*customerId*/subscriptions``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/customers/*customerId*/subscriptions
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 With subscriptions, you can schedule :ref:`recurring payments <guides/recurring>` to take place at regular intervals.
 
@@ -30,40 +35,61 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
    :widths: auto
 
    * - | ``amount``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The amount that is charged with each subscription payment, e.g. ``{"currency":"EUR", "value":"10.00"}`` if you
        would want to charge €10.00 every time.
 
    * - | ``times``
-       | integer
-     - Optional – Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
+
+       .. type:: integer
+          :required: false
+
+     - Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
 
    * - | ``interval``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
        Possible values: ``... months`` ``... weeks`` ``... days``
 
    * - | ``startDate``
-       | date
-     - Optional – The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your
+
+       .. type:: date
+          :required: false
+
+     - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your
        customer will be charged. When this parameter is not provided, the current date will be used instead.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - A description unique per subscription . This will be included in the payment description along with the charge
        date in ``YYYY-MM-DD`` format.
 
    * - | ``method``
-       | string
-     - Optional – The payment method used for this subscription, either forced on creation or ``null`` if any of the
+
+       .. type:: string
+          :required: false
+
+     - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
    * - | ``webhookUrl``
-       | string
-     - Optional – Use this parameter to set a webhook URL for all subscription payments.
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to set a webhook URL for all subscription payments.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -75,12 +101,18 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
    :widths: auto
 
    * - | ``profileId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to create a test mode subscription.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to create a test mode subscription.
 
 Response
 --------
@@ -94,6 +126,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -110,6 +143,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 201 Created
    Content-Type: application/hal+json

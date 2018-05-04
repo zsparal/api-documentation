@@ -2,9 +2,14 @@
 
 Profiles API v1: List profiles
 ==============================
-``GET`` ``https://api.mollie.com/v1/profiles``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/profiles
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all payment profiles available on the account.
 
@@ -16,12 +21,18 @@ Parameters
    :widths: auto
 
    * - | ``offset``
-       | integer
-     - Optional – The number of payment profiles to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of payment profiles to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to return (with a maximum of 250).
 
 Response
 --------
@@ -31,44 +42,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of payment profiles available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped payment profiles as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of payment profiles found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of payment profile objects as described in :ref:`Get profile <v1/profiles-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of payment profiles, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of payment profiles, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of payment profiles, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of payment profiles, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of payment profiles, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of payment profiles, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of payment profiles, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of payment profiles, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of payment profiles, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of payment profiles, if available.
 
 Example
 -------
@@ -76,6 +114,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/profiles \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -83,6 +122,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

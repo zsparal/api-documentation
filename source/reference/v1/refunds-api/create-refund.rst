@@ -2,9 +2,14 @@
 
 Refunds API v1: Create refund
 =============================
-``POST`` ``https://api.mollie.com/v1/payments/*id*/refunds``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/payments/*id*/refunds
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to the consumer. The amount
 of the refund will be withheld from your next settlement.
@@ -49,13 +54,19 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
    :widths: auto
 
    * - | ``amount``
-       | decimal
-     - Optional – The amount to refund. When ommitted, the full amount is refunded. Can be up to €25.00 more than the
+
+       .. type:: decimal
+          :required: false
+
+     - The amount to refund. When ommitted, the full amount is refunded. Can be up to €25.00 more than the
        original transaction amount.
 
    * - | ``description``
-       | string
-     - Optional – The description of the refund you are creating. This will be shown to the consumer on their card or
+
+       .. type:: string
+          :required: false
+
+     - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
 Mollie Connect/OAuth parameters
@@ -66,8 +77,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to refund a test mode payment.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to refund a test mode payment.
 
 Response
 --------
@@ -81,6 +95,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X POST https://api.mollie.com/v1/payments/tr_WDqYK6vllg/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -89,6 +104,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 201 Created
    Content-Type: application/json; charset=utf-8

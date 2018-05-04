@@ -2,9 +2,14 @@
 
 Profiles API v1: Get API key
 ============================
-``GET`` ``https://api.mollie.com/v1/profiles/*profileId*/apikeys/*mode*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/profiles/*profileId*/apikeys/*mode*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Get the API key for the given payment profile and profile mode.
 
@@ -26,22 +31,34 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The API key's identifier.
 
        Possible values: ``live`` ``test``
 
    * - | ``key``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The actual API key, which you'll use when creating payments or when otherwise communicating with the API. Never
        share the API key with anyone.
 
    * - | ``createdDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The API key's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 Example
@@ -50,6 +67,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/profiles/pfl_v9hTwCvYqw/apikeys/live \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -57,6 +75,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

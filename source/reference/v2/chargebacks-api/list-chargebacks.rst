@@ -2,9 +2,14 @@
 
 Chargebacks API v2: List chargebacks
 ====================================
-``GET`` ``https://api.mollie.com/v2/payments/*paymentId*/chargebacks``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/payments/*paymentId*/chargebacks
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
@@ -31,22 +36,34 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of chargebacks found in ``_embedded``.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``chargebacks``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of chargeback objects as described in :ref:`Get chargeback <v2/chargebacks-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -54,11 +71,17 @@ Response
           :widths: auto
 
           * - | ``self``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the current set of chargebacks.
 
           * - | ``documentation``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the chargebacks list endpoint documentation.
 
 Example
@@ -67,6 +90,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -74,6 +98,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

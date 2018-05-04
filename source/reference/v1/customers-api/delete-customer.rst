@@ -2,9 +2,14 @@
 
 Customers API v1: Delete customer
 =================================
-``DELETE`` ``https://api.mollie.com/v1/customers/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v1/customers/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Delete a customer. All mandates and subscriptions created for this customer will be canceled as well.
 
@@ -20,8 +25,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to delete a test mode customer.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to delete a test mode customer.
 
 Response
 --------
@@ -33,6 +41,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X DELETE https://api.mollie.com/v1/customers/cst_8wmqcHMN4U \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM
@@ -40,5 +49,6 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 204 No Content

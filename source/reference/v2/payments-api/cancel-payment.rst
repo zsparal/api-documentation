@@ -2,9 +2,14 @@
 
 Payments API v2: Cancel payment
 ===============================
-``DELETE`` ``https://api.mollie.com/v2/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v2/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
 is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
@@ -28,6 +33,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X DELETE https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -35,6 +41,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

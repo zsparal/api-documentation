@@ -17,22 +17,56 @@ Password: approved
 - [Issue Tracker](https://github.com/mollie/api-documentation/issues)
 - [Source Code](https://github.com/mollie/api-documentation)
 
-We take pull requests on our documentation as well, if you think that something can be improved please open a PR. 
+We take pull requests on our documentation as well, if you think that something can be improved please open a PR.
 
 The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). All
-documentation should be written in US English. 
+documentation should be written in US English.
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
-some syntax highlighting. 
+some syntax highlighting.
+### Prerequisites
 
-### Previewing local changes
+- Python > 2.7.9
+- Node > 8.x
+### Running locally
 
-If you made any changes, and want to check out if it can be successfully built and how it will look, perform the 
-following steps:
+Download a copy of this repostory:
 
-1. Install Sphinx, if you don't have it yet: `pip install -U -r requirements.txt`
-2. Run `make` to create the HTML files that make up the documentation. 
+```
+git clone git@github.com:mollie/api-documentation.git
+```
 
+Then visit the downloaded repository and install dependencies:
+
+```
+cd api-documentation
+npm install
+pip install -U -r requirements.txt
+```
+
+### Generate docs
+
+Finally, build the documentation, its CSS and JS files by running:
+
+```
+make html
+```
+
+You can now preview the docs by opening `build/html/index.html`:
+
+```
+open build/html/index.html
+```
+
+### Styling docs
+
+You can make changes to the styling by starting a webserver locally:
+
+```
+make start
+```
+
+Visit http://docs.mollie.dev:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your browser.
 ## Support
 
 If you are having issues, please let us know. We accept pull requests on our public documentation.

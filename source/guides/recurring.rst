@@ -38,6 +38,7 @@ periodically through *subscriptions*.
 #. Create a unique customer using the :ref:`Customers API <v1/customers-create>`.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X POST https://api.mollie.com/v1/customers \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -51,6 +52,7 @@ periodically through *subscriptions*.
    ``first``.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -87,6 +89,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
 #. Make sure the customer has valid mandates. Find out using the :ref:`Mandates API <v1/mandates-list>`.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -96,6 +99,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
 #. Set the ``recurringType`` parameter to ``recurring`` to charge the customer on-demand.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -120,6 +124,7 @@ frequency, and will show up in your Dashboard.
 #. Make sure the customer has a pending or valid mandate using the :ref:`Mandates API <v1/mandates-list>`.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -130,6 +135,7 @@ frequency, and will show up in your Dashboard.
 #. Create the subscription using the :ref:`Subscriptions API <v1/subscriptions-create>`.
 
    .. code-block:: bash
+      :linenos:
 
       curl -X POST https://api.mollie.com/v1/customers/cst_stTC2WHAuS/subscriptions \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \

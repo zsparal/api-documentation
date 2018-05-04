@@ -2,9 +2,14 @@
 
 Mandates API v1: Get mandate
 ============================
-``GET`` ``https://api.mollie.com/v1/customers/*customerId*/mandates/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers/*customerId*/mandates/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a mandate by its ID and its customer's ID. The mandate will either contain IBAN or credit card details,
 depending on the type of mandate.
@@ -22,8 +27,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to retrieve a test mode mandate.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to retrieve a test mode mandate.
 
 Response
 --------
@@ -33,33 +41,51 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a mandate object. Will always contain ``mandate`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The identifier uniquely referring to this mandate. Mollie assigns this identifier at mandate creation time. For
        example ``mdt_pWUnw6pkBN``.
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The status of the mandate. Please note that a status can be ``pending`` for subscription mandates when there is
        no first payment. See our :ref:`subscription guide <guides/recurring/charging-periodically>`.
 
        Possible values: ``valid`` ``pending`` ``invalid``
 
    * - | ``method``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Payment method of the mandate.
 
        Possible values: ``directdebit`` ``creditcard``
 
    * - | ``customerId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The customer's unique identifier, for example ``cst_3RkSN1zuPE``.
 
    * - | ``details``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The mandate detail object contains different fields per payment method.
 
        For direct debit mandates, the following details are returned:
@@ -68,15 +94,24 @@ Response
           :widths: auto
 
           * - | ``consumerName``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The account holder's name.
 
           * - | ``consumerAccount``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The account holder's IBAN.
 
           * - | ``consumerBic``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The account holder's bank's BIC.
 
        For credit card mandates, the following details are returned:
@@ -85,38 +120,62 @@ Response
           :widths: auto
 
           * - | ``cardHolder``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The credit card holder's name.
 
           * - | ``cardNumber``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The last four digits of the credit card number.
 
           * - | ``cardLabel``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The credit card's label. Note that not all labels can be processed through Mollie.
 
               Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
               ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
 
           * - | ``cardFingerprint``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
 
           * - | ``cardExpiryDate``
-              | date
+
+              .. type:: date
+                 :required: true
+
             - Expiry date of the credit card in ``YYYY-MM-DD`` format.
 
    * - | ``mandateReference``
-       | string
-     - Optional – The mandate's custom reference, if this was provided when creating the mandate.
+
+       .. type:: string
+          :required: false
+
+     - The mandate's custom reference, if this was provided when creating the mandate.
 
    * - | ``signatureDate``
-       | string
-     - Optional – The signature date of the mandate in ``YYYY-MM-DD`` format.
+
+       .. type:: string
+          :required: false
+
+     - The signature date of the mandate in ``YYYY-MM-DD`` format.
 
    * - | ``createdDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The mandate's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 Example
@@ -125,6 +184,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates/mdt_h3gAaD5zP \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -132,6 +192,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

@@ -2,9 +2,14 @@
 
 Profiles API v1: Get profile
 ============================
-``GET`` ``https://api.mollie.com/v1/profiles/*id*``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/profiles/*id*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve details of a payment profile, using the profile's identifier.
 
@@ -20,38 +25,62 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a payment profile object. Will always contain ``profile`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The identifier uniquely referring to this payment profile, for example ``pfl_3RkSN1zuPE``.
 
    * - | ``mode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates whether the payment profile is in test or production mode.
 
        Possible values: ``live`` ``test``
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The payment profile's name, this will usually reflect the tradename or brand name of the profile's website or
        application.
 
    * - | ``website``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The URL to the profile's website or application.
 
    * - | ``email``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The email address associated with the profile's tradename or brand.
 
    * - | ``phone``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The phone number associated with the profile's tradename or brand.
 
    * - | ``categoryCode``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The industry associated with the profile's tradename or brand.
 
        Possible values:
@@ -68,7 +97,10 @@ Response
        * ``0`` Other
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The profile status determines whether the payment profile is able to receive live payments.
 
        Possible values:
@@ -78,7 +110,10 @@ Response
        * ``blocked`` The profile is blocked and can thus no longer be used or changed.
 
    * - | ``review``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The presence of a review object indicates changes have been made that have not yet been approved by Mollie.
        Changes to test profiles are approved automatically, unless a switch to a live profile has been requested. The
        review object will therefore usually be ``null`` in test mode.
@@ -87,7 +122,10 @@ Response
           :widths: auto
 
           * - | ``status``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The status of the requested profile changes.
 
               Possible values:
@@ -96,27 +134,42 @@ Response
               * ``rejected`` We've reviewed and rejected your changes.
 
    * - | ``createdDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The payment profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``updatedDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time of the payment profile's last edit, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format.
 
    * - | ``links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Useful URLs to related resources.
 
        .. list-table::
           :widths: auto
 
           * - | ``apikeys``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL to the nested :ref:`API keys resource <v1/keys-list>`.
 
           * - | ``checkoutPreviewUrl``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The Checkout preview URL. You need to be logged in to access this page.
 
 Example
@@ -125,6 +178,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/profiles/pfl_v9hTwCvYqw \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
@@ -132,6 +186,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

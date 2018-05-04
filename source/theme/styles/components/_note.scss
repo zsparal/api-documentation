@@ -1,0 +1,23 @@
+.admonition.note {
+  background-color: #fffefc;
+  border: 1px solid $orange-pancho;
+  padding: 11px 15px;
+  color: $orange-anzac;
+  font-size: 15px;
+  line-height: 20px;
+  border-radius: 4px;
+  margin-bottom: 15px;
+}
+
+.admonition.note .admonition-title {
+  @include visually-hidden;
+}
+
+.admonition.note p {
+  margin: 0;
+}
+
+.admonition.note a {
+  color: $orange-reno-sand;
+  text-decoration: underline;
+}

@@ -6,9 +6,14 @@ Payments API v1: List payments
              found :ref:`here <v2/payments-list>`. For more information on the v2 API, refer to our
              :ref:`v2 migration guide <migrate-to-v2>`.
 
-``GET`` ``https://api.mollie.com/v1/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
@@ -20,12 +25,18 @@ Parameters
    :widths: auto
 
    * - | ``offset``
-       | integer
-     - Optional – The number of payments to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of payments to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of payments to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payments to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -38,12 +49,18 @@ websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
    :widths: auto
 
    * - | ``profileId``
-       | string
-     - Optional – The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
+       .. type:: string
+          :required: false
+
+     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to true to only retrieve payments made in test mode. By default, only live payments are
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve payments made in test mode. By default, only live payments are
        returned.
 
 Includes
@@ -63,44 +80,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of payments available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped payments as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of payment objects as described in :ref:`Get payment <v1/payments-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of payments, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of payments, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of payments, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of payments, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of payments, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of payments, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of payments, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of payments, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of payments, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of payments, if available.
 
 Example
 -------
@@ -108,6 +152,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -115,6 +160,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

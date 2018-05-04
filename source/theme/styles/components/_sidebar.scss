@@ -1,0 +1,140 @@
+.sidebar {
+  color: #000;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  position: fixed;
+  background-color: #fff;
+  z-index: 2;
+  height: 100vh;
+  overflow-y: auto;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  padding-left: 50px;
+  -webkit-overflow-scrolling: touch;
+
+  @media (min-width: $mobile-navigation-breakpoint) {
+    padding-left: 0;
+    padding-right: 0;
+    position: relative;
+    opacity: 1;
+    pointer-events: auto;
+    overflow: visible;
+    left: auto;
+    top: 0;
+    right: auto;
+    bottom: auto;
+    z-index: 0;
+  }
+}
+
+.sidebar.is-visible {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.sidebar__inner {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+.sidebar__inner::-webkit-scrollbar {
+  margin-top: 50px;
+  width: 6px;
+}
+
+.sidebar__inner::-webkit-scrollbar-track {
+  background: #fff;
+}
+
+.sidebar__inner::-webkit-scrollbar-thumb {
+  border-radius: 6px;
+  background: #fff;
+}
+
+.sidebar__inner:hover::-webkit-scrollbar-thumb {
+  background: $grey-medium;
+}
+
+.sidebar .toctree-l1 ul {
+  display: none;
+}
+
+.sidebar .caption {
+  font-size: 24px;
+  font-weight: $font-weight-semibold;
+  margin-bottom: 15px;
+
+  @media (min-width: breakpoint("medium")) {
+    margin-bottom: 15px;
+  }
+}
+
+.sidebar ul {
+  @include bare-list;
+  margin-bottom: 40px;
+}
+
+.sidebar ul li {
+  margin-bottom: 8px;
+}
+
+.sidebar ul li a {
+  color: #666666;
+  font-size: 16px;
+
+  @media (max-width: breakpoint("<medium")) {
+    max-width: 80%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display: block;
+  }
+}
+
+.sidebar > ul:last-child {
+  margin-bottom: 80px;
+}
+
+.sidebar ul:last-child li {
+  margin-bottom: 0;
+}
+
+.sidebar ul.current a.current {
+  color: $brand-primary;
+}
+
+.sidebar ul.current > li.current > ul {
+  display: block;
+  margin-top: 10px;
+}
+
+.sidebar ul.current > li.current > ul li:last-child a {
+  margin-bottom: 0;
+}
+
+.sidebar ul.current > li.current > ul {
+  margin-bottom: 20px;
+}
+
+.sidebar ul.current > li.current > ul a {
+  position: relative;
+  font-size: 14px;
+  padding-left: 15px;
+  display: inline;
+  line-height: 12px;
+}
+
+.sidebar ul.current > li.current > ul a:before {
+  content: "";
+  height: 1px;
+  width: 8px;
+  background: #666666;
+  position: absolute;
+  left: 0;
+  top: 4px;
+  transform: translateY(-50%);
+}

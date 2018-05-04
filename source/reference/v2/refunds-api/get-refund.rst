@@ -2,9 +2,14 @@
 
 Refunds API v2: Get refund
 ==========================
-``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
@@ -30,42 +35,66 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains a refund object. Will always contain ``refund`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
    * - | ``amount``
-       | amount object
+
+       .. type:: amount object
+          :required: true
+
      - The amount refunded to the consumer with this refund.
 
        .. list-table::
           :widths: auto
 
           * - | ``currency``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
               the payment methods that are enabled on your account.
 
           * - | ``value``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - A string containing the exact amount that was refunded in the given currency.
 
    * - | ``settlementAmount``
-       | amount object|null
+
+       .. type:: amount object|null
+          :required: true
+
      - The amount deducted from the settlement, in the settlement's currency.
 
        .. list-table::
           :widths: auto
 
           * - | ``currency``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - A string containing the exact amount that was deducted for the refund from your account balance in the
               settlement currency. Note that this will be negative.
 
@@ -73,11 +102,17 @@ Response
               will be ``null`` as the exchange rates may change until the refund is finally executed.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Since refunds may be delayed for certain payment methods, the refund carries a status field.
 
        Possible values:
@@ -90,16 +125,25 @@ Response
        * ``failed`` The refund has failed during processing.
 
    * - | ``createdAt``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``paymentId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with several URL objects relevant to the refund. Every URL object will contain an ``href`` and a
        ``type`` field.
 
@@ -107,15 +151,24 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the refund itself.
 
           * - | ``payment``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the payment the refund belongs to.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the refund retrieval endpoint documentation.
 
 Example
@@ -124,6 +177,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -131,6 +185,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

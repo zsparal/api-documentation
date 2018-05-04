@@ -2,9 +2,14 @@
 
 Profiles API v1: Create profile
 ===============================
-``POST`` ``https://api.mollie.com/v1/profiles``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/profiles
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 In order to process payments, you need to create a website profile. A website profile can easily be created via the
 Dashboard manually. However, the Mollie API also allows automatic profile creation via the Profiles API.
@@ -17,23 +22,38 @@ Parameters
    :widths: auto
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The profile's name should reflect the tradename or brand name of the profile's website or application.
 
    * - | ``website``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
    * - | ``email``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The email address associated with the profile's tradename or brand.
 
    * - | ``phone``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The phone number associated with the profile's tradename or brand.
 
    * - | ``categoryCode``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The industry associated with the profile's tradename or brand.
 
        Possible values:
@@ -50,8 +70,11 @@ Parameters
        * ``0`` Other
 
    * - | ``mode``
-       | string
-     - Optional – Creating a test profile by setting this parameter to ``test``, enables you to start using the API
+
+       .. type:: string
+          :required: false
+
+     - Creating a test profile by setting this parameter to ``test``, enables you to start using the API
        without having to provide all your business info just yet. Defaults to ``live``.
 
        Possible values: ``live`` ``test``
@@ -68,6 +91,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X POST https://api.mollie.com/v1/profiles \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
@@ -81,6 +105,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 201 Created
    Content-Type: application/json; charset=utf-8

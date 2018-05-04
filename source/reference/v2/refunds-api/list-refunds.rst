@@ -2,11 +2,19 @@
 
 Refunds API v2: List refunds
 ============================
-``GET`` ``https://api.mollie.com/v2/refunds``
 
-``GET`` ``https://api.mollie.com/v2/payments/*paymentId*/refunds``
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/refunds
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/payments/*paymentId*/refunds
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
 
@@ -21,13 +29,19 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
    :widths: auto
 
    * - | ``from``
-       | string
-     - Optional – Offset the result set to the refund with this ID. The refund with this ID is included in the result
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the refund with this ID. The refund with this ID is included in the result
        set as well.
 
    * - | ``limit``
-       | integer
-     - Optional – The number of refunds to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of refunds to return (with a maximum of 250).
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,23 +58,35 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``refunds``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of refund objects as described in :ref:`Get refund <v2/refunds-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of refunds. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -68,19 +94,31 @@ Response
           :widths: auto
 
           * - | ``self``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the current set of refunds.
 
           * - | ``previous``
-              | object
-            - Optional – The previous set of refunds, if available.
+
+              .. type:: object
+                 :required: false
+
+            - The previous set of refunds, if available.
 
           * - | ``next``
-              | object
-            - Optional – The next set of refunds, if available.
+
+              .. type:: object
+                 :required: false
+
+            - The next set of refunds, if available.
 
           * - | ``documentation``
-              | object
+
+              .. type:: object
+                 :required: true
+
             - The URL to the refunds list endpoint documentation.
 
 Example
@@ -89,6 +127,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -96,6 +135,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8
