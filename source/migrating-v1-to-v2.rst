@@ -222,6 +222,11 @@ The following fields have been changed, renamed or moved:
   ``amountGross``.
 * If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
 
+Changes in the Organizations API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The fields ``country``, ``registrationDate`` and ``registrationType`` have been removed.
+
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 In general, error reporting has been improved to help you resolve any implementation errors as fast as possible.
