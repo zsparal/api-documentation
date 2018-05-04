@@ -99,13 +99,13 @@ Request
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -H "Content-Type: application/json" \
        -d \
-       '{ \
-           "amount": {"currency":"EUR", "value":"25.00"}, \
-           "times": 4, \
-           "interval": "3 months", \
-           "description": "Quarterly payment", \
-           "webhookUrl": "https://webshop.example.org/subscriptions/webhook/" \
-       }'
+       "{
+           \"amount\": {\"currency\":\"EUR\", \"value\":\"25.00\"},
+           \"times\": 4,
+           \"interval\": \"3 months\",
+           \"description\": \"Quarterly payment\",
+           \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
+       }"
 
 Response
 ^^^^^^^^
