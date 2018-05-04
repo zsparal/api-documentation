@@ -36,7 +36,6 @@ start:
 	make html-reload & make css-reload & make js-reload
 
 install:
-	npm install
 	pip install -U -r requirements.txt
 
 # Catch-all target: route all unknown targets to Sphinx using the new
