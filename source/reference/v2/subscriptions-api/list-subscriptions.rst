@@ -42,7 +42,7 @@ With it, you can specify for which profile you want to retrieve subscriptions. O
 for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
 
 .. list-table::
-    :widths: auto
+   :widths: auto
 
    * - | ``profileId``
 

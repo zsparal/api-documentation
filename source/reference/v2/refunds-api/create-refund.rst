@@ -52,7 +52,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
    * - | ``amount``
 
        .. type:: amount object
-          :required: false
+          :required: true
 
      - The amount to refund. For some payments, it can be up to €25.00 more than the original transaction amount.
 
@@ -113,7 +113,8 @@ Request
 
    curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "{\"amount\":{\"currency\":\"EUR\",\"value\":\"5.95\"}}" # Optional amount.
+       -H "Content-Type: application/json" \
+       -d "{\"amount\":{\"currency\":\"EUR\",\"value\":\"5.95\"}}"
 
 Response
 ^^^^^^^^
