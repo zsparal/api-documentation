@@ -22,12 +22,29 @@ parameter ``webhookUrl``.
 
 Webhooks for v2 API endpoints
 -----------------------------
-TODO: Add documentation on v2 webhooks.
+The webhook will be called when the payment changes status to:
+
+* ``paid``
+* ``expired``
+* ``failed``
+* ``canceled``
+
+Furthermore, the webhook will be called when:
+
+* A refund is performed on the payment
+* A chargeback is received on the payment.
 
 Webhooks for v1 API endpoints
 -----------------------------
-The v1 API only supports webhooks for payment status changes. Please refer to the
-:ref:`list of payment status changes <guides/payment-status-changes>` for all supported payment statuses.
+
+The webhook will be called when the payment changes status to:
+
+* ``paid``
+* ``expired``
+* ``failed``
+* ``cancelled``
+* ``refunded``
+* ``charged_back``
 
 What IPs will the webhook requests be originating from?
 -------------------------------------------------------
