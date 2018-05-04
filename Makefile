@@ -12,8 +12,8 @@ SPHINXPROJ    = api-documentation
 SOURCEDIR     = source
 BUILDDIR      = build
 
-node_modules/.bin/parcel: .nvmrc package-lock.json
-	bash -l -c 'nvm install && npm install --no-optional'
+node_modules/.bin/parcel: package-lock.json
+	npm install --no-optional
 
 source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --detailed-report
@@ -34,6 +34,9 @@ html-reload:
 
 start:
 	make html-reload & make css-reload & make js-reload
+
+install:
+	pip install -U -r requirements.txt
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
