@@ -13,7 +13,7 @@ SOURCEDIR     = source
 BUILDDIR      = build
 
 node_modules/.bin/parcel: .nvmrc package-lock.json
-	bash -l -c 'nvm install && npm install --no-optional'
+	bash -l -c 'npm install --no-optional'
 
 source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --detailed-report
