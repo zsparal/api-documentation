@@ -2,9 +2,14 @@
 
 Settlements API v2: Get settlement refunds
 ==========================================
-``GET`` ``https://api.mollie.com/v2/settlements/*settlementId*/refunds``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements/*settlementId*/refunds
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all refunds included in a settlement.
 

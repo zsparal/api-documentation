@@ -2,9 +2,14 @@
 
 Mandates API v1: Create mandate
 ===============================
-``POST`` ``https://api.mollie.com/v1/customers/*customerId*/mandates``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v1/customers/*customerId*/mandates
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card or bank account
 recurrently.
@@ -20,30 +25,48 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
    :widths: auto
 
    * - | ``method``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Payment method of the mandate.
 
        Possible values: ``directdebit``
 
    * - | ``consumerName``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The consumer's name.
 
    * - | ``consumerAccount``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The consumer's IBAN.
 
    * - | ``consumerBic``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The consumer's bank's BIC.
 
    * - | ``signatureDate``
-       | date
-     - Optional - The date when the mandate was signed in ``YYYY-MM-DD`` format.
+
+       .. type:: date
+          :required: false
+
+     - The date when the mandate was signed in ``YYYY-MM-DD`` format.
 
    * - | ``mandateReference``
-       | date
-     - Optional - A custom mandate reference.
+
+       .. type:: date
+          :required: false
+
+     - A custom mandate reference.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,8 +76,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to create a test mode mandate.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to create a test mode mandate.
 
 Response
 --------

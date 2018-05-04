@@ -2,9 +2,14 @@
 
 Customers API v1: List customers
 ================================
-``GET`` ``https://api.mollie.com/v1/customers``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all customers created.
 
@@ -16,12 +21,18 @@ Parameters
    :widths: auto
 
    * - | ``offset``
-       | integer
-     - Optional – The number of customers to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of customers to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of customers to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of customers to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,8 +42,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to ``true`` to list test mode customers.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to list test mode customers.
 
 Response
 --------
@@ -42,44 +56,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of customers available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped customers as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of customers found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of customers objects as described in :ref:`Get customer <v1/customers-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of customers, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of customers, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of customers, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of customers, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of customers, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of customers, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of customers, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of customers, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of customers, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of customers, if available.
 
 Example
 -------

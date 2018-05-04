@@ -2,9 +2,14 @@
 
 Refunds API v1: Get refund
 ==========================
-``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
@@ -23,11 +28,17 @@ Response
    :widths: auto
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
    * - | ``payment``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The original payment, as described in :ref:`Get payment <v1/payments-get>`. In the payment object, note the
        following refund related fields.
 
@@ -35,24 +46,39 @@ Response
           :widths: auto
 
           * - | ``amountRefunded``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - The total amount in EUR that is already refunded. For some payment methods, this amount may be higher than
               the payment amount, for example to allow reimbursement of the costs for a return shipment to the consumer.
 
           * - | ``amountRemaining``
-              | decimal
+
+              .. type:: decimal
+                 :required: true
+
             - The remaining amount in EUR that can be refunded.
 
    * - | ``amount``
-       | decimal
+
+       .. type:: decimal
+          :required: true
+
      - The amount refunded to the consumer with this refund.
 
    * - | ``description``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
    * - | ``status``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Since refunds may be delayed for certain payment methods, the refund carries a status field.
 
        Possible values:
@@ -65,7 +91,10 @@ Response
        * ``failed`` The refund has failed during processing.
 
    * - | ``refundedDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 Example

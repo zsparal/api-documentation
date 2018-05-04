@@ -2,11 +2,19 @@
 
 Refunds API v1: List refunds
 ============================
-``GET`` ``https://api.mollie.com/v1/refunds``
 
-``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/refunds``
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/refunds
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/payments/*paymentId*/refunds
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
 
@@ -21,12 +29,18 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
    :widths: auto
 
    * - | ``offset``
-       | integer
-     - Optional – The number of refunds to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of refunds to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of refunds to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of refunds to return (with a maximum of 250).
 
 Response
 --------
@@ -36,44 +50,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of refunds available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped refunds as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of refunds found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of refund objects as described in :ref:`Get refund <v1/refunds-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of refunds, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of refunds, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of refunds, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of refunds, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of refunds, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of refunds, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of refunds, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of refunds, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of refunds, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of refunds, if available.
 
 Example
 -------

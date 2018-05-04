@@ -18,11 +18,17 @@ In v2 endpoints, an amount object is always represented as follows.
    :widths: auto
 
    * - | ``currency``
-       | string
+
+       .. type:: string
+          :required: true
+
      - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
    * - | ``value``
-       | string
+
+       .. type:: string
+          :required: true
+
      - A string containing the exact amount in the given currency.
 
 .. _address-object:
@@ -35,23 +41,38 @@ In the v2 endpoints, an address object is always represented as follows.
    :widths: auto
 
    * - | ``streetAndNumber``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The street and street number of the address.
 
    * - | ``postalCode``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The postal code of the address.
 
    * - | ``city``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The city of the address.
 
    * - | ``region``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The region of the address.
 
    * - | ``country``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 When providing an address object as parameter to a request, the following conditions must be met:
@@ -84,15 +105,24 @@ The QR code object represents an image of a QR code.
    :widths: auto
 
    * - | ``height``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - Height of the image in pixels.
 
    * - | ``width``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - Width of the image in pixels.
 
    * - | ``src``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
 
@@ -104,9 +134,15 @@ In v2 endpoints, URLs are commonly represented as objects with an ``href`` and `
    :widths: auto
 
    * - | ``href``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The actual URL string.
 
    * - | ``type``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The content type of the page or endpoint the URL points to.

@@ -2,9 +2,14 @@
 
 Settlements API v2: Get settlement chargebacks
 ==============================================
-``GET`` ``https://api.mollie.com/v2/settlements/*settlementId*/chargebacks``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements/*settlementId*/chargebacks
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all chargebacks included in a settlement.
 

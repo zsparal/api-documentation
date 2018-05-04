@@ -2,9 +2,14 @@
 
 Issuers API v1: Get issuer
 ==========================
-``GET`` ``https://api.mollie.com/v1/issuers/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/issuers/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a payment method issuer by its issuer identifier.
 
@@ -22,8 +27,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to true to only retrieve the issuer if it is available in test mode.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve the issuer if it is available in test mode.
 
 Response
 --------
@@ -33,37 +41,58 @@ Response
    :widths: auto
 
    * - | ``resource``
-       | string
+
+       .. type:: string
+          :required: true
+
      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The identifier uniquely referring to this issuer. When supplying this ID as the ``issuer`` parameter during
        :ref:`payment creation <v1/payments-create>`, the issuer selection screen is skipped.
 
    * - | ``name``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The full name of the issuer, for example 'ABN AMRO'.
 
    * - | ``method``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The :ref:`payment method <v1/methods-list>` this issuer belongs to.
 
        Possible values: ``ideal``
 
    * - | ``image``
-       | object
+
+       .. type:: object
+          :required: true
+
      - URLs of images representing the payment method issuer.
 
        .. list-table::
           :widths: auto
 
           * - | ``normal``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL for an issuer icon of 55x37 pixels.
 
           * - | ``bigger``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The URL for an issuer icon of 110x74 pixels.
 
 Example

@@ -2,9 +2,14 @@
 
 Chargebacks API v1: Get chargeback
 ==================================
-``GET`` ``https://api.mollie.com/v1/payments/*paymentId*/chargebacks/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/payments/*paymentId*/chargebacks/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
@@ -30,24 +35,39 @@ Response
    :widths: auto
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
    * - | ``payment``
-       | string, object
+
+       .. type:: string, object
+          :required: true
+
      - The ID of the payment this chargeback belongs to. If the payment include is requested, the ID will be replaced by
        a payment object as described in :ref:`Get payment <v1/payments-get>`.
 
    * - | ``amount``
-       | decimal
+
+       .. type:: decimal
+          :required: true
+
      - The amount charged back.
 
    * - | ``chargebackDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``reversedDatetime``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the chargeback was reversed if applicable, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

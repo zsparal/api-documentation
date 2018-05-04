@@ -2,9 +2,14 @@
 
 Customers API v2: Create customer payment
 =========================================
-``POST`` ``https://api.mollie.com/v2/customers/*customerId*/payments``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/customers/*customerId*/payments
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Creates a payment for the customer.
 
@@ -30,18 +35,27 @@ payments, the following parameters have notable differences in comparison to reg
    :widths: auto
 
    * - | ``recurringType``
-       | string
-     - Optional – Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
+
+       .. type:: string
+          :required: false
+
+     - Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
        the customer to agree to automatic recurring charges taking place on their account in the future. If set to
        ``recurring``, the customer's card is charged automatically.
 
    * - | ``amount``
-       | decimal
+
+       .. type:: decimal
+          :required: true
+
      - If the ``recurringType`` parameter is set to ``first`` then the minimal amount is €0.01 for iDEAL, credit card
        and Belfius Pay Button, €0.02 for Bancontact, or €0.10 for SOFORT Banking.
 
    * - | ``redirectUrl``
-       | string
+
+       .. type:: string
+          :required: true
+
      - If the ``recurringType`` parameter is set to ``recurring``, this parameter is ignored. Since the payment will
        take place without customer interaction, a redirect is not needed.
 

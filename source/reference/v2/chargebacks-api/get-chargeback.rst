@@ -2,9 +2,14 @@
 
 Chargebacks API v2: Get chargeback
 ==================================
-``GET`` ``https://api.mollie.com/v2/payments/*paymentId*/chargebacks/*id*``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/payments/*paymentId*/chargebacks/*id*
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
@@ -30,56 +35,89 @@ Response
    :widths: auto
 
    * - | ``id``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
    * - | ``amount``
-       | amount object
+
+       .. type:: amount object
+          :required: true
+
      - The amount charged back by the consumer.
 
        .. list-table::
           :widths: auto
 
           * - | ``currency``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - A string containing the exact amount that was charged back in the given currency.
 
    * - | ``settlementAmount``
-       | amount object
+
+       .. type:: amount object
+          :required: true
+
      - The amount deducted from the settlement, in the settlement's currency.
 
        .. list-table::
           :widths: auto
 
           * - | ``currency``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
-              | string
+
+              .. type:: string
+                 :required: true
+
             - A string containing the exact amount that was deducted for the chargeback from your account balance in the
               settlement currency. Note that this will be negative.
 
    * - | ``createdAt``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``reversedAt``
-       | datetime
+
+       .. type:: datetime
+          :required: true
+
      - The date and time the chargeback was reversed if applicable, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``paymentId``
-       | string
+
+       .. type:: string
+          :required: true
+
      - The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - An object with several URL objects relevant to the chargeback. Every URL object will contain an ``href`` and a
        ``type`` field.
 
@@ -87,15 +125,24 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the chargeback itself.
 
           * - | ``payment``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The API resource URL of the payment this chargeback belongs to.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the chargeback retrieval endpoint documentation.
 
 Example

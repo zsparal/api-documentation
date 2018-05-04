@@ -2,9 +2,14 @@
 
 Settlements API v1: Get open settlement
 =======================================
-``GET`` ``https://api.mollie.com/v1/settlements/open``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/settlements/open
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve the details of the open balance of the organization. This will return a settlement object representing your
 organization's balance.

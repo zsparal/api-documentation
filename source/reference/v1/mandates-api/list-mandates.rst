@@ -2,9 +2,14 @@
 
 Mandates API v1: List mandates
 ==============================
-``GET`` ``https://api.mollie.com/v1/customers/*customerId*/mandates``
 
-Authentication: :ref:`API keys <guides/authentication>`, :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/customers/*customerId*/mandates
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
 
 Retrieve all mandates of a customer.
 
@@ -16,12 +21,18 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
    :widths: auto
 
    * - | ``offset``
-       | integer
-     - Optional – The number of mandates to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of mandates to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of mandates to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of mandates to return (with a maximum of 250).
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -31,8 +42,11 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
    :widths: auto
 
    * - | ``testmode``
-       | boolean
-     - Optional – Set this to true to only retrieve test mode mandates.
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve test mode mandates.
 
 Response
 --------
@@ -42,44 +56,71 @@ Response
    :widths: auto
 
    * - | ``totalCount``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The total number of mandates available.
 
    * - | ``offset``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of skipped mandates as requested.
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of mandates found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of mandate objects as described in :ref:`Get mandate <v1/mandates-get>`.
 
    * - | ``links``
-       | object
-     - Optional – Links to help navigate through the lists of mandates, based on the given offset.
+
+       .. type:: object
+          :required: false
+
+     - Links to help navigate through the lists of mandates, based on the given offset.
 
        .. list-table::
           :widths: auto
 
           * - | ``previous``
-              | string
-            - Optional – The previous set of mandates, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The previous set of mandates, if available.
 
           * - | ``next``
-              | string
-            - Optional – The next set of mandates, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The next set of mandates, if available.
 
           * - | ``first``
-              | string
-            - Optional – The first set of mandates, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The first set of mandates, if available.
 
           * - | ``last``
-              | string
-            - Optional – The last set of mandates, if available.
+
+              .. type:: string
+                 :required: false
+
+            - The last set of mandates, if available.
 
 Example
 -------

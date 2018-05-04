@@ -2,9 +2,14 @@
 
 Profiles API v1: List API keys
 ==============================
-``GET`` ``https://api.mollie.com/v1/profiles/*id*/apikeys``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v1/profiles/*id*/apikeys
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 List the active API keys for the given payment profile.
 
@@ -25,11 +30,17 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of API keys found in ``data``.
 
    * - | ``data``
-       | array
+
+       .. type:: array
+          :required: true
+
      - An array of API key objects as described in :ref:`Get API key <v1/keys-get>`.
 
 Example

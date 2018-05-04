@@ -2,9 +2,14 @@
 
 Settlements API v2: List settlements
 ====================================
-``GET`` ``https://api.mollie.com/v2/settlements``
 
-Authentication: :ref:`OAuth access tokens <oauth/overview>`
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/settlements
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
 
 Retrieve all settlements, ordered from new to old.
 
@@ -16,17 +21,26 @@ Parameters
    :widths: auto
 
    * - | ``reference``
-       | string
-     - Optional – Use this parameter to filter for a settlement with a specific reference. The reference is visible on
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to filter for a settlement with a specific reference. The reference is visible on
        your bank statement and in emails. An example reference would be ``1182161.1506.02``.
 
    * - | ``offset``
-       | integer
-     - Optional – The number of payment profiles to skip.
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to skip.
 
    * - | ``count``
-       | integer
-     - Optional – The number of payment profiles to return (with a maximum of 250).
+
+       .. type:: integer
+          :required: false
+
+     - The number of payment profiles to return (with a maximum of 250).
 
 Response
 --------
@@ -36,23 +50,35 @@ Response
    :widths: auto
 
    * - | ``count``
-       | integer
+
+       .. type:: integer
+          :required: true
+
      - The number of settlements found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
    * - | ``_embedded``
-       | object
+
+       .. type:: object
+          :required: true
+
      - The object containing the queried data.
 
        .. list-table::
           :widths: auto
 
           * - | ``settlements``
-              | array
+
+              .. type:: array
+                 :required: true
+
             - An array of settlement objects as described in :ref:`Get settlement <v2/settlements-get>`.
 
    * - | ``_links``
-       | object
+
+       .. type:: object
+          :required: true
+
      - Links to help navigate through the lists of settlements. Every URL object will contain an ``href`` and a ``type``
        field.
 
@@ -60,19 +86,31 @@ Response
           :widths: auto
 
           * - | ``self``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the current set of settlements.
 
           * - | ``previous``
-              | URL object
-            - Optional – The previous set of settlements, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The previous set of settlements, if available.
 
           * - | ``next``
-              | URL object
-            - Optional – The next set of settlements, if available.
+
+              .. type:: URL object
+                 :required: false
+
+            - The next set of settlements, if available.
 
           * - | ``documentation``
-              | URL object
+
+              .. type:: URL object
+                 :required: true
+
             - The URL to the settlements list endpoint documentation.
 
 Example
