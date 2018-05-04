@@ -151,6 +151,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -158,6 +159,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

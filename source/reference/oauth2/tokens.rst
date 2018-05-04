@@ -104,6 +104,7 @@ Example
 Initial request
 ^^^^^^^^^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
        -d "grant_type=authorization_code&code=abc123"
@@ -111,6 +112,7 @@ Initial request
 Initial response
 ^^^^^^^^^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8
@@ -128,6 +130,7 @@ Now that we have a refresh token, we should renew the access token before its ex
 Refresh request
 ^^^^^^^^^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
        -d "grant_type=refresh_token&refresh_token=refresh_FS4xc3Mgci2xQ5s5DzaLXh3HhaTZOP"
@@ -135,6 +138,7 @@ Refresh request
 Refresh response
 ^^^^^^^^^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8

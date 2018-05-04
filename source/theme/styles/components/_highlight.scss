@@ -70,6 +70,15 @@
   font-weight: 300;
 }
 
+.rst-content .highlight .err {
+  border: none;
+  color: $grey-dark;
+}
+
+.rst-content .highlight .mi {
+  color: $orange-anzac;
+}
+
 .rst-content .highlight-bash .highlight .s2,
 .rst-content .highlight-bash .highlight .se {
   color: $brand-primary;

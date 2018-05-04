@@ -32,6 +32,7 @@ Amount changes
 All amounts in the API are passed as a map containing both a ``currency`` and a ``value`` property, for example:
 
 .. code-block:: json
+   :linenos:
 
    {
        "amount": {
@@ -77,6 +78,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
 ``billingAddress`` (and/or ``shippingAddress``) object, as follows:
 
 .. code-block:: json
+   :linenos:
 
    {
        "amount": {"currency": "USD", "value": "100.00"},
@@ -227,6 +229,7 @@ explained using an example.
 The new error reporting format in ``v2`` is the following:
 
 .. code-block:: json
+   :linenos:
 
    {
        "status": 401,

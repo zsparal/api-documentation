@@ -1070,6 +1070,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v1/payments/tr_WDqYK6vllg \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -1077,6 +1078,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/json; charset=utf-8
@@ -1095,7 +1097,7 @@ Response
            "order_id": "33"
        },
        "details": {
-           "consumerName": "Hr E G H K\u00fcppers en\/of MW M.J. K\u00fcppers-Veeneman",
+           "consumerName": "Hr E G H Kloppers en/of MW M.J. Kloppers-Veeneman",
            "consumerAccount": "NL53INGB0618365937",
            "consumerBic": "INGBNL2A"
        },
