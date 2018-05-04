@@ -57,7 +57,7 @@ abandons it. The expiry time is different for each payment method.
           payments.
  
 Expiry times per payment method
-------------------------------
+-------------------------------
 iDEAL / paysafecard / SEPA Direct Debit All     of these payment methods have the same expiry time of 15 minutes.
 Credit card    Payments of this payment method have an expiry time of about 30 minutes.
 Bitcoin / Bancontact / SOFORT Banking / KBC/CBC Payment Button    Payments of these payment methods have expiry times of about one hour.
