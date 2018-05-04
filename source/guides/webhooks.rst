@@ -58,6 +58,10 @@ system correctly processed the request. In case you return a different status â€
 problem with your hosting service â€“ we'll keep trying for a few hours, allowing you to process the request later on,
 after your hosting service is restored.
 
+A webhook call times out after 15 seconds. So, if you return HTTP-status ``200 OK`` after 16 seconds we will call the webhook again.
+
+In total we call the webhook 10 times with an increasing interval. If, after the 10th call, we don't get a ``200 OK`` repsonse we stop trying.
+
 Example
 -------
 To get started with webhooks, please refer to the documentation of the
