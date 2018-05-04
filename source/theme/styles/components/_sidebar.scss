@@ -41,24 +41,6 @@
   padding-bottom: 80px;
 }
 
-.sidebar__inner::-webkit-scrollbar {
-  margin-top: 50px;
-  width: 6px;
-}
-
-.sidebar__inner::-webkit-scrollbar-track {
-  background: #fff;
-}
-
-.sidebar__inner::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background: #fff;
-}
-
-.sidebar__inner:hover::-webkit-scrollbar-thumb {
-  background: $grey-medium;
-}
-
 .sidebar .toctree-l1 ul {
   display: none;
 }
@@ -93,6 +75,11 @@
     overflow: hidden;
     display: block;
   }
+}
+
+.sidebar ul li a:hover,
+.sidebar ul li a:focus {
+  color: $grey-darkest;
 }
 
 .sidebar > ul:last-child {
