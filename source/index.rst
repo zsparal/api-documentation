@@ -44,7 +44,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `SOFORT Banking <https://www.mollie.com/en/payments/sofort>`_
 
 All of the payment methods you have enabled are – where relevant – shown to the consumer. You can enable payment methods
-using the `Dashboard <https://www.mollie.com/dashboard>`_.
+using the `Dashboard <https://www.mollie.com/dashboard/settings/profiles>`_.
 
 How does the Mollie API work?
 -----------------------------
