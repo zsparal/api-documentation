@@ -20,6 +20,10 @@ webhook, fake calls to your webhook will never result in orders being processed 
 If an endpoint supports webhooks, you can specify the webhook URL you want to receive status changes on by providing the
 parameter ``webhookUrl``.
 
+The following endpoints support webhooks:
+* Payments
+* Subscriptions
+
 Webhooks for v2 API endpoints
 -----------------------------
 The webhook will be called when the payment changes status to:
