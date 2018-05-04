@@ -75,11 +75,13 @@ Request
 
    curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+       -H "Content-Type: application/json" \
        -d \
        "{
            \"amount\": {\"currency\":\"EUR\", \"value\":\"10.00\"},
            \"description\": \"My first payment\",
-           \"redirectUrl\": \"https://webshop.example.org/order/12345/\"
+           \"redirectUrl\": \"https://webshop.example.org/order/12345/\",
+           \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
        }"
 
 Response

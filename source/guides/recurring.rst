@@ -55,6 +55,7 @@ periodically through *subscriptions*.
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d \
           "{
               \"amount\": {\"currency\":\"EUR\", \"value\":\"0.01\"},
@@ -102,13 +103,14 @@ Please note that in order to do recurring payments, direct debit or credit card 
 
       curl -X POST https://api.mollie.com/v2/payments \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d \
           "{
-              \"amount\": {\"currency\": \"EUR\", \"value\": \"10.00\"}, \
-              \"customerId\": \"cst_Ok2DlrJe5\", \
-              \"sequenceType\": \"recurring\", \
-              \"description\": \"Background payment\", \
-              \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\" \
+              \"amount\": {\"currency\": \"EUR\", \"value\": \"10.00\"},
+              \"customerId\": \"cst_Ok2DlrJe5\",
+              \"sequenceType\": \"recurring\",
+              \"description\": \"Background payment\",
+              \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
 #. Like regular payments your :ref:`webhook <guides/webhooks>` is called for retrieving status updates.
@@ -139,13 +141,14 @@ frequency, and will show up in your Dashboard.
 
       curl -X POST https://api.mollie.com/v2/customers/cst_Ok2DlrJe5/subscriptions \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d \
           "{
-              \"amount\": {\"currency\":\"\EUR\", \"value\":\"25.00\"}, \
-              \"times\": 4, \
-              \"interval\": \"3 months\", \
-              \"description\": \"Quarterly payment\", \
-              \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\" \
+              \"amount\": {\"currency\":\"EUR\", \"value\":\"25.00\"},
+              \"times\": 4,
+              \"interval\": \"3 months\",
+              \"description\": \"Quarterly payment\",
+              \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
           }"
 
 
