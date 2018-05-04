@@ -12,15 +12,14 @@ SPHINXPROJ    = api-documentation
 SOURCEDIR     = source
 BUILDDIR      = build
 
-# Put it first so that "make" without argument is like "make help".
-help:
-	@$(SPHINXBUILD) -M help "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+node_modules/.bin/parcel: .nvmrc package-lock.json
+	bash -l -c 'nvm install && npm install --no-optional'
 
-source/_static/style.css: source/theme/styles/main.scss
-	./node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --detailed-report
+source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
+	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --detailed-report
 
-source/_static/index.js: source/theme/js/index.js
-	./node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --detailed-report
+source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
+	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --detailed-report
 
 css-reload:
 	@./node_modules/.bin/parcel source/theme/styles/main.scss --out-dir build/_static --out-file style --no-hmr --port 8001
