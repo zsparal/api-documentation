@@ -26,6 +26,11 @@ tested cryptographic safeties.
 ``https://api.mollie.com/``. If the client detects a fake certificate – let's say because of a hacked DNS-server – no
 connection will be set up.
 
+Sensitive information
+--------------------------
+All sensitive payment information is entered on our platform. So there is no need to jump trough hoops te make your website PCI DSS certified. We've got you covered.
+
+
 What about the webhooks?
 ------------------------
 The :ref:`webhooks <guides/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
