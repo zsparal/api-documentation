@@ -55,3 +55,14 @@ abandons it. The expiry time is different for each payment method.
 .. note:: It is not a good idea to predict payment expiry. Best wait until your webhook is called and fetch the status
           as usual. This is the most reliable way to keep your system in sync with Mollie, also in the case of expiring
           payments.
+ 
+Expiry times per payment method
+------------------------------
+iDEAL / paysafecard / SEPA Direct Debit All     of these payment methods have the same expiry time of 15 minutes.
+Credit card    Payments of this payment method have an expiry time of about 30 minutes.
+Bitcoin / Bancontact / SOFORT Banking / KBC/CBC Payment Button    Payments of these payment methods have expiry times of about one hour.
+Belfius Pay Button / ING Home'Pay    Payments of these payment methods have expiry times of about 3 hours.
+PayPal    Payments of these payment methods expire the next business day at 09:00 AM.
+Bank transfer    12(+2) days. A payment by banktransfer the consumer must make manually. By wiring a certain amount into our account and using a certain payment reference we register the incoming payment. Mollie checks for these payments on a daily basis.
+Some days can pass before it becomes clear a payment has been made. That's why a payment of the payment method banktransfer will not expire until 12 days have passed. One or two days can be added to this if 12 days after payment creation is a Sunday or a Saturday.
+It's possible to set an alternative expiry date for bank transfer payments by using the ``dueDate parameter`` during payment creation.
