@@ -24,9 +24,9 @@ remaining amount due using the other payment methods enabled on your website pro
 Contracting and settlement
 --------------------------
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle contracting and settlement on
-your behalf. You will have to set up the contracting yourself via the brand owner (e.g. for Podium Cadeaukaart, contact
+your behalf. You will have to set up the contracting yourself via `the brand owner <https://help.mollie.com/hc/en-us/articles/115004458349-How-do-I-activate-gift-card-payments->` (e.g. for Podium Cadeaukaart, contact
 Stichting Promotie Theater- en Concertbezoek). The brand owner will ask for your PSPID, a unique identifier. You should
-provide the brand owner with your Mollie Partner ID to use as the PSPID.
+provide the brand owner with your `Mollie Partner ID <https://help.mollie.com/hc/en-us/articles/210710049-Where-can-I-find-my-partner-ID-or-merchant-ID->` to use as the PSPID.
 
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
