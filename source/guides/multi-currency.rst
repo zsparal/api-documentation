@@ -49,4 +49,4 @@ Swedish krona        ``SEK``  PayPal, credit card
 New Taiwan dollar    ``TWD``  PayPal
 Thai baht            ``THB``  PayPal
 United States dollar ``USD``  PayPal, credit card
-==================== ======== ===================
+==================== ======== =================== 
