@@ -31,7 +31,7 @@ them. Then we will show you how the statuses are connected.
     to expire depends on the payment method. We explain this in more detail below.
 
 ``failed``
-    The payment has failed and cannot be completed with a different payment method.
+    The payment has failed and cannot be completed with a different payment method. We will call your webhook when a payment gets the ```failed``` status.
 
 ``paid``
     This status occurs whenever a payment is successfully paid. When this status occurs we will call your webhook.
