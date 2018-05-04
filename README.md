@@ -27,7 +27,7 @@ some syntax highlighting.
 ### Prerequisites
 
 - Python > 2.7.9
-- Node > 8.x
+- Node > 9.x
 ### Running locally
 
 Download a copy of this repostory:
@@ -40,8 +40,7 @@ Then visit the downloaded repository and install dependencies:
 
 ```
 cd api-documentation
-npm install
-pip install -U -r requirements.txt
+make install
 ```
 
 ### Generate docs
