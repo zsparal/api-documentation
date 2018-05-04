@@ -55,9 +55,9 @@ Parameters
           :required: true
 
      - The description of the payment you're creating. This will be shown to the consumer on their card or bank
-       statement when possible, and in any exports you generate.
+       statement when possible. We truncate the description automatically according to the limits of the used payment method. The description is also visible in any exports you generate.
 
-       We recommend you use the order number so that you can always link the payment to the order. This is particularly
+       We recommend you use an unique identifier so that you can always link the payment to the order. This is particularly
        useful for bookkeeping.
 
    * - | ``redirectUrl``
