@@ -161,7 +161,7 @@ Response
 
    * - | ``method``
        | string
-     - The payment method used for this payment, either forced on creation by specifying the ``method`` parameter, or 
+     - The payment method used for this payment, either forced on creation by specifying the ``method`` parameter, or
        chosen by the customer on our payment method selection screen.
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
@@ -782,6 +782,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -789,6 +790,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8

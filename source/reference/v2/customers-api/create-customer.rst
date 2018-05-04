@@ -60,6 +60,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X POST https://api.mollie.com/v2/customers \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -68,6 +69,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 201 Created
    Content-Type: application/hal+json; charset=utf-8

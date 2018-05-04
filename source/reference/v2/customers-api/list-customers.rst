@@ -30,7 +30,7 @@ If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter 
 
 .. list-table::
    :widths: auto
-    
+
    * - | ``testmode``
        | boolean
      - Optional – Set this to ``true`` to list test mode customers.
@@ -88,6 +88,7 @@ Example
 Request
 ^^^^^^^
 .. code-block:: bash
+   :linenos:
 
    curl -X GET https://api.mollie.com/v2/customers \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
@@ -95,6 +96,7 @@ Request
 Response
 ^^^^^^^^
 .. code-block:: http
+   :linenos:
 
    HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8
