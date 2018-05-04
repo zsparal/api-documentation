@@ -97,6 +97,11 @@ Datetime
 --------
 A string representing a date and time in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+Locale
+------
+Astring representing the country and language in `ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897_` format.
+Possible values: en_US de_AT de_CH de_DE es_ES fr_BE fr_FR nl_BE nl_NL
+
 QR code object
 --------------
 The QR code object represents an image of a QR code.
