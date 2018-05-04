@@ -21,9 +21,9 @@ transaction in multiple parts.
 
 A few example usages:
 
-* ``amount=5 interval="2 weeks"`` Your consumer will be charged €5 once every two weeks.
-* ``amount=20 interval="1 day" times=5`` Your consumer will be charged €20 every day, for five consecutive days.
-* ``amount=10 interval="1 month" startDate="2018-04-30"`` Your consumer will be charged €10 on the last day of each
+* ``amount=currency:``EUR``, value: ``5.00`" interval="2 weeks"`` Your consumer will be charged €5 once every two weeks.
+* ``amount=currency:``EUR``, value: ``20.00` interval="1 day" times=5`` Your consumer will be charged €20 every day, for five consecutive days.
+* ``amount=currency:``EUR``, value: ``10.00` interval="1 month" startDate="2018-04-30"`` Your consumer will be charged €10 on the last day of each
   month, starting in April 2018.
 
 Parameters
