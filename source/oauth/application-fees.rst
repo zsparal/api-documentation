@@ -74,7 +74,7 @@ endpoint:
 
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
-Multi-currency
---------------
+Multicurrency
+-------------
 Application fees are supported on all payments regardless of currency. However, the application fee itself must always
 be created in ``EUR``. For example, you can charge a €1.00 application fee on a US$10.00 payment.
