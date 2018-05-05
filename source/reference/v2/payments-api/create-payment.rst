@@ -134,7 +134,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
+     - The ID of the :ref:`Customer <v2/customers-create>` for whom the payment is being created. This is
        used for :ref:`recurring payments <guides/recurring>` and :ref:`single click payments <guides/checkout>`.
 
    * - | ``mandateId``
@@ -350,7 +350,7 @@ iDEAL
 
      - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
        specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
-       :ref:`Issuers API <v1/issuers-list>`.
+       :ref:`Methods API <v2/methods-get>` by using the optional ``issuers`` include.
 
 KBC/CBC Payment Button
 """"""""""""""""""""""
