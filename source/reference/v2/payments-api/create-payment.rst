@@ -65,7 +65,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - `The URL the customer will be redirected to after the payment process. It could make sense for the
+     - The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
@@ -76,8 +76,8 @@ Parameters
 
      - Set the webhook URL, where we will send payment status updates to.
 
-       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
-          development on ``localhost``, you must use a tool like
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
