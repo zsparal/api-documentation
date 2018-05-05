@@ -20,33 +20,33 @@ also supported by Mollie.
 
 Support for other currencies than ``EUR`` varies per payment method.
 
-==================== ======== ===================
-Currency             ISO code  Payment methods
-==================== ======== ===================
-Australian dollar    ``AUD``  PayPal, credit card
-Bulgarian lev        ``BGN``  Credit card
-Canadian dollar      ``CAD``  PayPal, credit card
-Swiss franc          ``CHF``  PayPal, credit card
-Czech koruna         ``CZK``  PayPal, credit card
-Danish krone         ``DKK``  PayPal, credit card
-Euro                 ``EUR``  All payment methods
-British pound        ``GBP``  PayPal, credit card
-Hong Kong dollar     ``HKD``  PayPal, credit card
-Croatian kuna        ``HRK``  Credit card
-Hungarian forint     ``HUF``  PayPal, credit card
-Israeli new shekel   ``ILS``  PayPal, credit card
-Icelandic króna      ``ISK``  Credit card
-Japanese yen         ``JPY``  PayPal, credit card
-Mexican peso         ``MXN``  PayPal
-Norwegian krone      ``NOK``  PayPal
-New Zealand dollar   ``NZD``  PayPal
-Philippine piso      ``PHP``  PayPal
-Polish złoty         ``PLN``  PayPal, credit card
-Romanian leu         ``RON``  Credit card
-Russian ruble        ``RUB``  PayPal
-Singapore dollar     ``SGD``  PayPal
-Swedish krona        ``SEK``  PayPal, credit card
-New Taiwan dollar    ``TWD``  PayPal
-Thai baht            ``THB``  PayPal
-United States dollar ``USD``  PayPal, credit card
-==================== ======== ===================
+==================== ======== ============== ===================
+Currency             ISO code Decimal places  Payment methods   
+==================== ======== ============== ===================
+Australian dollar    ``AUD``               2 PayPal, credit card
+Bulgarian lev        ``BGN``               2 Credit card        
+Canadian dollar      ``CAD``               2 PayPal, credit card
+Swiss franc          ``CHF``               2 PayPal, credit card
+Czech koruna         ``CZK``               2 PayPal, credit card
+Danish krone         ``DKK``               2 PayPal, credit card
+Euro                 ``EUR``               2 All payment methods
+British pound        ``GBP``               2 PayPal, credit card
+Hong Kong dollar     ``HKD``               2 PayPal, credit card
+Croatian kuna        ``HRK``               2 Credit card        
+Hungarian forint     ``HUF``               2 PayPal, credit card
+Israeli new shekel   ``ILS``               0 PayPal, credit card
+Icelandic króna      ``ISK``               2 Credit card        
+Japanese yen         ``JPY``               0 PayPal, credit card
+Mexican peso         ``MXN``               2 PayPal             
+Norwegian krone      ``NOK``               2 PayPal             
+New Zealand dollar   ``NZD``               2 PayPal             
+Philippine piso      ``PHP``               2 PayPal             
+Polish złoty         ``PLN``               2 PayPal, credit card
+Romanian leu         ``RON``               2 Credit card        
+Russian ruble        ``RUB``               2 PayPal             
+Singapore dollar     ``SGD``               2 PayPal             
+Swedish krona        ``SEK``               2 PayPal, credit card
+New Taiwan dollar    ``TWD``               2 PayPal             
+Thai baht            ``THB``               2 PayPal             
+United States dollar ``USD``               2 PayPal, credit card
+==================== ======== ============== ===================
