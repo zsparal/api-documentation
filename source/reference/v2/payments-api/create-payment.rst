@@ -55,17 +55,18 @@ Parameters
           :required: true
 
      - The description of the payment you're creating. This will be shown to the consumer on their card or bank
-       statement when possible, and in any exports you generate.
+       statement when possible. We truncate the description automatically according to the limits of the used payment
+       method. The description is also visible in any exports you generate.
 
-       We recommend you use the order number so that you can always link the payment to the order. This is particularly
-       useful for bookkeeping.
+       We recommend you use a unique identifier so that you can always link the payment to the order. This is
+       particularly useful for bookkeeping.
 
    * - | ``redirectUrl``
 
        .. type:: string
           :required: true
 
-     - `The URL the customer will be redirected to after the payment process. It could make sense for the
+     - The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
@@ -76,8 +77,8 @@ Parameters
 
      - Set the webhook URL, where we will send payment status updates to.
 
-       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
-          development on ``localhost``, you must use a tool like
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
@@ -103,8 +104,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit``
+       ``giftcard`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -134,7 +135,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
+     - The ID of the :ref:`Customer <v2/customers-create>` for whom the payment is being created. This is
        used for :ref:`recurring payments <guides/recurring>` and :ref:`single click payments <guides/checkout>`.
 
    * - | ``mandateId``
@@ -249,7 +250,8 @@ Credit card
               .. type:: string
                  :required: false
 
-            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
+              format.
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
@@ -350,7 +352,7 @@ iDEAL
 
      - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
        specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
-       :ref:`Issuers API <v1/issuers-list>`.
+       :ref:`Methods API <v2/methods-get>` by using the optional ``issuers`` include.
 
 KBC/CBC Payment Button
 """"""""""""""""""""""
@@ -511,7 +513,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
               .. type:: amount object
                  :required: true
 
-            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
+            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would
               want to charge €10.00.
 
               .. list-table::

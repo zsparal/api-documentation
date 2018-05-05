@@ -2,15 +2,7 @@
 
 
 This project contains the source of all of Mollie's public API documentation. The full documentation (in an easy to use
-format) in the future may be found at https://docs.mollie.com.
-
-**Before we go live:**
-You can find the docs on https://d12nhbpjotbqmy.cloudfront.net/, automatically deployed by Travis to S3, and cached by
-Cloudfront. During the development phase it is secured with basic auth using an AWS Lambda function:
-```
-Username: polder
-Password: approved
-```
+format) may be found at https://docs.mollie.com.
 
 ## Contribute
 
@@ -24,13 +16,15 @@ documentation should be written in US English.
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
 some syntax highlighting.
+
 ### Prerequisites
 
 - Python > 2.7.9
 - Node > 9.x
+
 ### Running locally
 
-Download a copy of this repostory:
+Download a copy of this repository:
 
 ```
 git clone git@github.com:mollie/api-documentation.git
@@ -59,13 +53,15 @@ open build/html/index.html
 
 ### Styling docs
 
-You can make changes to the styling by starting a webserver locally:
+You can make changes to the styling by starting a web server locally:
 
 ```
 make start
 ```
 
-Visit http://docs.mollie.dev:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your browser.
+Visit http://localhost:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your 
+browser.
+
 ## Support
 
 If you are having issues, please let us know. We accept pull requests on our public documentation.

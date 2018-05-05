@@ -7,9 +7,10 @@ Mollie Connect allows you to create apps for Mollie merchants via OAuth.
 
 Why should I use OAuth?
 -----------------------
-Mollie Connect is built on the OAuth standard. The OAuth connection enables you to access other merchants' accounts with
-their consent, without having to exchange API keys. Whether you are just looking to improve your customer's experience,
-to automate essential business processes, or to whitelabel our platform completely, it is all possible with OAuth.
+Mollie Connect is built on the `OAuth standard <https://en.wikipedia.org/wiki/OAuth>`_. The OAuth connection enables you
+to access other merchants' accounts with their consent, without having to exchange API keys. Whether you are just
+looking to improve your customers' experiences, to automate essential business processes, or to whitelabel our platform
+completely, it is all possible with OAuth.
 
 Our OAuth platform allows you to:
 

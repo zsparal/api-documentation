@@ -28,7 +28,7 @@ the requested permissions as a space separated list in the ``scope`` parameter.
 
    * - | ``refunds.write``
        | Refunds API
-     - Refund the merchant's payments to consumers.
+     - Create or cancel refunds.
 
    * - | ``customers.read``
        | Customers API

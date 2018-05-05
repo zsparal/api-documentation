@@ -5,7 +5,7 @@ Refunds API v2: Get refund
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v1/payments/*paymentId*/refunds/*id*
+   :url: https://api.mollie.com/v2/payments/*paymentId*/refunds/*id*
 
 .. authentication::
    :api_keys: true
@@ -13,7 +13,7 @@ Refunds API v2: Get refund
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`refunds list endpoint <v1/refunds-list>`.
+If you do not know the original payment's ID, you can use the :ref:`List refunds <v2/refunds-list>` endpoint.
 
 Parameters
 ----------

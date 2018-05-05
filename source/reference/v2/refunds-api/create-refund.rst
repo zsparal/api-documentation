@@ -5,7 +5,7 @@ Refunds API v2: Create refund
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v1/payments/*id*/refunds
+   :url: https://api.mollie.com/v2/payments/*id*/refunds
 
 .. authentication::
    :api_keys: true
@@ -44,7 +44,7 @@ into the Mollie Dashboard, or retrieving the payment's refunds via the API to va
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
+Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payments/tr_7UhSN1zuXS/refunds``.
 
 .. list-table::
    :widths: auto

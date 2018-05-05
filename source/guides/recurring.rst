@@ -42,6 +42,7 @@ periodically through *subscriptions*.
 
       curl -X POST https://api.mollie.com/v2/customers \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d "{\"name\":\"Customer A\",\"email\":\"customer@example.org\"}"
 
 #. Save the customer's ``id`` in your database. You need it when performing :ref:`Payments API <v2/payments-create>`
@@ -81,7 +82,7 @@ Charging immediately on-demand
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that the customer has given their consent, it's possible to perform a recurring payment on-demand. Instead of the
 regular payment with a ``redirectUrl``, a recurring payment happens in the background without a browser session, i.e.
-without the customer going through payments steps. You can create a recurring payment with the ``recurringType`` set to
+without the customer going through payments steps. You can create a recurring payment with the ``sequenceType`` set to
 ``recurring`` when creating a payment with the :ref:`Payments API <v2/payments-create>`.
 
 Please note that in order to do recurring payments, direct debit or credit card has to be activated on your profile.
@@ -169,4 +170,4 @@ not be known by your system yet when we call the webhook to report the payment's
 The payment object will, however, contain a ``subscriptionId`` field that contains the subscription ID you received when
 the subscription was created. This allows you to recognize where the payment belongs to.
 
-We currently do not provide webhooks specifically for status changes of a Subscription itself.
+We do not provide webhooks specifically for status changes of a Subscription itself.

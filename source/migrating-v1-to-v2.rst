@@ -7,10 +7,9 @@ Why upgrade to v2?
 ------------------
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments, subscriptions and refunds
-  in non-``EUR`` currencies.
-  Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
-  amount for various resources.
+* Fully supports :ref:`multicurrency <guides/multicurrency>`. You can create payments, subscriptions, and refunds in
+  non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
+  reflect the settlement amount for various resources.
 * Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
@@ -28,8 +27,8 @@ The identifier for the payment method *Bancontact* has been renamed from ``miste
 API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
-embedded by using the ``embed=refunds`` query string parameter. See the :ref:`Get payment documentation <v2/payments-get>`
-for more information.
+embedded by using the ``embed=refunds`` query string parameter. See the
+:ref:`Get payment documentation <v2/payments-get>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -86,7 +85,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
 
    {
        "amount": {"currency": "USD", "value": "100.00"},
-       ...
+       "description": "My first payment",
        "billingAddress": {
            "streetAndNumber": "Dorpstraat 1",
            "postalCode": "1122 AA",
