@@ -1,7 +1,9 @@
 .. _v1/settlements-get-next:
 
-Settlements API v1: Get next settlement
-=======================================
+Get next settlement
+===================
+.. api-name:: Settlements API
+   :version: 1
 
 .. endpoint::
    :method: GET

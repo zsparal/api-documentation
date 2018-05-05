@@ -1,7 +1,9 @@
 .. _v1/customers-create:
 
-Customers API v1: Create customer
-=================================
+Create customer
+===============
+.. api-name:: Customers API
+   :version: 1
 
 .. endpoint::
    :method: POST

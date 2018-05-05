@@ -1,7 +1,9 @@
 .. _v1/keys-get:
 
-Profiles API v1: Get API key
-============================
+Get API key
+===========
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET

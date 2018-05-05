@@ -1,7 +1,9 @@
 .. _v1/keys-reset:
 
-Profiles API v1: Reset API key
-==============================
+Reset API key
+=============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: POST

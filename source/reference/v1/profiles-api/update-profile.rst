@@ -1,7 +1,9 @@
 .. _v1/profiles-update:
 
-Profiles API v1: Update profile
-===============================
+Update profile
+==============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: POST

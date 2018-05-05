@@ -1,7 +1,9 @@
 .. _v2/subscriptions-get:
 
-Subscriptions API v2: Get subscription
-======================================
+Get subscription
+================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: GET

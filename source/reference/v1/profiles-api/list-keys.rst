@@ -1,7 +1,9 @@
 .. _v1/keys-list:
 
-Profiles API v1: List API keys
-==============================
+List API keys
+=============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET

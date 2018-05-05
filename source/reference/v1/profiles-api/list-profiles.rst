@@ -1,7 +1,9 @@
 .. _v1/profiles-list:
 
-Profiles API v1: List profiles
-==============================
+List profiles
+=============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET

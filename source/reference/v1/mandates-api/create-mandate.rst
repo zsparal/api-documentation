@@ -1,7 +1,9 @@
 .. _v1/mandates-create:
 
-Mandates API v1: Create mandate
-===============================
+Create mandate
+==============
+.. api-name:: Mandates API
+   :version: 1
 
 .. endpoint::
    :method: POST

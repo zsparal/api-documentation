@@ -1,7 +1,9 @@
-.. _v1/settlements-get-refunds:
+.. _v1/settlements-list-refunds:
 
-Settlements API v1: Get settlement refunds
-==========================================
+List settlement refunds
+=======================
+.. api-name:: Settlements API
+   :version: 1
 
 .. endpoint::
    :method: GET

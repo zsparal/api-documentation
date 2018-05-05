@@ -1,7 +1,9 @@
 .. _v1/customers-create-payment:
 
-Customers API v1: Create customer payment
-=========================================
+Create customer payment
+=======================
+.. api-name:: Customers API
+   :version: 1
 
 .. endpoint::
    :method: POST

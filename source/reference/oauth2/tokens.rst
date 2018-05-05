@@ -1,7 +1,8 @@
 .. _oauth2/tokens:
 
-Connect API: Tokens
-===================
+Tokens
+======
+.. api-name:: Connect API
 
 .. endpoint::
    :method: GET

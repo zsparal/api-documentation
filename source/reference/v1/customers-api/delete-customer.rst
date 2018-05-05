@@ -1,7 +1,9 @@
 .. _v1/customers-delete:
 
-Customers API v1: Delete customer
-=================================
+Delete customer
+===============
+.. api-name:: Customers API
+   :version: 1
 
 .. endpoint::
    :method: DELETE

@@ -1,7 +1,9 @@
 .. _v1/refunds-cancel:
 
-Refunds API v1: Cancel refund
-=============================
+Cancel refund
+=============
+.. api-name:: Refunds API
+   :version: 1
 
 .. endpoint::
    :method: DELETE

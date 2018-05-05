@@ -1,7 +1,9 @@
 .. _v2/payments-get:
 
-Payments API v2: Get payment
-============================
+Get payment
+===========
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: GET

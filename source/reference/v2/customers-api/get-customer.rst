@@ -1,7 +1,9 @@
 .. _v2/customers-get:
 
-Customers API v2: Get customer
-==============================
+Get customer
+============
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: GET

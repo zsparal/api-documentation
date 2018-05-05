@@ -1,7 +1,9 @@
 .. _v2/methods-list:
 
-Methods API v2: List payment methods
-====================================
+List payment methods
+====================
+.. api-name:: Methods API
+   :version: 2
 
 .. endpoint::
    :method: GET

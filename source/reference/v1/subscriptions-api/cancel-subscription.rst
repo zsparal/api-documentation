@@ -1,7 +1,9 @@
 .. _v1/subscriptions-cancel:
 
-Subscriptions API v1: Cancel subscription
-=========================================
+Cancel subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 1
 
 .. endpoint::
    :method: DELETE

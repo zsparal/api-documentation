@@ -1,7 +1,9 @@
 .. _v1/profiles-create:
 
-Profiles API v1: Create profile
-===============================
+Create profile
+==============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: POST

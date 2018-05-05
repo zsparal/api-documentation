@@ -2,7 +2,6 @@
 
 Mollie Connect: Overview
 ========================
-
 Mollie Connect allows you to create apps for Mollie merchants via OAuth.
 
 Why should I use OAuth?

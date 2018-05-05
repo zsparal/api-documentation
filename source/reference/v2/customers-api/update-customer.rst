@@ -1,7 +1,9 @@
 .. _v2/customers-update:
 
-Customers API v2: Update customer
-=================================
+Update customer
+===============
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: POST

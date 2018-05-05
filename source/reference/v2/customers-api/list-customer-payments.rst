@@ -1,7 +1,9 @@
 .. _v2/customers-list-payments:
 
-Customers API v2: List customer payments
-========================================
+List customer payments
+======================
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: GET

@@ -1,7 +1,8 @@
 .. _oauth2/authorize:
 
-Connect API: Authorize
-======================
+Authorize
+=========
+.. api-name:: Connect API
 
 .. endpoint::
    :method: GET

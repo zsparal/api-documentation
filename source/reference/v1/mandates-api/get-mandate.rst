@@ -1,7 +1,9 @@
 .. _v1/mandates-get:
 
-Mandates API v1: Get mandate
-============================
+Get mandate
+===========
+.. api-name:: Mandates API
+   :version: 1
 
 .. endpoint::
    :method: GET

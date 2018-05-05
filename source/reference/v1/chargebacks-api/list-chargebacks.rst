@@ -1,7 +1,9 @@
 .. _v1/chargebacks-list:
 
-Chargebacks API v1: List chargebacks
-====================================
+List chargebacks
+================
+.. api-name:: Chargebacks API
+   :version: 1
 
 .. endpoint::
    :method: GET

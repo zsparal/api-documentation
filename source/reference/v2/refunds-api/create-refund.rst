@@ -1,7 +1,9 @@
 .. _v2/refunds-create:
 
-Refunds API v2: Create refund
-=============================
+Create refund
+=============
+.. api-name:: Refunds API
+   :version: 2
 
 .. endpoint::
    :method: POST

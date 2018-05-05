@@ -1,7 +1,9 @@
 .. _v2/payments-cancel:
 
-Payments API v2: Cancel payment
-===============================
+Cancel payment
+==============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: DELETE

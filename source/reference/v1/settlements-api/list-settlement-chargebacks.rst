@@ -1,7 +1,9 @@
-.. _v1/settlements-get-chargebacks:
+.. _v1/settlements-list-chargebacks:
 
-Settlements API v1: Get settlement chargebacks
-==============================================
+List settlement chargebacks
+===========================
+.. api-name:: Settlements API
+   :version: 1
 
 .. endpoint::
    :method: GET

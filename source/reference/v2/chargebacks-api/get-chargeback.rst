@@ -1,7 +1,9 @@
 .. _v2/chargebacks-get:
 
-Chargebacks API v2: Get chargeback
-==================================
+Get chargeback
+==============
+.. api-name:: Chargebacks API
+   :version: 2
 
 .. endpoint::
    :method: GET

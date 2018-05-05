@@ -1,7 +1,9 @@
-.. _v2/settlements-get-payments:
+.. _v2/settlements-list-payments:
 
-Settlements API v2: Get settlement payments
-===========================================
+List settlement payments
+========================
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET

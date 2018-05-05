@@ -1,7 +1,9 @@
 .. _v1/settlements-get-open:
 
-Settlements API v1: Get open settlement
-=======================================
+Get open settlement
+===================
+.. api-name:: Settlements API
+   :version: 1
 
 .. endpoint::
    :method: GET

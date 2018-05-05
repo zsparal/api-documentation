@@ -1,7 +1,9 @@
 .. _v1/customers-list:
 
-Customers API v1: List customers
-================================
+List customers
+==============
+.. api-name:: Customers API
+   :version: 1
 
 .. endpoint::
    :method: GET

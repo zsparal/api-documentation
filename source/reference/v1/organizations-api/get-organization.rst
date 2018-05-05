@@ -1,7 +1,9 @@
 .. _v1/organizations-get:
 
-Organizations API v1: Get organization
-======================================
+Get organization
+================
+.. api-name:: Organizations API
+   :version: 1
 
 .. endpoint::
    :method: GET

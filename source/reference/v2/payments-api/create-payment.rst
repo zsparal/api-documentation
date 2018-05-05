@@ -1,7 +1,9 @@
 .. _v2/payments-create:
 
-Payments API v2: Create payment
-===============================
+Create payment
+==============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: POST

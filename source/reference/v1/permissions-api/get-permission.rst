@@ -1,7 +1,9 @@
 .. _v1/permissions-get:
 
-Permissions API v1: Get permission
-==================================
+Get permission
+==============
+.. api-name:: Permissions API
+   :version: 1
 
 .. endpoint::
    :method: GET

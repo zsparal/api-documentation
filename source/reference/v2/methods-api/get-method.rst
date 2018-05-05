@@ -1,7 +1,9 @@
 .. _v2/methods-get:
 
-Methods API v2: Get payment method
-==================================
+Get payment method
+==================
+.. api-name:: Methods API
+   :version: 2
 
 .. endpoint::
    :method: GET

@@ -1,7 +1,9 @@
 .. _v1/invoices-get:
 
-Invoices API v1: Get invoice
-============================
+Get invoice
+===========
+.. api-name:: Invoices API
+   :version: 1
 
 .. endpoint::
    :method: GET

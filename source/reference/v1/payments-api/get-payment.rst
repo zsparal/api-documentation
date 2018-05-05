@@ -1,11 +1,13 @@
 .. _v1/payments-get:
 
-Payments API v1: Get payment
-============================
+Get payment
+===========
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving payments in the new v2 API can be
              found :ref:`here <v2/payments-get>`. For more information on the v2 API, refer to our
              :ref:`v2 migration guide <migrate-to-v2>`.
 
+.. api-name:: Payments API
+   :version: 1
 
 .. endpoint::
    :method: GET

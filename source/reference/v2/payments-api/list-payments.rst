@@ -1,7 +1,9 @@
 .. _v2/payments-list:
 
-Payments API v2: List payments
-==============================
+List payments
+=============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: GET

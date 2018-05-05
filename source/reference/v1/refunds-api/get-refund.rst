@@ -1,7 +1,9 @@
 .. _v1/refunds-get:
 
-Refunds API v1: Get refund
-==========================
+Get refund
+==========
+.. api-name:: Refunds API
+   :version: 1
 
 .. endpoint::
    :method: GET

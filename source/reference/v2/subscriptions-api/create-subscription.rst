@@ -1,7 +1,9 @@
 .. _v2/subscriptions-create:
 
-Subscriptions API v2: Create subscription
-=========================================
+Create subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: POST

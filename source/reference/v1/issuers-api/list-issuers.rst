@@ -1,7 +1,9 @@
 .. _v1/issuers-list:
 
-Issuers API v1: List issuers
-============================
+List issuers
+============
+.. api-name:: Issuers API
+   :version: 1
 
 .. endpoint::
    :method: GET

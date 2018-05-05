@@ -1,7 +1,9 @@
 .. _v1/settlements-list:
 
-Settlements API v1: List settlements
-====================================
+List settlements
+================
+.. api-name:: Settlements API
+   :version: 1
 
 .. endpoint::
    :method: GET

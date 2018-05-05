@@ -1,7 +1,9 @@
 .. _v1/subscriptions-list:
 
-Subscriptions API v1: List subscriptions
-========================================
+List subscriptions
+==================
+.. api-name:: Subscriptions API
+   :version: 1
 
 .. endpoint::
    :method: GET

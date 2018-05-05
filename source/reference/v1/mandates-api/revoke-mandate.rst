@@ -1,7 +1,9 @@
 .. _v1/mandates-revoke:
 
-Mandates API v1: Revoke mandate
-===============================
+Revoke mandate
+==============
+.. api-name:: Mandates API
+   :version: 1
 
 .. endpoint::
    :method: DELETE
