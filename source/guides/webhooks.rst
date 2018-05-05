@@ -53,14 +53,16 @@ addresses that Mollie uses.
 
 Retry schema
 ------------
-In response to Mollie calling your webhook, you only have to return the HTTP-status ``200 OK``. Mollie then knows your
+In response to Mollie calling your webhook, you only have to return the HTTP status ``200 OK``. Mollie then knows your
 system correctly processed the request. In case you return a different status – let's say because there's a temporary
-problem with your hosting service – we'll keep trying for a few hours, allowing you to process the request later on,
-after your hosting service is restored.
+problem with your hosting service – we'll keep trying for a few hours, allowing you to process the request later on
+after your hosting service has been restored.
 
-A webhook call times out after 15 seconds. So, if you return HTTP-status ``200 OK`` after 16 seconds we will call the webhook again.
+Our webhook calls time out after 15 seconds. Even if you return a ``200 OK`` HTTP status after 16 seconds, we will mark
+the webhook call as failed and try again later.
 
-In total we call the webhook 10 times with an increasing interval. If, after the 10th call, we don't get a ``200 OK`` repsonse we stop trying.
+In total we will call your webhook 10 times with an increasing interval. If after the 10th call we still don't get a
+``200 OK`` response, we will stop trying.
 
 Example
 -------
