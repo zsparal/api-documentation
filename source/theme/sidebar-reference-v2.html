@@ -5,10 +5,26 @@
 	<p><a href="javascript:void(0)">Payments API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/payments-api/create-payment', 'Create payment') }}
-		{{ sidebar_item('reference/v2/payments-api/get-payment', 'Get payment') }}
-		{{ sidebar_item('reference/v2/payments-api/cancel-payment', 'Cancel payment') }}
-		{{ sidebar_item('reference/v2/payments-api/list-payments', 'List payments') }}
+		{{ sidebar_item(
+			'reference/v2/payments-api/create-payment',
+			'Create payment',
+			'POST /v2/payments'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/payments-api/get-payment',
+			'Get payment',
+			'GET /v2/payments/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/payments-api/cancel-payment',
+			'Cancel payment',
+			'DELETE /v2/payments/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/payments-api/list-payments',
+			'List payments',
+			'GET /v2/payments'
+		) }}
 	</ul>
 </div>
 
@@ -16,8 +32,16 @@
 	<p><a href="javascript:void(0)">Methods API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/methods-api/list-methods', 'List methods') }}
-		{{ sidebar_item('reference/v2/methods-api/get-method', 'Get method') }}
+		{{ sidebar_item(
+			'reference/v2/methods-api/list-methods',
+			'List methods',
+			'GET /v2/methods'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/methods-api/get-method',
+			'Get method',
+			'GET /v2/methods/*'
+		) }}
 	</ul>
 </div>
 
@@ -25,10 +49,26 @@
 	<p><a href="javascript:void(0)">Refunds API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/refunds-api/create-refund', 'Create refund') }}
-		{{ sidebar_item('reference/v2/refunds-api/get-refund', 'Get refund') }}
-		{{ sidebar_item('reference/v2/refunds-api/cancel-refund', 'Cancel refund') }}
-		{{ sidebar_item('reference/v2/refunds-api/list-refunds', 'List refunds') }}
+		{{ sidebar_item(
+			'reference/v2/refunds-api/create-refund',
+			'Create refund',
+			'POST /v2/payments/*/refunds'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/refunds-api/get-refund',
+			'Get refund',
+			'GET /v2/payments/*/refunds/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/refunds-api/cancel-refund',
+			'Cancel refund',
+			'DELETE /v2/payments/*/refunds/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/refunds-api/list-refunds',
+			'List refunds',
+			'GET /v2/refunds'
+		) }}
 	</ul>
 </div>
 
@@ -36,8 +76,16 @@
 	<p><a href="javascript:void(0)">Chargebacks API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/chargebacks-api/get-chargeback', 'Get chargeback') }}
-		{{ sidebar_item('reference/v2/chargebacks-api/list-chargebacks', 'List chargebacks') }}
+		{{ sidebar_item(
+			'reference/v2/chargebacks-api/get-chargeback',
+			'Get chargeback',
+			'GET /v2/payments/*/chargebacks/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/chargebacks-api/list-chargebacks',
+			'List chargebacks',
+			'GET /v2/chargebacks'
+		) }}
 	</ul>
 </div>
 
@@ -47,13 +95,41 @@
 	<p><a href="javascript:void(0)">Customers API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/customers-api/create-customer', 'Create customer') }}
-		{{ sidebar_item('reference/v2/customers-api/get-customer', 'Get customer') }}
-		{{ sidebar_item('reference/v2/customers-api/update-customer', 'Update customer') }}
-		{{ sidebar_item('reference/v2/customers-api/delete-customer', 'Delete customer') }}
-		{{ sidebar_item('reference/v2/customers-api/list-customers', 'List customers') }}
-		{{ sidebar_item('reference/v2/customers-api/create-customer-payment', 'Create customer payment') }}
-		{{ sidebar_item('reference/v2/customers-api/list-customer-payments', 'List customer payments') }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/create-customer',
+			'Create customer',
+			'POST /v2/customers'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/get-customer',
+			'Get customer',
+			'GET /v2/customers/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/update-customer',
+			'Update customer',
+			'POST /v2/customers/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/delete-customer',
+			'Delete customer',
+			'DELETE /v2/customers/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/list-customers',
+			'List customers',
+			'GET /v2/customers'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/create-customer-payment',
+			'Create customer payment',
+			'POST /v2/customers/*/payments'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/customers-api/list-customer-payments',
+			'List customer payments',
+			'GET /v2/customers/*/payments'
+		) }}
 	</ul>
 </div>
 
@@ -61,10 +137,26 @@
 	<p><a href="javascript:void(0)">Mandates API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v1/mandates-api/create-mandate', 'Create mandate') }}
-		{{ sidebar_item('reference/v1/mandates-api/get-mandate', 'Get mandate') }}
-		{{ sidebar_item('reference/v1/mandates-api/revoke-mandate', 'Revoke mandate') }}
-		{{ sidebar_item('reference/v1/mandates-api/list-mandates', 'List mandates') }}
+		{{ sidebar_item(
+			'reference/v1/mandates-api/create-mandate',
+			'Create mandate',
+			'POST /v1/customers/*/mandates'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/mandates-api/get-mandate',
+			'Get mandate',
+			'GET /v1/customers/*/mandates/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/mandates-api/revoke-mandate',
+			'Revoke mandate',
+			'DELETE /v1/customers/*/mandates/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/mandates-api/list-mandates',
+			'List mandates',
+			'GET /v1/customers/*/mandates'
+		) }}
 	</ul>
 </div>
 
@@ -72,10 +164,26 @@
 	<p><a href="javascript:void(0)">Subscriptions API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/subscriptions-api/create-subscription', 'Create subscription') }}
-		{{ sidebar_item('reference/v2/subscriptions-api/get-subscription', 'Get subscription') }}
-		{{ sidebar_item('reference/v2/subscriptions-api/cancel-subscription', 'Cancel subscription') }}
-		{{ sidebar_item('reference/v2/subscriptions-api/list-subscriptions', 'List subscriptions') }}
+		{{ sidebar_item(
+			'reference/v2/subscriptions-api/create-subscription',
+			'Create subscription',
+			'POST /v2/customers/*/subscriptions'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/subscriptions-api/get-subscription',
+			'Get subscription',
+			'GET /v2/customers/*/subscriptions/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/subscriptions-api/cancel-subscription',
+			'Cancel subscription',
+			'DELETE /v2/customers/*/subscriptions/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/subscriptions-api/list-subscriptions',
+			'List subscriptions',
+			'GET /v2/customers/*/subscriptions'
+		) }}
 	</ul>
 </div>
 
@@ -85,8 +193,16 @@
 	<p><a href="javascript:void(0)">Connect API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/oauth2/authorize', 'Authorize') }}
-		{{ sidebar_item('reference/oauth2/tokens', 'Tokens') }}
+		{{ sidebar_item(
+			'reference/oauth2/authorize',
+			'Authorize',
+			'GET /oauth2/authorize'
+		) }}
+		{{ sidebar_item(
+			'reference/oauth2/tokens',
+			'Tokens',
+			'GET /oauth2/tokens'
+		) }}
 	</ul>
 </div>
 
@@ -94,8 +210,16 @@
 	<p><a href="javascript:void(0)">Permissions API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v1/permissions-api/get-permission', 'Get permission') }}
-		{{ sidebar_item('reference/v1/permissions-api/list-permissions', 'List permissions') }}
+		{{ sidebar_item(
+			'reference/v1/permissions-api/get-permission',
+			'Get permission',
+			'GET /v1/permissions/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/permissions-api/list-permissions',
+			'List permissions',
+			'GET /v1/permissions'
+		) }}
 	</ul>
 </div>
 
@@ -103,7 +227,11 @@
 	<p><a href="javascript:void(0)">Organizations API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v1/organizations-api/get-organization', 'Get organization') }}
+		{{ sidebar_item(
+			'reference/v1/organizations-api/get-organization',
+			'Get organization',
+			'GET /v1/organizations/*'
+		) }}
 	</ul>
 </div>
 
@@ -111,14 +239,46 @@
 	<p><a href="javascript:void(0)">Profiles API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v1/profiles-api/create-profile', 'Create profile') }}
-		{{ sidebar_item('reference/v1/profiles-api/get-profile', 'Get profile') }}
-		{{ sidebar_item('reference/v1/profiles-api/update-profile', 'Update profile') }}
-		{{ sidebar_item('reference/v1/profiles-api/delete-profile', 'Delete profile') }}
-		{{ sidebar_item('reference/v1/profiles-api/list-profiles', 'List profiles') }}
-		{{ sidebar_item('reference/v1/profiles-api/get-key', 'Get API key') }}
-		{{ sidebar_item('reference/v1/profiles-api/reset-key', 'Reset API key') }}
-		{{ sidebar_item('reference/v1/profiles-api/list-keys', 'List API keys') }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/create-profile',
+			'Create profile',
+			'POST /v1/profiles'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/get-profile',
+			'Get profile',
+			'GET /v1/profiles/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/update-profile',
+			'Update profile',
+			'POST /v1/profiles/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/delete-profile',
+			'Delete profile',
+			'DELETE /v1/profiles/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/list-profiles',
+			'List profiles',
+			'GET /v1/profiles'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/get-key',
+			'Get API key',
+			'GET /v1/profiles/*/apikeys/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/reset-key',
+			'Reset API key',
+			'POST /v1/profiles/*/apikeys/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/profiles-api/list-keys',
+			'List API keys',
+			'GET /v1/profiles/*/apikeys'
+		) }}
 	</ul>
 </div>
 
@@ -126,13 +286,41 @@
 	<p><a href="javascript:void(0)">Settlements API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v2/settlements-api/get-settlement', 'Get settlement') }}
-		{{ sidebar_item('reference/v2/settlements-api/get-next-settlement', 'Get next settlement') }}
-		{{ sidebar_item('reference/v2/settlements-api/get-open-settlement', 'Get open settlement') }}
-		{{ sidebar_item('reference/v2/settlements-api/list-settlements', 'List settlements') }}
-		{{ sidebar_item('reference/v2/settlements-api/list-settlement-payments', 'List settlement payments') }}
-		{{ sidebar_item('reference/v2/settlements-api/list-settlement-refunds', 'List settlement refunds') }}
-		{{ sidebar_item('reference/v2/settlements-api/list-settlement-chargebacks', 'List settlement chargebacks') }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/get-settlement',
+			'Get settlement',
+			'GET /v2/settlements/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/get-next-settlement',
+			'Get next settlement',
+			'GET /v2/settlements/next'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/get-open-settlement',
+			'Get open settlement',
+			'GET /v2/settlements/open'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/list-settlements',
+			'List settlements',
+			'GET /v2/settlements'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/list-settlement-payments',
+			'List settlement payments',
+			'GET /v2/settlements/*/payments'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/list-settlement-refunds',
+			'List settlement refunds',
+			'GET /v2/settlements/*/refunds'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/settlements-api/list-settlement-chargebacks',
+			'List settlement chargebacks',
+			'GET /v2/settlements/*/chargebacks'
+		) }}
 	</ul>
 </div>
 
@@ -140,7 +328,15 @@
 	<p><a href="javascript:void(0)">Invoices API</a></p>
 
 	<ul>
-		{{ sidebar_item('reference/v1/invoices-api/get-invoice', 'Get invoice') }}
-		{{ sidebar_item('reference/v1/invoices-api/list-invoices', 'List invoices') }}
+		{{ sidebar_item(
+			'reference/v1/invoices-api/get-invoice',
+			'Get invoice',
+			'GET /v1/invoices/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v1/invoices-api/list-invoices',
+			'List invoices',
+			'GET /v1/invoices'
+		) }}
 	</ul>
 </div>

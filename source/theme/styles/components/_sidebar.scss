@@ -82,12 +82,13 @@
 }
 
 .sidebar__group ul li {
-  margin-bottom: 8px;
+  margin-bottom: 15px;
 }
 
 .sidebar__group ul li a {
   color: #666666;
   font-size: 16px;
+  line-height: 16px;
 
   @media (max-width: breakpoint("<medium")) {
     max-width: 80%;
@@ -101,6 +102,15 @@
 .sidebar__group ul li a:hover,
 .sidebar__group ul li a:focus {
   color: $grey-darkest;
+}
+
+.sidebar__group ul li a > code {
+  color: $grey-medium-light;
+  display: block;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .sidebar__group > ul > li.current > a {

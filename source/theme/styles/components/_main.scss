@@ -18,6 +18,11 @@
     z-index: auto;
     position: relative;
   }
+
+  @media (min-width: breakpoint('extra-large')) {
+    min-width: 260px;
+    width: 260px;
+  }
 }
 
 .main__content {
