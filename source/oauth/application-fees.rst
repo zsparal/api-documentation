@@ -34,7 +34,7 @@ Application fees are created by passing additional parameters to the :ref:`Creat
        .. type:: amount object
           :required: true
 
-     - The :ref:`amount <amount-object>` that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}``
+     - The :ref:`amount <amount-object>` that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}``
        if the app would want to charge €10.00.
 
    * - | ``description``

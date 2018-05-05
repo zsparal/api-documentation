@@ -512,7 +512,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
               .. type:: amount object
                  :required: true
 
-            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
+            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would
               want to charge €10.00.
 
               .. list-table::
