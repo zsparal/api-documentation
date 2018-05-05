@@ -180,9 +180,11 @@ the best approach for dealing with an error. The following classes of codes are 
 * A code in the ``4xx`` range is an error code returned from the Mollie API where the client (your responsibility) seems
   to be causing the error. Whenever this happens you can change your code to prevent the error from happening again. The
   error for this specific request usually won't go away by itself.
-* A code in the ``5xx`` range is an error caused by the server (Mollie's responsibility). So caused by the Mollie API or
-  it is infrastructure related. In the rare case you get this type of error, something is wrong with the Mollie API.
-  The errors should subside without your mediation.
+* A code in the ``5xx`` range is an error caused by the Mollie server. In the rare case you get this type of error,
+  something is wrong with the Mollie API. For instance, we may be experiencing a short service interruption. The errors
+  should subside without your mediation.
+
+The operational status of our service can be tracked at `status.mollie.com <https://status.mollie.com/>`_.
 
 All possible status codes
 -------------------------
@@ -228,4 +230,4 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 |   |Please retry the request at a later time.                                                                         |
 +---+------------------------------------------------------------------------------------------------------------------+
 |504|Gateway Timeout – Your request is causing an unusually long process time.                                         |
-+---+------------------------------------------------------------------------------------------------------------------+ 
++---+------------------------------------------------------------------------------------------------------------------+
