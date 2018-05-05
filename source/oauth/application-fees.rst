@@ -24,8 +24,8 @@ enabled.
 
 How to create an application fee
 --------------------------------
-Application fees are created by passing additional parameters to the
-:ref:`Create payment <v2/payments-create/mollie-connect-oauth-parameters>` endpoint:
+Application fees are created by passing additional parameters to the :ref:`Create payment <v2/payments-create>`
+endpoint:
 
 .. list-table::
    :widths: auto
