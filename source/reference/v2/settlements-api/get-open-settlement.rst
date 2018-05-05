@@ -28,7 +28,7 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/settlements/next \
+   curl -X GET https://api.mollie.com/v2/settlements/open \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Response

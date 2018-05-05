@@ -13,11 +13,11 @@ from his or her mobile device.
 
 How do QR codes work?
 ---------------------
-#. The merchant generates a QR code for a payment method using the Mollie API.
-#. The QR code is presented to the customer during the checkout.
-#. The customer opens the app on his or her mobile device and scans the QR code.
+#. You generate a QR code for a payment method using the Mollie API.
+#. You show the QR code to the customer during the checkout.
+#. The customer opens the app on a mobile device and scans the QR code.
 #. The customer finishes the payment in the app on the mobile device.
-#. Mollie informs the merchant of the payment status change using the :ref:`webhook <guides/webhooks>`.
+#. Mollie informs you of the payment status change using the :ref:`webhook <guides/webhooks>`.
 #. The customer is redirected back to the webshop on their computer.
 
 Supported payment methods

@@ -2,7 +2,6 @@
 
 Mollie Checkout
 ===============
-
 **Mollie Checkout** is a collection of *hosted payment pages* that allow your customers to pick payment methods or view
 payment details for various methods. Using Mollie Checkout is optional but recommended.
 

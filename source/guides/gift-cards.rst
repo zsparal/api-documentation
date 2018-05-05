@@ -8,13 +8,13 @@ Supported brands
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
-* Nationale Bioscoopbon
-* Nationale EntertainmentCard
-* Nationale Kunst & Cultuur Cadeaukaart
-* Podium Cadeaukaart
+* `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`
+* `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`
+* `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`
+* `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
-* Webshop Giftcard
-* YourGift
+* `Webshop Giftcard <https://www.webshopgiftcard.nl/>`
+* `YourGift <https://www.yourgift.nl/>`
 
 If you need a different brand, please reach out to your account manager or our support department.
 
@@ -24,9 +24,9 @@ remaining amount due using the other payment methods enabled on your website pro
 Contracting and settlement
 --------------------------
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle contracting and settlement on
-your behalf. You will have to set up the contracting yourself via the brand owner (e.g. for Podium Cadeaukaart, contact
+your behalf. You will have to set up the contracting yourself via `the brand owner <https://help.mollie.com/hc/en-us/articles/115004458349-How-do-I-activate-gift-card-payments->` (e.g. for Podium Cadeaukaart, contact
 Stichting Promotie Theater- en Concertbezoek). The brand owner will ask for your PSPID, a unique identifier. You should
-provide the brand owner with your Mollie Partner ID to use as the PSPID.
+provide the brand owner with your `Mollie Partner ID <https://help.mollie.com/hc/en-us/articles/210710049-Where-can-I-find-my-partner-ID-or-merchant-ID->` to use as the PSPID.
 
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
@@ -84,7 +84,7 @@ use to finish the payment.
 .. note:: Some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
 
 Canceled and abandoned payments
---------------------------------
+-------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
 the gift card will be returned to the gift card. This will show up as a refund in your
 `Dashboard <https://www.mollie.com/dashboard>`_.

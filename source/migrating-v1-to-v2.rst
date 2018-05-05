@@ -28,8 +28,8 @@ The identifier for the payment method *Bancontact* has been renamed from ``miste
 API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
-embedded by using the ``embed=refunds`` query string parameter. See the :ref:`Get payment documentation <v2/payments-get>`
-for more information.
+embedded by using the ``embed=refunds`` query string parameter. See the
+:ref:`Get payment documentation <v2/payments-get>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -86,7 +86,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
 
    {
        "amount": {"currency": "USD", "value": "100.00"},
-       ...
+       "description": "My first payment",
        "billingAddress": {
            "streetAndNumber": "Dorpstraat 1",
            "postalCode": "1122 AA",
