@@ -34,13 +34,32 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
           :required: true
 
-     - The amount that is charged with each subscription payment, e.g. ``{"currency":"EUR", "value":"10.00"}`` if you
-       would want to charge €10.00 every time.
+     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
+       €100.00.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``currency``
+
+              .. type:: string
+                 :required: true
+
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
+              the payment methods that are enabled on your account.
+
+          * - ``value``
+
+              .. type:: string
+                 :required: true
+
+            - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
+              amount of decimals. Non-string values are not accepted.
 
    * - | ``times``
 
