@@ -19,7 +19,7 @@ Benefits of payments via the Mollie Checkout
   another one. If a customer appears to not have sufficient credit on a checking account a retry by credit card could
   easily be attempted. We handle this for you without asking you to implement any extra APIs.
 
-* Full support for :ref:`QR codes <guides/qr-codes>` and other conversion rate improving features, such as .....
+* Full support for :ref:`QR codes <guides/qr-codes>`.
 
 * Mollie optimizes the order of payment methods. For Dutch customers we know to list iDEAL at the top while for Belgians
   we start off with the payment method Bancontact. A lot of effort goes into this and we optimize this using
