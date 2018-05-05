@@ -130,6 +130,11 @@ a.headerlink::before {
   text-align: left;
 }
 
+.rst-content a:hover,
+.rst-content a:focus, {
+  text-decoration: underline;
+}
+
 
 /**
  * Typography

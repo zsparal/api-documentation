@@ -1,48 +1,32 @@
-{# TEMPLATE VAR SETTINGS #} {%- set url_root = pathto('', 1) %} {%- if url_root == '#' %}{% set url_root = '' %}{% endif
-%} {%- if not embedded and docstitle %} {%- set titlesuffix = " &mdash; "|safe + docstitle|e %} {%- else %} {%- set titlesuffix
-= "" %} {%- endif %} {%- set lang_attr = 'en' if language == None else (language | replace('_', '-')) %}
-
+{% set url_root = pathto('', 1) -%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8"> {{ metatags }}
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"> {% block htmltitle %}
-    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
-    {% endblock %} {# FAVICON #} {% if favicon %}
-    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" /> {% endif %} {# CANONICAL URL #} {% if theme_canonical_url %}
-    <link rel="canonical" href="{{ theme_canonical_url }}{{ pagename }}.html" /> {% endif %} {# CSS #} {# OPENSEARCH #} {% if not embedded %} {% if use_opensearch %}
-    <link rel="search" type="application/opensearchdescription+xml" title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
-        href="{{ pathto('_static/opensearch.xml', 1) }}" /> {% endif %} {% endif %} {# RTD hosts this file, so just load on non RTD builds #} {%- if not READTHEDOCS %}
-    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" /> {%- endif %}
-    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" /> {%- for css in css_files %} {%- if css|attr("rel") %}
-    <link rel="{{ css.rel }}" href="{{ pathto(css.filename, 1) }}" type="text/css" {% if css.title is not none %} title="{{ css.title }}"
-        {% endif %} /> {%- else %}
-    <link rel="stylesheet" href="{{ pathto(css, 1) }}" type="text/css" /> {%- endif %} {%- endfor %} {%- for cssfile in extra_css_files %}
-    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" /> {%- endfor %} {%- block linktags %} {%- if hasdoc('about') %}
-    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" /> {%- endif %} {%- if hasdoc('genindex') %}
-    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" /> {%- endif %} {%- if hasdoc('search') %}
-    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" /> {%- endif %} {%- if hasdoc('copyright') %}
-    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" /> {%- endif %} {%- if next %}
-    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" /> {%- endif %} {%- if prev %}
-    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" /> {%- endif %} {%- endblock %} {%- block extrahead %} {% endblock %}
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <title>{{ title|striptags|e }} &mdash; Mollie API documentation</title>
 
+	<link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+	<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+	<link rel="index" title="Mollie API" href="{{ pathto('index') }}" />
+
+	{% if next -%}
+	<link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+	{%- endif %}
+	{% if prev -%}
+	<link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+	{%- endif %}
 </head>
 
 <body>
+    {% include 'navigation.html' %}
 
-    {% include 'navigation.html' %} {% block extrabody %} {% endblock %}
     <div class="l-wrapper l-wrapper--fluid main">
         <div class="main__inner" data-enhancer="sidebar">
             <nav class="main__sidebar">
                 <div class="sidebar js-mobile-sidebar">
                     <div class="sidebar__inner" role="navigation" aria-label="main navigation">
-                        {% block menu %} {# The singlehtml builder doesn't handle this toctree call when the toctree is empty. Skip building this
-                        for now. #} {% if 'singlehtml' not in builder %} {% set global_toc = toctree(maxdepth=theme_navigation_depth|int,
-                        collapse=theme_collapse_navigation|tobool, includehidden=theme_includehidden|tobool, titles_only=theme_titles_only|tobool)
-                        %} {% endif %} {% if global_toc %} {{ global_toc }} {% else %}
-                        <!-- Local TOC -->
-                        <div class="local-toc">{{ toc }}</div>
-                        {% endif %} {% endblock %}
+						{% include 'sidebar.html' %}
                     </div>
                 </div>
             </nav>
@@ -50,38 +34,24 @@
             <section class="main__content">
                 <div class="main__content-inner content">
                     <div class="wy-nav-content">
-                        {%- block content %} {% if theme_style_external_links|tobool %}
-                        <div class="rst-content style-external-links">
-                            {% else %}
-                            <div class="rst-content">
-                                {% endif %}
-                                <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
-                                    {%- block document %}
-                                    <div itemprop="articleBody">
+						<div class="rst-content">
+							<div role="main" class="document" itemscope="itemscope"
+								 itemtype="http://schema.org/Article">
+								{%- block document %}
+									<div itemprop="articleBody">
                                         {% block body %}{% endblock %}
                                     </div>
-                                    {% if self.comments()|trim %}
-                                    <div class="articleComments">
-                                        {% block comments %}{% endblock %}
-                                    </div>
-                                    {% endif%}
-                                </div>
-                                {%- endblock %}
-                            </div>
-                            {%- endblock %}
-                        </div>
-
-                    </div>
+								{%- endblock %}
+							</div>
+						</div>
+					</div>
+				</div>
             </section>
-            </div>
-        </div>
+		</div>
+	</div>
 
-        {% include "mobile-navigation-button.html" %}
+	{% include "mobile-navigation-button.html" %}
 
-        {% include "versions.html" %} {% include "footer.html" %}
-
-        <script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}">
-        </script>
-
+	<script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}"></script>
 </body>
 </html>

@@ -65,7 +65,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - `The URL the customer will be redirected to after the payment process. It could make sense for the
+     - The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
@@ -76,8 +76,8 @@ Parameters
 
      - Set the webhook URL, where we will send payment status updates to.
 
-       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
-          development on ``localhost``, you must use a tool like
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
@@ -103,8 +103,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit``
+       ``giftcard`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -249,7 +249,8 @@ Credit card
               .. type:: string
                  :required: false
 
-            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
+              format.
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
@@ -511,7 +512,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
               .. type:: amount object
                  :required: true
 
-            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
+            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would
               want to charge €10.00.
 
               .. list-table::
