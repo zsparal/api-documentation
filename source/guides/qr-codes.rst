@@ -61,8 +61,9 @@ the :ref:`Create payment <v2/payments-create>` reference.
 
 ``POST https://api.mollie.com/v2/payments?include=details.qrCode``
 
-The API will return a ``qrCode`` object in the ``details`` object. The QR code can contain either a ```data:image/``<https://en.wikipedia.org/wiki/Data_URI_scheme>` or a
-``https://`` URL pointing to the qrCode, depending on the payment method. You should support both.
+The API will return a ``qrCode`` object in the ``details`` object. The QR code can contain either a ``data:image/`` URI
+(i.e. an `image encoded in an URI <https://en.wikipedia.org/wiki/Data_URI_scheme>`_) or an ``https://`` URL pointing to
+the QR code image, depending on the payment method. You should support both.
 
 QR codes are only included in the API as long as the payment has the ``open`` status. For iDEAL, the QR code is only
 available if no issuer has been selected yet.
