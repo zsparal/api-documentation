@@ -28,14 +28,15 @@ connection will be set up.
 
 Sensitive information
 --------------------------
-All sensitive payment information is entered on our platform. So there is no need to jump trough hoops te make your website PCI DSS certified. We've got you covered.
-
+All sensitive payment information is entered on our platform. So there is no need to jump trough hoops te make your
+website `PCI DSS certified <https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard>`. We have got
+you covered.
 
 What about the webhooks?
 ------------------------
 The :ref:`webhooks <guides/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
 HTTPS. This is because the webhook requests – which Mollie sends out to communicate
-:ref:`status changes <guides/payment-status-changes>` – simply don't contain sensitive information. Your webhook-script
+:ref:`status changes <guides/payment-status-changes>` – simply do not contain sensitive information. Your webhook-script
 will always have to :ref:`fetch the object <v2/payments-get>` in order to know its status, and this can only be done
 using an HTTPS-secured connection. Here too, the fact ``https://api.mollie.com/`` can only be reached using HTTPS forces
 merchant-sites that don't use HTTPS into security.
