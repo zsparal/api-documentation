@@ -23,19 +23,19 @@ contact our support department to have charging application fees on your account
 
 How to create an application fee
 --------------------------------
-Application fees are created by passing additional parameters to the :ref:`Create Payment API <v2/payments-create/mollie-connect-oauth-parameters>`:
+Application fees are created by passing additional parameters to the
+:ref:`Create payment <v2/payments-create/mollie-connect-oauth-parameters>` endpoint:
 
 .. list-table::
    :widths: auto
 
-   
    * - | ``applicationFee``
 
        .. type:: object
           :required: false
 
-     - Adding an :ref:`application fee <oauth/application-fees>` allows you to charge the merchant a small
-       sum for the payment and transfer this to your own account.
+     - Adding an application fee allows you to charge the merchant a small sum for the payment and transfer this to your
+       own account. The application fee is deducted from the payment.
 
        .. list-table::
           :widths: auto
@@ -45,8 +45,8 @@ Application fees are created by passing additional parameters to the :ref:`Creat
               .. type:: amount object
                  :required: true
 
-            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
-              want to charge €10.00.
+            - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would want to
+              charge €10.00.
 
               .. list-table::
                  :widths: auto
@@ -72,9 +72,6 @@ Application fees are created by passing additional parameters to the :ref:`Creat
                  :required: true
 
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
-
-
-
 
 Multi currency
 --------------
