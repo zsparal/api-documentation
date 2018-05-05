@@ -21,8 +21,9 @@ If an endpoint supports webhooks, you can specify the webhook URL you want to re
 parameter ``webhookUrl``.
 
 The following endpoints support webhooks:
-* Payments
-* Subscriptions
+
+* `Payments API <v2/payments-create>`
+* `Subscriptions API <v2/subscriptions-create>`
 
 Webhooks for v2 API endpoints
 -----------------------------
