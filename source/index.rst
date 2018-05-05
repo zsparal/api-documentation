@@ -14,6 +14,9 @@ the API. We recommend to read these topics entirely.
 If possible it would be wise to leave communication at this level to our ready-made :ref:`Clients <clients>`. This
 allows you to still be in control without reinventing the wheel.
 
+If you have any questions about integrating our API please `contact us<https://www.mollie.com/en/contact/>`. We're happy
+to help! 
+
 .. _clients:
 
 Clients, modules and plugins
@@ -44,7 +47,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `SOFORT Banking <https://www.mollie.com/en/payments/sofort>`_
 
 All of the payment methods you have enabled are – where relevant – shown to the consumer. You can enable payment methods
-using the `Dashboard <https://www.mollie.com/dashboard>`_.
+using the `Dashboard <https://www.mollie.com/dashboard/settings/profiles>`_.
 
 How does the Mollie API work?
 -----------------------------
@@ -53,7 +56,7 @@ How does the Mollie API work?
 #. A customer on your website decides to checkout.
 
 #. Your website :ref:`creates a payment <v2/payments-create>` on the Mollie platform by calling the Mollie API with the
-   amount, a payment description and a URL we should redirect the customer to after the payment is made.
+   amount, a payment description, a webhook URL, and a URL we should redirect the customer to after the payment is made.
 
    The API responds with the unique id and the ``_links.checkout`` URL for the newly created payment. Your website
    stores the ``id``, links it to the customer's order and redirects the customer to the URL in the ``_links.checkout``

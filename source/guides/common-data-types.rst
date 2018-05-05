@@ -84,7 +84,6 @@ When providing an address object as parameter to a request, the following condit
 
 Boolean
 -------
-
 In JSON structures, booleans should be passed as the JSON boolean type.
 
 In query string parameters (e.g. ``GET`` requests) only the strings ``true`` and ``false`` are accepted.

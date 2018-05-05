@@ -1,0 +1,12 @@
+{% macro sidebar_item(item_pagename, item_title) -%}
+	{%- if pagename == item_pagename -%}
+		<li class="current">
+			<a href="{{ pathto(item_pagename) }}">{{ item_title }}</a>
+			{{ toc }}
+		</li>
+	{%- else -%}
+		<li>
+			<a href="{{ pathto(item_pagename) }}">{{ item_title }}</a>
+		</li>
+	{%- endif -%}
+{%- endmacro -%}

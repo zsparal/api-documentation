@@ -19,33 +19,62 @@ Mollie will then collect and settle the application fees to the ticketing platfo
 Enabling application fees
 -------------------------
 In order to enable charging application fees with your app, you must first register to become an app developer. Then,
-contact our support department to have charging application fees on your account enabled.
+`contact <https://www.mollie.com/en/contact/>`_ our support department to have charging application fees on your account
+enabled.
 
 How to create an application fee
 --------------------------------
-Application fees are created by passing additional parameters to the :ref:`Create Payment API <v2/payments-create>`:
+Application fees are created by passing additional parameters to the :ref:`Create payment <v2/payments-create>`
+endpoint:
 
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
+   * - | ``applicationFee``
 
-       .. type:: amount object
-          :required: true
+       .. type:: object
+          :required: false
 
-     - The :ref:`amount <amount-object>` that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}``
-       if the app would want to charge €10.00.
+     - Adding an application fee allows you to charge the merchant a small sum for the payment and transfer this to your
+       own account. The application fee is deducted from the payment.
 
-   * - | ``description``
+       .. list-table::
+          :widths: auto
 
-       .. type:: string
-          :required: true
+          * - | ``amount``
 
-     - The description of the application fee. This will appear on settlement reports to the merchant and to you.
+              .. type:: amount object
+                 :required: true
 
+            - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would want to
+              charge €10.00.
 
+              .. list-table::
+                 :widths: auto
 
-Multi currency
+                 * - | ``currency``
+
+                     .. type:: string
+                        :required: true
+
+                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                 * - | ``value``
+
+                     .. type:: string
+                        :required: true
+
+                   - A string containing the exact amount you want to charge in the given currency. Make sure to send
+                     the right amount of decimals. Non-string values are not accepted.
+
+          * - | ``description``
+
+              .. type:: string
+                 :required: true
+
+            - The description of the application fee. This will appear on settlement reports to the merchant and to you.
+
+Multi-currency
 --------------
 Application fees are supported on all payments regardless of currency. However, the application fee itself must always
 be created in ``EUR``. For example, you can charge a €1.00 application fee on a US$10.00 payment.

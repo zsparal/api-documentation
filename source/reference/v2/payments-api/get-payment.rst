@@ -253,8 +253,8 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit``
+       ``giftcard`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -415,6 +415,13 @@ Response
                  :required: true
 
             - The API resource URL of the chargebacks that belong to this payment.
+
+          * - | ``settlement``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
           * - | ``documentation``
 
