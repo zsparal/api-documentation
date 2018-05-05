@@ -42,21 +42,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of permissions available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped permissions as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of permissions found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -64,14 +61,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of permission objects as described in :ref:`Get permission <v1/permissions-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of permissions, based on the given offset.
 
@@ -81,28 +76,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of permissions, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of permissions, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of permissions, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of permissions, if available.
 

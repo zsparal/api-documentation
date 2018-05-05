@@ -29,14 +29,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The (unchanged) API key's identifier.
 
@@ -45,14 +43,12 @@ Response
    * - | ``key``
 
        .. type:: string
-          :required: true
 
      - The newly generated API key, which immediately replaces the previous API key.
 
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The API key's new date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

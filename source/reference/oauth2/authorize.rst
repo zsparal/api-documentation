@@ -84,14 +84,12 @@ Response
    * - | ``code``
 
        .. type:: string
-          :required: true
 
      - The auth code, with which you can request an :ref:`access token <oauth2/tokens>`.
 
    * - | ``state``
 
        .. type:: string
-          :required: true
 
      - The random string you've sent with your request to prevent CSRF attacks. Please always check if this matches the
        expected value.
@@ -99,7 +97,6 @@ Response
    * - | ``error``
 
        .. type:: string
-          :required: false
 
      - If the request is canceled by the merchant, or fails for any other reason, the merchant will be
        redirected back with an ``error`` field. The field will contain a code indicating the type of error.
@@ -107,7 +104,6 @@ Response
    * - | ``error_description``
 
        .. type:: string
-          :required: false
 
      - If the ``error`` field is present, this field will be present as well with an explanation of the error
        code.

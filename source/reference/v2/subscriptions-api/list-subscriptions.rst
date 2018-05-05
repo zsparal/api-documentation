@@ -68,7 +68,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
        or the default number.
@@ -76,7 +75,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -86,14 +84,12 @@ Response
           * - | ``subscriptions``
 
               .. type:: array
-                 :required: true
 
             - An array of subscription objects as described in :ref:`Get subscription <v2/subscriptions-get>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -104,28 +100,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the current set of subscriptions.
 
           * - | ``previous``
 
               .. type:: URL object
-                 :required: false
 
             - The previous set of subscriptions, if available.
 
           * - | ``next``
 
               .. type:: URL object
-                 :required: false
 
             - The next set of subscriptions, if available.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the subscriptions list endpoint documentation.
 

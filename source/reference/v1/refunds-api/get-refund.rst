@@ -30,14 +30,12 @@ Response
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
    * - | ``payment``
 
        .. type:: object
-          :required: true
 
      - The original payment, as described in :ref:`Get payment <v1/payments-get>`. In the payment object, note the
        following refund related fields.
@@ -48,7 +46,6 @@ Response
           * - | ``amountRefunded``
 
               .. type:: decimal
-                 :required: true
 
             - The total amount in EUR that is already refunded. For some payment methods, this amount may be higher than
               the payment amount, for example to allow reimbursement of the costs for a return shipment to the consumer.
@@ -56,28 +53,24 @@ Response
           * - | ``amountRemaining``
 
               .. type:: decimal
-                 :required: true
 
             - The remaining amount in EUR that can be refunded.
 
    * - | ``amount``
 
        .. type:: decimal
-          :required: true
 
      - The amount refunded to the consumer with this refund.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - Since refunds may be delayed for certain payment methods, the refund carries a status field.
 
@@ -93,7 +86,6 @@ Response
    * - | ``refundedDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

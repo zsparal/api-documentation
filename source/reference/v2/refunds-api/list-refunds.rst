@@ -60,7 +60,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -68,7 +67,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -78,14 +76,12 @@ Response
           * - | ``refunds``
 
               .. type:: array
-                 :required: true
 
             - An array of refund objects as described in :ref:`Get refund <v2/refunds-get>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of refunds. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -96,28 +92,24 @@ Response
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of refunds.
 
           * - | ``previous``
 
               .. type:: object
-                 :required: false
 
             - The previous set of refunds, if available.
 
           * - | ``next``
 
               .. type:: object
-                 :required: false
 
             - The next set of refunds, if available.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the refunds list endpoint documentation.
 

@@ -90,14 +90,12 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of methods found in ``_embedded``.
 
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -107,14 +105,12 @@ Response
           * - | ``methods``
 
               .. type:: array
-                 :required: true
 
             - An array of methods objects as described in :ref:`Get method <v2/methods-get>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links related to the lists of methods. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -125,14 +121,12 @@ Response
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of methods.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the methods list endpoint documentation.
 

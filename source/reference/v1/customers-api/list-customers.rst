@@ -58,21 +58,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of customers available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped customers as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of customers found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -80,14 +77,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of customers objects as described in :ref:`Get customer <v1/customers-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of customers, based on the given offset.
 
@@ -97,28 +92,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of customers, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of customers, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of customers, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of customers, if available.
 

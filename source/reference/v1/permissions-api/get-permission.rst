@@ -30,14 +30,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The permission's unique identifier, for example ``payments.read``. See
        :ref:`Permissions <oauth/permissions>` for details about the available permissions.
@@ -49,21 +47,18 @@ Response
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - A short description of what the permission allows.
 
    * - | ``warning``
 
        .. type:: string
-          :required: false
 
      - A mandatory warning message when necessary.
 
    * - | ``granted``
 
        .. type:: boolean
-          :required: true
 
      - Whether this permission is granted to the app by the organization or not.
 

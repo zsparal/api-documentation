@@ -52,21 +52,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of refunds available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped refunds as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of refunds found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -74,14 +71,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of refund objects as described in :ref:`Get refund <v1/refunds-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of refunds, based on the given offset.
 
@@ -91,28 +86,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of refunds, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of refunds, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of refunds, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of refunds, if available.
 

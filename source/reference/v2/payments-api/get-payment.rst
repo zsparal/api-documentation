@@ -62,14 +62,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a payment object. Will always contain ``payment`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this payment. Mollie assigns this identifier at payment creation time. For
        example ``tr_7UhSN1zuXS``. Its ID will always be used by Mollie to refer to a certain payment.
@@ -77,7 +75,6 @@ Response
    * - | ``mode``
 
        .. type:: string
-          :required: true
 
      - The mode used to create this payment. Mode determines whether a payment is *real* (live mode) or a *test*
        payment.
@@ -87,14 +84,12 @@ Response
    * - | ``createdAt``
 
        .. type:: datetime
-          :required: true
 
      - The payment's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - The payment's status. Please refer to the documentation regarding statuses for more info about which statuses
        occur at what point.
@@ -102,14 +97,12 @@ Response
    * - | ``isCancelable``
 
        .. type:: boolean
-          :required: false
 
      - Whether or not the payment can be canceled.
 
    * - | ``paidAt``
 
        .. type:: datetime
-          :required: false
 
      - The date and time the payment became paid, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not completed (yet).
@@ -117,7 +110,6 @@ Response
    * - | ``canceledAt``
 
        .. type:: datetime
-          :required: false
 
      - The date and time the payment was canceled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not canceled (yet).
@@ -125,14 +117,12 @@ Response
    * - | ``expiresAt``
 
        .. type:: duration
-          :required: true
 
      - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``expiredAt``
 
        .. type:: datetime
-          :required: false
 
      - The date and time the payment was expired, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment did not expire (yet).
@@ -140,7 +130,6 @@ Response
    * - | ``failedAt``
 
        .. type:: datetime
-          :required: false
 
      - The date and time the payment failed, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        This parameter is omitted if the payment did not fail (yet).
@@ -148,7 +137,6 @@ Response
    * - | ``amount``
 
        .. type:: amount object
-          :required: true
 
      - The amount of the payment, e.g. ``{"currency":"EUR", "value":"100.00"}`` for a €100.00 payment.
 
@@ -158,21 +146,18 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact amount of the payment in the given currency.
 
    * - | ``amountRefunded``
 
        .. type:: amount object
-          :required: false
 
      - The total amount that is already refunded. Only available when refunds are available for this payment.
        For some payment methods, this amount may be higher than the payment amount, for example to allow reimbursement
@@ -184,21 +169,18 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact refunded amount of the payment in the given currency.
 
    * - | ``amountRemaining``
 
        .. type:: decimal
-          :required: false
 
      - The remaining amount that can be refunded. Only available when refunds are available for this payment.
 
@@ -208,21 +190,18 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact refundable amount of the payment in the given currency.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - A short description of the payment. The description is visible in the Dashboard and will be shown on the
        customer's bank or card statement when possible.
@@ -230,7 +209,6 @@ Response
    * - | ``redirectUrl``
 
        .. type:: string
-          :required: true
 
      - The URL the customer will be redirected to after completing or cancelling the payment process.
 
@@ -239,14 +217,12 @@ Response
    * - | ``webhookUrl``
 
        .. type:: string
-          :required: false
 
      - The URL Mollie will call as soon an important status change takes place.
 
    * - | ``method``
 
        .. type:: string
-          :required: true
 
      - The payment method used for this payment, either forced on creation by specifying the ``method`` parameter, or
        chosen by the customer on our payment method selection screen.
@@ -259,7 +235,6 @@ Response
    * - | ``metadata``
 
        .. type:: mixed
-          :required: true
 
      - The optional metadata you provided upon payment creation. Metadata can for example be used to link an order to a
        payment.
@@ -267,7 +242,6 @@ Response
    * - | ``locale``
 
        .. type:: string
-          :required: false
 
      - The customer's locale, either forced on creation by specifying the ``locale`` parameter, or detected
        by us during checkout. Will be a full locale, for example ``nl_NL``.
@@ -275,7 +249,6 @@ Response
    * - | ``countryCode``
 
        .. type:: string
-          :required: false
 
      - The customer's `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code,
        detected by us during checkout. For example: ``BE``.
@@ -283,14 +256,12 @@ Response
    * - | ``profileId``
 
        .. type:: string
-          :required: true
 
      - The identifier referring to the profile this payment was created on. For example, ``pfl_QkEhN94Ba``.
 
    * - | ``settlementId``
 
        .. type:: string
-          :required: false
 
      - The identifier referring to the settlement this payment was settled with. For example,
        ``stl_BkEjN2eBb``.
@@ -298,7 +269,6 @@ Response
    * - | ``customerId``
 
        .. type:: string
-          :required: false
 
      - If a customer was specified upon payment creation, the customer's token will be available here as
        well. For example, ``cst_XPn78q9CfT``.
@@ -306,7 +276,6 @@ Response
    * - | ``sequenceType``
 
        .. type:: string
-          :required: true
 
      - Indicates which type of payment this is in a recurring sequence. Set to ``first`` for
        :ref:`first payments <guides/recurring/first-payment>` that allow the customer to agree to automatic recurring
@@ -320,7 +289,6 @@ Response
    * - | ``mandateId``
 
        .. type:: string
-          :required: false
 
      - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
        the recurring payment.
@@ -328,7 +296,6 @@ Response
    * - | ``subscriptionId``
 
        .. type:: string
-          :required: false
 
      - When implementing the Subscriptions API, any recurring charges resulting from the subscription will
        hold the ID of the subscription that triggered the payment.
@@ -336,7 +303,6 @@ Response
    * - | ``applicationFee``
 
        .. type:: object
-          :required: false
 
      - The :ref:`application fee <oauth/application-fees>`, if the payment was created with one.
 
@@ -346,7 +312,6 @@ Response
           * - | ``amount``
 
               .. type:: amount object
-                 :required: true
 
             - The application fee amount as specified during payment creation.
 
@@ -356,28 +321,24 @@ Response
                  * - | ``currency``
 
                      .. type:: string
-                        :required: true
 
                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
                  * - | ``value``
 
                      .. type:: string
-                        :required: true
 
                    - A string containing the exact application fee amount in the given currency.
 
           * - | ``description``
 
               .. type:: string
-                 :required: true
 
             - The description of the application fee as specified during payment creation.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the payment. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -388,14 +349,12 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the payment itself.
 
           * - | ``checkout``
 
               .. type:: URL object
-                 :required: false
 
             - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to. Make sure you redirect using the HTTP ``GET`` method.
@@ -405,28 +364,24 @@ Response
           * - | ``refunds``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the refunds that belong to this payment.
 
           * - | ``chargebacks``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the chargebacks that belong to this payment.
 
           * - | ``settlement``
 
               .. type:: URL object
-                 :required: false
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the payment retrieval endpoint documentation.
 
@@ -444,7 +399,6 @@ Bancontact
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -454,14 +408,12 @@ Bancontact
           * - | ``cardNumber``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment is completed - The last four digits of the card number.
 
           * - | ``cardFingerprint``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment is completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
@@ -469,7 +421,6 @@ Bancontact
           * - | ``qrCode``
 
               .. type:: QR code object
-                 :required: true
 
             - Only available if requested during payment creation - The QR code that can be scanned by the mobile
               Bancontact application. This enables the desktop to mobile feature.
@@ -482,7 +433,6 @@ Bank transfer
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -492,28 +442,24 @@ Bank transfer
           * - | ``bankName``
 
               .. type:: string
-                 :required: true
 
             - The name of the bank the consumer should wire the amount to.
 
           * - | ``bankAccount``
 
               .. type:: string
-                 :required: true
 
             - The IBAN the consumer should wire the amount to.
 
           * - | ``bankBic``
 
               .. type:: string
-                 :required: true
 
             - The BIC of the bank the consumer should wire the amount to.
 
           * - | ``transferReference``
 
               .. type:: string
-                 :required: true
 
             - The reference the consumer should use when wiring the amount. Note you should not apply any formatting
               here; show it to the consumer as-is.
@@ -521,14 +467,12 @@ Bank transfer
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's bank account. This may be an IBAN, or it
               may be a domestic account number.
@@ -536,14 +480,12 @@ Bank transfer
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's bank's BIC / SWIFT code.
 
           * - | ``billingEmail``
 
               .. type:: string
-                 :required: true
 
             - Only available if filled out in the API or by the consumer – The email address which the consumer asked
               the payment instructions to be sent to.
@@ -556,7 +498,6 @@ Belfius Pay Button
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -566,14 +507,12 @@ Belfius Pay Button
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's bank account. This
               may be an IBAN, or it may be a domestic account number.
@@ -581,7 +520,6 @@ Belfius Pay Button
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – ``GKCCBEBB``.
 
@@ -593,7 +531,6 @@ Bitcoin
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -603,21 +540,18 @@ Bitcoin
           * - | ``bitcoinAddress``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The bitcoin address the bitcoins were transferred to.
 
           * - | ``bitcoinAmount``
 
               .. type:: amount object
-                 :required: true
 
             - The amount transferred in BTC.
 
           * - | ``bitcoinUri``
 
               .. type:: string
-                 :required: false
 
             - An URI that is understood by Bitcoin wallet clients and will cause such clients to prepare the
               transaction. Follows the
@@ -626,7 +560,6 @@ Bitcoin
           * - | ``qrCode``
 
               .. type:: QR code object
-                 :required: true
 
             - Only available if requested during payment creation - The QR code that can be scanned by Bitcoin wallet
               clients and will cause such clients to prepare the transaction.
@@ -639,7 +572,6 @@ Credit card
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -649,21 +581,18 @@ Credit card
           * - | ``cardHolder``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed - The card holder's name.
 
           * - | ``cardNumber``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed - The last four digits of the card number.
 
           * - | ``cardFingerprint``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
@@ -671,7 +600,6 @@ Credit card
           * - | ``cardAudience``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed and if the data is available - The card's target
               audience.
@@ -681,7 +609,6 @@ Credit card
           * - | ``cardLabel``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed - The card's label. Note that not all labels can be
               processed through Mollie.
@@ -692,7 +619,6 @@ Credit card
           * - | ``cardCountryCode``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed - The
               `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code of the country the
@@ -701,7 +627,6 @@ Credit card
           * - | ``cardSecurity``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The type of security used during payment processing.
 
@@ -710,7 +635,6 @@ Credit card
           * - | ``feeRegion``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The fee region for the payment: ``intra-eu`` for
               consumer cards from the EU, and ``other`` for all other cards.
@@ -720,7 +644,6 @@ Credit card
           * - | ``failureReason``
 
               .. type:: string
-                 :required: false
 
             - Only available for failed payments. Contains a failure reason code.
 
@@ -735,7 +658,6 @@ Gift cards
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -745,7 +667,6 @@ Gift cards
           * - | ``voucherNumber``
 
               .. type:: string
-                 :required: true
 
             - The voucher number, with the last four digits masked. When multiple gift cards are used, this is the first
               voucher number. Example: ``606436353088147****``.
@@ -753,7 +674,6 @@ Gift cards
           * - | ``giftcards``
 
               .. type:: array
-                 :required: true
 
             - A list of details of all giftcards that are used for this payment. Each object will contain the following
               properties.
@@ -764,14 +684,12 @@ Gift cards
                  * - | ``issuer``
 
                      .. type:: string
-                        :required: true
 
                    - The ID of the gift card brand that was used during the payment.
 
                  * - | ``amount``
 
                      .. type:: amount object
-                        :required: true
 
                    - The amount in EUR that was paid with this gift card.
 
@@ -781,28 +699,24 @@ Gift cards
                         * - | ``currency``
 
                             .. type:: string
-                               :required: true
 
                           - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
                         * - | ``value``
 
                             .. type:: string
-                               :required: true
 
                           - A string containing the exact amount of the gift card payment in the given currency.
 
                  * - | ``voucherNumber``
 
                      .. type:: string
-                        :required: true
 
                    - The voucher number, with the last four digits masked. Example: ``606436353088147****``
 
           * - | ``remainderAmount``
 
               .. type:: amount object
-                 :required: true
 
             - Only available if another payment method was used to pay the remainder amount – The amount that was paid
               with another payment method for the remainder amount.
@@ -813,21 +727,18 @@ Gift cards
                  * - | ``currency``
 
                      .. type:: string
-                        :required: true
 
                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
                  * - | ``value``
 
                      .. type:: string
-                        :required: true
 
                    - A string containing the remaining payment amount.
 
           * - | ``remainderMethod``
 
               .. type:: string
-                 :required: true
 
             - Only available if another payment method was used to pay the remainder amount – The payment method that
               was used to pay the remainder amount.
@@ -840,7 +751,6 @@ iDEAL
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -850,21 +760,18 @@ iDEAL
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's IBAN.
 
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's bank's BIC.
 
@@ -876,7 +783,6 @@ ING Home'Pay
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -886,21 +792,18 @@ ING Home'Pay
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – ``BBRUBEBB``.
 
@@ -912,7 +815,6 @@ KBC/CBC Payment Button
    * - | ``details``
 
        .. type:: object
-          :required: false
 
      - An object with payment details.
 
@@ -922,21 +824,18 @@ KBC/CBC Payment Button
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available one banking day after the payment has been completed – The consumer's bank's BIC.
 
@@ -948,7 +847,6 @@ PayPal
    * - | ``details``
 
        .. type:: object
-          :required: true
 
      - An object with payment details.
 
@@ -958,21 +856,18 @@ PayPal
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's first and last name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's email address.
 
           * - | ``paypalReference``
 
               .. type:: string
-                 :required: true
 
             - PayPal's reference for the transaction, for instance ``9AL35361CF606152E``.
 
@@ -984,7 +879,6 @@ paysafecard
    * - | ``details``
 
        .. type:: object
-          :required: true
 
      - An object with payment details.
 
@@ -994,7 +888,6 @@ paysafecard
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - The consumer identification supplied when the payment was created.
 
@@ -1006,7 +899,6 @@ SEPA Direct Debit
    * - | ``details``
 
        .. type:: object
-          :required: true
 
      - An object with payment details.
 
@@ -1016,14 +908,12 @@ SEPA Direct Debit
           * - | ``transferReference``
 
               .. type:: string
-                 :required: true
 
             - Transfer reference used by Mollie to identify this payment.
 
           * - | ``creditorIdentifier``
 
               .. type:: string
-                 :required: true
 
             - The creditor identifier indicates who is authorized to execute the payment. In this case, it is a
               reference to Mollie.
@@ -1031,35 +921,30 @@ SEPA Direct Debit
           * - | ``consumerName``
 
               .. type:: string
-                 :required: false
 
             - The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: false
 
             - The consumer's IBAN.
 
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: false
 
             - The consumer's bank's BIC.
 
           * - | ``dueDate``
 
               .. type:: date
-                 :required: true
 
             - Estimated date the payment is debited from the consumer's bank account, in ``YYYY-MM-DD`` format.
 
           * - | ``signatureDate``
 
               .. type:: date
-                 :required: true
 
             - Only available if the payment has been verified – Date the payment has been signed by the consumer, in
               ``YYYY-MM-DD`` format.
@@ -1067,7 +952,6 @@ SEPA Direct Debit
           * - | ``bankReasonCode``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has failed – The official reason why this payment has failed. A detailed
               description of each reason is available on the website of the European Payments Council.
@@ -1075,14 +959,12 @@ SEPA Direct Debit
           * - | ``bankReason``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has failed – A textual desciption of the failure reason.
 
           * - | ``endToEndIdentifier``
 
               .. type:: string
-                 :required: true
 
             - Only available for batch transactions – The original end-to-end identifier that you've specified in your
               batch.
@@ -1090,7 +972,6 @@ SEPA Direct Debit
           * - | ``mandateReference``
 
               .. type:: string
-                 :required: true
 
             - Only available for batch transactions – The original mandate reference that you've specified in your
               batch.
@@ -1098,14 +979,12 @@ SEPA Direct Debit
           * - | ``batchReference``
 
               .. type:: string
-                 :required: true
 
             - Only available for batch transactions – The original batch reference that you've specified in your batch.
 
           * - | ``fileReference``
 
               .. type:: string
-                 :required: true
 
             - Only available for batch transactions – The original file reference that you've specified in your batch.
 
@@ -1117,7 +996,6 @@ SOFORT Banking
    * - | ``details``
 
        .. type:: object
-          :required: true
 
      - An object with payment details.
 
@@ -1127,21 +1005,18 @@ SOFORT Banking
           * - | ``consumerName``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's name.
 
           * - | ``consumerAccount``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's IBAN.
 
           * - | ``consumerBic``
 
               .. type:: string
-                 :required: true
 
             - Only available if the payment has been completed – The consumer's bank's BIC.
 
@@ -1158,21 +1033,18 @@ The ``qrCode`` key in the ``details`` object will then become available. The key
    * - | ``height``
 
        .. type:: integer
-          :required: true
 
      - Height of the image in pixels.
 
    * - | ``width``
 
        .. type:: integer
-          :required: true
 
      - Width of the image in pixels.
 
    * - | ``src``
 
        .. type:: string
-          :required: true
 
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.

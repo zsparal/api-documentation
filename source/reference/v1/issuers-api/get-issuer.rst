@@ -43,14 +43,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this issuer. When supplying this ID as the ``issuer`` parameter during
        :ref:`payment creation <v1/payments-create>`, the issuer selection screen is skipped.
@@ -58,14 +56,12 @@ Response
    * - | ``name``
 
        .. type:: string
-          :required: true
 
      - The full name of the issuer, for example 'ABN AMRO'.
 
    * - | ``method``
 
        .. type:: string
-          :required: true
 
      - The :ref:`payment method <v1/methods-list>` this issuer belongs to.
 
@@ -74,7 +70,6 @@ Response
    * - | ``image``
 
        .. type:: object
-          :required: true
 
      - URLs of images representing the payment method issuer.
 
@@ -84,14 +79,12 @@ Response
           * - | ``normal``
 
               .. type:: string
-                 :required: true
 
             - The URL for an issuer icon of 55x37 pixels.
 
           * - | ``bigger``
 
               .. type:: string
-                 :required: true
 
             - The URL for an issuer icon of 110x74 pixels.
 

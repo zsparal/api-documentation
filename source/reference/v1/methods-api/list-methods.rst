@@ -104,21 +104,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of payment methods available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped payment methods as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of payment methods found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -126,14 +123,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of payment method objects as described in :ref:`Get payment method <v1/methods-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of payment methods, based on the given offset.
 
@@ -143,28 +138,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of payment methods, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of payment methods, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of payment methods, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of payment methods, if available.
 

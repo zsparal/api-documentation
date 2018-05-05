@@ -23,7 +23,6 @@ Response object
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of objects found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -31,14 +30,12 @@ Response object
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The actual data you're looking for.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of objects. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -49,28 +46,24 @@ Response object
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of objects.
 
           * - | ``previous``
 
               .. type:: object
-                 :required: false
 
             - The previous set of objects, if available.
 
           * - | ``next``
 
               .. type:: object
-                 :required: false
 
             - The next set of objects, if available.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current list endpoint documentation.
 
@@ -171,21 +164,18 @@ Response object
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of objects available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped objects as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of objects found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -193,14 +183,12 @@ Response object
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - The actual data you're looking for.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of objects, based on the given offset.
 
@@ -210,28 +198,24 @@ Response object
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of objects, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of objects, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of objects, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of objects, if available.
 

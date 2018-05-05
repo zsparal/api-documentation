@@ -38,14 +38,12 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of chargebacks found in ``_embedded``.
 
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -55,14 +53,12 @@ Response
           * - | ``chargebacks``
 
               .. type:: array
-                 :required: true
 
             - An array of chargeback objects as described in :ref:`Get chargeback <v2/chargebacks-get>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -73,14 +69,12 @@ Response
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of chargebacks.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the chargebacks list endpoint documentation.
 

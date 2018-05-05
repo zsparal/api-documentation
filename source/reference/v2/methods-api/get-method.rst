@@ -73,14 +73,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a method object. Will always contain ``method`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The unique identifier of the payment method. When used during :ref:`payment creation <v2/payments-create>`,
        the payment method selection screen will be skipped.
@@ -88,14 +86,12 @@ Response
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The full name of the payment method, translated in the optional locale passed.
 
    * - | ``image``
 
        .. type:: image object
-          :required: true
 
      - The URLs of images representing the payment method.
 
@@ -105,21 +101,18 @@ Response
           * - | ``size1x``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 55x37 pixels.
 
           * - | ``size2x``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the payment method. Every URL object will contain an ``href`` and
        a ``type`` field.
@@ -130,14 +123,12 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the payment method itself.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the payment method retrieval endpoint documentation.
 

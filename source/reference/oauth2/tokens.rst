@@ -61,14 +61,12 @@ Response
    * - | ``access_token``
 
        .. type:: string
-          :required: true
 
      - The access token, with which you will be able to access the Mollie API on the merchant's behalf.
 
    * - | ``refresh_token``
 
        .. type:: string
-          :required: true
 
      - The refresh token, with which you will be able to retrieve new access tokens on this endpoint. Please note that
        the refresh token does not expire.
@@ -76,7 +74,6 @@ Response
    * - | ``expires_in``
 
        .. type:: integer
-          :required: true
 
      - The number of seconds left before the access token expires. Be sure to renew your access token before this
        reaches zero.
@@ -84,7 +81,6 @@ Response
    * - | ``token_type``
 
        .. type:: string
-          :required: true
 
      - As per OAuth standards, the provided access token can only be used with bearer authentication.
 
@@ -93,7 +89,6 @@ Response
    * - | ``scope``
 
        .. type:: string
-          :required: true
 
      - A space separated list of permissions. Please refer to :ref:`Permissions <oauth/permissions>` for the full
        permission list.

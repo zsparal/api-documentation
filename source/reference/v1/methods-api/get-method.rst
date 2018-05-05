@@ -76,14 +76,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a payment method object. Will always contain ``method`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this payment method. When supplying this ID as the ``method`` parameter
        during :ref:`payment creation <v1/payments-create>`, the payment method selection screen is skipped.
@@ -91,14 +89,12 @@ Response
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The full name of the payment method.
 
    * - | ``amount``
 
        .. type:: object
-          :required: true
 
      - The minimum and maximum allowed payment amount will differ between payment methods.
 
@@ -108,14 +104,12 @@ Response
           * - | ``minimum``
 
               .. type:: decimal
-                 :required: true
 
             - The minimum payment amount in EUR required to use this payment method.
 
           * - | ``maximum``
 
               .. type:: decimal
-                 :required: true
 
             - The maximum payment amount in EUR allowed when using this payment method. For gift cards, the maximum
               amount may be ignored.
@@ -123,7 +117,6 @@ Response
    * - | ``image``
 
        .. type:: object
-          :required: true
 
      - URLs of images representing the payment method.
 
@@ -133,14 +126,12 @@ Response
           * - | ``normal``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 55x37 pixels.
 
           * - | ``bigger``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 110x74 pixels.
 

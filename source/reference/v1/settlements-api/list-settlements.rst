@@ -52,21 +52,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of settlements available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped settlements as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of settlements found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -74,14 +71,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of settlement objects as described in :ref:`Get settlement <v1/settlements-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of settlements, based on the given offset.
 
@@ -91,28 +86,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of settlements, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of settlements, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of settlements, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of settlements, if available.
 

@@ -33,14 +33,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The API key's identifier.
 
@@ -49,7 +47,6 @@ Response
    * - | ``key``
 
        .. type:: string
-          :required: true
 
      - The actual API key, which you'll use when creating payments or when otherwise communicating with the API. Never
        share the API key with anyone.
@@ -57,7 +54,6 @@ Response
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The API key's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

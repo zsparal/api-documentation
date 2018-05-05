@@ -58,21 +58,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of mandates available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped mandates as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of mandates found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -80,14 +77,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of mandate objects as described in :ref:`Get mandate <v1/mandates-get>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of mandates, based on the given offset.
 
@@ -97,28 +92,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of mandates, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of mandates, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of mandates, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of mandates, if available.
 

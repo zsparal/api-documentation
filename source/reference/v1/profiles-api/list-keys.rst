@@ -32,14 +32,12 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of API keys found in ``data``.
 
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - An array of API key objects as described in :ref:`Get API key <v1/keys-get>`.
 

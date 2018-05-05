@@ -20,14 +20,12 @@ In v2 endpoints, an amount object is always represented as follows.
    * - | ``currency``
 
        .. type:: string
-          :required: true
 
      - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
    * - | ``value``
 
        .. type:: string
-          :required: true
 
      - A string containing the exact amount in the given currency.
 
@@ -43,35 +41,30 @@ In the v2 endpoints, an address object is always represented as follows.
    * - | ``streetAndNumber``
 
        .. type:: string
-          :required: true
 
      - The street and street number of the address.
 
    * - | ``postalCode``
 
        .. type:: string
-          :required: true
 
      - The postal code of the address.
 
    * - | ``city``
 
        .. type:: string
-          :required: true
 
      - The city of the address.
 
    * - | ``region``
 
        .. type:: string
-          :required: true
 
      - The region of the address.
 
    * - | ``country``
 
        .. type:: string
-          :required: true
 
      - The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
@@ -111,21 +104,18 @@ The QR code object represents an image of a QR code.
    * - | ``height``
 
        .. type:: integer
-          :required: true
 
      - Height of the image in pixels.
 
    * - | ``width``
 
        .. type:: integer
-          :required: true
 
      - Width of the image in pixels.
 
    * - | ``src``
 
        .. type:: string
-          :required: true
 
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
@@ -140,7 +130,6 @@ In v2 endpoints, URLs are commonly represented as objects with an ``href`` and `
    * - | ``href``
 
        .. type:: string
-          :required: true
 
      - The actual URL string.
 
