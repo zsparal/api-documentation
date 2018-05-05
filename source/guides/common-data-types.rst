@@ -99,7 +99,7 @@ A string representing a date and time in `ISO 8601 <https://en.wikipedia.org/wik
 
 Locale
 ------
-A string representing the country and language in `ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897_` format.
+A string representing the country and language in `ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897>`_ format.
 Possible values: ``de_AT`` ``de_CH`` ``de_DE`` ``en_US`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``.
 
 QR code object
