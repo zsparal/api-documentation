@@ -19,7 +19,7 @@ Mollie will then collect and settle the application fees to the ticketing platfo
 Enabling application fees
 -------------------------
 In order to enable charging application fees with your app, you must first register to become an app developer. Then,
-`contact <https://www.mollie.com/en/contact/>` our support department to have charging application fees on your account
+`contact <https://www.mollie.com/en/contact/>`_ our support department to have charging application fees on your account
 enabled.
 
 How to create an application fee
