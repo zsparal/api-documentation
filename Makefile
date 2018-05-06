@@ -6,11 +6,12 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-SPHINXOPTS    = -W -j auto
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = api-documentation
-SOURCEDIR     = source
-BUILDDIR      = build
+SPHINXOPTS     = -W -j auto
+SPHINXPRODOPTS = -D html_file_suffix=''
+SPHINXBUILD    = python -msphinx
+SPHINXPROJ     = api-documentation
+SOURCEDIR      = source
+BUILDDIR       = build
 
 node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional
@@ -42,3 +43,6 @@ install:
 # "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
 html: Makefile source/_static/style.css source/_static/index.js
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+html-production: Makefile source/_static/style.css source/_static/index.js
+	@$(SPHINXBUILD) -M html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(SPHINXPRODOPTS) $(O)
