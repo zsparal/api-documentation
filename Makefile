@@ -39,10 +39,15 @@ start:
 install:
 	pip install -U -r requirements.txt
 
+# This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your
+# intention.
+verify:
+	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)'
+
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
-html: Makefile source/_static/style.css source/_static/index.js
+html: Makefile source/_static/style.css source/_static/index.js verify
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
-html-production: Makefile source/_static/style.css source/_static/index.js
+html-production: Makefile source/_static/style.css source/_static/index.js verify
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}

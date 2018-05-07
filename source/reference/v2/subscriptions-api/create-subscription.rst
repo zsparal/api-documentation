@@ -197,7 +197,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/create",
+               "href": "https://docs.mollie.com/reference/subscriptions/create",
                "type": "text/html"
            }
        }

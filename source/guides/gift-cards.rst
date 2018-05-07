@@ -8,13 +8,13 @@ Supported brands
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
-* `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`
-* `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`
-* `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`
-* `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`
+* `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
+* `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
+* `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`_
+* `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
-* `Webshop Giftcard <https://www.webshopgiftcard.nl/>`
-* `YourGift <https://www.yourgift.nl/>`
+* `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
+* `YourGift <https://www.yourgift.nl/>`_
 
 If you need a different brand, please reach out to your account manager or our support department.
 
