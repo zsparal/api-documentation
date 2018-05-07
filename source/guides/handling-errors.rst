@@ -103,7 +103,7 @@ Response
        "detail": "Missing authentication, or failed to authenticate",
        "_links": {
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/authentication",
+               "href": "https://docs.mollie.com/guides/authentication.html",
                "type": "text/html"
            }
        }
@@ -137,7 +137,7 @@ Response
        "detail": "No payment exists with token tr_I_dont_exist.",
        "_links": {
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/errors",
+               "href": "https://docs.mollie.com/errors",
                "type": "text/html"
            }
        }
@@ -177,7 +177,7 @@ Response
        "field": "amount",
        "_links": {
           "documentation": {
-               "href": "https://www.mollie.com/en/docs/errors",
+               "href": "https://docs.mollie.com/errors",
                "type": "text/html"
            }
        }

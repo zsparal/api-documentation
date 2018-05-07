@@ -97,7 +97,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/list",
+               "href": "https://docs.mollie.com/reference/payments/list",
                "type": "text/html"
            }
        }

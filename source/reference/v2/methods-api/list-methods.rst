@@ -184,7 +184,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/methods/list",
+               "href": "https://docs.mollie.com/reference/methods/list",
                "type": "text/html"
            }
        }

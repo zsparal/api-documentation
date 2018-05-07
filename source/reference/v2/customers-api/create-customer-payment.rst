@@ -127,7 +127,7 @@ Response
                "type": "text/html"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/create",
+               "href": "https://docs.mollie.com/reference/payments/create",
                "type": "text/html"
            }
        }

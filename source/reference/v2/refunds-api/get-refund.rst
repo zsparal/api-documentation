@@ -203,7 +203,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/refunds/get",
+               "href": "https://docs.mollie.com/reference/refunds/get",
                "type": "text/html"
            }
        }
