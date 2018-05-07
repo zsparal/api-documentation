@@ -15,6 +15,7 @@ aws s3 cp build/html s3://${AWS_BUCKET}/ --recursive ${AWS_OPTIONS} \
     --exclude ".buildinfo" \
     --exclude "contents" \
     --exclude "genindex" \
+    --exclude "objects.inv" \
     --exclude "_sources/*" \
     --exclude "_images/*" \
     --exclude "_static/*" \
