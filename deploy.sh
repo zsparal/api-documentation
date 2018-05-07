@@ -6,6 +6,10 @@ AWS_OPTIONS="--region ${AWS_REGION} --cache-control max-age=3600"
 
 pip install awscli
 
+# Set the credentials for the upload user
+AWS_SECRET_ACCESS_KEY=${UPLOAD_AWS_SECRET_ACCESS_KEY}
+AWS_ACCESS_KEY_ID=${UPLOAD_AWS_ACCESS_KEY_ID}
+
 # Upload HTML files
 aws s3 cp build/html s3://${AWS_BUCKET}/ --recursive ${AWS_OPTIONS} \
     --exclude ".buildinfo" \
@@ -19,6 +23,3 @@ aws s3 cp build/html s3://${AWS_BUCKET}/ --recursive ${AWS_OPTIONS} \
 # Upload static assets
 aws s3 cp build/html/_images s3://${AWS_BUCKET}/_images/ --recursive ${AWS_OPTIONS}
 aws s3 cp build/html/_static s3://${AWS_BUCKET}/_static/ --recursive ${AWS_OPTIONS}
-
-# Bust the cloudfront edge cache, invalidate every object in the distribution
-aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
