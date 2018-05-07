@@ -6,11 +6,12 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-SPHINXOPTS    = -W -j auto
-SPHINXBUILD   = python -msphinx
-SPHINXPROJ    = api-documentation
-SOURCEDIR     = source
-BUILDDIR      = build
+SPHINXOPTS     = -W -j auto
+SPHINXPRODOPTS = -D html_file_suffix=''
+SPHINXBUILD    = python -msphinx
+SPHINXPROJ     = api-documentation
+SOURCEDIR      = source
+BUILDDIR       = build
 
 node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional
@@ -28,7 +29,7 @@ js-reload:
 	@./node_modules/.bin/parcel source/theme/js/index.js --out-dir build/_static --out-file index --no-hmr --port 8002
 
 html-reload:
-	sphinx-autobuild -b html "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+	sphinx-autobuild -b html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 .PHONY: help Makefile
 
@@ -38,9 +39,15 @@ start:
 install:
 	pip install -U -r requirements.txt
 
-# Catch-all target: route all unknown targets to Sphinx using the new
-# "make mode" option.  $(O) is meant as a shortcut for $(SPHINXOPTS).
-html: Makefile source/_static/style.css source/_static/index.js
-	# This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your intention
+# This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your
+# intention.
+verify:
 	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)'
-	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+# Catch-all target: route all unknown targets to Sphinx using the new
+# "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
+html: Makefile source/_static/style.css source/_static/index.js verify
+	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
+
+html-production: Makefile source/_static/style.css source/_static/index.js verify
+	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}
