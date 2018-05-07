@@ -44,3 +44,6 @@ html: Makefile source/_static/style.css source/_static/index.js
 	# This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your intention
 	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)'
 	@$(SPHINXBUILD) -M $@ "$(SOURCEDIR)" "$(BUILDDIR)" $(SPHINXOPTS) $(O)
+
+write-gtm: 
+	node scripts/gtm.js
