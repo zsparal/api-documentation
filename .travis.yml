@@ -20,7 +20,7 @@ script:
   - make html-production
 deploy:
   on:
-    branch: master
+    branch: 47-hide-html-extensions
   provider: script
   script: bash deploy.sh
   skip_cleanup: true

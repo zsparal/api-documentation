@@ -4,10 +4,7 @@
 # the user browser.
 AWS_OPTIONS="--region ${AWS_REGION} --cache-control max-age=3600"
 
-# pip install awscli
-
-# Empty the bucket
-aws s3 rm s3://$AWS_BUCKET --recursive
+pip install awscli
 
 # Upload HTML files
 aws s3 cp build/html s3://$AWS_BUCKET/ --recursive $AWS_OPTIONS \
