@@ -9,7 +9,8 @@
 
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-  <link rel="index" title="Mollie API" href="{{ pathto('index') }}" /> {% if next -%}
+  <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+  <link rel="index" title="Mollie API" href="{{ pathto('index') }}" />{% if next -%}
   <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" /> {%- endif %} {% if prev -%}
   <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" /> {%- endif %}
 </head>
