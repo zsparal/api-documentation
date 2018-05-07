@@ -147,7 +147,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/refunds/create",
+               "href": "https://docs.mollie.com/reference/refunds/create",
                "type": "text/html"
            }
        }

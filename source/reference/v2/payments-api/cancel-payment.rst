@@ -77,7 +77,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/delete",
+               "href": "https://docs.mollie.com/reference/payments/delete",
                "type": "text/html"
            }
        }

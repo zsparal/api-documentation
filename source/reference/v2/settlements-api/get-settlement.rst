@@ -395,7 +395,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/settlements/next",
+               "href": "https://docs.mollie.com/reference/settlements/next",
                "type": "text/html"
            }
        }

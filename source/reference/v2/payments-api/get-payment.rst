@@ -1104,7 +1104,7 @@ Response
                "type": "text/html"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/get",
+               "href": "https://docs.mollie.com/reference/payments/get",
                "type": "text/html"
            }
        }
