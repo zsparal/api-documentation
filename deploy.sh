@@ -7,7 +7,7 @@ AWS_OPTIONS="--region ${AWS_REGION} --cache-control max-age=3600"
 pip install awscli
 
 # Upload HTML files
-aws s3 cp build/html s3://$AWS_BUCKET/ --recursive $AWS_OPTIONS \
+aws s3 cp build/html s3://${AWS_BUCKET}/ --recursive ${AWS_OPTIONS} \
     --exclude ".buildinfo" \
     --exclude "contents" \
     --exclude "genindex" \
@@ -17,8 +17,8 @@ aws s3 cp build/html s3://$AWS_BUCKET/ --recursive $AWS_OPTIONS \
     --content-type "text/html"
 
 # Upload static assets
-aws s3 cp build/html/_images s3://$AWS_BUCKET/_images/ --recursive $AWS_OPTIONS
-aws s3 cp build/html/_static s3://$AWS_BUCKET/_static/ --recursive $AWS_OPTIONS
+aws s3 cp build/html/_images s3://${AWS_BUCKET}/_images/ --recursive ${AWS_OPTIONS}
+aws s3 cp build/html/_static s3://${AWS_BUCKET}/_static/ --recursive ${AWS_OPTIONS}
 
 # Bust the cloudfront edge cache, invalidate every object in the distribution
-aws cloudfront create-invalidation --distribution-id $CLOUDFRONT_DISTRIBUTION_ID --paths "/*"
+aws cloudfront create-invalidation --distribution-id ${CLOUDFRONT_DISTRIBUTION_ID} --paths "/*"
