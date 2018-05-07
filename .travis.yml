@@ -21,6 +21,7 @@ install:
   - pip install awscli
 script:
   - make html-production
+  - make write-gtm
 deploy:
   on:
     branch: master

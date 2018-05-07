@@ -1,57 +1,55 @@
 {% set url_root = pathto('', 1) -%}
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-    <title>{{ title|striptags|e }} &mdash; Mollie API documentation</title>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <title>{{ title|striptags|e }} &mdash; Mollie API documentation</title>
 
-	<link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
-	<link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
-	<link rel="index" title="Mollie API" href="{{ pathto('index') }}" />
-
-	{% if next -%}
-	<link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
-	{%- endif %}
-	{% if prev -%}
-	<link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
-	{%- endif %}
+  <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
+  <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+  <link rel="index" title="Mollie API" href="{{ pathto('index') }}" /> {% if next -%}
+  <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" /> {%- endif %} {% if prev -%}
+  <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" /> {%- endif %}
 </head>
 
 <body>
-    {% include 'navigation.html' %}
+  {% include 'navigation.html' %}
 
-    <div class="l-wrapper l-wrapper--fluid main">
-        <div class="main__inner" data-enhancer="sidebar">
-            <nav class="main__sidebar">
-                <div class="sidebar js-mobile-sidebar">
-                    <div class="sidebar__inner" role="navigation" aria-label="main navigation">
-						{% include 'sidebar.html' %}
-                    </div>
+  <div class="l-wrapper l-wrapper--fluid main">
+    <div class="main__inner" data-enhancer="sidebar">
+      <nav class="main__sidebar">
+        <div class="sidebar js-mobile-sidebar">
+          <div class="sidebar__inner" role="navigation" aria-label="main navigation">
+            {% include 'sidebar.html' %}
+          </div>
+        </div>
+      </nav>
+
+      <section class="main__content">
+        <div class="main__content-inner content">
+          <div class="wy-nav-content">
+            <div class="rst-content">
+              <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                {%- block document %}
+                <div itemprop="articleBody">
+                  {% block body %}{% endblock %}
                 </div>
-            </nav>
+                {%- endblock %}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
 
-            <section class="main__content">
-                <div class="main__content-inner content">
-                    <div class="wy-nav-content">
-						<div class="rst-content">
-							<div role="main" class="document" itemscope="itemscope"
-								 itemtype="http://schema.org/Article">
-								{%- block document %}
-									<div itemprop="articleBody">
-                                        {% block body %}{% endblock %}
-                                    </div>
-								{%- endblock %}
-							</div>
-						</div>
-					</div>
-				</div>
-            </section>
-		</div>
-	</div>
+  {% include "mobile-navigation-button.html" %}
 
-	{% include "mobile-navigation-button.html" %}
+  <!-- GOOGLE_TAG_MANAGER -->
 
-	<script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}"></script>
+  <script type="text/javascript" src="{{ pathto('_static/index.js', 1) }}"></script>
 </body>
+
 </html>
