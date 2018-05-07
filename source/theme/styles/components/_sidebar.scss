@@ -55,13 +55,10 @@
 }
 
 .sidebar__group > p {
-  font-size: 24px;
-  font-weight: $font-weight-semibold;
-  margin-bottom: 15px;
-
-  @media (min-width: breakpoint("medium")) {
-    margin-bottom: 15px;
-  }
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  line-height: 22px;
+  margin-bottom: 10px;
 }
 
 .sidebar__group > p > a {
@@ -82,7 +79,7 @@
 }
 
 .sidebar__group ul li {
-  margin-bottom: 15px;
+  margin-bottom: 10px;
 }
 
 .sidebar__group ul li a {
@@ -122,8 +119,8 @@
 }
 
 .sidebar__group > ul > li.current > ul ul {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
 .sidebar__group > ul > li.current > ul ul ul {
