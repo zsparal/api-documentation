@@ -7,6 +7,10 @@ List chargebacks
 
 .. endpoint::
    :method: GET
+   :url: https://api.mollie.com/v2/chargebacks
+
+.. endpoint::
+   :method: GET
    :url: https://api.mollie.com/v2/payments/*paymentId*/chargebacks
 
 .. authentication::
