@@ -189,7 +189,7 @@ Response
                 "type": "application/hal+json"
             },
             "documentation": {
-                "href": "https://docs.mollie.com/reference/methods/get",
+                "href": "https://docs.mollie.com/reference/v2/methods-api/get-method",
                 "type": "text/html"
             }
         }

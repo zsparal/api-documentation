@@ -228,7 +228,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/subscriptions/get",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/get-subscription",
                "type": "text/html"
            }
        }

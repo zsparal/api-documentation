@@ -623,7 +623,7 @@ Response
                "type": "text/html"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/payments/create",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/create-payment",
                "type": "text/html"
            }
        }
