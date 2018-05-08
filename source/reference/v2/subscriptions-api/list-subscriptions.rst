@@ -149,7 +149,6 @@ Response
                {
                    "resource": "subscription",
                    "id": "sub_rVKGtNd6s3",
-                   "customerId": "cst_8wmqcHMN4U",
                    "mode": "live",
                    "createdAt": "2018-06-01T12:23:34+00:00",
                    "status": "active",
