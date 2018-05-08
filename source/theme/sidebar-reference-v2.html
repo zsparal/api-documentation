@@ -223,14 +223,19 @@
 	</ul>
 </div>
 
-<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/organizations-api/') }}">
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/organizations-api/') }}">
 	<p><a href="javascript:void(0)">Organizations API</a></p>
 
 	<ul>
 		{{ sidebar_item(
-			'reference/v1/organizations-api/get-organization',
+			'reference/v2/organizations-api/current-organization',
+			'Get current organization',
+			'GET /v2/organizations/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/organizations-api/get-organization',
 			'Get organization',
-			'GET /v1/organizations/*'
+			'GET /v2/organizations/*'
 		) }}
 	</ul>
 </div>

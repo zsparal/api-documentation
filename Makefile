@@ -52,5 +52,8 @@ write-gtm:
 html: Makefile source/_static/style.css source/_static/index.js verify
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
+html-only:
+	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
+
 html-production: Makefile source/_static/style.css source/_static/index.js verify
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}
