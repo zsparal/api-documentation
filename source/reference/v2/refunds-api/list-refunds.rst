@@ -159,7 +159,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/refunds/get",
+                           "href": "https://docs.mollie.com/reference/v2/refunds-api/get-refund",
                            "type": "text/html"
                        }
                    }
@@ -179,7 +179,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/refunds/list",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/list-refunds",
                "type": "text/html"
            }
        }

@@ -164,7 +164,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/customers/get",
+               "href": "https://docs.mollie.com/reference/v2/customers-api/get-customer",
                "type": "text/html"
            }
        }

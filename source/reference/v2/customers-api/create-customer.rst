@@ -112,7 +112,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/customers/create",
+               "href": "https://docs.mollie.com/reference/v2/customers-api/create-customer",
                "type": "text/html"
            }
        }

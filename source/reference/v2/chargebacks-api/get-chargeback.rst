@@ -182,7 +182,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/chargebacks/get",
+               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/get-chargeback",
                "type": "text/html"
            }
        }

@@ -127,7 +127,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/chargebacks/get",
+                           "href": "https://docs.mollie.com/reference/v2/chargebacks-api/get-chargeback",
                            "type": "text/html"
                        }
                    }
@@ -142,7 +142,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/chargebacks/list",
+               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/list-chargebacks",
                "type": "text/html"
            }
        }
