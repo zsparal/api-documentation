@@ -72,6 +72,10 @@ Parameters
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
 
+       .. note::
+          For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
+          parameter is required. 
+
    * - | ``webhookUrl``
 
        .. type:: string
