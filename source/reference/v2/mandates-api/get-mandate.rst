@@ -234,7 +234,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://mollie.com/en/docs/reference/customers/create-mandate",
+               "href": "https://docs.mollie.com/reference/v2/mandates-api/get-mandate",
                "type": "text/html"
            }
        }
