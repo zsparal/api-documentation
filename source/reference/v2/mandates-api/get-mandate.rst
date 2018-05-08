@@ -139,12 +139,6 @@ Response
 
             - Expiry date of the credit card in ``YYYY-MM-DD`` format.
 
-   * - | ``customerId``
-
-       .. type:: string
-
-     - The customer's unique identifier, for example ``cst_3RkSN1zuPE``.
-
    * - | ``mandateReference``
 
        .. type:: string

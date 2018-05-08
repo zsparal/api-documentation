@@ -54,12 +54,6 @@ Response
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
 
-   * - | ``customerId``
-
-       .. type:: string
-
-     - The customer's unique identifier, for example ``cst_8wmqcHMN4U``.
-
    * - | ``mode``
 
        .. type:: string
@@ -205,7 +199,6 @@ Response
    {
        "resource": "subscription",
        "id": "sub_rVKGtNd6s3",
-       "customerId": "cst_stTC2WHAuS",
        "mode": "live",
        "createdAt": "2016-06-01T12:23:34+00:00",
        "status": "active",
