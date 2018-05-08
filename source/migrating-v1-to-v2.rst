@@ -134,6 +134,12 @@ These new fields have been added:
 
   Any amounts not settled by Mollie will be not be reflected in this amount, e.g. PayPal or gift cards.
 
+* ``_links.status`` has been added to the responses for ``banktransfer`` payments. Here, you customer can check the
+  status of their transfer.
+
+* ``_links.payOnline`` has been added to the responses for ``banktransfer`` payments. Here, you customer can finish the
+  payment using an alternative payment method also activated on your website profile.
+
 Changes in the Refunds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:

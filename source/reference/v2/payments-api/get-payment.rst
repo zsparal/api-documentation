@@ -492,6 +492,29 @@ Bank transfer
             - Only available if filled out in the API or by the consumer – The email address which the consumer asked
               the payment instructions to be sent to.
 
+   * - | ``_links``
+
+       .. type:: object
+
+     - For bank transfer payments, the ``_links`` object will contain some additional URL objects relevant to the
+       payment.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``status``
+
+              .. type:: URL object
+
+            - A link to a hosted payment page where your customer can check the status of their payment.
+
+          * - | ``payOnline``
+
+              .. type:: URL object
+
+            - A link to a hosted payment page where your customer can finish the payment using an alternative payment
+              method also activated on your website profile.
+
 Belfius Pay Button
 """"""""""""""""""
 .. list-table::
