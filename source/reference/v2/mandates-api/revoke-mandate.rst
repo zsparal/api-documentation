@@ -19,7 +19,7 @@ mandate.
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the mandate's ID. For example:
-``/v1/customers/cst_stTC2WHAuS/mandates/mdt_pWUnw6pkBN``.
+``/v2/customers/cst_stTC2WHAuS/mandates/mdt_pWUnw6pkBN``.
 
 Response
 --------

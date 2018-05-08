@@ -19,7 +19,7 @@ depending on the type of mandate.
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the mandate's ID. For example
-``/v1/customers/cst_8wmqcHMN4U/mandates/mdt_pWUnw6pkBN``.
+``/v2/customers/cst_8wmqcHMN4U/mandates/mdt_pWUnw6pkBN``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
