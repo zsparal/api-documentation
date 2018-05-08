@@ -102,7 +102,7 @@ Request
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "method=directdebit" \
        -d "consumerName=John Doe" \
-       -d "consumerAccount=NL53INGB0000000000" \
+       -d "consumerAccount=NL55INGB0000000000" \
        -d "consumerBic=INGBNL2A" \
        -d "signatureDate=2018-05-07" \
        -d "mandateReference=YOUR-COMPANY-MD13804"
@@ -125,7 +125,6 @@ Response
            "consumerAccount": "NL55INGB0000000000",
            "consumerBic": "INGBNL2A"
        },
-       "customerId": "cst_4qqhO89gsT",
        "mandateReference": "YOUR-COMPANY-MD13804",
        "signatureDate": "2018-05-07",
        "createdAt": "2018-05-07T10:49:08+00:00",
