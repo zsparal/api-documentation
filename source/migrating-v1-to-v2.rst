@@ -256,7 +256,7 @@ The new error reporting format in ``v2`` is the following:
        "detail": "Missing authentication, or failed to authenticate",
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/guides/authentication.html",
+               "href": "https://docs.mollie.com/guides/authentication",
                "type": "text/html"
            }
        }
