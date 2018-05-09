@@ -215,6 +215,7 @@ The following fields have been changed, renamed or moved:
 * ``createdDatetime`` has been renamed to ``createdAt``.
 * ``cancelledDatetime`` has been renamed to ``canceledAt``, and is now only returned when the subscription is canceled.
 * ``webhookUrl`` is now part of the top-level object for Subscriptions.
+* ``customerId`` has been removed, the ``_links`` property will now contain a ``customer`` key.
 
 Changes in the Settlements API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -228,6 +229,12 @@ The following fields have been changed, renamed or moved:
 * ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
   ``amountGross``.
 * If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
+
+Changes in the Mandates API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+* ``customerId`` has been removed, the ``_links`` property will now contain a ``customer`` key.
 
 Changes in the Organizations API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
