@@ -50,3 +50,76 @@ New Taiwan dollar    ``TWD``               2 PayPal
 Thai baht            ``THB``               2 PayPal             
 United States dollar ``USD``               2 PayPal, credit card
 ==================== ======== ============== ===================
+
+Filter payment methods
+----------------------
+When integrating multicurrency we can use the :ref:`Methods Api <v2/methods-list>` to retrieve all methods available for the given amount and currency.
+
+Request
+^^^^^^^
+.. code-block:: bash
+   :linenos:
+
+   curl -X GET https://api.mollie.com/v2/payments/methods \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+       -H "Content-Type: application/json" \
+       -d \
+       "{
+           \"amount\": {\"currency\":\"SEK\", \"value\":\"10.00\"}
+       }"
+
+Response
+^^^^^^^^
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 200 OK
+   Content-Type: application/hal+json; charset=utf-8
+
+   {
+       "count": 2,
+       "_embedded": {
+           "methods": [
+               {
+                   "resource": "method",
+                   "id": "creditcard",
+                   "description": "Credit card",
+                   "image": {
+                       "size1x": "https://www.mollie.com/images/payscreen/methods/creditcard.png",
+                       "size2x": "https://www.mollie.com/images/payscreen/methods/creditcard%402x.png"
+                   },
+                   "_links": {
+                       "self": {
+                           "href": "https://api.mollie.com/v2/methods/creditcard",
+                           "type": "application/hal+json"
+                       }
+                   }
+               },
+               {
+                   "resource": "method",
+                   "id": "paypal",
+                   "description": "PayPal",
+                   "image": {
+                       "size1x": "https://www.mollie.com/images/payscreen/methods/paypal.png",
+                       "size2x": "https://www.mollie.com/images/payscreen/methods/paypal%402x.png"
+                   },
+                   "_links": {
+                       "self": {
+                           "href": "https://api.mollie.com/v2/methods/paypal",
+                           "type": "application/hal+json"
+                       }
+                   }
+               }
+           ]
+       },
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/methods",
+               "type": "application/hal+json"
+           },
+           "documentation": {
+               "href": "https://docs.mollie.com/reference/v2/methods-api/list-methods",
+               "type": "text/html"
+           }
+       }
+   }
