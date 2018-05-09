@@ -28,6 +28,7 @@ Currency             ISO code Decimal places  Payment methods
 ==================== ======== ============== ===================
 Australian dollar    ``AUD``               2 PayPal, credit card
 Bulgarian lev        ``BGN``               2 Credit card        
+Brazilian real       ``BRL``               2 PayPal
 Canadian dollar      ``CAD``               2 PayPal, credit card
 Swiss franc          ``CHF``               2 PayPal, credit card
 Czech koruna         ``CZK``               2 PayPal, credit card
@@ -41,16 +42,17 @@ Israeli new shekel   ``ILS``               0 PayPal, credit card
 Icelandic króna      ``ISK``               2 Credit card        
 Japanese yen         ``JPY``               0 PayPal, credit card
 Mexican peso         ``MXN``               2 PayPal             
+Malaysian ringgit    ``MYR``               2 PayPal
 Norwegian krone      ``NOK``               2 PayPal             
 New Zealand dollar   ``NZD``               2 PayPal             
 Philippine piso      ``PHP``               2 PayPal             
 Polish złoty         ``PLN``               2 PayPal, credit card
 Romanian leu         ``RON``               2 Credit card        
 Russian ruble        ``RUB``               2 PayPal             
-Singapore dollar     ``SGD``               2 PayPal             
 Swedish krona        ``SEK``               2 PayPal, credit card
+Singapore dollar     ``SGD``               2 PayPal             
+Thai baht            ``THB``               2 PayPal    
 New Taiwan dollar    ``TWD``               2 PayPal             
-Thai baht            ``THB``               2 PayPal             
 United States dollar ``USD``               2 PayPal, credit card
 ==================== ======== ============== ===================
 
