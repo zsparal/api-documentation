@@ -126,7 +126,8 @@ These new fields have been added:
 
 .. _settlementAmount:
 
-* ``settlementAmount`` has been added to the responses of the Payments API, the Refunds API and the Chargebacks API.
+* ``settlementAmount`` has been added to the responses of the :ref:`Payments API <v2/payments-get>`, the
+  :ref:`Refunds API <v2/refunds-get>` and the :ref:`Chargebacks API <v2/chargebacks-get>`.
   This optional field will contain the amount that will be settled to your account, converted to the currency your
   account is settled in. It follows the same syntax as the ``amount`` property.
 
