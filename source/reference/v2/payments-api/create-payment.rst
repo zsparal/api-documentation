@@ -74,7 +74,7 @@ Parameters
 
        .. note::
           For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
-          parameter is required. 
+          parameter is required.
 
    * - | ``webhookUrl``
 

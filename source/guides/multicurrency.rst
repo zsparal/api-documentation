@@ -13,6 +13,9 @@ response.
 Creating payments, refunds or subscriptions in a different currency than ``EUR`` is only possible via the ``v2`` API.
 Review the :ref:`Payments API reference <v2/payments-create>` for more information.
 
+Payments in non-EUR currencies (created via the ``v2`` API) that are retrieved via the ``v1`` API will show the
+settlement amount (in ``EUR``) in the ``amount`` field.
+
 Supported currencies
 --------------------
 For PayPal, `all currencies supported by PayPal <https://developer.paypal.com/docs/classic/api/currency_codes/>`_ are
