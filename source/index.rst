@@ -1,10 +1,8 @@
 .. _overview:
 
-Welcome to Mollie's public API documentation!
-=============================================
-
 Mollie API: simple & powerful
------------------------------
+=============================
+
 Use the Mollie API to integrate online payments by Mollie directly into your website or app. Mollie and your website
 will communicate by sending HTTP requests back and forth.
 
