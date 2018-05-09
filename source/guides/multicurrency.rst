@@ -60,13 +60,8 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/payments/methods \
+   curl -X GET https://api.mollie.com/v2/payments/methods?amount[value]=10.00&amount[currency]=SEK \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-       -H "Content-Type: application/json" \
-       -d \
-       "{
-           \"amount\": {\"currency\":\"SEK\", \"value\":\"10.00\"}
-       }"
 
 Response
 ^^^^^^^^
