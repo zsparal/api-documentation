@@ -1,7 +1,7 @@
 .. _guides/multicurrency:
 
-Multi-currency
-==============
+Multicurrency
+=============
 Mollie offers payments in non-EUR currencies via its ``v2`` APIs. This allows your shoppers outside of the
 Eurozone to pay in their own currency. The payments will be settled to your account in ``EUR``. Mollie will take care of
 the conversion. You can retrieve the settlement amount via the API or view it in your
