@@ -572,7 +572,7 @@ Bitcoin
 
               .. type:: amount object
 
-            - The amount transferred in BTC.
+            - The amount transferred in XBT.
 
           * - | ``bitcoinUri``
 

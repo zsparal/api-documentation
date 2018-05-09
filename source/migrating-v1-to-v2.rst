@@ -110,16 +110,18 @@ The following fields have been changed, renamed or moved:
   start of a recurring sequence and not a :ref:`recurring payment <guides/recurring>`) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
-* ``failureReason`` has been moved from the Payment resource to the credit card detail object, and is not available
-  anymore for Bancontact payments.
+* ``failureReason`` has been moved from the Payment resource to the credit card detail object, and no longer available
+  for Bancontact payments.
+* ``details.bitcoinAmount`` is now an amount object in the ``XBT`` currency.
 
 The following fields have been removed:
 
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
-* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the Create payment call.
-* ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
-* ``cardCountry`` has been removed from the creditcard detail object on the Payment resource.
+* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
+  :ref:`Create payment API <v2/payments-create>`.
+* ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
+* ``details.cardCountry`` has been removed from the credit card detail object.
 * The option to include the settlement using the ``include`` query string parameter has been removed.
 
 These new fields have been added:
