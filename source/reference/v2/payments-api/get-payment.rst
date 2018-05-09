@@ -910,7 +910,7 @@ paysafecard
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - | ``customerReference``
 
               .. type:: string
 
