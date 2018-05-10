@@ -73,7 +73,7 @@ The following changes have been made in regards to the status of payments:
 * If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
   which will point you to the refunds resource where you can view the refund details.
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
-  property, which will point you to the chargeback resource where you can view the refund details.
+  property, which will point you to the chargeback resource where you can view the chargeback details.
 
 The individual billing and shipping address parameters that can be used when creating a credit card or PayPal payment
 have been replaced by address objects. Instead of passing ``billingAddress``, ``billingPostal``, ``billingCity``,
