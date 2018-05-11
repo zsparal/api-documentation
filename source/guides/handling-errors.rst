@@ -103,7 +103,7 @@ Response
        "detail": "Missing authentication, or failed to authenticate",
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/guides/authentication.html",
+               "href": "https://docs.mollie.com/guides/authentication",
                "type": "text/html"
            }
        }
