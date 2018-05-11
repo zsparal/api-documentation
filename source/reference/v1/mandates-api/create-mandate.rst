@@ -5,6 +5,10 @@ Create mandate
 .. api-name:: Mandates API
    :version: 1
 
+.. warning:: This is the documentation of the v1 API. The documentation for creating mandates in the new v2 API can be
+             found :ref:`here <v2/mandates-create>`. For more information on the v2 API, refer to our
+             :ref:`v2 migration guide <migrate-to-v2>`.
+
 .. endpoint::
    :method: POST
    :url: https://api.mollie.com/v1/customers/*customerId*/mandates

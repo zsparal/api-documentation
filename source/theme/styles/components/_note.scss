@@ -1,23 +1,37 @@
-.admonition.note {
-  background-color: #fffefc;
-  border: 1px solid $orange-pancho;
+.admonition {
+  background-color: #f1fafd;
+  border: 1px solid #0070c1;
   padding: 11px 15px;
-  color: $orange-anzac;
+  color: #00508a;
   font-size: 15px;
   line-height: 20px;
   border-radius: 4px;
-  margin-bottom: 15px;
+  margin-bottom: 35px;
 }
 
-.admonition.note .admonition-title {
-  @include visually-hidden;
-}
-
-.admonition.note p {
-  margin: 0;
-}
-
-.admonition.note a {
-  color: $orange-reno-sand;
+.admonition a {
+  color: inherit;
   text-decoration: underline;
+}
+
+.admonition a:hover {
+  opacity: .8;
+}
+
+.admonition p {
+  margin-bottom: 10px !important;
+}
+
+.admonition p.last {
+  margin-bottom: 0 !important;
+}
+
+.admonition p.admonition-title {
+  font-weight: $font-weight-medium;
+}
+
+.admonition.warning {
+  background-color: #fffcf9;
+  border-color: #ce5e24;
+  color: #b33d00;
 }

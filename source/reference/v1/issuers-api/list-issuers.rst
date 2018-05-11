@@ -5,6 +5,11 @@ List issuers
 .. api-name:: Issuers API
    :version: 1
 
+.. warning:: This is the documentation of the v1 API. In the new v2 API, issuers can be retrieved by using the
+             ``issuers`` include on the Methods API. Documentation for the Methods API v2 can be found
+             :ref:`here <v2/methods-get>`. For more information on the v2 API, refer to our
+             :ref:`v2 migration guide <migrate-to-v2>`.
+
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v1/issuers
