@@ -1,5 +1,3 @@
-.. _security:
-
 Security
 ========
 
@@ -11,7 +9,7 @@ required.
 
 Secure connection required
 --------------------------
-Mollie uses the API-key as :ref:`means of authentication <guides/authentication>` and requires HTTPS connections to
+Mollie uses the API-key as :doc:`means of authentication </guides/authentication>` and requires HTTPS connections to
 guarantee security. This means the Mollie API can only be accessed through the secure ``https`` protocol. All of the API
 clients we publish use HTTPS.
 
@@ -34,14 +32,14 @@ you covered.
 
 What about the webhooks?
 ------------------------
-The :ref:`webhooks <guides/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
+The :doc:`webhooks </guides/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
 HTTPS. This is because the webhook requests – which Mollie sends out to communicate
-:ref:`status changes <guides/payment-status-changes>` – simply do not contain sensitive information. Your webhook script
-will always have to :ref:`fetch the object <v2/payments-get>` in order to know its status, and this can only be done
-using an HTTPS-secured connection. Here too, the fact ``https://api.mollie.com/`` can only be reached using HTTPS forces
-merchant-sites that don't use HTTPS into security.
+:doc:`status changes </guides/payment-status-changes>` – simply do not contain sensitive information. Your webhook
+script will always have to :doc:`fetch the object </reference/v2/payments-api/get-payment>` in order to know its status,
+and this can only be done using an HTTPS-secured connection. Here too, the fact ``https://api.mollie.com/`` can only be
+reached using HTTPS forces merchant-sites that don't use HTTPS into security.
 
 What's left?
 ------------
-An API that's so convenient you'll :ref:`integrate <overview>` it just for kicks. Make sure you enjoy yourself because
+An API that's so convenient you'll :doc:`integrate </index>` it just for kicks. Make sure you enjoy yourself because
 you'll be done in no time.

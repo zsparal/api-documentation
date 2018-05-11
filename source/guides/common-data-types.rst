@@ -1,5 +1,3 @@
-.. _guides/common-data-types:
-
 Common data types
 =================
 To keep things simple, the Mollie API endpoints will always attempt to use the same structure when representing certain
@@ -73,7 +71,7 @@ When providing an address object as parameter to a request, the following condit
 * If any of the fields is provided, all fields have to be provided with exception of the ``region`` field.
 * If only the ``region`` field is given, one should provide all the other fields as per the previous condition.
 * For certain PayPal payments the ``region`` field is required. Please see the
-  :ref:`Create payment documentation <v2/payments-create>` for more information.
+  :doc:`Create payment documentation </reference/v2/payments-api/create-payment>` for more information.
 
 Boolean
 -------

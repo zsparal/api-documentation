@@ -1,5 +1,3 @@
-.. _v2/organizations-get:
-
 Get organization
 ================
 .. api-name:: Organizations API
@@ -15,12 +13,10 @@ Get organization
 
 Retrieve an organization by its ID.
 
-If you do not know the organization's ID, you can use the :ref:`organizations list endpoint <v2/methods-list>` to
-retrieve all organizations that are accessible.
+If you do not know the organization's ID, you can use the organizations list endpoint to retrieve all organizations that
+are accessible.
 
-
-.. note::
-   You can only retrieve organizations that the authenticated organization is a reseller of.
+.. note:: You can only retrieve organizations that the authenticated organization is connected to.
 
 Parameters
 ----------

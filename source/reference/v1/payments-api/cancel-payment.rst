@@ -1,13 +1,11 @@
-.. _v1/payments-cancel:
-
 Cancel payment
 ==============
 .. api-name:: Payments API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for cancelling payments in the new v2 API can be
-             found :ref:`here <v2/payments-cancel>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/payments-api/cancel-payment>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: DELETE
@@ -20,8 +18,8 @@ Cancel payment
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
 is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
 
-The ``canBeCancelled`` property on the :ref:`Payment object <v1/payments-get>` will indicate if the payment can be
-canceled.
+The ``canBeCancelled`` property on the :doc:`Payment object </reference/v1/payments-api/get-payment>` will indicate if
+the payment can be canceled.
 
 Parameters
 ----------
@@ -31,7 +29,7 @@ Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-A payment object is returned, as described in :ref:`Get payment <v1/payments-get>`.
+A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
 Example
 -------

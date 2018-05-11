@@ -1,5 +1,3 @@
-.. _v2/mandates-get:
-
 Get mandate
 ===========
 .. api-name:: Mandates API

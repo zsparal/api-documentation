@@ -1,13 +1,11 @@
-.. _v1/organizations-get:
-
 Get organization
 ================
 .. api-name:: Organizations API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving organizations in the new v2 API
-             can be found :ref:`here <v2/organizations-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             can be found :doc:`here </reference/v2/organizations-api/get-organization>`. For more information on the v2
+             API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -113,7 +111,7 @@ Response
        .. type:: string
 
      - The organization's VAT number. You can use this for invoicing
-       :ref:`application fees <oauth/application-fees>`, for example.
+       :doc:`application fees </oauth/application-fees>`, for example.
 
    * - | ``verifiedDatetime``
 

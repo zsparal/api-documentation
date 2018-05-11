@@ -1,5 +1,3 @@
-.. _v1/profiles-get:
-
 Get profile
 ===========
 .. api-name:: Profiles API
@@ -150,7 +148,7 @@ Response
 
               .. type:: string
 
-            - The URL to the nested :ref:`API keys resource <v1/keys-list>`.
+            - The URL to the nested :doc:`API keys resource </reference/v1/profiles-api/list-keys>`.
 
           * - | ``checkoutPreviewUrl``
 

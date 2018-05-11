@@ -1,5 +1,3 @@
-.. _v2/payments-get:
-
 Get payment
 ===========
 .. api-name:: Payments API
@@ -15,7 +13,7 @@ Get payment
 
 Retrieve a single payment object by its payment token.
 
-.. note:: We call your webhook when the :ref:`payment status changes <guides/payment-status-changes>`, so there's no
+.. note:: We call your webhook when the :doc:`payment status changes </guides/payment-status-changes>`, so there's no
           need to poll this endpoint for status changes.
 
 Parameters
@@ -43,7 +41,7 @@ Includes
 This endpoint allows you to include additional information by appending the following values via the ``include``
 querystring parameter.
 
-* ``details.qrCode`` Include a :ref:`QR code <guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
+* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
   and bank transfer payments.
 
 Embedding of related resources
@@ -51,8 +49,8 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``refunds`` Include any :ref:`refunds <v2/refunds-get>` created for the payment.
-* ``chargebacks`` Include any :ref:`chargebacks <v2/chargebacks-get>` issued for the payment.
+* ``refunds`` Include any :doc:`refunds </reference/v2/refunds-api/get-refund>` created for the payment.
+* ``chargebacks`` Include any :doc:`chargebacks </reference/v2/chargebacks-api/get-chargeback>` issued for the payment.
 
 Response
 --------
@@ -306,7 +304,7 @@ Response
 
        .. type:: object
 
-     - The :ref:`application fee <oauth/application-fees>`, if the payment was created with one.
+     - The :doc:`application fee </oauth/application-fees>`, if the payment was created with one.
 
        .. list-table::
           :widths: auto
@@ -1074,7 +1072,7 @@ The ``qrCode`` key in the ``details`` object will then become available. The key
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
 
-For an implemention guide, see our :ref:`QR codes guide <guides/qr-codes>`.
+For an implemention guide, see our :doc:`QR codes guide </guides/qr-codes>`.
 
 Example
 -------

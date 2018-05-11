@@ -1,18 +1,15 @@
-.. _v1/chargebacks-list:
-
 List chargebacks
 ================
 .. api-name:: Chargebacks API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing chargebacks in the new v2 API can be
-             found :ref:`here <v2/chargebacks-list>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/chargebacks-api/list-chargebacks>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v1/chargebacks
-
 
 .. endpoint::
    :method: GET
@@ -25,7 +22,7 @@ List chargebacks
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -86,7 +83,8 @@ Response
 
        .. type:: array
 
-     - An array of chargebacks objects as described in :ref:`Get chargeback <v1/chargebacks-get>`.
+     - An array of chargebacks objects as described in
+       :doc:`Get chargeback </reference/v1/chargebacks-api/get-chargeback>`.
 
    * - | ``links``
 

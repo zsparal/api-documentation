@@ -1,5 +1,3 @@
-.. _v2/subscriptions-create:
-
 Create subscription
 ===================
 .. api-name:: Subscriptions API
@@ -13,7 +11,7 @@ Create subscription
    :api_keys: true
    :oauth: true
 
-With subscriptions, you can schedule :ref:`recurring payments <guides/recurring>` to take place at regular intervals.
+With subscriptions, you can schedule :doc:`recurring payments </guides/recurring>` to take place at regular intervals.
 
 For example, by simply specifying an ``amount`` and an ``interval``, you can create an endless subscription to charge a
 monthly fee, until the consumer cancels their subscription.
@@ -118,7 +116,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify to which profile the subscription belongs. Organizations can have multiple profiles for each of
-their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -141,7 +139,8 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A subscription object is returned, as described in :ref:`Get subscription <v2/subscriptions-get>`.
+A subscription object is returned, as described in
+:doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
 
 Example
 -------

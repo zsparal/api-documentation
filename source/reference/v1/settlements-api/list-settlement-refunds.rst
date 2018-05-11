@@ -1,13 +1,11 @@
-.. _v1/settlements-list-refunds:
-
 List settlement refunds
 =======================
 .. api-name:: Settlements API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing refunds included in a settlement in
-             the new v2 API can be found :ref:`here <v2/settlements-list-refunds>`. For more information on the v2 API,
-             refer to our :ref:`v2 migration guide <migrate-to-v2>`.
+             the new v2 API can be found :doc:`here </reference/v2/settlements-api/list-settlement-refunds>`. For more
+             information on the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -23,15 +21,15 @@ Parameters
 ----------
 Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
 
-This endpoint is an alias of the :ref:`List refunds <v1/refunds-list>` endpoint. All parameters for that endpoint can
-be used here as well.
+This endpoint is an alias of the :doc:`List refunds </reference/v1/refunds-api/list-refunds>` endpoint. All parameters
+for that endpoint can be used here as well.
 
 Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-This endpoint is an alias of the :ref:`List refunds <v1/refunds-list>` endpoint. The response is therefore the exact
-same.
+This endpoint is an alias of the :doc:`List refunds </reference/v1/refunds-api/list-refunds>` endpoint. The response is
+therefore the exact same.
 
 Example
 -------

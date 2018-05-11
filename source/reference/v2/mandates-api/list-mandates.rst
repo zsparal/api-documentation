@@ -1,5 +1,3 @@
-.. _v2/mandates-list:
-
 List mandates
 =============
 .. api-name:: Mandates API
@@ -15,7 +13,7 @@ List mandates
 
 Retrieve all mandates for the given ``customerId``, ordered from newest to oldest.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -81,7 +79,7 @@ Response
 
               .. type:: array
 
-            - An array of mandate objects as described in :ref:`Get mandate <v2/mandates-get>`.
+            - An array of mandate objects as described in :doc:`Get mandate </reference/v2/mandates-api/get-mandate>`.
 
    * - | ``_links``
 

@@ -1,5 +1,3 @@
-.. _v1/profiles-delete:
-
 Delete profile
 ==============
 .. api-name:: Profiles API

@@ -1,5 +1,3 @@
-.. _v2/refunds-create:
-
 Create refund
 =============
 .. api-name:: Refunds API
@@ -103,7 +101,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A refund object is returned, as described in :ref:`Get refund <v2/refunds-get>`.
+A refund object is returned, as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
 
 Example
 -------

@@ -1,13 +1,11 @@
-.. _v1/payments-get:
-
 Get payment
 ===========
 .. api-name:: Payments API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving payments in the new v2 API can be
-             found :ref:`here <v2/payments-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/payments-api/get-payment>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -19,7 +17,7 @@ Get payment
 
 Retrieve a single payment object by its payment token.
 
-.. note:: We call your webhook when the :ref:`payment status changes <guides/payment-status-changes>`, so there's no
+.. note:: We call your webhook when the :doc:`payment status changes </guides/payment-status-changes>`, so there's no
           need to poll this endpoint for status changes.
 
 Parameters
@@ -48,7 +46,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``settlement`` Include the settlement this payment belongs to, when available.
-* ``details.qrCode`` Include a :ref:`QR code <guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
+* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
   and bank transfer payments.
 
 Response
@@ -219,7 +217,7 @@ Response
        .. type:: string
 
      - This field indicates the position of the payment in a recurring stream. Refer to the
-       :ref:`recurring payments guide <guides/recurring>` for more information.
+       :doc:`recurring payments guide </guides/recurring>` for more information.
 
        Possible values: ``null`` ``first`` ``recurring``
 
@@ -949,7 +947,7 @@ The ``qrCode`` key in the ``details`` object will then become available. The key
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
 
-For an implemention guide, see our :ref:`QR codes guide <guides/qr-codes>`.
+For an implemention guide, see our :doc:`QR codes guide </guides/qr-codes>`.
 
 Example
 -------

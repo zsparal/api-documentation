@@ -1,13 +1,11 @@
-.. _v1/refunds-create:
-
 Create refund
 =============
 .. api-name:: Refunds API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for creating refunds in the new v2 API can be
-             found :ref:`here <v2/refunds-create>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/refunds-api/create-refund>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: POST
@@ -93,7 +91,7 @@ Response
 --------
 ``201`` ``application/json; charset=utf-8``
 
-A refund object is returned, as described in :ref:`Get refund <v1/refunds-get>`.
+A refund object is returned, as described in :doc:`Get refund </reference/v1/refunds-api/get-refund>`.
 
 Example
 -------

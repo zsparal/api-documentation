@@ -1,5 +1,3 @@
-.. _oauth/application-fees:
-
 Application fees
 ================
 With **Application fees**, you can split a payment between a platform and connected merchant accounts.
@@ -24,8 +22,8 @@ enabled.
 
 How to create an application fee
 --------------------------------
-Application fees are created by passing additional parameters to the :ref:`Create payment <v2/payments-create>`
-endpoint:
+Application fees are created by passing additional parameters to the
+:doc:`Create payment </reference/v2/payments-api/create-payment>` endpoint:
 
 .. list-table::
    :widths: auto

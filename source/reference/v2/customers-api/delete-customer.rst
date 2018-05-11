@@ -1,5 +1,3 @@
-.. _v2/customers-delete:
-
 Delete customer
 ===============
 .. api-name:: Customers API

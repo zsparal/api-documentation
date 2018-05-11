@@ -1,5 +1,3 @@
-.. _v2/customers-get:
-
 Get customer
 ============
 .. api-name:: Customers API

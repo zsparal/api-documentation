@@ -1,5 +1,3 @@
-.. _v2/customers-update:
-
 Update customer
 ===============
 .. api-name:: Customers API
@@ -73,7 +71,7 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-A customer object is returned, as described in :ref:`Get customer <v2/customers-get>`.
+A customer object is returned, as described in :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
 Example
 -------

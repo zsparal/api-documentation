@@ -1,5 +1,3 @@
-.. _guides/multicurrency:
-
 Multicurrency
 =============
 Mollie offers payments in non-EUR currencies via its ``v2`` APIs. This allows your shoppers outside of the
@@ -11,7 +9,7 @@ When creating a payment in a non-EUR currency, we will immediately give you the 
 response.
 
 Creating payments, refunds or subscriptions in a different currency than ``EUR`` is only possible via the ``v2`` API.
-Review the :ref:`Payments API reference <v2/payments-create>` for more information.
+Review the :doc:`Payments API reference </reference/v2/payments-api/create-payment>` for more information.
 
 Payments in non-EUR currencies (created via the ``v2`` API) that are retrieved via the ``v1`` API will show the
 settlement amount (in ``EUR``) in the ``amount`` field.
@@ -58,7 +56,8 @@ United States dollar ``USD``               2 PayPal, credit card
 
 Filter payment methods
 ----------------------
-When integrating multicurrency we can use the :ref:`Methods Api <v2/methods-list>` to retrieve all methods available for the given amount and currency.
+When integrating multicurrency we can use the :doc:`Methods API </reference/v2/methods-api/list-methods>` to retrieve
+all methods available for the given amount and currency.
 
 Request
 ^^^^^^^

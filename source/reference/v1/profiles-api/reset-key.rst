@@ -1,5 +1,3 @@
-.. _v1/keys-reset:
-
 Reset API key
 =============
 .. api-name:: Profiles API

@@ -1,5 +1,3 @@
-.. _v2/refunds-get:
-
 Get refund
 ==========
 .. api-name:: Refunds API
@@ -15,7 +13,8 @@ Get refund
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`List refunds <v2/refunds-list>` endpoint.
+If you do not know the original payment's ID, you can use the
+:doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint.
 
 Parameters
 ----------
@@ -27,7 +26,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payment <v2/payments-get>` this refund was created for.
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` this refund was created for.
 
 Response
 --------

@@ -1,5 +1,3 @@
-.. _v1/profiles-list:
-
 List profiles
 =============
 .. api-name:: Profiles API
@@ -15,7 +13,7 @@ List profiles
 
 Retrieve all payment profiles available on the account.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -66,7 +64,7 @@ Response
 
        .. type:: array
 
-     - An array of payment profile objects as described in :ref:`Get profile <v1/profiles-get>`.
+     - An array of payment profile objects as described in :doc:`Get profile </reference/v1/profiles-api/get-profile>`.
 
    * - | ``links``
 

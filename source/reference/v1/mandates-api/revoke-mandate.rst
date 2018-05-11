@@ -1,13 +1,11 @@
-.. _v1/mandates-revoke:
-
 Revoke mandate
 ==============
 .. api-name:: Mandates API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for revoking mandates in the new v2 API can be
-             found :ref:`here <v2/mandates-revoke>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/mandates-api/revoke-mandate>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: DELETE

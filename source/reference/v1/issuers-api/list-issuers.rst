@@ -1,5 +1,3 @@
-.. _v1/issuers-list:
-
 List issuers
 ============
 .. api-name:: Issuers API
@@ -7,8 +5,8 @@ List issuers
 
 .. warning:: This is the documentation of the v1 API. In the new v2 API, issuers can be retrieved by using the
              ``issuers`` include on the Methods API. Documentation for the Methods API v2 can be found
-             :ref:`here <v2/methods-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             :doc:`here </reference/v2/methods-api/list-methods>`. For more information on the v2 API, refer to our
+             :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -23,7 +21,7 @@ payment flow.
 
 The Issuers API only supports iDEAL.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -88,7 +86,7 @@ Response
 
        .. type:: array
 
-     - An array of issuer objects as described in :ref:`Get issuer <v1/issuers-get>`.
+     - An array of issuer objects as described in :doc:`Get issuer </reference/v1/issuers-api/get-issuer>`.
 
    * - | ``links``
 

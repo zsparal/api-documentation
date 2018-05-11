@@ -1,5 +1,3 @@
-.. _guides/webhooks:
-
 Webhooks
 ========
 
@@ -7,14 +5,14 @@ Process realtime status updates
 -------------------------------
 A webhook is a URL Mollie will call when an object's status changes, for example when a payment changes from ``open`` to
 ``paid``. You should put a script behind this URL that – when it's called –
-:ref:`fetches the payment status <v2/payments-get>` and processes it if it's status has changed.
+:doc:`fetches the payment status </reference/v2/payments-api/get-payment>` and processes it if it's status has changed.
 
 In the example case of a payment changing to ``paid``, you should mark the order belonging to the payment as paid
 accordingly.
 
 The webhook will be called with a single POST-parameter called ``id``, which for example will contain the value
 ``tr_d0b0E3EA3v``. You should use that ID to actively fetch the payment to find out about it's status. This step seems a
-little cumbersome, but :ref:`proper security <security>` dictates this flow. Since the status is not transmitted in the
+little cumbersome, but :doc:`proper security </security>` dictates this flow. Since the status is not transmitted in the
 webhook, fake calls to your webhook will never result in orders being processed without being actually paid.
 
 If an endpoint supports webhooks, you can specify the webhook URL you want to receive status changes on by providing the

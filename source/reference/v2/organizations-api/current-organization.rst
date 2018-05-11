@@ -1,5 +1,3 @@
-.. _v2/organizations-me:
-
 Get current organization
 ========================
 .. api-name:: Organizations API
@@ -26,8 +24,8 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-For the full list of fields, see :ref:`GET Organization endpoint <v2/organizations-get>`. Only ``_links`` is listed
-here.
+For the full list of fields, see the
+:doc:`Get organization endpoint </reference/v2/organizations-api/get-organization>`. Only ``_links`` is listed here.
 
 .. list-table::
    :widths: auto
@@ -52,43 +50,50 @@ here.
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`chargebacks <v2/chargebacks-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`chargebacks </reference/v2/chargebacks-api/list-chargebacks>` can be retrieved.
 
           * - | ``customers``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`customers <v2/customers-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`customers </reference/v2/customers-api/list-customers>` can be retrieved.
 
           * - | ``invoices``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`invoices <v2/customers-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`invoices </reference/v1/invoices-api/list-invoices>` can be retrieved.
 
           * - | ``payments``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`payments <v2/payments-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`payments </reference/v2/payments-api/list-payments>` can be retrieved.
 
           * - | ``profiles``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`profiles <v2/customers-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`profiles </reference/v1/profiles-api/list-profiles>` can be retrieved.
 
           * - | ``refunds``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`refunds <v2/refunds-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`refunds </reference/v2/refunds-api/list-refunds>` can be retrieved.
 
           * - | ``settlements``
 
               .. type:: URL object
 
-            - The API resource URL where the organization's :ref:`settlements <v2/settlements-list>` can be retrieved.
+            - The API resource URL where the organization's
+              :doc:`settlements </reference/v2/settlements-api/list-settlements>` can be retrieved.
 
           * - | ``documentation``
 

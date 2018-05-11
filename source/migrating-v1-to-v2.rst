@@ -1,5 +1,3 @@
-.. _migrate-to-v2:
-
 Migrating from v1 to v2
 =======================
 
@@ -7,10 +5,10 @@ Why upgrade to v2?
 ------------------
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multicurrency <guides/multicurrency>`. You can create payments, subscriptions, and refunds in
+* Fully supports :doc:`multicurrency </guides/multicurrency>`. You can create payments, subscriptions, and refunds in
   non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
   reflect the settlement amount for various resources.
-* Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
+* Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
 * Improved error messages. Error message will contain more details to help you quickly resolve any implementation
@@ -28,7 +26,7 @@ API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
 embedded by using the ``embed=refunds`` query string parameter. See the
-:ref:`Get payment documentation <v2/payments-get>` for more information.
+:doc:`Get payment documentation </reference/v2/payments-api/get-payment>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -96,7 +94,8 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
    }
 
 .. note:: The usage of the address object parameters remains optional. Please refer to the
-          :ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
+          :doc:`Create payment documentation </reference/v2/payments-api/create-payment>` for exact specifications on
+          what input is accepted.
 
 The following fields have been changed, renamed or moved:
 
@@ -107,7 +106,7 @@ The following fields have been changed, renamed or moved:
 * ``paidDatetime`` has been renamed to ``paidAt``.
 * ``canBeCancelled`` has been renamed to ``isCancelable``.
 * ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
-  start of a recurring sequence and not a :ref:`recurring payment <guides/recurring>`) will have the value ``oneoff``.
+  start of a recurring sequence and not a :doc:`recurring payment </guides/recurring>`) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
 * ``failureReason`` has been moved from the Payment resource to the credit card detail object, and no longer available
@@ -119,7 +118,7 @@ The following fields have been removed:
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
 * ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
-  :ref:`Create payment API <v2/payments-create>`.
+  :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
 * ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
 * ``details.cardCountry`` has been removed from the credit card detail object.
 * The option to include the settlement using the ``include`` query string parameter has been removed.
@@ -128,8 +127,10 @@ These new fields have been added:
 
 .. _settlementAmount:
 
-* ``settlementAmount`` has been added to the responses of the :ref:`Payments API <v2/payments-get>`, the
-  :ref:`Refunds API <v2/refunds-get>` and the :ref:`Chargebacks API <v2/chargebacks-get>`.
+* ``settlementAmount`` has been added to the responses of the
+  :doc:`Payments API </reference/v2/payments-api/get-payment>`, the
+  :doc:`Refunds API </reference/v2/refunds-api/get-refund>` and the
+  :doc:`Chargebacks API </reference/v2/chargebacks-api/get-chargeback>`.
   This optional field will contain the amount that will be settled to your account, converted to the currency your
   account is settled in. It follows the same syntax as the ``amount`` property.
 
@@ -197,8 +198,8 @@ The following parameters have been changed or added:
 
 Changes in the Issuers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using
-the ``issuers`` include.
+The issuers API has been removed. Instead, you can get the issuers via the
+:doc:`Get Method API </reference/v2/methods-api/get-method>` using the ``issuers`` include.
 
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

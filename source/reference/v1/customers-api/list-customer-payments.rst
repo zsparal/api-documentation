@@ -1,13 +1,11 @@
-.. _v1/customers-list-payments:
-
 List customer payments
 ======================
 .. api-name:: Customers API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing payments of a customer in the new v2
-             API can be found :ref:`here <v2/customers-list-payments>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             API can be found :doc:`here </reference/v2/customers-api/list-customer-payments>`. For more information on
+             the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -23,13 +21,15 @@ Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
 
-This endpoint accepts the same parameters as the :ref:`List payments <v1/payments-list>` endpoint.
+This endpoint accepts the same parameters as the :doc:`List payments </reference/v1/payments-api/list-payments>`
+endpoint.
 
 Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-This endpoint returns results in the same format as the :ref:`List payments <v1/payments-list>` endpoint.
+This endpoint returns results in the same format as the :doc:`List payments </reference/v1/payments-api/list-payments>`
+endpoint.
 
 Example
 -------

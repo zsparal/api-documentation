@@ -1,5 +1,3 @@
-.. _v2/settlements-list-chargebacks:
-
 List settlement chargebacks
 ===========================
 .. api-name:: Settlements API
@@ -19,15 +17,15 @@ Parameters
 ----------
 Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
 
-This endpoint is an alias of the :ref:`List chargebacks <v2/chargebacks-list>` endpoint. All parameters for that
-endpoint can be used here as well.
+This endpoint is an alias of the :doc:`List chargebacks </reference/v2/chargebacks-api/list-chargebacks>` endpoint. All
+parameters for that endpoint can be used here as well.
 
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-This endpoint is an alias of the :ref:`List chargebacks <v2/chargebacks-list>` endpoint. The response is therefore the
-exact same.
+This endpoint is an alias of the :doc:`List chargebacks </reference/v2/chargebacks-api/list-chargebacks>` endpoint. The
+response is therefore the exact same.
 
 Example
 -------

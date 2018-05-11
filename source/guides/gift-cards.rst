@@ -1,5 +1,3 @@
-.. _guides/gift-cards:
-
 Integrating gift cards
 ======================
 
@@ -18,7 +16,7 @@ brands are supported:
 
 If you need a different brand, please reach out to your account manager or our support department.
 
-Using the :ref:`checkout <guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
+Using the :doc:`checkout </guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
 remaining amount due using the other payment methods enabled on your website profile.
 
 Contracting and settlement
@@ -40,14 +38,15 @@ Settlement is handled by the brand owner and not by Mollie.
 
 Technical integration
 ---------------------
-Integration is handled via the :ref:`Payments API <v2/payments-create>`. Several levels of integration are possible.
+Integration is handled via the :doc:`Payments API </reference/v2/payments-api/create-payment>`. Several levels of
+integration are possible.
 
 Mollie supports stacking transactions, e.g. starting with a partial gift card payment and then finalizing the payment
 using more gift cards or one of the other payment methods.
 
 Integrate using Mollie Checkout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The easiest way to integrate gift cards is to use the :ref:`Mollie Checkout <guides/checkout>`. This is arranged by
+The easiest way to integrate gift cards is to use the :doc:`Mollie Checkout </guides/checkout>`. This is arranged by
 creating the payment via our API without passing the ``method`` parameter. Mollie will then display a list of payment
 methods available for the payment and offer the gift card options enabled on your account.
 
@@ -61,8 +60,8 @@ will call your webhook.
 Integrate method selection in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The selection for the gift card brand can be integrated in your own application as well. Using the
-:ref:`Methods API <v1/methods-list>`, you can retrieve the methods and gift cards available on your account. Use the
-include ``issuers`` to include the gift card brands available.
+:doc:`Methods API </reference/v1/methods-api/list-methods>`, you can retrieve the methods and gift cards available on
+your account. Use the include ``issuers`` to include the gift card brands available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.
 

@@ -1,5 +1,3 @@
-.. _v2/customers-list:
-
 List customers
 ==============
 .. api-name:: Customers API
@@ -15,7 +13,7 @@ List customers
 
 Retrieve all customers created.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -78,7 +76,8 @@ Response
 
               .. type:: array
 
-            - An array of customer objects as described in :ref:`Get customer <v2/customers-get>`.
+            - An array of customer objects as described in
+              :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
    * - | ``_links``
 

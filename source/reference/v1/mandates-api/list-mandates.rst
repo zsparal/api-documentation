@@ -1,13 +1,11 @@
-.. _v1/mandates-list:
-
 List mandates
 =============
 .. api-name:: Mandates API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing mandates in the new v2 API can be
-             found :ref:`here <v2/mandates-list>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/mandates-api/list-mandates>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -84,7 +82,7 @@ Response
 
        .. type:: array
 
-     - An array of mandate objects as described in :ref:`Get mandate <v1/mandates-get>`.
+     - An array of mandate objects as described in :doc:`Get mandate </reference/v1/mandates-api/get-mandate>`.
 
    * - | ``links``
 

@@ -1,13 +1,11 @@
-.. _v1/methods-list:
-
 List payment methods
 ====================
 .. api-name:: Methods API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing payment methods in the new v2 API
-             can be found :ref:`here <v2/methods-list>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             can be found :doc:`here </reference/v2/methods-api/list-methods>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -19,7 +17,7 @@ List payment methods
 
 Retrieve all payment methods activated on the payment profile.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -32,7 +30,7 @@ Parameters
           :required: true
 
      - Include additional data. Must be a comma separated list of one or more includes. See
-       :ref:`Get method <v1/methods-get>` for available includes.
+       :doc:`Get method </reference/v1/methods-api/get-method>` for available includes.
 
    * - | ``recurringType``
 
@@ -73,7 +71,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile you want to list the methods of. Organizations can have multiple profiles for
-each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -130,7 +128,8 @@ Response
 
        .. type:: array
 
-     - An array of payment method objects as described in :ref:`Get payment method <v1/methods-get>`.
+     - An array of payment method objects as described in
+       :doc:`Get payment method </reference/v1/methods-api/get-method>`.
 
    * - | ``links``
 

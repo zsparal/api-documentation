@@ -1,5 +1,3 @@
-.. _v1/permissions-get:
-
 Get permission
 ==============
 .. api-name:: Permissions API
@@ -20,7 +18,7 @@ resource allows the app to check whether an API action is (still) allowed by the
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the permission's ID, for example ``payments.read``. See
-:ref:`Permissions <oauth/permissions>` for details about the available permissions.
+:doc:`Permissions </oauth/permissions>` for details about the available permissions.
 
 Response
 --------
@@ -40,7 +38,7 @@ Response
        .. type:: string
 
      - The permission's unique identifier, for example ``payments.read``. See
-       :ref:`Permissions <oauth/permissions>` for details about the available permissions.
+       :doc:`Permissions </oauth/permissions>` for details about the available permissions.
 
        Possible values: ``apikeys.read`` ``apikeys.write`` ``customers.read`` ``customers.write`` ``mandates.read``
        ``mandates.write`` ``organizations.read`` ``organizations.write`` ``payments.read`` ``payments.write``

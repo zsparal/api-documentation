@@ -1,5 +1,3 @@
-.. _v1/invoices-get:
-
 Get invoice
 ===========
 .. api-name:: Invoices API
@@ -15,8 +13,8 @@ Get invoice
 
 Retrieve details of an invoice, using the invoice's identifier.
 
-If you want to retreive the details of an invoice by its invoice number, use the :ref:`list API <v1/invoices-list>` with
-the ``reference`` parameter.
+If you want to retrieve the details of an invoice by its invoice number, use the
+:doc:`list endpoint </reference/v1/invoices-api/list-invoices>` with the ``reference`` parameter.
 
 Parameters
 ----------
@@ -163,8 +161,9 @@ Response
 
        .. type:: array
 
-     - Only available if you require this field to be included – An array of :ref:`settlements <v1/settlements-get>`
-       that were invoiced on this invoice. You need the ``settlements.read`` permission for this field.
+     - Only available if you require this field to be included – An array of
+       :doc:`settlements </reference/v1/settlements-api/get-settlement>` that were invoiced on this invoice. You need
+       the ``settlements.read`` permission for this field.
 
    * - | ``links``
 

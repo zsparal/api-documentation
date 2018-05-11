@@ -1,5 +1,3 @@
-.. _v2/subscriptions-cancel:
-
 Cancel subscription
 ===================
 .. api-name:: Subscriptions API

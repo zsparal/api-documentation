@@ -1,13 +1,11 @@
-.. _v1/customers-list:
-
 List customers
 ==============
 .. api-name:: Customers API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for listing customers in the new v2 API can be
-             found :ref:`here <v2/customers-list>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/customers-api/list-customers>`. For more information on the v2 API, refer
+             to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -19,7 +17,7 @@ List customers
 
 Retrieve all customers created.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -84,7 +82,7 @@ Response
 
        .. type:: array
 
-     - An array of customers objects as described in :ref:`Get customer <v1/customers-get>`.
+     - An array of customers objects as described in :doc:`Get customer </reference/v1/customers-api/get-customer>`.
 
    * - | ``links``
 

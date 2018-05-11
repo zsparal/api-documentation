@@ -1,5 +1,3 @@
-.. _v2/customers-list-payments:
-
 List customer payments
 ======================
 .. api-name:: Customers API
@@ -19,13 +17,15 @@ Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
 
-This endpoint accepts the same parameters as the :ref:`List payments <v2/payments-list>` endpoint.
+This endpoint accepts the same parameters as the :doc:`List payments </reference/v2/payments-api/list-payments>`
+endpoint.
 
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-This endpoint returns results in the same format as the :ref:`List payments <v2/payments-list>` endpoint.
+This endpoint returns results in the same format as the :doc:`List payments </reference/v2/payments-api/list-payments>`
+endpoint.
 
 Example
 -------

@@ -1,5 +1,3 @@
-.. _oauth/overview:
-
 Mollie Connect: Overview
 ========================
 Mollie Connect allows you to create apps for Mollie merchants via OAuth.
@@ -18,17 +16,17 @@ Our OAuth platform allows you to:
 * View a merchants' transaction and settlement data
 * Show the next settlement and balance at Mollie in your app
 * Integrate merchants' invoices from Mollie in your app
-* Charge merchants for payments initiated through your app (:ref:`application fees <oauth/application-fees>`)
+* Charge merchants for payments initiated through your app (:doc:`application fees </oauth/application-fees>`)
 
 What does the Mollie OAuth flow look like?
 ------------------------------------------
-After you've :ref:`registered your OAuth app with Mollie <oauth/getting-started>`, other Mollie merchants are able to
+After you've :doc:`registered your OAuth app with Mollie </oauth/getting-started>`, other Mollie merchants are able to
 install your app on their Mollie account. To do so, they have to follow the well known OAuth *authorization flow* as
 visualized below.
 
 .. image:: images/oauth-overview-flow@2x.png
 
-The authorization flow is explained in further detail in :ref:`OAuth: Getting started <oauth/getting-started>`.
+The authorization flow is explained in further detail in :doc:`OAuth: Getting started </oauth/getting-started>`.
 
 What merchant data can I access?
 --------------------------------
@@ -36,12 +34,12 @@ As with all OAuth platforms, you tell Mollie what data you need when requesting 
 permissions your app requires. The merchant will explicitly have to agree with any permissions you request, so be sure
 to only request necessary permissions.
 
-Please refer to :ref:`OAuth: Permissions <oauth/permissions>` for a full list of available permissions.
+Please refer to :doc:`OAuth: Permissions </oauth/permissions>` for a full list of available permissions.
 
 How do merchants install my app?
 --------------------------------
 By implementing the authorization flow, other Mollie merchants are able to install your app on their Mollie account.
-:ref:`OAuth: Getting started <oauth/getting-started>` discusses authorizations in further detail.
+:doc:`OAuth: Getting started </oauth/getting-started>` discusses authorizations in further detail.
 
 The Connect with Mollie button
 ------------------------------

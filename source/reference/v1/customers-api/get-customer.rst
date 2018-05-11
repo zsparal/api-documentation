@@ -1,13 +1,11 @@
-.. _v1/customers-get:
-
 Get customer
 ============
 .. api-name:: Customers API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving customers in the new v2 API can
-             be found :ref:`here <v2/customers-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             be found :doc:`here </reference/v2/customers-api/get-customer>`. For more information on the v2 API, refer
+             to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET

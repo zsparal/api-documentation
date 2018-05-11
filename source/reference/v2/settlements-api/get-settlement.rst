@@ -1,5 +1,3 @@
-.. _v2/settlements-get:
-
 Get settlement
 ==============
 .. api-name:: Settlements API
@@ -18,7 +16,8 @@ schedule. By retrieving a single settlement, you can check which payments were p
 took place, and what invoice reference was used for it.
 
 Settlements will be transferred to your bank account with a ``reference``, for example ``1182161.1506.02``. You can use
-the :ref:`List settlements <v2/settlements-list>` endpoint to look up a settlement by reference.
+the :doc:`List settlements </reference/v2/settlements-api/get-settlement>` endpoint to look up a settlement by
+reference.
 
 Parameters
 ----------
@@ -60,8 +59,8 @@ Response
        .. type:: string
 
      - The date on which the settlement was settled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-       When requesting the :ref:`open settlement <v2/settlements-get-open>` or
-       :ref:`next settlement <v2/settlements-get-next>` the return value is ``null``.
+       When requesting the :doc:`open settlement </reference/v2/settlements-api/get-open-settlement>` or
+       :doc:`next settlement </reference/v2/settlements-api/get-next-settlement>` the return value is ``null``.
 
    * - | ``status``
 

@@ -1,5 +1,3 @@
-.. _v2/subscriptions-get:
-
 Get subscription
 ================
 .. api-name:: Subscriptions API

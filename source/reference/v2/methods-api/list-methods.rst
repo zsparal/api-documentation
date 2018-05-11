@@ -1,5 +1,3 @@
-.. _v2/methods-list:
-
 List payment methods
 ====================
 .. api-name:: Methods API
@@ -56,7 +54,8 @@ Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
-profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -108,7 +107,7 @@ Response
 
               .. type:: array
 
-            - An array of methods objects as described in :ref:`Get method <v2/methods-get>`.
+            - An array of methods objects as described in :doc:`Get method </reference/v2/methods-api/get-method>`.
 
    * - | ``_links``
 

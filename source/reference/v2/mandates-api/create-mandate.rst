@@ -1,5 +1,3 @@
-.. _v2/mandates-create:
-
 Create mandate
 ==============
 .. api-name:: Mandates API
@@ -88,7 +86,7 @@ Response
 --------
 ``201`` ``application/json; charset=utf-8``
 
-A mandate object is returned, as described in :ref:`Get mandate <v2/mandates-get>`.
+A mandate object is returned, as described in :doc:`Get mandate </reference/v2/mandates-api/get-mandate>`.
 
 Example
 -------

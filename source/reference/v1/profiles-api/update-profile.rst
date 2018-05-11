@@ -1,5 +1,3 @@
-.. _v1/profiles-update:
-
 Update profile
 ==============
 .. api-name:: Profiles API
@@ -87,7 +85,7 @@ Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-The updated profile object is returned, as described in :ref:`Get profile <v1/profiles-get>`.
+The updated profile object is returned, as described in :doc:`Get profile </reference/v1/profiles-api/get-profile>`.
 
 Example
 -------

@@ -1,5 +1,3 @@
-.. _oauth/permissions:
-
 Mollie Connect: Permissions
 ===========================
 
@@ -8,8 +6,9 @@ Accessing merchant data
 Your app may request a set of permissions, which allow access to various endpoints of the Mollie API. All currently
 available permissions are listed below.
 
-Permissions can be requested by redirecting the resource owner to the :ref:`Authorize endpoint <oauth2/authorize>` with
-the requested permissions as a space separated list in the ``scope`` parameter.
+Permissions can be requested by redirecting the resource owner to the
+:doc:`Authorize endpoint </reference/oauth2/authorize>` with the requested permissions as a space separated list in the
+``scope`` parameter.
 
 .. list-table::
    :widths: auto

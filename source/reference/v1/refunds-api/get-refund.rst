@@ -1,13 +1,11 @@
-.. _v1/refunds-get:
-
 Get refund
 ==========
 .. api-name:: Refunds API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving refunds in the new v2 API can be
-             found :ref:`here <v2/refunds-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/refunds-api/get-refund>`. For more information on the v2 API, refer to our
+             :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -19,7 +17,8 @@ Get refund
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`refunds list endpoint <v1/refunds-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`refunds list endpoint </reference/v1/refunds-api/list-refunds>`.
 
 Parameters
 ----------
@@ -43,8 +42,8 @@ Response
 
        .. type:: object
 
-     - The original payment, as described in :ref:`Get payment <v1/payments-get>`. In the payment object, note the
-       following refund related fields.
+     - The original payment, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`. In the payment
+       object, note the following refund related fields.
 
        .. list-table::
           :widths: auto

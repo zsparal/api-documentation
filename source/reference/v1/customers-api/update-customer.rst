@@ -1,13 +1,11 @@
-.. _v1/customers-update:
-
 Update customer
 ===============
 .. api-name:: Customers API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for updating customers in the new v2 API can be
-             found :ref:`here <v2/customers-update>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             found :doc:`here </reference/v2/customers-api/update-customer>`. For more information on the v2 API, refer
+             to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: POST
@@ -77,7 +75,7 @@ Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-A customer object is returned, as described in :ref:`Get customer <v1/customers-get>`.
+A customer object is returned, as described in :doc:`Get customer </reference/v1/customers-api/get-customer>`.
 
 Example
 -------

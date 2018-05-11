@@ -1,13 +1,11 @@
-.. _v1/settlements-get:
-
 Get settlement
 ==============
 .. api-name:: Settlements API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving settlements in the new v2 API can
-             be found :ref:`here <v2/settlements-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             be found :doc:`here </reference/v2/settlements-api/get-settlement>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -22,7 +20,8 @@ schedule. By retrieving a single settlement, you can check which payments were p
 took place, and what invoice reference was used for it.
 
 Settlements will be transferred to your bank account with a ``reference``, for example ``1182161.1506.02``. You can use
-the :ref:`List settlements <v1/settlements-list>` endpoint to look up a settlement by reference.
+the :doc:`List settlements </reference/v1/settlements-api/list-settlements>` endpoint to look up a settlement by
+reference.
 
 Parameters
 ----------
@@ -64,8 +63,8 @@ Response
        .. type:: string
 
      - The date on which the settlement was settled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-       When requesting the :ref:`open settlement <v1/settlements-get-open>` or
-       :ref:`next settlement <v1/settlements-get-next>` the return value is ``null``.
+       When requesting the :doc:`open settlement </reference/v1/settlements-api/get-open-settlement>` or
+       :doc:`next settlement </reference/v1/settlements-api/get-next-settlement>` the return value is ``null``.
 
    * - | ``status``
 
@@ -178,22 +177,22 @@ Response
 
        .. type:: array
 
-     - A list of all :ref:`payment IDs <v1/payments-get>` that are included in the settlement. You can use this to fully
-       reconcile the settlement with your back office.
+     - A list of all :doc:`payment IDs </reference/v1/payments-api/get-payment>` that are included in the settlement.
+       You can use this to fully reconcile the settlement with your back office.
 
    * - | ``refundIds``
 
        .. type:: array
 
-     - A list of all :ref:`refund IDs <v1/refunds-get>` that are included in the settlement. You can use this to fully
-       recocnile the settlement with your back office.
+     - A list of all :doc:`refund IDs </reference/v1/refunds-api/get-refund>` that are included in the settlement. You
+       can use this to fully recocnile the settlement with your back office.
 
    * - | ``chargebackIds``
 
        .. type:: array
 
-     - A list of all :ref:`chargeback IDs <v1/chargebacks-get>` that are included in the settlement. You can use this to
-       fully recocnile the settlement with your back office.
+     - A list of all :doc:`chargeback IDs </reference/v1/chargebacks-api/get-chargeback>` that are included in the
+       settlement. You can use this to fully recocnile the settlement with your back office.
 
    * - | ``links``
 

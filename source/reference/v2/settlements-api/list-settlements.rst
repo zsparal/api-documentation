@@ -1,5 +1,3 @@
-.. _v2/settlements-list:
-
 List settlements
 ================
 .. api-name:: Settlements API
@@ -15,7 +13,7 @@ List settlements
 
 Retrieve all settlements, ordered from new to old.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -71,7 +69,8 @@ Response
 
               .. type:: array
 
-            - An array of settlement objects as described in :ref:`Get settlement <v2/settlements-get>`.
+            - An array of settlement objects as described in
+              :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`.
 
    * - | ``_links``
 

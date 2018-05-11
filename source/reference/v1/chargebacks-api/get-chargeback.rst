@@ -1,13 +1,11 @@
-.. _v1/chargebacks-get:
-
 Get chargeback
 ==============
 .. api-name:: Chargebacks API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving chargebacks in the new v2 API can
-             be found :ref:`here <v2/chargebacks-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             be found :doc:`here </reference/v2/chargebacks-api/get-chargeback>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -19,7 +17,8 @@ Get chargeback
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`chargebacks list endpoint <v1/chargebacks-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`chargebacks list endpoint </reference/v1/chargebacks-api/list-chargebacks>`.
 
 Parameters
 ----------
@@ -51,7 +50,7 @@ Response
        .. type:: string, object
 
      - The ID of the payment this chargeback belongs to. If the payment include is requested, the ID will be replaced by
-       a payment object as described in :ref:`Get payment <v1/payments-get>`.
+       a payment object as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
    * - | ``amount``
 

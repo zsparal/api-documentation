@@ -1,5 +1,3 @@
-.. _guides/pagination:
-
 Pagination
 ==========
 Fetching all objects of a resource can be convenient. At the same time, returning too many objects at once can be
@@ -147,7 +145,7 @@ Response
 Pagination in v1 API endpoints
 ------------------------------
 .. warning:: This is the documentation of the v1 API. The documentation for pagination in the new v2 API can be found
-             above. For more information on the v2 API, refer to our :ref:`v2 migration guide <migrate-to-v2>`.
+             above. For more information on the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 Using the ``count`` parameter you can set the page size up to a maximum of 250 objects. The result will be paginated
 accordingly, presuming your request would otherwise have resulted in more than ``count`` objects. The ``offset``

@@ -1,5 +1,3 @@
-.. _v2/chargebacks-list:
-
 List chargebacks
 ================
 .. api-name:: Chargebacks API
@@ -32,7 +30,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payments <v2/payments-get>` these chargebacks were issued for.
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` these chargebacks were issued for.
 
 Response
 --------
@@ -60,7 +58,8 @@ Response
 
               .. type:: array
 
-            - An array of chargeback objects as described in :ref:`Get chargeback <v2/chargebacks-get>`.
+            - An array of chargeback objects as described in
+              :doc:`Get chargeback </reference/v2/chargebacks-api/get-chargeback>`.
 
    * - | ``_links``
 

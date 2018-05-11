@@ -1,5 +1,3 @@
-.. _v1/keys-get:
-
 Get API key
 ===========
 .. api-name:: Profiles API
@@ -18,7 +16,7 @@ Get the API key for the given payment profile and profile mode.
 **Note that you cannot retrieve API keys for a different account than your own, even if you have a valid OAuth token.**
 
 If you wish to create a payment on behalf of a different merchant, use your app's access token and the ``profileId`` of
-one of the merchant's payment profiles when :ref:`creating a payment <v1/payments-create>`.
+one of the merchant's payment profiles when :doc:`creating a payment </reference/v1/payments-api/create-payment>`.
 
 Parameters
 ----------

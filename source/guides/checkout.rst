@@ -1,5 +1,3 @@
-.. _guides/checkout:
-
 Mollie Checkout
 ===============
 **Mollie Checkout** is a collection of *hosted payment pages* that allow your customers to pick payment methods or view
@@ -18,7 +16,7 @@ Benefits of payments via the Mollie Checkout
   another one. If a customer appears to not have sufficient credit on a checking account a retry by credit card could
   easily be attempted. We handle this for you without asking you to implement any extra APIs.
 
-* Full support for :ref:`QR codes <guides/qr-codes>`.
+* Full support for :doc:`QR codes </guides/qr-codes>`.
 
 * Mollie optimizes the order of payment methods. For Dutch customers we know to list iDEAL at the top while for Belgians
   we start off with the payment method Bancontact. A lot of effort goes into this and we optimize this using
@@ -44,7 +42,7 @@ Single Click payments increase conversion. This feature allows your customers wh
 recognizable credit card with information gathered from previous payments is presented securely through unique customer
 and device detection.
 
-#. Create a unique customer using the :ref:`Customers API <v2/customers-create>`.
+#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`.
 #. Store the customer's ``id`` safely in your database. It's needed for performing Payments API calls for the customer.
 #. Specify the ``customerId`` parameter each time you create a payment for this customer.
 #. Returning customers are now shown the credit cards they have used in the past, enabling them to charge their card of

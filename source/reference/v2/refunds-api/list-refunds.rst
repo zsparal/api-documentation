@@ -1,5 +1,3 @@
-.. _v2/refunds-list:
-
 List refunds
 ============
 .. api-name:: Refunds API
@@ -20,7 +18,7 @@ List refunds
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -50,7 +48,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payments <v2/payments-get>` the refunds were created for.
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the refunds were created for.
 
 Response
 --------
@@ -79,7 +77,7 @@ Response
 
               .. type:: array
 
-            - An array of refund objects as described in :ref:`Get refund <v2/refunds-get>`.
+            - An array of refund objects as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
 
    * - | ``_links``
 

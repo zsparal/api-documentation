@@ -1,5 +1,3 @@
-.. _v1/permissions-list:
-
 List permissions
 ================
 .. api-name:: Permissions API
@@ -64,7 +62,8 @@ Response
 
        .. type:: array
 
-     - An array of permission objects as described in :ref:`Get permission <v1/permissions-get>`.
+     - An array of permission objects as described in
+       :doc:`Get permission </reference/v1/permissions-api/get-permission>`.
 
    * - | ``links``
 

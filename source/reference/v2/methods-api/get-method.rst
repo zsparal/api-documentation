@@ -1,5 +1,3 @@
-.. _v2/methods-get:
-
 Get payment method
 ==================
 .. api-name:: Methods API
@@ -16,8 +14,9 @@ Get payment method
 Retrieve a single method by its ID. Note that if a method is not available on the payment profile a status
 ``404 Not found`` is returned. When the method is not enabled, a status ``403 Forbidden`` is returned.
 
-If you do not know the method's ID, you can use the :ref:`methods list endpoint <v2/methods-list>` to retrieve all
-payment methods that are available.
+If you do not know the method's ID, you can use the
+:doc:`methods list endpoint </reference/v2/methods-api/list-methods>` to retrieve all payment methods that are
+available.
 
 Parameters
 ----------
@@ -39,7 +38,8 @@ Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
-profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -82,8 +82,9 @@ Response
 
        .. type:: string
 
-     - The unique identifier of the payment method. When used during :ref:`payment creation <v2/payments-create>`,
-       the payment method selection screen will be skipped.
+     - The unique identifier of the payment method. When used during
+       :doc:`payment creation </reference/v2/payments-api/create-payment>`, the payment method selection screen will be
+       skipped.
 
    * - | ``description``
 

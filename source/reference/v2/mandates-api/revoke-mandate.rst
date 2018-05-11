@@ -1,5 +1,3 @@
-.. _v2/mandates-revoke:
-
 Revoke mandate
 ==============
 .. api-name:: Mandates API

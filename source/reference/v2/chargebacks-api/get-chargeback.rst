@@ -1,5 +1,3 @@
-.. _v2/chargebacks-get:
-
 Get chargeback
 ==============
 .. api-name:: Chargebacks API
@@ -15,7 +13,8 @@ Get chargeback
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`chargebacks list endpoint <v2/chargebacks-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`chargebacks list endpoint </reference/v2/chargebacks-api/list-chargebacks>`.
 
 Parameters
 ----------
@@ -27,7 +26,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payment <v2/payments-get>` this chargeback was issued for.
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` this chargeback was issued for.
 
 Response
 --------

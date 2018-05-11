@@ -1,5 +1,3 @@
-.. _v2/settlements-get-open:
-
 Get open settlement
 ===================
 .. api-name:: Settlements API
@@ -20,7 +18,8 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-The open balance settlement is returned in the same fashion as the :ref:`Get settlement <v2/settlements-get>` endpoint.
+The open balance settlement is returned in the same fashion as the
+:doc:`Get settlement </reference/v2/settlements-api/get-settlement>` endpoint.
 
 Example
 -------

@@ -1,5 +1,3 @@
-.. _v1/invoices-list:
-
 List invoices
 =============
 .. api-name:: Invoices API
@@ -15,7 +13,7 @@ List invoices
 
 Retrieve all invoices on the account. Optionally filter on year or invoice number.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -89,7 +87,7 @@ Response
 
        .. type:: array
 
-     - An array of invoice objects as described in :ref:`Get invoice <v1/invoices-get>`.
+     - An array of invoice objects as described in :doc:`Get invoice </reference/v1/invoices-api/get-invoice>`.
 
    * - | ``links``
 

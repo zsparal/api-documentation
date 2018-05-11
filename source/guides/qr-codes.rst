@@ -1,5 +1,3 @@
-.. _guides/qr-codes:
-
 QR codes
 ========
 In the context of payments, `QR codes <https://en.wikipedia.org/wiki/QR_code>`_ enable customers to transfer the payment
@@ -17,7 +15,7 @@ How do QR codes work?
 #. You show the QR code to the customer during the checkout.
 #. The customer opens the app on a mobile device and scans the QR code.
 #. The customer finishes the payment in the app on the mobile device.
-#. Mollie informs you of the payment status change using the :ref:`webhook <guides/webhooks>`.
+#. Mollie informs you of the payment status change using the :doc:`webhook </guides/webhooks>`.
 #. The customer is redirected back to the webshop on their computer.
 
 Supported payment methods
@@ -40,7 +38,7 @@ Implementation options
 Two options for implementation are available:
 
 +---------------------+------------------------------------------------------------------------------------------------+
-|Mollie Checkout      |:ref:`Mollie Checkout <guides/checkout>` contains QR codes at all the right places and handles  |
+|Mollie Checkout      |:doc:`Mollie Checkout </guides/checkout>` contains QR codes at all the right places and handles |
 |                     |the QR code logic for your application. It supports real-time feedback to the customer after he |
 |                     |/ she finishes the payment.                                                                     |
 +---------------------+------------------------------------------------------------------------------------------------+
@@ -57,7 +55,7 @@ The QR code flow is largely similar to normal payment flow.
 Retrieving QR codes
 -------------------
 The QR code can be retrieved by adding the ``details.qrCode`` include to the payment creation API call, as detailed in
-the :ref:`Create payment <v2/payments-create>` reference.
+the :doc:`Create payment </reference/v2/payments-api/create-payment>` reference.
 
 ``POST https://api.mollie.com/v2/payments?include=details.qrCode``
 

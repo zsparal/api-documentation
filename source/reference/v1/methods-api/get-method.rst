@@ -1,13 +1,11 @@
-.. _v1/methods-get:
-
 Get payment method
 ==================
 .. api-name:: Methods API
    :version: 1
 
 .. warning:: This is the documentation of the v1 API. The documentation for retrieving payment methods in the new v2 API
-             can be found :ref:`here <v2/methods-get>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
+             can be found :doc:`here </reference/v2/methods-api/get-method>`. For more information on the v2 API, refer
+             to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -46,7 +44,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile you want to retrieve a method for. Organizations can have multiple profiles for
-each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -90,7 +88,8 @@ Response
        .. type:: string
 
      - The identifier uniquely referring to this payment method. When supplying this ID as the ``method`` parameter
-       during :ref:`payment creation <v1/payments-create>`, the payment method selection screen is skipped.
+       during :doc:`payment creation </reference/v1/payments-api/create-payment>`, the payment method selection screen
+       is skipped.
 
    * - | ``description``
 
