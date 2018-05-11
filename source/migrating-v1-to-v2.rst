@@ -135,13 +135,13 @@ These new fields have been added:
 
   Note that for refunds and chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
 
-  Any amounts not settled by Mollie will be not be reflected in this amount, e.g. PayPal or gift cards.
+  Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
 
-* ``_links.status`` has been added to the responses for ``banktransfer`` payments. Here, you customer can check the
-  status of their transfer.
+* ``_links.status`` has been added to the responses for ``banktransfer`` payments. Your customer can check the status of
+  their transfer at this URL.
 
-* ``_links.payOnline`` has been added to the responses for ``banktransfer`` payments. Here, you customer can finish the
-  payment using an alternative payment method also activated on your website profile.
+* ``_links.payOnline`` has been added to the responses for ``banktransfer`` payments. At this URL your customer can
+  finish the payment using an alternative payment method also activated on your website profile.
 
 Changes in the Refunds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
