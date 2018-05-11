@@ -45,7 +45,8 @@
   margin-bottom: 30px;
 }
 
-.rst-content table.docutils p:last-child {
+.rst-content table.docutils p:last-child,
+.rst-content table.docutils div.admonition:last-child {
   margin-bottom: 0;
 }
 
