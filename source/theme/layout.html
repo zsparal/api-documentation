@@ -33,6 +33,8 @@
           <div class="wy-nav-content">
             <div class="rst-content">
               <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+                {% include 'api-version-switcher.html' %}
+
                 {%- block document %}
                 <div itemprop="articleBody">
                   {% block body %}{% endblock %}

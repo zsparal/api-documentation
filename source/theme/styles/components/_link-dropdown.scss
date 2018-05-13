@@ -1,0 +1,104 @@
+.link-dropdown {
+  display: inline-block;
+  font-size: 15px;
+  height: 32px;
+  position: relative;
+}
+
+.link-dropdown__label {
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  cursor: pointer;
+  height: 32px;
+  line-height: 20px;
+  padding: 6px 32px 6px 12px;
+  position: relative;
+  z-index: 2;
+}
+
+.link-dropdown__label:hover {
+  border-color: #bbb;
+}
+
+.link-dropdown.active .link-dropdown__label {
+  border-color: #bbb;
+  border-bottom-color: #eee;
+  border-radius: 4px 4px 0 0;
+}
+
+.link-dropdown__label:after {
+  border: 4px solid transparent;
+  border-top-color: #000;
+  content: "";
+  display: block;
+  height: 0;
+  position: absolute;
+  right: 12px;
+  top: 12px;
+  width: 0;
+}
+
+.link-dropdown__options {
+  background: #fff;
+  border: 1px solid #bbb;
+  border-radius: 0 4px 4px 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, .15);
+  left: 0;
+  list-style: none;
+  margin: -1px 0 0;
+  padding: 5px 0;
+  position: absolute;
+  top: 32px;
+  transform: scale(.9);
+  transform-origin: top left;
+  transition: transform .1s;
+  visibility: hidden;
+  z-index: 1;
+}
+
+.link-dropdown.active .link-dropdown__options {
+  transform: scale(1);
+  visibility: visible;
+}
+
+.link-dropdown--rtl .link-dropdown__options {
+  border-radius: 4px 0 4px 4px;
+  left: auto;
+  right: 0;
+  transform-origin: top right;
+}
+
+.link-dropdown--full-width .link-dropdown__options {
+  border-radius: 0 0 4px 4px;
+  left: 0;
+  right: 0;
+  transform-origin: top center;
+}
+
+.link-dropdown__options li a,
+.link-dropdown__options li span {
+  color: #000;
+  display: block;
+  height: 44px;
+  line-height: 20px;
+  padding: 12px 32px 12px 12px;
+  white-space: nowrap;
+}
+
+.link-dropdown--full-width .link-dropdown__options li a,
+.link-dropdown--full-width .link-dropdown__options li span {
+  overflow: hidden;
+  padding: 6px 12px;
+  text-overflow: ellipsis;
+}
+
+.link-dropdown__options li span {
+  font-weight: $font-weight-medium;
+}
+
+.link-dropdown__options li a:hover {
+  background: #fafafa;
+  color: #000;
+  text-decoration: none;
+}

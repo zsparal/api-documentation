@@ -1,0 +1,35 @@
+{% if pagename.startswith("reference/v") -%}
+	{%- set is_v1 = pagename.startswith("reference/v1/") -%}
+	{%- set is_v2 = pagename.startswith("reference/v2/") -%}
+	{%- set pagename_v1 = pagename.replace("/v2/", "/v1/") -%}
+	{%- set pagename_v2 = pagename.replace("/v1/", "/v2/") -%}
+	{%- set has_v1 = hasdoc(pagename_v1) -%}
+	{%- set has_v2 = hasdoc(pagename_v2) -%}
+
+	{% if (is_v1 and has_v2) or (is_v2 and has_v1) -%}
+		<div class="api-version-switcher">
+			API version:
+
+			<div class="link-dropdown link-dropdown--rtl" data-enhancer="link-dropdown">
+				<div class="link-dropdown__label">{% if is_v1 %}v1{% else %}v2{% endif %}</div>
+
+				<ul class="link-dropdown__options">
+					<li>
+						{% if is_v2 -%}
+							<span>v2 (latest)</span>
+						{%- else -%}
+							<a href="{{ pathto(pagename_v2) }}">v2 (latest)</a>
+						{%- endif %}
+					</li>
+					<li>
+						{% if is_v1 -%}
+							<span>v1</span>
+						{%- else -%}
+							<a href="{{ pathto(pagename_v1) }}">v1</a>
+						{%- endif %}
+					</li>
+				</ul>
+			</div>
+		</div>
+	{%- endif -%}
+{%- endif -%}
