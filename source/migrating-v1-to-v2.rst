@@ -16,8 +16,8 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 
 Changes in v2
 -------------
-In general, the API has adopted the `HAL specification <https://en.wikipedia.org/wiki/Hypertext_Application_Language>` , allowing you to discover new resources and follow links to new
-resources while working with the API.
+In general, the API has adopted the `HAL specification <https://en.wikipedia.org/wiki/Hypertext_Application_Language>`_,
+allowing you to discover new resources and follow links to new resources while working with the API.
 
 Several fields have changed too to support new features or to clear up confusing aspects of the ``v1`` API.
 
