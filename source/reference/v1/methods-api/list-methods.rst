@@ -1,7 +1,11 @@
-.. _v1/methods-list:
+List payment methods
+====================
+.. api-name:: Methods API
+   :version: 1
 
-Methods API v1: List payment methods
-====================================
+.. warning:: This is the documentation of the v1 API. The documentation for listing payment methods in the new v2 API
+             can be found :doc:`here </reference/v2/methods-api/list-methods>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -13,7 +17,7 @@ Methods API v1: List payment methods
 
 Retrieve all payment methods activated on the payment profile.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -26,7 +30,7 @@ Parameters
           :required: true
 
      - Include additional data. Must be a comma separated list of one or more includes. See
-       :ref:`Get method <v1/methods-get>` for available includes.
+       :doc:`Get method </reference/v1/methods-api/get-method>` for available includes.
 
    * - | ``recurringType``
 
@@ -67,7 +71,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile you want to list the methods of. Organizations can have multiple profiles for
-each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -104,21 +108,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of payment methods available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped payment methods as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of payment methods found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -126,14 +127,13 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of payment method objects as described in :ref:`Get payment method <v1/methods-get>`.
+     - An array of payment method objects as described in
+       :doc:`Get payment method </reference/v1/methods-api/get-method>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of payment methods, based on the given offset.
 
@@ -143,28 +143,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of payment methods, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of payment methods, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of payment methods, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of payment methods, if available.
 

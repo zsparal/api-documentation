@@ -1,7 +1,7 @@
-.. _v2/settlements-get-payments:
-
-Settlements API v2: Get settlement payments
-===========================================
+List settlement payments
+========================
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -17,15 +17,15 @@ Parameters
 ----------
 Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
 
-This endpoint is an alias of the :ref:`List payments <v2/payments-list>` endpoint. All parameters for that endpoint can
-be used here as well.
+This endpoint is an alias of the :doc:`List payments </reference/v2/payments-api/list-payments>` endpoint. All
+parameters for that endpoint can be used here as well.
 
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-This endpoint is an alias of the :ref:`List payments <v2/payments-list>` endpoint. The response is therefore the exact
-same.
+This endpoint is an alias of the :doc:`List payments </reference/v2/payments-api/list-payments>` endpoint. The response
+is therefore the exact same.
 
 Example
 -------
@@ -97,7 +97,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/list",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/list-payments",
                "type": "text/html"
            }
        }

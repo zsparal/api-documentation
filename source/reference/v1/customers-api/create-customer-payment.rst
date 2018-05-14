@@ -1,7 +1,11 @@
-.. _v1/customers-create-payment:
+Create customer payment
+=======================
+.. api-name:: Customers API
+   :version: 1
 
-Customers API v1: Create customer payment
-=========================================
+.. warning:: This is the documentation of the v1 API. The documentation for creating payments for a customer in the new
+             v2 API can be found :doc:`here </reference/v2/customers-api/create-customer-payment>`. For more information
+             on the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: POST
@@ -19,17 +23,17 @@ Linking customers to payments enables a number of
 * Keeping track of payment preferences for your customers.
 * Enabling your customers to charge a previously used credit card with a single click.
 * Improved payment insights in your dashboard.
-* :ref:`Recurring payments <guides/recurring>`.
+* :doc:`Recurring payments </guides/recurring>`.
 
-.. note:: This endpoint is a shortcut for :ref:`creating a payment <v1/payments-create>` with a ``customerId``
-          parameter.
+.. note:: This endpoint is a shortcut for :doc:`creating a payment </reference/v1/payments-api/create-payment>` with a
+          ``customerId`` parameter.
 
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
 
-This endpoint accepts the same parameters as the :ref:`Create payment <v1/payments-create>` endpoint. For recurring
-payments, the following parameters have notable differences in comparison to regular payments:
+This endpoint accepts the same parameters as the :doc:`Create payment </reference/v1/payments-api/create-payment>`
+endpoint. For recurring payments, the following parameters have notable differences in comparison to regular payments:
 
 .. list-table::
    :widths: auto
@@ -63,7 +67,7 @@ Response
 --------
 ``201`` ``application/json; charset=utf-8``
 
-A payment object is returned, as described in :ref:`Get payment <v1/payments-get>`.
+A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
 Example
 -------

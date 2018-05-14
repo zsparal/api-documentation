@@ -1,7 +1,7 @@
-.. _v1/subscriptions-list:
-
-Subscriptions API v1: List subscriptions
-========================================
+List subscriptions
+==================
+.. api-name:: Subscriptions API
+   :version: 1
 
 .. endpoint::
    :method: GET
@@ -10,6 +10,10 @@ Subscriptions API v1: List subscriptions
 .. authentication::
    :api_keys: true
    :oauth: true
+
+.. warning:: This is the documentation of the v1 API. The documentation for listing subscriptions in the new v2 API can
+             be found :doc:`here </reference/v2/subscriptions-api/list-subscriptions>`. For more information on the v2
+             API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 Retrieve all subscriptions of a customer.
 
@@ -38,7 +42,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles
-for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
     :widths: auto
@@ -67,21 +71,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of subscriptions available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped subscriptions as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of subscriptions found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -89,14 +90,13 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of subscription objects as described in :ref:`Get subscription <v1/subscriptions-get>`.
+     - An array of subscription objects as described in
+       :doc:`Get subscription </reference/v1/subscriptions-api/get-subscription>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of subscriptions, based on the given offset.
 
@@ -106,28 +106,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of subscriptions, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of subscriptions, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of subscriptions, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of subscriptions, if available.
 

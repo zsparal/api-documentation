@@ -3,8 +3,10 @@
 /build
 source/_static/style.css
 source/_static/
+!source/_static/html/*
 !source/_static/img/*
 !source/_static/fonts/*
+!source/_static/404.css
 
 # JavaScript
 /node_modules

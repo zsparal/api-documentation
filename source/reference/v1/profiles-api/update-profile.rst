@@ -1,7 +1,7 @@
-.. _v1/profiles-update:
-
-Profiles API v1: Update profile
-===============================
+Update profile
+==============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: POST
@@ -85,7 +85,7 @@ Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-The updated profile object is returned, as described in :ref:`Get profile <v1/profiles-get>`.
+The updated profile object is returned, as described in :doc:`Get profile </reference/v1/profiles-api/get-profile>`.
 
 Example
 -------

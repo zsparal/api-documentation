@@ -1,7 +1,11 @@
-.. _v1/organizations-get:
+Get organization
+================
+.. api-name:: Organizations API
+   :version: 1
 
-Organizations API v1: Get organization
-======================================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving organizations in the new v2 API
+             can be found :doc:`here </reference/v2/organizations-api/get-organization>`. For more information on the v2
+             API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -33,99 +37,85 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an organization object. Will always contain ``organization`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this organization, for example ``org_1234567``.
 
    * - | ``name``
 
        .. type:: string
-          :required: true
 
      - The organization's official name.
 
    * - | ``email``
 
        .. type:: string
-          :required: true
 
      - The email address of the organization.
 
    * - | ``address``
 
        .. type:: string
-          :required: true
 
      - The address where the organizations is established.
 
    * - | ``postalCode``
 
        .. type:: string
-          :required: true
 
      - The postal code of where the organization is established.
 
    * - | ``city``
 
        .. type:: string
-          :required: true
 
      - The name of the city where the organization is established.
 
    * - | ``country``
 
        .. type:: string
-          :required: true
 
      - The name of the country where the organization is established.
 
    * - | ``countryCode``
 
        .. type:: string
-          :required: true
 
      - The two-letter code of the country where the organization is established.
 
    * - | ``registrationType``
 
        .. type:: string
-          :required: true
 
      - National or international registration type of the organization's legal entity.
 
    * - | ``registrationNumber``
 
        .. type:: string
-          :required: true
 
      - Registration number of the organization's legal entity.
 
    * - | ``registrationDatetime``
 
        .. type:: datetime
-          :required: true
 
      - Registration date of the organization's legal entity.
 
    * - | ``vatNumber``
 
        .. type:: string
-          :required: false
 
      - The organization's VAT number. You can use this for invoicing
-       :ref:`application fees <oauth/application-fees>`, for example.
+       :doc:`application fees </oauth/application-fees>`, for example.
 
    * - | ``verifiedDatetime``
 
        .. type:: datetime
-          :required: true
 
      - Date on which Mollie's verification of this organization completed successfully.
 

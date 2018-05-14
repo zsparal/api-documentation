@@ -1,7 +1,11 @@
-.. _v1/mandates-list:
+List mandates
+=============
+.. api-name:: Mandates API
+   :version: 1
 
-Mandates API v1: List mandates
-==============================
+.. warning:: This is the documentation of the v1 API. The documentation for listing mandates in the new v2 API can be
+             found :doc:`here </reference/v2/mandates-api/list-mandates>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -58,21 +62,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of mandates available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped mandates as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of mandates found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -80,14 +81,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of mandate objects as described in :ref:`Get mandate <v1/mandates-get>`.
+     - An array of mandate objects as described in :doc:`Get mandate </reference/v1/mandates-api/get-mandate>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of mandates, based on the given offset.
 
@@ -97,28 +96,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of mandates, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of mandates, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of mandates, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of mandates, if available.
 

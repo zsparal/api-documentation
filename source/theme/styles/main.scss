@@ -130,6 +130,11 @@ a.headerlink::before {
   text-align: left;
 }
 
+.rst-content a:hover,
+.rst-content a:focus, {
+  text-decoration: underline;
+}
+
 
 /**
  * Typography
@@ -162,6 +167,7 @@ a.headerlink::before {
 @import "components/main";
 @import "components/sidebar";
 @import "components/content";
+@import "components/api-name";
 @import "components/endpoint";
 @import "components/authentication";
 @import "components/parameters";

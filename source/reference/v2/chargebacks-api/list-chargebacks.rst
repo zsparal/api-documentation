@@ -1,7 +1,11 @@
-.. _v2/chargebacks-list:
+List chargebacks
+================
+.. api-name:: Chargebacks API
+   :version: 2
 
-Chargebacks API v2: List chargebacks
-====================================
+.. endpoint::
+   :method: GET
+   :url: https://api.mollie.com/v2/chargebacks
 
 .. endpoint::
    :method: GET
@@ -26,7 +30,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payments <v2/payments-get>` these chargebacks were issued for.
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` these chargebacks were issued for.
 
 Response
 --------
@@ -38,14 +42,12 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of chargebacks found in ``_embedded``.
 
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -55,14 +57,13 @@ Response
           * - | ``chargebacks``
 
               .. type:: array
-                 :required: true
 
-            - An array of chargeback objects as described in :ref:`Get chargeback <v2/chargebacks-get>`.
+            - An array of chargeback objects as described in
+              :doc:`Get chargeback </reference/v2/chargebacks-api/get-chargeback>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -73,14 +74,12 @@ Response
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of chargebacks.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the chargebacks list endpoint documentation.
 
@@ -131,7 +130,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://www.mollie.com/en/docs/reference/chargebacks/get",
+                           "href": "https://docs.mollie.com/reference/v2/chargebacks-api/get-chargeback",
                            "type": "text/html"
                        }
                    }
@@ -146,7 +145,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/chargebacks/list",
+               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/list-chargebacks",
                "type": "text/html"
            }
        }

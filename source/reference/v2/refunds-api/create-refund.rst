@@ -1,11 +1,11 @@
-.. _v2/refunds-create:
-
-Refunds API v2: Create refund
-=============================
+Create refund
+=============
+.. api-name:: Refunds API
+   :version: 2
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v1/payments/*id*/refunds
+   :url: https://api.mollie.com/v2/payments/*id*/refunds
 
 .. authentication::
    :api_keys: true
@@ -44,7 +44,7 @@ into the Mollie Dashboard, or retrieving the payment's refunds via the API to va
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
+Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payments/tr_7UhSN1zuXS/refunds``.
 
 .. list-table::
    :widths: auto
@@ -101,7 +101,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A refund object is returned, as described in :ref:`Get refund <v2/refunds-get>`.
+A refund object is returned, as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
 
 Example
 -------
@@ -145,7 +145,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/refunds/create",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/create-refund",
                "type": "text/html"
            }
        }

@@ -1,7 +1,7 @@
-.. _v2/settlements-get-next:
-
-Settlements API v2: Get next settlement
-=======================================
+Get next settlement
+===================
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -17,7 +17,8 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-The next settlement is returned in the same fashion as the :ref:`Get settlement <v2/settlements-get>` endpoint.
+The next settlement is returned in the same fashion as the
+:doc:`Get settlement </reference/v2/settlements-api/get-settlement>` endpoint.
 
 Example
 -------
@@ -140,7 +141,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/settlements/next",
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/get-next-settlement",
                "type": "text/html"
            }
        }

@@ -1,7 +1,7 @@
-.. _v2/customers-update:
-
-Customers API v2: Update customer
-=================================
+Update customer
+===============
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: POST
@@ -71,7 +71,7 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-A customer object is returned, as described in :ref:`Get customer <v2/customers-get>`.
+A customer object is returned, as described in :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
 Example
 -------
@@ -112,7 +112,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/customers/get",
+               "href": "https://docs.mollie.com/reference/v2/customers-api/get-customer",
                "type": "text/html"
            }
        }

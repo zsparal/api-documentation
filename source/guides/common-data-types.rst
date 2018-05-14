@@ -1,5 +1,3 @@
-.. _guides/common-data-types:
-
 Common data types
 =================
 To keep things simple, the Mollie API endpoints will always attempt to use the same structure when representing certain
@@ -20,14 +18,12 @@ In v2 endpoints, an amount object is always represented as follows.
    * - | ``currency``
 
        .. type:: string
-          :required: true
 
      - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
    * - | ``value``
 
        .. type:: string
-          :required: true
 
      - A string containing the exact amount in the given currency.
 
@@ -43,35 +39,30 @@ In the v2 endpoints, an address object is always represented as follows.
    * - | ``streetAndNumber``
 
        .. type:: string
-          :required: true
 
      - The street and street number of the address.
 
    * - | ``postalCode``
 
        .. type:: string
-          :required: true
 
      - The postal code of the address.
 
    * - | ``city``
 
        .. type:: string
-          :required: true
 
      - The city of the address.
 
    * - | ``region``
 
        .. type:: string
-          :required: true
 
      - The region of the address.
 
    * - | ``country``
 
        .. type:: string
-          :required: true
 
      - The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
@@ -80,11 +71,10 @@ When providing an address object as parameter to a request, the following condit
 * If any of the fields is provided, all fields have to be provided with exception of the ``region`` field.
 * If only the ``region`` field is given, one should provide all the other fields as per the previous condition.
 * For certain PayPal payments the ``region`` field is required. Please see the
-  :ref:`Create payment documentation <v2/payments-create>` for more information.
+  :doc:`Create payment documentation </reference/v2/payments-api/create-payment>` for more information.
 
 Boolean
 -------
-
 In JSON structures, booleans should be passed as the JSON boolean type.
 
 In query string parameters (e.g. ``GET`` requests) only the strings ``true`` and ``false`` are accepted.
@@ -97,6 +87,11 @@ Datetime
 --------
 A string representing a date and time in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+Locale
+------
+A string representing the country and language in `ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897>`_ format.
+Possible values: ``de_AT`` ``de_CH`` ``de_DE`` ``en_US`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``.
+
 QR code object
 --------------
 The QR code object represents an image of a QR code.
@@ -107,21 +102,18 @@ The QR code object represents an image of a QR code.
    * - | ``height``
 
        .. type:: integer
-          :required: true
 
      - Height of the image in pixels.
 
    * - | ``width``
 
        .. type:: integer
-          :required: true
 
      - Width of the image in pixels.
 
    * - | ``src``
 
        .. type:: string
-          :required: true
 
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
@@ -136,7 +128,6 @@ In v2 endpoints, URLs are commonly represented as objects with an ``href`` and `
    * - | ``href``
 
        .. type:: string
-          :required: true
 
      - The actual URL string.
 

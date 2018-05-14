@@ -16,7 +16,6 @@ def validate_http_method(argument):
 class ApiEndpointDirective(Directive):
     has_content = False
     required_arguments = 0
-    optional_arguments = 0
     option_spec = {
         "method": validate_http_method,
         "url": directives.unchanged_required

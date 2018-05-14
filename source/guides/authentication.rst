@@ -1,5 +1,3 @@
-.. _guides/authentication:
-
 Authentication
 ==============
 
@@ -12,9 +10,10 @@ profile has a *Live API key* and a *Test API key*. Use these keys to:
 * Select the website profile the intended communication with the Mollie API relates to.
 * Specify whether you're testing or working with real payments.
 
-The API key must be sent along with each API request, by providing it in the HTTP call's ``Authorization`` header. If
-one of our default API clients is used, the client will offer a ``setApiKey`` method that will allow you to easily
-configure the required header.
+The API key must be sent along with each API request, by providing it in the HTTP call's ``Authorization`` header. The
+API key is preceded by ``Bearer``. For example: a valid ``Authorization`` header is
+``Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. If one of our default API clients is used, the client will offer a 
+``setApiKey`` method that will allow you to easily configure the required header.
 
 While building and testing your integration you should use the *Test API key*. This will cause your code to
 (automatically) only create test payments. Test payments come with a fake payment screen that allows you to select
@@ -23,7 +22,7 @@ rehearse different scenarios that will occur later on when you switch to real pa
 go live by using the Live API key instead of the Test API key. Going live (or going back to testing) is as easy as
 changing keys. Nothing else needs to change.
 
-Of course it's very important to keep any API-keys :ref:`secure <security>`. Do not ever share them. However, if a key
+Of course it's very important to keep any API-keys :doc:`secure </security>`. Do not ever share them. However, if a key
 leaks you can always `regenerate <https://www.mollie.com/dashboard/settings/profiles>`_ it. Don't forget to apply new
 keys to your code. Until you do your integration will not work.
 
@@ -44,8 +43,9 @@ on ``https://api.mollie.com/v2/`` adding the name of the resource you want to in
 Example
 -------
 Any API action you want to execute requires a valid *Test API key* or *Live API key*. In order to show you how
-authentication works we use the ``GET`` method on the ``payments`` :ref:`resource <v2/payments-get>`. This method
-fetches a payment, but that's not really important here. Focus on how the API key is involved.
+authentication works we use the ``GET`` method on the ``payments``
+:doc:`resource </reference/v2/payments-api/get-payment>`. This method fetches a payment, but that's not really important
+here. Focus on how the API key is involved.
 
 In the example below we're using the *Test API Key* ``test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. The response shows a result
 for a retrieved payment with fictional ``id`` ``tr_WDqYK6vllg``.

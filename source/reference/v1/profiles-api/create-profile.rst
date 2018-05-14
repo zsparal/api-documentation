@@ -1,7 +1,7 @@
-.. _v1/profiles-create:
-
-Profiles API v1: Create profile
-===============================
+Create profile
+==============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: POST
@@ -83,7 +83,7 @@ Response
 --------
 ``201`` ``application/json; charset=utf-8``
 
-A profile object is returned, as described in :ref:`Get profile <v1/profiles-get>`.
+A profile object is returned, as described in :doc:`Get profile </reference/v1/profiles-api/get-profile>`.
 
 Example
 -------

@@ -1,7 +1,11 @@
-.. _v1/customers-get:
+Get customer
+============
+.. api-name:: Customers API
+   :version: 1
 
-Customers API v1: Get customer
-==============================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving customers in the new v2 API can
+             be found :doc:`here </reference/v2/customers-api/get-customer>`. For more information on the v2 API, refer
+             to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -41,21 +45,18 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
 
    * - | ``mode``
 
        .. type:: string
-          :required: true
 
      - The mode used to create this customer. Mode determines whether a customer is *real* (live mode) or a *test*
        customer.
@@ -65,21 +66,18 @@ Response
    * - | ``name``
 
        .. type:: string
-          :required: true
 
      - The full name of the customer as provided when the customer was created.
 
    * - | ``email``
 
        .. type:: string
-          :required: true
 
      - The email address of the customer as provided when the customer was created.
 
    * - | ``locale``
 
        .. type:: string
-          :required: true
 
      - Allows you to preset the language to be used in the payment screens shown to the consumer. If this parameter was
        not provided when the customer was created, the browser language will be used instead in the payment flow (which
@@ -90,14 +88,12 @@ Response
    * - | ``metadata``
 
        .. type:: object
-          :required: true
 
      - Data provided during the customer creation in JSON notation.
 
    * - | ``recentlyUsedMethods``
 
        .. type:: array
-          :required: true
 
      - Payment methods that the customer recently used for payments.
 
@@ -107,7 +103,6 @@ Response
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The customer record's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

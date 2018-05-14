@@ -1,7 +1,11 @@
-.. _v1/subscriptions-get:
+Get subscription
+================
+.. api-name:: Subscriptions API
+   :version: 1
 
-Subscriptions API v1: Get subscription
-======================================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving subscriptions in the new v2 API
+             can be found :doc:`here </reference/v2/subscriptions-api/get-subscription>`. For more information on the v2
+             API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -42,14 +46,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a subscription object. Will always contain ``subscription`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
@@ -57,14 +59,12 @@ Response
    * - | ``customerId``
 
        .. type:: string
-          :required: true
 
      - The customer's unique identifier, for example ``cst_8wmqcHMN4U``.
 
    * - | ``mode``
 
        .. type:: string
-          :required: true
 
      - The mode used to create this subscription. Mode determines whether the subscription's payments are real or test
        payments.
@@ -74,14 +74,12 @@ Response
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The subscription's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - The subscription's current status, depends on whether the customer has a pending, valid or invalid mandate.
 
@@ -90,21 +88,18 @@ Response
    * - | ``amount``
 
        .. type:: decimal
-          :required: true
 
      - The constant amount that is charged with each subscription payment.
 
    * - | ``times``
 
        .. type:: integer
-          :required: true
 
      - Total number of charges for the subscription to complete.
 
    * - | ``interval``
 
        .. type:: string
-          :required: true
 
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
@@ -113,14 +108,12 @@ Response
    * - | ``startDate``
 
        .. type:: date
-          :required: true
 
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The description specified during subscription creation. This will be included in the payment description along
        with the charge date in ``YYYY-MM-DD`` format.
@@ -128,7 +121,6 @@ Response
    * - | ``method``
 
        .. type:: string
-          :required: false
 
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
@@ -138,14 +130,12 @@ Response
    * - | ``cancelledDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The subscription's date and time of cancellation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``links``
 
        .. type:: object
-          :required: true
 
      - An object with URLs important to the subscription.
 
@@ -155,7 +145,6 @@ Response
           * - | ``webhookUrl``
 
               .. type:: string
-                 :required: true
 
             - The URL Mollie will call as soon a payment status change takes place.
 

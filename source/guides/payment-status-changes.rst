@@ -1,5 +1,3 @@
-.. _guides/payment-status-changes:
-
 Payment status changes
 ======================
 
@@ -10,7 +8,7 @@ them. Then we will show you how the statuses are connected.
 
 ``open``
     The payment has been created, but nothing else has happened yet. This is not a status Mollie will call your
-    :ref:`webhook <guides/webhooks>` for.
+    :doc:`webhook </guides/webhooks>` for.
 
 ``canceled``
     Your customer has canceled the payment. This is a definitive status. Mollie will call your webhook when this status
@@ -31,14 +29,15 @@ them. Then we will show you how the statuses are connected.
     to expire depends on the payment method. We explain this in more detail below.
 
 ``failed``
-    The payment has failed and cannot be completed with a different payment method.
+    The payment has failed and cannot be completed with a different payment method. We will call your webhook when a
+    payment transitions to the ``failed`` status.
 
 ``paid``
     This status occurs whenever a payment is successfully paid. When this status occurs we will call your webhook.
 
 .. note:: In the ``v1`` API, there were statuses for when payments were refunded, charged back, or paid out (settled).
           These statuses have been removed in ``v2``. You can get the same information from other properties on the
-          :ref:`Payment object <v2/payments-get>`.
+          :doc:`Payment object </reference/v2/payments-api/get-payment>`.
 
 How does one status lead to another?
 ------------------------------------

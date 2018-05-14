@@ -41,50 +41,51 @@
   padding-bottom: 80px;
 }
 
-.sidebar__inner::-webkit-scrollbar {
-  margin-top: 50px;
-  width: 6px;
+.sidebar__group {
+  margin-bottom: 20px;
 }
 
-.sidebar__inner::-webkit-scrollbar-track {
-  background: #fff;
+.sidebar__group:last-child {
+  margin-bottom: 80px;
 }
 
-.sidebar__inner::-webkit-scrollbar-thumb {
-  border-radius: 6px;
-  background: #fff;
+.sidebar__group a:hover,
+.sidebar__group a:focus {
+  text-decoration: none;
 }
 
-.sidebar__inner:hover::-webkit-scrollbar-thumb {
-  background: $grey-medium;
+.sidebar__group > p {
+  font-size: 20px;
+  font-weight: $font-weight-medium;
+  line-height: 22px;
+  margin-bottom: 10px;
 }
 
-.sidebar .toctree-l1 ul {
-  display: none;
+.sidebar__group > p > a {
+  color: #333333;
 }
 
-.sidebar .caption {
-  font-size: 24px;
-  font-weight: $font-weight-semibold;
-  margin-bottom: 15px;
-
-  @media (min-width: breakpoint("medium")) {
-    margin-bottom: 15px;
-  }
+.sidebar__group > p > a:hover {
+  color: $brand-primary;
 }
 
-.sidebar ul {
+.sidebar__group ul {
   @include bare-list;
+  margin: 0;
+}
+
+.sidebar__group > ul {
   margin-bottom: 40px;
 }
 
-.sidebar ul li {
-  margin-bottom: 8px;
+.sidebar__group ul li {
+  margin-bottom: 10px;
 }
 
-.sidebar ul li a {
+.sidebar__group ul li a {
   color: #666666;
   font-size: 16px;
+  line-height: 16px;
 
   @media (max-width: breakpoint("<medium")) {
     max-width: 80%;
@@ -95,32 +96,42 @@
   }
 }
 
-.sidebar > ul:last-child {
-  margin-bottom: 80px;
+.sidebar__group ul li a:hover,
+.sidebar__group ul li a:focus {
+  color: $grey-darkest;
 }
 
-.sidebar ul:last-child li {
-  margin-bottom: 0;
+.sidebar__group ul li a > code {
+  color: $grey-medium-light;
+  display: block;
+  font-size: 12px;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
-.sidebar ul.current a.current {
+.sidebar__group > ul > li.current > a {
   color: $brand-primary;
 }
 
-.sidebar ul.current > li.current > ul {
-  display: block;
-  margin-top: 10px;
+.sidebar__group > ul > li.current > ul > li > a {
+  display: none;
 }
 
-.sidebar ul.current > li.current > ul li:last-child a {
-  margin-bottom: 0;
+.sidebar__group > ul > li.current > ul ul {
+  margin-top: 5px;
+  margin-bottom: 15px;
 }
 
-.sidebar ul.current > li.current > ul {
-  margin-bottom: 20px;
+.sidebar__group > ul > li.current > ul ul ul {
+  display: none;
 }
 
-.sidebar ul.current > li.current > ul a {
+.sidebar__group > ul > li.current > ul li {
+  margin: 0;
+}
+
+.sidebar__group > ul > li.current > ul a {
   position: relative;
   font-size: 14px;
   padding-left: 15px;
@@ -128,13 +139,20 @@
   line-height: 12px;
 }
 
-.sidebar ul.current > li.current > ul a:before {
+.sidebar__group > ul > li.current > ul a:before {
   content: "";
   height: 1px;
   width: 8px;
   background: #666666;
   position: absolute;
   left: 0;
-  top: 4px;
-  transform: translateY(-50%);
+  top: 8px;
+}
+
+.sidebar__group--collapse > ul {
+  display: none;
+}
+
+.sidebar__spacing {
+  padding-bottom: 20px;
 }

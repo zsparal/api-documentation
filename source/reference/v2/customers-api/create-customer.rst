@@ -1,7 +1,7 @@
-.. _v2/customers-create:
-
-Customers API v2: Create customer
-=================================
+Create customer
+===============
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: POST
@@ -72,7 +72,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A customer object is returned, as described in :ref:`Get customer <v2/customers-get>`.
+A customer object is returned, as described in :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
 Example
 -------
@@ -110,7 +110,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/customers/create",
+               "href": "https://docs.mollie.com/reference/v2/customers-api/create-customer",
                "type": "text/html"
            }
        }

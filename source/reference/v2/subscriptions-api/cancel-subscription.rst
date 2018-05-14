@@ -1,7 +1,7 @@
-.. _v2/subscriptions-cancel:
-
-Subscriptions API v2: Cancel subscription
-=========================================
+Cancel subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: DELETE
@@ -44,7 +44,6 @@ Response
    {
        "resource": "subscription",
        "id": "sub_rVKGtNd6s3",
-       "customerId": "cst_stTC2WHAuS",
        "mode": "live",
        "createdAt": "2018-06-01T12:23:34+00:00",
        "status": "canceled",
@@ -68,7 +67,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/get",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/cancel-subscription",
                "type": "text/html"
            }
        }

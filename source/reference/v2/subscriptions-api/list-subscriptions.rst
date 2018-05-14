@@ -1,7 +1,7 @@
-.. _v2/subscriptions-list:
-
-Subscriptions API v2: List subscriptions
-========================================
+List subscriptions
+==================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -39,7 +39,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles
-for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -68,7 +68,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
        or the default number.
@@ -76,7 +75,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -86,14 +84,13 @@ Response
           * - | ``subscriptions``
 
               .. type:: array
-                 :required: true
 
-            - An array of subscription objects as described in :ref:`Get subscription <v2/subscriptions-get>`.
+            - An array of subscription objects as described in
+              :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of subscriptions. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -104,28 +101,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the current set of subscriptions.
 
           * - | ``previous``
 
               .. type:: URL object
-                 :required: false
 
             - The previous set of subscriptions, if available.
 
           * - | ``next``
 
               .. type:: URL object
-                 :required: false
 
             - The next set of subscriptions, if available.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the subscriptions list endpoint documentation.
 
@@ -155,7 +148,6 @@ Response
                {
                    "resource": "subscription",
                    "id": "sub_rVKGtNd6s3",
-                   "customerId": "cst_8wmqcHMN4U",
                    "mode": "live",
                    "createdAt": "2018-06-01T12:23:34+00:00",
                    "status": "active",
@@ -194,7 +186,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/list",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-subscriptions",
                "type": "text/html"
            }
        }

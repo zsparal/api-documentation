@@ -1,7 +1,7 @@
-.. _v2/customers-list:
-
-Customers API v2: List customers
-================================
+List customers
+==============
+.. api-name:: Customers API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -13,7 +13,7 @@ Customers API v2: List customers
 
 Retrieve all customers created.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -59,7 +59,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of customers found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -67,7 +66,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -77,14 +75,13 @@ Response
           * - | ``customers``
 
               .. type:: array
-                 :required: true
 
-            - An array of customer objects as described in :ref:`Get customer <v2/customers-get>`.
+            - An array of customer objects as described in
+              :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of customers. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -95,28 +92,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the current set of customers.
 
           * - | ``previous``
 
               .. type:: URL object
-                 :required: false
 
             - The previous set of customers, if available.
 
           * - | ``next``
 
               .. type:: URL object
-                 :required: false
 
             - The next set of customers, if available.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the customers list endpoint documentation.
 
@@ -162,7 +155,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://www.mollie.com/en/docs/reference/customers/get",
+                           "href": "https://docs.mollie.com/reference/v2/customers-api/get-customer",
                            "type": "text/html"
                        }
                    }
@@ -182,7 +175,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/customers/list",
+               "href": "https://docs.mollie.com/reference/v2/customers-api/list-customers",
                "type": "text/html"
            }
        }

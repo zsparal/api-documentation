@@ -1,7 +1,11 @@
-.. _v1/subscriptions-cancel:
+Cancel subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 1
 
-Subscriptions API v1: Cancel subscription
-=========================================
+.. warning:: This is the documentation of the v1 API. The documentation for canceling subscriptions in the new v2 API
+             can be found :doc:`here </reference/v2/subscriptions-api/cancel-subscription>`. For more information on the
+             v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: DELETE

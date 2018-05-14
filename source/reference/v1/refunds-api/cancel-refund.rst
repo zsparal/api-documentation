@@ -1,7 +1,11 @@
-.. _v1/refunds-cancel:
+Cancel refund
+=============
+.. api-name:: Refunds API
+   :version: 1
 
-Refunds API v1: Cancel refund
-=============================
+.. warning:: This is the documentation of the v1 API. The documentation for canceling refunds in the new v2 API can be
+             found :doc:`here </reference/v2/refunds-api/cancel-refund>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: DELETE
@@ -15,7 +19,7 @@ For certain payment methods, like iDEAL, the underlying banking system will dela
 time, refunds may be canceled manually in your Mollie account, or automatically by using this endpoint.
 
 The refund can only be canceled while the refund's ``status`` field is either ``queued`` or ``pending``. See
-:ref:`Get refund <v1/refunds-get>` for more information.
+:doc:`Get refund </reference/v1/refunds-api/get-refund>` for more information.
 
 Parameters
 ----------

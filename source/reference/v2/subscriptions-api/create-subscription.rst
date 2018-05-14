@@ -1,7 +1,7 @@
-.. _v2/subscriptions-create:
-
-Subscriptions API v2: Create subscription
-=========================================
+Create subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: POST
@@ -11,7 +11,7 @@ Subscriptions API v2: Create subscription
    :api_keys: true
    :oauth: true
 
-With subscriptions, you can schedule :ref:`recurring payments <guides/recurring>` to take place at regular intervals.
+With subscriptions, you can schedule :doc:`recurring payments </guides/recurring>` to take place at regular intervals.
 
 For example, by simply specifying an ``amount`` and an ``interval``, you can create an endless subscription to charge a
 monthly fee, until the consumer cancels their subscription.
@@ -21,10 +21,12 @@ transaction in multiple parts.
 
 A few example usages:
 
-* ``amount=5 interval="2 weeks"`` Your consumer will be charged €5 once every two weeks.
-* ``amount=20 interval="1 day" times=5`` Your consumer will be charged €20 every day, for five consecutive days.
-* ``amount=10 interval="1 month" startDate="2018-04-30"`` Your consumer will be charged €10 on the last day of each
-  month, starting in April 2018.
+* ``amount[currency]="EUR" amount[value]="5.00" interval="2 weeks"``
+  Your consumer will be charged €5 once every two weeks.
+* ``amount[currency]="EUR" amount[value]="20.00" interval="1 day" times=5``
+  Your consumer will be charged €20 every day, for five consecutive days.
+* ``amount[currency]="EUR" amount[value]="10.00" interval="1 month" startDate="2018-04-30"``
+  Your consumer will be charged €10 on the last day of each month, starting in April 2018.
 
 Parameters
 ----------
@@ -34,13 +36,32 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
           :required: true
 
-     - The amount that is charged with each subscription payment, e.g. ``{"currency":"EUR", "value":"10.00"}`` if you
-       would want to charge €10.00 every time.
+     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
+       €100.00.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``currency``
+
+              .. type:: string
+                 :required: true
+
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
+              the payment methods that are enabled on your account.
+
+          * - ``value``
+
+              .. type:: string
+                 :required: true
+
+            - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
+              amount of decimals. Non-string values are not accepted.
 
    * - | ``times``
 
@@ -95,7 +116,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify to which profile the subscription belongs. Organizations can have multiple profiles for each of
-their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -118,7 +139,8 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A subscription object is returned, as described in :ref:`Get subscription <v2/subscriptions-get>`.
+A subscription object is returned, as described in
+:doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
 
 Example
 -------
@@ -151,7 +173,6 @@ Response
    {
        "resource": "subscription",
        "id": "sub_rVKGtNd6s3",
-       "customerId": "cst_stTC2WHAuS",
        "mode": "live",
        "createdAt": "2018-06-01T12:23:34+00:00",
        "status": "active",
@@ -174,7 +195,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/create",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/create-subscription",
                "type": "text/html"
            }
        }

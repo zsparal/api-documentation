@@ -1,14 +1,13 @@
-.. _oauth2/authorize:
-
-Connect API: Authorize
-======================
+Authorize
+=========
+.. api-name:: Connect API
 
 .. endpoint::
    :method: GET
    :url: https://www.mollie.com/oauth2/authorize
 
 The Authorize endpoint is the endpoint on Mollie web site where the merchant logs in, and grants authorization to your
-client application. E.g. when the merchant clicks on the :ref:`Connect with Mollie button <oauth/overview>`, you should
+client application. E.g. when the merchant clicks on the :doc:`Connect with Mollie button </oauth/overview>`, you should
 redirect the merchant to the Authorize endpoint.
 
 You should construct the Authorize URL from the endpoint and the parameters below. Then, you should redirect the
@@ -18,7 +17,7 @@ The resource owner can then grant the authorization to your client application f
 
 Mollie will then redirect the resource owner to the ``redirect_uri`` you have specified. The ``redirect_uri`` will be
 appended with a ``code`` parameter, which will contain the *auth token*. You should then exchange the *auth token* for
-an *access token* using the :ref:`Tokens API <oauth2/tokens>`.
+an *access token* using the :doc:`Tokens API </reference/oauth2/tokens>`.
 
 Parameters
 ----------
@@ -30,7 +29,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The client ID you receive when :ref:`registering your app <oauth/getting-started>`.
+     - The client ID you receive when :doc:`registering your app </oauth/getting-started>`.
 
    * - | ``redirect_uri``
 
@@ -52,8 +51,8 @@ Parameters
        .. type:: string
           :required: true
 
-     - A space separated list of permissions your app requires. Refer to :ref:`Permissions <oauth/permissions>` for more
-       information about the available scopes.
+     - A space separated list of permissions your app requires. Refer to :doc:`Permissions </oauth/permissions>` for
+       more information about the available scopes.
 
    * - | ``response_type``
 
@@ -69,7 +68,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - This parameter can be set to ``force`` to force showing the :ref:`consent screen <oauth/getting-started>` to the
+     - This parameter can be set to ``force`` to force showing the :doc:`consent screen </oauth/getting-started>` to the
        merchant, even when it is not necessary.
 
        Possible values: ``auto`` ``force``
@@ -84,14 +83,12 @@ Response
    * - | ``code``
 
        .. type:: string
-          :required: true
 
-     - The auth code, with which you can request an :ref:`access token <oauth2/tokens>`.
+     - The auth code, with which you can request an :doc:`access token </reference/oauth2/tokens>`.
 
    * - | ``state``
 
        .. type:: string
-          :required: true
 
      - The random string you've sent with your request to prevent CSRF attacks. Please always check if this matches the
        expected value.
@@ -99,7 +96,6 @@ Response
    * - | ``error``
 
        .. type:: string
-          :required: false
 
      - If the request is canceled by the merchant, or fails for any other reason, the merchant will be
        redirected back with an ``error`` field. The field will contain a code indicating the type of error.
@@ -107,7 +103,6 @@ Response
    * - | ``error_description``
 
        .. type:: string
-          :required: false
 
      - If the ``error`` field is present, this field will be present as well with an explanation of the error
        code.
