@@ -59,15 +59,16 @@ Expiry times per payment method
 -------------------------------
 
 
-=========================================== ===========
+=========================================== =============================
 Payment methods                             Expiry
-=========================================== ===========
-iDEAL / paysafecard / SEPA Direct Debit     15 minutes
+=========================================== =============================
+iDEAL / paysafecard                         15 minutes
 Credit card                                 30 minutes
 Bitcoin / Bancontact / SOFORT Banking / KBC 1 hour
-Belfius Pay Button / ING Home'Pay / Paypal  3 hours
+Paypal                                      3 hours
+Belfius Pay Button / ING Home'Pay           Next business day at 09:00 am
 Bank transfer                               12(+2) days
-=========================================== ===========
+=========================================== =============================
 
 .. note:: Payments made by banktransfer are done manually. A wire transfer is done by using a certain amount and
           reference. We check these payments daily. Some days can pass before it becomes clear the payment has been
