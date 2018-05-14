@@ -1,7 +1,7 @@
-.. _v2/payments-create:
-
-Payments API v2: Create payment
-===============================
+Create payment
+==============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: POST
@@ -15,7 +15,7 @@ Payment creation is elemental to the Mollie API: this is where most payment impl
 parameters are accepted for certain payment methods.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:ref:`Overview <overview>`.
+:doc:`Overview </index>`.
 
 Parameters
 ----------
@@ -55,19 +55,24 @@ Parameters
           :required: true
 
      - The description of the payment you're creating. This will be shown to the consumer on their card or bank
-       statement when possible, and in any exports you generate.
+       statement when possible. We truncate the description automatically according to the limits of the used payment
+       method. The description is also visible in any exports you generate.
 
-       We recommend you use the order number so that you can always link the payment to the order. This is particularly
-       useful for bookkeeping.
+       We recommend you use a unique identifier so that you can always link the payment to the order. This is
+       particularly useful for bookkeeping.
 
    * - | ``redirectUrl``
 
        .. type:: string
           :required: true
 
-     - `The URL the customer will be redirected to after the payment process. It could make sense for the
+     - The URL the customer will be redirected to after the payment process. It could make sense for the
        ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
        the order when your customer returns.
+
+       .. note::
+          For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
+          parameter is required.
 
    * - | ``webhookUrl``
 
@@ -76,8 +81,8 @@ Parameters
 
      - Set the webhook URL, where we will send payment status updates to.
 
-       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view. If you want to use webhook during
-          development on ``localhost``, you must use a tool like
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
@@ -103,8 +108,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit``
+       ``giftcard`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -125,7 +130,8 @@ Parameters
        to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
        customer's card is charged automatically.
 
-       Defaults to ``oneoff``, which is a regular non-:ref:`recurring payment <guides/recurring>`.
+       Defaults to ``oneoff``, which is a regular non-recurring payment (see also:
+       :doc:`Recurring </guides/recurring>`).
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
@@ -134,16 +140,17 @@ Parameters
        .. type:: string
           :required: false
 
-     - The ID of the :ref:`Customer <v1/customers-create>` for whom the payment is being created. This is
-       used for :ref:`recurring payments <guides/recurring>` and :ref:`single click payments <guides/checkout>`.
+     - The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
+       This is used for :doc:`recurring payments </guides/recurring>` and
+       :doc:`single click payments </guides/checkout>`.
 
    * - | ``mandateId``
 
        .. type:: string
           :required: false
 
-     - When creating recurring payments, the ID of a specific :ref:`Mandate <v1/mandates-create>` may be
-       supplied to indicate which of the consumer's accounts should be credited.
+     - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
+       may be supplied to indicate which of the consumer's accounts should be credited.
 
 Payment method specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -171,7 +178,7 @@ Bank transfer
        .. type:: string
           :required: false
 
-     - The date the payment should :ref:`expire <guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
+     - The date the payment should :doc:`expire </guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
    * - | ``locale``
@@ -249,7 +256,8 @@ Credit card
               .. type:: string
                  :required: false
 
-            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+            - The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
+              format.
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
@@ -350,7 +358,7 @@ iDEAL
 
      - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
        specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
-       :ref:`Issuers API <v1/issuers-list>`.
+       :doc:`Methods API </reference/v2/methods-api/get-method>` by using the optional ``issuers`` include.
 
 KBC/CBC Payment Button
 """"""""""""""""""""""
@@ -451,7 +459,7 @@ SEPA Direct Debit
     One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
     general, it is not very useful for web shops but may be useful for charities.
 
-    If you want to use recurring payments, take a look at our :ref:`Recurring payments guide <guides/recurring>`.
+    If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </guides/recurring>`.
 
 .. list-table::
    :widths: auto
@@ -476,7 +484,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile the payment belongs to. Organizations can have multiple profiles for each of
-their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -500,8 +508,8 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
        .. type:: object
           :required: false
 
-     - Adding an :ref:`application fee <oauth/application-fees>` allows you to charge the merchant a small
-       sum for the payment and transfer this to your own account.
+     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
+       payment and transfer this to your own account.
 
        .. list-table::
           :widths: auto
@@ -511,7 +519,7 @@ their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
               .. type:: amount object
                  :required: true
 
-            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}}`` if the app would
+            - The amount in that the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would
               want to charge €10.00.
 
               .. list-table::
@@ -550,14 +558,14 @@ include request for ``details.qrCode`` in the query string:
 
 QR codes can be generated for iDEAL, Bitcoin, Bancontact and bank transfer payments.
 
-Refer to the :ref:`Get payment <v2/payments-get>` reference to see what the API response looks like when the QR code is
-included.
+Refer to the :doc:`Get payment </reference/v2/payments-api/get-payment>` reference to see what the API response looks
+like when the QR code is included.
 
 Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A payment object is returned, as described in :ref:`Get payment <v2/payments-get>`.
+A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 
 Example
 -------
@@ -619,7 +627,7 @@ Response
                "type": "text/html"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/create",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/create-payment",
                "type": "text/html"
            }
        }

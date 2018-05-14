@@ -1,12 +1,15 @@
-.. _v1/chargebacks-list:
+List chargebacks
+================
+.. api-name:: Chargebacks API
+   :version: 1
 
-Chargebacks API v1: List chargebacks
-====================================
+.. warning:: This is the documentation of the v1 API. The documentation for listing chargebacks in the new v2 API can be
+             found :doc:`here </reference/v2/chargebacks-api/list-chargebacks>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v1/chargebacks
-
 
 .. endpoint::
    :method: GET
@@ -19,7 +22,7 @@ Chargebacks API v1: List chargebacks
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -60,21 +63,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of chargebacks available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped chargebacks as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of chargebacks found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -82,14 +82,13 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of chargebacks objects as described in :ref:`Get chargeback <v1/chargebacks-get>`.
+     - An array of chargebacks objects as described in
+       :doc:`Get chargeback </reference/v1/chargebacks-api/get-chargeback>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of chargebacks, based on the given offset.
 
@@ -99,28 +98,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of chargebacks, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of chargebacks, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of chargebacks, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of chargebacks, if available.
 

@@ -1,7 +1,11 @@
-.. _v1/chargebacks-get:
+Get chargeback
+==============
+.. api-name:: Chargebacks API
+   :version: 1
 
-Chargebacks API v1: Get chargeback
-==================================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving chargebacks in the new v2 API can
+             be found :doc:`here </reference/v2/chargebacks-api/get-chargeback>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -13,7 +17,8 @@ Chargebacks API v1: Get chargeback
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`chargebacks list endpoint <v1/chargebacks-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`chargebacks list endpoint </reference/v1/chargebacks-api/list-chargebacks>`.
 
 Parameters
 ----------
@@ -37,36 +42,31 @@ Response
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
    * - | ``payment``
 
        .. type:: string, object
-          :required: true
 
      - The ID of the payment this chargeback belongs to. If the payment include is requested, the ID will be replaced by
-       a payment object as described in :ref:`Get payment <v1/payments-get>`.
+       a payment object as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
    * - | ``amount``
 
        .. type:: decimal
-          :required: true
 
      - The amount charged back.
 
    * - | ``chargebackDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``reversedDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the chargeback was reversed if applicable, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.

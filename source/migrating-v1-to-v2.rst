@@ -1,5 +1,3 @@
-.. _migrate-to-v2:
-
 Migrating from v1 to v2
 =======================
 
@@ -7,11 +5,10 @@ Why upgrade to v2?
 ------------------
 The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
 
-* Fully supports :ref:`multi currency <guides/multi-currency>`, e.g. you can create payments, subscriptions and refunds
-  in non-``EUR`` currencies.
-  Your account will still be settled in ``EUR``, so new fields have been added in the API to reflect the settlement
-  amount for various resources.
-* Improved support for accessing large sets of objects, now uses :ref:`cursor-based pagination <guides/pagination>`
+* Fully supports :doc:`multicurrency </guides/multicurrency>`. You can create payments, subscriptions, and refunds in
+  non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
+  reflect the settlement amount for various resources.
+* Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
 * Improved error messages. Error message will contain more details to help you quickly resolve any implementation
@@ -28,8 +25,8 @@ The identifier for the payment method *Bancontact* has been renamed from ``miste
 API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
-embedded by using the ``embed=refunds`` query string parameter. See the :ref:`Get payment documentation <v2/payments-get>`
-for more information.
+embedded by using the ``embed=refunds`` query string parameter. See the
+:doc:`Get payment documentation </reference/v2/payments-api/get-payment>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -74,7 +71,7 @@ The following changes have been made in regards to the status of payments:
 * If you want to see if a payment has any refunds, the payment will have the ``refunds`` key in the ``_links`` property,
   which will point you to the refunds resource where you can view the refund details.
 * If you want to see if a payment has any chargebacks, the payment will have the ``chargebacks`` key in the ``_links``
-  property, which will point you to the chargeback resource where you can view the refund details.
+  property, which will point you to the chargeback resource where you can view the chargeback details.
 
 The individual billing and shipping address parameters that can be used when creating a credit card or PayPal payment
 have been replaced by address objects. Instead of passing ``billingAddress``, ``billingPostal``, ``billingCity``,
@@ -86,7 +83,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
 
    {
        "amount": {"currency": "USD", "value": "100.00"},
-       ...
+       "description": "My first payment",
        "billingAddress": {
            "streetAndNumber": "Dorpstraat 1",
            "postalCode": "1122 AA",
@@ -97,7 +94,8 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
    }
 
 .. note:: The usage of the address object parameters remains optional. Please refer to the
-          :ref:`Create payment documentation <v2/payments-create>` for exact specifications on what input is accepted.
+          :doc:`Create payment documentation </reference/v2/payments-api/create-payment>` for exact specifications on
+          what input is accepted.
 
 The following fields have been changed, renamed or moved:
 
@@ -108,32 +106,43 @@ The following fields have been changed, renamed or moved:
 * ``paidDatetime`` has been renamed to ``paidAt``.
 * ``canBeCancelled`` has been renamed to ``isCancelable``.
 * ``recurringType`` has been renamed to ``sequenceType``. This field is now always present. A one-off payment (not the
-  start of a recurring sequence and not a :ref:`recurring payment <guides/recurring>`) will have the value ``oneoff``.
+  start of a recurring sequence and not a :doc:`recurring payment </guides/recurring>`) will have the value ``oneoff``.
 * ``redirectUrl`` and ``webhookUrl`` are now part of the top-level object for Payments.
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
-* ``failureReason`` has been moved from the Payment resource to the credit card detail object, and is not available
-  anymore for Bancontact payments.
+* ``failureReason`` has been moved from the Payment resource to the credit card detail object, and no longer available
+  for Bancontact payments.
+* ``details.bitcoinAmount`` is now an amount object in the ``XBT`` currency.
 
 The following fields have been removed:
 
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
-* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the Create payment call.
-* ``bitcoinRate`` has been removed from the Bitcoin detail object on the Payment resource.
-* ``cardCountry`` has been removed from the creditcard detail object on the Payment resource.
+* ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
+  :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+* ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
+* ``details.cardCountry`` has been removed from the credit card detail object.
 * The option to include the settlement using the ``include`` query string parameter has been removed.
 
 These new fields have been added:
 
 .. _settlementAmount:
 
-* ``settlementAmount`` has been added to the responses of the Payments API, the Refunds API and the Chargebacks API.
+* ``settlementAmount`` has been added to the responses of the
+  :doc:`Payments API </reference/v2/payments-api/get-payment>`, the
+  :doc:`Refunds API </reference/v2/refunds-api/get-refund>` and the
+  :doc:`Chargebacks API </reference/v2/chargebacks-api/get-chargeback>`.
   This optional field will contain the amount that will be settled to your account, converted to the currency your
   account is settled in. It follows the same syntax as the ``amount`` property.
 
   Note that for refunds and chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
 
-  Any amounts not settled by Mollie will be not be reflected in this amount, e.g. PayPal or gift cards.
+  Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
+
+* ``_links.status`` has been added to the responses for ``banktransfer`` payments. Your customer can check the status of
+  their transfer at this URL.
+
+* ``_links.payOnline`` has been added to the responses for ``banktransfer`` payments. At this URL your customer can
+  finish the payment using an alternative payment method also activated on your website profile.
 
 Changes in the Refunds API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -189,8 +198,8 @@ The following parameters have been changed or added:
 
 Changes in the Issuers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-The issuers API has been removed. Instead, you can get the issuers via the :ref:`Get Method API <v2/methods-get>` using
-the ``issuers`` include.
+The issuers API has been removed. Instead, you can get the issuers via the
+:doc:`Get Method API </reference/v2/methods-api/get-method>` using the ``issuers`` include.
 
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -248,7 +257,7 @@ The new error reporting format in ``v2`` is the following:
        "detail": "Missing authentication, or failed to authenticate",
        "_links": {
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/authentication",
+               "href": "https://docs.mollie.com/guides/authentication",
                "type": "text/html"
            }
        }

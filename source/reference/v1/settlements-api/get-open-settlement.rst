@@ -1,7 +1,11 @@
-.. _v1/settlements-get-open:
+Get open settlement
+===================
+.. api-name:: Settlements API
+   :version: 1
 
-Settlements API v1: Get open settlement
-=======================================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving the open settlement in the new v2
+             API can be found :doc:`here </reference/v2/settlements-api/get-open-settlement>`. For more information on
+             the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -18,7 +22,8 @@ Response
 --------
 ``200`` ``application/json; charset=utf-8``
 
-The open balance settlement is returned in the same fashion as the :ref:`Get settlement <v1/settlements-get>` endpoint.
+The open balance settlement is returned in the same fashion as the
+:doc:`Get settlement </reference/v1/settlements-api/get-settlement>` endpoint.
 
 Example
 -------

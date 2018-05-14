@@ -1,5 +1,3 @@
-.. _guides/gift-cards:
-
 Integrating gift cards
 ======================
 
@@ -8,25 +6,27 @@ Supported brands
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
-* Nationale Bioscoopbon
-* Nationale EntertainmentCard
-* Nationale Kunst & Cultuur Cadeaukaart
-* Podium Cadeaukaart
+* `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
+* `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
+* `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`_
+* `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
-* Webshop Giftcard
-* YourGift
+* `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
+* `YourGift <https://www.yourgift.nl/>`_
 
 If you need a different brand, please reach out to your account manager or our support department.
 
-Using the :ref:`checkout <guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
+Using the :doc:`checkout </guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
 remaining amount due using the other payment methods enabled on your website profile.
 
 Contracting and settlement
 --------------------------
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle contracting and settlement on
-your behalf. You will have to set up the contracting yourself via the brand owner (e.g. for Podium Cadeaukaart, contact
-Stichting Promotie Theater- en Concertbezoek). The brand owner will ask for your PSPID, a unique identifier. You should
-provide the brand owner with your Mollie Partner ID to use as the PSPID.
+your behalf. You will have to set up the contracting yourself via
+`the brand owner <https://help.mollie.com/hc/en-us/articles/115004458349>`_. For example, for Podium Cadeaukaart contact
+Stichting Promotie Theater- en Concertbezoek. The brand owner will ask for your PSPID, a unique identifier. You should
+provide the brand owner with your `Mollie ID <https://help.mollie.com/hc/en-us/articles/210710049>`_ to use as the
+PSPID.
 
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
@@ -38,14 +38,15 @@ Settlement is handled by the brand owner and not by Mollie.
 
 Technical integration
 ---------------------
-Integration is handled via the :ref:`Payments API <v2/payments-create>`. Several levels of integration are possible.
+Integration is handled via the :doc:`Payments API </reference/v2/payments-api/create-payment>`. Several levels of
+integration are possible.
 
 Mollie supports stacking transactions, e.g. starting with a partial gift card payment and then finalizing the payment
 using more gift cards or one of the other payment methods.
 
 Integrate using Mollie Checkout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The easiest way to integrate gift cards is to use the :ref:`Mollie Checkout <guides/checkout>`. This is arranged by
+The easiest way to integrate gift cards is to use the :doc:`Mollie Checkout </guides/checkout>`. This is arranged by
 creating the payment via our API without passing the ``method`` parameter. Mollie will then display a list of payment
 methods available for the payment and offer the gift card options enabled on your account.
 
@@ -59,8 +60,8 @@ will call your webhook.
 Integrate method selection in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The selection for the gift card brand can be integrated in your own application as well. Using the
-:ref:`Methods API <v1/methods-list>`, you can retrieve the methods and gift cards available on your account. Use the
-include ``issuers`` to include the gift card brands available.
+:doc:`Methods API </reference/v1/methods-api/list-methods>`, you can retrieve the methods and gift cards available on
+your account. Use the include ``issuers`` to include the gift card brands available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.
 
@@ -84,7 +85,7 @@ use to finish the payment.
 .. note:: Some cards don’t have a PIN printed on them. If the card does have a PIN, the PIN is always required.
 
 Canceled and abandoned payments
---------------------------------
+-------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more gift cards, the amount paid with
 the gift card will be returned to the gift card. This will show up as a refund in your
 `Dashboard <https://www.mollie.com/dashboard>`_.

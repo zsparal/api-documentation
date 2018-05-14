@@ -1,16 +1,15 @@
-.. _oauth2/tokens:
-
-Connect API: Tokens
-===================
+Tokens
+======
+.. api-name:: Connect API
 
 .. endpoint::
    :method: GET
    :url: https://www.mollie.com/oauth2/tokens
 
-Authentication: :ref:`OAuth client credentials <oauth/overview>`
+Authentication: :doc:`OAuth client credentials </oauth/overview>`
 
-Exchange the auth code received at the :ref:`Authorize endpoint <oauth2/authorize>` for an actual access token, with
-which you can communicate with the Mollie API.
+Exchange the auth code received at the :doc:`Authorize endpoint </reference/oauth2/authorize>` for an actual access
+token, with which you can communicate with the Mollie API.
 
 Parameters
 ----------
@@ -49,7 +48,7 @@ Parameters
           :required: true
 
      - The URL the merchant is sent back to once the request has been authorized. It must match the URL you set when
-       :ref:`registering your app <oauth/getting-started>`.
+       :doc:`registering your app </oauth/getting-started>`.
 
 Response
 --------
@@ -61,14 +60,12 @@ Response
    * - | ``access_token``
 
        .. type:: string
-          :required: true
 
      - The access token, with which you will be able to access the Mollie API on the merchant's behalf.
 
    * - | ``refresh_token``
 
        .. type:: string
-          :required: true
 
      - The refresh token, with which you will be able to retrieve new access tokens on this endpoint. Please note that
        the refresh token does not expire.
@@ -76,7 +73,6 @@ Response
    * - | ``expires_in``
 
        .. type:: integer
-          :required: true
 
      - The number of seconds left before the access token expires. Be sure to renew your access token before this
        reaches zero.
@@ -84,7 +80,6 @@ Response
    * - | ``token_type``
 
        .. type:: string
-          :required: true
 
      - As per OAuth standards, the provided access token can only be used with bearer authentication.
 
@@ -93,9 +88,8 @@ Response
    * - | ``scope``
 
        .. type:: string
-          :required: true
 
-     - A space separated list of permissions. Please refer to :ref:`Permissions <oauth/permissions>` for the full
+     - A space separated list of permissions. Please refer to :doc:`Permissions </oauth/permissions>` for the full
        permission list.
 
 Example

@@ -1,7 +1,11 @@
-.. _v1/refunds-get:
+Get refund
+==========
+.. api-name:: Refunds API
+   :version: 1
 
-Refunds API v1: Get refund
-==========================
+.. warning:: This is the documentation of the v1 API. The documentation for retrieving refunds in the new v2 API can be
+             found :doc:`here </reference/v2/refunds-api/get-refund>`. For more information on the v2 API, refer to our
+             :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -13,7 +17,8 @@ Refunds API v1: Get refund
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`refunds list endpoint <v1/refunds-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`refunds list endpoint </reference/v1/refunds-api/list-refunds>`.
 
 Parameters
 ----------
@@ -30,17 +35,15 @@ Response
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
    * - | ``payment``
 
        .. type:: object
-          :required: true
 
-     - The original payment, as described in :ref:`Get payment <v1/payments-get>`. In the payment object, note the
-       following refund related fields.
+     - The original payment, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`. In the payment
+       object, note the following refund related fields.
 
        .. list-table::
           :widths: auto
@@ -48,7 +51,6 @@ Response
           * - | ``amountRefunded``
 
               .. type:: decimal
-                 :required: true
 
             - The total amount in EUR that is already refunded. For some payment methods, this amount may be higher than
               the payment amount, for example to allow reimbursement of the costs for a return shipment to the consumer.
@@ -56,28 +58,24 @@ Response
           * - | ``amountRemaining``
 
               .. type:: decimal
-                 :required: true
 
             - The remaining amount in EUR that can be refunded.
 
    * - | ``amount``
 
        .. type:: decimal
-          :required: true
 
      - The amount refunded to the consumer with this refund.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - Since refunds may be delayed for certain payment methods, the refund carries a status field.
 
@@ -93,7 +91,6 @@ Response
    * - | ``refundedDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

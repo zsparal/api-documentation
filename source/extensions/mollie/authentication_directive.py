@@ -23,10 +23,10 @@ class AuthenticationDirective(Directive):
         # References need to be contained within something like an inline text
         # element; they cannot directly be added to the container.
         if self.options["api_keys"]:
-            api_ref = self.create_reference("guides/authentication", "API keys")
+            api_ref = self.create_reference("/guides/authentication", "API keys")
             inline += api_ref
         if self.options["oauth"]:
-            oauth_ref = self.create_reference("oauth/overview", "OAuth access tokens")
+            oauth_ref = self.create_reference("/oauth/overview", "OAuth access tokens")
             inline += oauth_ref
 
         container += inline
@@ -44,7 +44,7 @@ class AuthenticationDirective(Directive):
         # whether to use a custom link text, or to use the text that the label
         # itself provides (e.g. the title of the section you're referring to).
         ref = sphinx.addnodes.pending_xref(
-            reftype="ref",
+            reftype="doc",
             refdomain="std",
             reftarget=label,
             refexplicit=(title != "")

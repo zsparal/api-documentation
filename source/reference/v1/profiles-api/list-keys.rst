@@ -1,7 +1,7 @@
-.. _v1/keys-list:
-
-Profiles API v1: List API keys
-==============================
+List API keys
+=============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET
@@ -16,7 +16,7 @@ List the active API keys for the given payment profile.
 **Note that you cannot retrieve API keys for a different account than your own, even if you have a valid OAuth token.**
 
 If you wish to create a payment on behalf of a different merchant, use your app's access token and the ``profileId`` of
-one of the merchant's payment profiles when :ref:`creating a payment <v1/payments-create>`.
+one of the merchant's payment profiles when :doc:`creating a payment </reference/v1/payments-api/create-payment>`.
 
 Parameters
 ----------
@@ -32,16 +32,14 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of API keys found in ``data``.
 
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of API key objects as described in :ref:`Get API key <v1/keys-get>`.
+     - An array of API key objects as described in :doc:`Get API key </reference/v1/profiles-api/get-key>`.
 
 Example
 -------

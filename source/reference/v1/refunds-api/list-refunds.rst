@@ -1,7 +1,11 @@
-.. _v1/refunds-list:
+List refunds
+============
+.. api-name:: Refunds API
+   :version: 1
 
-Refunds API v1: List refunds
-============================
+.. warning:: This is the documentation of the v1 API. The documentation for listing refunds in the new v2 API can be
+             found :doc:`here </reference/v2/refunds-api/list-refunds>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -18,7 +22,7 @@ Refunds API v1: List refunds
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -52,21 +56,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of refunds available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped refunds as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of refunds found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -74,14 +75,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of refund objects as described in :ref:`Get refund <v1/refunds-get>`.
+     - An array of refund objects as described in :doc:`Get refund </reference/v1/refunds-api/get-refund>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of refunds, based on the given offset.
 
@@ -91,28 +90,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of refunds, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of refunds, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of refunds, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of refunds, if available.
 

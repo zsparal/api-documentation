@@ -1,7 +1,7 @@
-.. _v2/methods-get:
-
-Methods API v2: Get payment method
-==================================
+Get payment method
+==================
+.. api-name:: Methods API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -14,8 +14,9 @@ Methods API v2: Get payment method
 Retrieve a single method by its ID. Note that if a method is not available on the payment profile a status
 ``404 Not found`` is returned. When the method is not enabled, a status ``403 Forbidden`` is returned.
 
-If you do not know the method's ID, you can use the :ref:`methods list endpoint <v2/methods-list>` to retrieve all
-payment methods that are available.
+If you do not know the method's ID, you can use the
+:doc:`methods list endpoint </reference/v2/methods-api/list-methods>` to retrieve all payment methods that are
+available.
 
 Parameters
 ----------
@@ -37,7 +38,8 @@ Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
-profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -73,29 +75,26 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a method object. Will always contain ``method`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
-     - The unique identifier of the payment method. When used during :ref:`payment creation <v2/payments-create>`,
-       the payment method selection screen will be skipped.
+     - The unique identifier of the payment method. When used during
+       :doc:`payment creation </reference/v2/payments-api/create-payment>`, the payment method selection screen will be
+       skipped.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The full name of the payment method, translated in the optional locale passed.
 
    * - | ``image``
 
        .. type:: image object
-          :required: true
 
      - The URLs of images representing the payment method.
 
@@ -105,21 +104,18 @@ Response
           * - | ``size1x``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 55x37 pixels.
 
           * - | ``size2x``
 
               .. type:: string
-                 :required: true
 
             - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the payment method. Every URL object will contain an ``href`` and
        a ``type`` field.
@@ -130,14 +126,12 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the payment method itself.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the payment method retrieval endpoint documentation.
 
@@ -196,7 +190,7 @@ Response
                 "type": "application/hal+json"
             },
             "documentation": {
-                "href": "https://www.mollie.com/en/docs/reference/methods/get",
+                "href": "https://docs.mollie.com/reference/v2/methods-api/get-method",
                 "type": "text/html"
             }
         }

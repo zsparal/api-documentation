@@ -1,7 +1,11 @@
-.. _v1/settlements-list:
+List settlements
+================
+.. api-name:: Settlements API
+   :version: 1
 
-Settlements API v1: List settlements
-====================================
+.. warning:: This is the documentation of the v1 API. The documentation for listing settlements in the new v2 API can be
+             found :doc:`here </reference/v2/settlements-api/list-settlements>`. For more information on the v2 API,
+             refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -13,7 +17,7 @@ Settlements API v1: List settlements
 
 Retrieve all settlements, ordered from new to old.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -52,21 +56,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of settlements available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped settlements as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of settlements found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -74,14 +75,13 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of settlement objects as described in :ref:`Get settlement <v1/settlements-get>`.
+     - An array of settlement objects as described in
+       :doc:`Get settlement </reference/v1/settlements-api/get-settlement>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of settlements, based on the given offset.
 
@@ -91,28 +91,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of settlements, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of settlements, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of settlements, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of settlements, if available.
 

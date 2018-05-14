@@ -1,7 +1,12 @@
-.. _v1/issuers-get:
+Get issuer
+==========
+.. api-name:: Issuers API
+   :version: 1
 
-Issuers API v1: Get issuer
-==========================
+.. warning:: This is the documentation of the v1 API. The new v2 API no longer supports retrieving issuers separately.
+             Instead, issuers can be retrieved by using the ``issuers`` include on the Methods API. Documentation for
+             the Methods API v2 can be found :doc:`here </reference/v2/methods-api/list-methods>`. For more information
+             on the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -43,38 +48,33 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this issuer. When supplying this ID as the ``issuer`` parameter during
-       :ref:`payment creation <v1/payments-create>`, the issuer selection screen is skipped.
+       :doc:`payment creation </reference/v1/payments-api/create-payment>`, the issuer selection screen is skipped.
 
    * - | ``name``
 
        .. type:: string
-          :required: true
 
      - The full name of the issuer, for example 'ABN AMRO'.
 
    * - | ``method``
 
        .. type:: string
-          :required: true
 
-     - The :ref:`payment method <v1/methods-list>` this issuer belongs to.
+     - The :doc:`payment method </reference/v1/methods-api/list-methods>` this issuer belongs to.
 
        Possible values: ``ideal``
 
    * - | ``image``
 
        .. type:: object
-          :required: true
 
      - URLs of images representing the payment method issuer.
 
@@ -84,14 +84,12 @@ Response
           * - | ``normal``
 
               .. type:: string
-                 :required: true
 
             - The URL for an issuer icon of 55x37 pixels.
 
           * - | ``bigger``
 
               .. type:: string
-                 :required: true
 
             - The URL for an issuer icon of 110x74 pixels.
 

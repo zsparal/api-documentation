@@ -1,7 +1,11 @@
-.. _v1/subscriptions-create:
+Create subscription
+===================
+.. api-name:: Subscriptions API
+   :version: 1
 
-Subscriptions API v1: Create subscription
-=========================================
+.. warning:: This is the documentation of the v1 API. The documentation for creating subscriptions in the new v2 API can
+             be found :doc:`here </reference/v2/subscriptions-api/create-subscription>`. For more information on the v2
+             API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: POST
@@ -95,7 +99,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify to which profile the subscription belongs. Organizations can have multiple profiles for each of
-their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -118,7 +122,8 @@ Response
 --------
 ``201`` ``application/json; charset=utf-8``
 
-A subscription object is returned, as described in :ref:`Get subscription <v1/subscriptions-get>`.
+A subscription object is returned, as described in
+:doc:`Get subscription </reference/v1/subscriptions-api/get-subscription>`.
 
 Example
 -------

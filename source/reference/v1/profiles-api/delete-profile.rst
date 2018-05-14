@@ -1,7 +1,7 @@
-.. _v1/profiles-delete:
-
-Profiles API v1: Delete profile
-===============================
+Delete profile
+==============
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: DELETE

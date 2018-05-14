@@ -1,7 +1,7 @@
-.. _v1/keys-get:
-
-Profiles API v1: Get API key
-============================
+Get API key
+===========
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET
@@ -16,7 +16,7 @@ Get the API key for the given payment profile and profile mode.
 **Note that you cannot retrieve API keys for a different account than your own, even if you have a valid OAuth token.**
 
 If you wish to create a payment on behalf of a different merchant, use your app's access token and the ``profileId`` of
-one of the merchant's payment profiles when :ref:`creating a payment <v1/payments-create>`.
+one of the merchant's payment profiles when :doc:`creating a payment </reference/v1/payments-api/create-payment>`.
 
 Parameters
 ----------
@@ -33,14 +33,12 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The API key's identifier.
 
@@ -49,7 +47,6 @@ Response
    * - | ``key``
 
        .. type:: string
-          :required: true
 
      - The actual API key, which you'll use when creating payments or when otherwise communicating with the API. Never
        share the API key with anyone.
@@ -57,7 +54,6 @@ Response
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The API key's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 

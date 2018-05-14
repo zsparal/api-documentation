@@ -1,7 +1,7 @@
-.. _v2/chargebacks-get:
-
-Chargebacks API v2: Get chargeback
-==================================
+Get chargeback
+==============
+.. api-name:: Chargebacks API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -13,7 +13,8 @@ Chargebacks API v2: Get chargeback
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
 
-If you do not know the original payment's ID, you can use the :ref:`chargebacks list endpoint <v2/chargebacks-list>`.
+If you do not know the original payment's ID, you can use the
+:doc:`chargebacks list endpoint </reference/v2/chargebacks-api/list-chargebacks>`.
 
 Parameters
 ----------
@@ -25,7 +26,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :ref:`payment <v2/payments-get>` this chargeback was issued for.
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` this chargeback was issued for.
 
 Response
 --------
@@ -37,14 +38,12 @@ Response
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
    * - | ``amount``
 
        .. type:: amount object
-          :required: true
 
      - The amount charged back by the consumer.
 
@@ -54,21 +53,18 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact amount that was charged back in the given currency.
 
    * - | ``settlementAmount``
 
        .. type:: amount object
-          :required: true
 
      - The amount deducted from the settlement, in the settlement's currency.
 
@@ -78,14 +74,12 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact amount that was deducted for the chargeback from your account balance in the
               settlement currency. Note that this will be negative.
@@ -93,14 +87,12 @@ Response
    * - | ``createdAt``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``reversedAt``
 
        .. type:: datetime
-          :required: true
 
      - The date and time the chargeback was reversed if applicable, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
@@ -108,7 +100,6 @@ Response
    * - | ``paymentId``
 
        .. type:: string
-          :required: true
 
      - The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
@@ -116,7 +107,6 @@ Response
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the chargeback. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -127,21 +117,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the chargeback itself.
 
           * - | ``payment``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the payment this chargeback belongs to.
+
+          * - | ``settlement``
+
+              .. type:: URL object
+
+            - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the chargeback retrieval endpoint documentation.
 
@@ -188,7 +181,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/chargebacks/get",
+               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/get-chargeback",
                "type": "text/html"
            }
        }

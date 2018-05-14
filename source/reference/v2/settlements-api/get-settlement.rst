@@ -1,7 +1,7 @@
-.. _v2/settlements-get:
-
-Settlements API v2: Get settlement
-==================================
+Get settlement
+==============
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -16,7 +16,8 @@ schedule. By retrieving a single settlement, you can check which payments were p
 took place, and what invoice reference was used for it.
 
 Settlements will be transferred to your bank account with a ``reference``, for example ``1182161.1506.02``. You can use
-the :ref:`List settlements <v2/settlements-list>` endpoint to look up a settlement by reference.
+the :doc:`List settlements </reference/v2/settlements-api/get-settlement>` endpoint to look up a settlement by
+reference.
 
 Parameters
 ----------
@@ -32,44 +33,38 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a settlement object. Will always contain ``settlement`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The settlement's unique identifier, for example ``stl_jDk30akdN``.
 
    * - | ``reference``
 
        .. type:: string
-          :required: true
 
      - The settlement's bank reference, as found on your invoice and in your Mollie account.
 
    * - | ``createdAt``
 
        .. type:: string
-          :required: true
 
      - The date on which the settlement was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``settledAt``
 
        .. type:: string
-          :required: true
 
      - The date on which the settlement was settled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-       When requesting the :ref:`open settlement <v2/settlements-get-open>` or
-       :ref:`next settlement <v2/settlements-get-next>` the return value is ``null``.
+       When requesting the :doc:`open settlement </reference/v2/settlements-api/get-open-settlement>` or
+       :doc:`next settlement </reference/v2/settlements-api/get-next-settlement>` the return value is ``null``.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - The status of the settlement.
 
@@ -83,7 +78,6 @@ Response
    * - | ``amount``
 
        .. type:: amount object
-          :required: true
 
      - The total amount paid out with this settlement.
 
@@ -93,21 +87,18 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact amount of the settlement in the given currency.
 
    * - | ``periods``
 
        .. type:: object
-          :required: true
 
      - This object is a collection of Period objects, which describe the settlement by month in full detail.
 
@@ -120,7 +111,6 @@ Response
           * - | ``revenue``
 
               .. type:: array
-                 :required: true
 
             - An array of revenue objects containing the total revenue for each payment method during this period. Each
               object has the following fields.
@@ -131,49 +121,42 @@ Response
                  * - | ``description``
 
                      .. type:: string
-                        :required: true
 
                    - A description of the revenue subtotal.
 
                  * - | ``amountNet``
 
                      .. type:: amount object
-                        :required: true
 
                    - The net total of received funds for this payment method (excludes VAT).
 
                  * - | ``amountVat``
 
                      .. type:: amount object
-                        :required: true
 
                    - The VAT amount applicable to the revenue.
 
                  * - | ``amountGross``
 
                      .. type:: amount object
-                        :required: true
 
                    - The gross total of received funds for this payment method (includes VAT).
 
                  * - | ``count``
 
                      .. type:: integer
-                        :required: true
 
                    - The number of payments received for this payment method.
 
                  * - | ``method``
 
                      .. type:: string
-                        :required: true
 
                    - The payment method ID, if applicable.
 
           * - | ``costs``
 
               .. type:: array
-                 :required: true
 
             - An array of Cost objects, describing the fees withheld for each payment method during this period. Each
               object has the following fields.
@@ -184,42 +167,36 @@ Response
                  * - | ``description``
 
                      .. type:: string
-                        :required: true
 
                    - A description of the subtotal.
 
                  * - | ``amountNet``
 
                      .. type:: amount object
-                        :required: true
 
                    - The net total costs for this payment method (excludes VAT).
 
                  * - | ``amountVat``
 
                      .. type:: amount object
-                        :required: true
 
                    - The VAT amount applicable to the costs.
 
                  * - | ``amountGross``
 
                      .. type:: amount object
-                        :required: true
 
                    - The gross total costs for this payment method (includes VAT).
 
                  * - | ``count``
 
                      .. type:: integer
-                        :required: true
 
                    - The number of times costs were made for this payment method.
 
                  * - | ``rate``
 
                      .. type:: object
-                        :required: true
 
                    - The service rates, further divided into ``fixed`` and ``percentage`` costs.
 
@@ -229,28 +206,24 @@ Response
                         * - | ``fixed``
 
                             .. type:: amount object
-                               :required: true
 
                           - An amount object describing the fixed costs.
 
                         * - | ``variable``
 
                             .. type:: string
-                               :required: true
 
                           - A string describing the variable costs as a percentage.
 
                  * - | ``method``
 
                      .. type:: string
-                        :required: true
 
                    - The payment method ID, if applicable.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the settlement. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -261,35 +234,30 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the settlement itself.
 
           * - | ``payments``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the payments that are included in this settlement.
 
           * - | ``refunds``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the refunds that are included in this settlement.
 
           * - | ``chargebacks``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the chargebacks that are included in this settlement.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the settlement retrieval endpoint documentation.
 
@@ -426,7 +394,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/settlements/next",
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/get-settlement",
                "type": "text/html"
            }
        }

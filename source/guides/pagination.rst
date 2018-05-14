@@ -1,10 +1,8 @@
-.. _guides/pagination:
-
 Pagination
 ==========
 Fetching all objects of a resource can be convenient. At the same time, returning too many objects at once can be
 unpractical from a performance perspective. Doing so might be too much work for the Mollie API to generate, or for your
-website to process.
+website to process. The maximum number of objects returned is 250.
 
 For this reason the Mollie API only returns a subset of the requested set of objects. In other words, the Mollie API
 chops the result of a certain API method call into pages you're able to programmatically scroll through.
@@ -23,7 +21,6 @@ Response object
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of objects found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -31,14 +28,12 @@ Response object
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The actual data you're looking for.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of objects. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -49,28 +44,24 @@ Response object
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of objects.
 
           * - | ``previous``
 
               .. type:: object
-                 :required: false
 
             - The previous set of objects, if available.
 
           * - | ``next``
 
               .. type:: object
-                 :required: false
 
             - The next set of objects, if available.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current list endpoint documentation.
 
@@ -125,7 +116,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://www.mollie.com/en/docs/reference/payments/get",
+                           "href": "https://docs.mollie.com/reference/v2/payments-api/get-payment",
                            "type": "text/html"
                        }
                    }
@@ -145,7 +136,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/list",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/list-payments",
                "type": "text/html"
            }
        }
@@ -154,7 +145,7 @@ Response
 Pagination in v1 API endpoints
 ------------------------------
 .. warning:: This is the documentation of the v1 API. The documentation for pagination in the new v2 API can be found
-             above. For more information on the v2 API, refer to our :ref:`v2 migration guide <migrate-to-v2>`.
+             above. For more information on the v2 API, refer to our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 Using the ``count`` parameter you can set the page size up to a maximum of 250 objects. The result will be paginated
 accordingly, presuming your request would otherwise have resulted in more than ``count`` objects. The ``offset``
@@ -171,21 +162,18 @@ Response object
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of objects available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped objects as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of objects found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -193,14 +181,12 @@ Response object
    * - | ``data``
 
        .. type:: array
-          :required: true
 
      - The actual data you're looking for.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of objects, based on the given offset.
 
@@ -210,28 +196,24 @@ Response object
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of objects, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of objects, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of objects, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of objects, if available.
 

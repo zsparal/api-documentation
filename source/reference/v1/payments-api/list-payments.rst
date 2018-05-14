@@ -1,11 +1,11 @@
-.. _v1/payments-list:
+List payments
+=============
+.. api-name:: Payments API
+   :version: 1
 
-Payments API v1: List payments
-==============================
 .. warning:: This is the documentation of the v1 API. The documentation for listing payments in the new v2 API can be
-             found :ref:`here <v2/payments-list>`. For more information on the v2 API, refer to our
-             :ref:`v2 migration guide <migrate-to-v2>`.
-
+             found :doc:`here </reference/v2/payments-api/list-payments>`. For more information on the v2 API, refer to
+             our :doc:`v2 migration guide </migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET
@@ -17,7 +17,7 @@ Payments API v1: List payments
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -43,7 +43,7 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payments. If you omit the ``profileId``
 parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
-websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -69,8 +69,8 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``settlement`` Include the settlement a payment belongs to, when available.
-* ``details.qrCode`` Include a :ref:`QR code <guides/qr-codes>` object for each payment that supports it. Only available
-  for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object for each payment that supports it. Only
+  available for iDEAL, Bitcoin, Bancontact and bank transfer payments.
 
 Response
 --------
@@ -82,21 +82,18 @@ Response
    * - | ``totalCount``
 
        .. type:: integer
-          :required: true
 
      - The total number of payments available.
 
    * - | ``offset``
 
        .. type:: integer
-          :required: true
 
      - The number of skipped payments as requested.
 
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
@@ -104,14 +101,12 @@ Response
    * - | ``data``
 
        .. type:: array
-          :required: true
 
-     - An array of payment objects as described in :ref:`Get payment <v1/payments-get>`.
+     - An array of payment objects as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
    * - | ``links``
 
        .. type:: object
-          :required: false
 
      - Links to help navigate through the lists of payments, based on the given offset.
 
@@ -121,28 +116,24 @@ Response
           * - | ``previous``
 
               .. type:: string
-                 :required: false
 
             - The previous set of payments, if available.
 
           * - | ``next``
 
               .. type:: string
-                 :required: false
 
             - The next set of payments, if available.
 
           * - | ``first``
 
               .. type:: string
-                 :required: false
 
             - The first set of payments, if available.
 
           * - | ``last``
 
               .. type:: string
-                 :required: false
 
             - The last set of payments, if available.
 

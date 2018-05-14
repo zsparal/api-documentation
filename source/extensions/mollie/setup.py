@@ -1,4 +1,4 @@
-from . import ApiEndpointDirective, AuthenticationDirective, DataTypeDirective
+from . import ApiNameDirective, ApiEndpointDirective, AuthenticationDirective, DataTypeDirective
 
 
 def setup(app):
@@ -7,6 +7,7 @@ def setup(app):
     :rtype: dict
     """
     # Add the directives.
+    app.add_directive('api-name', ApiNameDirective)
     app.add_directive('endpoint', ApiEndpointDirective)
     app.add_directive('authentication', AuthenticationDirective)
     app.add_directive('type', DataTypeDirective)

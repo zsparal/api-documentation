@@ -1,7 +1,7 @@
-.. _v2/payments-list:
-
-Payments API v2: List payments
-==============================
+List payments
+=============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -13,7 +13,7 @@ Payments API v2: List payments
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -40,7 +40,7 @@ Mollie Connect/OAuth parameters
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payments. If you omit the ``profileId``
 parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
-websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -65,16 +65,16 @@ Includes
 This endpoint allows you to include additional information by appending the following values via the ``include``
 querystring parameter.
 
-* ``details.qrCode`` Include a :ref:`QR code <guides/qr-codes>` object for each payment that supports it. Only available
-  for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object for each payment that supports it. Only
+  available for iDEAL, Bitcoin, Bancontact and bank transfer payments.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``refunds`` Include any :ref:`refunds <v2/refunds-get>` created for the payments.
-* ``chargebacks`` Include any :ref:`chargebacks <v2/chargebacks-get>` issued for the payments.
+* ``refunds`` Include any :doc:`refunds </reference/v2/refunds-api/get-refund>` created for the payments.
+* ``chargebacks`` Include any :doc:`chargebacks </reference/v2/chargebacks-api/get-chargeback>` issued for the payments.
 
 Response
 --------
@@ -86,7 +86,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of payments found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -94,7 +93,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -104,14 +102,12 @@ Response
           * - | ``payments``
 
               .. type:: array
-                 :required: true
 
-            - An array of payment objects as described in :ref:`Get payment <v2/payments-get>`.
+            - An array of payment objects as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of payments. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -122,28 +118,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the current set of payments.
 
           * - | ``previous``
 
               .. type:: URL object
-                 :required: false
 
             - The previous set of payments, if available.
 
           * - | ``next``
 
               .. type:: URL object
-                 :required: false
 
             - The next set of payments, if available.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the payments list endpoint documentation.
 
@@ -216,7 +208,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/list",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/list-payments",
                "type": "text/html"
            }
        }

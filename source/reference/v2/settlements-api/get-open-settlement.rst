@@ -1,7 +1,7 @@
-.. _v2/settlements-get-open:
-
-Settlements API v2: Get open settlement
-=======================================
+Get open settlement
+===================
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -18,7 +18,8 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-The open balance settlement is returned in the same fashion as the :ref:`Get settlement <v2/settlements-get>` endpoint.
+The open balance settlement is returned in the same fashion as the
+:doc:`Get settlement </reference/v2/settlements-api/get-settlement>` endpoint.
 
 Example
 -------
@@ -28,7 +29,7 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/settlements/next \
+   curl -X GET https://api.mollie.com/v2/settlements/open \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Response
@@ -141,7 +142,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/settlements/next",
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/get-open-settlement",
                "type": "text/html"
            }
        }

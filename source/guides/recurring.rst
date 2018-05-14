@@ -1,5 +1,3 @@
-.. _guides/recurring:
-
 Recurring payments
 ==================
 Recurring payments can be used to charge customers on a regular basis or to offer automatic top-ups with credits-based
@@ -35,17 +33,18 @@ complete the payment with the account or card that will be used for recurring ch
 payment is completed succesfully, the customer's account or card will immediately be chargeable *on-demand*, or
 periodically through *subscriptions*.
 
-#. Create a unique customer using the :ref:`Customers API <v2/customers-create>`.
+#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`.
 
    .. code-block:: bash
       :linenos:
 
       curl -X POST https://api.mollie.com/v2/customers \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+          -H "Content-Type: application/json" \
           -d "{\"name\":\"Customer A\",\"email\":\"customer@example.org\"}"
 
-#. Save the customer's ``id`` in your database. You need it when performing :ref:`Payments API <v2/payments-create>`
-   calls.
+#. Save the customer's ``id`` in your database. You need it when performing
+   :doc:`Payments API </reference/v2/payments-api/create-payment>` calls.
 
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
@@ -68,7 +67,8 @@ periodically through *subscriptions*.
 
 #. Redirect the customer to the ``paymentUrl`` to complete the first payment. Make sure to use an HTTP ``GET`` redirect.
 
-#. Once completed there will be a customer mandate that you can access via the :ref:`Mandates API <v1/mandates-get>`.
+#. Once completed there will be a customer mandate that you can access via the
+   :doc:`Mandates API </reference/v1/mandates-api/get-mandate>`.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our Checkout. The following payment methods support a first payment and are
@@ -81,12 +81,13 @@ Charging immediately on-demand
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Now that the customer has given their consent, it's possible to perform a recurring payment on-demand. Instead of the
 regular payment with a ``redirectUrl``, a recurring payment happens in the background without a browser session, i.e.
-without the customer going through payments steps. You can create a recurring payment with the ``recurringType`` set to
-``recurring`` when creating a payment with the :ref:`Payments API <v2/payments-create>`.
+without the customer going through payments steps. You can create a recurring payment with the ``sequenceType`` set to
+``recurring`` when creating a payment with the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 
 Please note that in order to do recurring payments, direct debit or credit card has to be activated on your profile.
 
-#. Make sure the customer has valid mandates. Find out using the :ref:`Mandates API <v1/mandates-list>`.
+#. Make sure the customer has valid mandates. Find out using the
+   :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
 
    .. code-block:: bash
       :linenos:
@@ -113,17 +114,18 @@ Please note that in order to do recurring payments, direct debit or credit card 
               \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
-#. Like regular payments your :ref:`webhook <guides/webhooks>` is called for retrieving status updates.
+#. Like regular payments your :doc:`webhook </guides/webhooks>` is called for retrieving status updates.
 
 .. _guides/recurring/charging-periodically:
 
 Charging periodically with subscriptions
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 For simple regular recurring payments with constant amounts, you can create *subscriptions* with the
-:ref:`Subscriptions API <v2/subscriptions-create>`. Subscription payments will be spawned automatically at the specified
-frequency, and will show up in your Dashboard.
+:doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`. Subscription payments will be spawned
+automatically at the specified frequency, and will show up in your Dashboard.
 
-#. Make sure the customer has a pending or valid mandate using the :ref:`Mandates API <v1/mandates-list>`.
+#. Make sure the customer has a pending or valid mandate using the
+   :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
 
    .. code-block:: bash
       :linenos:
@@ -134,7 +136,7 @@ frequency, and will show up in your Dashboard.
 #. Continue if there's a mandate with its ``status`` being either ``pending`` or ``valid``, otherwise set up a *first*
    payment for the customer first.
 
-#. Create the subscription using the :ref:`Subscriptions API <v2/subscriptions-create>`.
+#. Create the subscription using the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
 
    .. code-block:: bash
       :linenos:
@@ -169,4 +171,4 @@ not be known by your system yet when we call the webhook to report the payment's
 The payment object will, however, contain a ``subscriptionId`` field that contains the subscription ID you received when
 the subscription was created. This allows you to recognize where the payment belongs to.
 
-We currently do not provide webhooks specifically for status changes of a Subscription itself.
+We do not provide webhooks specifically for status changes of a Subscription itself.

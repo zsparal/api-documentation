@@ -1,5 +1,3 @@
-.. _oauth/getting-started:
-
 Mollie Connect: Getting started
 ===============================
 Assuming you have already built an OAuth-compatible app, the first step is to register your app in your
@@ -19,16 +17,17 @@ Use the details below to configure your app to work with our platform.
 * **Client Secret**: received upon app registration
 * **Redirect URL**: a URL within your app that processes authorizations
 * **Authorization URL**: ``https://www.mollie.com/oauth2/authorize``, see the
-  :ref:`Authorize endpoint <oauth2/authorize>`
-* **Access token URL**: ``https://api.mollie.com/oauth2/tokens``, see the :ref:`Tokens endpoint <oauth2/tokens>`
+  :doc:`Authorize endpoint </reference/oauth2/authorize>`
+* **Access token URL**: ``https://api.mollie.com/oauth2/tokens``, see the
+  :doc:`Tokens endpoint </reference/oauth2/tokens>`
 * **Resource owner URL**: ``https://api.mollie.com/v1/organizations/me``, see
-  :ref:`Get organization <v1/organizations-get>`
+  :doc:`Get organization </reference/v2/organizations-api/get-organization>`
 
 Getting a merchant’s consent
 ----------------------------
 After having registered and configured your app, you can send the merchant to Mollie through the default authorization
 URL as configured in your OAuth app. Good practice is to show a *Connect with Mollie* button which redirects the
-merchant to :ref:`the authorization screen <oauth2/authorize>`.
+merchant to :doc:`the authorization screen </reference/oauth2/authorize>`.
 
 When you send a merchant to the authorization screen, Mollie will tell the merchant what data your app has requested
 access to, and request the merchant to confirm the authorization. An example authorization is shown below.

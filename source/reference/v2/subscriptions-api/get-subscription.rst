@@ -1,7 +1,7 @@
-.. _v2/subscriptions-get:
-
-Subscriptions API v2: Get subscription
-======================================
+Get subscription
+================
+.. api-name:: Subscriptions API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -42,29 +42,19 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a subscription object. Will always contain ``subscription`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
 
-   * - | ``customerId``
-
-       .. type:: string
-          :required: true
-
-     - The customer's unique identifier, for example ``cst_8wmqcHMN4U``.
-
    * - | ``mode``
 
        .. type:: string
-          :required: true
 
      - The mode used to create this subscription. Mode determines whether the subscription's payments are real or test
        payments.
@@ -74,14 +64,12 @@ Response
    * - | ``createdAt``
 
        .. type:: datetime
-          :required: true
 
      - The subscription's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - The subscription's current status, depends on whether the customer has a pending, valid or invalid mandate.
 
@@ -90,7 +78,6 @@ Response
    * - | ``amount``
 
        .. type:: object
-          :required: true
 
      - The constant amount that is charged with each subscription payment, e.g.
        ``{"currency":"EUR", "value":"10.00"}`` for a €10.00 subscription.
@@ -101,28 +88,24 @@ Response
           * - | ``currency``
 
               .. type:: string
-                 :required: true
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
           * - | ``value``
 
               .. type:: string
-                 :required: true
 
             - A string containing the exact amount of the payment in the given currency.
 
    * - | ``times``
 
        .. type:: integer
-          :required: true
 
      - Total number of charges for the subscription to complete.
 
    * - | ``interval``
 
        .. type:: string
-          :required: true
 
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
@@ -131,14 +114,12 @@ Response
    * - | ``startDate``
 
        .. type:: date
-          :required: true
 
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
    * - | ``description``
 
        .. type:: string
-          :required: true
 
      - The description specified during subscription creation. This will be included in the payment description along
        with the charge date in ``YYYY-MM-DD`` format.
@@ -146,7 +127,6 @@ Response
    * - | ``method``
 
        .. type:: string
-          :required: false
 
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
@@ -156,7 +136,6 @@ Response
    * - | ``canceledAt``
 
        .. type:: datetime
-          :required: false
 
      - The subscription's date and time of cancellation, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. This parameter is omitted if the payment is not
@@ -165,14 +144,12 @@ Response
    * - | ``webhookUrl``
 
        .. type:: string
-          :required: true
 
      - The URL Mollie will call as soon a payment status change takes place.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - An object with several URL objects relevant to the subscription. Every URL object will contain an ``href`` and a
        ``type`` field.
@@ -183,21 +160,18 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the subscription itself.
 
           * - | ``customer``
 
               .. type:: URL object
-                 :required: true
 
             - The API resource URL of the customer the subscription is for.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the subscription retrieval endpoint documentation.
 
@@ -223,7 +197,6 @@ Response
    {
        "resource": "subscription",
        "id": "sub_rVKGtNd6s3",
-       "customerId": "cst_stTC2WHAuS",
        "mode": "live",
        "createdAt": "2016-06-01T12:23:34+00:00",
        "status": "active",
@@ -246,7 +219,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/subscriptions/get",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/get-subscription",
                "type": "text/html"
            }
        }

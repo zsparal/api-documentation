@@ -1,7 +1,7 @@
-.. _v2/payments-cancel:
-
-Payments API v2: Cancel payment
-===============================
+Cancel payment
+==============
+.. api-name:: Payments API
+   :version: 2
 
 .. endpoint::
    :method: DELETE
@@ -14,8 +14,8 @@ Payments API v2: Cancel payment
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
 is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
 
-The ``isCancelable`` property on the :ref:`Payment object <v2/payments-get>` will indicate if the payment can be
-canceled.
+The ``isCancelable`` property on the :doc:`Payment object </reference/v2/payments-api/get-payment>` will indicate if the
+payment can be canceled.
 
 Parameters
 ----------
@@ -25,7 +25,7 @@ Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
 
-A payment object is returned, as described in :ref:`Get payment <v2/payments-get>`.
+A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 
 Example
 -------
@@ -75,7 +75,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/payments/delete",
+               "href": "https://docs.mollie.com/reference/v2/payments-api/cancel-payment",
                "type": "text/html"
            }
        }

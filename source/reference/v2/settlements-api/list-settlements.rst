@@ -1,7 +1,7 @@
-.. _v2/settlements-list:
-
-Settlements API v2: List settlements
-====================================
+List settlements
+================
+.. api-name:: Settlements API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -13,7 +13,7 @@ Settlements API v2: List settlements
 
 Retrieve all settlements, ordered from new to old.
 
-The results are paginated. See :ref:`pagination <guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -52,7 +52,6 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of settlements found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
@@ -60,7 +59,6 @@ Response
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -70,14 +68,13 @@ Response
           * - | ``settlements``
 
               .. type:: array
-                 :required: true
 
-            - An array of settlement objects as described in :ref:`Get settlement <v2/settlements-get>`.
+            - An array of settlement objects as described in
+              :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links to help navigate through the lists of settlements. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -88,28 +85,24 @@ Response
           * - | ``self``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the current set of settlements.
 
           * - | ``previous``
 
               .. type:: URL object
-                 :required: false
 
             - The previous set of settlements, if available.
 
           * - | ``next``
 
               .. type:: URL object
-                 :required: false
 
             - The next set of settlements, if available.
 
           * - | ``documentation``
 
               .. type:: URL object
-                 :required: true
 
             - The URL to the settlements list endpoint documentation.
 
@@ -172,7 +165,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://www.mollie.com/en/docs/reference/settlements/next",
+                           "href": "https://docs.mollie.com/reference/v2/settlements-api/get-settlement",
                            "type": "text/html"
                        }
                    }
@@ -194,7 +187,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/settlements/list",
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/list-settlements",
                "type": "text/html"
            }
        }

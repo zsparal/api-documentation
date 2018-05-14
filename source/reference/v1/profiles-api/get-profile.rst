@@ -1,7 +1,7 @@
-.. _v1/profiles-get:
-
-Profiles API v1: Get profile
-============================
+Get profile
+===========
+.. api-name:: Profiles API
+   :version: 1
 
 .. endpoint::
    :method: GET
@@ -27,21 +27,18 @@ Response
    * - | ``resource``
 
        .. type:: string
-          :required: true
 
      - Indicates the response contains a payment profile object. Will always contain ``profile`` for this endpoint.
 
    * - | ``id``
 
        .. type:: string
-          :required: true
 
      - The identifier uniquely referring to this payment profile, for example ``pfl_3RkSN1zuPE``.
 
    * - | ``mode``
 
        .. type:: string
-          :required: true
 
      - Indicates whether the payment profile is in test or production mode.
 
@@ -50,7 +47,6 @@ Response
    * - | ``name``
 
        .. type:: string
-          :required: true
 
      - The payment profile's name, this will usually reflect the tradename or brand name of the profile's website or
        application.
@@ -58,28 +54,24 @@ Response
    * - | ``website``
 
        .. type:: string
-          :required: true
 
      - The URL to the profile's website or application.
 
    * - | ``email``
 
        .. type:: string
-          :required: true
 
      - The email address associated with the profile's tradename or brand.
 
    * - | ``phone``
 
        .. type:: string
-          :required: true
 
      - The phone number associated with the profile's tradename or brand.
 
    * - | ``categoryCode``
 
        .. type:: integer
-          :required: true
 
      - The industry associated with the profile's tradename or brand.
 
@@ -99,7 +91,6 @@ Response
    * - | ``status``
 
        .. type:: string
-          :required: true
 
      - The profile status determines whether the payment profile is able to receive live payments.
 
@@ -112,7 +103,6 @@ Response
    * - | ``review``
 
        .. type:: object
-          :required: true
 
      - The presence of a review object indicates changes have been made that have not yet been approved by Mollie.
        Changes to test profiles are approved automatically, unless a switch to a live profile has been requested. The
@@ -124,7 +114,6 @@ Response
           * - | ``status``
 
               .. type:: string
-                 :required: true
 
             - The status of the requested profile changes.
 
@@ -136,14 +125,12 @@ Response
    * - | ``createdDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The payment profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - | ``updatedDatetime``
 
        .. type:: datetime
-          :required: true
 
      - The date and time of the payment profile's last edit, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format.
@@ -151,7 +138,6 @@ Response
    * - | ``links``
 
        .. type:: object
-          :required: true
 
      - Useful URLs to related resources.
 
@@ -161,14 +147,12 @@ Response
           * - | ``apikeys``
 
               .. type:: string
-                 :required: true
 
-            - The URL to the nested :ref:`API keys resource <v1/keys-list>`.
+            - The URL to the nested :doc:`API keys resource </reference/v1/profiles-api/list-keys>`.
 
           * - | ``checkoutPreviewUrl``
 
               .. type:: string
-                 :required: true
 
             - The Checkout preview URL. You need to be logged in to access this page.
 

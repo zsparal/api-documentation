@@ -1,7 +1,7 @@
-.. _v2/methods-list:
-
-Methods API v2: List payment methods
-====================================
+List payment methods
+====================
+.. api-name:: Methods API
+   :version: 2
 
 .. endpoint::
    :method: GET
@@ -54,7 +54,8 @@ Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
-profiles for each of their websites. See :ref:`Profiles API <v1/profiles-get>` for more information.
+profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -90,14 +91,12 @@ Response
    * - | ``count``
 
        .. type:: integer
-          :required: true
 
      - The number of methods found in ``_embedded``.
 
    * - | ``_embedded``
 
        .. type:: object
-          :required: true
 
      - The object containing the queried data.
 
@@ -107,14 +106,12 @@ Response
           * - | ``methods``
 
               .. type:: array
-                 :required: true
 
-            - An array of methods objects as described in :ref:`Get method <v2/methods-get>`.
+            - An array of methods objects as described in :doc:`Get method </reference/v2/methods-api/get-method>`.
 
    * - | ``_links``
 
        .. type:: object
-          :required: true
 
      - Links related to the lists of methods. Every URL object will contain an ``href`` and a ``type``
        field.
@@ -125,14 +122,12 @@ Response
           * - | ``self``
 
               .. type:: object
-                 :required: true
 
             - The URL to the current set of methods.
 
           * - | ``documentation``
 
               .. type:: object
-                 :required: true
 
             - The URL to the methods list endpoint documentation.
 
@@ -188,7 +183,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://www.mollie.com/en/docs/reference/methods/list",
+               "href": "https://docs.mollie.com/reference/v2/methods-api/list-methods",
                "type": "text/html"
            }
        }
