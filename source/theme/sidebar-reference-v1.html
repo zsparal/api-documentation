@@ -1,6 +1,8 @@
 {% from 'macros/sidebar-item.html' import sidebar_item with context -%}
 {% from 'macros/sidebar-collapse-group.html' import sidebar_collapse_group with context -%}
 
+{% include 'api-version-switcher.html' %}
+
 <div class="sidebar__group {{ sidebar_collapse_group('reference/v1/payments-api/') }}">
 	<p><a href="javascript:void(0)">Payments API</a></p>
 
@@ -50,12 +52,12 @@
 
 	<ul>
 		{{ sidebar_item(
-			'reference/v1/methods-api/list-issuers',
+			'reference/v1/issuers-api/list-issuers',
 			'List issuers',
 			'GET /v1/issuers'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/methods-api/get-issuer',
+			'reference/v1/issuers-api/get-issuer',
 			'Get issuer',
 			'GET /v1/issuers/*'
 		) }}

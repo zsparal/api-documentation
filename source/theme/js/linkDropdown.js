@@ -1,22 +1,12 @@
 import { enhance } from "./utils";
+import Dropkick from "./vendor/dropkick/dropkick";
 
 export default enhance("link-dropdown", element => {
-  const label = document.querySelector(".link-dropdown__label");
-
-  label.addEventListener("click", event => {
-    event.preventDefault();
-    element.classList.toggle("active");
+  element.addEventListener("change", () => {
+    window.location = element.value;
   });
 
-  document.addEventListener("click", event => {
-    if (element !== event.target && !element.contains(event.target)) {
-      element.classList.remove("active");
-    }
-  });
-
-  document.addEventListener("keydown", event => {
-    if (event.key === "Escape") {
-      element.classList.remove("active");
-    }
+  new Dropkick(element, {
+    mobile: false
   });
 });
