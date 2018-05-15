@@ -28,7 +28,8 @@
     "replace-in-file": "^3.4.0"
   },
   "dependencies": {
-    "custom-event": "^1.0.1"
+    "custom-event": "^1.0.1",
+    "dropkickjs": "^2.2.4"
   },
   "private": true
 }
