@@ -27,6 +27,8 @@
     "pify": "^3.0.0",
     "replace-in-file": "^3.4.0"
   },
-  "dependencies": {},
+  "dependencies": {
+    "custom-event": "^1.0.1"
+  },
   "private": true
 }
