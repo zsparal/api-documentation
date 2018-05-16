@@ -36,7 +36,7 @@ British pound        ``GBP``               2 PayPal, credit card
 Hong Kong dollar     ``HKD``               2 PayPal, credit card
 Croatian kuna        ``HRK``               2 Credit card        
 Hungarian forint     ``HUF``               2 PayPal, credit card
-Israeli new shekel   ``ILS``               0 PayPal, credit card
+Israeli new shekel   ``ILS``               2 PayPal, credit card
 Icelandic króna      ``ISK``               2 Credit card        
 Japanese yen         ``JPY``               0 PayPal, credit card
 Mexican peso         ``MXN``               2 PayPal             
