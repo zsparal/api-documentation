@@ -95,13 +95,13 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json+hal; charset=utf-8
+   Content-Type: application/hal+json; charset=utf-8
 
    {
        "resource": "permission",
        "id": "payments.read",
        "description": "View your payments",
-       "granted": true
+       "granted": true,
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/permissions/payments.read",
