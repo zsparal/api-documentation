@@ -96,7 +96,7 @@ Response
                    "granted": false,
                    "_links": {
                        "self": {
-                           "href": "http://api.mollie.com/v2/permissions/apikeys.read",
+                           "href": "https://api.mollie.com/v2/permissions/apikeys.read",
                            "type": "application/hal+json"
                        }
                    }
@@ -108,7 +108,7 @@ Response
                    "granted": true,
                    "_links": {
                        "self": {
-                           "href": "http://api.mollie.com/v2/permissions/payments.read",
+                           "href": "https://api.mollie.com/v2/permissions/payments.read",
                            "type": "application/hal+json"
                        }
                    }
@@ -123,6 +123,10 @@ Response
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/permissions-api/list-permissions",
                "type": "text/html"
+           },
+           "self": {
+               "href": "https://api.mollie.com/v2/permissions",
+               "type": "application/hal+json"
            }
        }
    }
