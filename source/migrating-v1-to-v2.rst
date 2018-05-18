@@ -245,6 +245,11 @@ Changes in the Organizations API
 * The fields ``country``, ``registrationDate`` and ``registrationType`` have been removed.
 * The field ``address`` is now an :ref:`Address object <address-object>`.
 
+Changes in the Permissions API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The field ``warning`` has been removed.
+
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 In general, error reporting has been improved to help you resolve any implementation errors as fast as possible.
