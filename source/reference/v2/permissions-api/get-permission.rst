@@ -22,7 +22,7 @@ Replace ``id`` in the endpoint URL by the permission's ID, for example ``payment
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/hal+json; charset=utf-8``
 
 .. list-table::
    :widths: auto
