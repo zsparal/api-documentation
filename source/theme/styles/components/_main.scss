@@ -17,6 +17,7 @@
     width: 200px;
     z-index: auto;
     position: relative;
+    display: block;
   }
 
   @media (min-width: breakpoint('extra-large')) {
