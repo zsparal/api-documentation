@@ -389,7 +389,7 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the mandate linked to this payment. Not present if not a recurring payment.
+            - The API resource URL of the mandate linked to this payment. Not present if a one-off payment.
 
           * - | ``subscription``
 
