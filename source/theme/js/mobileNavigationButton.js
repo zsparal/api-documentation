@@ -2,6 +2,8 @@ import { debounce } from "lodash";
 import { enhance } from "./utils";
 
 const NO_SCROLL_UTILITY_CLASS = "u-no-scroll";
+const VISIBLE_STATE_CLASS = "is-visible";
+const OPENED_STATE_CLASS = "is-opened";
 const MOBILE_NAV_BREAKPOINT = 980; // _variables.scss:19
 
 export default enhance("mobile-navigation-button", () => {
@@ -10,9 +12,9 @@ export default enhance("mobile-navigation-button", () => {
 
   navigationTrigger.addEventListener("click", event => {
     event.preventDefault();
-    mobileSidebar.classList.toggle("is-visible");
-    navigationTrigger.classList.toggle("is-opened");
-    document.documentElement.classList.toggle("u-no-scroll");
+    mobileSidebar.classList.toggle(VISIBLE_STATE_CLASS);
+    navigationTrigger.classList.toggle(OPENED_STATE_CLASS);
+    document.documentElement.classList.toggle(NO_SCROLL_UTILITY_CLASS);
   });
 
   const allowScrollingOnDesktop = () => {
@@ -26,12 +28,12 @@ export default enhance("mobile-navigation-button", () => {
         // If we're on desktop and the mobile nav was previously opened, close it.
         if (documentWidth > MOBILE_NAV_BREAKPOINT) {
           documentElement.classList.remove(NO_SCROLL_UTILITY_CLASS);
-          mobileSidebar.classList.remove("is-visible");
-          navigationTrigger.classList.remove("is-opened");
+          mobileSidebar.classList.remove(VISIBLE_STATE_CLASS);
+          navigationTrigger.classList.remove(OPENED_STATE_CLASS);
         }
       });
     }
   };
 
-  window.addEventListener("resize", debounce(() => allowScrollingOnDesktop(), 200, false));
+  window.addEventListener("resize", debounce(allowScrollingOnDesktop, 200));
 });
