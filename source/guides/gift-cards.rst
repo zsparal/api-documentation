@@ -60,7 +60,7 @@ will call your webhook.
 Integrate method selection in your application
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The selection for the gift card brand can be integrated in your own application as well. Using the
-:doc:`Methods API </reference/v1/methods-api/list-methods>`, you can retrieve the methods and gift cards available on
+:doc:`Methods API </reference/v2/methods-api/list-methods>`, you can retrieve the methods and gift cards available on
 your account. Use the include ``issuers`` to include the gift card brands available.
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.

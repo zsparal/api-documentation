@@ -131,10 +131,16 @@ a.headerlink::before {
 }
 
 .rst-content a:hover,
-.rst-content a:focus, {
+.rst-content a:focus {
   text-decoration: underline;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 130px;
+  margin: -130px 0 0;
+}
 
 /**
  * Typography
