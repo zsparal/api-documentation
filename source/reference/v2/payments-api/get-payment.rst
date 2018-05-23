@@ -385,6 +385,24 @@ Response
 
             - The URL to the payment retrieval endpoint documentation.
 
+          * - | ``mandate``
+
+              .. type:: URL object
+
+            - The API resource URL of the mandate linked to this payment. Not present if not a recurring payment.
+
+          * - | ``subscription``
+
+              .. type:: URL object
+
+            - The API resource URL of the subscription this payment is part of. Not present if not a subscription payment.
+
+          * - | ``customer``
+
+              .. type:: URL object
+
+            - The API resource URL of the customer this payment belongs to. Not present if not linked to a customer.
+
 Payment method specific details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If the payment has been created with a ``method``, or if the customer selected a method in the payment method selection
