@@ -20,8 +20,8 @@ parameter ``webhookUrl``.
 
 The following endpoints support webhooks:
 
-* `Payments API <v2/payments-create>`
-* `Subscriptions API <v2/subscriptions-create>`
+* :doc:`Payments API </reference/v2/payments-api/create-payment>`
+* :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`
 
 Webhooks for v2 API endpoints
 -----------------------------
