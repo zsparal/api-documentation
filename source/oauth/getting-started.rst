@@ -20,7 +20,7 @@ Use the details below to configure your app to work with our platform.
   :doc:`Authorize endpoint </reference/oauth2/authorize>`
 * **Access token URL**: ``https://api.mollie.com/oauth2/tokens``, see the
   :doc:`Tokens endpoint </reference/oauth2/tokens>`
-* **Resource owner URL**: ``https://api.mollie.com/v1/organizations/me``, see
+* **Resource owner URL**: ``https://api.mollie.com/v2/organizations/me``, see
   :doc:`Get organization </reference/v2/organizations-api/get-organization>`
 
 Getting a merchant’s consent
