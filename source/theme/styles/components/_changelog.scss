@@ -1,0 +1,24 @@
+#changes-in-the-v1-api ul,
+#changes-in-the-v2-api ul {
+  @include bare-list;
+}
+
+#changes-in-the-v1-api ul li,
+#changes-in-the-v2-api ul li {
+  position: relative;
+}
+
+#changes-in-the-v1-api ul li::before,
+#changes-in-the-v2-api ul li::before {
+  height: calc(100% + 5px);
+
+  @media (min-width: breakpoint('medium')) {
+    left: -25px;
+    position: absolute;
+    display: block;
+    height: 40px;
+    width: 19px;
+    content: "\2022";
+    opacity: 0.2;
+  }
+}
