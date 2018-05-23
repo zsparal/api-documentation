@@ -19,7 +19,7 @@ If you do not know the original payment's ID, you can use the
 Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the refund's ID. For example:
-``/v1/payments/tr_7UhSN1zuXS/refunds/re_4qqhO89gsT``.
+``/v2/payments/tr_7UhSN1zuXS/refunds/re_4qqhO89gsT``.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
