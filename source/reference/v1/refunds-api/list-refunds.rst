@@ -3,7 +3,6 @@ List refunds
 .. api-name:: Refunds API
    :version: 1
 
-
 .. warning:: The v1 API has been deprecated. The v1 API will be supported for the foreseeable future, at least until
              July 2023. However, new features will only be added to the v2 API.
 
@@ -14,7 +13,6 @@ List refunds
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v1/refunds
-
 
 .. endpoint::
    :method: GET
