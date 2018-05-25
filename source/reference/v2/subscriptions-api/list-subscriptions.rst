@@ -39,7 +39,7 @@ Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles
-for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
+for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
