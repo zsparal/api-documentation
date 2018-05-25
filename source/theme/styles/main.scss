@@ -131,10 +131,16 @@ a.headerlink::before {
 }
 
 .rst-content a:hover,
-.rst-content a:focus, {
+.rst-content a:focus {
   text-decoration: underline;
 }
 
+:target::before {
+  content: "";
+  display: block;
+  height: 130px;
+  margin: -130px 0 0;
+}
 
 /**
  * Typography
@@ -168,8 +174,10 @@ a.headerlink::before {
 @import "components/sidebar";
 @import "components/content";
 @import "components/api-name";
+@import "components/api-version-switcher";
 @import "components/endpoint";
 @import "components/authentication";
+@import "components/link-dropdown";
 @import "components/parameters";
 @import "components/code";
 @import "components/highlight";
@@ -183,3 +191,5 @@ a.headerlink::before {
  * Utilities
  */
 @import "utilities";
+
+@import "vendor/dropkick/dropkick";

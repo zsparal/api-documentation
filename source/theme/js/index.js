@@ -6,6 +6,7 @@ import subNavigation from "./subNavigation";
 import mobileNavigationButton from "./mobileNavigationButton";
 import * as mobileNavigation from "./mobileNavigation";
 import toggleClass from "./toggleClass";
+import linkDropdown from "./linkDropdown";
 import sidebar from "./sidebar";
 
 const handlers = makeHandlers([toggleClass, mobileNavigation.hide, mobileNavigation.show]);
@@ -15,6 +16,7 @@ const enhancers = makeEnhancers([
   subNavigation,
   mobileNavigationButton,
   sidebar,
+  linkDropdown
 ]);
 
 const main = () => {

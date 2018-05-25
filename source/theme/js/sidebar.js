@@ -45,7 +45,6 @@ const scrollToSection = event => {
       document.documentElement.scrollTop = v;
     },
   });
-
 };
 
 const toggleSidebarGroup = event => {

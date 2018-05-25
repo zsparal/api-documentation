@@ -3,8 +3,8 @@ Tokens
 .. api-name:: Connect API
 
 .. endpoint::
-   :method: GET
-   :url: https://www.mollie.com/oauth2/tokens
+   :method: POST
+   :url: https://api.mollie.com/oauth2/tokens
 
 Authentication: :doc:`OAuth client credentials </oauth/overview>`
 

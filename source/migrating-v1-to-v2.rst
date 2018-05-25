@@ -16,8 +16,8 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 
 Changes in v2
 -------------
-In general, the API has adopted the HAL specification, allowing you to discover new resources and follow links to new
-resources while working with the API.
+In general, the API has adopted the `HAL specification <https://en.wikipedia.org/wiki/Hypertext_Application_Language>`_,
+allowing you to discover new resources and follow links to new resources while working with the API.
 
 Several fields have changed too to support new features or to clear up confusing aspects of the ``v1`` API.
 
@@ -220,6 +220,16 @@ The following fields have been changed, renamed or moved:
 * ``cancelledDatetime`` has been renamed to ``canceledAt``, and is now only returned when the subscription is canceled.
 * ``webhookUrl`` is now part of the top-level object for Subscriptions.
 
+Changes in the Profiles API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+The following fields have been changed, renamed or removed:
+
+* ``createdDatetime`` has been renamed to ``createdAt``
+* ``updatedDatetime`` has been removed.
+* ``phone`` is now formatted in `E.164 <https://en.wikipedia.org/wiki/E.164>`_ formatting.
+* The API keys subresource has been removed.
+
 Changes in the Settlements API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
@@ -233,11 +243,22 @@ The following fields have been changed, renamed or moved:
   ``amountGross``.
 * If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
 
+Changes in the Mandates API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The following fields have been changed, renamed or moved:
+
+* ``createdDatetime`` has been renamed to ``createdAt``.
+
 Changes in the Organizations API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 * The fields ``country``, ``registrationDate`` and ``registrationType`` have been removed.
 * The field ``address`` is now an :ref:`Address object <address-object>`.
+
+Changes in the Permissions API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* The field ``warning`` has been removed.
 
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
