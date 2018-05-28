@@ -1,5 +1,5 @@
-{%- set is_v1 = pagename.startswith("reference/v1/") -%}
-{%- set is_v2 = pagename.startswith("reference/v2/") -%}
+{%- set is_v1 = pagename.startswith("reference/v1/") or pagename.startswith("changelog/v1") -%}
+{%- set is_v2 = pagename.startswith("reference/v2/") or pagename.startswith("changelog/v2") -%}
 
 {%- set pagename_v1 = pagename.replace("/v2/", "/v1/") -%}
 {%- set pagename_v2 = pagename.replace("/v1/", "/v2/") -%}
