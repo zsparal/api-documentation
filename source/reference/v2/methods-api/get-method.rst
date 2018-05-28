@@ -38,7 +38,7 @@ Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
 information.
 
 .. list-table::

@@ -68,7 +68,7 @@ periodically through *subscriptions*.
 #. Redirect the customer to the ``paymentUrl`` to complete the first payment. Make sure to use an HTTP ``GET`` redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
-   :doc:`Mandates API </reference/v1/mandates-api/get-mandate>`.
+   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our Checkout. The following payment methods support a first payment and are
@@ -92,7 +92,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates \
+      curl -X GET https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 #. If there's at least one mandate with a ``status`` set to ``valid`` then continue.
@@ -130,7 +130,7 @@ automatically at the specified frequency, and will show up in your Dashboard.
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v1/customers/cst_4qqhO89gsT/mandates \
+      curl -X GET https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 #. Continue if there's a mandate with its ``status`` being either ``pending`` or ``valid``, otherwise set up a *first*

@@ -1,6 +1,8 @@
 {% from 'macros/sidebar-item.html' import sidebar_item with context -%}
 {% from 'macros/sidebar-collapse-group.html' import sidebar_collapse_group with context -%}
 
+{% include 'api-version-switcher.html' %}
+
 <div class="sidebar__group {{ sidebar_collapse_group('reference/v2/payments-api/') }}">
 	<p><a href="javascript:void(0)">Payments API</a></p>
 
@@ -196,29 +198,29 @@
 		{{ sidebar_item(
 			'reference/oauth2/authorize',
 			'Authorize',
-			'GET /oauth2/authorize'
+			'GET www.mollie.com/oauth2/authorize'
 		) }}
 		{{ sidebar_item(
 			'reference/oauth2/tokens',
 			'Tokens',
-			'GET /oauth2/tokens'
+			'POST /oauth2/tokens'
 		) }}
 	</ul>
 </div>
 
-<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/permissions-api/') }}">
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/permissions-api/') }}">
 	<p><a href="javascript:void(0)">Permissions API</a></p>
 
 	<ul>
 		{{ sidebar_item(
-			'reference/v1/permissions-api/get-permission',
+			'reference/v2/permissions-api/get-permission',
 			'Get permission',
-			'GET /v1/permissions/*'
+			'GET /v2/permissions/*'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/permissions-api/list-permissions',
+			'reference/v2/permissions-api/list-permissions',
 			'List permissions',
-			'GET /v1/permissions'
+			'GET /v2/permissions'
 		) }}
 	</ul>
 </div>
@@ -240,49 +242,34 @@
 	</ul>
 </div>
 
-<div class="sidebar__group {{ sidebar_collapse_group('reference/v1/profiles-api/') }}">
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/profiles-api/') }}">
 	<p><a href="javascript:void(0)">Profiles API</a></p>
 
 	<ul>
 		{{ sidebar_item(
-			'reference/v1/profiles-api/create-profile',
+			'reference/v2/profiles-api/create-profile',
 			'Create profile',
-			'POST /v1/profiles'
+			'POST /v2/profiles'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/profiles-api/get-profile',
+			'reference/v2/profiles-api/get-profile',
 			'Get profile',
-			'GET /v1/profiles/*'
+			'GET /v2/profiles/*'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/profiles-api/update-profile',
+			'reference/v2/profiles-api/update-profile',
 			'Update profile',
-			'POST /v1/profiles/*'
+			'POST /v2/profiles/*'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/profiles-api/delete-profile',
+			'reference/v2/profiles-api/delete-profile',
 			'Delete profile',
-			'DELETE /v1/profiles/*'
+			'DELETE /v2/profiles/*'
 		) }}
 		{{ sidebar_item(
-			'reference/v1/profiles-api/list-profiles',
+			'reference/v2/profiles-api/list-profiles',
 			'List profiles',
-			'GET /v1/profiles'
-		) }}
-		{{ sidebar_item(
-			'reference/v1/profiles-api/get-key',
-			'Get API key',
-			'GET /v1/profiles/*/apikeys/*'
-		) }}
-		{{ sidebar_item(
-			'reference/v1/profiles-api/reset-key',
-			'Reset API key',
-			'POST /v1/profiles/*/apikeys/*'
-		) }}
-		{{ sidebar_item(
-			'reference/v1/profiles-api/list-keys',
-			'List API keys',
-			'GET /v1/profiles/*/apikeys'
+			'GET /v2/profiles'
 		) }}
 	</ul>
 </div>

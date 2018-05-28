@@ -79,7 +79,7 @@ For the full list of fields, see the
               .. type:: URL object
 
             - The API resource URL where the organization's
-              :doc:`profiles </reference/v1/profiles-api/list-profiles>` can be retrieved.
+              :doc:`profiles </reference/v2/profiles-api/list-profiles>` can be retrieved.
 
           * - | ``refunds``
 
