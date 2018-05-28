@@ -1,7 +1,7 @@
-Changes in the V1 API
+Changelog
 ~~~~~~~~~~~~~~~~~~~~~
 
-Occasionally, we will add new resources, new fields, or new possible values to existing fields to the V1 Mollie API. All changes are documented here.
+Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All changes are documented here.
 
 May 2018
 ========
