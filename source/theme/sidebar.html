@@ -2,6 +2,10 @@
 	{%- include "sidebar-reference-v2.html" -%}
 {%- elif pagename.startswith("reference/v1/") -%}
 	{%- include "sidebar-reference-v1.html" -%}
+{%- elif pagename.startswith("changelog/v1/") -%}
+	{%- include "sidebar-changelog-v1.html" -%}
+{%- elif pagename.startswith("changelog/v2/") -%}
+	{%- include "sidebar-changelog-v2.html" -%}
 {%- else -%}
 	{%- include "sidebar-guides.html" -%}
 {%- endif -%}

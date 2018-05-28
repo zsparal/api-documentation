@@ -106,9 +106,9 @@ a.headerlink::before {
   content: "";
   position: absolute;
   left: -22px;
-  top: 50%;
+  top: 8px;
   transform: translateY(-50%);
-  height: 10px;
+  height: 100%;
   width: 15px;
   background: transparent url("./../../_static/img/headerlink.svg") no-repeat center center;
   opacity: 0;
@@ -163,33 +163,37 @@ a.headerlink::before {
 /**
 * Components
 */
-@import "components/main-navigation";
-@import "components/sub-navigation";
-@import "components/sub-navigation-item";
-@import "components/mobile-navigation";
-@import "components/products-navigation";
-@import "components/products-navigation-items";
-@import "components/footer";
-@import "components/main";
-@import "components/sidebar";
-@import "components/content";
 @import "components/api-name";
 @import "components/api-version-switcher";
-@import "components/endpoint";
 @import "components/authentication";
-@import "components/link-dropdown";
-@import "components/parameters";
+@import "components/changelog";
 @import "components/code";
-@import "components/highlight";
-@import "components/note";
-@import "components/github-link";
-@import "components/type";
+@import "components/content";
+@import "components/endpoint";
 @import "components/figure";
+@import "components/footer";
+@import "components/github-link";
+@import "components/highlight";
+@import "components/link-dropdown";
+@import "components/main";
+@import "components/main-navigation";
+@import "components/mobile-navigation";
 @import "components/mobile-navigation-button";
+@import "components/note";
+@import "components/parameters";
+@import "components/products-navigation";
+@import "components/products-navigation-items";
+@import "components/sidebar";
+@import "components/sub-navigation";
+@import "components/sub-navigation-item";
+@import "components/type";
 
 /**
  * Utilities
  */
 @import "utilities";
 
+/**
+ * Vendor
+ */
 @import "vendor/dropkick/dropkick";
