@@ -1,8 +1,6 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive, directives
 
-from source.extensions import utilities
-
 
 class ApiNameDirective(Directive):
     has_content = False

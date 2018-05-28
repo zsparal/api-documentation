@@ -7,7 +7,6 @@ List refunds
    :method: GET
    :url: https://api.mollie.com/v2/refunds
 
-
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v2/payments/*paymentId*/refunds
