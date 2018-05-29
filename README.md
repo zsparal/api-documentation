@@ -1,5 +1,7 @@
 # Mollie public API documentation
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/mollie/api-documentation.svg)](https://greenkeeper.io/)
+
 
 This project contains the source of all of Mollie's public API documentation. The full documentation (in an easy to use
 format) may be found at https://docs.mollie.com.
