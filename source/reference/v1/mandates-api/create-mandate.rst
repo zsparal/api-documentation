@@ -57,7 +57,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
    * - | ``consumerBic``
 
        .. type:: string
-          :required: true
+          :required: falso
 
      - The consumer's bank's BIC.
 
