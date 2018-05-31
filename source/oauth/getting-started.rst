@@ -1,7 +1,7 @@
 Mollie Connect: Getting started
 ===============================
-Assuming you have already built an OAuth-compatible app, the first step is to register your app in your
-`Dashboard <https://www.mollie.com/dashboard/>`_ under 'Apps'. You will receive a *Client ID* and *Client Secret*, both
+Assuming you have already built an OAuth-compatible app, the first step is to `register your app in your
+Dashboard <https://www.mollie.com/dashboard/developers/applications>`_. You will receive a *Client ID* and *Client Secret*, both
 of which should be kept secret. These credentials can be used to:
 
 * Redirect users to your app's authorization form (*Client ID*)

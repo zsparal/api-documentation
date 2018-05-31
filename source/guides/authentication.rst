@@ -23,7 +23,7 @@ go live by using the Live API key instead of the Test API key. Going live (or go
 changing keys. Nothing else needs to change.
 
 Of course it's very important to keep any API-keys :doc:`secure </security>`. Do not ever share them. However, if a key
-leaks you can always `regenerate <https://www.mollie.com/dashboard/settings/profiles>`_ it. Don't forget to apply new
+leaks you can always `regenerate <https://www.mollie.com/dashboard/developers/api-keys>`_ it. Don't forget to apply new
 keys to your code. Until you do your integration will not work.
 
 Apart from the payment screen and the fact that test payments are created instead of real ones, the Mollie API behaves
