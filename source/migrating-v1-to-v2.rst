@@ -260,6 +260,16 @@ Changes in the Permissions API
 
 * The field ``warning`` has been removed.
 
+Changes in the Invoice API
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+* ``issuedDate`` has been renamed to ``issuedAt``.
+* ``paidDate`` has been renamed to ``paidAt``.
+* ``dueDate`` has been renamed to ``dueAt``.
+* ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
+  ``amountGross``.
+* ``pdf`` has been moved into the ``_links`` property.
+
 Changes in error reporting
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 In general, error reporting has been improved to help you resolve any implementation errors as fast as possible.
