@@ -357,9 +357,13 @@ Response
               .. type:: URL object
 
             - The URL your customer should visit to make the payment. This is where you should redirect the
-              consumer to. Make sure you redirect using the HTTP ``GET`` method.
+              consumer to.
 
-              Note the URL will not be present for recurring payments.
+              .. note :: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
+                         redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
+                         ``303 See Other`` to force an HTTP ``GET`` redirect.
+
+              Recurring payments don't have a checkout URL.
 
           * - | ``refunds``
 
