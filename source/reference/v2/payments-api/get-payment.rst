@@ -259,6 +259,15 @@ Response
 
      - The identifier referring to the profile this payment was created on. For example, ``pfl_QkEhN94Ba``.
 
+   * - | ``settlementAmount``
+
+       .. type:: amount object|null
+
+     -   This optional field will contain the amount that will be settled to your account, converted to the currency your
+         account is settled in. It follows the same syntax as the ``amount`` property.
+
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
+
    * - | ``settlementId``
 
        .. type:: string

@@ -73,26 +73,31 @@ Response
 
        .. type:: amount object|null
 
-     - The amount deducted from the settlement, in the settlement's currency.
+     -   This optional field will contain the amount that will be deducted from your account balance, converted to the
+         currency your account is settled in. It follows the same syntax as the ``amount`` property.
 
-       .. list-table::
-          :widths: auto
+         Note that for refunds, the ``value`` key of ``settlementAmount`` will be negative.
 
-          * - | ``currency``
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal refunds.
 
-              .. type:: string
+         .. list-table::
+            :widths: auto
 
-            - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+            * - | ``currency``
 
-          * - | ``value``
+                .. type:: string
 
-              .. type:: string
+              - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-            - A string containing the exact amount that was deducted for the refund from your account balance in the
-              settlement currency. Note that this will be negative.
+            * - | ``value``
 
-              If the refund is queued and in a different currency than the settlement currency, the settlement amount
-              will be ``null`` as the exchange rates may change until the refund is finally executed.
+                .. type:: string
+
+              - A string containing the exact amount that was deducted for the refund from your account balance in the
+                settlement currency. Note that this will be negative.
+
+                If the refund is queued and in a different currency than the settlement currency, the settlement amount
+                will be ``null`` as the exchange rates may change until the refund is finally executed.
 
    * - | ``description``
 

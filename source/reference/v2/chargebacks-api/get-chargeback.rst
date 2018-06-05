@@ -64,25 +64,30 @@ Response
 
    * - | ``settlementAmount``
 
-       .. type:: amount object
+       .. type:: amount object|null
 
-     - The amount deducted from the settlement, in the settlement's currency.
+     -   This optional field will contain the amount that will be deducted from your account, converted to the currency
+         your account is settled in. It follows the same syntax as the ``amount`` property.
 
-       .. list-table::
-          :widths: auto
+         Note that for chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
 
-          * - | ``currency``
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal chargebacks.
 
-              .. type:: string
+         .. list-table::
+            :widths: auto
 
-            - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+            * - | ``currency``
 
-          * - | ``value``
+                .. type:: string
 
-              .. type:: string
+              - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-            - A string containing the exact amount that was deducted for the chargeback from your account balance in the
-              settlement currency. Note that this will be negative.
+            * - | ``value``
+
+                .. type:: string
+
+              - A string containing the exact amount that was deducted for the chargeback from your account balance in the
+                settlement currency. Note that this will be negative.
 
    * - | ``createdAt``
 
@@ -166,7 +171,7 @@ Response
        },
        "settlementAmount": {
            "currency": "EUR",
-           "value": "35.07"
+           "value": "-35.07"
        },
        "createdAt": "2018-03-14T17:00:52.0Z",
        "reversedAt": null
