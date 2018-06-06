@@ -11,7 +11,7 @@ If possible it would be wise to leave communication at this level to our ready-m
 allows you to still be in control without reinventing the wheel.
 
 If you have any questions about integrating our API, please `contact us <https://www.mollie.com/en/contact/>`_. We're happy
-to help! 
+to help!
 
 .. _clients:
 
@@ -21,7 +21,7 @@ Well begun is half done. Save time and build on solid foundations. Mollie API cl
 `PHP <https://github.com/mollie/mollie-api-php>`_, `Ruby <https://github.com/mollie/mollie-api-ruby>`_,
 `Node.js <https://github.com/mollie/mollie-api-node>`_ and `Python <https://github.com/mollie/mollie-api-python>`_.
 
-Of course we also provide modules and plugins for about every web shop software out there.
+Of course we also provide modules and plugins for about every webshop software out there.
 
 Payment methods
 ---------------
