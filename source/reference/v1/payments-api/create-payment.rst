@@ -389,7 +389,7 @@ SEPA Direct Debit
 
 .. note::
    One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
-   general, it is not very useful for web shops but may be useful for charities.
+   general, it is not very useful for webshops but may be useful for charities.
 
    If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </guides/recurring>`.
 
