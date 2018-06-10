@@ -118,7 +118,7 @@ Response
                        "value": "35.07"
                    },
                    "createdAt": "2018-03-14T17:00:52.0Z",
-                   "reversedAt": null
+                   "reversedAt": null,
                    "paymentId": "tr_WDqYK6vllg",
                    "_links": {
                        "self": {
@@ -134,7 +134,7 @@ Response
                            "type": "text/html"
                        }
                    }
-               }
+               },
                { },
                { }
            ]
