@@ -135,7 +135,7 @@ Response
    {
        "count": 3,
        "_embedded": {
-           "subscriptions": [
+           "customers": [
                {
                    "resource": "customer",
                    "id": "cst_kEn1PlbGa",
