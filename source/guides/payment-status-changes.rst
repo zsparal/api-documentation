@@ -43,7 +43,7 @@ How does one status lead to another?
 ------------------------------------
 Please look at the below diagram. It tells you exactly when to expect what status:
 
-.. image:: images/api-status-list@2x.png
+.. image:: images/api-status-list-v2@2x.png
 
 When does a payment expire?
 ---------------------------
@@ -54,7 +54,7 @@ abandons it. The expiry time is different for each payment method.
 .. note:: It is not a good idea to predict payment expiry. Best wait until your webhook is called and fetch the status
           as usual. This is the most reliable way to keep your system in sync with Mollie, also in the case of expiring
           payments.
- 
+
 Expiry times per payment method
 -------------------------------
 
