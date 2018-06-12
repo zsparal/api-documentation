@@ -116,7 +116,7 @@ Response
 
    * - | ``expiresAt``
 
-       .. type:: duration
+       .. type:: datetime
 
      - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
