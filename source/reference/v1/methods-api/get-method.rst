@@ -45,7 +45,7 @@ Replace ``id`` in the endpoint URL by the payment method's ID, for example ``cre
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter.
 With it, you can specify which profile you want to retrieve a method for. Organizations can have multiple profiles for
 each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
