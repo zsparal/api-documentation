@@ -122,19 +122,22 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the mandates belonging to the Customer, if there are no mandates this parameter is omitted.
+            - The API resource URL of the mandates belonging to the Customer, if there are no mandates this parameter is
+              omitted.
 
           * - | ``subscriptions``
 
               .. type:: URL object
 
-            - The API resource URL of the subscriptions belonging to the Customer, if there are no subscriptions this parameter is omitted.
+            - The API resource URL of the subscriptions belonging to the Customer, if there are no subscriptions this
+              parameter is omitted.
 
           * - | ``payments``
 
               .. type:: URL object
 
-            - The API resource URL of the payments belonging to the Customer, if there are no payments this parameter is omitted.
+            - The API resource URL of the payments belonging to the Customer, if there are no payments this parameter is
+              omitted.
 
           * - | ``documentation``
 
