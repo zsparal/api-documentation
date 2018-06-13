@@ -72,4 +72,4 @@ You can get support via info@mollie.com.
 
 ## License
 
-The project is licensed under the MIT license.
+The documentation is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?) license.
