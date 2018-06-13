@@ -668,7 +668,7 @@ Credit card
               processed through Mollie.
 
               Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
-              ``Discover`` ``JCB Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
+              ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
 
           * - | ``cardCountryCode``
 
