@@ -65,7 +65,7 @@ periodically through *subscriptions*.
               \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
-#. Redirect the customer to the ``paymentUrl`` to complete the first payment. Make sure to use an HTTP ``GET`` redirect.
+#. Redirect the customer to the ``_links.checkout.url`` to complete the first payment. Make sure to use an HTTP ``GET`` redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
    :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`.
