@@ -567,8 +567,7 @@ Belfius Pay Button
 
               .. type:: string
 
-            - Only available one banking day after the payment has been completed – The consumer's bank account. This
-              may be an IBAN, or it may be a domestic account number.
+            - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
           * - | ``consumerBic``
 
