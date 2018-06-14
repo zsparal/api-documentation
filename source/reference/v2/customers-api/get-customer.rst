@@ -87,15 +87,6 @@ Response
 
      - Data provided during the customer creation in JSON notation.
 
-   * - | ``recentlyUsedMethods``
-
-       .. type:: array
-
-     - Payment methods that the customer recently used for payments.
-
-       Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
-
    * - | ``createdAt``
 
        .. type:: datetime

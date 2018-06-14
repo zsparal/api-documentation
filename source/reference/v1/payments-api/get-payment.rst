@@ -171,8 +171,8 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard`` ``ideal``
-       ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -458,8 +458,7 @@ Belfius Pay Button
 
               .. type:: string
 
-            - Only available one banking day after the payment has been completed – The consumer's bank account. This
-              may be an IBAN, or it may be a domestic account number.
+            - Only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
 
           * - | ``consumerBic``
 
@@ -585,6 +584,38 @@ Credit card
 
               Possible values: ``intra-eu`` ``other``
 
+eps
+"""
+.. list-table::
+   :widths: auto
+
+   * - | ``details``
+
+       .. type:: object
+
+     - An object with payment details.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``consumerName``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed – The consumer's name.
+
+          * - | ``consumerAccount``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
+
+          * - | ``consumerBic``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed. The consumer's bank's BIC.
+
 Gift cards
 """"""""""
 .. list-table::
@@ -648,6 +679,38 @@ Gift cards
             - Only available if another payment method was used to pay the remainder amount – The payment method that
               was used to pay the remainder amount.
 
+Giropay
+"""""""
+.. list-table::
+   :widths: auto
+
+   * - | ``details``
+
+       .. type:: object
+
+     - An object with payment details.
+
+       .. list-table::
+          :widths: auto
+
+          * - | ``consumerName``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed – The consumer's name.
+
+          * - | ``consumerAccount``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
+
+          * - | ``consumerBic``
+
+              .. type:: string
+
+            - Generally only available one banking day after the payment has been completed. The consumer's bank's BIC.
+
 iDEAL
 """""
 .. list-table::
@@ -704,7 +767,7 @@ ING Home'Pay
 
               .. type:: string
 
-            - Only available one banking day after the payment has been completed – The consumer's IBAN.
+            - Only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
 
           * - | ``consumerBic``
 
