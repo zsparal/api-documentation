@@ -608,7 +608,8 @@ eps
 
               .. type:: string
 
-            - Generally only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
+            - Generally only available one banking day after the payment has been completed – The consumer's bank
+              account's IBAN.
 
           * - | ``consumerBic``
 
@@ -703,7 +704,8 @@ Giropay
 
               .. type:: string
 
-            - Generally only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
+            - Generally only available one banking day after the payment has been completed – The consumer's bank
+              account's IBAN.
 
           * - | ``consumerBic``
 

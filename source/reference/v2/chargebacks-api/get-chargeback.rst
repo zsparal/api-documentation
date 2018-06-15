@@ -86,8 +86,8 @@ Response
 
                 .. type:: string
 
-              - A string containing the exact amount that was deducted for the chargeback from your account balance in the
-                settlement currency. Note that this will be negative.
+              - A string containing the exact amount that was deducted for the chargeback from your account balance in
+                the settlement currency. Note that this will be negative.
 
    * - | ``createdAt``
 

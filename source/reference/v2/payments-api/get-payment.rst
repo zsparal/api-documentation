@@ -229,7 +229,8 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
 
    * - | ``metadata``
 
@@ -262,8 +263,8 @@ Response
 
        .. type:: amount object|null
 
-     -   This optional field will contain the amount that will be settled to your account, converted to the currency your
-         account is settled in. It follows the same syntax as the ``amount`` property.
+     -   This optional field will contain the amount that will be settled to your account, converted to the currency
+         your account is settled in. It follows the same syntax as the ``amount`` property.
 
          Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
 
@@ -271,15 +272,14 @@ Response
 
        .. type:: string
 
-     - The identifier referring to the settlement this payment was settled with. For example,
-       ``stl_BkEjN2eBb``.
+     - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``.
 
    * - | ``customerId``
 
        .. type:: string
 
-     - If a customer was specified upon payment creation, the customer's token will be available here as
-       well. For example, ``cst_XPn78q9CfT``.
+     - If a customer was specified upon payment creation, the customer's token will be available here as well. For
+       example, ``cst_XPn78q9CfT``.
 
    * - | ``sequenceType``
 
@@ -407,7 +407,8 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the subscription this payment is part of. Not present if not a subscription payment.
+            - The API resource URL of the subscription this payment is part of. Not present if not a subscription
+              payment.
 
           * - | ``customer``
 

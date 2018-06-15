@@ -1,14 +1,20 @@
 Changelog
-~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~
 
-Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All changes are documented here.
+Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
+changes are documented here.
 
 June 2018
 =========
 
 Friday, 1st
 -----------
-- Added new locales ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` and ``lt_LT`` to the :doc:`Create Customer </reference/v1/customers-api/create-customer>`, :doc:`Create Payment </reference/v1/payments-api/create-payment>`, and :doc:`List Methods </reference/v1/methods-api/list-methods>` endpoints to localize translations and allow for ordering the payment methods in the preferred order for the country.
+- Added new locales ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
+  ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` and ``lt_LT`` to
+  the :doc:`Create Customer </reference/v1/customers-api/create-customer>`,
+  :doc:`Create Payment </reference/v1/payments-api/create-payment>`, and
+  :doc:`List Methods </reference/v1/methods-api/list-methods>` endpoints to localize translations and allow for ordering
+  the payment methods in the preferred order for the country.
 
 May 2018
 ========
@@ -207,7 +213,8 @@ Monday, 17th
 Saturday, 1st
 -------------
 - Occasionally, we would not call the web hook for iDEAL payments if the payment status had already been retrieved via
-  the API. This behavior has now been brought in line with the behavior of the other payment methods: we will now always call the web hook if there is a status update, whether or not the status has retrieved from the API.
+  the API. This behavior has now been brought in line with the behavior of the other payment methods: we will now always
+  call the web hook if there is a status update, whether or not the status has retrieved from the API.
 
 May 2017
 ========
@@ -239,7 +246,8 @@ Wednesday, 1st
 --------------
 - You can now retrieve an organization's open balance using the settlements/open resource.
 
-- The profiles method of the Reseller API will now return a <token /> field to help you integrate the Reseller API with our OAuth APIs.
+- The profiles method of the Reseller API will now return a <token /> field to help you integrate the Reseller API with
+  our OAuth APIs.
 
 - Added a details.qrCode include for the Payments resource. You can add this parameter to the resource endpoint
   ``?include=details.qrCode`` during creation, get or list operations and it will give you an object with a QR code
@@ -324,7 +332,8 @@ Saturday, 1st
   value kbc, which will create a KBC/CBC payment.
 
 - When the method parameter is passed with the value kbc or when no method value is passed and KBC/CBC is chosen as the
-  payment method, the description parameter value will be truncated to 13 characters. This will be increased in the future.
+  payment method, the description parameter value will be truncated to 13 characters. This will be increased in the
+  future.
 
 September 2016
 ==============

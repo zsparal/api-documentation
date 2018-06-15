@@ -174,7 +174,7 @@ Response
                             "type": "application/hal+json"
                        },
                        "pdf": {
-                            "href": "https://www.mollie.com/merchant/download/invoice/xBEbP9rvAq/2ab44d60b35b1d06090bba955fa2c602",
+                            "href": "https://www.mollie.com/merchant/download/invoice/xBEbP9rvAq/2ab44d60b35955fa2c602",
                             "type": "application/pdf"
                        }
                    }
