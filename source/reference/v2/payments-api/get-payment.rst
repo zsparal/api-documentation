@@ -180,7 +180,7 @@ Response
 
    * - | ``amountRemaining``
 
-       .. type:: decimal
+       .. type:: amount object
 
      - The remaining amount that can be refunded. Only available when refunds are available for this payment.
 
