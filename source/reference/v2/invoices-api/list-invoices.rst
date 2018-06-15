@@ -20,7 +20,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
           :required: false
@@ -28,14 +28,14 @@ Parameters
      - Use this parameter to filter for an invoice with a specific invoice number / reference. An example
        reference would be ``2018.10000``.
 
-   * - | ``year``
+   * - ``year``
 
        .. type:: integer
           :required: false
 
      - Use this parameter to filter for invoices from a specific year (e.g. ``2018``).
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: integer
           :required: false
@@ -43,7 +43,7 @@ Parameters
      - Offset the result set to the invoice with this ID. The invoice with this ID is included in the result
        set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -57,14 +57,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of invoices found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -73,13 +73,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``invoices``
+          * - ``invoices``
 
               .. type:: array
 
             - An array of invoice objects as described in :doc:`Get invoice </reference/v2/invoices-api/get-invoice>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -89,25 +89,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of invoices.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of invoices, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of invoices, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

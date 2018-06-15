@@ -35,31 +35,31 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an invoice object. Will always contain ``invoice`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The invoice's unique identifier, for example ``inv_FrvewDA3Pr``.
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
 
      - The reference number of the invoice. An example value would be: ``2018.10000``.
 
-   * - | ``vatNumber``
+   * - ``vatNumber``
 
        .. type:: string
 
      - The VAT number to which the invoice was issued to (if applicable).
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -71,25 +71,25 @@ Response
        * ``paid`` The invoice is paid.
        * ``overdue`` Payment of the invoice is overdue.
 
-   * - | ``issueDate``
+   * - ``issueDate``
 
        .. type:: string
 
      - The invoice date in ``YYYY-MM-DD`` format.
 
-   * - | ``paidDate``
+   * - ``paidDate``
 
        .. type:: string
 
      - The date on which the invoice was paid, in ``YYYY-MM-DD`` format. Only for paid invoices.
 
-   * - | ``dueDate``
+   * - ``dueDate``
 
        .. type:: string
 
      - The date on which the invoice is due, in ``YYYY-MM-DD`` format. Only for due invoices.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
 
@@ -98,13 +98,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``net``
+          * - ``net``
 
               .. type:: decimal
 
             - Total amount of the invoice excluding VAT.
 
-          * - | ``vat``
+          * - ``vat``
 
               .. type:: decimal
 
@@ -112,13 +112,13 @@ Response
               shifted to recipient; article 44 and 196 EU VAT Directive 2006/112. For merchants outside the EU, no VAT
               will be charged.
 
-          * - | ``gross``
+          * - ``gross``
 
               .. type:: decimal
 
             - Total amount of the invoice including VAT.
 
-   * - | ``lines``
+   * - ``lines``
 
        .. type:: array
 
@@ -127,37 +127,37 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``period``
+          * - ``period``
 
               .. type:: string
 
             - The administrative period in ``YYYY-MM`` on which the line should be booked.
 
-          * - | ``description``
+          * - ``description``
 
               .. type:: string
 
             - Description of the product.
 
-          * - | ``count``
+          * - ``count``
 
               .. type:: integer
 
             - Number of products invoiced (usually number of payments).
 
-          * - | ``vatPercentage``
+          * - ``vatPercentage``
 
               .. type:: decimal
 
             - VAT percentage rate that applies to this product.
 
-          * - | ``amount``
+          * - ``amount``
 
               .. type:: decimal
 
             - Amount excluding VAT.
 
-   * - | ``settlements``
+   * - ``settlements``
 
        .. type:: array
 
@@ -165,7 +165,7 @@ Response
        :doc:`settlements </reference/v1/settlements-api/get-settlement>` that were invoiced on this invoice. You need
        the ``settlements.read`` permission for this field.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -174,7 +174,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``pdf``
+          * - ``pdf``
 
               .. type:: string
 

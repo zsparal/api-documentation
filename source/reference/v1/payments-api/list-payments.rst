@@ -27,14 +27,14 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of payments to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -52,14 +52,14 @@ information.
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: false
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -83,32 +83,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of payments available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped payments as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of payment objects as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -117,25 +117,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of payments, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of payments, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of payments, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

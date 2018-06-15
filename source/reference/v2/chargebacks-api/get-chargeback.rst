@@ -35,13 +35,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: amount object
 
@@ -50,19 +50,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount that was charged back in the given currency.
 
-   * - | ``settlementAmount``
+   * - ``settlementAmount``
 
        .. type:: amount object|null
 
@@ -76,40 +76,40 @@ Response
          .. list-table::
             :widths: auto
 
-            * - | ``currency``
+            * - ``currency``
 
                 .. type:: string
 
               - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-            * - | ``value``
+            * - ``value``
 
                 .. type:: string
 
               - A string containing the exact amount that was deducted for the chargeback from your account balance in
                 the settlement currency. Note that this will be negative.
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``reversedAt``
+   * - ``reversedAt``
 
        .. type:: datetime
 
      - The date and time the chargeback was reversed if applicable, in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``paymentId``
+   * - ``paymentId``
 
        .. type:: string
 
      - The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -119,25 +119,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the chargeback itself.
 
-          * - | ``payment``
+          * - ``payment``
 
               .. type:: URL object
 
             - The API resource URL of the payment this chargeback belongs to.
 
-          * - | ``settlement``
+          * - ``settlement``
 
               .. type:: URL object
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

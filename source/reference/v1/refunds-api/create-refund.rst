@@ -60,7 +60,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
           :required: false
@@ -68,7 +68,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
      - The amount to refund. When ommitted, the full amount is refunded. Can be up to €25.00 more than the
        original transaction amount.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
           :required: false
@@ -84,7 +84,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

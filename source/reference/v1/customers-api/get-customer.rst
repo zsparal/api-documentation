@@ -32,7 +32,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -46,19 +46,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -67,19 +67,19 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The full name of the customer as provided when the customer was created.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address of the customer as provided when the customer was created.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
 
@@ -91,13 +91,13 @@ Response
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: object
 
      - Data provided during the customer creation in JSON notation.
 
-   * - | ``recentlyUsedMethods``
+   * - ``recentlyUsedMethods``
 
        .. type:: array
 
@@ -106,7 +106,7 @@ Response
        Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 

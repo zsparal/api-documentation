@@ -39,13 +39,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of chargebacks found in ``_embedded``.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -54,14 +54,14 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: array
 
             - An array of chargeback objects as described in
               :doc:`Get chargeback </reference/v2/chargebacks-api/get-chargeback>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -71,13 +71,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: object
 
             - The URL to the current set of chargebacks.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: object
 

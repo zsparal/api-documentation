@@ -30,31 +30,31 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a settlement object. Will always contain ``settlement`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The settlement's unique identifier, for example ``stl_jDk30akdN``.
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
 
      - The settlement's bank reference, as found on your invoice and in your Mollie account.
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: string
 
      - The date on which the settlement was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``settledAt``
+   * - ``settledAt``
 
        .. type:: string
 
@@ -62,7 +62,7 @@ Response
        When requesting the :doc:`open settlement </reference/v2/settlements-api/get-open-settlement>` or
        :doc:`next settlement </reference/v2/settlements-api/get-next-settlement>` the return value is ``null``.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -75,7 +75,7 @@ Response
        * ``paidout`` The settlement has been paid out.
        * ``failed`` The settlement could not be paid out.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: amount object
 
@@ -84,19 +84,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount of the settlement in the given currency.
 
-   * - | ``periods``
+   * - ``periods``
 
        .. type:: object
 
@@ -108,7 +108,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``revenue``
+          * - ``revenue``
 
               .. type:: array
 
@@ -118,43 +118,43 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``description``
+                 * - ``description``
 
                      .. type:: string
 
                    - A description of the revenue subtotal.
 
-                 * - | ``amountNet``
+                 * - ``amountNet``
 
                      .. type:: amount object
 
                    - The net total of received funds for this payment method (excludes VAT).
 
-                 * - | ``amountVat``
+                 * - ``amountVat``
 
                      .. type:: amount object
 
                    - The VAT amount applicable to the revenue.
 
-                 * - | ``amountGross``
+                 * - ``amountGross``
 
                      .. type:: amount object
 
                    - The gross total of received funds for this payment method (includes VAT).
 
-                 * - | ``count``
+                 * - ``count``
 
                      .. type:: integer
 
                    - The number of payments received for this payment method.
 
-                 * - | ``method``
+                 * - ``method``
 
                      .. type:: string
 
                    - The payment method ID, if applicable.
 
-          * - | ``costs``
+          * - ``costs``
 
               .. type:: array
 
@@ -164,37 +164,37 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``description``
+                 * - ``description``
 
                      .. type:: string
 
                    - A description of the subtotal.
 
-                 * - | ``amountNet``
+                 * - ``amountNet``
 
                      .. type:: amount object
 
                    - The net total costs for this payment method (excludes VAT).
 
-                 * - | ``amountVat``
+                 * - ``amountVat``
 
                      .. type:: amount object
 
                    - The VAT amount applicable to the costs.
 
-                 * - | ``amountGross``
+                 * - ``amountGross``
 
                      .. type:: amount object
 
                    - The gross total costs for this payment method (includes VAT).
 
-                 * - | ``count``
+                 * - ``count``
 
                      .. type:: integer
 
                    - The number of times costs were made for this payment method.
 
-                 * - | ``rate``
+                 * - ``rate``
 
                      .. type:: object
 
@@ -203,25 +203,25 @@ Response
                      .. list-table::
                         :widths: auto
 
-                        * - | ``fixed``
+                        * - ``fixed``
 
                             .. type:: amount object
 
                           - An amount object describing the fixed costs.
 
-                        * - | ``variable``
+                        * - ``variable``
 
                             .. type:: string
 
                           - A string describing the variable costs as a percentage.
 
-                 * - | ``method``
+                 * - ``method``
 
                      .. type:: string
 
                    - The payment method ID, if applicable.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -231,31 +231,31 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the settlement itself.
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: URL object
 
             - The API resource URL of the payments that are included in this settlement.
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: URL object
 
             - The API resource URL of the refunds that are included in this settlement.
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: URL object
 
             - The API resource URL of the chargebacks that are included in this settlement.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

@@ -25,7 +25,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -39,19 +39,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -60,19 +60,19 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The full name of the customer as provided when the customer was created.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address of the customer as provided when the customer was created.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
 
@@ -84,19 +84,19 @@ Response
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: object
 
      - Data provided during the customer creation in JSON notation.
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The customer record's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -106,34 +106,34 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the customer itself.
 
-          * - | ``mandates``
+          * - ``mandates``
 
               .. type:: URL object
 
             - The API resource URL of the mandates belonging to the Customer, if there are no mandates this parameter is
               omitted.
 
-          * - | ``subscriptions``
+          * - ``subscriptions``
 
               .. type:: URL object
 
             - The API resource URL of the subscriptions belonging to the Customer, if there are no subscriptions this
               parameter is omitted.
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: URL object
 
             - The API resource URL of the payments belonging to the Customer, if there are no payments this parameter is
               omitted.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

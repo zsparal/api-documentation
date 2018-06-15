@@ -27,13 +27,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -44,19 +44,19 @@ Response
        ``mandates.write`` ``organizations.read`` ``organizations.write`` ``payments.read`` ``payments.write``
        ``profiles.read`` ``profiles.write`` ``refunds.read`` ``refunds.write`` ``settlements.read``
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - A short description of what the permission allows.
 
-   * - | ``granted``
+   * - ``granted``
 
        .. type:: boolean
 
      - Whether this permission is granted to the app by the organization or not.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -66,13 +66,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the permission itself.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

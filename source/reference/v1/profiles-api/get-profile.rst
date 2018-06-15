@@ -24,19 +24,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a payment profile object. Will always contain ``profile`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this payment profile, for example ``pfl_3RkSN1zuPE``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -44,32 +44,32 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The payment profile's name, this will usually reflect the tradename or brand name of the profile's website or
        application.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
 
      - The URL to the profile's website or application.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
 
      - The phone number associated with the profile's tradename or brand.
 
-   * - | ``categoryCode``
+   * - ``categoryCode``
 
        .. type:: integer
 
@@ -88,7 +88,7 @@ Response
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -100,7 +100,7 @@ Response
        * ``verified`` The profile has been verified and can be used to create live payments and test payments.
        * ``blocked`` The profile is blocked and can thus no longer be used or changed.
 
-   * - | ``review``
+   * - ``review``
 
        .. type:: object
 
@@ -111,7 +111,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``status``
+          * - ``status``
 
               .. type:: string
 
@@ -122,20 +122,20 @@ Response
               * ``pending`` The changes are pending review. We will review your changes soon.
               * ``rejected`` We've reviewed and rejected your changes.
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 
      - The payment profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``updatedDatetime``
+   * - ``updatedDatetime``
 
        .. type:: datetime
 
      - The date and time of the payment profile's last edit, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -144,13 +144,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``apikeys``
+          * - ``apikeys``
 
               .. type:: string
 
             - The URL to the nested :doc:`API keys resource </reference/v1/profiles-api/list-keys>`.
 
-          * - | ``checkoutPreviewUrl``
+          * - ``checkoutPreviewUrl``
 
               .. type:: string
 

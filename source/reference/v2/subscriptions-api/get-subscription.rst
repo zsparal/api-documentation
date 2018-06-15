@@ -26,7 +26,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -40,20 +40,20 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a subscription object. Will always contain ``subscription`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -62,13 +62,13 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The subscription's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -76,7 +76,7 @@ Response
 
        Possible values: ``pending`` ``active`` ``canceled`` ``suspended`` ``completed``
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
 
@@ -86,25 +86,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount of the payment in the given currency.
 
-   * - | ``times``
+   * - ``times``
 
        .. type:: integer
 
      - Total number of charges for the subscription to complete.
 
-   * - | ``interval``
+   * - ``interval``
 
        .. type:: string
 
@@ -112,20 +112,20 @@ Response
 
        Possible values: ``... months`` ``... weeks`` ``... days``
 
-   * - | ``startDate``
+   * - ``startDate``
 
        .. type:: date
 
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The description specified during subscription creation. This will be included in the payment description along
        with the charge date in ``YYYY-MM-DD`` format.
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
 
@@ -134,7 +134,7 @@ Response
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
-   * - | ``canceledAt``
+   * - ``canceledAt``
 
        .. type:: datetime
 
@@ -142,13 +142,13 @@ Response
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. This parameter is omitted if the payment is not
        canceled (yet).
 
-   * - | ``webhookUrl``
+   * - ``webhookUrl``
 
        .. type:: string
 
      - The URL Mollie will call as soon a payment status change takes place.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -158,19 +158,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the subscription itself.
 
-          * - | ``customer``
+          * - ``customer``
 
               .. type:: URL object
 
             - The API resource URL of the customer the subscription is for.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

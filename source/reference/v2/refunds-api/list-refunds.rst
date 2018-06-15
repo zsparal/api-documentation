@@ -27,7 +27,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 .. list-table::
    :widths: auto
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: string
           :required: false
@@ -35,7 +35,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
      - Offset the result set to the refund with this ID. The refund with this ID is included in the result
        set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -56,14 +56,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -72,13 +72,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: array
 
             - An array of refund objects as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -88,25 +88,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: object
 
             - The URL to the current set of refunds.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: object
 
             - The previous set of refunds, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: object
 
             - The next set of refunds, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: object
 

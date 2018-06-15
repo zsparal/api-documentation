@@ -20,7 +20,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: string
           :required: false
@@ -28,7 +28,7 @@ Parameters
      - Offset the result set to the customer with this ID. The customer with this ID is included in the
        result set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -43,7 +43,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -57,14 +57,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of customers found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -73,14 +73,14 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``customers``
+          * - ``customers``
 
               .. type:: array
 
             - An array of customer objects as described in
               :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -90,25 +90,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of customers.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of customers, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of customers, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

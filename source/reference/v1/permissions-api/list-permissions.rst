@@ -18,14 +18,14 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of permissions to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -39,33 +39,33 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of permissions available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped permissions as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of permissions found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of permission objects as described in
        :doc:`Get permission </reference/v1/permissions-api/get-permission>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -74,25 +74,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of permissions, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of permissions, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of permissions, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

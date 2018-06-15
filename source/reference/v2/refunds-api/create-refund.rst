@@ -49,7 +49,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
 .. list-table::
    :widths: auto
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: amount object
           :required: true
@@ -59,7 +59,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
                  :required: true
@@ -67,7 +67,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currency must be the same as
               the corresponding payment.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
                  :required: true
@@ -75,7 +75,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
             - A string containing the exact amount you want to refund in the given currency. Make sure to send the right
               amount of decimals. Non-string values are not accepted.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
           :required: false
@@ -91,7 +91,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

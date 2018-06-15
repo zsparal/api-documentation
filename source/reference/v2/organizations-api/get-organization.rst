@@ -31,44 +31,44 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a method object. Will always contain ``organization`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The unique identifier of the organization method.
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The name of the organization.
 
-   * - | ``address``
+   * - ``address``
 
        .. type:: address object
 
      - The address of the organization.
 
-   * - | ``registrationNumber``
+   * - ``registrationNumber``
 
        .. type:: string
 
      - The registration number of the organization at the (local) chamber of commerce.
 
-   * - | ``vatNumber``
+   * - ``vatNumber``
 
        .. type:: string
 
      - The VAT number of the organization, if based in the European Union. The VAT number has been checked with the
        `VIES <http://ec.europa.eu/taxation_customs/vies/>`_ by Mollie.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -78,13 +78,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the organization itself.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

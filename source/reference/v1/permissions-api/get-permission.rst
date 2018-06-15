@@ -27,13 +27,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -44,19 +44,19 @@ Response
        ``mandates.write`` ``organizations.read`` ``organizations.write`` ``payments.read`` ``payments.write``
        ``profiles.read`` ``profiles.write`` ``refunds.read`` ``refunds.write`` ``settlements.read``
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - A short description of what the permission allows.
 
-   * - | ``warning``
+   * - ``warning``
 
        .. type:: string
 
      - A mandatory warning message when necessary.
 
-   * - | ``granted``
+   * - ``granted``
 
        .. type:: boolean
 

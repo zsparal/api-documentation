@@ -28,21 +28,21 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: false
 
      - The full name of the customer.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: false
 
      - The email address of the customer.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -55,7 +55,7 @@ Parameters
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: object
           :required: false
@@ -71,7 +71,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

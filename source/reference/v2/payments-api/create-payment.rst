@@ -61,7 +61,7 @@ Parameters
        We recommend you use a unique identifier so that you can always link the payment to the order. This is
        particularly useful for bookkeeping.
 
-   * - | ``redirectUrl``
+   * - ``redirectUrl``
 
        .. type:: string
           :required: true
@@ -74,7 +74,7 @@ Parameters
           For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
           parameter is required.
 
-   * - | ``webhookUrl``
+   * - ``webhookUrl``
 
        .. type:: string
           :required: true
@@ -86,7 +86,7 @@ Parameters
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -100,7 +100,7 @@ Parameters
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
           :required: false
@@ -113,7 +113,7 @@ Parameters
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: mixed
           :required: false
@@ -122,7 +122,7 @@ Parameters
        payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
-   * - | ``sequenceType``
+   * - ``sequenceType``
 
        .. type:: string
           :required: false
@@ -137,7 +137,7 @@ Parameters
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
-   * - | ``customerId``
+   * - ``customerId``
 
        .. type:: string
           :required: false
@@ -146,7 +146,7 @@ Parameters
        This is used for :doc:`recurring payments </guides/recurring>` and
        :doc:`single click payments </guides/checkout>`.
 
-   * - | ``mandateId``
+   * - ``mandateId``
 
        .. type:: string
           :required: false
@@ -165,7 +165,7 @@ Bank transfer
 .. list-table::
    :widths: auto
 
-   * - | ``billingEmail``
+   * - ``billingEmail``
 
        .. type:: string
           :required: false
@@ -175,7 +175,7 @@ Bank transfer
        parameter, the email will be sent in English, as we haven't yet been able to detect the consumer's browser
        language.
 
-   * - | ``dueDate``
+   * - ``dueDate``
 
        .. type:: string
           :required: false
@@ -183,7 +183,7 @@ Bank transfer
      - The date the payment should :doc:`expire </guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -201,7 +201,7 @@ Bitcoin
 .. list-table::
    :widths: auto
 
-   * - | ``billingEmail``
+   * - ``billingEmail``
 
        .. type:: string
           :required: false
@@ -214,7 +214,7 @@ Credit card
 .. list-table::
    :widths: auto
 
-   * - | ``billingAddress``
+   * - ``billingAddress``
 
        .. type:: address object
           :required: false
@@ -227,35 +227,35 @@ Credit card
        .. list-table::
           :widths: auto
 
-          * - | ``streetAndNumber``
+          * - ``streetAndNumber``
 
               .. type:: string
                  :required: false
 
             - The card holder's street and street number.
 
-          * - | ``postalCode``
+          * - ``postalCode``
 
               .. type:: string
                  :required: false
 
             - The card holder's postal code.
 
-          * - | ``city``
+          * - ``city``
 
               .. type:: string
                  :required: false
 
             - The card holder's city.
 
-          * - | ``region``
+          * - ``region``
 
               .. type:: string
                  :required: false
 
             - The card holder's region.
 
-          * - | ``country``
+          * - ``country``
 
               .. type:: string
                  :required: false
@@ -266,7 +266,7 @@ Credit card
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
 
-   * - | ``shippingAddress``
+   * - ``shippingAddress``
 
        .. type:: address object
           :required: false
@@ -279,35 +279,35 @@ Credit card
        .. list-table::
           :widths: auto
 
-          * - | ``streetAndNumber``
+          * - ``streetAndNumber``
 
               .. type:: string
                  :required: false
 
             - The street and street number of the shipping address.
 
-          * - | ``postalCode``
+          * - ``postalCode``
 
               .. type:: string
                  :required: false
 
             - The postal code of the shipping address.
 
-          * - | ``city``
+          * - ``city``
 
               .. type:: string
                  :required: false
 
             - The city of the shipping address.
 
-          * - | ``region``
+          * - ``region``
 
               .. type:: string
                  :required: false
 
             - The region of the shipping address.
 
-          * - | ``country``
+          * - ``country``
 
               .. type:: string
                  :required: false
@@ -323,7 +323,7 @@ Gift cards
 .. list-table::
    :widths: auto
 
-   * - | ``issuer``
+   * - ``issuer``
 
        .. type:: string
           :required: false
@@ -336,14 +336,14 @@ Gift cards
        Possible values: ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
        ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift``
 
-   * - | ``voucherNumber``
+   * - ``voucherNumber``
 
        .. type:: string
           :required: false
 
      - The card number on the gift card.
 
-   * - | ``voucherPin``
+   * - ``voucherPin``
 
        .. type:: string
           :required: false
@@ -355,7 +355,7 @@ iDEAL
 .. list-table::
    :widths: auto
 
-   * - | ``issuer``
+   * - ``issuer``
 
        .. type:: string
           :required: false
@@ -369,14 +369,14 @@ KBC/CBC Payment Button
 .. list-table::
    :widths: auto
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
           :required: true
 
      - When KBC/CBC is chosen as the payment method, the description will be truncated to 13 characters.
 
-   * - | ``issuer``
+   * - ``issuer``
 
        .. type:: string
           :required: false
@@ -391,7 +391,7 @@ PayPal
 .. list-table::
    :widths: auto
 
-   * - | ``shippingAddress``
+   * - ``shippingAddress``
 
        .. type:: address object
           :required: false
@@ -404,28 +404,28 @@ PayPal
        .. list-table::
           :widths: auto
 
-          * - | ``streetAndNumber``
+          * - ``streetAndNumber``
 
               .. type:: string
                  :required: false
 
             - The street and street number of the shipping address. The maximum character length is 128.
 
-          * - | ``postalCode``
+          * - ``postalCode``
 
               .. type:: string
                  :required: false
 
             - The postal code of the shipping address. The maximum character length is 20.
 
-          * - | ``city``
+          * - ``city``
 
               .. type:: string
                  :required: false
 
             - The city of the shipping address. The maximum character length is 100.
 
-          * - | ``region``
+          * - ``region``
 
               .. type:: string
                  :required: false
@@ -434,7 +434,7 @@ PayPal
               **Please note**: this field is required if ``country`` is one of the following countries:
               ``AR`` ``BR`` ``CA`` ``CN`` ``ID`` ``IN`` ``JP`` ``MX`` ``TH`` ``US``
 
-          * - | ``country``
+          * - ``country``
 
               .. type:: string
                  :required: false
@@ -450,7 +450,7 @@ paysafecard
 .. list-table::
    :widths: auto
 
-   * - | ``customerReference``
+   * - ``customerReference``
 
        .. type:: string
           :required: false
@@ -468,7 +468,7 @@ SEPA Direct Debit
 .. list-table::
    :widths: auto
 
-   * - | ``consumerName``
+   * - ``consumerName``
 
        .. type:: string
           :required: false
@@ -476,7 +476,7 @@ SEPA Direct Debit
      - Beneficiary name of the account holder. Only available if one-off payments are enabled on your
        account. Will pre-fill the beneficiary name in the checkout screen if present.
 
-   * - | ``consumerAccount``
+   * - ``consumerAccount``
 
        .. type:: string
           :required: false
@@ -494,21 +494,21 @@ information.
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
 
      - Set this to ``true`` to make this payment a test payment.
 
-   * - | ``applicationFee``
+   * - ``applicationFee``
 
        .. type:: object
           :required: false
@@ -519,7 +519,7 @@ information.
        .. list-table::
           :widths: auto
 
-          * - | ``amount``
+          * - ``amount``
 
               .. type:: amount object
                  :required: true
@@ -530,14 +530,14 @@ information.
               .. list-table::
                  :widths: auto
 
-                 * - | ``currency``
+                 * - ``currency``
 
                      .. type:: string
                         :required: true
 
                    - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                 * - | ``value``
+                 * - ``value``
 
                      .. type:: string
                         :required: true
@@ -545,7 +545,7 @@ information.
                    - A string containing the exact amount you want to charge in the given currency. Make sure to send
                      the right amount of decimals. Non-string values are not accepted.
 
-          * - | ``description``
+          * - ``description``
 
               .. type:: string
                  :required: true

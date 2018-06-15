@@ -16,7 +16,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``grant_type``
+   * - ``grant_type``
 
        .. type:: string
           :required: true
@@ -26,7 +26,7 @@ Parameters
 
        Possible values: ``authorization_code`` ``refresh_token``
 
-   * - | ``code``
+   * - ``code``
 
        .. type:: string
           :required: false
@@ -34,7 +34,7 @@ Parameters
      - The auth code you've received when creating the authorization. Only use this field when using grant
        type ``authorization_code``.
 
-   * - | ``refresh_token``
+   * - ``refresh_token``
 
        .. type:: string
           :required: false
@@ -42,7 +42,7 @@ Parameters
      - The refresh token you've received when creating the authorization. Only use this field when using
        grant type ``refresh_token``.
 
-   * - | ``redirect_uri``
+   * - ``redirect_uri``
 
        .. type:: string
           :required: true
@@ -57,27 +57,27 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``access_token``
+   * - ``access_token``
 
        .. type:: string
 
      - The access token, with which you will be able to access the Mollie API on the merchant's behalf.
 
-   * - | ``refresh_token``
+   * - ``refresh_token``
 
        .. type:: string
 
      - The refresh token, with which you will be able to retrieve new access tokens on this endpoint. Please note that
        the refresh token does not expire.
 
-   * - | ``expires_in``
+   * - ``expires_in``
 
        .. type:: integer
 
      - The number of seconds left before the access token expires. Be sure to renew your access token before this
        reaches zero.
 
-   * - | ``token_type``
+   * - ``token_type``
 
        .. type:: string
 
@@ -85,7 +85,7 @@ Response
 
        Possible values: ``bearer``
 
-   * - | ``scope``
+   * - ``scope``
 
        .. type:: string
 

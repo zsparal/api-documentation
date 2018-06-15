@@ -35,7 +35,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -49,26 +49,26 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this issuer. When supplying this ID as the ``issuer`` parameter during
        :doc:`payment creation </reference/v1/payments-api/create-payment>`, the issuer selection screen is skipped.
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The full name of the issuer, for example 'ABN AMRO'.
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
 
@@ -76,7 +76,7 @@ Response
 
        Possible values: ``ideal``
 
-   * - | ``image``
+   * - ``image``
 
        .. type:: object
 
@@ -85,13 +85,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``normal``
+          * - ``normal``
 
               .. type:: string
 
             - The URL for an issuer icon of 55x37 pixels.
 
-          * - | ``bigger``
+          * - ``bigger``
 
               .. type:: string
 

@@ -37,31 +37,31 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a settlement object. Will always contain ``settlement`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The settlement's unique identifier, for example ``stl_jDk30akdN``.
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
 
      - The settlement's bank reference, as found on your invoice and in your Mollie account.
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: string
 
      - The date on which the settlement was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``settlementDatetime``
+   * - ``settlementDatetime``
 
        .. type:: string
 
@@ -69,7 +69,7 @@ Response
        When requesting the :doc:`open settlement </reference/v1/settlements-api/get-open-settlement>` or
        :doc:`next settlement </reference/v1/settlements-api/get-next-settlement>` the return value is ``null``.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -82,13 +82,13 @@ Response
        * ``paidout`` The settlement has been paid out.
        * ``failed`` The settlement could not be paid out.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
 
      - The total amount in EUR paid out with this settlement.
 
-   * - | ``periods``
+   * - ``periods``
 
        .. type:: object
 
@@ -100,7 +100,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``revenue``
+          * - ``revenue``
 
               .. type:: array
 
@@ -110,32 +110,32 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``description``
+                 * - ``description``
 
                      .. type:: string
 
                    - A description of the revenue subtotal.
 
-                 * - | ``amount``
+                 * - ``amount``
 
                      .. type:: object
 
                    - The received subtotal for this payment method, further divided in ``net`` (excludes VAT), ``vat``,
                      and ``gross`` (includes VAT).
 
-                 * - | ``count``
+                 * - ``count``
 
                      .. type:: integer
 
                    - The number of payments received for this payment method.
 
-                 * - | ``method``
+                 * - ``method``
 
                      .. type:: string
 
                    - The payment method ID, if applicable.
 
-          * - | ``costs``
+          * - ``costs``
 
               .. type:: array
 
@@ -145,59 +145,59 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``description``
+                 * - ``description``
 
                      .. type:: string
 
                    - A description of the subtotal.
 
-                 * - | ``amount``
+                 * - ``amount``
 
                      .. type:: object
 
                    - The paid costs for this payment method, further divided in ``net`` (excludes VAT), ``vat``, and
                      ``gross`` (includes VAT).
 
-                 * - | ``count``
+                 * - ``count``
 
                      .. type:: integer
 
                    - The number of times costs were made for this payment method.
 
-                 * - | ``rate``
+                 * - ``rate``
 
                      .. type:: object
 
                    - The service rates, further divided into ``fixed`` and ``variable`` costs.
 
-                 * - | ``method``
+                 * - ``method``
 
                      .. type:: string
 
                    - The payment method ID, if applicable.
 
-   * - | ``paymentIds``
+   * - ``paymentIds``
 
        .. type:: array
 
      - A list of all :doc:`payment IDs </reference/v1/payments-api/get-payment>` that are included in the settlement.
        You can use this to fully reconcile the settlement with your back office.
 
-   * - | ``refundIds``
+   * - ``refundIds``
 
        .. type:: array
 
      - A list of all :doc:`refund IDs </reference/v1/refunds-api/get-refund>` that are included in the settlement. You
        can use this to fully recocnile the settlement with your back office.
 
-   * - | ``chargebackIds``
+   * - ``chargebackIds``
 
        .. type:: array
 
      - A list of all :doc:`chargeback IDs </reference/v1/chargebacks-api/get-chargeback>` that are included in the
        settlement. You can use this to fully recocnile the settlement with your back office.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -206,19 +206,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: string
 
             - URL to retrieve all payments included in the settlement.
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: string
 
             - URL to retrieve all refunds included in the settlement.
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: string
 

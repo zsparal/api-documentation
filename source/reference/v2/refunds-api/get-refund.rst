@@ -35,19 +35,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a refund object. Will always contain ``refund`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: amount object
 
@@ -56,20 +56,20 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
               the payment methods that are enabled on your account.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount that was refunded in the given currency.
 
-   * - | ``settlementAmount``
+   * - ``settlementAmount``
 
        .. type:: amount object|null
 
@@ -83,13 +83,13 @@ Response
          .. list-table::
             :widths: auto
 
-            * - | ``currency``
+            * - ``currency``
 
                 .. type:: string
 
               - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-            * - | ``value``
+            * - ``value``
 
                 .. type:: string
 
@@ -99,13 +99,13 @@ Response
                 If the refund is queued and in a different currency than the settlement currency, the settlement amount
                 will be ``null`` as the exchange rates may change until the refund is finally executed.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -120,20 +120,20 @@ Response
        * ``refunded`` The refund has been paid out to the consumer.
        * ``failed`` The refund has failed during processing.
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``paymentId``
+   * - ``paymentId``
 
        .. type:: string
 
      - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -143,25 +143,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the refund itself.
 
-          * - | ``payment``
+          * - ``payment``
 
               .. type:: URL object
 
             - The API resource URL of the payment the refund belongs to.
 
-          * - | ``settlement``
+          * - ``settlement``
 
               .. type:: URL object
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

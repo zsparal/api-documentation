@@ -21,35 +21,35 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: true
 
      - The profile's new name.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
           :required: true
 
      - The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: true
 
      - The new email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
           :required: true
 
      - The new phone number associated with the profile's tradename or brand.
 
-   * - | ``categoryCode``
+   * - ``categoryCode``
 
        .. type:: integer
           :required: true
@@ -69,7 +69,7 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
           :required: false

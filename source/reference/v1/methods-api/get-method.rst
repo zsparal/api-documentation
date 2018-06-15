@@ -27,14 +27,14 @@ Replace ``id`` in the endpoint URL by the payment method's ID, for example ``cre
 .. list-table::
    :widths: auto
 
-   * - | ``include``
+   * - ``include``
 
        .. type:: string
           :required: true
 
      - Include additional data. Must be a comma separated list of one or more includes.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -55,14 +55,14 @@ more information.
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -83,13 +83,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a payment method object. Will always contain ``method`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -97,13 +97,13 @@ Response
        during :doc:`payment creation </reference/v1/payments-api/create-payment>`, the payment method selection screen
        is skipped.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The full name of the payment method.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
 
@@ -112,20 +112,20 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``minimum``
+          * - ``minimum``
 
               .. type:: decimal
 
             - The minimum payment amount in EUR required to use this payment method.
 
-          * - | ``maximum``
+          * - ``maximum``
 
               .. type:: decimal
 
             - The maximum payment amount in EUR allowed when using this payment method. For gift cards, the maximum
               amount may be ignored.
 
-   * - | ``image``
+   * - ``image``
 
        .. type:: object
 
@@ -134,13 +134,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``normal``
+          * - ``normal``
 
               .. type:: string
 
             - The URL for a payment method icon of 55x37 pixels.
 
-          * - | ``bigger``
+          * - ``bigger``
 
               .. type:: string
 

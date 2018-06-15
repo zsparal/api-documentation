@@ -25,7 +25,7 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
 .. list-table::
    :widths: auto
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -46,14 +46,14 @@ Organizations can have multiple profiles for each of their websites. See
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -74,13 +74,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a method object. Will always contain ``method`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -88,13 +88,13 @@ Response
        :doc:`payment creation </reference/v2/payments-api/create-payment>`, the payment method selection screen will be
        skipped.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The full name of the payment method, translated in the optional locale passed.
 
-   * - | ``image``
+   * - ``image``
 
        .. type:: image object
 
@@ -103,19 +103,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``size1x``
+          * - ``size1x``
 
               .. type:: string
 
             - The URL for a payment method icon of 55x37 pixels.
 
-          * - | ``size2x``
+          * - ``size2x``
 
               .. type:: string
 
             - The URL for a payment method icon of 110x74 pixels. Use this for high resolution screens.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -125,13 +125,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the payment method itself.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

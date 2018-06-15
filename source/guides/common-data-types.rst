@@ -15,13 +15,13 @@ In v2 endpoints, an amount object is always represented as follows.
 .. list-table::
    :widths: auto
 
-   * - | ``currency``
+   * - ``currency``
 
        .. type:: string
 
      - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-   * - | ``value``
+   * - ``value``
 
        .. type:: string
 
@@ -36,31 +36,31 @@ In the v2 endpoints, an address object is always represented as follows.
 .. list-table::
    :widths: auto
 
-   * - | ``streetAndNumber``
+   * - ``streetAndNumber``
 
        .. type:: string
 
      - The street and street number of the address.
 
-   * - | ``postalCode``
+   * - ``postalCode``
 
        .. type:: string
 
      - The postal code of the address.
 
-   * - | ``city``
+   * - ``city``
 
        .. type:: string
 
      - The city of the address.
 
-   * - | ``region``
+   * - ``region``
 
        .. type:: string
 
      - The region of the address.
 
-   * - | ``country``
+   * - ``country``
 
        .. type:: string
 
@@ -101,19 +101,19 @@ The QR code object represents an image of a QR code.
 .. list-table::
    :widths: auto
 
-   * - | ``height``
+   * - ``height``
 
        .. type:: integer
 
      - Height of the image in pixels.
 
-   * - | ``width``
+   * - ``width``
 
        .. type:: integer
 
      - Width of the image in pixels.
 
-   * - | ``src``
+   * - ``src``
 
        .. type:: string
 
@@ -127,13 +127,13 @@ In v2 endpoints, URLs are commonly represented as objects with an ``href`` and `
 .. list-table::
    :widths: auto
 
-   * - | ``href``
+   * - ``href``
 
        .. type:: string
 
      - The actual URL string.
 
-   * - | ``type``
+   * - ``type``
 
        .. type:: string
           :required: true

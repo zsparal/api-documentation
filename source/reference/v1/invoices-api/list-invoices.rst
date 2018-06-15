@@ -20,7 +20,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
           :required: false
@@ -28,21 +28,21 @@ Parameters
      - Use this parameter to filter for an invoice with a specific invoice number / reference. An example
        reference would be ``2018.10000``.
 
-   * - | ``year``
+   * - ``year``
 
        .. type:: integer
           :required: false
 
      - Use this parameter to filter for invoices from a specific year (e.g. ``2018``).
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of payment profiles to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -64,32 +64,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of invoices available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped invoices as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of invoices found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of invoice objects as described in :doc:`Get invoice </reference/v1/invoices-api/get-invoice>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -98,25 +98,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of invoices, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of invoices, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of invoices, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

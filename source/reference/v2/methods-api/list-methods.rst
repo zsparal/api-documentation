@@ -28,7 +28,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``sequenceType``
+   * - ``sequenceType``
 
        .. type:: string
           :required: false
@@ -40,7 +40,7 @@ Parameters
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -52,7 +52,7 @@ Parameters
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
           :required: false
@@ -72,14 +72,14 @@ Organizations can have multiple profiles for each of their websites. See
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -100,13 +100,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of methods found in ``_embedded``.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -115,13 +115,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``methods``
+          * - ``methods``
 
               .. type:: array
 
             - An array of methods objects as described in :doc:`Get method </reference/v2/methods-api/get-method>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -131,13 +131,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: object
 
             - The URL to the current set of methods.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: object
 

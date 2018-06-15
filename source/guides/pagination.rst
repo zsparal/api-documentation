@@ -18,20 +18,20 @@ Response object
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of objects found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
      - The actual data you're looking for.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -41,25 +41,25 @@ Response object
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: object
 
             - The URL to the current set of objects.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: object
 
             - The previous set of objects, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: object
 
             - The next set of objects, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: object
 
@@ -159,32 +159,32 @@ Response object
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of objects available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped objects as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of objects found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - The actual data you're looking for.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -193,25 +193,25 @@ Response object
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of objects, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of objects, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of objects, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

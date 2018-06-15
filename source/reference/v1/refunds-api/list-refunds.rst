@@ -34,14 +34,14 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of refunds to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -55,32 +55,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of refunds available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped refunds as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of refunds found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of refund objects as described in :doc:`Get refund </reference/v1/refunds-api/get-refund>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -89,25 +89,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of refunds, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of refunds, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of refunds, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

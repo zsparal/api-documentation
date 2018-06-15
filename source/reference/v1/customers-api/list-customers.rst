@@ -27,14 +27,14 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of customers to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -49,7 +49,7 @@ available.
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -63,32 +63,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of customers available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped customers as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of customers found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of customers objects as described in :doc:`Get customer </reference/v1/customers-api/get-customer>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -97,25 +97,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of customers, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of customers, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of customers, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

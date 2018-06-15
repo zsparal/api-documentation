@@ -30,13 +30,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -44,14 +44,14 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``key``
+   * - ``key``
 
        .. type:: string
 
      - The actual API key, which you'll use when creating payments or when otherwise communicating with the API. Never
        share the API key with anyone.
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 

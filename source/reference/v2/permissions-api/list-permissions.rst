@@ -24,13 +24,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of permissions found in ``_embedded``.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -39,14 +39,14 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``permissions``
+          * - ``permissions``
 
               .. type:: array
 
             - An array of permission objects as described in
               :doc:`Get permission </reference/v2/permissions-api/get-permission>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -55,13 +55,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: object
 
             - The URL to the current set of permissions.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: object
 
