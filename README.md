@@ -70,6 +70,10 @@ If you are having issues, please let us know. We accept pull requests on our pub
 
 You can get support via info@mollie.com.
 
+## Working at Mollie
+
+Mollie is always looking for new talent to join our teams. We’re looking for inquisitive minds with good ideas and strong opinions, and, most importantly, who know how to ship great products. Want to join the future of payments? [Check out our vacancies](https://jobs.mollie.com).
+
 ## License
 
 The documentation is licensed under the [CC BY-SA 4.0](https://creativecommons.org/licenses/by-sa/4.0/?) license.
