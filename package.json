@@ -41,7 +41,7 @@
   },
   "private": true,
   "lint-staged": {
-    "src/*.{js,jsx,json}": [
+    "source/theme/**/*.{js,jsx,json}": [
       "eslint",
       "prettier --write",
       "git add"
