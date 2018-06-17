@@ -1,5 +1,7 @@
 import { bindHandlers, executeEnhancers, makeEnhancers, makeHandlers } from "./utils";
 
+const blah = 'blah';
+
 import navLoggedIn from "./navLoggedIn";
 import productsNavigation from "./productsNavigation";
 import subNavigation from "./subNavigation";
