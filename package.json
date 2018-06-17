@@ -4,7 +4,7 @@
   "description": "API Documentation for all of Mollie's public APIs.",
   "main": "index.js",
   "scripts": {
-    "lint:js": "eslint \"./source/theme/**/*.+(js|jsx)\"",
+    "lint:js": "eslint \"./source/theme/**/*.+(js)\"",
     "precommit": "lint-staged"
   },
   "repository": {
@@ -41,7 +41,7 @@
   },
   "private": true,
   "lint-staged": {
-    "source/theme/**/*.{js,jsx,json}": [
+    "source/theme/**/*.{js,json}": [
       "eslint",
       "prettier --write",
       "git add"
