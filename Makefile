@@ -39,12 +39,15 @@ start:
 install:
 	pip install -U -r requirements.txt
 
+lint-js:
+	npm run lint:js
+
 # This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your
 # intention.
 verify:
 	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)'
 
-write-gtm: 
+write-gtm:
 	node scripts/gtm.js
 
 # Catch-all target: route all unknown targets to Sphinx using the new
