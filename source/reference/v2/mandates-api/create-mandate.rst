@@ -63,7 +63,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
    * - ``mandateReference``
 
-       .. type:: date
+       .. type:: string
           :required: false
 
      - A custom mandate reference.
