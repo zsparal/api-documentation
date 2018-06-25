@@ -8,7 +8,7 @@ June 2018
 =========
 
 Monday, 25th
------------
+------------
 
 - Added the new payment methods Giropay (``giropay``) and eps (``eps``). Note that this method may not be available on
   your account straight away. If it is not, contact our support department to get it activated for your account.
