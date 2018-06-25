@@ -1,21 +1,21 @@
 /**
  * Global
  */
-@import "fonts";
-@import "normalize";
-@import "variables";
+@import 'fonts';
+@import 'normalize';
+@import 'variables';
 
 /**
  * Functions
  */
-@import "functions/breakpoint";
-@import "functions/color-trans";
-@import "functions/px-to-em";
-@import "functions/shade";
-@import "functions/spans";
-@import "functions/strip-unit";
-@import "functions/tint";
-@import "functions/z";
+@import 'functions/breakpoint';
+@import 'functions/color-trans';
+@import 'functions/px-to-em';
+@import 'functions/shade';
+@import 'functions/spans';
+@import 'functions/strip-unit';
+@import 'functions/tint';
+@import 'functions/z';
 
 /**
  * Base styles
@@ -24,7 +24,7 @@ html {
   box-sizing: border-box;
   font-size: 62.5%;
   line-height: 1.5;
-  font-feature-settings: "liga", "kern";
+  font-feature-settings: 'liga', 'kern';
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -50,7 +50,7 @@ dl {
 }
 
 button,
-input[type="submit"] {
+input[type='submit'] {
   cursor: pointer;
 }
 
@@ -103,14 +103,14 @@ h6:hover a.headerlink::before {
 }
 
 a.headerlink::before {
-  content: "";
+  content: '';
   position: absolute;
   left: -22px;
   top: 50%;
   transform: translateY(-50%);
   height: 100%;
   width: 15px;
-  background: transparent url("./../../_static/img/headerlink.svg") no-repeat center center;
+  background: transparent url('./../../_static/img/headerlink.svg') no-repeat center center;
   opacity: 0;
   padding-right: 22px;
 }
@@ -118,8 +118,20 @@ a.headerlink::before {
 /**
  * Main content wrapper
  */
-[role="main"].document {
+[role='main'].document {
   max-width: 100%;
+}
+
+.rst-content a:hover,
+.rst-content a:focus {
+  text-decoration: underline;
+}
+
+:target::before {
+  content: '';
+  display: block;
+  height: 130px;
+  margin: -130px 0 0;
 }
 
 /**
@@ -130,70 +142,71 @@ a.headerlink::before {
   text-align: left;
 }
 
-.rst-content a:hover,
-.rst-content a:focus {
-  text-decoration: underline;
+/**
+ * Specific styles for payment method expiry times table
+ */
+#expiry-times-per-payment-method table tr th,
+#expiry-times-per-payment-method table tr td {
+  text-align: left;
 }
 
-:target::before {
-  content: "";
-  display: block;
-  height: 130px;
-  margin: -130px 0 0;
+#expiry-times-per-payment-method table ul {
+  list-style: none;
+  padding: 0;
 }
 
 /**
  * Typography
  */
-@import "typography";
+@import 'typography';
 
 /**
  * Layout blocks
  */
-@import "layout/l-layer";
-@import "layout/l-wrapper";
+@import 'layout/l-layer';
+@import 'layout/l-wrapper';
 
 /**
 * Mixins
 */
-@import "mixins/bare-list";
-@import "mixins/clearfix";
-@import "mixins/visually-hidden";
+@import 'mixins/bare-list';
+@import 'mixins/clearfix';
+@import 'mixins/visually-hidden';
 
 /**
 * Components
 */
-@import "components/api-name";
-@import "components/api-version-switcher";
-@import "components/authentication";
-@import "components/changelog";
-@import "components/code";
-@import "components/content";
-@import "components/endpoint";
-@import "components/figure";
-@import "components/footer";
-@import "components/github-link";
-@import "components/highlight";
-@import "components/link-dropdown";
-@import "components/main";
-@import "components/main-navigation";
-@import "components/mobile-navigation";
-@import "components/mobile-navigation-button";
-@import "components/note";
-@import "components/parameters";
-@import "components/products-navigation";
-@import "components/products-navigation-items";
-@import "components/sidebar";
-@import "components/sub-navigation";
-@import "components/sub-navigation-item";
-@import "components/type";
+@import 'components/api-name';
+@import 'components/api-version-switcher';
+@import 'components/authentication';
+@import 'components/changelog';
+@import 'components/code';
+@import 'components/content';
+@import 'components/endpoint';
+@import 'components/figure';
+@import 'components/footer';
+@import 'components/github-link';
+@import 'components/highlight';
+@import 'components/link-dropdown';
+@import 'components/main';
+@import 'components/main-navigation';
+@import 'components/mobile-navigation';
+@import 'components/mobile-navigation-button';
+@import 'components/note';
+@import 'components/parameters';
+@import 'components/products-navigation';
+@import 'components/products-navigation-items';
+@import 'components/sidebar';
+@import 'components/sub-navigation';
+@import 'components/sub-navigation-item';
+@import 'components/type';
 
 /**
  * Utilities
  */
-@import "utilities";
+@import 'utilities';
 
 /**
  * Vendor
  */
-@import "vendor/dropkick/dropkick";
+@import 'vendor/dropkick/dropkick';
