@@ -391,6 +391,20 @@ PayPal
 .. list-table::
    :widths: auto
 
+   * - ``description``
+
+       .. type:: string
+          :required: true
+
+     - If a description in the form ``Order <order number>`` is used, the order number is passed to PayPal as the
+       *invoice reference*. This field is searchable in the PayPal merchant dashboard. Alternatively, we will recognize
+       the following keywords:
+
+       - Cart
+       - Order
+       - Invoice
+       - Payment
+
    * - ``shippingAddress``
 
        .. type:: address object
