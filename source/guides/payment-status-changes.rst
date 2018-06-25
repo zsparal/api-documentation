@@ -57,10 +57,10 @@ Expiry times per payment method
 +---------------------------+-----------------------------------+
 | Payment methods           | Expiry time                       |
 +===========================+===================================+
-| - iDEAL                   | 15 minutes                        |
-| - paysafecard             |                                   |
+| iDEAL                   | 15 minutes                        |
+| paysafecard             |                                   |
 +---------------------------+-----------------------------------+
-| - Credit card             | 30 minutes                        |
+| Credit card             | 30 minutes                        |
 +---------------------------+-----------------------------------+
 | - Bancontact              | 1 hour                            |
 | - Bitcoin                 |                                   |
