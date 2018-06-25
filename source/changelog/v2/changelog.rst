@@ -7,6 +7,12 @@ changes are documented here.
 June 2018
 =========
 
+Monday, 25th
+-----------
+
+- Added the new payment methods Giropay (``giropay``) and eps (``eps``). Note that this method may not be available on
+  your account straight away. If it is not, contact our support department to get it activated for your account.
+
 Friday, 1st
 -----------
 - Added new locales ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
