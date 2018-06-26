@@ -40,14 +40,14 @@ Parameters
        .. type:: integer
           :required: false
 
-     - The number of payment profiles to skip.
+     - The number of invoices to skip.
 
    * - ``count``
 
        .. type:: integer
           :required: false
 
-     - The number of payment profiles to return (with a maximum of 250).
+     - The number of invoices to return (with a maximum of 250).
 
 Includes
 ^^^^^^^^
