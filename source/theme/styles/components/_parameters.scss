@@ -41,11 +41,16 @@
   margin-bottom: 60px;
 }
 
-.rst-content table.docutils p {
-  margin-bottom: 30px;
+.rst-content table.docutils p,
+.rst-content table.docutils ul,
+.rst-content table.docutils ol,
+.rst-content table.docutils div.admonition {
+  margin-bottom: 20px;
 }
 
 .rst-content table.docutils p:last-child,
+.rst-content table.docutils ul:last-child,
+.rst-content table.docutils ol:last-child,
 .rst-content table.docutils div.admonition:last-child {
   margin-bottom: 0;
 }

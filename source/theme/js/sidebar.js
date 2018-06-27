@@ -1,4 +1,4 @@
-import { enhance } from "./utils";
+import { enhance } from './utils';
 
 const animate = ({ from, to, duration, easeFn, cb }) => {
   const delta = to - from;
@@ -48,17 +48,17 @@ const scrollToSection = event => {
 };
 
 const toggleSidebarGroup = event => {
-    event.target.parentNode.parentNode.classList.toggle('sidebar__group--collapse');
+  event.target.parentNode.parentNode.classList.toggle('sidebar__group--collapse');
 };
 
-export default enhance("sidebar", () => {
-  const links = document.querySelectorAll(".sidebar__inner .current a, a.headerlink");
+export default enhance('sidebar', () => {
+  const links = document.querySelectorAll('.sidebar__inner .current a, a.headerlink');
   [].forEach.call(links, link => {
-    link.addEventListener("click", scrollToSection);
+    link.addEventListener('click', scrollToSection);
   });
 
-  const groupHeaders = document.querySelectorAll(".sidebar__group > p > a");
+  const groupHeaders = document.querySelectorAll('.sidebar__group > p > a');
   [].forEach.call(groupHeaders, groupHeader => {
-    groupHeader.addEventListener("click", toggleSidebarGroup);
+    groupHeader.addEventListener('click', toggleSidebarGroup);
   });
 });

@@ -30,14 +30,14 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of issuers to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -46,12 +46,13 @@ Parameters
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -65,32 +66,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of issuers available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped issuers as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of issuers found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of issuer objects as described in :doc:`Get issuer </reference/v1/issuers-api/get-issuer>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -99,25 +100,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of issuers, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of issuers, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of issuers, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

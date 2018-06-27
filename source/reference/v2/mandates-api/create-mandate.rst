@@ -24,7 +24,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 .. list-table::
    :widths: auto
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
           :required: true
@@ -33,49 +33,50 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
        Possible values: ``directdebit``
 
-   * - | ``consumerName``
+   * - ``consumerName``
 
        .. type:: string
           :required: true
 
      - The consumer's name.
 
-   * - | ``consumerAccount``
+   * - ``consumerAccount``
 
        .. type:: string
           :required: true
 
      - The consumer's IBAN.
 
-   * - | ``consumerBic``
+   * - ``consumerBic``
 
        .. type:: string
           :required: false
 
      - The consumer's bank's BIC.
 
-   * - | ``signatureDate``
+   * - ``signatureDate``
 
        .. type:: date
           :required: false
 
      - The date when the mandate was signed in ``YYYY-MM-DD`` format.
 
-   * - | ``mandateReference``
+   * - ``mandateReference``
 
-       .. type:: date
+       .. type:: string
           :required: false
 
      - A custom mandate reference.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

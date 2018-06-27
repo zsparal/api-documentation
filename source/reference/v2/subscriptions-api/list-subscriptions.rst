@@ -20,7 +20,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 .. list-table::
    :widths: auto
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: string
           :required: false
@@ -28,7 +28,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
      - Offset the result set to the subscription with this ID. The subscription with this ID is included
        in the result set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -37,21 +37,22 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
-With it, you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles
-for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
+``profileId`` parameter. With it, you can specify for which profile you want to retrieve subscriptions. Organizations
+can have multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>`
+for more information.
 
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -65,14 +66,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of subscriptions found in ``_embedded``, which is either the requested number (with a maximum of 250)
        or the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -81,14 +82,14 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``subscriptions``
+          * - ``subscriptions``
 
               .. type:: array
 
             - An array of subscription objects as described in
               :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -98,25 +99,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of subscriptions.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of subscriptions, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of subscriptions, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

@@ -28,31 +28,31 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an invoice object. Will always contain ``invoice`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The invoice's unique identifier, for example ``inv_FrvewDA3Pr``.
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
 
      - The reference number of the invoice. An example value would be: ``2018.10000``.
 
-   * - | ``vatNumber``
+   * - ``vatNumber``
 
        .. type:: string
 
      - The VAT number to which the invoice was issued to (if applicable).
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -64,25 +64,25 @@ Response
        * ``paid`` The invoice is paid.
        * ``overdue`` Payment of the invoice is overdue.
 
-   * - | ``issuedAt``
+   * - ``issuedAt``
 
        .. type:: string
 
      - The invoice date in ``YYYY-MM-DD`` format.
 
-   * - | ``paidAt``
+   * - ``paidAt``
 
        .. type:: string
 
      - The date on which the invoice was paid, in ``YYYY-MM-DD`` format. Only for paid invoices.
 
-   * - | ``dueAt``
+   * - ``dueAt``
 
        .. type:: string
 
      - The date on which the invoice is due, in ``YYYY-MM-DD`` format. Only for due invoices.
 
-   * - | ``netAmount``
+   * - ``netAmount``
 
        .. type:: amount object
 
@@ -91,19 +91,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount of the invoice excluding VAT in the given currency.
 
-   * - | ``vatAmount``
+   * - ``vatAmount``
 
        .. type:: amount object
 
@@ -114,19 +114,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact VAT amount in the given currency.
 
-   * - | ``grossAmount``
+   * - ``grossAmount``
 
        .. type:: amount object
 
@@ -135,19 +135,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact total amount of the invoice including VAT in the given currency.
 
-   * - | ``lines``
+   * - ``lines``
 
        .. type:: object
 
@@ -156,31 +156,31 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``period``
+          * - ``period``
 
               .. type:: string
 
             - The administrative period in ``YYYY-MM`` on which the line should be booked.
 
-          * - | ``description``
+          * - ``description``
 
               .. type:: string
 
             - Description of the product.
 
-          * - | ``count``
+          * - ``count``
 
               .. type:: integer
 
             - Number of products invoiced (usually number of payments).
 
-          * - | ``vatPercentage``
+          * - ``vatPercentage``
 
               .. type:: decimal
 
             - VAT percentage rate that applies to this product.
 
-          * - | ``amount``
+          * - ``amount``
 
               .. type:: amount object
 
@@ -189,19 +189,19 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``currency``
+                 * - ``currency``
 
                      .. type:: string
 
                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                 * - | ``value``
+                 * - ``value``
 
                      .. type:: string
 
                    - A string containing the exact amount of this line excluding VAT in the given currency.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -210,19 +210,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the invoice itself.
 
-          * - | ``pdf``
+          * - ``pdf``
 
               .. type:: URL object
 
             - The URL to the PDF version of the invoice. The URL will expire after 60 minutes.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

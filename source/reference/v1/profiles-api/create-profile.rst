@@ -21,38 +21,38 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: true
 
      - The profile's name should reflect the tradename or brand name of the profile's website or application.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
           :required: true
 
      - The URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: true
 
      - The email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
           :required: true
 
      - The phone number associated with the profile's tradename or brand.
 
-   * - | ``categoryCode``
+   * - ``categoryCode``
 
        .. type:: integer
-          :required: true
+          :required: false
 
      - The industry associated with the profile's tradename or brand.
 
@@ -69,7 +69,7 @@ Parameters
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
           :required: false

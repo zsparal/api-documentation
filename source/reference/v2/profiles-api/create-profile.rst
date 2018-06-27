@@ -19,38 +19,39 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: true
 
      - The profile's name should reflect the tradename or brand name of the profile's website or application.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
           :required: true
 
      - The URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: true
 
      - The email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
           :required: true
 
-     - The phone number associated with the profile's tradename or brand.
+     - The phone number associated with the profile's tradename or brand. Must be in the
+       `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
-   * - | ``categoryCode``
+   * - ``categoryCode``
 
        .. type:: integer
-          :required: true
+          :required: false
 
      - The industry associated with the profile's tradename or brand.
 
@@ -67,7 +68,7 @@ Parameters
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
           :required: false
@@ -99,7 +100,7 @@ Request
            \"name\": \"My website name\",
            \"website\": \"https://www.mywebsite.com\",
            \"email\": \"info@mywebsite.com\",
-           \"phone\": \"31123456789\",
+           \"phone\": \"+31208202070\",
            \"categoryCode\": 5399,
            \"mode\": \"live\"
        }"
@@ -119,7 +120,7 @@ Response
        "name": "My website name",
        "website": "https://www.mywebsite.com",
        "email": "info@mywebsite.com",
-       "phone": "31123456789",
+       "phone": "+31208202070",
        "categoryCode": 5399,
        "status": "unverified",
        "createdAt": "2018-03-20T09:28:37+00:00",

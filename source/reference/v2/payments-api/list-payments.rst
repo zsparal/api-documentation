@@ -20,7 +20,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: string
           :required: false
@@ -28,7 +28,7 @@ Parameters
      - Offset the result set to the payment with this ID. The payment with this ID is included in the result
        set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -37,22 +37,23 @@ Parameters
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the following parameters are also available. With the ``profileId``
-parameter, you can specify which profile you want to look at when listing payments. If you omit the ``profileId``
-parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
-websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following parameters are also
+available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing payments.
+If you omit the ``profileId`` parameter, you will get all payments on the organization. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: false
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -83,14 +84,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of payments found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -99,13 +100,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: array
 
             - An array of payment objects as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -115,25 +116,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of payments.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of payments, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of payments, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

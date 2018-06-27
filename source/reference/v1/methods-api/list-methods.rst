@@ -27,7 +27,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``include``
+   * - ``include``
 
        .. type:: string
           :required: true
@@ -35,7 +35,7 @@ Parameters
      - Include additional data. Must be a comma separated list of one or more includes. See
        :doc:`Get method </reference/v1/methods-api/get-method>` for available includes.
 
-   * - | ``recurringType``
+   * - ``recurringType``
 
        .. type:: string
           :required: false
@@ -46,7 +46,7 @@ Parameters
 
        Possible values: ``first`` ``recurring``
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -56,14 +56,14 @@ Parameters
 
        Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of payment methods to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -72,21 +72,22 @@ Parameters
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
-With it, you can specify which profile you want to list the methods of. Organizations can have multiple profiles for
-each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
+``profileId`` parameter. With it, you can specify which profile you want to list the methods of. Organizations can have
+multiple profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -108,33 +109,33 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of payment methods available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped payment methods as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of payment methods found in ``data``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of payment method objects as described in
        :doc:`Get payment method </reference/v1/methods-api/get-method>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -143,25 +144,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of payment methods, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of payment methods, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of payment methods, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

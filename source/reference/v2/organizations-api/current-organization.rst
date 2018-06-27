@@ -30,7 +30,7 @@ For the full list of fields, see the
 .. list-table::
    :widths: auto
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -40,62 +40,62 @@ For the full list of fields, see the
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the organization itself.
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`chargebacks </reference/v2/chargebacks-api/list-chargebacks>` can be retrieved.
 
-          * - | ``customers``
+          * - ``customers``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`customers </reference/v2/customers-api/list-customers>` can be retrieved.
 
-          * - | ``invoices``
+          * - ``invoices``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`invoices </reference/v1/invoices-api/list-invoices>` can be retrieved.
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`payments </reference/v2/payments-api/list-payments>` can be retrieved.
 
-          * - | ``profiles``
+          * - ``profiles``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`profiles </reference/v2/profiles-api/list-profiles>` can be retrieved.
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`refunds </reference/v2/refunds-api/list-refunds>` can be retrieved.
 
-          * - | ``settlements``
+          * - ``settlements``
 
               .. type:: URL object
 
             - The API resource URL where the organization's
               :doc:`settlements </reference/v2/settlements-api/list-settlements>` can be retrieved.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

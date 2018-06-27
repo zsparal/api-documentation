@@ -28,7 +28,7 @@ parameter in the query string if you want to retrieve a payment that was created
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: true
@@ -59,20 +59,20 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a payment object. Will always contain ``payment`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this payment. Mollie assigns this identifier at payment creation time. For
        example ``tr_7UhSN1zuXS``. Its ID will always be used by Mollie to refer to a certain payment.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -81,60 +81,60 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The payment's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
      - The payment's status. Please refer to the documentation regarding statuses for more info about which statuses
        occur at what point.
 
-   * - | ``isCancelable``
+   * - ``isCancelable``
 
        .. type:: boolean
 
      - Whether or not the payment can be canceled.
 
-   * - | ``paidAt``
+   * - ``paidAt``
 
        .. type:: datetime
 
      - The date and time the payment became paid, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not completed (yet).
 
-   * - | ``canceledAt``
+   * - ``canceledAt``
 
        .. type:: datetime
 
      - The date and time the payment was canceled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not canceled (yet).
 
-   * - | ``expiresAt``
+   * - ``expiresAt``
 
-       .. type:: duration
+       .. type:: datetime
 
      - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``expiredAt``
+   * - ``expiredAt``
 
        .. type:: datetime
 
      - The date and time the payment was expired, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment did not expire (yet).
 
-   * - | ``failedAt``
+   * - ``failedAt``
 
        .. type:: datetime
 
      - The date and time the payment failed, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        This parameter is omitted if the payment did not fail (yet).
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: amount object
 
@@ -143,19 +143,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact amount of the payment in the given currency.
 
-   * - | ``amountRefunded``
+   * - ``amountRefunded``
 
        .. type:: amount object
 
@@ -166,47 +166,47 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact refunded amount of the payment in the given currency.
 
-   * - | ``amountRemaining``
+   * - ``amountRemaining``
 
-       .. type:: decimal
+       .. type:: amount object
 
      - The remaining amount that can be refunded. Only available when refunds are available for this payment.
 
        .. list-table::
           :widths: auto
 
-          * - | ``currency``
+          * - ``currency``
 
               .. type:: string
 
             - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-          * - | ``value``
+          * - ``value``
 
               .. type:: string
 
             - A string containing the exact refundable amount of the payment in the given currency.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - A short description of the payment. The description is visible in the Dashboard and will be shown on the
        customer's bank or card statement when possible.
 
-   * - | ``redirectUrl``
+   * - ``redirectUrl``
 
        .. type:: string
 
@@ -214,13 +214,13 @@ Response
 
        Note the URL will not be present for recurring payments.
 
-   * - | ``webhookUrl``
+   * - ``webhookUrl``
 
        .. type:: string
 
      - The URL Mollie will call as soon an important status change takes place.
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
 
@@ -229,60 +229,59 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit``
-       ``giftcard`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: mixed
 
      - The optional metadata you provided upon payment creation. Metadata can for example be used to link an order to a
        payment.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
 
      - The customer's locale, either forced on creation by specifying the ``locale`` parameter, or detected
        by us during checkout. Will be a full locale, for example ``nl_NL``.
 
-   * - | ``countryCode``
+   * - ``countryCode``
 
        .. type:: string
 
      - The customer's `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code,
        detected by us during checkout. For example: ``BE``.
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
 
      - The identifier referring to the profile this payment was created on. For example, ``pfl_QkEhN94Ba``.
 
-   * - | ``settlementAmount``
+   * - ``settlementAmount``
 
        .. type:: amount object|null
 
-     -   This optional field will contain the amount that will be settled to your account, converted to the currency your
-         account is settled in. It follows the same syntax as the ``amount`` property.
+     -   This optional field will contain the amount that will be settled to your account, converted to the currency
+         your account is settled in. It follows the same syntax as the ``amount`` property.
 
          Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
 
-   * - | ``settlementId``
+   * - ``settlementId``
 
        .. type:: string
 
-     - The identifier referring to the settlement this payment was settled with. For example,
-       ``stl_BkEjN2eBb``.
+     - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``.
 
-   * - | ``customerId``
+   * - ``customerId``
 
        .. type:: string
 
-     - If a customer was specified upon payment creation, the customer's token will be available here as
-       well. For example, ``cst_XPn78q9CfT``.
+     - If a customer was specified upon payment creation, the customer's token will be available here as well. For
+       example, ``cst_XPn78q9CfT``.
 
-   * - | ``sequenceType``
+   * - ``sequenceType``
 
        .. type:: string
 
@@ -295,21 +294,21 @@ Response
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
-   * - | ``mandateId``
+   * - ``mandateId``
 
        .. type:: string
 
      - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
        the recurring payment.
 
-   * - | ``subscriptionId``
+   * - ``subscriptionId``
 
        .. type:: string
 
      - When implementing the Subscriptions API, any recurring charges resulting from the subscription will
        hold the ID of the subscription that triggered the payment.
 
-   * - | ``applicationFee``
+   * - ``applicationFee``
 
        .. type:: object
 
@@ -318,7 +317,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``amount``
+          * - ``amount``
 
               .. type:: amount object
 
@@ -327,25 +326,25 @@ Response
               .. list-table::
                  :widths: auto
 
-                 * - | ``currency``
+                 * - ``currency``
 
                      .. type:: string
 
                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                 * - | ``value``
+                 * - ``value``
 
                      .. type:: string
 
                    - A string containing the exact application fee amount in the given currency.
 
-          * - | ``description``
+          * - ``description``
 
               .. type:: string
 
             - The description of the application fee as specified during payment creation.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -355,13 +354,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the payment itself.
 
-          * - | ``checkout``
+          * - ``checkout``
 
               .. type:: URL object
 
@@ -374,43 +373,44 @@ Response
 
               Recurring payments don't have a checkout URL.
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: URL object
 
             - The API resource URL of the refunds that belong to this payment.
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: URL object
 
             - The API resource URL of the chargebacks that belong to this payment.
 
-          * - | ``settlement``
+          * - ``settlement``
 
               .. type:: URL object
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 
             - The URL to the payment retrieval endpoint documentation.
 
-          * - | ``mandate``
+          * - ``mandate``
 
               .. type:: URL object
 
             - The API resource URL of the mandate linked to this payment. Not present if a one-off payment.
 
-          * - | ``subscription``
+          * - ``subscription``
 
               .. type:: URL object
 
-            - The API resource URL of the subscription this payment is part of. Not present if not a subscription payment.
+            - The API resource URL of the subscription this payment is part of. Not present if not a subscription
+              payment.
 
-          * - | ``customer``
+          * - ``customer``
 
               .. type:: URL object
 
@@ -427,7 +427,7 @@ Bancontact
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -436,20 +436,20 @@ Bancontact
        .. list-table::
           :widths: auto
 
-          * - | ``cardNumber``
+          * - ``cardNumber``
 
               .. type:: string
 
             - Only available if the payment is completed - The last four digits of the card number.
 
-          * - | ``cardFingerprint``
+          * - ``cardFingerprint``
 
               .. type:: string
 
             - Only available if the payment is completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
 
-          * - | ``qrCode``
+          * - ``qrCode``
 
               .. type:: QR code object
 
@@ -461,7 +461,7 @@ Bank transfer
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -470,58 +470,58 @@ Bank transfer
        .. list-table::
           :widths: auto
 
-          * - | ``bankName``
+          * - ``bankName``
 
               .. type:: string
 
             - The name of the bank the consumer should wire the amount to.
 
-          * - | ``bankAccount``
+          * - ``bankAccount``
 
               .. type:: string
 
             - The IBAN the consumer should wire the amount to.
 
-          * - | ``bankBic``
+          * - ``bankBic``
 
               .. type:: string
 
             - The BIC of the bank the consumer should wire the amount to.
 
-          * - | ``transferReference``
+          * - ``transferReference``
 
               .. type:: string
 
             - The reference the consumer should use when wiring the amount. Note you should not apply any formatting
               here; show it to the consumer as-is.
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's bank account. This may be an IBAN, or it
               may be a domestic account number.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's bank's BIC / SWIFT code.
 
-          * - | ``billingEmail``
+          * - ``billingEmail``
 
               .. type:: string
 
             - Only available if filled out in the API or by the consumer – The email address which the consumer asked
               the payment instructions to be sent to.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -531,13 +531,13 @@ Bank transfer
        .. list-table::
           :widths: auto
 
-          * - | ``status``
+          * - ``status``
 
               .. type:: URL object
 
             - A link to a hosted payment page where your customer can check the status of their payment.
 
-          * - | ``payOnline``
+          * - ``payOnline``
 
               .. type:: URL object
 
@@ -549,7 +549,7 @@ Belfius Pay Button
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -558,20 +558,19 @@ Belfius Pay Button
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
-            - Only available one banking day after the payment has been completed – The consumer's bank account. This
-              may be an IBAN, or it may be a domestic account number.
+            - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -582,7 +581,7 @@ Bitcoin
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -591,19 +590,19 @@ Bitcoin
        .. list-table::
           :widths: auto
 
-          * - | ``bitcoinAddress``
+          * - ``bitcoinAddress``
 
               .. type:: string
 
             - Only available if the payment has been completed – The bitcoin address the bitcoins were transferred to.
 
-          * - | ``bitcoinAmount``
+          * - ``bitcoinAmount``
 
               .. type:: amount object
 
             - The amount transferred in XBT.
 
-          * - | ``bitcoinUri``
+          * - ``bitcoinUri``
 
               .. type:: string
 
@@ -611,7 +610,7 @@ Bitcoin
               transaction. Follows the
               `BIP 21 URI scheme <https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki>`_.
 
-          * - | ``qrCode``
+          * - ``qrCode``
 
               .. type:: QR code object
 
@@ -623,7 +622,7 @@ Credit card
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -632,26 +631,26 @@ Credit card
        .. list-table::
           :widths: auto
 
-          * - | ``cardHolder``
+          * - ``cardHolder``
 
               .. type:: string
 
             - Only available if the payment has been completed - The card holder's name.
 
-          * - | ``cardNumber``
+          * - ``cardNumber``
 
               .. type:: string
 
             - Only available if the payment has been completed - The last four digits of the card number.
 
-          * - | ``cardFingerprint``
+          * - ``cardFingerprint``
 
               .. type:: string
 
             - Only available if the payment has been completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
 
-          * - | ``cardAudience``
+          * - ``cardAudience``
 
               .. type:: string
 
@@ -660,7 +659,7 @@ Credit card
 
               Possible values: ``consumer`` ``business`` ``null``
 
-          * - | ``cardLabel``
+          * - ``cardLabel``
 
               .. type:: string
 
@@ -668,9 +667,9 @@ Credit card
               processed through Mollie.
 
               Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
-              ``Discover`` ``JCB Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
+              ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
 
-          * - | ``cardCountryCode``
+          * - ``cardCountryCode``
 
               .. type:: string
 
@@ -678,7 +677,7 @@ Credit card
               `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code of the country the
               card was issued in. For example: ``BE``.
 
-          * - | ``cardSecurity``
+          * - ``cardSecurity``
 
               .. type:: string
 
@@ -686,7 +685,7 @@ Credit card
 
               Possible values: ``normal`` ``3dsecure``
 
-          * - | ``feeRegion``
+          * - ``feeRegion``
 
               .. type:: string
 
@@ -695,7 +694,7 @@ Credit card
 
               Possible values: ``intra-eu`` ``other``
 
-          * - | ``failureReason``
+          * - ``failureReason``
 
               .. type:: string
 
@@ -709,7 +708,7 @@ Gift cards
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -718,14 +717,14 @@ Gift cards
        .. list-table::
           :widths: auto
 
-          * - | ``voucherNumber``
+          * - ``voucherNumber``
 
               .. type:: string
 
             - The voucher number, with the last four digits masked. When multiple gift cards are used, this is the first
               voucher number. Example: ``606436353088147****``.
 
-          * - | ``giftcards``
+          * - ``giftcards``
 
               .. type:: array
 
@@ -735,13 +734,13 @@ Gift cards
               .. list-table::
                  :widths: auto
 
-                 * - | ``issuer``
+                 * - ``issuer``
 
                      .. type:: string
 
                    - The ID of the gift card brand that was used during the payment.
 
-                 * - | ``amount``
+                 * - ``amount``
 
                      .. type:: amount object
 
@@ -750,25 +749,25 @@ Gift cards
                      .. list-table::
                         :widths: auto
 
-                        * - | ``currency``
+                        * - ``currency``
 
                             .. type:: string
 
                           - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                        * - | ``value``
+                        * - ``value``
 
                             .. type:: string
 
                           - A string containing the exact amount of the gift card payment in the given currency.
 
-                 * - | ``voucherNumber``
+                 * - ``voucherNumber``
 
                      .. type:: string
 
                    - The voucher number, with the last four digits masked. Example: ``606436353088147****``
 
-          * - | ``remainderAmount``
+          * - ``remainderAmount``
 
               .. type:: amount object
 
@@ -778,19 +777,19 @@ Gift cards
               .. list-table::
                  :widths: auto
 
-                 * - | ``currency``
+                 * - ``currency``
 
                      .. type:: string
 
                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                 * - | ``value``
+                 * - ``value``
 
                      .. type:: string
 
                    - A string containing the remaining payment amount.
 
-          * - | ``remainderMethod``
+          * - ``remainderMethod``
 
               .. type:: string
 
@@ -802,7 +801,7 @@ iDEAL
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -811,19 +810,19 @@ iDEAL
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -834,7 +833,7 @@ ING Home'Pay
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -843,19 +842,19 @@ ING Home'Pay
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -866,7 +865,7 @@ KBC/CBC Payment Button
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -875,19 +874,19 @@ KBC/CBC Payment Button
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available one banking day after the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available one banking day after the payment has been completed – The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -898,7 +897,7 @@ PayPal
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -907,19 +906,19 @@ PayPal
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's first and last name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's email address.
 
-          * - | ``paypalReference``
+          * - ``paypalReference``
 
               .. type:: string
 
@@ -930,7 +929,7 @@ paysafecard
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -939,7 +938,7 @@ paysafecard
        .. list-table::
           :widths: auto
 
-          * - | ``customerReference``
+          * - ``customerReference``
 
               .. type:: string
 
@@ -950,7 +949,7 @@ SEPA Direct Debit
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -959,84 +958,84 @@ SEPA Direct Debit
        .. list-table::
           :widths: auto
 
-          * - | ``transferReference``
+          * - ``transferReference``
 
               .. type:: string
 
             - Transfer reference used by Mollie to identify this payment.
 
-          * - | ``creditorIdentifier``
+          * - ``creditorIdentifier``
 
               .. type:: string
 
             - The creditor identifier indicates who is authorized to execute the payment. In this case, it is a
               reference to Mollie.
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
             - The consumer's bank's BIC.
 
-          * - | ``dueDate``
+          * - ``dueDate``
 
               .. type:: date
 
             - Estimated date the payment is debited from the consumer's bank account, in ``YYYY-MM-DD`` format.
 
-          * - | ``signatureDate``
+          * - ``signatureDate``
 
               .. type:: date
 
             - Only available if the payment has been verified – Date the payment has been signed by the consumer, in
               ``YYYY-MM-DD`` format.
 
-          * - | ``bankReasonCode``
+          * - ``bankReasonCode``
 
               .. type:: string
 
             - Only available if the payment has failed – The official reason why this payment has failed. A detailed
               description of each reason is available on the website of the European Payments Council.
 
-          * - | ``bankReason``
+          * - ``bankReason``
 
               .. type:: string
 
             - Only available if the payment has failed – A textual desciption of the failure reason.
 
-          * - | ``endToEndIdentifier``
+          * - ``endToEndIdentifier``
 
               .. type:: string
 
             - Only available for batch transactions – The original end-to-end identifier that you've specified in your
               batch.
 
-          * - | ``mandateReference``
+          * - ``mandateReference``
 
               .. type:: string
 
             - Only available for batch transactions – The original mandate reference that you've specified in your
               batch.
 
-          * - | ``batchReference``
+          * - ``batchReference``
 
               .. type:: string
 
             - Only available for batch transactions – The original batch reference that you've specified in your batch.
 
-          * - | ``fileReference``
+          * - ``fileReference``
 
               .. type:: string
 
@@ -1047,7 +1046,7 @@ SOFORT Banking
 .. list-table::
    :widths: auto
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -1056,19 +1055,19 @@ SOFORT Banking
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -1084,19 +1083,19 @@ The ``qrCode`` key in the ``details`` object will then become available. The key
 .. list-table::
    :widths: auto
 
-   * - | ``height``
+   * - ``height``
 
        .. type:: integer
 
      - Height of the image in pixels.
 
-   * - | ``width``
+   * - ``width``
 
        .. type:: integer
 
      - Width of the image in pixels.
 
-   * - | ``src``
+   * - ``src``
 
        .. type:: string
 

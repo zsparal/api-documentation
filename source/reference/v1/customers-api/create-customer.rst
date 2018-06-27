@@ -28,21 +28,21 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: false
 
      - The full name of the customer.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: false
 
      - The email address of the customer.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
@@ -51,9 +51,11 @@ Parameters
        parameter is not provided, the browser language will be used instead in the payment flow (which is usually more
        accurate).
 
-       Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
+       Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
+       ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
+       ``lt_LT``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: object
           :required: false
@@ -63,12 +65,13 @@ Parameters
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

@@ -35,13 +35,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
-   * - | ``payment``
+   * - ``payment``
 
        .. type:: object
 
@@ -51,32 +51,32 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``amountRefunded``
+          * - ``amountRefunded``
 
               .. type:: decimal
 
             - The total amount in EUR that is already refunded. For some payment methods, this amount may be higher than
               the payment amount, for example to allow reimbursement of the costs for a return shipment to the consumer.
 
-          * - | ``amountRemaining``
+          * - ``amountRemaining``
 
               .. type:: decimal
 
             - The remaining amount in EUR that can be refunded.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
 
      - The amount refunded to the consumer with this refund.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The description of the refund that may be shown to the consumer, depending on the payment method used.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -91,7 +91,7 @@ Response
        * ``refunded`` The refund has been paid out to the consumer.
        * ``failed`` The refund has failed during processing.
 
-   * - | ``refundedDatetime``
+   * - ``refundedDatetime``
 
        .. type:: datetime
 

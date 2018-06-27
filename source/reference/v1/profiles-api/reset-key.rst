@@ -26,13 +26,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an API key object. Will always contain ``profile_api_key`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -40,13 +40,13 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``key``
+   * - ``key``
 
        .. type:: string
 
      - The newly generated API key, which immediately replaces the previous API key.
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 

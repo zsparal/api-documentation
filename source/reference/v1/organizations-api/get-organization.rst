@@ -37,86 +37,86 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains an organization object. Will always contain ``organization`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this organization, for example ``org_1234567``.
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The organization's official name.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address of the organization.
 
-   * - | ``address``
+   * - ``address``
 
        .. type:: string
 
      - The address where the organizations is established.
 
-   * - | ``postalCode``
+   * - ``postalCode``
 
        .. type:: string
 
      - The postal code of where the organization is established.
 
-   * - | ``city``
+   * - ``city``
 
        .. type:: string
 
      - The name of the city where the organization is established.
 
-   * - | ``country``
+   * - ``country``
 
        .. type:: string
 
      - The name of the country where the organization is established.
 
-   * - | ``countryCode``
+   * - ``countryCode``
 
        .. type:: string
 
      - The two-letter code of the country where the organization is established.
 
-   * - | ``registrationType``
+   * - ``registrationType``
 
        .. type:: string
 
      - National or international registration type of the organization's legal entity.
 
-   * - | ``registrationNumber``
+   * - ``registrationNumber``
 
        .. type:: string
 
      - Registration number of the organization's legal entity.
 
-   * - | ``registrationDatetime``
+   * - ``registrationDatetime``
 
        .. type:: datetime
 
      - Registration date of the organization's legal entity.
 
-   * - | ``vatNumber``
+   * - ``vatNumber``
 
        .. type:: string
 
      - The organization's VAT number. You can use this for invoicing
        :doc:`application fees </oauth/application-fees>`, for example.
 
-   * - | ``verifiedDatetime``
+   * - ``verifiedDatetime``
 
        .. type:: datetime
 

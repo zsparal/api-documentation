@@ -27,14 +27,14 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of mandates to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -43,12 +43,13 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -62,32 +63,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of mandates available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped mandates as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of mandates found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of mandate objects as described in :doc:`Get mandate </reference/v1/mandates-api/get-mandate>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -96,25 +97,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of mandates, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of mandates, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of mandates, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

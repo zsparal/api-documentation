@@ -29,13 +29,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of API keys found in ``data``.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 

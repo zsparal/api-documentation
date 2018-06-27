@@ -34,7 +34,7 @@ endpoint. For recurring payments, the following parameters have notable differen
 .. list-table::
    :widths: auto
 
-   * - | ``recurringType``
+   * - ``recurringType``
 
        .. type:: string
           :required: false
@@ -43,7 +43,7 @@ endpoint. For recurring payments, the following parameters have notable differen
        the customer to agree to automatic recurring charges taking place on their account in the future. If set to
        ``recurring``, the customer's card is charged automatically.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
           :required: true
@@ -51,7 +51,7 @@ endpoint. For recurring payments, the following parameters have notable differen
      - If the ``recurringType`` parameter is set to ``first`` then the minimal amount is €0.01 for iDEAL, credit card
        and Belfius Pay Button, €0.02 for Bancontact, or €0.10 for SOFORT Banking.
 
-   * - | ``redirectUrl``
+   * - ``redirectUrl``
 
        .. type:: string
           :required: true

@@ -20,7 +20,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
           :required: false
@@ -28,14 +28,14 @@ Parameters
      - Use this parameter to filter for a settlement with a specific reference. The reference is visible on
        your bank statement and in emails. An example reference would be ``1182161.1506.02``.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of payment profiles to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -49,14 +49,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of settlements found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -65,14 +65,14 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``settlements``
+          * - ``settlements``
 
               .. type:: array
 
             - An array of settlement objects as described in
               :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -82,25 +82,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of settlements.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of settlements, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of settlements, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

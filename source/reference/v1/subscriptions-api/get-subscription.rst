@@ -27,12 +27,13 @@ example ``/v1/customers/cst_8wmqcHMN4U/subscriptions/sub_rVKGtNd6s3``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -46,26 +47,26 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a subscription object. Will always contain ``subscription`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this subscription. Mollie assigns this identifier at subscription creation
        time. For example ``sub_rVKGtNd6s3``.
 
-   * - | ``customerId``
+   * - ``customerId``
 
        .. type:: string
 
      - The customer's unique identifier, for example ``cst_8wmqcHMN4U``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -74,13 +75,13 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 
      - The subscription's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -88,19 +89,19 @@ Response
 
        Possible values: ``pending`` ``active`` ``cancelled`` ``suspended`` ``completed``
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
 
      - The constant amount that is charged with each subscription payment.
 
-   * - | ``times``
+   * - ``times``
 
        .. type:: integer
 
      - Total number of charges for the subscription to complete.
 
-   * - | ``interval``
+   * - ``interval``
 
        .. type:: string
 
@@ -108,20 +109,20 @@ Response
 
        Possible values: ``... months`` ``... weeks`` ``... days``
 
-   * - | ``startDate``
+   * - ``startDate``
 
        .. type:: date
 
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The description specified during subscription creation. This will be included in the payment description along
        with the charge date in ``YYYY-MM-DD`` format.
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
 
@@ -130,13 +131,13 @@ Response
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
-   * - | ``cancelledDatetime``
+   * - ``cancelledDatetime``
 
        .. type:: datetime
 
      - The subscription's date and time of cancellation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -145,7 +146,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``webhookUrl``
+          * - ``webhookUrl``
 
               .. type:: string
 

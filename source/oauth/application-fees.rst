@@ -28,7 +28,7 @@ Application fees are created by passing additional parameters to the
 .. list-table::
    :widths: auto
 
-   * - | ``applicationFee``
+   * - ``applicationFee``
 
        .. type:: object
           :required: false
@@ -39,7 +39,7 @@ Application fees are created by passing additional parameters to the
        .. list-table::
           :widths: auto
 
-          * - | ``amount``
+          * - ``amount``
 
               .. type:: amount object
                  :required: true
@@ -50,14 +50,14 @@ Application fees are created by passing additional parameters to the
               .. list-table::
                  :widths: auto
 
-                 * - | ``currency``
+                 * - ``currency``
 
                      .. type:: string
                         :required: true
 
                    - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-                 * - | ``value``
+                 * - ``value``
 
                      .. type:: string
                         :required: true
@@ -65,7 +65,7 @@ Application fees are created by passing additional parameters to the
                    - A string containing the exact amount you want to charge in the given currency. Make sure to send
                      the right amount of decimals. Non-string values are not accepted.
 
-          * - | ``description``
+          * - ``description``
 
               .. type:: string
                  :required: true

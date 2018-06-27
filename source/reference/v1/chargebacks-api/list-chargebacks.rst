@@ -35,14 +35,14 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 .. list-table::
    :widths: auto
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
      - The number of chargebacks to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
@@ -63,33 +63,33 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of chargebacks available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped chargebacks as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of chargebacks found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of chargebacks objects as described in
        :doc:`Get chargeback </reference/v1/chargebacks-api/get-chargeback>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -98,25 +98,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of chargebacks, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of chargebacks, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of chargebacks, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

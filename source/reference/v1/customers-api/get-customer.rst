@@ -26,12 +26,13 @@ Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqc
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -45,19 +46,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -66,19 +67,19 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The full name of the customer as provided when the customer was created.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address of the customer as provided when the customer was created.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
 
@@ -86,24 +87,26 @@ Response
        not provided when the customer was created, the browser language will be used instead in the payment flow (which
        is usually more accurate).
 
-       Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
+       Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
+       ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
+       ``lt_LT``
 
-   * - | ``metadata``
+   * - ``metadata``
 
        .. type:: object
 
      - Data provided during the customer creation in JSON notation.
 
-   * - | ``recentlyUsedMethods``
+   * - ``recentlyUsedMethods``
 
        .. type:: array
 
      - Payment methods that the customer recently used for payments.
 
-       Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``giftcard``
-       ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 

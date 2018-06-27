@@ -42,32 +42,32 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
-   * - | ``payment``
+   * - ``payment``
 
        .. type:: string, object
 
      - The ID of the payment this chargeback belongs to. If the payment include is requested, the ID will be replaced by
        a payment object as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: decimal
 
      - The amount charged back.
 
-   * - | ``chargebackDatetime``
+   * - ``chargebackDatetime``
 
        .. type:: datetime
 
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``reversedDatetime``
+   * - ``reversedDatetime``
 
        .. type:: datetime
 

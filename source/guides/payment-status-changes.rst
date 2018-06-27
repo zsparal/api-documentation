@@ -43,35 +43,46 @@ How does one status lead to another?
 ------------------------------------
 Please look at the below diagram. It tells you exactly when to expect what status:
 
-.. image:: images/api-status-list@2x.png
+.. image:: images/api-status-list-v2@2x.png
 
 When does a payment expire?
 ---------------------------
 When your customer doesn't make an actual payment, the payment will at some point expire. After a certain expiry time an
-``open`` payment will become ``expired``. This could happen when a consumer decides not to make a payment after all, and
-abandons it. The expiry time is different for each payment method.
+``open`` payment will become ``expired``. This could happen when a customer decides not to make a payment after all, and
+abandons it. The expiry time is different for each payment method:
+
+Expiry times per payment method
+-------------------------------
+
++---------------------------+-----------------------------------+
+| Payment methods           | Expiry time                       |
++===========================+===================================+
+| - iDEAL                   | 15 minutes                        |
+| - paysafecard             |                                   |
++---------------------------+-----------------------------------+
+| - Credit card             | 30 minutes                        |
++---------------------------+-----------------------------------+
+| - Bancontact              | 1 hour                            |
+| - Bitcoin                 |                                   |
+| - eps                     |                                   |
+| - Giropay                 |                                   |
+| - KBC                     |                                   |
+| - SOFORT Banking          |                                   |
++---------------------------+-----------------------------------+
+| - PayPal                  | 3 hours                           |
++---------------------------+-----------------------------------+
+| - Belfius Pay Button      | Next business day at 09:00 AM     |
+| - ING Home'Pay            |                                   |
++---------------------------+-----------------------------------+
+| - Bank transfer [#f1]_    | 12(+2) days                       |
++---------------------------+-----------------------------------+
 
 .. note:: It is not a good idea to predict payment expiry. Best wait until your webhook is called and fetch the status
           as usual. This is the most reliable way to keep your system in sync with Mollie, also in the case of expiring
           payments.
- 
-Expiry times per payment method
--------------------------------
 
+.. rubric:: Footnotes
 
-=========================================== =============================
-Payment methods                             Expiry
-=========================================== =============================
-iDEAL / paysafecard                         15 minutes
-Credit card                                 30 minutes
-Bitcoin / Bancontact / SOFORT Banking / KBC 1 hour
-Paypal                                      3 hours
-Belfius Pay Button / ING Home'Pay           Next business day at 09:00 am
-Bank transfer                               12(+2) days
-=========================================== =============================
-
-.. note:: Payments made by banktransfer are done manually. A wire transfer is done by using a certain amount and
-          reference. We check these payments daily. Some days can pass before it becomes clear the payment has been
-          paid. That's why the payment method ``banktransfer`` will not expire until 12 days have passed. One or two
-          days can be added when the 12th day is a Saturday or Sunday.
-
+.. [#f1] Payments made by bank transfer are done manually by your customer. Some days can pass before it becomes clear
+         the payment has been paid. That's why the payment method ``banktransfer`` will by default not expire until 12
+         days have passed. One or two days can be added when the 12th day is a Saturday or Sunday.

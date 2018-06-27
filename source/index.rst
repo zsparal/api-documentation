@@ -10,8 +10,8 @@ the API. We recommend to read these topics entirely.
 If possible it would be wise to leave communication at this level to our ready-made :ref:`Clients <clients>`. This
 allows you to still be in control without reinventing the wheel.
 
-If you have any questions about integrating our API, please `contact us <https://www.mollie.com/en/contact/>`_. We're happy
-to help! 
+If you have any questions about integrating our API, please `contact us <https://www.mollie.com/en/contact/>`_. We're
+happy to help!
 
 .. _clients:
 
@@ -21,7 +21,7 @@ Well begun is half done. Save time and build on solid foundations. Mollie API cl
 `PHP <https://github.com/mollie/mollie-api-php>`_, `Ruby <https://github.com/mollie/mollie-api-ruby>`_,
 `Node.js <https://github.com/mollie/mollie-api-node>`_ and `Python <https://github.com/mollie/mollie-api-python>`_.
 
-Of course we also provide modules and plugins for about every web shop software out there.
+Of course we also provide modules and plugins for about every webshop software out there.
 
 Payment methods
 ---------------
@@ -33,8 +33,10 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Bitcoin <https://www.mollie.com/en/payments/bitcoin>`_
 * `Credit card <https://www.mollie.com/en/payments/credit-card>`_ (VISA, MasterCard, Maestro and American Express)
 * `SEPA Direct Debit <https://www.mollie.com/en/payments/direct-debit>`_
+* `eps <https://www.mollie.com/en/payments/eps>`_
 * `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart,
   YourGift etc.)
+* `Giropay <https://www.mollie.com/en/payments/giropay>`_
 * `iDEAL <https://www.mollie.com/en/payments/ideal>`_
 * `ING Home'Pay <https://www.mollie.com/en/payments/ing-homepay>`_
 * `KBC/CBC Payment Button <https://www.mollie.com/en/payments/kbc-cbc>`_

@@ -63,14 +63,14 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals. Non-string values are not accepted.
 
-   * - | ``times``
+   * - ``times``
 
        .. type:: integer
           :required: false
 
      - Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
 
-   * - | ``interval``
+   * - ``interval``
 
        .. type:: string
           :required: true
@@ -79,7 +79,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
        Possible values: ``... months`` ``... weeks`` ``... days``
 
-   * - | ``startDate``
+   * - ``startDate``
 
        .. type:: date
           :required: false
@@ -87,7 +87,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your
        customer will be charged. When this parameter is not provided, the current date will be used instead.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
           :required: true
@@ -95,7 +95,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - A description unique per subscription . This will be included in the payment description along with the charge
        date in ``YYYY-MM-DD`` format.
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
           :required: false
@@ -105,7 +105,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
-   * - | ``webhookUrl``
+   * - ``webhookUrl``
 
        .. type:: string
           :required: false
@@ -114,21 +114,22 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
-With it, you can specify to which profile the subscription belongs. Organizations can have multiple profiles for each of
-their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
+``profileId`` parameter. With it, you can specify to which profile the subscription belongs. Organizations can have
+multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false

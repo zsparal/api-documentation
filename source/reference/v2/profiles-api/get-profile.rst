@@ -24,19 +24,19 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a profile object. Will always contain ``profile`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this profile, for example ``pfl_v9hTwCvYqw``.
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
 
@@ -44,32 +44,32 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
 
      - The profile's name, this will usually reflect the tradename or brand name of the profile's website or
        application.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
 
      - The URL to the profile's website or application.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
 
      - The email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
 
      - The phone number associated with the profile's tradename or brand.
 
-   * - | ``categoryCode``
+   * - ``categoryCode``
 
        .. type:: integer
 
@@ -88,7 +88,7 @@ Response
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -100,7 +100,7 @@ Response
        * ``verified`` The profile has been verified and can be used to create live payments and test payments.
        * ``blocked`` The profile is blocked and can thus no longer be used or changed.
 
-   * - | ``review``
+   * - ``review``
 
        .. type:: object
 
@@ -111,7 +111,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``status``
+          * - ``status``
 
               .. type:: string
 
@@ -122,13 +122,13 @@ Response
               * ``pending`` The changes are pending review. We will review your changes soon.
               * ``rejected`` We've reviewed and rejected your changes.
 
-   * - | ``createdAt``
+   * - ``createdAt``
 
        .. type:: datetime
 
      - The profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -138,43 +138,43 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The API resource URL of the profile itself.
 
-          * - | ``chargebacks``
+          * - ``chargebacks``
 
               .. type:: URL object
 
             - The API resource URL of the chargebacks that belong to this profile.
 
-          * - | ``methods``
+          * - ``methods``
 
               .. type:: URL object
 
             - The API resource URL of the methods that are enabled for this profile.
 
-          * - | ``payments``
+          * - ``payments``
 
               .. type:: URL object
 
             - The API resource URL of the payments that belong to this profile.
 
-          * - | ``refunds``
+          * - ``refunds``
 
               .. type:: URL object
 
             - The API resource URL of the refunds that belong to this profile.
 
-          * - | ``checkoutPreviewUrl``
+          * - ``checkoutPreviewUrl``
 
               .. type:: URL object
 
             - The Checkout preview URL. You need to be logged in to access this page.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 
@@ -206,7 +206,7 @@ Response
        "name": "My website name",
        "website": "https://www.mywebsite.com",
        "email": "info@mywebsite.com",
-       "phone": "31123456789",
+       "phone": "+31208202070",
        "categoryCode": 5399,
        "status": "verified",
        "review": {

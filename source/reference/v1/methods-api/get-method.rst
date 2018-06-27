@@ -27,39 +27,42 @@ Replace ``id`` in the endpoint URL by the payment method's ID, for example ``cre
 .. list-table::
    :widths: auto
 
-   * - | ``include``
+   * - ``include``
 
        .. type:: string
           :required: true
 
      - Include additional data. Must be a comma separated list of one or more includes.
 
-   * - | ``locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
 
      - Passing a locale will translate the payment method name to the corresponding language.
 
-       Possible values: ``en_US`` ``de_AT`` ``de_CH`` ``de_DE`` ``es_ES`` ``fr_BE`` ``fr_FR`` ``nl_BE`` ``nl_NL``
+       Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
+       ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
+       ``lt_LT``
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the only mandatory extra parameter is the ``profileId`` parameter.
-With it, you can specify which profile you want to retrieve a method for. Organizations can have multiple profiles for
-each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
+``profileId`` parameter. With it, you can specify which profile you want to retrieve a method for. Organizations can
+have multiple profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for
+more information.
 
 .. list-table::
    :widths: auto
 
-   * - | ``profileId``
+   * - ``profileId``
 
        .. type:: string
           :required: true
 
      - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -80,13 +83,13 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a payment method object. Will always contain ``method`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
@@ -94,13 +97,13 @@ Response
        during :doc:`payment creation </reference/v1/payments-api/create-payment>`, the payment method selection screen
        is skipped.
 
-   * - | ``description``
+   * - ``description``
 
        .. type:: string
 
      - The full name of the payment method.
 
-   * - | ``amount``
+   * - ``amount``
 
        .. type:: object
 
@@ -109,20 +112,20 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``minimum``
+          * - ``minimum``
 
               .. type:: decimal
 
             - The minimum payment amount in EUR required to use this payment method.
 
-          * - | ``maximum``
+          * - ``maximum``
 
               .. type:: decimal
 
             - The maximum payment amount in EUR allowed when using this payment method. For gift cards, the maximum
               amount may be ignored.
 
-   * - | ``image``
+   * - ``image``
 
        .. type:: object
 
@@ -131,13 +134,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``normal``
+          * - ``normal``
 
               .. type:: string
 
             - The URL for a payment method icon of 55x37 pixels.
 
-          * - | ``bigger``
+          * - ``bigger``
 
               .. type:: string
 

@@ -28,12 +28,13 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``i
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -47,20 +48,20 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``resource``
+   * - ``resource``
 
        .. type:: string
 
      - Indicates the response contains a mandate object. Will always contain ``mandate`` for this endpoint.
 
-   * - | ``id``
+   * - ``id``
 
        .. type:: string
 
      - The identifier uniquely referring to this mandate. Mollie assigns this identifier at mandate creation time. For
        example ``mdt_pWUnw6pkBN``.
 
-   * - | ``status``
+   * - ``status``
 
        .. type:: string
 
@@ -69,7 +70,7 @@ Response
 
        Possible values: ``valid`` ``pending`` ``invalid``
 
-   * - | ``method``
+   * - ``method``
 
        .. type:: string
 
@@ -77,13 +78,13 @@ Response
 
        Possible values: ``directdebit`` ``creditcard``
 
-   * - | ``customerId``
+   * - ``customerId``
 
        .. type:: string
 
      - The customer's unique identifier, for example ``cst_3RkSN1zuPE``.
 
-   * - | ``details``
+   * - ``details``
 
        .. type:: object
 
@@ -94,19 +95,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``consumerName``
+          * - ``consumerName``
 
               .. type:: string
 
             - The account holder's name.
 
-          * - | ``consumerAccount``
+          * - ``consumerAccount``
 
               .. type:: string
 
             - The account holder's IBAN.
 
-          * - | ``consumerBic``
+          * - ``consumerBic``
 
               .. type:: string
 
@@ -117,19 +118,19 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``cardHolder``
+          * - ``cardHolder``
 
               .. type:: string
 
             - The credit card holder's name.
 
-          * - | ``cardNumber``
+          * - ``cardNumber``
 
               .. type:: string
 
             - The last four digits of the credit card number.
 
-          * - | ``cardLabel``
+          * - ``cardLabel``
 
               .. type:: string
 
@@ -138,31 +139,31 @@ Response
               Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
               ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
 
-          * - | ``cardFingerprint``
+          * - ``cardFingerprint``
 
               .. type:: string
 
             - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
 
-          * - | ``cardExpiryDate``
+          * - ``cardExpiryDate``
 
               .. type:: date
 
             - Expiry date of the credit card in ``YYYY-MM-DD`` format.
 
-   * - | ``mandateReference``
+   * - ``mandateReference``
 
        .. type:: string
 
      - The mandate's custom reference, if this was provided when creating the mandate.
 
-   * - | ``signatureDate``
+   * - ``signatureDate``
 
        .. type:: string
 
      - The signature date of the mandate in ``YYYY-MM-DD`` format.
 
-   * - | ``createdDatetime``
+   * - ``createdDatetime``
 
        .. type:: datetime
 

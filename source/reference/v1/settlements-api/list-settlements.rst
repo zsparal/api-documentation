@@ -27,7 +27,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - | ``reference``
+   * - ``reference``
 
        .. type:: string
           :required: false
@@ -35,19 +35,19 @@ Parameters
      - Use this parameter to filter for a settlement with a specific reference. The reference is visible on
        your bank statement and in emails. An example reference would be ``1182161.1506.02``.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
           :required: false
 
-     - The number of payment profiles to skip.
+     - The number of settlements to skip.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
           :required: false
 
-     - The number of payment profiles to return (with a maximum of 250).
+     - The number of settlements to return (with a maximum of 250).
 
 Response
 --------
@@ -56,33 +56,33 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``totalCount``
+   * - ``totalCount``
 
        .. type:: integer
 
      - The total number of settlements available.
 
-   * - | ``offset``
+   * - ``offset``
 
        .. type:: integer
 
      - The number of skipped settlements as requested.
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of settlements found in ``data``, which is either the requested number (with a maximum of 250) or the
        default number.
 
-   * - | ``data``
+   * - ``data``
 
        .. type:: array
 
      - An array of settlement objects as described in
        :doc:`Get settlement </reference/v1/settlements-api/get-settlement>`.
 
-   * - | ``links``
+   * - ``links``
 
        .. type:: object
 
@@ -91,25 +91,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: string
 
             - The previous set of settlements, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: string
 
             - The next set of settlements, if available.
 
-          * - | ``first``
+          * - ``first``
 
               .. type:: string
 
             - The first set of settlements, if available.
 
-          * - | ``last``
+          * - ``last``
 
               .. type:: string
 

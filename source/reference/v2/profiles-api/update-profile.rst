@@ -21,38 +21,40 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
 .. list-table::
    :widths: auto
 
-   * - | ``name``
+   * - ``name``
 
        .. type:: string
           :required: true
 
      - The profile's new name.
 
-   * - | ``website``
+   * - ``website``
 
        .. type:: string
           :required: true
 
      - The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
-   * - | ``email``
+   * - ``email``
 
        .. type:: string
           :required: true
 
      - The new email address associated with the profile's tradename or brand.
 
-   * - | ``phone``
+   * - ``phone``
 
        .. type:: string
           :required: true
 
-     - The new phone number associated with the profile's tradename or brand.
+     - The new phone number associated with the profile's tradename or brand. Must be in the
+         `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
-   * - | ``categoryCode``
+
+   * - ``categoryCode``
 
        .. type:: integer
-          :required: true
+          :required: false
 
      - The new industry identifier associated with the profile's tradename or brand.
 
@@ -69,7 +71,7 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
        * ``8398`` Charity and donations
        * ``0`` Other
 
-   * - | ``mode``
+   * - ``mode``
 
        .. type:: string
           :required: false
@@ -101,7 +103,7 @@ Request
            \"name\": \"My website name - Update 1\",
            \"website\": \"https://www.mywebsite2.com\",
            \"email\": \"info@mywebsite2.com\",
-           \"phone\": \"31123456789\",
+           \"phone\": \"+31208202070\",
            \"categoryCode\": 5399
        }"
 
@@ -120,7 +122,7 @@ Response
        "name": "My website name - Update 1",
        "website": "https://www.mywebsite2.com",
        "email": "info@mywebsite2.com",
-       "phone": "31123456789",
+       "phone": "+31208202070",
        "categoryCode": 5399,
        "status": "verified",
        "review": {

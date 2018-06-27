@@ -22,7 +22,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 .. list-table::
    :widths: auto
 
-   * - | ``from``
+   * - ``from``
 
        .. type:: string
           :required: false
@@ -30,7 +30,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
      - Offset the result set to the mandate with this ID. The mandate with this ID is included in the result
        set as well.
 
-   * - | ``limit``
+   * - ``limit``
 
        .. type:: integer
           :required: false
@@ -39,12 +39,13 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with Mollie Connect/OAuth, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto
 
-   * - | ``testmode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -59,14 +60,14 @@ Response
 .. list-table::
    :widths: auto
 
-   * - | ``count``
+   * - ``count``
 
        .. type:: integer
 
      - The number of mandates found in ``_embedded``, which is either the requested number (with a maximum of 250) or
        the default number.
 
-   * - | ``_embedded``
+   * - ``_embedded``
 
        .. type:: object
 
@@ -75,13 +76,13 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``mandates``
+          * - ``mandates``
 
               .. type:: array
 
             - An array of mandate objects as described in :doc:`Get mandate </reference/v2/mandates-api/get-mandate>`.
 
-   * - | ``_links``
+   * - ``_links``
 
        .. type:: object
 
@@ -91,25 +92,25 @@ Response
        .. list-table::
           :widths: auto
 
-          * - | ``self``
+          * - ``self``
 
               .. type:: URL object
 
             - The URL to the current set of mandates.
 
-          * - | ``previous``
+          * - ``previous``
 
               .. type:: URL object
 
             - The previous set of mandates, if available.
 
-          * - | ``next``
+          * - ``next``
 
               .. type:: URL object
 
             - The next set of mandates, if available.
 
-          * - | ``documentation``
+          * - ``documentation``
 
               .. type:: URL object
 

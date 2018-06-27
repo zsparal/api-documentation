@@ -5,11 +5,13 @@ export default handle('toggle-class', (element, event) => {
   const toggleClass = element.getAttribute('data-toggle-class');
 
   if (!target) {
+    // eslint-disable-next-line no-console
     console.warn(`No "data-target" found on ${element}.`);
     return;
   }
 
   if (!toggleClass) {
+    // eslint-disable-next-line no-console
     console.warn(`No "data-toggle-class" found on ${element}.`);
     return;
   }
