@@ -45,7 +45,8 @@ Parameters
        .. type:: string
           :required: true
 
-     - The phone number associated with the profile's tradename or brand.
+     - The phone number associated with the profile's tradename or brand. Must be in the
+       `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
    * - ``categoryCode``
 
@@ -99,7 +100,7 @@ Request
            \"name\": \"My website name\",
            \"website\": \"https://www.mywebsite.com\",
            \"email\": \"info@mywebsite.com\",
-           \"phone\": \"31123456789\",
+           \"phone\": \"+31208202070\",
            \"categoryCode\": 5399,
            \"mode\": \"live\"
        }"
@@ -119,7 +120,7 @@ Response
        "name": "My website name",
        "website": "https://www.mywebsite.com",
        "email": "info@mywebsite.com",
-       "phone": "31123456789",
+       "phone": "+31208202070",
        "categoryCode": 5399,
        "status": "unverified",
        "createdAt": "2018-03-20T09:28:37+00:00",

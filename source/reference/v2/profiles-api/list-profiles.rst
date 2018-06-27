@@ -127,7 +127,7 @@ Response
                    "name": "My website name",
                    "website": "https://www.mywebsite.com",
                    "email": "info@mywebsite.com",
-                   "phone": "31123456789",
+                   "phone": "+31208202070",
                    "categoryCode": 5399,
                    "status": "verified",
                    "review": {

@@ -47,7 +47,9 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
        .. type:: string
           :required: true
 
-     - The new phone number associated with the profile's tradename or brand.
+     - The new phone number associated with the profile's tradename or brand. Must be in the
+         `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
+
 
    * - ``categoryCode``
 
@@ -101,7 +103,7 @@ Request
            \"name\": \"My website name - Update 1\",
            \"website\": \"https://www.mywebsite2.com\",
            \"email\": \"info@mywebsite2.com\",
-           \"phone\": \"31123456789\",
+           \"phone\": \"+31208202070\",
            \"categoryCode\": 5399
        }"
 
@@ -120,7 +122,7 @@ Response
        "name": "My website name - Update 1",
        "website": "https://www.mywebsite2.com",
        "email": "info@mywebsite2.com",
-       "phone": "31123456789",
+       "phone": "+31208202070",
        "categoryCode": 5399,
        "status": "verified",
        "review": {
