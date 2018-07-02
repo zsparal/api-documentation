@@ -22,6 +22,9 @@ source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
 source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --detailed-report
 
+source/_static/gtm.js:
+	cp source/theme/js/gtm.js source/_static/gtm.js
+
 css-reload:
 	@./node_modules/.bin/parcel source/theme/styles/main.scss --out-dir build/_static --out-file style --no-hmr --port 8001
 
@@ -52,7 +55,7 @@ write-gtm:
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
-html: Makefile source/_static/style.css source/_static/index.js verify
+html: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 html-only:
