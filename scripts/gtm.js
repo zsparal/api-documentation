@@ -5,7 +5,7 @@ async function run() {
   const changedFiles = await replace({
     files: "build/**/*[!.]",
     from: "<!-- GOOGLE_TAG_MANAGER -->",
-    to: '<script type="text/javascript" src="/_static/gtm.js"></script>'
+    to: '<script type="text/javascript" src="/_static/gtm.js" async></script>'
   });
 
   if (!changedFiles.length) {
