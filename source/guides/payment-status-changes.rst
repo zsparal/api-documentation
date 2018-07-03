@@ -64,7 +64,7 @@ Expiry times per payment method
 +---------------------------+-----------------------------------+
 | - Bancontact              | 1 hour                            |
 | - Bitcoin                 |                                   |
-| - eps                     |                                   |
+| - EPS                     |                                   |
 | - Giropay                 |                                   |
 | - KBC                     |                                   |
 | - SOFORT Banking          |                                   |

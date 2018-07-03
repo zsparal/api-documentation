@@ -584,7 +584,7 @@ Credit card
 
               Possible values: ``intra-eu`` ``other``
 
-eps
+EPS
 """
 .. list-table::
    :widths: auto
