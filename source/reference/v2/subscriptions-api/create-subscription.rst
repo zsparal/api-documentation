@@ -153,15 +153,12 @@ Request
 
    curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -H "Content-Type: application/json" \
-       -d \
-       "{
-           \"amount\": {\"currency\":\"EUR\", \"value\":\"25.00\"},
-           \"times\": 4,
-           \"interval\": \"3 months\",
-           \"description\": \"Quarterly payment\",
-           \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
-       }"
+       -d "amount[currency]=EUR" \
+       -d "amount[value]=25.00" \
+       -d "times=4" \
+       -d "interval=3 months" \
+       -d "description=Quarterly payment" \
+       -d "webhookUrl=https://webshop.example.org/subscriptions/webhook/"
 
 Response
 ^^^^^^^^

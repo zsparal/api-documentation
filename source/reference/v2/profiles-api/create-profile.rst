@@ -94,16 +94,12 @@ Request
 
    curl -X POST https://api.mollie.com/v2/profiles \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
-       -H "Content-Type: application/json" \
-       -d \
-       "{
-           \"name\": \"My website name\",
-           \"website\": \"https://www.mywebsite.com\",
-           \"email\": \"info@mywebsite.com\",
-           \"phone\": \"+31208202070\",
-           \"categoryCode\": 5399,
-           \"mode\": \"live\"
-       }"
+       -d "name=My website name" \
+       -d "website=https://www.mywebsite.com" \
+       -d "email=info@mywebsite.com" \
+       -d "phone=+31208202070" \
+       -d "categoryCode=5399" \
+       -d "mode=live"
 
 Response
 ^^^^^^^^

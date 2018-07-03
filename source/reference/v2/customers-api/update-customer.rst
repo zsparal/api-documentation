@@ -86,8 +86,8 @@ Request
 
    curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -H "Content-Type: application/json" \
-       -d "{\"name\":\"Updated Customer A\",\"email\":\"updated-customer@example.org\"}"
+       -d "name=Updated Customer A" \
+       -d "email=updated-customer@example.org"
 
 Response
 ^^^^^^^^

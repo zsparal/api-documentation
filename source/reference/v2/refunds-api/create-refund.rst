@@ -114,8 +114,8 @@ Request
 
    curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -H "Content-Type: application/json" \
-       -d "{\"amount\":{\"currency\":\"EUR\",\"value\":\"5.95\"}}"
+       -d "amount[currency]=EUR" \
+       -d "amount[value]=5.95"
 
 Response
 ^^^^^^^^

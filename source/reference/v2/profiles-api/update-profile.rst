@@ -97,15 +97,11 @@ Request
 
    curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
-       -H "Content-Type: application/json" \
-       -d \
-       "{
-           \"name\": \"My website name - Update 1\",
-           \"website\": \"https://www.mywebsite2.com\",
-           \"email\": \"info@mywebsite2.com\",
-           \"phone\": \"+31208202070\",
-           \"categoryCode\": 5399
-       }"
+       -d "name=My website name - Update 1" \
+       -d "website=https://www.mywebsite2.com" \
+       -d "email=info@mywebsite2.com" \
+       -d "phone=+31208202070" \
+       -d "categoryCode=5399"
 
 Response
 ^^^^^^^^
