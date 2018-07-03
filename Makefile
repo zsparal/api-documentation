@@ -61,5 +61,5 @@ html: Makefile source/_static/style.css source/_static/index.js source/_static/g
 html-only:
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
-html-production: Makefile source/_static/style.css source/_static/index.js verify
+html-production: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}
