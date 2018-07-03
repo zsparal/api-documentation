@@ -38,7 +38,7 @@ parameter in the query string if you want to retrieve a payment that was created
    * - ``testmode``
 
        .. type:: boolean
-          :required: true
+          :required: false
 
      - Set this to ``true`` to get a payment made in test mode. If you omit this parameter, you can only retrieve live
        mode payments.
