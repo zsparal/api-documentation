@@ -33,7 +33,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Bitcoin <https://www.mollie.com/en/payments/bitcoin>`_
 * `Credit card <https://www.mollie.com/en/payments/credit-card>`_ (VISA, MasterCard, Maestro and American Express)
 * `SEPA Direct Debit <https://www.mollie.com/en/payments/direct-debit>`_
-* `eps <https://www.mollie.com/en/payments/eps>`_
+* `EPS <https://www.mollie.com/en/payments/eps>`_
 * `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart,
   YourGift etc.)
 * `Giropay <https://www.mollie.com/en/payments/giropay>`_
