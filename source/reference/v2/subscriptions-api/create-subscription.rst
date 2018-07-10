@@ -162,7 +162,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: json
    :linenos:
 
    HTTP/1.1 201 Created
