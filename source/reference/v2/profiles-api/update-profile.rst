@@ -4,7 +4,7 @@ Update profile
    :version: 2
 
 .. endpoint::
-   :method: POST
+   :method: PATCH
    :url: https://api.mollie.com/v2/profiles/*id*
 
 .. authentication::
@@ -13,6 +13,8 @@ Update profile
 
 A profile is required to process payments. A profile can easily be created and updated via the Dashboard manually
 However, the Mollie API also allows automatic profile creation and updates via the Profiles API.
+
+Deprecation notice: POST method is still available but reaching end of life. Please use PATCH instead.
 
 Parameters
 ----------
@@ -95,7 +97,7 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw \
+   curl -X PATCH https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
        -d "name=My website name - Update 1" \
        -d "website=https://www.mywebsite2.com" \

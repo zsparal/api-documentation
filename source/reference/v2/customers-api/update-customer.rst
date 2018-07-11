@@ -4,7 +4,7 @@ Update customer
    :version: 2
 
 .. endpoint::
-   :method: POST
+   :method: PATCH
    :url: https://api.mollie.com/v2/customers/*id*
 
 .. authentication::
@@ -12,6 +12,8 @@ Update customer
    :oauth: true
 
 Update an existing customer.
+
+Deprecation notice: POST method is still available but reaching end of life. Please use PATCH instead.
 
 Parameters
 ----------
@@ -84,7 +86,7 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
+   curl -X PATCH https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "name=Updated Customer A" \
        -d "email=updated-customer@example.org"
