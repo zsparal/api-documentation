@@ -11,7 +11,7 @@ Update subscription
    :api_keys: true
    :oauth: true
 
-Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint.
+Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Every field is option to make life easier
 
 Parameters
 ----------
@@ -24,7 +24,7 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
    * - ``amount``
 
        .. type:: object
-          :required: true
+          :required: false
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
        €100.00.
@@ -51,21 +51,21 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
    * - ``times``
 
        .. type:: integer
-          :required: true
+          :required: false
 
      - Total number of charges for the subscription to complete. Can not be less than number of times that subscription has been charged
 
    * - ``startDate``
 
        .. type:: date
-          :required: true
+          :required: false
 
      - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be charged. Should always be in the future
 
    * - ``description``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - A description unique per subscription . This will be included in the payment description along with the charge
        date in ``YYYY-MM-DD`` format.
@@ -73,7 +73,7 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
    * - ``webhookUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - Use this parameter to set a webhook URL for all subscription payments.
 
