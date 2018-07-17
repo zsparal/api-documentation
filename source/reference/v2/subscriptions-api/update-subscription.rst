@@ -11,7 +11,7 @@ Update subscription
    :api_keys: true
    :oauth: true
 
-Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Every field is option to make life easier
+Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Each field is optional.
 
 Parameters
 ----------
@@ -26,8 +26,8 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. type:: object
           :required: false
 
-     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
-       €100.00.
+     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to the charge
+       to €100.00.
 
        .. list-table::
           :widths: auto
@@ -53,14 +53,14 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. type:: integer
           :required: false
 
-     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription has been charged
+     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription has been charged.
 
    * - ``startDate``
 
        .. type:: date
           :required: false
 
-     - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be charged. Should always be in the future
+     - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be charged. Should always be in the future.
 
    * - ``description``
 
@@ -68,7 +68,7 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
           :required: false
 
      - A description unique per subscription . This will be included in the payment description along with the charge
-       date in ``YYYY-MM-DD`` format.
+       date.
 
    * - ``webhookUrl``
 

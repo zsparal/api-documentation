@@ -11,10 +11,8 @@ Update profile
    :api_keys: false
    :oauth: true
 
-A profile is required to process payments. A profile can easily be created and updated via the Dashboard manually
+A profile is required to process payments. A profile can easily be created and updated via the Dashboard manually.
 However, the Mollie API also allows automatic profile creation and updates via the Profiles API.
-
-Deprecation notice: POST method is still available but reaching end of life. Please use PATCH instead.
 
 Parameters
 ----------

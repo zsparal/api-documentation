@@ -10,12 +10,10 @@ July 2018
 Wednesday, 11th
 ---------------
 
-- Added new endpoint for updating Customer Subscription. Now merchants can update subscription in case of needed --
-  for example when price for subscription goes down, there is no need to unsubscribe customers, create new subscription
-  and create a new one. Simply ``PATCH`` the existing one withh new ``amount`` and new ``startDate``, let's say.
+- Added a new endpoint for updating Subscriptions. Now you can update a subscription when needed --
+  for example when your customer switches price plans.
 
-  Look here for details: :doc:`Update Subscription </reference/v2/subscriptions-api/update-subscription>`
-
+  For details, see: :doc:`Update Subscription </reference/v2/subscriptions-api/update-subscription>`
 
 June 2018
 =========

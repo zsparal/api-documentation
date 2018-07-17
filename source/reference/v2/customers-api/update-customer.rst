@@ -13,8 +13,6 @@ Update customer
 
 Update an existing customer.
 
-Deprecation notice: POST method is still available but reaching end of life. Please use PATCH instead.
-
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
