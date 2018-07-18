@@ -136,7 +136,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: json
    :linenos:
 
    HTTP/1.1 200 OK

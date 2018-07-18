@@ -4,6 +4,17 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+July 2018
+=========
+
+Wednesday, 11th
+---------------
+
+- Added a new endpoint for updating Subscriptions. Now you can update a subscription when needed --
+  for example when your customer switches price plans.
+
+  For details, see: :doc:`Update Subscription </reference/v2/subscriptions-api/update-subscription>`
+
 June 2018
 =========
 
