@@ -221,6 +221,13 @@ Response
 
                    - The payment method ID, if applicable.
 
+   * - ``invoiceId``
+
+       .. type:: string
+
+     - The ID of the invoice on which this settlement is invoiced, if it has been invoiced.
+
+
    * - ``_links``
 
        .. type:: object
@@ -254,6 +261,12 @@ Response
               .. type:: URL object
 
             - The API resource URL of the chargebacks that are included in this settlement.
+
+          * - ``invoice``
+
+              .. type:: URL object
+
+            - The API resource URL of the invoice that contains this settlement.
 
           * - ``documentation``
 
@@ -376,6 +389,7 @@ Response
                }
            }
        },
+       "invoiceId": "inv_FrvewDA3Pr",
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/settlements/next",
@@ -392,6 +406,10 @@ Response
            "chargebacks": {
                "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/chargebacks",
                "type": "application/hal+json"
+           },
+           "invoice": {
+                "href": "https://api.mollie.com/v2/invoices/inv_FrvewDA3Pr",
+                "type": "application/hal+json"
            },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/settlements-api/get-settlement",

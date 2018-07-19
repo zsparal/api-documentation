@@ -26,7 +26,7 @@ please contact our support department.
 
 By supplying the optional ``amount`` parameter, you can issue a partial refund where the consumer is only refunded a
 fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,
-for example to refund costs for returnment shipping.
+for example to refund costs for return shipping.
 
 Refunds support descriptions, which we will show in the Dashboard, your exports and pass to the consumer if possible.
 

@@ -7,6 +7,12 @@ changes are documented here.
 July 2018
 =========
 
+Thursday, 19th
+--------------
+
+- The :doc:`Get Settlement </reference/v2/settlements-api/get-settlement>` endpoint now returns the ``invoiceId`` if the
+  settlement has been invoiced. The invoice is also available in the ``_link`` object.
+
 Wednesday, 11th
 ---------------
 
