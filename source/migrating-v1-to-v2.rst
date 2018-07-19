@@ -206,6 +206,7 @@ Changes in the Customers API
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
+* ``recentlyUsedMethods`` has been removed. 
 
 Changes in the Subscriptions API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
