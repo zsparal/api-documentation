@@ -589,8 +589,8 @@ A payment object is returned, as described in :doc:`Get payment </reference/v2/p
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -602,6 +602,27 @@ Request
        -d "redirectUrl=https://webshop.example.org/order/12345/" \
        -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
        -d "metadata={\"order_id\": \"12345\"}"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+    $payment = $mollie->payments->create([
+      "amount" => [
+          "currency" => "EUR",
+          "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
+      ],
+      "description" => "My first payment",
+      "redirectUrl" => "https://webshop.example.org/order/12345/",
+      "webhookUrl" => "https://webshop.example.org/payments/webhook/",
+      "metadata" => [
+          "order_id" => "12345",
+      ],
+    ]);
 
 Response
 ^^^^^^^^
