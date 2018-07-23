@@ -21,7 +21,7 @@ When using the ``first`` sequence type, methods will be returned if they can be 
 sequence and if they are enabled in the Dashboard.
 
 When using the ``recurring`` sequence type, methods that can be used for recurring payments or subscriptions will be
-returned. Enabling / disabling methods in the dashboard does not affect how they can be used for recurring payments. 
+returned. Enabling / disabling methods in the dashboard does not affect how they can be used for recurring payments.
 
 Parameters
 ----------
@@ -146,13 +146,23 @@ Response
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
    curl -X GET https://api.mollie.com/v2/methods \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+    $methods = $mollie->methods->all();
 
 Response
 ^^^^^^^^
