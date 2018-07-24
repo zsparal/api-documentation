@@ -107,8 +107,8 @@ A refund object is returned, as described in :doc:`Get refund </reference/v2/ref
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -116,6 +116,23 @@ Request
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "amount[currency]=EUR" \
        -d "amount[value]=5.95"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+    $payment = $mollie->payments->get("tr_WDqYK6vllg");
+    $refund = $payment->refund([
+      "amount" => [
+        "currency" => "EUR",
+        "value" => "5.95" // You must send the correct number of decimals, thus we enforce the use of strings
+      ]
+    ]);
 
 Response
 ^^^^^^^^
