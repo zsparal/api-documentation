@@ -145,10 +145,6 @@ Response
                    "email": "customer@example.org",
                    "locale": "nl_NL",
                    "metadata": null,
-                   "recentlyUsedMethods": [
-                       "creditcard",
-                       "ideal"
-                   ],
                    "createdAt": "2018-04-06T13:23:21.0Z",
                    "_links": {
                        "self": {
