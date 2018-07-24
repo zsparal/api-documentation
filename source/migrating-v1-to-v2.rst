@@ -267,8 +267,8 @@ Changes in the Invoice API
 * ``issuedDate`` has been renamed to ``issuedAt``.
 * ``paidDate`` has been renamed to ``paidAt``.
 * ``dueDate`` has been renamed to ``dueAt``.
-* ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
-  ``amountGross``.
+* ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``netAmount``, ``vatAmount`` and
+  ``grossAmount``.
 * ``pdf`` has been moved into the ``_links`` property.
 
 Changes in error reporting
