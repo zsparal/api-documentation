@@ -68,8 +68,8 @@ A payment object is returned, as described in :doc:`Get payment </reference/v2/p
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -80,6 +80,25 @@ Request
        -d "description=My first payment" \
        -d "redirectUrl=https://webshop.example.org/order/12345/" \
        -d "webhookUrl=https://webshop.example.org/payments/webhook/"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+    $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
+      "amount" => [
+        "currency" => "EUR",
+        "value" => "10.00",
+      ],
+      "description" => "My first payment",
+      "redirectUrl" => "https://webshop.example.org/order/12345/",
+      "webhookUrl => "https://webshop.example.org/payments/webhook/",
+    ]);
 
 Response
 ^^^^^^^^
