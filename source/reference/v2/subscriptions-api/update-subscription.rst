@@ -111,8 +111,8 @@ A subscription object is returned, as described in
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -124,6 +124,28 @@ Request
        -d "startDate=2018-12-12" \
        -d "description=Mollie Recurring subscription" \
        -d "webhookUrl=https://example.org/webhook"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+    $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+
+    $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
+    $subscription->amount = (object) [
+      "currency" => "EUR",
+      "value" => "10.00",
+    ];
+    $subscription->times = 42;
+    $subscription->startDate = "2018-12-12";
+    $subscription->description = "Mollie recurring subscription";
+    $subscription->webhookUrl = "https://example.org/webhook";
+    $updatedSubscription = $subscription->update();
+
 
 Response
 ^^^^^^^^
