@@ -79,8 +79,8 @@ A customer object is returned, as described in :doc:`Get customer </reference/v2
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -88,6 +88,20 @@ Request
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "name=Updated Customer A" \
        -d "email=updated-customer@example.org"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+    $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+    $customer->name = "Updated Customer A";
+    $customer->email = "updated-customer@example.org";
+    $customer->update();
 
 Response
 ^^^^^^^^
