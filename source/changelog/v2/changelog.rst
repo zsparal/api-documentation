@@ -7,6 +7,11 @@ changes are documented here.
 July 2018
 =========
 
+Tuesday, 31st
+-------------
+
+- Test payments are no longer cleaned up after 2 weeks. Just like live payments they will never be removed.
+
 Thursday, 19th
 --------------
 

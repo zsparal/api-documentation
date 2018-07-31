@@ -4,6 +4,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+July 2018
+=========
+
+Tuesday, 31st
+-------------
+
+- Test payments are no longer cleaned up after 2 weeks. Just like live payments they will never be removed.
+
 June 2018
 =========
 
