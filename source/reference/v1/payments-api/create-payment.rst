@@ -460,8 +460,9 @@ information.
 
             - The amount in EUR that the app wants to charge, e.g. ``10.00`` if the app would want to charge €10.00.
 
-              Note that you will need to invoice the merchant yourself. We will only collect the amount from the
-              merchant and settle the amount with you.
+              .. note::
+                 You will need to invoice the merchant yourself. We will only collect the amount from the merchant and
+                 settle the amount with you.
 
           * - ``description``
 

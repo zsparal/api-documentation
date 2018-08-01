@@ -45,7 +45,7 @@ All amounts in the API are passed as a map containing both a ``currency`` and a 
 This example object describes an amount of €10.00.
 
 .. note:: If you specify an amount, you must specify the *correct* number of decimals. We strongly recommend sending
-          ``value`` as a string. Note that even though most currencies use two decimals, some use three or none, like
+          ``value`` as a string. And even though most currencies use two decimals, some use three or none, like
           ``JPY``.
 
 All amounts returned in the ``v2`` API will use this format.
