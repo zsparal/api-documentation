@@ -51,7 +51,7 @@ Response
 
        .. type:: amount object
 
-     - The amount refunded to the consumer with this refund.
+     - The amount refunded to your customer with this refund.
 
        .. list-table::
           :widths: auto
@@ -103,7 +103,7 @@ Response
 
        .. type:: string
 
-     - The description of the refund that may be shown to the consumer, depending on the payment method used.
+     - The description of the refund that may be shown to your customer, depending on the payment method used.
 
    * - ``status``
 
@@ -117,7 +117,7 @@ Response
        * ``pending`` The refund will be processed soon (usually the next business day). You can still cancel this
          refund.
        * ``processing`` The refund is being processed. Cancellation is no longer possible.
-       * ``refunded`` The refund has been paid out to the consumer.
+       * ``refunded`` The refund has been paid out to your customer.
        * ``failed`` The refund has failed during processing.
 
    * - ``createdAt``

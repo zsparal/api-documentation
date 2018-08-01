@@ -431,7 +431,7 @@ Bank transfer
 
               .. type:: string
 
-            - Only available if filled out in the API or by the consumer – The email address which the consumer asked
+            - Only available if filled out in the API or by your customer – The email address which your customer asked
               the payment instructions to be sent to.
 
 Belfius Pay Button
