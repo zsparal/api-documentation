@@ -90,8 +90,8 @@ The updated profile object is returned, as described in :doc:`Get profile </refe
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
@@ -102,6 +102,23 @@ Request
        -d "email=info@mywebsite2.com" \
        -d "phone=+31208202070" \
        -d "categoryCode=5399"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+    $profile = $mollie->profiles->get("pfl_v9hTwCvYqw");
+
+    $profile->name = "My website name - Update 1";
+    $profile->website = "https://www.mywebsite2.com";
+    $profile->email = "info@mywebsite2.com";
+    $profile->phone = "+31208202070";
+    $profile->categoryCode = "5399";
+    $updatedProfile = $profile->update();
 
 Response
 ^^^^^^^^
