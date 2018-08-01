@@ -14,10 +14,14 @@ Create order
 Using orders is the preferred approach when integrating the Mollie API into e-commerce applications such as web shops.
 If you want to use *Pay later.*, using the Orders API is mandatory.
 
+Creating an order will automatically create the required payment to allow your customer to pay for the order.
+
 .. warning::
    This API is currently in private beta. If you are interested in participating, please contact your account manager at
    Mollie.
 
+Once you have created an order, you should redirect your customer to the URL in the ``_links.checkout`` property from
+the response.
 
 Parameters
 ----------

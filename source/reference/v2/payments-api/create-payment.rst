@@ -11,11 +11,16 @@ Create payment
    :api_keys: true
    :oauth: true
 
-Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
-parameters are accepted for certain payment methods.
+Payment creation is elemental to the Mollie API: this is where most payment implementations start off.
+
+Once you have created a payment, you should redirect your customer to the URL in the ``_links.checkout`` property from
+the response.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
 :doc:`Overview </index>`.
+
+.. note::
+   :ref:`Optional parameters<payment-method-specific-parameters>` are accepted for certain payment methods.
 
 Parameters
 ----------
@@ -153,6 +158,8 @@ Parameters
 
      - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
        may be supplied to indicate which of the consumer's accounts should be credited.
+
+.. _payment-method-specific-parameters:
 
 Payment method specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
