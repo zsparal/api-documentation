@@ -61,19 +61,19 @@ Response
 
        .. type:: string
 
-     - The email address associated with the profile's tradename or brand.
+     - The email address associated with the profile's trade name or brand.
 
    * - ``phone``
 
-       .. type:: string
+       .. type:: phone number
 
-     - The phone number associated with the profile's tradename or brand.
+     - The phone number associated with the profile's trade name or brand.
 
    * - ``categoryCode``
 
        .. type:: integer
 
-     - The industry associated with the profile's tradename or brand.
+     - The industry associated with the profile's trade name or brand.
 
        Possible values:
 
