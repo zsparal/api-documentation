@@ -11,7 +11,13 @@ Create order
    :api_keys: true
    :oauth: true
 
-Creating orders is the first step when integrating the Mollie API into e-commerce applications such as web shops.
+Using orders is the preferred approach when integrating the Mollie API into e-commerce applications such as web shops.
+If you want to use *Pay later.*, using the Orders API is mandatory.
+
+.. warning::
+   This API is currently in private beta. If you are interested in participating, please contact your account manager at
+   Mollie.
+
 
 Parameters
 ----------
@@ -23,10 +29,10 @@ Parameters
        .. type:: amount
           :required: true
 
-     - The total amount of the order, including all VAT and discounts. This is the amount that will be charged to your
+     - The total amount of the order, including VAT and discounts. This is the amount that will be charged to your
        customer.
 
-       For example ``{"currency":"EUR", "value":"100.00"}`` if the total order amount is €100.00.
+       For example: ``{"currency":"EUR", "value":"100.00"}`` if the total order amount is €100.00.
 
        .. note::
           This has to match the sum of the ``lines.totalAmount`` amounts.
@@ -47,14 +53,14 @@ Parameters
           :required: true
 
      - The lines in the order. Each line contains details such as a description of the item ordered, its price et
-       cetera. See :ref:`order lines below <order-lines-details>` for the exact details on the lines.
+       cetera. See :ref:`order-lines-details` for the exact details on the lines.
 
    * - ``billingAddress``
 
        .. type:: object
           :required: true
 
-     - The billing person and address for the order. See :ref:`Order Address details<order-address-details>` for the exact
+     - The billing person and address for the order. See :ref:`order-address-details` for the exact
        fields needed.
 
    * - ``shippingAddress``
@@ -62,7 +68,7 @@ Parameters
        .. type:: object
           :required: false
 
-     - The shipping address for the order. See :ref:`Order Address details <order-address-details>` for the exact fields
+     - The shipping address for the order. See :ref:`order-address-details` for the exact fields
        needed. If omitted, it is assumed to be identical to the ``billingAddress``.
 
    * - ``consumerDateOfBirth``
@@ -304,7 +310,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
+An order object is returned, as described in :doc:`Get order </reference/v2/payments-api/get-payment>`.
 
 Example
 -------
@@ -350,6 +356,7 @@ Request (curl)
                 \"description\": \"Lego cars\"
             },
             \"consumerDateOfBirth\": \"1958-01-31\",
+            \"locale\": \"nl_NL\",
             \"orderNumber\": \"Order #1337 (Lego cars) \",
             \"redirectUrl\": \"https://example.org/redirect\",
             \"webhookUrl\": \"https://example.org/webhook\",
@@ -405,10 +412,3 @@ Request (curl)
                 }
             ]
         }"
-
-Response
-^^^^^^^^
-
-An order object is returned, as described in :doc:`Get order </reference/v2/payments-api/get-payment>`.
-
-.. note:: TODO
