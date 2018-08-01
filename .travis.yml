@@ -4,6 +4,8 @@ python:
 cache:
   - pip
   - npm
+  - directories:
+    - build/
 env:
   global:
     # Upload credentials
