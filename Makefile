@@ -22,7 +22,7 @@ source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
 source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --no-source-maps --detailed-report
 
-source/_static/gtm.js:
+source/_static/gtm.js: source/theme/js/gtm.js
 	cp source/theme/js/gtm.js $@
 
 css-reload:
