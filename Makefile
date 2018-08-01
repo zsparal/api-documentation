@@ -17,10 +17,10 @@ node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional
 
 source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
-	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --detailed-report
+	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --no-source-maps --detailed-report
 
 source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
-	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --detailed-report
+	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --no-source-maps --detailed-report
 
 source/_static/gtm.js:
 	cp source/theme/js/gtm.js $@
