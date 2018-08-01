@@ -115,7 +115,7 @@ another payment method.
 
 Tuesday, 17th
 -------------
-- Updated the payment screens for payments created in test mode. All screens are now available in English, Dutch,
+- Updated the hosted payment pages for payments created in test mode. All screens are now available in English, Dutch,
   French and German. No changes in the API are needed to use these new screens.
 
 Tuesday, 10th
