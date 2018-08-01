@@ -110,7 +110,7 @@ Request (PHP)
 
     <?php
     $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
     $profile = $mollie->profiles->get("pfl_v9hTwCvYqw");
 
     $profile->name = "My website name - Update 1";
