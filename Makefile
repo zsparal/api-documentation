@@ -6,7 +6,7 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-SPHINXOPTS     = -W -j auto
+SPHINXOPTS     = -W
 SPHINXPRODOPTS = -D html_file_suffix=''
 SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
@@ -23,7 +23,7 @@ source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --detailed-report
 
 source/_static/gtm.js:
-	cp source/theme/js/gtm.js source/_static/gtm.js
+	cp source/theme/js/gtm.js $@
 
 css-reload:
 	@./node_modules/.bin/parcel source/theme/styles/main.scss --out-dir build/_static --out-file style --no-hmr --port 8001
