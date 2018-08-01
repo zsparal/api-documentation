@@ -30,7 +30,7 @@ Parameters
 
    * - ``amount``
 
-       .. type:: amount
+       .. type:: amount object
           :required: true
 
      - The total amount of the order, including VAT and discounts. This is the amount that will be charged to your
@@ -61,7 +61,7 @@ Parameters
 
    * - ``billingAddress``
 
-       .. type:: object
+       .. type:: address object
           :required: true
 
      - The billing person and address for the order. See :ref:`order-address-details` for the exact
@@ -69,7 +69,7 @@ Parameters
 
    * - ``shippingAddress``
 
-       .. type:: object
+       .. type:: address object
           :required: false
 
      - The shipping address for the order. See :ref:`order-address-details` for the exact fields
@@ -181,14 +181,14 @@ The order lines contain the actual things the shopper bought.
 
    * - ``unitPrice``
 
-       .. type:: amount
+       .. type:: amount object
           :required: true
 
      - The price of a single item in the order line.
 
    * - ``discountAmount``
 
-       .. type:: amount
+       .. type:: amount object
           :required: false
 
      - Any discounts applied to the order line. For example, if you have a two-for-one sale, you should pass the amount
@@ -196,7 +196,7 @@ The order lines contain the actual things the shopper bought.
 
    * - ``totalAmount``
 
-       .. type:: amount
+       .. type:: amount object
           :required: true
 
      - The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
@@ -216,7 +216,7 @@ The order lines contain the actual things the shopper bought.
 
    * - ``vatAmount``
 
-       .. type:: amount
+       .. type:: amount object
           :required: true
 
      - The amount to value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
