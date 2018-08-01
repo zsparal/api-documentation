@@ -1,0 +1,414 @@
+Create order
+============
+.. api-name:: Orders API
+   :version: 2
+
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/orders
+
+.. authentication::
+   :api_keys: true
+   :oauth: true
+
+Creating orders is the first step when integrating the Mollie API into e-commerce applications such as web shops.
+
+Parameters
+----------
+.. list-table::
+   :widths: auto
+
+   * - ``amount``
+
+       .. type:: amount
+          :required: true
+
+     - The total amount of the order, including all VAT and discounts. This is the amount that will be charged to your
+       customer.
+
+       For example ``{"currency":"EUR", "value":"100.00"}`` if the total order amount is €100.00.
+
+       .. note::
+          This has to match the sum of the ``lines.totalAmount`` amounts.
+
+   * - ``orderNumber``
+
+       .. type:: string
+          :required: true
+
+     - The order number.
+
+       We recommend that each order should has a unique order number. This will greatly simplify your customer support
+       and your financial administration processes.
+
+   * - ``lines``
+
+       .. type:: array
+          :required: true
+
+     - The lines in the order. Each line contains details such as a description of the item ordered, its price et
+       cetera. See :ref:`order lines below <order-lines-details>` for the exact details on the lines.
+
+   * - ``billingAddress``
+
+       .. type:: object
+          :required: true
+
+     - The billing person and address for the order. See :ref:`Order Address details<order-address-details>` for the exact
+       fields needed.
+
+   * - ``shippingAddress``
+
+       .. type:: object
+          :required: false
+
+     - The shipping address for the order. See :ref:`Order Address details <order-address-details>` for the exact fields
+       needed. If omitted, it is assumed to be identical to the ``billingAddress``.
+
+   * - ``consumerDateOfBirth``
+
+       .. type:: date
+          :required: false
+
+     - The date of birth of your customer. Some payment methods need this value and if you have it, you should send it
+       so that your customer does not have to enter it again later in the checkout process.
+
+   * - ``redirectUrl``
+
+       .. type:: string
+          :required: true
+
+     - The URL the customer will be redirected to after the payment process.
+
+   * - ``webhookUrl``
+
+       .. type:: string
+          :required: true
+
+     - Set the webhook URL, where we will send order status updates to.
+
+   * - ``locale``
+
+       .. type:: string
+          :required: false
+
+     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. You can provide any
+       ISO 15897 locale, but our hosted payment pages currently only supports the following languages:
+
+       Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
+       ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
+       ``lt_LT``
+
+   * - ``method``
+
+       .. type:: string
+          :required: false
+
+     - Normally, a payment method selection screen is shown. However, when using this parameter, your
+       customer will skip the selection screen and will be sent directly to the chosen payment method. The parameter
+       enables you to fully integrate the payment method selection into your website.
+
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``paypal`` ``paysafecard`` ``sofort``
+
+   * - ``payment``
+
+       .. type:: object
+          :required: false
+
+     - Any payment method specific properties can be passed here. See below for more details.
+
+
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+       order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
+       approximately 1kB.
+
+.. _order-lines-details:
+
+Order line details
+^^^^^^^^^^^^^^^^^^
+
+The order lines contain the actual things the shopper bought.
+
+.. note:: All order lines must have the same currency as the order. You cannot mix currencies within a single order.
+
+.. list-table::
+   :widths: auto
+
+   * - ``type``
+
+       .. type:: string
+          :required: true
+
+     - The type of product bought, for example, a physical or a digital product. Must be one of the following values:
+
+       * ``physical``
+       * ``discount``
+       * ``digital``
+       * ``shipping_fee``
+       * ``store_credit``
+       * ``gift_card``
+       * ``surcharge``
+
+   * - ``name``
+
+       .. type:: string
+          :required: true
+
+     - A description of the order line, for example *LEGO 4440 Forest Police Station*.
+
+   * - ``quantity``
+
+       .. type:: int
+          :required: true
+
+     - The number of items in the order line.
+
+   * - ``unitPrice``
+
+       .. type:: amount
+          :required: true
+
+     - The price of a single item in the order line.
+
+   * - ``discountAmount``
+
+       .. type:: amount
+          :required: false
+
+     - Any discounts applied to the order line. For example, if you have a two-for-one sale, you should pass the amount
+       discounted as a positive amount.
+
+   * - ``totalAmount``
+
+       .. type:: amount
+          :required: true
+
+     - The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
+       result in the same amount as the ``amount`` top level property.
+
+       The total amount should match the following formula:
+
+       ``(unitPrice × quantity) - discountAmount``
+
+   * - ``vatRate``
+
+       .. type:: string
+          :required: true
+
+     - The VAT rate applied to the order line, for example ``"21.00"`` for 21%. The ``vatRate`` should be passed as a
+       string and not as a float to ensure the correct number of decimals are passed.
+
+   * - ``vatAmount``
+
+       .. type:: amount
+          :required: true
+
+     - The amount to value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
+       the ``vatRate``. Any deviations from this will result in an API error.
+
+       It should match the following formula:
+
+       ``totalAmount × (vatRate / 100)``
+
+   * - ``sku``
+
+       .. type:: string
+          :required: false
+
+     - The SKU, EAN, ISBN or UPC of the product sold.
+
+   * - ``imageUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to a image of the product sold.
+
+   * - ``productUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to the product page in your web shop of the product sold.
+
+.. _order-address-details:
+
+Order address details
+^^^^^^^^^^^^^^^^^^^^^
+
+In the Orders API, the address objects identify both the address and the person the order is billed or shipped too. At
+least a valid address must be passed as well as fields identifying the person.
+
+.. list-table::
+   :widths: auto
+
+   * - ``title``
+
+       .. type:: string
+          :required: false
+
+     - The title of the person, for example *Mr.* or *Mrs.*.
+
+   * - ``givenName``
+
+       .. type:: string
+          :required: true
+
+     - The given name (first name) of the person.
+
+   * - ``familyName``
+
+       .. type:: string
+          :required: true
+
+     - The family name (surname) of the person.
+
+   * - ``email``
+
+       .. type:: string
+          :required: true
+
+     - The email address of the person.
+
+   * - ``phone``
+
+       .. type:: phone number
+          :required: false
+
+     - The phone number of the person. Some payment methods require this information. If you have it, you should pass it
+       so that your customer does not have to enter it again in the checkout. Must be in the
+       `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
+
+   * - ``streetAndNumber`` ``streetAdditional`` ``postalCode`` ``city`` ``region`` ``country``
+
+     - The other address fields. Please refer to the documentation of the :ref:`address object <address-object>` for
+       more information on which inputs are accepted inputs.
+
+Payment method specific parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you specify the ``method`` parameter, optional parameters may be available for that payment method. If no method is
+specified, you can still send the optional parameters and we will apply them when your customer selects the relevant
+payment method.
+
+All method specific parameters must be passed in the ``payment`` object. See the
+:doc:`Get payment documentation </reference/v2/payments-api/get-payment>` for more information.
+
+
+Response
+--------
+``201`` ``application/hal+json; charset=utf-8``
+
+A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
+
+Example
+-------
+
+Request (curl)
+^^^^^^^^^^^^^^
+.. code-block:: bash
+   :linenos:
+
+   curl -X POST https://api.mollie.com/v2/payments \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+       -d "{
+            \"amount\": {
+                \"value\": \"1027.99\",
+                \"currency\": \"EUR\"
+            },
+            \"billingAddress\": {
+                \"streetAndNumber\": \"Keizersgracht 313\",
+                \"city\": \"Amsterdam\",
+                \"region\": \"Noord-Holland\",
+                \"postalCode\": \"1234AB\",
+                \"country\": \"NL\",
+                \"title\": \"Dhr\",
+                \"givenName\": \"Adriaan\",
+                \"familyName\": \"Mol\",
+                \"email\": \"adriaan@mollie.com\",
+                \"phone\": \"+31208202070\"
+            },
+            \"shippingAddress\": {
+                \"streetAndNumber\": \"Prinsengracht 313\",
+                \"streetAdditional\": \"4th floor\",
+                \"city\": \"Haarlem\",
+                \"region\": \"Noord-Holland\",
+                \"postalCode\": \"5678AB\",
+                \"country\": \"NL\",
+                \"title\": \"Mr\",
+                \"givenName\": \"Chuck\",
+                \"familyName\": \"Norris\",
+                \"email\": \"norris@chucknorrisfacts.net\"
+            },
+            \"metadata\": {
+                \"order_id\": \"1337\",
+                \"description\": \"Lego cars\"
+            },
+            \"consumerDateOfBirth\": \"1958-01-31\",
+            \"orderNumber\": \"Order #1337 (Lego cars) \",
+            \"redirectUrl\": \"https://example.org/redirect\",
+            \"webhookUrl\": \"https://example.org/webhook\",
+            \"method\": \"klarnapaylater\",
+            \"lines\": [
+                {
+                    \"type\": \"physical\",
+                    \"sku\": \"5702016116977\",
+                    \"name\": \"LEGO 42083 Bugatti Chiron\",
+                    \"productUrl\": \"https://shop.lego.com/nl-NL/Bugatti-Chiron-42083\",
+                    \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$\",
+                    \"quantity\": 2,
+                    \"quantityUnit\": \"pcs\",
+                    \"vatRate\": \"21.00\",
+                    \"unitPrice\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"399.00\"
+                    },
+                    \"totalAmount\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"698.00\"
+                    },
+                    \"discountAmount\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"100.00\"
+                    },
+                    \"vatAmount\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"121.14\"
+                    }
+                },
+                {
+                    \"type\": \"physical\",
+                    \"sku\": \"5702015594028\",
+                    \"name\": \"LEGO 42056 Porsche 911 GT3 RS\",
+                    \"productUrl\": \"https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056\",
+                    \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$\",
+                    \"quantity\": 1,
+                    \"quantityUnit\": \"box\",
+                    \"vatRate\": \"21.00\",
+                    \"unitPrice\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"329.99\"
+                    },
+                    \"totalAmount\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"329.99\"
+                    },
+                    \"vatAmount\": {
+                        \"currency\": \"EUR\",
+                        \"value\": \"57.27\"
+                    }
+                }
+            ]
+        }"
+
+Response
+^^^^^^^^
+
+An order object is returned, as described in :doc:`Get order </reference/v2/payments-api/get-payment>`.
+
+.. note:: TODO
