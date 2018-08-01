@@ -4,6 +4,16 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+August 2018
+===========
+
+Wednesday, 1st
+--------------
+
+- The icons returned by the :doc:`Methods API </reference/v2/methods-api/list-methods>` have been updated. Note that the
+  size of the icons has changed from 40x40 to 62x40. All icons are now available in SVG as well, which we advise you to 
+  use where possible.
+
 July 2018
 =========
 

@@ -181,8 +181,9 @@ Response
                     "id": "ideal",
                     "description": "iDEAL",
                     "image": {
-                        "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-                        "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
+                        "size1x": "https://mollie.com/external/icons/payment-methods/ideal.png",
+                        "size2x": "https://mollie.com/external/icons/payment-methods/ideal%402x.png",
+                        "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
                     "_links": {
                         "self": {
