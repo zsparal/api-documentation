@@ -7,7 +7,7 @@
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
 SPHINXOPTS     = -W
-SPHINXPRODOPTS = -D html_file_suffix=''
+SPHINXPRODOPTS = -j auto -D html_file_suffix=''
 SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
