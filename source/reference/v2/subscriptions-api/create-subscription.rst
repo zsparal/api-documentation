@@ -38,7 +38,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
           :required: true
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge

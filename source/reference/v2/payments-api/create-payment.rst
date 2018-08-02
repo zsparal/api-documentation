@@ -29,7 +29,7 @@ Parameters
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
           :required: true
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
@@ -388,8 +388,8 @@ KBC/CBC Payment Button
        .. type:: string
           :required: false
 
-     - The issuer to use for the KBC/CBC payment. These issuers are not dynamically available through the
-       Issuers API, but can be retrieved by using the ``issuers`` include in the Methods API.
+     - The issuer to use for the KBC/CBC payment.The full list of issuers can be retrieved via the
+       :doc:`Methods API </reference/v2/methods-api/get-method>` by using the optional ``issuers`` include.
 
        Possible values: ``kbc`` ``cbc``
 

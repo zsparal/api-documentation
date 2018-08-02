@@ -3,6 +3,10 @@ Create order
 .. api-name:: Orders API
    :version: 2
 
+.. warning::
+   This API is currently in private beta. If you are interested in participating, please contact your account manager at
+   Mollie.
+
 .. endpoint::
    :method: POST
    :url: https://api.mollie.com/v2/orders
@@ -11,14 +15,10 @@ Create order
    :api_keys: true
    :oauth: true
 
-Using orders is the preferred approach when integrating the Mollie API into e-commerce applications such as web shops.
-If you want to use *Pay later.*, using the Orders API is mandatory.
+Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as web
+shops. If you want to use *Klarna Pay later.*, using the Orders API is mandatory.
 
 Creating an order will automatically create the required payment to allow your customer to pay for the order.
-
-.. warning::
-   This API is currently in private beta. If you are interested in participating, please contact your account manager at
-   Mollie.
 
 Once you have created an order, you should redirect your customer to the URL in the ``_links.checkout`` property from
 the response.
@@ -48,8 +48,7 @@ Parameters
 
      - The order number.
 
-       We recommend that each order should has a unique order number. This will greatly simplify your customer support
-       and your financial administration processes.
+       We recommend that each order should have a unique order number.
 
    * - ``lines``
 
@@ -103,7 +102,7 @@ Parameters
           :required: false
 
      - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. You can provide any
-       ISO 15897 locale, but our hosted payment pages currently only supports the following languages:
+       ISO 15897 locale, but our hosted payment pages currently only support the following languages:
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
@@ -143,9 +142,10 @@ Parameters
 Order line details
 ^^^^^^^^^^^^^^^^^^
 
-The order lines contain the actual things the shopper bought.
+The order lines contain the actual things the your customer bought.
 
-.. note:: All order lines must have the same currency as the order. You cannot mix currencies within a single order.
+.. note::
+   All order lines must have the same currency as the order. You cannot mix currencies within a single order.
 
 .. list-table::
    :widths: auto
@@ -219,8 +219,8 @@ The order lines contain the actual things the shopper bought.
        .. type:: amount object
           :required: true
 
-     - The amount to value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
-       the ``vatRate``. Any deviations from this will result in an API error.
+     - The amount of value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
+       the ``vatRate``. Any deviations from this will result in an error.
 
        It should match the following formula:
 
@@ -238,7 +238,7 @@ The order lines contain the actual things the shopper bought.
        .. type:: string
           :required: false
 
-     - A link pointing to a image of the product sold.
+     - A link pointing to an image of the product sold.
 
    * - ``productUrl``
 
@@ -252,7 +252,7 @@ The order lines contain the actual things the shopper bought.
 Order address details
 ^^^^^^^^^^^^^^^^^^^^^
 
-In the Orders API, the address objects identify both the address and the person the order is billed or shipped too. At
+In the Orders API, the address objects identify both the address and the person the order is billed or shipped to. At
 least a valid address must be passed as well as fields identifying the person.
 
 .. list-table::
@@ -307,8 +307,31 @@ specified, you can still send the optional parameters and we will apply them whe
 payment method.
 
 All method specific parameters must be passed in the ``payment`` object. See the
-:doc:`Get payment documentation </reference/v2/payments-api/get-payment>` for more information.
+:ref:`Create payment documentation <payment-method-specific-parameters>` for more information.
 
+Mollie Connect/OAuth parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
+``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: true
+
+     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to make this order a test order.
 
 Response
 --------
