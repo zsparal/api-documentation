@@ -6,7 +6,6 @@ cache:
   - npm
   - directories:
     - .cache
-    - build
 env:
   global:
     # Upload credentials
