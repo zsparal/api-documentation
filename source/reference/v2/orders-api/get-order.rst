@@ -177,6 +177,52 @@ Order lines
 Addresses
 ^^^^^^^^^
 
+In the Orders API, the address objects identify both the address and the person the order is billed or shipped to.
+
+These properties can be found in the ``billingAddress`` and ``shippingAddress`` address objects.
+
+.. list-table::
+   :widths: auto
+
+   * - ``title``
+
+       .. type:: string
+          :required: false
+
+     - The title of the person.
+
+   * - ``givenName``
+
+       .. type:: string
+
+     - The given name (first name) of the person.
+
+   * - ``familyName``
+
+       .. type:: string
+
+     - The family name (surname) of the person.
+
+   * - ``email``
+
+       .. type:: string
+
+     - The email address of the person.
+
+   * - ``phone``
+
+       .. type:: phone number
+          :required: false
+
+     - The phone number of the person. Will be in the `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example
+       ``+31208202070``.
+
+   * - ``streetAndNumber`` ``streetAdditional`` ``postalCode`` ``city`` ``region`` ``country``
+
+       .. type:: string
+
+     - See :ref:`address-object` for details on these fields.
+
 Example
 -------
 
@@ -226,7 +272,7 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
-        "orderlines": [
+        "lines": [
             {
                 "resource": "orderline",
                 "id": "odl_dgtxyl",
@@ -236,7 +282,6 @@ Response
                 "type": null,
                 "status": "created",
                 "quantity": "1",
-                "quantityUnit": null,
                 "unitPrice": {
                     "value": "1.00",
                     "currency": "EUR"
@@ -268,7 +313,6 @@ Response
                 "type": null,
                 "status": "created",
                 "quantity": "1",
-                "quantityUnit": null,
                 "unitPrice": {
                     "value": "1.00",
                     "currency": "EUR"

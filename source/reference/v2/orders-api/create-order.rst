@@ -400,7 +400,6 @@ Request (curl)
                     \"productUrl\": \"https://shop.lego.com/nl-NL/Bugatti-Chiron-42083\",
                     \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$\",
                     \"quantity\": 2,
-                    \"quantityUnit\": \"pcs\",
                     \"vatRate\": \"21.00\",
                     \"unitPrice\": {
                         \"currency\": \"EUR\",
@@ -426,7 +425,6 @@ Request (curl)
                     \"productUrl\": \"https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056\",
                     \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$\",
                     \"quantity\": 1,
-                    \"quantityUnit\": \"box\",
                     \"vatRate\": \"21.00\",
                     \"unitPrice\": {
                         \"currency\": \"EUR\",
