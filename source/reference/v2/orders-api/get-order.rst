@@ -15,7 +15,7 @@ Retrieve a single order by its ID.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the customer's ID, for example ``ord_8wmqcHMN4U``.
+Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -43,7 +43,7 @@ Response
 
        .. type:: string
 
-     - Indicates the response contains a customer object. Will always contain ``order`` for this endpoint.
+     - Indicates the response contains an order object. Will always contain ``order`` for this endpoint.
 
    * - ``id``
 
@@ -61,8 +61,7 @@ Response
 
        .. type:: string
 
-     - The mode used to create this customer. Mode determines whether a customer is *real* (live mode) or a *test*
-       customer.
+     - The mode used to create this order.
 
        Possible values: ``live`` ``test``
 
@@ -198,34 +197,110 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "resource": "customer",
-       "id": "cst_kEn1PlbGa",
-       "mode": "test",
-       "name": "Customer A",
-       "email": "customer@example.org",
-       "locale": "nl_NL",
-       "metadata": null,
-       "createdAt": "2018-04-06T13:23:21.0Z",
-       "_links": {
-           "self": {
-               "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa",
-               "type": "application/hal+json"
-           },
-           "mandates": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/mandates",
-               "type": "application/hal+json"
-           },
-           "subscriptions": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/subscriptions",
-               "type": "application/hal+json"
-           },
-           "payments": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/payments",
-               "type": "application/hal+json"
-           },
-           "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/customers-api/get-customer",
-               "type": "text/html"
-           }
-       }
-   }
+        "resource": "order",
+        "id": "ord_pbjz8x",
+        "profileId": "pfl_URR55HPMGx",
+        "amount": {
+            "value": "2.00",
+            "currency": "EUR"
+        },
+        "status": "created",
+        "merchantData": null,
+        "createdAt": "2018-08-02T09:29:56+00:00",
+        "mode": "live",
+        "billingAddress": {
+            "streetAndNumber": "Keizersgracht 313",
+            "postalCode": "1016 EE",
+            "city": "Amsterdam",
+            "country": "nl",
+            "givenName": "Luke",
+            "familyName": "Skywalker",
+            "email": "luke@skywalker.com"
+        },
+        "shippingAddress": {
+            "streetAndNumber": "Keizersgracht 313",
+            "postalCode": "1016 EE",
+            "city": "Amsterdam",
+            "country": "nl",
+            "givenName": "Luke",
+            "familyName": "Skywalker",
+            "email": "luke@skywalker.com"
+        },
+        "orderlines": [
+            {
+                "resource": "orderline",
+                "id": "odl_dgtxyl",
+                "orderId": "ord_pbjz8x",
+                "name": null,
+                "reference": null,
+                "type": null,
+                "status": "created",
+                "quantity": "1",
+                "quantityUnit": null,
+                "unitPrice": {
+                    "value": "1.00",
+                    "currency": "EUR"
+                },
+                "taxRate": null,
+                "totalTaxAmount": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "totalAmount": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "merchantData": null,
+                "createdAt": "2018-08-02T09:29:56+00:00",
+                "_links": {
+                    "self": {
+                        "href": "https://api.mollie.com/v2/orders/ord_pbjz8x/orderlines/odl_dgtxyl",
+                        "type": "application/hal+json"
+                    }
+                }
+            },
+            {
+                "resource": "orderline",
+                "id": "odl_jp31jz",
+                "orderId": "ord_pbjz8x",
+                "name": null,
+                "reference": null,
+                "type": null,
+                "status": "created",
+                "quantity": "1",
+                "quantityUnit": null,
+                "unitPrice": {
+                    "value": "1.00",
+                    "currency": "EUR"
+                },
+                "taxRate": null,
+                "totalTaxAmount": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "totalAmount": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "merchantData": null,
+                "createdAt": "2018-08-02T09:29:56+00:00",
+                "_links": {
+                    "self": {
+                        "href": "https://api.mollie.com/v2/orders/ord_pbjz8x/orderlines/odl_jp31jz",
+                        "type": "application/hal+json"
+                    }
+                }
+            }
+        ],
+        "_links": {
+            "self": {
+                "href": "https://api.mollie.com/v2/orders/ord_pbjz8x",
+                "type": "application/hal+json"
+            },
+            "documentation": {
+                "href": "https://docs.mollie.com/reference/v2/orders-api/get-order",
+                "type": "text/html"
+            }
+        }
+    }
+

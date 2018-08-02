@@ -62,8 +62,7 @@ Response
 
        .. type:: string
 
-     - The mode used to create this customer. Mode determines whether a customer is *real* (live mode) or a *test*
-       customer.
+     - The mode used to create this customer.
 
        Possible values: ``live`` ``test``
 
