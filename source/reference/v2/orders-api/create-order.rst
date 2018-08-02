@@ -138,6 +138,10 @@ Parameters
        order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
+.. note::
+   For orders, there is no ``description`` field. The description for any payments will be automatically created by
+   Mollie and will contain the order number, your profile's name and your profile's website.
+
 .. _order-lines-details:
 
 Order line details
