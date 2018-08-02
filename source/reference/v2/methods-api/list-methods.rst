@@ -54,7 +54,7 @@ Parameters
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
           :required: false
 
      - An object containing ``value`` and ``currency``. Only methods that support the amount and currency

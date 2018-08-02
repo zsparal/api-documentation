@@ -16,7 +16,7 @@ API key is preceded by ``Bearer``. For example: a valid ``Authorization`` header
 ``setApiKey`` method that will allow you to easily configure the required header.
 
 While building and testing your integration you should use the *Test API key*. This will cause your code to
-(automatically) only create test payments. Test payments come with a fake payment screen that allows you to select
+(automatically) only create test payments. Test payments come with a hosted payment page that allows you to select
 whether your test payments are successful or not without spending actual money. This way you can easily test and
 rehearse different scenarios that will occur later on when you switch to real payments. After your testing is done you
 go live by using the Live API key instead of the Test API key. Going live (or going back to testing) is as easy as
@@ -26,7 +26,7 @@ Of course it's very important to keep any API-keys :doc:`secure </guides/securit
 leaks you can always `regenerate <https://www.mollie.com/dashboard/developers/api-keys>`_ it. Don't forget to apply new
 keys to your code. Until you do your integration will not work.
 
-Apart from the payment screen and the fact that test payments are created instead of real ones, the Mollie API behaves
+Apart from the hosted payment pages and the fact that test payments are created instead of real ones, the Mollie API behaves
 the same way regardless of whether the Test API key or the Live API key is used. Because of this, there won't be any
 technical surprises upon going live. Make a note: don't forget to start using the *Live API key* when your site goes
 public or your customers could be getting a free ride.

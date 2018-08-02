@@ -76,7 +76,7 @@ Response
 
        .. type:: string
 
-     - Allows you to preset the language to be used in the payment screens shown to the consumer. If this parameter was
+     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. If this parameter was
        not provided when the customer was created, the browser language will be used instead in the payment flow (which
        is usually more accurate).
 

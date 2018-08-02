@@ -18,17 +18,17 @@ Create refund
    :api_keys: true
    :oauth: true
 
-Most payment methods support refunds. This means you can request your payment to be refunded to the consumer. The amount
+Most payment methods support refunds. This means you can request your payment to be refunded to your customer. The amount
 of the refund will be withheld from your next settlement.
 
 Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
 please contact our support department.
 
-By supplying the optional ``amount`` parameter, you can issue a partial refund where the consumer is only refunded a
+By supplying the optional ``amount`` parameter, you can issue a partial refund where your customer is only refunded a
 fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,
 for example to refund costs for return shipping.
 
-Refunds support descriptions, which we will show in the Dashboard, your exports and pass to the consumer if possible.
+Refunds support descriptions, which we will show in the Dashboard, your exports and pass to your customer if possible.
 
 If you have insufficient balance with Mollie to perform the refund, the refund will be ``queued``. We will automatically
 process the refund once your balance increases.

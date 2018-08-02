@@ -34,29 +34,21 @@ endpoint. For recurring payments, the following parameters have notable differen
 .. list-table::
    :widths: auto
 
-   * - ``recurringType``
+   * - ``sequenceType``
 
        .. type:: string
           :required: false
 
      - Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
        the customer to agree to automatic recurring charges taking place on their account in the future. If set to
-       ``recurring``, the customer's card is charged automatically.
-
-   * - ``amount``
-
-       .. type:: decimal
-          :required: true
-
-     - If the ``recurringType`` parameter is set to ``first`` then the minimal amount is €0.01 for iDEAL, credit card
-       and Belfius Pay Button, €0.02 for Bancontact, or €0.10 for SOFORT Banking.
+       ``recurring``, the customer is charged automatically.
 
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - If the ``recurringType`` parameter is set to ``recurring``, this parameter is ignored. Since the payment will
+     - If the ``recurringType`` parameter is set to ``recurring``, this parameter can be omitted. Since the payment will
        take place without customer interaction, a redirect is not needed.
 
 Response
@@ -78,6 +70,7 @@ Request (curl)
        -d "amount[currency]=EUR" \
        -d "amount[value]=10.00" \
        -d "description=My first payment" \
+       -d "sequenceType=first" \
        -d "redirectUrl=https://webshop.example.org/order/12345/" \
        -d "webhookUrl=https://webshop.example.org/payments/webhook/"
 
@@ -96,6 +89,7 @@ Request (PHP)
         "value" => "10.00",
       ],
       "description" => "My first payment",
+      "sequenceType" => "first",
       "redirectUrl" => "https://webshop.example.org/order/12345/",
       "webhookUrl => "https://webshop.example.org/payments/webhook/",
     ]);
@@ -128,7 +122,7 @@ Response
        "details": null,
        "profileId": "pfl_QkEhN94Ba",
        "customerId": "cst_8wmqcHMN4U",
-       "sequenceType": "oneoff",
+       "sequenceType": "first",
        "redirectUrl": "https://webshop.example.org/order/12345/",
        "webhookUrl": "https://webshop.example.org/payments/webhook/",
        "_links": {

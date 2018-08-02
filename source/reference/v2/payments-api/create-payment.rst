@@ -11,11 +11,16 @@ Create payment
    :api_keys: true
    :oauth: true
 
-Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
-parameters are accepted for certain payment methods.
+Payment creation is elemental to the Mollie API: this is where most payment implementations start off.
+
+Once you have created a payment, you should redirect your customer to the URL in the ``_links.checkout`` property from
+the response.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
 :doc:`Overview </index>`.
+
+.. note::
+   :ref:`Optional parameters<payment-method-specific-parameters>` are accepted for certain payment methods.
 
 Parameters
 ----------
@@ -24,7 +29,7 @@ Parameters
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
           :required: true
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
@@ -91,10 +96,10 @@ Parameters
        .. type:: string
           :required: false
 
-     - Allows you to preset the language to be used in the payment screens shown to the consumer. Setting a
+     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
        browser language will be used instead if supported by the payment method. You can provide any ISO 15897 locale,
-       but our payment screen currently only supports the following languages:
+       but our hosted payment pages currently only support the following languages:
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
@@ -153,6 +158,8 @@ Parameters
 
      - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
        may be supplied to indicate which of the consumer's accounts should be credited.
+
+.. _payment-method-specific-parameters:
 
 Payment method specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -381,8 +388,8 @@ KBC/CBC Payment Button
        .. type:: string
           :required: false
 
-     - The issuer to use for the KBC/CBC payment. These issuers are not dynamically available through the
-       Issuers API, but can be retrieved by using the ``issuers`` include in the Methods API.
+     - The issuer to use for the KBC/CBC payment.The full list of issuers can be retrieved via the
+       :doc:`Methods API </reference/v2/methods-api/get-method>` by using the optional ``issuers`` include.
 
        Possible values: ``kbc`` ``cbc``
 

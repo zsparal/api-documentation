@@ -39,7 +39,7 @@ Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqc
        .. type:: string
           :required: false
 
-     - Allows you to preset the language to be used in the payment screens shown to the consumer. When this
+     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. When this
        parameter is not provided, the browser language will be used instead in the payment flow (which is usually more
        accurate).
 

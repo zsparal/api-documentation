@@ -78,7 +78,7 @@ Response
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
 
      - The constant amount that is charged with each subscription payment, e.g.
        ``{"currency":"EUR", "value":"10.00"}`` for a €10.00 subscription.
