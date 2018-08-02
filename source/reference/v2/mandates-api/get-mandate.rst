@@ -59,7 +59,7 @@ Response
        .. type:: string
 
      - The status of the mandate. Please note that a status can be ``pending`` for subscription mandates when there is
-       no first payment. See our :ref:`subscription guide <guides/recurring/charging-periodically>`.
+       no first payment. See our :ref:`subscription guide <payments/recurring/charging-periodically>`.
 
        Possible values: ``valid`` ``pending`` ``invalid``
 

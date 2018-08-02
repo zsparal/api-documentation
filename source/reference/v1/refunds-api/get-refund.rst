@@ -8,7 +8,7 @@ Get refund
 
              The documentation for retrieving refunds in the new v2 API can be found
              :doc:`here </reference/v2/refunds-api/get-refund>`. For more information on the v2 API, refer to our
-             :doc:`v2 migration guide </migrating-v1-to-v2>`.
+             :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: GET

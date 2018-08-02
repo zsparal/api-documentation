@@ -23,7 +23,7 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
 
    * - ``amount``
 
-       .. type:: object
+       .. type:: amount object
           :required: false
 
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to change the
@@ -92,7 +92,7 @@ information.
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 
