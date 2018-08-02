@@ -11,7 +11,7 @@ Create subscription
    :api_keys: true
    :oauth: true
 
-With subscriptions, you can schedule :doc:`recurring payments </guides/recurring>` to take place at regular intervals.
+With subscriptions, you can schedule :doc:`recurring payments </payments/recurring>` to take place at regular intervals.
 
 For example, by simply specifying an ``amount`` and an ``interval``, you can create an endless subscription to charge a
 monthly fee, until the consumer cancels their subscription.

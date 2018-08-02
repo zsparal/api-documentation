@@ -8,7 +8,7 @@ Create payment
 
              The documentation for creating payments in the new v2 API can be found
              :doc:`here </reference/v2/payments-api/create-payment>`. For more information on the v2 API, refer to our
-             :doc:`v2 migration guide </migrating-v1-to-v2>`.
+             :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
 .. endpoint::
    :method: POST
@@ -156,7 +156,7 @@ Bank transfer
        .. type:: string
           :required: false
 
-     - The date the payment should :doc:`expire </guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
+     - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
    * - ``locale``
@@ -395,7 +395,7 @@ SEPA Direct Debit
    One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
    general, it is not very useful for webshops but may be useful for charities.
 
-   If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </guides/recurring>`.
+   If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </payments/recurring>`.
 
 .. list-table::
    :widths: auto
