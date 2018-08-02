@@ -46,7 +46,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The order number.
+     - The order number. For example, ``16738``.
 
        We recommend that each order should have a unique order number.
 
