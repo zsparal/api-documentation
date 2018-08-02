@@ -1,5 +1,5 @@
-Mollie Payment API
-==================
+Mollie Payments API
+===================
 
 How does the Mollie Payments API work?
 --------------------------------------

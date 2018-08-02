@@ -211,8 +211,7 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 +---+------------------------------------------------------------------------------------------------------------------+
 |401|Unauthorized – Your request wasn't executed due to failed authentication. Check your API key.                     |
 +---+------------------------------------------------------------------------------------------------------------------+
-|403|Forbidden – You do not have access to the requested resource, for example if you're trying to create a payment for|
-|   |payment method that you did not activate yet.                                                                     |
+|403|Forbidden – You do not have access to the requested resource.                                                                     |
 +---+------------------------------------------------------------------------------------------------------------------+
 |404|Not Found – The object referenced by your URL does not exist.                                                     |
 +---+------------------------------------------------------------------------------------------------------------------+
