@@ -85,7 +85,7 @@ When providing an address object as parameter to a request, the following condit
 * If any of the fields is provided, all fields have to be provided with exception of the ``region`` field.
 * If only the ``region`` field is given, one should provide all the other fields as per the previous condition.
 * For certain PayPal payments the ``region`` field is required. Please see the
-  :doc:`Create payment documentation </reference/v2/payments-api/create-payment>` for more information.
+  :ref:`Create payment documentation <paypal-method-details>` for more information.
 
 Boolean
 -------

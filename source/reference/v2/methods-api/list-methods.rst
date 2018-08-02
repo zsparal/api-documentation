@@ -77,7 +77,7 @@ Organizations can have multiple profiles for each of their websites. See
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 
@@ -181,8 +181,9 @@ Response
                     "id": "ideal",
                     "description": "iDEAL",
                     "image": {
-                        "size1x": "https://mollie.com/images/payscreen/methods/ideal.png",
-                        "size2x": "https://mollie.com/images/payscreen/methods/ideal%402x.png"
+                        "size1x": "https://mollie.com/external/icons/payment-methods/ideal.png",
+                        "size2x": "https://mollie.com/external/icons/payment-methods/ideal%402x.png",
+                        "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
                     "_links": {
                         "self": {

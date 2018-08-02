@@ -19,7 +19,7 @@ Linking customers to payments enables a number of
 * Keeping track of payment preferences for your customers.
 * Enabling your customers to charge a previously used credit card with a single click.
 * Improved payment insights in your dashboard.
-* :doc:`Recurring payments </guides/recurring>`.
+* :doc:`Recurring payments </payments/recurring>`.
 
 .. note:: This endpoint is a shortcut for :doc:`creating a payment </reference/v2/payments-api/create-payment>` with a
           ``customerId`` parameter.
