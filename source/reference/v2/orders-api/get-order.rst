@@ -1,21 +1,21 @@
-Get customer
-============
-.. api-name:: Customers API
+Get order
+=========
+.. api-name:: Orders API
    :version: 2
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/customers/*id*
+   :url: https://api.mollie.com/v2/orders/*id*
 
 .. authentication::
    :api_keys: true
    :oauth: true
 
-Retrieve a single customer by its ID.
+Retrieve a single order by its ID.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
+Replace ``id`` in the endpoint URL by the customer's ID, for example ``ord_8wmqcHMN4U``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -30,7 +30,7 @@ available.
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to retrieve a test mode customer.
+     - Set this to ``true`` to retrieve a test mode order.
 
 Response
 --------
@@ -43,13 +43,19 @@ Response
 
        .. type:: string
 
-     - Indicates the response contains a customer object. Will always contain ``customer`` for this endpoint.
+     - Indicates the response contains a customer object. Will always contain ``order`` for this endpoint.
 
    * - ``id``
 
        .. type:: string
 
-     - The customer's unique identifier, for example ``cst_vsKJpSsabw``.
+     - The order's unique identifier, for example ``ord_vsKJpSsabw``.
+
+   * - ``profileId``
+
+       .. type:: string
+
+     - The profile the order was created on, for example ``pfl_v9hTwCvYqw``.
 
    * - ``mode``
 
@@ -60,17 +66,65 @@ Response
 
        Possible values: ``live`` ``test``
 
-   * - ``name``
+   * - ``amount``
+
+       .. type:: amount object
+
+     - The total amount of the order, including VAT and discounts.
+
+   * - ``amountCaptured``
+
+       .. type:: amount object
+
+     - The amount captured, thus far.
+
+   * - ``amountRefunded``
+
+       .. type:: amount object
+
+     - The total amount refunded, thus far.
+
+   * - ``status``
 
        .. type:: string
 
-     - The full name of the customer as provided when the customer was created.
+     - The status of the order. One of the following values:
 
-   * - ``email``
+       * ``created``
+       * ``paid``
+       * ``authorized``
+       * ``canceled``
+       * ``refunded``
+       * ``shipping``
+       * ``completed``
+       * ``void``
+
+       See Order status changes for details on the orders' statuses.
+
+   * - ``billingAddress``
+
+       .. type:: object
+
+     - The person and the address the order is billed too. See below.
+
+   * - ``consumerDateOfBirth``
+
+       .. type:: date
+          :required: false
+
+     - The date of birth of your customer, if available.
+
+   * - ``orderNumber``
 
        .. type:: string
 
-     - The email address of the customer as provided when the customer was created.
+     - Your order number that was used when creating the order.
+
+   * - ``shippingAddress``
+
+       .. type:: object
+
+     - The person and the address the order is billed too. See below.
 
    * - ``locale``
 
@@ -88,13 +142,13 @@ Response
 
        .. type:: object
 
-     - Data provided during the customer creation in JSON notation.
+     - Data provided during the order creation.
 
    * - ``createdAt``
 
        .. type:: datetime
 
-     - The customer's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - The order's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 
@@ -112,32 +166,17 @@ Response
 
             - The API resource URL of the customer itself.
 
-          * - ``mandates``
-
-              .. type:: URL object
-
-            - The API resource URL of the mandates belonging to the Customer, if there are no mandates this parameter is
-              omitted.
-
-          * - ``subscriptions``
-
-              .. type:: URL object
-
-            - The API resource URL of the subscriptions belonging to the Customer, if there are no subscriptions this
-              parameter is omitted.
-
-          * - ``payments``
-
-              .. type:: URL object
-
-            - The API resource URL of the payments belonging to the Customer, if there are no payments this parameter is
-              omitted.
-
           * - ``documentation``
 
               .. type:: URL object
 
             - The URL to the customer retrieval endpoint documentation.
+
+Order lines
+^^^^^^^^^^^
+
+Addresses
+^^^^^^^^^
 
 Example
 -------
@@ -147,18 +186,8 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/customers/cst_kEn1PlbGa \
+   curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $customer = $mollie->customers->get("cst_kEn1PlbGa");
 
 Response
 ^^^^^^^^
