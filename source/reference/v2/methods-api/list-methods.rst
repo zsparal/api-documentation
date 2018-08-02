@@ -77,7 +77,7 @@ Organizations can have multiple profiles for each of their websites. See
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 

@@ -15,7 +15,7 @@ Create a mandate for a specific customer. Mandates allow you to charge a custome
 recurrently.
 
 It is only possible to create mandates for IBANs with this endpoint. To create mandates for credit cards, have your
-customers perform a :ref:`'first payment' <guides/recurring/first-payment>` with their credit card.
+customers perform a :ref:`'first payment' <payments/recurring/first-payment>` with their credit card.
 
 Parameters
 ----------

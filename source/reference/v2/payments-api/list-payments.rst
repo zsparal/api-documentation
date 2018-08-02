@@ -11,7 +11,7 @@ List payments
    :api_keys: true
    :oauth: true
 
-Retrieve all payments created with the current payment profile, ordered from newest to oldest.
+Retrieve all payments created with the current website profile, ordered from newest to oldest.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
@@ -51,7 +51,7 @@ information.
        .. type:: string
           :required: false
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 

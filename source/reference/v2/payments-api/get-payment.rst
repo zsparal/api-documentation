@@ -13,7 +13,7 @@ Get payment
 
 Retrieve a single payment object by its payment token.
 
-.. note:: We call your webhook when the :doc:`payment status changes </guides/payment-status-changes>`, so there's no
+.. note:: We call your webhook when the :doc:`payment status changes </payments/status-changes>`, so there's no
           need to poll this endpoint for status changes.
 
 Parameters
@@ -286,7 +286,7 @@ Response
        .. type:: string
 
      - Indicates which type of payment this is in a recurring sequence. Set to ``first`` for
-       :ref:`first payments <guides/recurring/first-payment>` that allow the customer to agree to automatic recurring
+       :ref:`first payments <payments/recurring/first-payment>` that allow the customer to agree to automatic recurring
        charges taking place on their account in the future. Set to ``recurring`` for payments where the customer's card
        is charged automatically.
 

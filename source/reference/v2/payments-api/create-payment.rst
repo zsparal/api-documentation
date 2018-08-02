@@ -128,12 +128,12 @@ Parameters
           :required: false
 
      - Indicate which type of payment this is in a recurring sequence. If set to ``first``, a
-       :ref:`first payment <guides/recurring/first-payment>` is created for the customer, allowing the customer to agree
+       :ref:`first payment <payments/recurring/first-payment>` is created for the customer, allowing the customer to agree
        to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
        customer's card is charged automatically.
 
        Defaults to ``oneoff``, which is a regular non-recurring payment (see also:
-       :doc:`Recurring </guides/recurring>`).
+       :doc:`Recurring </payments/recurring>`).
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
@@ -143,7 +143,7 @@ Parameters
           :required: false
 
      - The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
-       This is used for :doc:`recurring payments </guides/recurring>` and
+       This is used for :doc:`recurring payments </payments/recurring>` and
        :doc:`single click payments </guides/checkout>`.
 
    * - ``mandateId``
@@ -180,7 +180,7 @@ Bank transfer
        .. type:: string
           :required: false
 
-     - The date the payment should :doc:`expire </guides/payment-status-changes>`, in ``YYYY-MM-DD`` format.
+     - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
    * - ``locale``
@@ -386,6 +386,8 @@ KBC/CBC Payment Button
 
        Possible values: ``kbc`` ``cbc``
 
+.. _paypal-method-details:
+
 PayPal
 """"""
 .. list-table::
@@ -477,7 +479,7 @@ SEPA Direct Debit
     One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
     general, it is not very useful for webshops but may be useful for charities.
 
-    If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </guides/recurring>`.
+    If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </payments/recurring>`.
 
 .. list-table::
    :widths: auto
@@ -513,7 +515,7 @@ information.
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 
