@@ -3,7 +3,7 @@ Mollie Payment API
 
 How does the Mollie Payments API work?
 --------------------------------------
-.. image:: guides/images/api-overview-flow@2x.png
+.. image:: images/api-overview-flow@2x.png
 
 #. A customer on your website decides to checkout.
 
