@@ -139,7 +139,7 @@ Response
 
    * - ``metadata``
 
-       .. type:: object
+       .. type:: mixed
 
      - Data provided during the order creation.
 

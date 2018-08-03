@@ -85,7 +85,7 @@ Response
 
    * - ``metadata``
 
-       .. type:: object
+       .. type:: mixed
 
      - Data provided during the customer creation in JSON notation.
 

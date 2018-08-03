@@ -176,7 +176,7 @@ Response
 
    * - ``metadata``
 
-       .. type:: object
+       .. type:: mixed
 
      - The optional metadata you provided upon payment creation. Metadata can for example be used to link an order to a
        payment.

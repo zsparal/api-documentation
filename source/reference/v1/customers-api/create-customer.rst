@@ -57,7 +57,7 @@ Parameters
 
    * - ``metadata``
 
-       .. type:: object
+       .. type:: mixed
           :required: false
 
      - Provide any data you like in JSON notation, and we will save the data alongside the customer. Whenever
