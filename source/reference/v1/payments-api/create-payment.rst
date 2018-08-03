@@ -100,7 +100,7 @@ Parameters
        .. type:: mixed
           :required: false
 
-     - Provide any data you like in JSON notation, and we will save the data alongside the payment. Whenever
+     - Provide any data you like, and we will save the data alongside the payment. Whenever
        you fetch the payment with our API, we'll also include the metadata. You can use up to approximately 1kB.
 
    * - ``recurringType``

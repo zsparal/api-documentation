@@ -87,7 +87,7 @@ Response
 
        .. type:: mixed
 
-     - Data provided during the customer creation in JSON notation.
+     - Data provided during the customer creation.
 
    * - ``createdAt``
 
