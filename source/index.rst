@@ -16,7 +16,7 @@ happy to help!
 The Mollie REST API
 -------------------
 The API implements a **Representational state transfer** (REST) architecture. Sounds technical, but it's really quite
-easy. It mainly breaks down to HTTP-methods ``GET``, ``POST``, ``PUT`` and ``DELETE`` matching the operations to
+easy. It mainly breaks down to HTTP-methods ``GET``, ``PATCH``, ``POST`` and ``DELETE`` matching the operations to
 **read**, **update**, **create** and **delete**.
 
 REST also implies a nice and clean structure for URLs or endpoints. This means you can reach any part of the Mollie API
