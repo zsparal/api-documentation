@@ -59,7 +59,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The description of the payment you're creating. This will be shown to the consumer on their card or bank
+     - The description of the payment you're creating. This will be shown to your customer on their card or bank
        statement when possible. We truncate the description automatically according to the limits of the used payment
        method. The description is also visible in any exports you generate.
 

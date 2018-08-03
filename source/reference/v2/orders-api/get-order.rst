@@ -169,6 +169,19 @@ Response
 
             - The API resource URL of the customer itself.
 
+          * - ``checkout``
+
+              .. type:: URL object
+
+            - The URL your customer should visit to make the payment for the order. This is where you should redirect
+              the customer to after creating the order.
+
+              .. note :: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
+                         redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
+                         ``303 See Other`` to force an HTTP ``GET`` redirect.
+
+              Orders with recurring payments don't have a checkout URL.
+
           * - ``documentation``
 
               .. type:: URL object
@@ -460,6 +473,10 @@ Response
             "self": {
                 "href": "https://api.mollie.com/v2/orders/ord_pbjz8x",
                 "type": "application/hal+json"
+            },
+            "checkout": {
+                "href": "https://www.mollie.com/payscreen/select-method/7UhSN1zuXS",
+                "type": "text/html"
             },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/orders-api/get-order",
