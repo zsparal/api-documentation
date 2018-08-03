@@ -57,10 +57,10 @@ Parameters
 
    * - ``metadata``
 
-       .. type:: object
+       .. type:: mixed
           :required: false
 
-     - Provide any data you like in JSON notation, and we will save the data alongside the customer. Whenever
+     - Provide any data you like, and we will save the data alongside the customer. Whenever
        you fetch the customer with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
 Mollie Connect/OAuth parameters

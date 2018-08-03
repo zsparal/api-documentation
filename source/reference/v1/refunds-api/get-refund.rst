@@ -127,7 +127,7 @@ Response
            "amount": "35.07",
            "amountRefunded": "5.95",
            "amountRemaining": "54.12",
-           "description": "Order",
+           "description": "Order #33",
            "method": "ideal",
            "metadata": {
                "order_id": "33"

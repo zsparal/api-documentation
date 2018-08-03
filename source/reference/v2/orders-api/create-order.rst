@@ -99,7 +99,7 @@ Parameters
    * - ``locale``
 
        .. type:: string
-          :required: false
+          :required: true
 
      - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. You can provide any
        ISO 15897 locale, but our hosted payment pages currently only support the following languages:
@@ -107,6 +107,9 @@ Parameters
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
+
+       .. note::
+          For orders, the ``locale`` is a **required** parameter.
 
    * - ``method``
 
@@ -125,9 +128,8 @@ Parameters
        .. type:: object
           :required: false
 
-     - Any payment method specific properties can be passed here. See :ref:`payment-method-specific-parameters` for the
+     - Any payment specific properties can be passed here. See :ref:`payment-parameters` for the
        possible fields.
-
 
    * - ``metadata``
 
@@ -138,15 +140,16 @@ Parameters
        order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
+.. note::
+   For orders, there is no ``description`` field. The description for any payments will be automatically created by
+   Mollie and will contain the order number, your profile's name and your profile's website.
+
 .. _order-lines-details:
 
 Order line details
 ^^^^^^^^^^^^^^^^^^
 
 The order lines contain the actual things that your customer bought.
-
-.. note::
-   All order lines must have the same currency as the order. You cannot mix currencies within a single order.
 
 .. list-table::
    :widths: auto
@@ -252,6 +255,9 @@ The order lines contain the actual things that your customer bought.
 
      - A link pointing to the product page in your web shop of the product sold.
 
+.. note::
+   All order lines must have the same currency as the order. You cannot mix currencies within a single order.
+
 .. _order-address-details:
 
 Order address details
@@ -305,14 +311,37 @@ least a valid address must be passed as well as fields identifying the person.
      - The other address fields. Please refer to the documentation of the :ref:`address object <address-object>` for
        more information on which inputs are accepted inputs.
 
-Payment method specific parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you specify the ``method`` parameter, optional parameters may be available for that payment method. If no method is
-specified, you can still send the optional parameters and we will apply them when your customer selects the relevant
-payment method.
+.. _payment-parameters:
 
-All method specific parameters must be passed in the ``payment`` object. See the
-:ref:`Create payment documentation <payment-method-specific-parameters>` for more information.
+Payment specific parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+Creating an order will automatically create a payment that your customer can use to pay for the order. Creation of the
+payment can be controlled using the ``method`` and ``payment`` parameters.
+
+The optional ``method`` parameter ensures that order can be paid for using a specific payment method. If the parameter
+is omitted, your customer will be presented with a method selection screen and can check out using any of the available
+payment method on your website profile.
+
+Optional parameters may be available for that payment method. If no method is specified, you can still send the optional
+parameters and we will apply them when your customer selects the relevant payment method.
+
+All payment specific parameters must be passed in the ``payment`` object. The following payment specific parameters can
+be passed during order creation:
+
+* ``payment.consumerAccount``
+* ``payment.customerId``
+* ``payment.customerReference``
+* ``payment.dueDate``
+* ``payment.issuer``
+* ``payment.mandateId``
+* ``payment.routing``
+* ``payment.sequenceType``
+* ``payment.voucherNumber``
+* ``payment.voucherPin``
+
+See the :ref:`payment-method-specific-parameters` for more information on these
+parameters.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -338,11 +367,20 @@ information.
 
      - Set this to ``true`` to make this order a test order.
 
+   * - ``payment.applicationFee``
+
+       .. type:: object
+          :required: false
+
+     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
+       payment and transfer this to your own account.
+
+
 Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-An order object is returned, as described in :doc:`Get order </reference/v2/payments-api/get-payment>`.
+An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
 Example
 -------
@@ -401,7 +439,6 @@ Request (curl)
                     \"productUrl\": \"https://shop.lego.com/nl-NL/Bugatti-Chiron-42083\",
                     \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$\",
                     \"quantity\": 2,
-                    \"quantityUnit\": \"pcs\",
                     \"vatRate\": \"21.00\",
                     \"unitPrice\": {
                         \"currency\": \"EUR\",
@@ -427,7 +464,6 @@ Request (curl)
                     \"productUrl\": \"https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056\",
                     \"imageUrl\": \"https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$\",
                     \"quantity\": 1,
-                    \"quantityUnit\": \"box\",
                     \"vatRate\": \"21.00\",
                     \"unitPrice\": {
                         \"currency\": \"EUR\",

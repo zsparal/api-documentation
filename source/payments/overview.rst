@@ -31,7 +31,7 @@ How does the Mollie Payments API work?
 
 #. Processing the webhook request your website
    :doc:`fetches the payment status </reference/v2/payments-api/get-payment>` using the Mollie API. This fetched status
-   serves to mark the order as paid, trigger fulfilment and send out an email confirmation to the customer.
+   serves to mark the payment paid, trigger fulfilment and send out an email confirmation to the customer.
 
 #. At this point Mollie returns the visitor to your website using the ``redirectUrl`` specified when the payment was
    created. Your website already knows the payment was successful and thanks the customer.

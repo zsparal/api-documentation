@@ -195,7 +195,7 @@ Response
        },
        "status": "pending",
        "createdAt": "2018-03-14T17:09:02.0Z",
-       "description": "Order",
+       "description": "Order #33",
        "paymentId": "tr_WDqYK6vllg",
        "_links": {
            "self": {

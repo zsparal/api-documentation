@@ -40,7 +40,7 @@ Response
            "value": "1.00",
            "currency": "EUR"
        },
-       "description": "Order 66",
+       "description": "Order #66",
        "method": null,
        "metadata": null,
        "status": "open",
@@ -156,7 +156,7 @@ Request
        -d \
        "{
            \"amount\": {\"currency\":\"EUR\", \"value\":\"1000000000.00\"},
-           \"description\": \"Order 66\",
+           \"description\": \"Order #66\",
            \"redirectUrl\": \"https://www.example.org/payment/completed\"
        }"
 

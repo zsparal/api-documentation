@@ -190,7 +190,7 @@ Response
                        "value": "75.00",
                        "currency": "GBP"
                    },
-                   "description": "test",
+                   "description": "Order #12345",
                    "method": "ideal",
                    "metadata": null,
                    "details": null,
