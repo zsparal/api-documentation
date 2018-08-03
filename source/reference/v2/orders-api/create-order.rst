@@ -346,7 +346,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-An order object is returned, as described in :doc:`Get order </reference/v2/payments-api/get-payment>`.
+An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
 Example
 -------
