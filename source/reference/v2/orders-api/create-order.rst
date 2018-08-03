@@ -55,8 +55,8 @@ Parameters
        .. type:: array
           :required: true
 
-     - The lines in the order. Each line contains details such as a description of the item ordered, its price etcetera.
-       See :ref:`order-lines-details` for the exact details on the lines.
+     - The lines in the order. Each line contains details such as a description of the item ordered, its price et
+       cetera. See :ref:`order-lines-details` for the exact details on the lines.
 
    * - ``billingAddress``
 
@@ -126,7 +126,7 @@ Parameters
           :required: false
 
      - Any payment method specific properties can be passed here. See :ref:`payment-method-specific-parameters` for the
-     possible fields.
+       possible fields.
 
 
    * - ``metadata``
@@ -187,7 +187,7 @@ The order lines contain the actual things that your customer bought.
 
      - The price of a single item in the order line.
 
-       For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of lego costs €89.00 each.
+       For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
 
    * - ``discountAmount``
 
@@ -197,7 +197,7 @@ The order lines contain the actual things that your customer bought.
      - Any discounts applied to the order line. For example, if you have a two-for-one sale, you should pass the amount
        discounted as a positive amount.
 
-       For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give €10.00 discount on this order line.
+       For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give a €10.00 discount on this order line.
 
    * - ``totalAmount``
 
@@ -207,7 +207,7 @@ The order lines contain the actual things that your customer bought.
      - The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
        result in the same amount as the ``amount`` top level property.
 
-       For example: ``{"currency":"EUR", "value":"168.00"}`` if the total amount of this order line is €168.
+       For example: ``{"currency":"EUR", "value":"168.00"}`` if the total amount of this order line is €168.00.
 
        The total amount should match the following formula: ``(unitPrice × quantity) - discountAmount``
 
@@ -229,7 +229,7 @@ The order lines contain the actual things that your customer bought.
 
        For example: ``{"currency":"EUR", "value":"35.00"}`` if the VAT amount of this order line is €35.00.
 
-       It should match the following formula: ``totalAmount × (vatRate / 100)``
+       The ``vatAmount`` should match the following formula: ``totalAmount × (vatRate / 100)``
 
    * - ``sku``
 
@@ -304,8 +304,6 @@ least a valid address must be passed as well as fields identifying the person.
 
      - The other address fields. Please refer to the documentation of the :ref:`address object <address-object>` for
        more information on which inputs are accepted inputs.
-
-.. _payment-method-specific-parameters:
 
 Payment method specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
