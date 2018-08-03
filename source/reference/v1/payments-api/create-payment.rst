@@ -22,7 +22,7 @@ Payment creation is elemental to the Mollie API: this is where most payment impl
 parameters are accepted for certain payment methods.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:doc:`Overview </index>`.
+:doc:`Overview </payments/overview>`.
 
 Parameters
 ----------
