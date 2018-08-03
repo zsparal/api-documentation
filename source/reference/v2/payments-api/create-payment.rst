@@ -17,7 +17,7 @@ Once you have created a payment, you should redirect your customer to the URL in
 the response.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:doc:`Overview </index>`.
+:doc:`Overview </payments/overview>`.
 
 .. note::
    :ref:`Optional parameters<payment-method-specific-parameters>` are accepted for certain payment methods.

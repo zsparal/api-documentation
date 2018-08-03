@@ -15,8 +15,8 @@ Create order
    :api_keys: true
    :oauth: true
 
-Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as web
-shops. If you want to use *Klarna Pay later.*, using the Orders API is mandatory.
+Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
+webshops. If you want to use *Klarna Pay later.*, using the Orders API is mandatory.
 
 Creating an order will automatically create the required payment to allow your customer to pay for the order.
 
@@ -125,7 +125,8 @@ Parameters
        .. type:: object
           :required: false
 
-     - Any payment method specific properties can be passed here. See below for more details.
+     - Any payment method specific properties can be passed here. See :ref:`payment-method-specific-parameters` for the
+       possible fields.
 
 
    * - ``metadata``
@@ -142,7 +143,7 @@ Parameters
 Order line details
 ^^^^^^^^^^^^^^^^^^
 
-The order lines contain the actual things the your customer bought.
+The order lines contain the actual things that your customer bought.
 
 .. note::
    All order lines must have the same currency as the order. You cannot mix currencies within a single order.
@@ -186,6 +187,8 @@ The order lines contain the actual things the your customer bought.
 
      - The price of a single item in the order line.
 
+       For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
+
    * - ``discountAmount``
 
        .. type:: amount object
@@ -193,6 +196,8 @@ The order lines contain the actual things the your customer bought.
 
      - Any discounts applied to the order line. For example, if you have a two-for-one sale, you should pass the amount
        discounted as a positive amount.
+
+       For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give a €10.00 discount on this order line.
 
    * - ``totalAmount``
 
@@ -202,9 +207,9 @@ The order lines contain the actual things the your customer bought.
      - The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
        result in the same amount as the ``amount`` top level property.
 
-       The total amount should match the following formula:
+       For example: ``{"currency":"EUR", "value":"168.00"}`` if the total amount of this order line is €168.00.
 
-       ``(unitPrice × quantity) - discountAmount``
+       The total amount should match the following formula: ``(unitPrice × quantity) - discountAmount``
 
    * - ``vatRate``
 
@@ -222,9 +227,9 @@ The order lines contain the actual things the your customer bought.
      - The amount of value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
        the ``vatRate``. Any deviations from this will result in an error.
 
-       It should match the following formula:
+       For example: ``{"currency":"EUR", "value":"35.00"}`` if the VAT amount of this order line is €35.00.
 
-       ``totalAmount × (vatRate / 100)``
+       The ``vatAmount`` should match the following formula: ``totalAmount × (vatRate / 100)``
 
    * - ``sku``
 
