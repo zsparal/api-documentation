@@ -69,7 +69,7 @@ Request (curl)
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "amount[currency]=EUR" \
        -d "amount[value]=10.00" \
-       -d "description=My first payment" \
+       -d "description=Order #12345" \
        -d "sequenceType=first" \
        -d "redirectUrl=https://webshop.example.org/order/12345/" \
        -d "webhookUrl=https://webshop.example.org/payments/webhook/"
@@ -88,7 +88,7 @@ Request (PHP)
         "currency" => "EUR",
         "value" => "10.00",
       ],
-      "description" => "My first payment",
+      "description" => "Order #12345",
       "sequenceType" => "first",
       "redirectUrl" => "https://webshop.example.org/order/12345/",
       "webhookUrl => "https://webshop.example.org/payments/webhook/",
@@ -111,7 +111,7 @@ Response
            "value": "10.00",
            "currency": "EUR"
        },
-       "description": "My first payment",
+       "description": "Order #12345",
        "method": null,
        "metadata": {
            "order_id": "12345"

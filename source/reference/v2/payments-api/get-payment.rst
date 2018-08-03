@@ -1142,7 +1142,7 @@ Response
            "value": "10.00",
            "currency": "EUR"
        },
-       "description": "My first payment",
+       "description": "Order #12345",
        "method": null,
        "metadata": {
            "order_id": "12345"

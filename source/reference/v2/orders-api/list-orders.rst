@@ -140,7 +140,7 @@ Response
                {
                    "resource": "order",
                    "id": "ord_kEn1PlbGa",
-                    ...
+                   "...": "..."
                },
                { },
                { }
