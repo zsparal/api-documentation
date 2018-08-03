@@ -23,7 +23,8 @@ enabled.
 How to create an application fee
 --------------------------------
 Application fees are created by passing additional parameters to the
-:doc:`Create payment </reference/v2/payments-api/create-payment>` endpoint:
+:doc:`Create payment </reference/v2/payments-api/create-payment>` or
+:doc:`Create order </reference/v2/orders-api/create-order>` API:
 
 .. list-table::
    :widths: auto
@@ -55,7 +56,8 @@ Application fees are created by passing additional parameters to the
                      .. type:: string
                         :required: true
 
-                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. For application fees, this
+                     must always be ``EUR`` regardless of the currency of the payment or order. 
 
                  * - ``value``
 
