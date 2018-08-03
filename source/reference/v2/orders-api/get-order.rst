@@ -171,8 +171,124 @@ Response
 
             - The URL to the customer retrieval endpoint documentation.
 
-Order lines
-^^^^^^^^^^^
+Order line details
+^^^^^^^^^^^^^^^^^^
+
+The order lines contain the actual things the your customer bought.
+
+.. list-table::
+   :widths: auto
+
+   * - ``resource``
+
+       .. type:: string
+
+     - Always ``orderline``.
+
+   * - ``orderId``
+
+       .. type:: string
+
+     - The ID of the order the line belongs too, for example ``ord_kEn1PlbGa``.
+
+   * - ``type``
+
+       .. type:: string
+
+     - The type of product bought, for example, a physical or a digital product. Will be one of the following values:
+
+       * ``physical``
+       * ``discount``
+       * ``digital``
+       * ``shipping_fee``
+       * ``store_credit``
+       * ``gift_card``
+       * ``surcharge``
+
+   * - ``name``
+
+       .. type:: string
+
+     - A description of the order line, for example *LEGO 4440 Forest Police Station*.
+
+   * - ``status``
+
+       .. type:: string
+
+     - Status of the order line. One of the following values:
+
+       * ``created``
+       * ``authorized``
+       * ``paid``
+       * ``canceled``
+       * ``refunded``
+       * ``shipped``
+       * ``void``
+
+   * - ``quantity``
+
+       .. type:: int
+
+     - The number of items in the order line.
+
+   * - ``unitPrice``
+
+       .. type:: amount object
+
+     - The price of a single item in the order line.
+
+   * - ``discountAmount``
+
+       .. type:: amount object
+          :required: false
+
+     - Any discounts applied to the order line.
+
+   * - ``totalAmount``
+
+       .. type:: amount object
+
+     - The total amount of the line, including VAT and discounts.
+
+   * - ``vatRate``
+
+       .. type:: string
+
+     - The VAT rate applied to the order line, for example ``"21.00"`` for 21%. The ``vatRate`` is passed as a string
+       and not as a float to ensure the correct number of decimals are passed.
+
+   * - ``vatAmount``
+
+       .. type:: amount object
+
+     - The amount of value-added tax on the line.
+
+   * - ``sku``
+
+       .. type:: string
+          :required: false
+
+     - The SKU, EAN, ISBN or UPC of the product sold.
+
+   * - ``imageUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to an image of the product sold.
+
+   * - ``productUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to the product page in your web shop of the product sold.
+
+   * - ``createdAt``
+
+       .. type:: datetime
+
+     - The order line's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 Addresses
 ^^^^^^^^^
