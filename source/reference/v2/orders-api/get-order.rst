@@ -383,6 +383,14 @@ Response
             "value": "1027.99",
             "currency": "EUR"
         },
+        "amountCaptured": {
+            "value": "0.00",
+            "currency": "EUR"
+        },
+        "amountRefunded": {
+            "value": "0.00",
+            "currency": "EUR"
+        },
         "status": "created",
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
