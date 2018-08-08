@@ -92,7 +92,7 @@ Response
 .. code-block:: http
    :linenos:
 
-   HTTP/1.1 401 Authorization Required
+   HTTP/1.1 401 Unauthorized
    Content-Type: application/hal+json; charset=utf-8
 
    {
@@ -107,7 +107,7 @@ Response
        }
    }
 
-The HTTP status ``401 Authorization Required`` indicates missing or incorrect authorization to execute the desired
+The HTTP status ``401 Unauthorized`` indicates missing or incorrect authorization to execute the desired
 action.
 
 Another error that occurs often, is the well known HTTP status ``404 Not Found``, which indicates the object you're
