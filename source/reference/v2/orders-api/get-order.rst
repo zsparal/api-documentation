@@ -380,13 +380,23 @@ Response
         "id": "ord_pbjz8x",
         "profileId": "pfl_URR55HPMGx",
         "amount": {
-            "value": "2.00",
+            "value": "1027.99",
+            "currency": "EUR"
+        },
+        "amountCaptured": {
+            "value": "0.00",
+            "currency": "EUR"
+        },
+        "amountRefunded": {
+            "value": "0.00",
             "currency": "EUR"
         },
         "status": "created",
-        "merchantData": null,
+        "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
         "mode": "live",
+        "locale": "nl_NL",
+        "orderNumber": "18475",
         "billingAddress": {
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
@@ -410,25 +420,30 @@ Response
                 "resource": "orderline",
                 "id": "odl_dgtxyl",
                 "orderId": "ord_pbjz8x",
-                "name": null,
-                "reference": null,
-                "type": null,
+                "name": "LEGO 42083 Bugatti Chiron",
+                "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                "sku": "5702016116977",
+                "type": "physical",
                 "status": "created",
-                "quantity": "1",
+                "quantity": 2,
                 "unitPrice": {
-                    "value": "1.00",
+                    "value": "399.00",
                     "currency": "EUR"
                 },
-                "taxRate": null,
-                "totalTaxAmount": {
-                    "value": "0.00",
+                "vatRate": "21.00",
+                "vatAmount": {
+                    "value": "121.14",
+                    "currency": "EUR"
+                },
+                "discountAmount": {
+                    "value": "100.00",
                     "currency": "EUR"
                 },
                 "totalAmount": {
-                    "value": "0.00",
+                    "value": "698.00",
                     "currency": "EUR"
                 },
-                "merchantData": null,
                 "createdAt": "2018-08-02T09:29:56+00:00",
                 "_links": {
                     "self": {
@@ -441,25 +456,26 @@ Response
                 "resource": "orderline",
                 "id": "odl_jp31jz",
                 "orderId": "ord_pbjz8x",
-                "name": null,
-                "reference": null,
-                "type": null,
+                "name": "LEGO 42056 Porsche 911 GT3 RS",
+                "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                "sku": "5702015594028",
+                "type": "physical",
                 "status": "created",
-                "quantity": "1",
+                "quantity": 1,
                 "unitPrice": {
-                    "value": "1.00",
+                    "value": "329.99",
                     "currency": "EUR"
                 },
-                "taxRate": null,
-                "totalTaxAmount": {
-                    "value": "0.00",
+                "vatRate": "21.00",
+                "vatAmount": {
+                    "value": "57.27",
                     "currency": "EUR"
                 },
                 "totalAmount": {
-                    "value": "0.00",
+                    "value": "329.99",
                     "currency": "EUR"
                 },
-                "merchantData": null,
                 "createdAt": "2018-08-02T09:29:56+00:00",
                 "_links": {
                     "self": {
