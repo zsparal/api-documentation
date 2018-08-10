@@ -39,7 +39,7 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/line/odl_dgtxyl \
+   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines/odl_dgtxyl \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
