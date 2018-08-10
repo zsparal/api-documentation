@@ -368,6 +368,8 @@ Request (curl)
    curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+.. _get-order-response:
+
 Response
 ^^^^^^^^
 .. code-block:: http

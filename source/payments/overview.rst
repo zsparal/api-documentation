@@ -1,8 +1,11 @@
-Mollie Payments API
-===================
+Payments API
+============
 
-How does the Mollie Payments API work?
---------------------------------------
+The **Payments API** allows you to create payments for your web shop, e-invoicing platform or other application that you
+need payments for.
+
+How does the Payments API work?
+-------------------------------
 .. image:: images/api-overview-flow@2x.png
 
 #. A customer on your website decides to checkout.

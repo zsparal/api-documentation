@@ -377,7 +377,6 @@ information.
      - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
        payment and transfer this to your own account.
 
-
 Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
