@@ -11,9 +11,19 @@ Cancel order
    :api_keys: true
    :oauth: true
 
-The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``.
+The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping`` [#f1]_.
+
+#. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
+#. In case of ``authorized``, the authorization will be released, all order lines will be canceled and the new order
+   status will be ``canceled``.
+#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled. The new order status will be
+   ``completed``.
+
 For more information about the status transitions please check our <link to guide here>.
 
+.. [#f1] If the order status is ``shipping``, some order lines can have the status ``paid`` if the order was paid using
+         a payment method that does not support authorizations (such as iDEAL) and the order lines are not shipped yet.
+         In this case, the order cannot be canceled. You should create refunds for these order lines instead.
 
 Parameters
 ----------
