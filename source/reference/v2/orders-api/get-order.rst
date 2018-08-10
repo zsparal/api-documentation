@@ -79,7 +79,10 @@ Response
 
        .. type:: amount object
 
-     - The amount captured, thus far.
+     - The amount captured, thus far. The captured amount will be settled to your account.
+
+       For orders that have the status ``authorized``, you must
+       :doc:`ship the order </reference/v2/shipments-api/create-shipment>` to ensure the order amount gets captured.
 
    * - ``amountRefunded``
 
