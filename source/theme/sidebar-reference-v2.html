@@ -115,6 +115,28 @@
 	</ul>
 </div>
 
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/shipments-api/') }}">
+	<p><a href="javascript:void(0)">Shipments API</a></p>
+
+	<ul>
+		{{ sidebar_item(
+		'reference/v2/shipments-api/create-shipment',
+		'Create shipment',
+		'POST /v2/orders/*/shipments'
+		) }}
+		{{ sidebar_item(
+		'reference/v2/shipments-api/get-shipment',
+		'Get shipment',
+		'GET /v2/orders/*/shipment/*'
+		) }}
+		{{ sidebar_item(
+		'reference/v2/shipments-api/list-shipments',
+		'LIST shipments',
+		'GET /v2/orders/*/shipments'
+		) }}
+	</ul>
+</div>
+
 <div class="sidebar__spacing"></div>
 
 <div class="sidebar__group {{ sidebar_collapse_group('reference/v2/customers-api/') }}">
