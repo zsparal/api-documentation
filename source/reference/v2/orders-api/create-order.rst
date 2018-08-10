@@ -157,7 +157,7 @@ The order lines contain the actual things that your customer bought.
    * - ``type``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The type of product bought, for example, a physical or a digital product. Must be one of the following values:
 
@@ -168,6 +168,8 @@ The order lines contain the actual things that your customer bought.
        * ``store_credit``
        * ``gift_card``
        * ``surcharge``
+
+       Will be set to ``physical`` by default.
 
    * - ``name``
 
