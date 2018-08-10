@@ -72,7 +72,7 @@ Response
 
        .. type:: array
 
-     - An array of order line objects as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
+     - An array of :ref:`order line objects<order-lines-details>` as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
    * - ``_links``
 

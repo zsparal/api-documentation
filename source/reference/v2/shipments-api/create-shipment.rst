@@ -15,25 +15,27 @@ Create shipment
    :api_keys: true
    :oauth: true
 
-In addition to the Orders API, the create shipment can be used to ship order lines.
-When using *Klarna Pay later* this is mandatory for the amount to be captured.
+In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment can be used to ship
+order lines. When using *Klarna Pay later* this is mandatory for the amount to be captured.
 
 Parameters
 ----------
 .. list-table::
    :widths: auto
 
-   * - ``orderLineShipments``
+   * - ``lines``
 
        .. type:: array
           :required: true
 
-     - An array of objects containing the order line tokens you want to create a shipment for
+     - An array of objects containing the order line details you want to create a shipment for.  If you send an empty
+       array, the entire order will be shipped. If the order is already partially shipped, any remaining lines will be
+       shipped.
 
        .. list-table::
           :widths: auto
 
-          * - ``orderLineToken``
+          * - ``id``
 
               .. type:: string
 
@@ -42,20 +44,11 @@ Parameters
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the shipment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, you should use the ``testmode`` parameter
+if you want to create a shipment in test mode.
 
 .. list-table::
    :widths: auto
-
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 
@@ -83,10 +76,10 @@ Request (curl)
        -d '{
             "orderLineShipments": [
                 {
-                    "orderLineToken": "odl_dgtxyl"
+                    "orderLineId": "odl_dgtxyl"
                 },
                 {
-                    "orderLineToken": "odl_jp31jz"
+                    "orderLineId": "odl_jp31jz"
                 }
             ]
         }'
