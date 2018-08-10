@@ -3,17 +3,24 @@ Cancel order line
 .. api-name:: Orders API
    :version: 2
 
+.. warning::
+   This API is currently in private beta. If you are interested in participating, please contact your account manager at
+   Mollie.
+
 .. endpoint::
    :method: DELETE
-   :url: https://api.mollie.com/v2/orders/*orderId*/line/*lineId*
+   :url: https://api.mollie.com/v2/orders/*orderId*/lines/*lineId*
 
 .. authentication::
    :api_keys: true
    :oauth: true
 
-The order line can only be canceled while it's ``status`` field is either ``created`` or ``authorized``.
-For more information about the status transitions please check our <link to guide here>.
+The order line can only be canceled while it's ``status`` field is either ``created`` or ``authorized``. You should
+cancel an order line if you don't intent to ship it.
 
+If the order line is already ``paid`` or ``shipped``, you should create a refund instead.
+
+For more information about the status transitions please check our <link to guide here>.
 
 Parameters
 ----------
