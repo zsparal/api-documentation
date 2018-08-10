@@ -19,7 +19,7 @@ Retrieve all shipments for an order.
 
 Parameters
 ----------
-Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``
+Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
 
 Mollie Connect/OAuth parameters
@@ -35,7 +35,7 @@ available.
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to list all shipments available in testmode.
+     - Set this to ``true`` to list all shipments available in test mode.
 
 
 Response
@@ -145,13 +145,7 @@ Response
                                "value": "698.00",
                                "currency": "EUR"
                            },
-                           "createdAt": "2018-08-02T09:29:56+00:00",
-                           "_links": {
-                               "self": {
-                                   "href": "https://api.mollie.com/v2/orders/ord_pbjz8x/orderlines/odl_dgtxyl",
-                                   "type": "application/hal+json"
-                               }
-                           }
+                           "createdAt": "2018-08-02T09:29:56+00:00"
                        },
                        { }
                    ]

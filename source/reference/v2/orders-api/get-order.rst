@@ -442,13 +442,7 @@ Response
                     "value": "698.00",
                     "currency": "EUR"
                 },
-                "createdAt": "2018-08-02T09:29:56+00:00",
-                "_links": {
-                    "self": {
-                        "href": "https://api.mollie.com/v2/orders/ord_pbjz8x/orderlines/odl_dgtxyl",
-                        "type": "application/hal+json"
-                    }
-                }
+                "createdAt": "2018-08-02T09:29:56+00:00"
             },
             {
                 "resource": "orderline",
@@ -474,13 +468,7 @@ Response
                     "value": "329.99",
                     "currency": "EUR"
                 },
-                "createdAt": "2018-08-02T09:29:56+00:00",
-                "_links": {
-                    "self": {
-                        "href": "https://api.mollie.com/v2/orders/ord_pbjz8x/orderlines/odl_jp31jz",
-                        "type": "application/hal+json"
-                    }
-                }
+                "createdAt": "2018-08-02T09:29:56+00:00"
             }
         ],
         "_links": {
