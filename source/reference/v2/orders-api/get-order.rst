@@ -111,7 +111,7 @@ Response
 
        .. type:: object
 
-     - The person and the address the order is billed too. See below.
+     - The person and the address the order is billed to. See below.
 
    * - ``consumerDateOfBirth``
 
@@ -130,7 +130,7 @@ Response
 
        .. type:: object
 
-     - The person and the address the order is billed too. See below.
+     - The person and the address the order is billed to. See below.
 
    * - ``locale``
 
@@ -187,7 +187,7 @@ Response
 
               .. type:: URL object
 
-            - The URL to the customer retrieval endpoint documentation.
+            - The URL to the order retrieval endpoint documentation.
 
 Order line details
 ^^^^^^^^^^^^^^^^^^

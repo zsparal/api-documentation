@@ -15,10 +15,10 @@ Cancel order line
    :api_keys: true
    :oauth: true
 
-The order line can only be canceled while it's ``status`` field is either ``created`` or ``authorized``. You should
-cancel an order line if you don't intent to ship it.
+An order line can only be canceled while its ``status`` field is either ``created`` or ``authorized``. You should
+cancel an order line if you don't intend to ship it.
 
-If the order line is already ``paid`` or ``shipped``, you should create a refund instead.
+If the order line is ``paid`` or already ``shipped``, you should create a refund instead.
 
 For more information about the status transitions please check our <link to guide here>.
 

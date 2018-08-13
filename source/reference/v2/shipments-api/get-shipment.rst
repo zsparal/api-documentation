@@ -94,7 +94,7 @@ Response
 
               .. type:: URL object
 
-            - The resource URL of the order this shipment was created for
+            - The resource URL of the order this shipment was created for.
 
           * - ``documentation``
 
