@@ -15,8 +15,8 @@ Create shipment
    :api_keys: true
    :oauth: true
 
-In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment can be used to ship
-order lines. When using *Klarna Pay later* this is mandatory for the amount to be captured.
+In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment endpoint can be used to ship
+order lines. When using *Klarna Pay later* this is mandatory for the order amount to be captured.
 
 Parameters
 ----------
@@ -74,12 +74,12 @@ Request (curl)
    curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d '{
-            "orderLineShipments": [
+            "lines": [
                 {
-                    "orderLineId": "odl_dgtxyl"
+                    "id": "odl_dgtxyl"
                 },
                 {
-                    "orderLineId": "odl_jp31jz"
+                    "id": "odl_jp31jz"
                 }
             ]
         }'
