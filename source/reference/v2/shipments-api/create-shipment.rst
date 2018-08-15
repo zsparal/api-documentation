@@ -41,12 +41,19 @@ Parameters
 
             - The API resource token of the order line, for example: ``odl_jp31jz``
 
+          * - ``quantity``
+
+              .. type:: int
+                 :required: false
+
+            - The quantity of items that should be shipped for this order line. When this parameter is omitted, the whole order line will be shipped.
+
    * - ``tracking``
 
        .. type:: object
           :required: false
 
-     - An object containing tracking details for the shipment. When sent the ``carrier`` and ``code`` parameters become required for this endpoint.
+     - An object containing tracking details for the shipment. When sent, the ``carrier`` and ``code`` parameters become required for this endpoint.
 
        .. list-table::
           :widths: auto
@@ -56,21 +63,21 @@ Parameters
               .. type:: string
                  :required: true
 
-            - Name of the postal carrier (as specific as possible). For example ``DHL US`` and not only ``DHL``.
+            - Name of the postal carrier (as specific as possible). For example ``PostNL``.
 
           * - ``code``
 
               .. type:: string
                  :required: true
 
-            - Track and trace code for the shipment. For example ``3SKABA000000000``
+            - The track and trace code of the shipment. For example ``3SKABA000000000``
 
           * - ``url``
 
               .. type:: string
                  :required: false
 
-            - The URL where the consumer can track the shipment, for example: ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``
+            - The URL where your customer can track the shipment, for example: ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``
 
 
 Mollie Connect/OAuth parameters
@@ -107,7 +114,8 @@ Request (curl)
        -d '{
             "lines": [
                 {
-                    "id": "odl_dgtxyl"
+                    "id": "odl_dgtxyl",
+                    "quantity": 1
                 },
                 {
                     "id": "odl_jp31jz"

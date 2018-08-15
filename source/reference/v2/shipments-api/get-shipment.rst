@@ -93,7 +93,7 @@ Response
 
               .. type:: string
 
-            - The URL the consumer can track the shipment.
+            - The URL where your customer can track the shipment.
 
    * - ``lines``
 
