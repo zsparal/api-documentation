@@ -249,8 +249,9 @@ Response
    * - ``countryCode``
 
        .. type:: string
+          :required: false
 
-     - This optional field contains the customer's `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code,
+     - This optional field contains your customer's `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code,
        detected by us during checkout. For example: ``BE``. This field is omitted if the country code was not detected.
 
    * - ``profileId``
