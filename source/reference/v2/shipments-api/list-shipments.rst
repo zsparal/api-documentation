@@ -116,6 +116,11 @@ Response
                    "id": "shp_3wmsgCJN4U",
                    "orderId": "ord_kEn1PlbGa",
                    "createdAt": "2018-08-09T14:33:54+00:00",
+                   "tracking": {
+                       "carrier": "PostNL",
+                       "code": "3SKABA000000000",
+                       "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
+                   },
                    "lines": [
                        {
                            "resource": "orderline",

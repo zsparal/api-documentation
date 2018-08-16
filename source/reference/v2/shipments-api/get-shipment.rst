@@ -68,6 +68,33 @@ Response
 
      - The shipment's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+   * - ``tracking``
+
+       .. type:: object
+
+     - An object containing shipment tracking details. Will be omitted when no tracking details are available.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``carrier``
+
+              .. type:: string
+
+            - The name of the postal carrier.
+
+          * - ``code``
+
+              .. type:: string
+
+            - The track and trace code for the shipment.
+
+          * - ``url``
+
+              .. type:: string
+
+            - The URL where your customer can track the shipment.
+
    * - ``lines``
 
        .. type:: array
@@ -126,6 +153,11 @@ Response
         "id": "shp_3wmsgCJN4U",
         "orderId": "ord_kEn1PlbGa",
         "createdAt": "2018-08-09T14:33:54+00:00",
+        "tracking": {
+            "carrier": "PostNL",
+            "code": "3SKABA000000000",
+            "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
+        },
         "lines": [
             {
                 "resource": "orderline",
