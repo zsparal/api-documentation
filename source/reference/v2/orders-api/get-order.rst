@@ -61,6 +61,12 @@ Response
 
      - The profile the order was created on, for example ``pfl_v9hTwCvYqw``.
 
+   * - ``method``
+
+       .. type:: string|null
+
+     - The payment method last used when paying for the order.
+
    * - ``mode``
 
        .. type:: string
@@ -382,6 +388,7 @@ Response
         "resource": "order",
         "id": "ord_pbjz8x",
         "profileId": "pfl_URR55HPMGx",
+        "method": "ideal",
         "amount": {
             "value": "1027.99",
             "currency": "EUR"
