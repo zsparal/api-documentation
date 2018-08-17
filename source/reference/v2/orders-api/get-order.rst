@@ -111,7 +111,7 @@ Response
        * ``completed``
        * ``void``
 
-       See Order status changes for details on the orders' statuses.
+       See :doc:`Order status changes </orders/status-changes>` for details on the orders' statuses.
 
    * - ``billingAddress``
 

@@ -1,7 +1,8 @@
 Order status changes
 ====================
+
 Orders and order lines can go through a number of different statuses. First we will discuss the difference between
-two possible flows for orders. After that we will list all the possible statuses for both orders and order lines.
+two possible flows for orders. After that we will list all the possible statuses for both **orders** and **order lines**.
 
 Two flows: authorized and paid
 ------------------------------
@@ -106,8 +107,8 @@ The following diagram shows how one order status leads to another:
     When an order was paid with a payment method that transfers the money immediately, but the order was completely
     canceled, the order will be set to this status.
 
-    Note that this status is not used when you refund orders or order lines after you have shipped them. In that case
-    the status will stay at ``completed``.
+    .. note:: This status is *not* used when you refund orders or order lines after you have shipped them. In that case
+              the status will stay at ``completed``.
 
     * Mollie will call your webhook when the order reaches this state.
     * All order lines will also be in the ``refunded`` state.
@@ -200,8 +201,8 @@ The following diagram shows how one order line status leads to another:
     This is only possible for payment methods that don't support captures. If the payment does support captures, the
     order line would have been in status ``authorized`` and canceling would cause it to go to status ``canceled``.
 
-    Note that this status is not used when you refund order lines after you have shipped them. In that case the status
-    will stay at ``completed``.
+    .. note:: This status is *not* used when you refund order lines after you have shipped them. In that case the status
+              will stay at ``completed``.
 
     * The order has status ``completed`` or ``refunded``.
     * This is a final state, the order line can't transition to another state.

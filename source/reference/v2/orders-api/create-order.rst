@@ -94,7 +94,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - Set the webhook URL, where we will send order status updates to.
+     - Set the webhook URL, where we will send :doc:`order status updates </orders/status-changes>` to.
 
    * - ``locale``
 
