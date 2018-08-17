@@ -46,7 +46,12 @@ Parameters
               .. type:: int
                  :required: false
 
-            - The quantity of items that should be shipped for this order line. When this parameter is omitted, the whole order line will be shipped.
+            - The number of items that should be shipped for this order line. When this parameter is omitted, the
+              whole order line will be shipped.
+
+              Must be less than the number of items already shipped for this order line. 
+
+              .. note:: At the moment, it is not possible to partially ship an order line if it has a discount.
 
    * - ``tracking``
 
