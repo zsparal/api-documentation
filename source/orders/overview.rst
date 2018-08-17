@@ -13,8 +13,8 @@ How does the Orders API work?
 
 #. For every order in your webshop, you create an order using the :doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
-#. The :ref:`Create Order API response <get-order-response>` contains the ``_links.checkout`` property. This is a link where you should redirect
-   your customer to for checking out.
+#. The :ref:`Create Order API response <get-order-response>` contains the ``_links.checkout`` property. This is a link
+   where you should redirect your customer to for checking out.
 
 #. If the checkout is successful, the order will change it's state to ``authorized`` or ``paid``, depending on the
    payment method used by your customer.
@@ -25,7 +25,7 @@ How does the Orders API work?
    :doc:`Create Shipment API </reference/v2/shipments-api/create-shipment>`. Alternatively, you can use the Mollie
    Dashboard.
 
-   For some payment methods, shipping is required to ensure your account will get settled for the full order amount.
+   For some payment methods, shipping is required to ensure your will be settled for the full order amount.
 
    You should ship the order within 28 days or the order will expire.
 
@@ -47,4 +47,4 @@ Order expiry
 ------------
 
 An order expires after 28 days. Any authorizations on the order will be released. You can check the ``expiresAt``
-property on the order or your Mollie Dashboard to see when the order expires exactly.
+property on the order or in Mollie Dashboard to see when the order expires exactly.
