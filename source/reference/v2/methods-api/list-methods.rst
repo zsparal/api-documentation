@@ -67,11 +67,17 @@ Parameters
        .. type:: string
           :required: false
 
-     - Passing a resource will return all payment methods for that specific type. For example: when passing ``orders``
-       the methods will include ``Klarna Pay later``. Default behaviour is returning all available payment methods for
+     - Use the ``resource`` parameter to indicate if you will use the result with the
+       :doc:`Create Order </reference/v2/orders-api/create-order>` or :doc:`Create
+       Payment </reference/v2/payments-api/create-payment>` API.
+
+       For example: when passing ``orders`` the methods will include methods that can only be used in conjunction with
+       orders, such as ``Klarna Pay later``. Default behaviour is returning all available payment methods for
        ``payments``.
 
-       Possible values: ``orders`` ``payments``
+       Possible values: ``orders`` ``payments``.
+
+       Example: ``https://api.mollie.com/v2/methods?resource=orders``
 
    * - ``billingCountry``
 
@@ -79,8 +85,8 @@ Parameters
           :required: false
 
      - The country of your costumer in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
-       This parameter can be used to check wether your customer is eligable for certain payment methods, for example:
-       ``Klarna Slice it``.
+       This parameter can be used to check wether your customer is eligible for certain payment methods, for example:
+       ``Klarna Slice it``. 
 
 Mollie Connect/OAuth parameters
 -------------------------------
