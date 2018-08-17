@@ -169,7 +169,7 @@ When using our Subscriptions API to charge a customer periodically, new payments
 customer is charged. We will call your webhook as usual for these payments. The only difference is, the payment ID will
 not be known by your system yet when we call the webhook to report the payment's status.
 
-With normal payments you know the transaction ID, because you've received this when creating the payment. With 
+With normal payments you know the payment ID, because you've received this when creating the payment. With
 subscriptions you don't know the payment ID in advance. So you'll receive a webhook call with a payment ID that you've 
 never seen before.
 
