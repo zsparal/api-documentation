@@ -25,7 +25,7 @@ How does the Orders API work?
    :doc:`Create Shipment API </reference/v2/shipments-api/create-shipment>`. Alternatively, you can use the Mollie
    Dashboard.
 
-   For some payment methods, shipping is required to ensure your will be settled for the full order amount.
+   For some payment methods, shipping is required to ensure you will be settled for the full order amount.
 
    You should ship the order within 28 days or the order will expire.
 
@@ -47,4 +47,4 @@ Order expiry
 ------------
 
 An order expires after 28 days. Any authorizations on the order will be released. You can check the ``expiresAt``
-property on the order or in Mollie Dashboard to see when the order expires exactly.
+property on the order or in the Mollie Dashboard to see when the order expires exactly.
