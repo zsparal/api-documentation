@@ -62,6 +62,24 @@ Parameters
 
        Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
 
+   * - ``resource``
+
+       .. type:: string
+          :required: false
+
+     - Passing a resource will return all payment methods for that specific type. For example: when passing ``orders`` the
+       methods will include ``Klarna Pay later``. Default behaviour is returning all available payment methods for
+       ``payments``.
+
+       Possible values: ``orders`` ``payments``
+
+   * - ``billingCountry``
+
+       .. type:: string
+          :required: false
+
+     - The country of your costumer in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+
 Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following parameters are also
