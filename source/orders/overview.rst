@@ -32,17 +32,6 @@ How does the Orders API work?
 #. If there are some lines in the order you will not ship, you can cancel them using the
    :doc:`Cancel Order line API </reference/v2/orders-api/cancel-order-line>`.
 
-Second chance emails
---------------------
-
-Should your customer's initial payment fail, you can create additional payments for the order using the Create Order
-Payment API or alternative from the Mollie Dashboard.
-
-Mollie can also automatically send payment emails to your customer.
-
-If you do not intent to fulfill an authorized order, you should cancel the order using the
-:doc:`Cancel Order API </reference/v2/orders-api/cancel-order>`.
-
 Order expiry
 ------------
 
