@@ -62,7 +62,7 @@ Support for other currencies than ``EUR`` varies per payment method.
 +----------------------+----------+----------------+---------------------+
 | Malaysian ringgit    | ``MYR``  |              2 | PayPal              |
 +----------------------+----------+----------------+---------------------+
-| Norwegian krone      | ``NOK``  |              2 | PayPal              |
+| Norwegian krone      | ``NOK``  |              2 | PayPal, credit card |
 +----------------------+----------+----------------+---------------------+
 | New Zealand dollar   | ``NZD``  |              2 | PayPal              |
 +----------------------+----------+----------------+---------------------+
