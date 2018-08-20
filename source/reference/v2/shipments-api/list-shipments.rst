@@ -131,7 +131,7 @@ Response
                            "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                            "sku": "5702016116977",
                            "type": "physical",
-                           "status": "shipped",
+                           "status": "shipping",
                            "quantity": 2,
                            "unitPrice": {
                                "value": "399.00",
