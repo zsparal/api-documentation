@@ -19,7 +19,7 @@ The order can only be canceled while the order's ``status`` field is either ``cr
 #. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled. The new order status will be
    ``completed``.
 
-For more information about the status transitions please check our <link to guide here>.
+For more information about the status transitions please check our :doc:`order status changes guide </orders/status-changes>`.
 
 .. [#f1] If the order status is ``shipping``, some order lines can have the status ``paid`` if the order was paid using
          a payment method that does not support authorizations (such as iDEAL) and the order lines are not shipped yet.
