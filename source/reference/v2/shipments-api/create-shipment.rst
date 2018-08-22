@@ -39,7 +39,7 @@ Parameters
 
               .. type:: string
 
-            - The API resource token of the order line, for example: ``odl_jp31jz``
+            - The API resource token of the order line, for example: ``odl_jp31jz``.
 
           * - ``quantity``
 
@@ -75,14 +75,14 @@ Parameters
               .. type:: string
                  :required: true
 
-            - The track and trace code of the shipment. For example ``3SKABA000000000``
+            - The track and trace code of the shipment. For example ``3SKABA000000000``.
 
           * - ``url``
 
               .. type:: string
                  :required: false
 
-            - The URL where your customer can track the shipment, for example: ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``
+            - The URL where your customer can track the shipment, for example: ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``.
 
 
 Mollie Connect/OAuth parameters
