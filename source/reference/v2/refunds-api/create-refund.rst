@@ -23,8 +23,9 @@ Refunds support descriptions, which we will show in the Dashboard, your exports 
 If you have insufficient balance with Mollie to perform the refund, the refund will be ``queued``. We will automatically
 process the refund once your balance increases.
 
-Any payments created for Orders can also be refunded using the Payment Refunds API. However, we recommend using the Order
-Refund API in those cases so you can pass the order lines you are refunding too.
+Any payments created for Orders can also be refunded using the Payment Refunds API. However, we recommend using the
+:doc:`Order Refund API </reference/v2/orders-api/create-order-refund>` in those cases so you can pass the order lines
+you are refunding too. For pay after delivery methods, this is mandatory.
 
 Possible errors
 ---------------
@@ -103,7 +104,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-A refund object is returned, as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
+A refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
 Example
 -------

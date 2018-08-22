@@ -1,5 +1,6 @@
-Get refund
-==========
+Get payment refund
+==================
+
 .. api-name:: Refunds API
    :version: 2
 
