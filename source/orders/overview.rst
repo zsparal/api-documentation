@@ -5,8 +5,8 @@ Orders API
    This API is currently in private beta. If you are interested in participating, please contact your account manager at
    Mollie.
 
-The **Orders API** allows you to use Mollie for your order management. Some payment methods, such as Klarna Pay later
-require the Orders API and cannot be used with the :doc:`Payments API </payments/overview>`.
+The **Orders API** allows you to use Mollie for your order management. *Pay after delivery* payment methods, such as
+Klarna Pay later require the Orders API and cannot be used with the :doc:`Payments API </payments/overview>`.
 
 How does the Orders API work?
 -----------------------------
@@ -30,7 +30,8 @@ How does the Orders API work?
    You should ship the order within 28 days.
 
 #. If there are some lines in the order you will not ship, you can cancel them using the
-   :doc:`Cancel Order line API </reference/v2/orders-api/cancel-order-line>`.
+   :doc:`Cancel Order line API </reference/v2/orders-api/cancel-order-line>` if they are ``authorized`` or you can
+   :doc:`create refunds </reference/v2/orders-api/create-order-refund>` if the lines are already ``paid``.
 
 Order expiry
 ------------
