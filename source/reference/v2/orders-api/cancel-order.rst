@@ -71,6 +71,7 @@ Response
             "currency": "EUR"
         },
         "status": "canceled",
+        "isCancelable": false,
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
         "mode": "live",
@@ -105,6 +106,7 @@ Response
                 "sku": "5702016116977",
                 "type": "physical",
                 "status": "canceled",
+                "isCancelable": false,
                 "quantity": 2,
                 "unitPrice": {
                     "value": "399.00",
@@ -141,6 +143,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "canceled",
+                "isCancelable": false,
                 "quantity": 1,
                 "unitPrice": {
                     "value": "329.99",
