@@ -53,22 +53,22 @@
 	<ul>
 		{{ sidebar_item(
 			'reference/v2/refunds-api/create-refund',
-			'Create refund',
+			'Create payment refund',
 			'POST /v2/payments/*/refunds'
 		) }}
 		{{ sidebar_item(
 			'reference/v2/refunds-api/get-refund',
-			'Get refund',
+			'Get payment refund',
 			'GET /v2/payments/*/refunds/*'
 		) }}
 		{{ sidebar_item(
 			'reference/v2/refunds-api/cancel-refund',
-			'Cancel refund',
+			'Cancel payment refund',
 			'DELETE /v2/payments/*/refunds/*'
 		) }}
 		{{ sidebar_item(
 			'reference/v2/refunds-api/list-refunds',
-			'List refunds',
+			'List payment refunds',
 			'GET /v2/refunds'
 		) }}
 	</ul>
@@ -122,6 +122,11 @@
 			'Cancel order line',
 			'DELETE /v2/orders/*/lines/*'
 		) }}
+		{{ sidebar_item(
+			'reference/v2/orders-api/create-order-refund',
+			'Create order refund',
+			'POST /v2/orders/*/refunds/*'
+		) }}
 	</ul>
 </div>
 
@@ -130,19 +135,19 @@
 
 	<ul>
 		{{ sidebar_item(
-		'reference/v2/shipments-api/create-shipment',
-		'Create shipment',
-		'POST /v2/orders/*/shipments'
+			'reference/v2/shipments-api/create-shipment',
+			'Create shipment',
+			'POST /v2/orders/*/shipments'
 		) }}
 		{{ sidebar_item(
-		'reference/v2/shipments-api/get-shipment',
-		'Get shipment',
-		'GET /v2/orders/*/shipment/*'
+			'reference/v2/shipments-api/get-shipment',
+			'Get shipment',
+			'GET /v2/orders/*/shipment/*'
 		) }}
 		{{ sidebar_item(
-		'reference/v2/shipments-api/list-shipments',
-		'List shipments',
-		'GET /v2/orders/*/shipments'
+			'reference/v2/shipments-api/list-shipments',
+			'List shipments',
+			'GET /v2/orders/*/shipments'
 		) }}
 	</ul>
 </div>
