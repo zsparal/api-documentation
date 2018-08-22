@@ -15,9 +15,9 @@ The order can only be canceled while the order's ``status`` field is either ``cr
 
 #. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
 #. In case of ``authorized``, the authorization will be released, all order lines will be canceled and the new order
-   status will be ``void``.
-#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled. The new order status will be
-   ``completed``.
+   status will be ``canceled``.
+#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled and order lines that are ``shipping``
+   will be completed. The new order status will be ``completed``.
 
 For more information about the status transitions please check our :doc:`order status changes guide </orders/status-changes>`.
 

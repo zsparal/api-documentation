@@ -18,9 +18,9 @@ Cancel order line
 An order line can only be canceled while its ``status`` field is either ``created`` or ``authorized``. You should
 cancel an order line if you don't intend to ship it.
 
-If the order line is ``paid`` or already ``shipped``, you should create a refund instead.
+If the order line is ``paid`` or already ``completed``, you should create a refund instead.
 
-For more information about the status transitions please check our <link to guide here>.
+For more information about the status transitions please check our :doc:`order status changes guide </orders/status-changes>`.
 
 Parameters
 ----------

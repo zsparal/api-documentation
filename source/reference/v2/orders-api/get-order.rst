@@ -109,7 +109,7 @@ Response
        * ``refunded``
        * ``shipping``
        * ``completed``
-       * ``void``
+       * ``expired``
 
        See :doc:`Order status changes </orders/status-changes>` for details on the orders' statuses.
 
@@ -244,10 +244,10 @@ The order lines contain the actual things the your customer bought.
        * ``created``
        * ``authorized``
        * ``paid``
+       * ``shipping``
        * ``canceled``
        * ``refunded``
-       * ``shipped``
-       * ``void``
+       * ``completed``
 
    * - ``quantity``
 
