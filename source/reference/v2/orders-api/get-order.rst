@@ -113,6 +113,12 @@ Response
 
        See :doc:`Order status changes </orders/status-changes>` for details on the orders' statuses.
 
+   * - ``isCancelable``
+
+       .. type:: boolean
+
+     - Whether or not the order can be (partially) canceled.
+
    * - ``billingAddress``
 
        .. type:: object
@@ -248,6 +254,12 @@ The order lines contain the actual things the your customer bought.
        * ``canceled``
        * ``refunded``
        * ``completed``
+
+   * - ``isCancelable``
+
+       .. type:: boolean
+
+     - Whether or not the order line can be (partially) canceled.
 
    * - ``quantity``
 
@@ -402,6 +414,7 @@ Response
             "currency": "EUR"
         },
         "status": "created",
+        "isCancelable": true,
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
         "mode": "live",
@@ -436,6 +449,7 @@ Response
                 "sku": "5702016116977",
                 "type": "physical",
                 "status": "created",
+                "isCancelable": true,
                 "quantity": 2,
                 "unitPrice": {
                     "value": "399.00",
@@ -466,6 +480,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "created",
+                "isCancelable": true,
                 "quantity": 1,
                 "unitPrice": {
                     "value": "329.99",
