@@ -155,7 +155,7 @@ Response
                            "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                            "sku": "5702016116977",
                            "type": "physical",
-                           "status": "shipping",
+                           "status": "refunded",
                            "quantity": 2,
                            "unitPrice": {
                                "value": "399.00",
