@@ -124,11 +124,17 @@ Response
        * ``refunded`` The refund has been paid out to your customer.
        * ``failed`` The refund has failed during processing.
 
-   * - ``createdAt``
+   * - ``lines``
 
-       .. type:: datetime
+       .. type:: array
+          :required: false
 
-     - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - An array of :ref:`order line objects<order-lines-details>` as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
+
+       The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` refunded. If the line
+       was partially refunded, these values will be different from the values in response from the Get order API.
+
+       Only available if the refund was created via the :doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>`.
 
    * - ``paymentId``
 
@@ -146,6 +152,13 @@ Response
        the refund was not created for an order.
 
        The full order object can be retrieved via the ``order`` URL in the ``_links`` object.
+
+
+   * - ``createdAt``
+
+       .. type:: datetime
+
+     - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 
