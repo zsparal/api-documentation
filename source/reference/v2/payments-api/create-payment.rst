@@ -335,10 +335,11 @@ Gift cards
        .. type:: string
           :required: false
 
-     - The gift card brand to use for the payment. These issuers are not dynamically available through the
-       Issuers API, but can be retrieved by using the ``issuers`` include in the Methods API. If you need a brand not in
-       the list, contact our support department. If only one issuer is activated on your account, you can omit this
-       parameter.
+     - The gift card brand to use for the payment. These issuers can be retrieved by using
+       the ``issuers`` :ref:`include in the Methods API <method-includes>`. If you need a brand not in the list, contact
+       our support department. We can also support closed-loop cards.
+
+       If only one issuer is activated on your account, you can omit this parameter.
 
        Possible values: ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
        ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift``
@@ -369,7 +370,7 @@ iDEAL
 
      - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
        specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
-       :doc:`Methods API </reference/v2/methods-api/get-method>` by using the optional ``issuers`` include.
+       :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 
 KBC/CBC Payment Button
 """"""""""""""""""""""
@@ -389,7 +390,7 @@ KBC/CBC Payment Button
           :required: false
 
      - The issuer to use for the KBC/CBC payment.The full list of issuers can be retrieved via the
-       :doc:`Methods API </reference/v2/methods-api/get-method>` by using the optional ``issuers`` include.
+       :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 
        Possible values: ``kbc`` ``cbc``
 

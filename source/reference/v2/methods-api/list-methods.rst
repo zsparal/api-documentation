@@ -20,7 +20,7 @@ Retrieve all available payment methods. The results are not paginated.
 When using the ``first`` sequence type, methods will be returned if they can be used as a first payment in a recurring
 sequence and if they are enabled in the Dashboard.
 
-When using the ``recurring`` sequence type, methods that can be used for recurring payments or subscriptions will be
+When using the ``recurring`` sequence type, payment methods that can be used for recurring payments or subscriptions will be
 returned. Enabling / disabling methods in the dashboard does not affect how they can be used for recurring payments.
 
 Parameters
@@ -35,7 +35,7 @@ Parameters
 
      - Passing ``first`` will only show payment methods eligible for making a first payment. Passing
        ``recurring`` shows payment methods which can be used to automatically charge your customer's account when
-       authorization has been given. Set to ``oneoff`` by default, which indicates the method is available for a
+       authorization has been given. Set to ``oneoff`` by default, which indicates the payment method is available for a
        regular non-recurring payment.
 
        Possible values: ``oneoff`` ``first`` ``recurring``
@@ -57,7 +57,7 @@ Parameters
        .. type:: amount object
           :required: false
 
-     - An object containing ``value`` and ``currency``. Only methods that support the amount and currency
+     - An object containing ``value`` and ``currency``. Only payment methods that support the amount and currency
        are returned.
 
        Example: ``https://api.mollie.com/v2/methods?amount[value]=100.00&amount[currency]=USD``
@@ -71,8 +71,8 @@ Parameters
        :doc:`Create Order </reference/v2/orders-api/create-order>` or :doc:`Create
        Payment </reference/v2/payments-api/create-payment>` API.
 
-       For example: when passing ``orders`` the methods will include methods that can only be used in conjunction with
-       orders, such as ``Klarna Pay later``. Default behaviour is returning all available payment methods for
+       For example: when passing ``orders`` the result will include payment methods that can only be used in conjunction
+       with orders, such as *Klarna Pay later*. Default behaviour is returning all available payment methods for
        ``payments``.
 
        Possible values: ``orders`` ``payments``.
@@ -91,7 +91,7 @@ Parameters
 Mollie Connect/OAuth parameters
 -------------------------------
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following parameters are also
-available. With the ``profileId`` parameter, you must specify which profile you want to look at when listing methods.
+available. With the ``profileId`` parameter, you must specify which profile you want to look at when listing payment methods.
 Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
@@ -110,14 +110,14 @@ Organizations can have multiple profiles for each of their websites. See
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to list all methods available in testmode.
+     - Set this to ``true`` to list all payment methods available in testmode.
 
 Includes
 --------
 This endpoint allows you to include additional information by appending the following values via the ``include``
 querystring parameter.
 
-* ``issuers`` Include issuer details such as which iDeal issuers are available.
+* ``issuers`` Include issuer details such as which iDEAL or gift card issuers are available.
 
 Response
 --------
@@ -130,7 +130,7 @@ Response
 
        .. type:: integer
 
-     - The number of methods found in ``_embedded``.
+     - The number of payment methods found in ``_embedded``.
 
    * - ``_embedded``
 
@@ -151,7 +151,7 @@ Response
 
        .. type:: object
 
-     - Links related to the lists of methods. Every URL object will contain an ``href`` and a ``type``
+     - Links related to the lists of payment methods. Every URL object will contain an ``href`` and a ``type``
        field.
 
        .. list-table::
@@ -167,7 +167,7 @@ Response
 
               .. type:: object
 
-            - The URL to the methods list endpoint documentation.
+            - The URL to the List payment methods endpoint documentation.
 
 Example
 -------

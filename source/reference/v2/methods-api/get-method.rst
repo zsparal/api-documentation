@@ -60,6 +60,8 @@ Organizations can have multiple profiles for each of their websites. See
 
      - Set this to ``true`` to list all methods available in testmode.
 
+.. _method-includes:
+
 Includes
 ^^^^^^^^
 This endpoint allows you to include additional information by appending the following values via the ``include``
