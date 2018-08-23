@@ -166,6 +166,19 @@ Response
 
      - The order's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+   * - ``expiresAt``
+
+       .. type:: datetime
+          :required: false
+
+     - The date and time the order will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Note
+       that you have until this date to fully ship the order.
+
+       For some payment methods, such as Klarna Pay later. this means that you will lose the authorization and not be
+       settled for the amounts of the unshipped order lines.
+
+       The expiry period for orders is 28 days.
+
    * - ``_links``
 
        .. type:: object
@@ -417,6 +430,7 @@ Response
         "isCancelable": true,
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
+        "expiresAt": "2018-08-30T09:29:56+00:00",
         "mode": "live",
         "locale": "nl_NL",
         "orderNumber": "18475",
