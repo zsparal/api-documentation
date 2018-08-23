@@ -103,6 +103,7 @@ Response
    * - ``paidAt``
 
        .. type:: datetime
+          :required: false
 
      - The date and time the payment became paid, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not completed (yet).
@@ -110,6 +111,7 @@ Response
    * - ``canceledAt``
 
        .. type:: datetime
+          :required: false
 
      - The date and time the payment was canceled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment is not canceled (yet).
@@ -123,6 +125,7 @@ Response
    * - ``expiredAt``
 
        .. type:: datetime
+          :required: false
 
      - The date and time the payment was expired, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format. This parameter is omitted if the payment did not expire (yet).
@@ -130,6 +133,7 @@ Response
    * - ``failedAt``
 
        .. type:: datetime
+          :required: false
 
      - The date and time the payment failed, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        This parameter is omitted if the payment did not fail (yet).
@@ -158,6 +162,7 @@ Response
    * - ``amountRefunded``
 
        .. type:: amount object
+          :required: false
 
      - The total amount that is already refunded. Only available when refunds are available for this payment.
        For some payment methods, this amount may be higher than the payment amount, for example to allow reimbursement
@@ -181,6 +186,7 @@ Response
    * - ``amountRemaining``
 
        .. type:: amount object
+          :required: false
 
      - The remaining amount that can be refunded. Only available when refunds are available for this payment.
 
@@ -262,7 +268,8 @@ Response
 
    * - ``settlementAmount``
 
-       .. type:: amount object|null
+       .. type:: amount object
+          :required: false
 
      -   This optional field will contain the amount that will be settled to your account, converted to the currency
          your account is settled in. It follows the same syntax as the ``amount`` property.
@@ -272,12 +279,14 @@ Response
    * - ``settlementId``
 
        .. type:: string
+          :required: false
 
      - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``.
 
    * - ``customerId``
 
        .. type:: string
+          :required: false
 
      - If a customer was specified upon payment creation, the customer's token will be available here as well. For
        example, ``cst_XPn78q9CfT``.
@@ -298,6 +307,7 @@ Response
    * - ``mandateId``
 
        .. type:: string
+          :required: false
 
      - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
        the recurring payment.
@@ -305,13 +315,22 @@ Response
    * - ``subscriptionId``
 
        .. type:: string
+          :required: false
 
      - When implementing the Subscriptions API, any recurring charges resulting from the subscription will
        hold the ID of the subscription that triggered the payment.
 
+   * - ``orderId``
+
+       .. type:: string
+          :required: false
+
+     - If the payment was created for an order, the ID of that order will be part of the response.
+
    * - ``applicationFee``
 
        .. type:: object
+          :required: false
 
      - The :doc:`application fee </oauth/application-fees>`, if the payment was created with one.
 
@@ -377,18 +396,21 @@ Response
           * - ``refunds``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the refunds that belong to this payment.
 
           * - ``chargebacks``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the chargebacks that belong to this payment.
 
           * - ``settlement``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
@@ -401,12 +423,14 @@ Response
           * - ``mandate``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the mandate linked to this payment. Not present if a one-off payment.
 
           * - ``subscription``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the subscription this payment is part of. Not present if not a subscription
               payment.
@@ -414,8 +438,16 @@ Response
           * - ``customer``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the customer this payment belongs to. Not present if not linked to a customer.
+
+          * - ``order``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the order this payment was created for. Not present if not created for an order.
 
 Payment method specific details
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
