@@ -121,7 +121,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website.
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``paypal`` ``paysafecard`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
+       ``paysafecard`` ``sofort``
 
    * - ``payment``
 
