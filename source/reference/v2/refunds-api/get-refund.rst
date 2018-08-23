@@ -1,5 +1,6 @@
-Get refund
-==========
+Get payment refund
+==================
+
 .. api-name:: Refunds API
    :version: 2
 
@@ -14,7 +15,7 @@ Get refund
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
 
 If you do not know the original payment's ID, you can use the
-:doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint.
+:doc:`List payment refunds </reference/v2/refunds-api/list-refunds>` endpoint.
 
 Parameters
 ----------
@@ -71,7 +72,8 @@ Response
 
    * - ``settlementAmount``
 
-       .. type:: amount object|null
+       .. type:: amount object
+          :required: false
 
      -   This optional field will contain the amount that will be deducted from your account balance, converted to the
          currency your account is settled in. It follows the same syntax as the ``amount`` property.
@@ -79,6 +81,8 @@ Response
          Note that for refunds, the ``value`` key of ``settlementAmount`` will be negative.
 
          Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal refunds.
+
+         Queued refunds in non EUR currencies will not have a settlement amount until they become ``pending``.
 
          .. list-table::
             :widths: auto
@@ -120,11 +124,17 @@ Response
        * ``refunded`` The refund has been paid out to your customer.
        * ``failed`` The refund has failed during processing.
 
-   * - ``createdAt``
+   * - ``lines``
 
-       .. type:: datetime
+       .. type:: array
+          :required: false
 
-     - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - An array of :ref:`order line objects<order-lines-details>` as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
+
+       The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` refunded. If the line
+       was partially refunded, these values will be different from the values in response from the Get order API.
+
+       Only available if the refund was created via the :doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>`.
 
    * - ``paymentId``
 
@@ -132,6 +142,23 @@ Response
 
      - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
        payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
+
+   * - ``orderId``
+
+       .. type:: string
+          :required: false
+
+     - The unique identifier of the order this refund was created for. For example: ``ord_8wmqcHMN4U``. Not present if
+       the refund was not created for an order.
+
+       The full order object can be retrieved via the ``order`` URL in the ``_links`` object.
+
+
+   * - ``createdAt``
+
+       .. type:: datetime
+
+     - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 
@@ -158,8 +185,17 @@ Response
           * - ``settlement``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
+
+          * - ``order``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the order the refund belongs to. Not present if the refund does not belong to an
+              order.
 
           * - ``documentation``
 

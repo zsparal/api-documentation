@@ -1,35 +1,26 @@
-List payment refunds
+List order refunds
 ====================
 
-.. api-name:: Refunds API
+.. api-name:: Orders API
    :version: 2
 
-.. endpoint::
-   :method: GET
-   :url: https://api.mollie.com/v2/refunds
+.. warning::
+   This API is currently in private beta. If you are interested in participating, please contact your account manager at
+   Mollie.
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/payments/*paymentId*/refunds
+   :url: https://api.mollie.com/v2/order/*orderId*/refunds
 
 .. authentication::
    :api_keys: true
    :oauth: true
 
-Retrieve refunds.
-
-* If the payment-specific endpoint is used, only refunds for that specific payment are returned.
-* When using the top level endpoint ``v2/refunds`` with an API key, only refunds for the corresponding website profile and mode are
-  returned.
-* When using the top level endpoint with OAuth, you can specify the profile and mode with the ``profileId`` and
-  ``testmode`` parameters respectively. If you omit ``profileId``, you will get all refunds for the organization.
-
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+Retrieve order refunds. The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
-When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
-``tr_7UhSN1zuXS``.
+Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbjz8x``.
 
 .. list-table::
    :widths: auto
@@ -48,30 +39,6 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
           :required: false
 
      - The number of refunds to return (with a maximum of 250).
-
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following parameters are also
-available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing refunds.
-If you omit the ``profileId`` parameter, you will get all refunds on the organization.
-
-.. list-table::
-   :widths: auto
-
-   * - ``profileId``
-
-       .. type:: string
-          :required: false
-
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to true to only retrieve refunds made in test mode. By default, only live payments are
-       returned.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -141,7 +108,7 @@ Response
 
               .. type:: object
 
-            - The URL to the List payment refunds endpoint documentation.
+            - The URL to the List order refunds endpoint documentation.
 
 Example
 -------
@@ -151,18 +118,8 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
+   curl -X GET https://api.mollie.com/v2/orders/ord_pbjz8x/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $refunds = $mollie->payments->get("tr_WDqYK6vllg")->refunds();
 
 Response
 ^^^^^^^^
@@ -173,7 +130,7 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "count": 5,
+       "count": 1,
        "_embedded": {
            "refunds": [
                {
@@ -181,12 +138,45 @@ Response
                    "id": "re_4qqhO89gsT",
                    "amount": {
                        "currency": "EUR",
-                       "value": "5.95"
+                       "value": "698.00"
                    },
-                   "status": "pending",
+                   "status": "processing",
                    "createdAt": "2018-03-14T17:09:02.0Z",
-                   "description": "Order",
+                   "description": "Item not in stock, refunding",
                    "paymentId": "tr_WDqYK6vllg",
+                   "orderId": "ord_pbjz8x",
+                   "lines": [
+                       {
+                           "resource": "orderline",
+                           "id": "odl_dgtxyl",
+                           "orderId": "ord_pbjz8x",
+                           "name": "LEGO 42083 Bugatti Chiron",
+                           "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                           "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                           "sku": "5702016116977",
+                           "type": "physical",
+                           "status": "refunded",
+                           "quantity": 2,
+                           "unitPrice": {
+                               "value": "399.00",
+                               "currency": "EUR"
+                           },
+                           "vatRate": "21.00",
+                           "vatAmount": {
+                               "value": "121.14",
+                               "currency": "EUR"
+                           },
+                           "discountAmount": {
+                               "value": "100.00",
+                               "currency": "EUR"
+                           },
+                           "totalAmount": {
+                               "value": "698.00",
+                               "currency": "EUR"
+                           },
+                           "createdAt": "2018-08-02T09:29:56+00:00"
+                       }
+                   ],
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT",
@@ -196,14 +186,16 @@ Response
                            "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
                            "type": "application/hal+json"
                        },
+                       "order": {
+                           "href": "https://api.mollie.com/v2/orders/ord_pbjz8x",
+                           "type": "application/hal+json"
+                       },
                        "documentation": {
                            "href": "https://docs.mollie.com/reference/v2/refunds-api/get-refund",
                            "type": "text/html"
                        }
                    }
-               },
-               { },
-               { }
+               }
            ]
        },
        "_links": {
@@ -217,7 +209,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/refunds-api/list-refunds",
+               "href": "https://docs.mollie.com/reference/v2/orders-api/list-order-refunds",
                "type": "text/html"
            }
        }

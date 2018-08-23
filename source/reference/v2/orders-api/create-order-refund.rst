@@ -20,7 +20,7 @@ When using the Orders API, refunds should be made against the order. When using 
 as Klarna Pay later, this ensures that your customer will receive credit invoices with the correct product information on
 them.
 
-If the order line is still in the ``authorized`` status, it cannot be refunded. You should
+If an order line is still in the ``authorized`` status, it cannot be refunded. You should
 :doc:`cancel it instead </reference/v2/orders-api/cancel-order-line>`. Order lines that are ``paid``, ``shipping`` or
 ``completed`` can be refunded.
 
@@ -76,7 +76,7 @@ Response
 --------
 ``201`` ``application/hal+json; charset=utf-8``
 
-An refund object is returned, as described in :doc:`Get refund </reference/v2/refunds-api/get-refund>`.
+An refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
 Example
 -------
