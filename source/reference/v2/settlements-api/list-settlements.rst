@@ -20,22 +20,14 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - ``reference``
+   * - ``from``
 
        .. type:: string
           :required: false
 
-     - Use this parameter to filter for a settlement with a specific reference. The reference is visible on
-       your bank statement and in emails. An example reference would be ``1182161.1506.02``.
+     - Offset the result set to the settlement with this ID. The settlement with this ID is included in the result set as well.
 
-   * - ``offset``
-
-       .. type:: integer
-          :required: false
-
-     - The number of settlements to skip.
-
-   * - ``count``
+   * - ``limit``
 
        .. type:: integer
           :required: false
