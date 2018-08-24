@@ -18,7 +18,7 @@ Parameters
 Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
 
 This endpoint is an alias of the :doc:`List chargebacks </reference/v2/chargebacks-api/list-chargebacks>` endpoint. All
-parameters for that endpoint can be used here as well.
+parameters for that endpoint can be used here as well.
 
 Response
 --------
