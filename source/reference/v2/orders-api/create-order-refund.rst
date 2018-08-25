@@ -97,3 +97,26 @@ Request (curl)
             ],
             "description": "Required quantity not in stock, refunding one photo book."
        }'
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+     $order = $mollie->orders->get("ord_stTC2WHAuS");
+     $order->refund([
+        'lines' => [
+            'id' => 'odl_dgtxyl',
+            'quantity' => 1,
+        ],
+        "description": "Required quantity not in stock, refunding one photo book.",
+    ]);
+
+    // Alternative shorthand for refunding all eligible order lines
+    $order->refundAll([
+      "description": "Required quantity not in stock, refunding one photo book.",
+    ]);
