@@ -52,7 +52,7 @@ Parameters
             - The number of items that should be shipped for this order line. When this parameter is omitted, the
               whole order line will be shipped.
 
-              Must be less than the number of items already shipped for this order line. 
+              Must be less than the number of items already shipped for this order line.
 
               .. note:: At the moment, it is not possible to partially ship an order line if it has a discount.
 
@@ -135,3 +135,44 @@ Request (curl)
                 "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
             },
         }'
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+
+     $order = $mollie->orders->get('ord_kEn1PlbGa');
+     $shipment = $order->createShipment(
+        [
+          'lines' => [
+            [
+              'id' => 'odl_dgtxyl',
+              'quantity' => 1, // you can set the quantity if not all is shipped at once
+            ],
+            [
+              'id' => 'odl_jp31jz',
+              // assume all is shipped if no quantity is specified
+            ],
+          ],
+          [
+            'tracking' => [
+              'carrier' => 'PostNL',
+              'code' => '3SKABA000000000',
+              'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+            ],
+          ],
+        ]
+    );
+
+    // Alternative shorthand for shipping all remaining order lines
+    $shipment = $order->shipAll([
+      'tracking' => [
+        'carrier' => 'PostNL',
+        'code' => '3SKABA000000000',
+        'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+      ],
+    ]);

@@ -46,6 +46,16 @@ Request (curl)
    curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+     $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
+
 Response
 ^^^^^^^^
 .. code-block:: http
