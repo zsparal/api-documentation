@@ -180,7 +180,7 @@ Response
                    ],
                    "_links": {
                        "self": {
-                            "href": "https://api.mollie.com/v2/invoice/inv_xBEbP9rvAq",
+                            "href": "https://api.mollie.com/v2/invoices/inv_xBEbP9rvAq",
                             "type": "application/hal+json"
                        },
                        "pdf": {

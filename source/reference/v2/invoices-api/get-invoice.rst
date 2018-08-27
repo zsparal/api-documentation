@@ -236,7 +236,7 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-       curl -X GET "https://api.mollie.com/v2/invoice/inv_xBEbP9rvAq" \
+       curl -X GET "https://api.mollie.com/v2/invoices/inv_xBEbP9rvAq" \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Request (PHP)
@@ -291,7 +291,7 @@ Response
        ],
        "_links": {
            "self": {
-                "href": "https://api.mollie.com/v2/invoice/inv_xBEbP9rvAq",
+                "href": "https://api.mollie.com/v2/invoices/inv_xBEbP9rvAq",
                 "type": "application/hal+json"
            },
            "pdf": {
