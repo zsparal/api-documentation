@@ -92,9 +92,17 @@ Parameters
    * - ``webhookUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - Set the webhook URL, where we will send :doc:`order status updates </orders/status-changes>` to.
+     - Set the webhook URL, where we will send :doc:`order status changes </orders/status-changes>` to.
+
+       .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important
+          :doc:`status changes </orders/status-changes>` to your order.
+
+          The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
+          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+          delivered to your local machine.
 
    * - ``locale``
 

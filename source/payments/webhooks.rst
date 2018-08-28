@@ -1,10 +1,10 @@
-Webhooks
-========
+Payment Webhooks
+================
 
 Process realtime status updates
 -------------------------------
 A webhook is a URL Mollie will call when an object's status changes, for example when a payment changes from ``open`` to
-``paid``. You should put a script behind this URL that – when it's called –
+``paid``. You should put a script behind this URL that – when it is called –
 :doc:`fetches the payment status </reference/v2/payments-api/get-payment>` and processes it if its status has changed.
 
 In the example case of a payment changing to ``paid``, you should mark the order belonging to the payment as paid
@@ -63,8 +63,8 @@ after your hosting service has been restored.
 Our webhook calls time out after 15 seconds. Even if you return a ``200 OK`` HTTP status after 16 seconds, we will mark
 the webhook call as failed and try again later.
 
-In total we will call your webhook 10 times with an increasing interval. If after the 10th call we still don't get a
-``200 OK`` response, we will stop trying.
+In total we will call your webhook 10 times with an increasing interval. If after the 10\ :sup:`th` call we still do not
+get a ``200 OK`` response, we will stop trying.
 
 Example
 -------

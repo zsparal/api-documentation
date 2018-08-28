@@ -98,6 +98,15 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
      - Use this parameter to set a webhook URL for all subscription payments.
 
+
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
+          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+          delivered to your local machine.
+
+       .. warning:: The ``webhookUrl`` is optional, but without a webhook you will not be informed when new payments
+          are created on your subscription.
+
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the

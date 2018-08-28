@@ -17,7 +17,7 @@ Once you have created a payment, you should redirect your customer to the URL in
 the response.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:doc:`Overview </payments/overview>`.
+:doc:`Payments API Overview </payments/overview>`.
 
 .. note::
    :ref:`Optional parameters<payment-method-specific-parameters>` are accepted for certain payment methods.
@@ -82,11 +82,14 @@ Parameters
    * - ``webhookUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - Set the webhook URL, where we will send payment status updates to.
 
-       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+       .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important
+          :doc:`status changes </payments/webhooks>` to your payment.
+
+          The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
           you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.

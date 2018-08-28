@@ -85,4 +85,4 @@ Expiry times per payment method
 
 .. [#f1] Payments made by bank transfer are done manually by your customer. Some days can pass before it becomes clear
          the payment has been paid. That's why the payment method ``banktransfer`` will by default not expire until 12
-         days have passed. One or two days can be added when the 12th day is a Saturday or Sunday.
+         days have passed. One or two days can be added when the 12\ :sup:`th` day is a Saturday or Sunday.
