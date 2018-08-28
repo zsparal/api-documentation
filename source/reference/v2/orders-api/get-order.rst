@@ -401,6 +401,16 @@ Request (curl)
 
 .. _get-order-response:
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+     $order = $mollie->orders->get("ord_kEn1PlbGa");
+
 Response
 ^^^^^^^^
 .. code-block:: http

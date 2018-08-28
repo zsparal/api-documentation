@@ -121,6 +121,18 @@ Request (curl)
    curl -X GET https://api.mollie.com/v2/orders/ord_pbjz8x/refunds \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+     $order = $mollie->orders->get("ord_stTC2WHAuS");
+     $refunds = $order->refunds();
+
 Response
 ^^^^^^^^
 .. code-block:: http

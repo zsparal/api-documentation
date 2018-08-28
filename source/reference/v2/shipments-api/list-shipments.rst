@@ -99,6 +99,18 @@ Request (curl)
    curl -X GET https://api.mollie.com/v2/order/ord_kEn1PlbGa/shipments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+
+     $order = $mollie->orders->get('ord_kEn1PlbGa');
+     $shipments = $order->shipments();
+
 Response
 ^^^^^^^^
 .. code-block:: http
