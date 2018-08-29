@@ -58,7 +58,7 @@ The following diagram shows how one order status leads to another:
 ^^^^^^^^^^^^^^
     If the order's payment is successfully completed with a payment method that does support authorizations, the order
     is set to this status. The money will only be transferred once a shipment is created for the order. Currently only
-    Klarna Pay Later uses this status.
+    *Klarna Pay later* and *Klarna Slice it* use this status.
 
     * Mollie will call your webhook when the order reaches this state.
     * Order lines can be in the state ``authorized`` or ``canceled``. Not all lines are ``canceled``.
@@ -156,7 +156,7 @@ The following diagram shows how one order line status leads to another:
 ^^^^^^^^^^^^^^
     If the order's payment is successfully completed with a payment method that does support authorizations, the order
     lines are set to this status. The money will only be transferred once a shipment is created for the order line.
-    Currently only Klarna Pay Later uses this status.
+    Currently only *Klarna Pay later* and *Klarna Slice it* use this status.
 
     * The order has status ``authorized`` or ``shipping``.
     * Can transition to: ``shipping`` or ``canceled``.
