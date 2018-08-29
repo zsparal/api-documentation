@@ -165,7 +165,7 @@ Response
    {
         "resource": "capture",
         "id": "cpt_nkVtjNVx9",
-        "method": "ideal",
+        "mode": "live",
         "amount": {
             "value": "1027.99",
             "currency": "EUR"
@@ -176,7 +176,6 @@ Response
         },
         "shipmentId": "shp_3wmsgCJN4U",
         "createdAt": "2018-08-02T09:29:56+00:00",
-        "mode": "live",
         "_links": {
             "self": {
                 "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_nkVtjNVx9",
