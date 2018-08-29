@@ -16,7 +16,7 @@ Create order
    :oauth: true
 
 Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
-webshops. If you want to use *pay after delivery* methods such as Klarna Pay later, using the Orders API is mandatory.
+webshops. If you want to use *pay after delivery* methods such as *Klarna Pay later*, using the Orders API is mandatory.
 
 Creating an order will automatically create the required payment to allow your customer to pay for the order.
 
@@ -87,7 +87,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The URL the customer will be redirected to after the payment process.
+     - The URL your customer will be redirected to after the payment process.
 
    * - ``webhookUrl``
 

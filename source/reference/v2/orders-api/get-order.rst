@@ -160,6 +160,21 @@ Response
 
      - Data provided during the order creation.
 
+   * - ``redirectUrl``
+
+       .. type:: string|null
+
+     - The URL your customer will be redirected to after completing or canceling the payment process.
+
+       .. note:: The URL will be ``null`` for recurring orders.
+
+   * - ``webhookUrl``
+
+       .. type:: string
+          :required: false
+
+     - The URL Mollie will call as soon an important status change on the order takes place.
+
    * - ``createdAt``
 
        .. type:: datetime
@@ -179,6 +194,41 @@ Response
 
        The expiry period for orders is 28 days.
 
+   * - ``expiredAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order is expired, the time of expiration will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``paidAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been paid, the time of payment will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``authorizedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been authorized, the time of authorization will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``canceledAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been canceled, the time of cancellation will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``completedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order is completed, the time of completion will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
    * - ``_links``
 
        .. type:: object
@@ -193,11 +243,12 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the customer itself.
+            - The API resource URL of the order itself.
 
           * - ``checkout``
 
               .. type:: URL object
+                 :required: false
 
             - The URL your customer should visit to make the payment for the order. This is where you should redirect
               the customer to after creating the order.
@@ -206,7 +257,7 @@ Response
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Orders with recurring payments don't have a checkout URL.
+              Recurring orders do not have a checkout URL.
 
           * - ``documentation``
 
