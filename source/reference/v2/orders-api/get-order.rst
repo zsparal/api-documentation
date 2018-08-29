@@ -160,6 +160,21 @@ Response
 
      - Data provided during the order creation.
 
+   * - ``redirectUrl``
+
+       .. type:: string|null
+
+     - The URL your customer will be redirected to after completing or canceling the payment process.
+
+       .. note:: The URL will be ``null`` for recurring orders.
+
+   * - ``webhookUrl``
+
+       .. type:: string
+          :required: false
+
+     - The URL Mollie will call as soon an important status change on the order takes place.
+
    * - ``createdAt``
 
        .. type:: datetime
@@ -193,11 +208,12 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the customer itself.
+            - The API resource URL of the order itself.
 
           * - ``checkout``
 
               .. type:: URL object
+                 :required: false
 
             - The URL your customer should visit to make the payment for the order. This is where you should redirect
               the customer to after creating the order.
@@ -206,7 +222,7 @@ Response
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Orders with recurring payments don't have a checkout URL.
+              Recurring orders do not have a checkout URL.
 
           * - ``documentation``
 

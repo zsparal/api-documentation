@@ -287,6 +287,7 @@ Response
           * - ``paymentUrl``
 
               .. type:: string
+                 :required: false
 
             - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to.
@@ -300,32 +301,36 @@ Response
           * - ``webhookUrl``
 
               .. type:: string
+                 :required: false
 
             - The URL Mollie will call as soon an important status change takes place.
 
           * - ``redirectUrl``
 
-              .. type:: string
+              .. type:: string|null
 
-            - The URL the customer will be redirected to after completing or cancelling the payment process.
+            - The URL your customer will be redirected to after completing or canceling the payment process.
 
-              Note the URL will not be present for recurring payments.
+              .. note:: The URL will be ``null`` for recurring payments.
 
           * - ``settlement``
 
               .. type:: string
+                 :required: false
 
             - The API resource URL of the settlement this payment belongs to.
 
           * - ``refunds``
 
               .. type:: string
+                 :required: false
 
             - The API resource URL of the refunds that belong to this payment.
 
           * - ``chargebacks``
 
               .. type:: string
+                 :required: false
 
             - The API resource URL of the chargebacks that belong to this payment.
 

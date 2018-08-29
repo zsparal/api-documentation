@@ -87,7 +87,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The URL the customer will be redirected to after the payment process.
+     - The URL your customer will be redirected to after the payment process.
 
    * - ``webhookUrl``
 
