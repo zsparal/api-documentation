@@ -71,11 +71,11 @@ Permissions can be requested by redirecting the resource owner to the
 
    * - | ``orders.read``
        | Orders API
-     - View the merchant's orders.
+     - View the merchant's orders & shipments.
 
    * - | ``orders.write``
        | Orders API
-     - Manage the merchant's orders.
+     - Manage the merchant's orders & shipments.
 
    * - | ``organizations.read``
        | Organizations API
