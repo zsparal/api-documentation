@@ -214,15 +214,16 @@ Response
 
    * - ``redirectUrl``
 
-       .. type:: string
+       .. type:: string|null
 
-     - The URL the customer will be redirected to after completing or cancelling the payment process.
+     - The URL your customer will be redirected to after completing or canceling the payment process.
 
-       Note the URL will not be present for recurring payments.
+       .. note:: The URL will be ``null`` for recurring payments.
 
    * - ``webhookUrl``
 
        .. type:: string
+          :required: false
 
      - The URL Mollie will call as soon an important status change takes place.
 
