@@ -174,10 +174,45 @@ Response
      - The date and time the order will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Note
        that you have until this date to fully ship the order.
 
-       For some payment methods, such as Klarna Pay later. this means that you will lose the authorization and not be
+       For some payment methods, such as *Klarna Pay later* this means that you will lose the authorization and not be
        settled for the amounts of the unshipped order lines.
 
        The expiry period for orders is 28 days.
+
+   * - ``expiredAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order is expired, the time of expiration will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``paidAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been paid, the time of payment will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``authorizedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been authorized, the time of authorization will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``canceledAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order has been canceled, the time of cancellation will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``completedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - If the order is completed, the time of completion will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 

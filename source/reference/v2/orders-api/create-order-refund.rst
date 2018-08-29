@@ -17,7 +17,7 @@ Create order refund
 
 
 When using the Orders API, refunds should be made against the order. When using *pay after delivery* payment methods such
-as Klarna Pay later, this ensures that your customer will receive credit invoices with the correct product information on
+as *Klarna Pay later*, this ensures that your customer will receive credit invoices with the correct product information on
 them.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
