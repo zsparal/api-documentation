@@ -331,6 +331,42 @@ The order lines contain the actual things the your customer bought.
 
      - The number of items in the order line.
 
+   * - ``quantityShipped``
+
+       .. type:: int
+
+     - The number items that are shipped for this order line.
+
+   * - ``amountShipped``
+
+       .. type:: amount object
+
+     - The total amount that is shipped for this order line.
+
+   * - ``quantityRefunded``
+
+       .. type:: int
+
+     - The number items that are refunded for this order line.
+
+   * - ``amountRefunded``
+
+       .. type:: amount object
+
+     - The total amount that is refunded for this order line.
+
+   * - ``quantityCanceled``
+
+       .. type:: int
+
+     - The number items that are canceled in this order line.
+
+   * - ``amountCanceled``
+
+       .. type:: amount object
+
+     - The total amount that is canceled in this order line.
+
    * - ``unitPrice``
 
        .. type:: amount object
