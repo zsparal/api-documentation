@@ -81,27 +81,17 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify to which profile the subscription belongs. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
-
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
 
    * - ``testmode``
 
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to create a test mode subscription.
+     - Set this to ``true`` to update a test mode subscription.
 
 Response
 --------
