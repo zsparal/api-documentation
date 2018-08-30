@@ -13,6 +13,8 @@ Update subscription
 
 Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Each field is optional.
 
+You cannot update a canceled subscription. 
+
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the subscription's ID. For
