@@ -176,11 +176,11 @@ Response
         "webhookUrl": "https://example.org/webhook",
         "_links": {
             "self": {
-                "href": "http://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn",
+                "href": "https://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn",
                 "type": "application/hal+json"
             },
             "customer": {
-                "href": "http://api.mollie.com/v2/customers/cst_5a2pPrwaWy",
+                "href": "https://api.mollie.com/v2/customers/cst_5a2pPrwaWy",
                 "type": "application/hal+json"
             },
             "documentation": {

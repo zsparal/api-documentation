@@ -75,8 +75,8 @@ Response
                    "metadata": null,
                    "profileId": "pfl_D96wnsu869",
                    "links": {
-                       "refunds": "http://api.mollie.com/v1/payments/tr_2qkhcMzypH/refunds",
-                       "settlement": "http://api.mollie.com/v1/settlements/stl_QM8w7JDEhU"
+                       "refunds": "https://api.mollie.com/v1/payments/tr_2qkhcMzypH/refunds",
+                       "settlement": "https://api.mollie.com/v1/settlements/stl_QM8w7JDEhU"
                    },
                    "settlementId": "stl_QM8w7JDEhU"
                },
@@ -85,7 +85,7 @@ Response
                "refundedDatetime": "2017-01-11T15:39:53.0Z",
                "description": "Test refund 5 EU",
                "links": {
-                   "self": "http://api.mollie.com/v1/payments/tr_2qkhcMzypH/refunds/re_CkS3qkJ8Ny"
+                   "self": "https://api.mollie.com/v1/payments/tr_2qkhcMzypH/refunds/re_CkS3qkJ8Ny"
                }
            },
            { },

@@ -172,7 +172,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "order": {
-                           "href": "http://api.mollie.com/v2/orders/ord_kEn1PlbGa",
+                           "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
                            "type": "application/hal+json"
                        },
                        "documentation": {
