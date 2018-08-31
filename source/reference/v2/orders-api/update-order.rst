@@ -86,9 +86,9 @@ Request (curl)
                "postalCode": "1234AB",
                "country": "NL",
                "title": "Dhr",
-               "givenName": "Adriaan",
-               "familyName": "Mol",
-               "email": "adriaan@mollie.com",
+               "givenName": "Piet",
+               "familyName": "Mondriaan",
+               "email": "piet@mondriaan.com",
                "phone": "+31208202070"
            }
        }'
@@ -109,9 +109,9 @@ Request (PHP)
    $order->billingAddress->postalCode = "1234AB";
    $order->billingAddress->country = "NL";
    $order->billingAddress->title = "Dhr";
-   $order->billingAddress->givenName = "Adriaan";
-   $order->billingAddress->familyName = "Mol";
-   $order->billingAddress->email = "adriaan@mollie.com";
+   $order->billingAddress->givenName = "Piet";
+   $order->billingAddress->familyName = "Mondriaan";
+   $order->billingAddress->email = "piet@mondriaan.com";
    $order->billingAddress->phone = "+31208202070";
    $order->update();
 
@@ -155,9 +155,9 @@ Response
             "postalCode": "1234AB",
             "country": "NL",
             "title": "Dhr",
-            "givenName": "Adriaan",
-            "familyName": "Mol",
-            "email": "adriaan@mollie.com",
+            "givenName": "Piet",
+            "familyName": "Mondriaan",
+            "email": "piet@mondriaan.com",
             "phone": "+31208202070"
         },
         "shippingAddress": {

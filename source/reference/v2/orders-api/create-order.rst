@@ -414,9 +414,9 @@ Request (curl)
                 "postalCode": "1234AB",
                 "country": "NL",
                 "title": "Dhr",
-                "givenName": "Adriaan",
-                "familyName": "Mol",
-                "email": "adriaan@mollie.com",
+                "givenName": "Piet",
+                "familyName": "Mondriaan",
+                "email": "piet@mondriaan.com",
                 "phone": "+31208202070"
             },
             "shippingAddress": {
@@ -512,9 +512,9 @@ Request (PHP)
          "postalCode" => "1234AB",
          "country" => "NL",
          "title" => "Dhr.",
-         "givenName" => "Adriaan",
-         "familyName" => "Mol",
-         "email" => "adriaan@mollie.com",
+         "givenName" => "Piet",
+         "familyName" => "Mondriaan",
+         "email" => "piet@mondriaan.com",
          "phone" => "+31309202070",
        ],
        "shippingAddress" => [
@@ -632,9 +632,9 @@ Response
            "postalCode": "1234AB",
            "country": "NL",
            "title": "Dhr.",
-           "givenName": "Adriaan",
-           "familyName": "Mol",
-           "email": "adriaan@mollie.com",
+           "givenName": "Piet",
+           "familyName": "Mondriaan",
+           "email": "piet@mondriaan.com",
            "phone": "+31309202070"
        },
        "shippingAddress": {
