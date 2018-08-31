@@ -78,28 +78,31 @@ Response
 
        .. type:: amount object
 
-     -   This optional field will contain the amount that will be settled to your account, converted to the currency
-         your account is settled in. It follows the same syntax as the ``amount`` property.
+     - This optional field will contain the amount that will be settled to your account, converted to the currency
+       your account is settled in. It follows the same syntax as the ``amount`` property.
 
    * - ``paymentId``
 
        .. type:: string
 
-     - The mode used to create this order.
+     - The unique identifier of the payment this capture was created for, for example: ``tr_7UhSN1zuXS``. The full
+       payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
    * - ``shipmentId``
 
        .. type:: string
           :required: false
 
-     - The shipment ID that triggered the creation of the capture.
+     - The unique identifier of the shipment that triggered the creation of this capture, for example:
+       ``shp_3wmsgCJN4U``. The full shipment object can be retrieved via the ``shipment`` URL in the ``_links`` object.
 
    * - ``settlementId``
 
        .. type:: string
           :required: false
 
-     - The identifier referring to the settlement this capture was settled with. For example, ``stl_BkEjN2eBb``.
+     - The unique identifier of the settlement this capture was settled with, for example: ``stl_jDk30akdN``. The full
+       settlement object can be retrieved via the ``capture`` URL in the ``_links`` object.
 
    * - ``createdAt``
 
@@ -122,6 +125,12 @@ Response
               .. type:: URL object
 
             - The API resource URL of the order itself.
+
+          * - ``payment``
+
+              .. type:: URL object
+
+            - The API resource URL of the payment the capture belongs to.
 
           * - ``shipment``
 
@@ -163,31 +172,42 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-        "resource": "capture",
-        "id": "cpt_nkVtjNVx9",
-        "mode": "live",
-        "amount": {
-            "value": "1027.99",
-            "currency": "EUR"
-        },
-        "settlementAmount": {
-            "value": "399.00",
-            "currency": "EUR"
-        },
-        "shipmentId": "shp_3wmsgCJN4U",
-        "createdAt": "2018-08-02T09:29:56+00:00",
-        "_links": {
-            "self": {
-                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_nkVtjNVx9",
-                "type": "application/hal+json"
-            },
-            "shipment": {
-                "href": "https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/shipments/shp_3wmsgCJN4U"
-            }
-            "documentation": {
-                "href": "https://docs.mollie.com/reference/v2/captures-api/get-capture",
-                "type": "text/html"
-            }
-        }
-    }
+       "resource": "capture",
+       "id": "cpt_nkVtjNVx9",
+       "mode": "live",
+       "amount": {
+           "value": "1027.99",
+           "currency": "EUR"
+       },
+       "settlementAmount": {
+           "value": "399.00",
+           "currency": "EUR"
+       },
+       "paymentId": "tr_WDqYK6vllg",
+       "shipmentId": "shp_3wmsgCJN4U",
+       "settlementId": "stl_jDk30akdN",
+       "createdAt": "2018-08-02T09:29:56+00:00",
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_nkVtjNVx9",
+               "type": "application/hal+json"
+           },
+           "payment": {
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
+               "type": "application/hal+json"
+           },
+           "shipment": {
+               "href": "https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/shipments/shp_3wmsgCJN4U",
+               "type": "application/hal+json"
+           },
+           "settlement": {
+               "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN",
+               "type": "application/hal+json"
+           },
+           "documentation": {
+               "href": "https://docs.mollie.com/reference/v2/captures-api/get-capture",
+               "type": "text/html"
+           }
+       }
+   }
 
