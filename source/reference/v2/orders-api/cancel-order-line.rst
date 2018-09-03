@@ -27,6 +27,22 @@ Parameters
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U`` and replace ``lineId`` in
 the endpoint URL by the order line's ID, for example ``odl_dgtxyl``.
 
+.. list-table::
+   :widths: auto
+
+   * - ``quantity``
+
+       .. type:: int
+          :required: false
+
+     - The number of items that should be canceled for this order line. When this parameter is omitted, the
+       whole order line will be canceled. When part of the line has been shipped, it will cancel the remainder and the
+       order line will be completed.
+
+       Must be less than the number of items already shipped or canceled for this order line.
+
+       .. note:: At the moment, it is not possible to partially cancel an order line if it has a discount.
+
 Response
 --------
 ``204 No Content``
