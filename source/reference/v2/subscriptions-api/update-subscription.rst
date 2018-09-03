@@ -13,7 +13,7 @@ Update subscription
 
 Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Each field is optional.
 
-You cannot update a canceled subscription. 
+You cannot update a canceled subscription.
 
 Parameters
 ----------
@@ -95,7 +95,7 @@ If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, th
 
 Response
 --------
-``200 OK``
+``200`` ``application/hal+json; charset=utf-8``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
