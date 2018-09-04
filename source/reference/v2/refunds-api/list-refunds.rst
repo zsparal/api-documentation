@@ -51,9 +51,9 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following parameters are also
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are also
 available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing refunds.
-If you omit the ``profileId`` parameter, you will get all refunds on the organization.
+If you omit the ``profileId`` query string parameter, you will get all refunds on the organization.
 
 .. list-table::
    :widths: auto

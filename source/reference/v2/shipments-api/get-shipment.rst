@@ -24,7 +24,7 @@ shipment's ID, for example ``shp_3wmsgCJN4U``
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is also
 available.
 
 .. list-table::
