@@ -235,7 +235,7 @@ Response
                 "type": "application/hal+json"
             },
             "checkout": {
-                "href": "https://www.mollie.com/payscreen/select-method/7UhSN1zuXS",
+                "href": "https://www.mollie.com/payscreen/order/checkout/pbjz8x",
                 "type": "text/html"
             },
             "documentation": {
