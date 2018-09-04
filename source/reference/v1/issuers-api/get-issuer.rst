@@ -29,7 +29,7 @@ Replace ``id`` in the endpoint URL by the issuer's ID, for example ``ideal_ABNAN
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is also
 available.
 
 .. list-table::

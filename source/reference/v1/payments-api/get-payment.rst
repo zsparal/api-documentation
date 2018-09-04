@@ -29,7 +29,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you are creating an app with Mollie Connect (OAuth), the ``testmode`` parameter is available. You must pass this as a
+If you are creating an app with Mollie Connect (OAuth), the ``testmode`` query string parameter is available. You must pass this as a
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::
