@@ -279,6 +279,12 @@ The order lines contain the actual things the your customer bought.
 
      - Always ``orderline``.
 
+   * - ``id``
+
+       .. type:: string
+
+     - The order line's unique identifier, for example ``odl_dgtxyl``.
+
    * - ``orderId``
 
        .. type:: string

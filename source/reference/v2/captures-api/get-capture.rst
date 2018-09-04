@@ -24,7 +24,7 @@ that have this flow are *Klarna Pay later* and *Klarna Slice it*.
 Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the capture's ID. For example:
-``/v2/payments/tr_7UhSN1zuXS/captures/re_4qqhO89gsT``.
+``/v2/payments/tr_7UhSN1zuXS/captures/cpt_4qqhO89gsT``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -58,7 +58,7 @@ Response
 
        .. type:: string
 
-     - The order's unique identifier, for example ``ord_vsKJpSsabw``.
+     - The order's unique identifier, for example ``cpt_4qqhO89gsT``.
 
    * - ``mode``
 
@@ -160,7 +160,7 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_nkVtjNVx9 \
+   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
@@ -173,7 +173,7 @@ Response
 
    {
        "resource": "capture",
-       "id": "cpt_nkVtjNVx9",
+       "id": "cpt_4qqhO89gsT",
        "mode": "live",
        "amount": {
            "value": "1027.99",
@@ -189,7 +189,7 @@ Response
        "createdAt": "2018-08-02T09:29:56+00:00",
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_nkVtjNVx9",
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT",
                "type": "application/hal+json"
            },
            "payment": {
