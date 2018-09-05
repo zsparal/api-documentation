@@ -1,11 +1,22 @@
 {% set url_root = pathto('', 1) -%}
+{%- set is_v1 = "/v1/" in pagename -%}
+{%- set is_v2 = "/v2/" in pagename -%}
+{% if is_v1 %}
+  {%- set versionName = "v1" -%}
+{% elif is_v2 %}
+  {%- set versionName = "v2" -%}
+{% endif %}
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-  <title>{{ title|striptags|e }} &mdash; Mollie API documentation</title>
+  {% if versionName %}
+    <title>{{ title|striptags|e }} &mdash; API {{ versionName }} documentation &mdash; Mollie</title>
+  {% else %}
+    <title>{{ title|striptags|e }} &mdash; API documentation &mdash; Mollie</title>
+  {% endif %}
 
   <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}" />
   <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
@@ -15,7 +26,6 @@
   <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" /> {%- endif %}
   <link rel="preconnect" href="https://www.googletagmanager.com" crossorigin />
 </head>
-
 <body>
   {% include 'navigation.html' %}
 
