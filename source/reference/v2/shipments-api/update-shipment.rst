@@ -95,6 +95,25 @@ Request (curl)
             },
         }'
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+     <?php
+     $mollie = new \Mollie\Api\MollieApiClient();
+     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+     $order = $mollie->orders->get('ord_kEn1PlbGa');
+     $shipment = $order->getShipment("shp_3wmsgCJN4U");
+
+     $shipment->tracking = [
+       'carrier' => 'PostNL',
+       'code' => '3SKABA000000000',
+       'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
+     ];
+     $shipment = $shipment->update();
+
 Response
 ^^^^^^^^
 .. code-block:: http
