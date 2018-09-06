@@ -26,7 +26,7 @@ In the following sections we explain the following topics.
 .. _payments/recurring/first-payment:
 
 Setting up the first payment
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
 In order to get started with recurring payments you need to require the customer's consent through a first payment. It's
 similar to a regular payment, but the customer is shown information about your organization, and the customer needs to
 complete the payment with the account or card that will be used for recurring charges in the future. After the first
@@ -79,7 +79,7 @@ periodically through *subscriptions*.
 .. _payments/recurring/charging-on-demand:
 
 Charging immediately on-demand
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+------------------------------
 Now that the customer has given their consent, it's possible to perform a recurring payment on-demand. Instead of the
 regular payment with a ``redirectUrl``, a recurring payment happens in the background without a browser session, i.e.
 without the customer going through payments steps. You can create a recurring payment with the ``sequenceType`` set to
@@ -120,7 +120,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
 .. _payments/recurring/charging-periodically:
 
 Charging periodically with subscriptions
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 For simple regular recurring payments with constant amounts, you can create *subscriptions* with the
 :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`. Subscription payments will be spawned
 automatically at the specified frequency, and will show up in your Dashboard.
@@ -164,7 +164,7 @@ Refer to the documentation of the API client you are using for more examples.
 .. _payments/recurring/subscription-webhooks:
 
 How do webhooks for subscriptions work?
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+---------------------------------------
 When using our Subscriptions API to charge a customer periodically, new payments are created by Mollie every time the
 customer is charged. We will call your webhook as usual for these payments. The only difference is, the payment ID will
 not be known by your system yet when we call the webhook to report the payment's status.
@@ -177,4 +177,3 @@ The payment object will, however, contain a ``subscriptionId`` field that contai
 the subscription was created. This allows you to recognize where the payment belongs to.
 
 We do not provide webhooks specifically for status changes of a Subscription itself.
-
