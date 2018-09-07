@@ -17,8 +17,9 @@ is called a *capture*.
 If the payment method supports authorizations, the consumer will authorize a payment when the order is created. If the
 authorization is successful, the order will have status ``authorized``.
 
-Each time a shipment is created, we will automatically execute a capture too. The shipment can be for the whole order
-or for only a part of the order. Only the amount that is shipped will be captured.
+Each time a :doc:`shipment is created </reference/v2/shipments-api/create-shipment>`, we will automatically execute a
+capture too. The shipment can be for the whole order or for only a part of the order. Only the amount that is shipped
+will be captured.
 
 Paid
 ^^^^
@@ -57,7 +58,7 @@ The following diagram shows how one order status leads to another:
 ``pending``
 ^^^^^^^^^^^
     It is possible that the payment supplier will manually check an order. In that case we will set the order to this
-    status. It can take a couple of days before the order is set to another status.Currently only *Klarna Pay later*
+    status. It can take a couple of days before the order is set to another status. Currently only *Klarna Pay later*
     and *Klarna Slice it* use this status.
 
     * This is not a status Mollie will call your webhook for.
