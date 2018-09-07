@@ -341,7 +341,7 @@ The order lines contain the actual things the your customer bought.
 
        .. type:: int
 
-     - The number items that are shipped for this order line.
+     - The number of items that are shipped for this order line.
 
    * - ``amountShipped``
 
@@ -353,7 +353,7 @@ The order lines contain the actual things the your customer bought.
 
        .. type:: int
 
-     - The number items that are refunded for this order line.
+     - The number of items that are refunded for this order line.
 
    * - ``amountRefunded``
 
@@ -365,7 +365,7 @@ The order lines contain the actual things the your customer bought.
 
        .. type:: int
 
-     - The number items that are canceled in this order line.
+     - The number of items that are canceled in this order line.
 
    * - ``amountCanceled``
 
@@ -568,6 +568,21 @@ Response
                 "status": "created",
                 "isCancelable": true,
                 "quantity": 2,
+                "quantityShipped": 0,
+                "amountShipped": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "quantityRefunded": 0,
+                "amountRefunded": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "quantityCanceled": 0,
+                "amountCanceled": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
                 "unitPrice": {
                     "value": "399.00",
                     "currency": "EUR"
@@ -599,6 +614,21 @@ Response
                 "status": "created",
                 "isCancelable": true,
                 "quantity": 1,
+                "quantityShipped": 0,
+                "amountShipped": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "quantityRefunded": 0,
+                "amountRefunded": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
+                "quantityCanceled": 0,
+                "amountCanceled": {
+                    "value": "0.00",
+                    "currency": "EUR"
+                },
                 "unitPrice": {
                     "value": "329.99",
                     "currency": "EUR"
