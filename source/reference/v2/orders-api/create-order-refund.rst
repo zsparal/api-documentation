@@ -21,7 +21,7 @@ as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer wil
 correct product information on them.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
-:doc:`cancel it instead </reference/v2/orders-api/cancel-order-line>`. Order lines that are ``paid``, ``shipping`` or
+:doc:`cancel it instead </reference/v2/orders-api/cancel-order-lines>`. Order lines that are ``paid``, ``shipping`` or
 ``completed`` can be refunded.
 
 For more details on how refunds work, see :doc:`Create Payment Refund API </reference/v2/refunds-api/create-refund>`.
