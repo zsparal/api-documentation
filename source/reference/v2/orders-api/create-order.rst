@@ -243,7 +243,7 @@ The order lines contain the actual things that your customer bought.
 
        For example: ``{"currency":"EUR", "value":"35.00"}`` if the VAT amount of this order line is €35.00.
 
-       The ``vatAmount`` should match the following formula: ``totalAmount × (vatRate / 100)``
+       The ``vatAmount`` should match the following formula: ``totalAmount × (vatRate / (100 + vatRate))``
 
    * - ``sku``
 
@@ -594,7 +594,7 @@ Response
 .. code-block:: http
    :linenos:
 
-   HTTP/1.1 200 OK
+   HTTP/1.1 201 Created
    Content-Type: application/hal+json; charset=utf-8
 
    {
@@ -662,6 +662,21 @@ Response
                "status": "created",
                "isCancelable": true,
                "quantity": 2,
+               "quantityShipped": 0,
+               "amountShipped": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
+               "quantityRefunded": 0,
+               "amountRefunded": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
+               "quantityCanceled": 0,
+               "amountCanceled": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
                "unitPrice": {
                    "value": "399.00",
                    "currency": "EUR"
@@ -693,6 +708,21 @@ Response
                "status": "created",
                "isCancelable": true,
                "quantity": 1,
+               "quantityShipped": 0,
+               "amountShipped": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
+               "quantityRefunded": 0,
+               "amountRefunded": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
+               "quantityCanceled": 0,
+               "amountCanceled": {
+                   "value": "0.00",
+                   "currency": "EUR"
+               },
                "unitPrice": {
                    "value": "329.99",
                    "currency": "EUR"
