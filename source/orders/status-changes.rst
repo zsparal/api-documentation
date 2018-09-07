@@ -63,7 +63,7 @@ The following diagram shows how one order status leads to another:
 
     * This is not a status Mollie will call your webhook for.
     * All order lines will be ``created``.
-    * Can transition to: ``authorized`` and ``canceled``.
+    * Can transition to: ``authorized`` and ``created``. 
 
 .. _order-status-authorized:
 
