@@ -15,14 +15,16 @@ Cancel order lines
    :api_keys: true
    :oauth: true
 
-This endpoint can be used to cancel a single or multiple order lines.
+This endpoint can be used to cancel a single or multiple order lines. Use
+:doc:`cancel order </reference/v2/orders-api/cancel-order>` when you want to cancel the entire order.
 
 An order line can only be canceled while its ``status`` field is either ``created`` or ``authorized``. You should
 cancel an order line if you don't intend to ship it.
 
 If the order line is ``paid`` or already ``completed``, you should create a refund for that line instead.
 
-For more information about the status transitions please check our :doc:`order status changes guide </orders/status-changes>`.
+For more information about the status transitions please check our
+:doc:`order status changes guide </orders/status-changes>`.
 
 Parameters
 ----------
@@ -54,8 +56,8 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
                  :required: false
 
             - The number of items that should be canceled for this order line. When this parameter is omitted, the
-              whole order line will be canceled. When part of the line has been shipped, it will cancel the remainder and the
-              order line will be completed.
+              whole order line will be canceled. When part of the line has been shipped, it will cancel the remainder
+              and the order line will be completed.
 
               Must be less than the number of items already shipped or canceled for this order line.
 
