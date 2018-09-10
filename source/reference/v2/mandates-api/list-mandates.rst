@@ -153,6 +153,7 @@ Response
                {
                    "resource": "mandate",
                    "id": "mdt_AcQl5fdL4h",
+                   "mode": "test",
                    "status": "valid",
                    "method": "directdebit",
                    "details": {
