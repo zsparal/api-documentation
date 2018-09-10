@@ -36,6 +36,13 @@ available.
 
      - Set this to ``true`` to retrieve a test mode order.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint also allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payments`` Include any :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
+
 Response
 --------
 ``200`` ``application/hal+json; charset=utf-8``
@@ -489,7 +496,7 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
+   curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 .. _get-order-response:
@@ -502,7 +509,7 @@ Request (PHP)
      <?php
      $mollie = new \Mollie\Api\MollieApiClient();
      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-     $order = $mollie->orders->get("ord_kEn1PlbGa");
+     $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
 
 Response
 ^^^^^^^^
@@ -645,6 +652,44 @@ Response
                 "createdAt": "2018-08-02T09:29:56+00:00"
             }
         ],
+        "_embedded": {
+            "payments": [
+                {
+                    "resource": "payment",
+                    "id": "tr_ncaPcAhuUV",
+                    "mode": "live",
+                    "createdAt": "2018-09-07T12:00:05+00:00",
+                    "amount": {
+                        "value": "1027.99",
+                        "currency": "EUR"
+                    },
+                    "description": "Order Order #1337 (Lego cars)",
+                    "method": null,
+                    "metadata": null,
+                    "status": "open",
+                    "isCancelable": false,
+                    "locale": "nl_NL",
+                    "profileId": "pfl_URR55HPMGx",
+                    "orderId": "ord_kEn1PlbGa",
+                    "sequenceType": "oneoff",
+                    "redirectUrl": "https://example.org/redirect",
+                    "_links": {
+                        "self": {
+                            "href": "https://api.mollie.com/v2/payments/tr_ncaPcAhuUV",
+                            "type": "application/hal+json"
+                        },
+                        "checkout": {
+                            "href": "https://www.mollie.com/payscreen/select-method/ncaPcAhuUV",
+                            "type": "text/html"
+                        },
+                        "order": {
+                            "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
+                            "type": "application/hal+json"
+                        }
+                    }
+                }
+            ]
+        },
         "_links": {
             "self": {
                 "href": "https://api.mollie.com/v2/orders/ord_pbjz8x",
