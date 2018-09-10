@@ -41,7 +41,7 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payments`` Include any :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
+* ``payments`` Include all :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
 
 Response
 --------
@@ -663,7 +663,7 @@ Response
                         "value": "1027.99",
                         "currency": "EUR"
                     },
-                    "description": "Order Order #1337 (Lego cars)",
+                    "description": "Order #1337 (Lego cars)",
                     "method": null,
                     "metadata": null,
                     "status": "open",

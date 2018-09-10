@@ -49,8 +49,8 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``refunds`` Include any :doc:`refunds </reference/v2/refunds-api/get-refund>` created for the payment.
-* ``chargebacks`` Include any :doc:`chargebacks </reference/v2/chargebacks-api/get-chargeback>` issued for the payment.
+* ``refunds`` Include all :doc:`refunds </reference/v2/refunds-api/get-refund>` created for the payment.
+* ``chargebacks`` Include all :doc:`chargebacks </reference/v2/chargebacks-api/get-chargeback>` issued for the payment.
 
 Response
 --------
