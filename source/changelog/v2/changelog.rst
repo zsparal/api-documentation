@@ -4,6 +4,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+September 2018
+==============
+
+Monday, 10th
+------------
+
+- Added a new endpoint for getting the Profile of the used API Key. For details, see:
+  :doc:`Get current profile </reference/v2/profiles-api/get-profile-me>`
+
 August 2018
 ===========
 
