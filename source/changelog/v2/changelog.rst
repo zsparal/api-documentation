@@ -10,7 +10,7 @@ September 2018
 Monday, 10th
 ------------
 
-- Added a new endpoint for getting the Profile of the used API Key. For details, see:
+- Added a new endpoint for retrieving the Profile of the used API key.. For details, see:
   :doc:`Get current profile </reference/v2/profiles-api/get-profile-me>`
 
 August 2018
