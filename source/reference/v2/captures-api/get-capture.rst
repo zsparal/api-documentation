@@ -19,7 +19,7 @@ Get Payment Capture
 Retrieve a single capture by its ID. Note the original payment's ID is needed as well.
 
 Captures are used in payments that have the *authorize-then-capture* flow. The only payment methods at the moment
-that have this flow are *Klarna Pay later* and *Klarna Slice it*.
+that have this flow are **Klarna Pay later** and **Klarna Slice it**.
 
 Parameters
 ----------
@@ -58,13 +58,13 @@ Response
 
        .. type:: string
 
-     - The order's unique identifier, for example ``cpt_4qqhO89gsT``.
+     - The capture's unique identifier, for example ``cpt_4qqhO89gsT``.
 
    * - ``mode``
 
        .. type:: string
 
-     - The mode used to create this order.
+     - The mode used to create this capture.
 
        Possible values: ``live`` ``test``
 
@@ -108,7 +108,7 @@ Response
 
        .. type:: datetime
 
-     - The order's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - The capture's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 
@@ -124,7 +124,7 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of the order itself.
+            - The API resource URL of the capture itself.
 
           * - ``payment``
 

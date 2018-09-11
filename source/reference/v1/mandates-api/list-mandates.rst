@@ -148,6 +148,7 @@ Response
            {
                "resource": "mandate",
                "id": "mdt_pO2m5jVgMa",
+               "mode": "test",
                "status": "valid",
                "method": "directdebit",
                "customerId": "cst_8wmqcHMN4U",
