@@ -1,4 +1,4 @@
-List Captures
+List captures
 =============
 
 .. api-name:: Captures API
@@ -18,7 +18,7 @@ List Captures
 
 Retrieve all captures for a certain payment.
 
-Captures are used in payments that have the *authorize-then-capture* flow. The only payment methods at the moment
+Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment
 that have this flow are *Klarna Pay later* and *Klarna Slice it*.
 
 Parameters
@@ -169,7 +169,7 @@ Response
        "count": 1,
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/captures-api/list-capture",
+               "href": "https://docs.mollie.com/reference/v2/captures-api/list-captures",
                "type": "text/html"
            },
            "self": {

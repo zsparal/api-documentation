@@ -1,5 +1,5 @@
-Get Payment Capture
-===================
+Get capture
+===========
 
 .. api-name:: Captures API
    :version: 2
@@ -18,7 +18,7 @@ Get Payment Capture
 
 Retrieve a single capture by its ID. Note the original payment's ID is needed as well.
 
-Captures are used in payments that have the *authorize-then-capture* flow. The only payment methods at the moment
+Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment
 that have this flow are *Klarna Pay later* and *Klarna Slice it*.
 
 Parameters

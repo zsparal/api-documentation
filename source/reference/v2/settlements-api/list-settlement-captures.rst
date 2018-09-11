@@ -1,4 +1,4 @@
-List Settlement Captures
+List settlement captures
 ========================
 
 .. api-name:: Settlements API
@@ -18,7 +18,7 @@ List Settlement Captures
 
 Retrieve all captures for a certain settlement.
 
-Captures are used in payments that have the *authorize-then-capture* flow. The only payment methods at the moment
+Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment
 that have this flow are *Klarna Pay later* and *Klarna Slice it*.
 
 Parameters
