@@ -4,6 +4,25 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+September 2018
+==============
+
+Wednesday, 12th
+---------------
+
+- The ``amount`` field in chargebacks had the wrong sign, though it was documented correctly. The API has been changed
+  to use positive values for the ``amount`` field and negative values for the ``settlementAmount`` field in the
+  :doc:`/reference/v2/chargebacks-api/get-chargeback` API.
+
+- You can now use cursors to scroll through all chargebacks of a Payment using the
+  :doc:`/reference/v2/chargebacks-api/list-chargebacks` API.
+
+Monday, 10th
+------------
+
+- Added a new endpoint for retrieving the website profile of the used API key. For details, see:
+  :doc:`Get current profile </reference/v2/profiles-api/get-profile-me>`
+
 August 2018
 ===========
 
