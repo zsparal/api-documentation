@@ -14,6 +14,9 @@ Get current profile
 Use this API if you are creating a plugin or SaaS application that allows users to enter a Mollie API key, and you want
 to give a confirmation of the website profile that will be used in your plugin or application.
 
+This is similar to the :doc:`Get current organization </reference/v2/organizations-api/get-organization>` endpoint for
+OAuth.
+
 Parameters
 ----------
 No parameters applicable for this endpoint.
