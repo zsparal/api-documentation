@@ -54,6 +54,12 @@ Response
      - The identifier uniquely referring to this mandate. Mollie assigns this identifier at mandate creation time. For
        example ``mdt_pWUnw6pkBN``.
 
+   * - ``mode``
+
+       .. type:: string
+
+     - The mode used to create this mandate.
+
    * - ``status``
 
        .. type:: string
@@ -217,6 +223,7 @@ Response
    {
        "resource": "mandate",
        "id": "mdt_h3gAaD5zP",
+       "mode": "test",
        "status": "valid",
        "method": "directdebit",
        "details": {
