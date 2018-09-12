@@ -58,7 +58,7 @@ Response
 
        .. type:: string
 
-     - The order's unique identifier, for example ``cpt_4qqhO89gsT``.
+     - The capture's unique identifier, for example ``cpt_4qqhO89gsT``.
 
    * - ``mode``
 
