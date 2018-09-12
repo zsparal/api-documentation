@@ -9,6 +9,10 @@ September 2018
 
 Wednesday, 12th
 ---------------
+- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`.
+  See the :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
+
+- Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
 
 - The ``amount`` field in chargebacks had the wrong sign, though it was documented correctly. The API has been changed
   to use positive values for the ``amount`` field and negative values for the ``settlementAmount`` field in the
@@ -30,7 +34,7 @@ Wednesday, 1st
 --------------
 
 - The icons returned by the :doc:`Methods API </reference/v2/methods-api/list-methods>` have been updated. Note that the
-  size of the icons has changed from 40x40 to 32x24. All icons are now available in SVG as well, which we advise you to 
+  size of the icons has changed from 40x40 to 32x24. All icons are now available in SVG as well, which we advise you to
   use where possible.
 
 July 2018
