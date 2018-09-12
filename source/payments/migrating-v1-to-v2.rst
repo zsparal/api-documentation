@@ -170,8 +170,6 @@ The following fields have been changed, renamed or moved:
   reversed.
 * ``payment``, which contained the payment ID related to the chargeback, has been renamed to ``paymentId``. The payment
   resource can easily be accessed using the ``payment`` key in the ``_links`` property.
-* Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
-  return all chargebacks.
 * The resource will contain a link to the settlement if it is settled (via the ``settlement`` key in the ``_links``
   property.
 
