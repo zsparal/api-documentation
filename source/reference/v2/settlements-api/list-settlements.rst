@@ -166,6 +166,10 @@ Response
                            "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/chargebacks",
                            "type": "application/hal+json"
                        },
+                       "captures": {
+                           "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures",
+                           "type": "application/hal+json"
+                       },
                        "documentation": {
                            "href": "https://docs.mollie.com/reference/v2/settlements-api/get-settlement",
                            "type": "text/html"
