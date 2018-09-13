@@ -11,7 +11,7 @@ List organizations
     :api_keys: false
     :oauth: true
 
-Retrieve all organizations that are connected your partner-account.
+Retrieve all organizations that are connected to your partner-account.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
