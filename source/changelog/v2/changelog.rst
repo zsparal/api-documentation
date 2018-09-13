@@ -7,6 +7,11 @@ changes are documented here.
 September 2018
 ==============
 
+Monday, 17th
+------------
+- Added a new endpoint for partners to get all connected organizations. For details, see:
+  :doc:`List Organizations </reference/v2/organizations-api/list-organizations>`
+
 Wednesday, 12th
 ---------------
 - Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`.
@@ -20,6 +25,12 @@ Wednesday, 12th
 
 - You can now use cursors to scroll through all chargebacks of a Payment using the
   :doc:`/reference/v2/chargebacks-api/list-chargebacks` API.
+
+Tuesday, 11th
+-------------
+
+- Added the ``mode`` field to the :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. This makes it possible
+  to see in which environment the mandate is created.
 
 Monday, 10th
 ------------
