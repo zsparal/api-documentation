@@ -8,8 +8,8 @@ List organizations
     :url: https://api.mollie.com/v2/organizations
 
 .. authentication::
-    :api_keys: true
-    :oauth: false
+    :api_keys: false
+    :oauth: true
 
 Retrieve all organizations that are connected your partner-account.
 
@@ -27,7 +27,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - Offset the result set to the payment with this ID. The payment with this ID is included in the result
+     - Offset the result set to the organization with this ID. The organization with this ID is included in the result
        set as well.
 
    * - ``limit``
@@ -35,7 +35,7 @@ Parameters
        .. type:: integer
           :required: false
 
-     - The number of payments to return (with a maximum of 250).
+     - The number of organizations to return (with a maximum of 250).
 
 Response
 --------
@@ -109,7 +109,7 @@ Request
    :linenos:
 
    curl -X GET https://api.mollie.com/v2/organizations?limit=5 \
-       -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+       -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 ^^^^^^^^
