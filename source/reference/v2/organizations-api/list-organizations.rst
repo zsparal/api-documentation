@@ -15,7 +15,7 @@ Retrieve all organizations that are connected your partner-account.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
-.. note:: This API is only for partners.
+.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 Parameters
 ----------
@@ -159,7 +159,7 @@ Response
                 "type": "text/html"
             },
             "self": {
-                "href": "https://api.mollie.dev/v2/organizations?limit=5",
+                "href": "https://api.mollie.com/v2/organizations?limit=5",
                 "type": "application/hal+json"
             },
             "previous": null,
