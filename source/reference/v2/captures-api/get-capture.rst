@@ -159,6 +159,18 @@ Request (curl)
    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+    $payment = $mollie->payments->get("tr_WDqYK6vllg");
+    $capture = $payment->getCapture("cpt_4qqhO89gsT");
+
 Response
 ^^^^^^^^
 .. code-block:: http
