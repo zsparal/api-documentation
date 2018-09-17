@@ -1,5 +1,5 @@
-Payment Webhooks
-================
+Webhooks
+========
 
 Process realtime status updates
 -------------------------------

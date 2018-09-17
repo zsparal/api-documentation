@@ -115,7 +115,7 @@ Please note that in order to do recurring payments, direct debit or credit card 
               \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
-#. Like regular payments your :doc:`webhook </payments/webhooks>` is called for retrieving status updates.
+#. Like regular payments your :doc:`webhook </guides/webhooks>` is called for retrieving status updates.
 
 .. _payments/recurring/charging-periodically:
 
