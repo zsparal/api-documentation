@@ -1,31 +1,36 @@
 Webhooks
 ========
 
-Process realtime status updates
--------------------------------
-A webhook is a URL Mollie will call when an object's status changes, for example when a payment changes from ``open`` to
-``paid``. You should put a script behind this URL that – when it is called –
-:doc:`fetches the payment status </reference/v2/payments-api/get-payment>` and processes it if its status has changed.
+Webhooks are used to process realtime status updates, for example when a payment is paid. It is a URL Mollie will call
+with the ID of the updated object. When Mollie calls your webhook, you should fetch the latest status and process it if
+the status was changed.
 
-In the example case of a payment changing to ``paid``, you should mark the order belonging to the payment as paid
-accordingly.
+Example
+-------
 
-The webhook will be called with a single POST-parameter called ``id``, which for example will contain the value
-``tr_d0b0E3EA3v``. You should use that ID to actively fetch the payment to find out about it's status. This step seems a
-little cumbersome, but :doc:`proper security </guides/security>` dictates this flow. Since the status is not transmitted in the
-webhook, fake calls to your webhook will never result in orders being processed without being actually paid.
+The most important example of a webhook is when a payment is paid. If you created the payment with a webhook URL, we
+will call that webhook URL with a single POST-parameter called ``id`` and a value of for example ``tr_d0b0E3EA3v``. The
+script behind your webhook URL should use that ID to :doc:`fetch the payment status </reference/v2/payments-api/get-payment>`
+and act accordingly. If the new payment status is ``paid`` you can start shipping the order.
+
+It might seem a little cumbersome that we don't post the new status immediately, but :doc:`proper security </guides/security>`
+dictates this flow. Since the status is not transmitted in the webhook, fake calls to your webhook will never result in
+orders being processed without being actually paid.
+
+More examples are available in the documentation of the `Mollie API client <https://www.mollie.com/en/modules>`_ you are
+using.
+
+Endpoints supporting webhooks
+-----------------------------
 
 If an endpoint supports webhooks, you can specify the webhook URL you want to receive status changes on by providing the
-parameter ``webhookUrl``.
+parameter ``webhookUrl``. Below is a list of all endpoints that support webhooks.
 
-The following endpoints support webhooks:
+Payments API
+^^^^^^^^^^^^
 
-* :doc:`Payments API </reference/v2/payments-api/create-payment>`
-* :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`
-
-Webhooks for v2 API endpoints
------------------------------
-The webhook will be called when the payment changes status to:
+The :doc:`Payments API </reference/v2/payments-api/create-payment>` calls a webhook when a payment reaches one of the
+following statuses:
 
 * ``paid``
 * ``expired``
@@ -37,21 +42,31 @@ Furthermore, the webhook will be called when:
 * A refund is performed on the payment
 * A chargeback is received on the payment.
 
-Webhooks for v1 API endpoints
------------------------------
-The webhook will be called when the payment changes status to:
+Read more about :doc:`payment status changes </payments/status-changes>`.
 
-* ``paid``
-* ``expired``
-* ``failed``
-* ``cancelled``
-* ``refunded``
-* ``charged_back``
+Orders API
+^^^^^^^^^^
 
-What IPs will the webhook requests be originating from?
--------------------------------------------------------
-Read `our support article <https://help.mollie.com/hc/en-us/articles/213470829>`_ for more information on the IP
-addresses that Mollie uses.
+The :doc:`Orders API </reference/v2/orders-api/create-order>` calls a webhook when an order reaches the status ``paid``
+or ``authorized``. These statuses indicate that the order is ready to be shipped.
+
+Furthermore, the webhook will be called when:
+
+* A shipment is created for the order
+* The order or part of the order is canceled
+* The order or part of the order is refunded.
+
+Read more about :doc:`order status changes </orders/status-changes>`.
+
+Subscriptions API
+^^^^^^^^^^^^^^^^^
+
+The webhook URL specified when :doc:`creating a subscription </reference/v2/subscriptions-api/create-subscription>` is
+used for each payment that is created by this subscription. Please refer to the explanation above for more information
+about webhooks for payments.
+
+The :ref:`Recurring Payments guide <payments/recurring/subscription-webhooks>` has some additional information about
+webhooks for subscriptions.
 
 Retry schema
 ------------
@@ -66,11 +81,7 @@ the webhook call as failed and try again later.
 In total we will call your webhook 10 times with an increasing interval. If after the 10\ :sup:`th` call we still do not
 get a ``200 OK`` response, we will stop trying.
 
-Example
--------
-The most important task your webhook script has to complete is to process orders whenever the status of a payment turns
-out to be ``paid``. Therefore, please note the exact working of this process really depends on your product, your
-business and your website. So we're not able to show a general example here.
-
-To get started with webhooks, please refer to the documentation of the
-`Mollie API client <https://www.mollie.com/en/modules>`_ you are using.
+What IPs will the webhook requests be originating from?
+-------------------------------------------------------
+Read `our support article <https://help.mollie.com/hc/en-us/articles/213470829>`_ for more information on the IP
+addresses that Mollie uses.
