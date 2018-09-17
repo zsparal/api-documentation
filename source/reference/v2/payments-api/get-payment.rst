@@ -408,6 +408,13 @@ Response
 
             - The API resource URL of the chargebacks that belong to this payment.
 
+          * - ``captures``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the captures that belong to this payment.
+
           * - ``settlement``
 
               .. type:: URL object
