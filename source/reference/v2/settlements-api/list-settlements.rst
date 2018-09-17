@@ -135,8 +135,8 @@ Response
                    "resource": "settlement",
                    "id": "stl_jDk30akdN",
                    "reference": "1234567.1804.03",
-                   "createdDatetime": "2018-04-06T06:00:01.0Z",
-                   "settledDatetime": "2018-04-06T09:41:44.0Z",
+                   "createdAt": "2018-04-06T06:00:01.0Z",
+                   "settledAt": "2018-04-06T09:41:44.0Z",
                    "amount": {
                        "currency": "EUR",
                        "value": "39.75"
