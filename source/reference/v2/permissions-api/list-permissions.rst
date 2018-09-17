@@ -91,12 +91,12 @@ Response
            "permissions": [
                {
                    "resource": "permission",
-                   "id": "apikeys.read",
-                   "description": "View your API keys",
+                   "id": "payments.write",
+                   "description": "Create new payments",
                    "granted": false,
                    "_links": {
                        "self": {
-                           "href": "https://api.mollie.com/v2/permissions/apikeys.read",
+                           "href": "https://api.mollie.com/v2/permissions/payments.write",
                            "type": "application/hal+json"
                        }
                    }
