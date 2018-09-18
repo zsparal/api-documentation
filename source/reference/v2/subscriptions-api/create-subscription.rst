@@ -117,9 +117,8 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        .. type:: mixed
           :required: false
 
-     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       subscription. Whenever you fetch the subscription with our API, we'll also include the metadata. You can use up
-       to approximately 1kB.
+     - Provide any data you like, and we will save the data alongside the subscription. Whenever you fetch the
+       subscription with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
