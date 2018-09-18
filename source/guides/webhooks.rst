@@ -1,13 +1,11 @@
 Webhooks
 ========
-
 Webhooks are used to process realtime status updates, for example when a payment is paid. It is a URL Mollie will call
 with the ID of the updated object. When Mollie calls your webhook, you should fetch the latest status and process it if
 the status was changed.
 
 Example
 -------
-
 The most important example of a webhook is when a payment is paid. If you created the payment with a webhook URL, we
 will call that webhook URL with a single POST-parameter called ``id`` and a value of for example ``tr_d0b0E3EA3v``. The
 script behind your webhook URL should use that ID to :doc:`fetch the payment status </reference/v2/payments-api/get-payment>`
@@ -22,13 +20,11 @@ using.
 
 Endpoints supporting webhooks
 -----------------------------
-
 If an endpoint supports webhooks, you can specify the webhook URL you want to receive status changes on by providing the
 parameter ``webhookUrl``. Below is a list of all endpoints that support webhooks.
 
 Payments API
 ^^^^^^^^^^^^
-
 The :doc:`Payments API </reference/v2/payments-api/create-payment>` calls a webhook when a payment reaches one of the
 following statuses:
 
@@ -46,7 +42,6 @@ Read more about :doc:`payment status changes </payments/status-changes>`.
 
 Orders API
 ^^^^^^^^^^
-
 The :doc:`Orders API </reference/v2/orders-api/create-order>` calls a webhook when an order reaches the status ``paid``
 or ``authorized``. These statuses indicate that the order is ready to be shipped.
 
@@ -60,7 +55,6 @@ Read more about :doc:`order status changes </orders/status-changes>`.
 
 Subscriptions API
 ^^^^^^^^^^^^^^^^^
-
 The webhook URL specified when :doc:`creating a subscription </reference/v2/subscriptions-api/create-subscription>` is
 used for each payment that is created by this subscription. Please refer to the explanation above for more information
 about webhooks for payments.
@@ -85,3 +79,8 @@ What IPs will the webhook requests be originating from?
 -------------------------------------------------------
 Read `our support article <https://help.mollie.com/hc/en-us/articles/213470829>`_ for more information on the IP
 addresses that Mollie uses.
+
+The webhook location is invalid
+-------------------------------
+`In this support article <https://help.mollie.com/hc/en-us/articles/213470409>`_ we explain when we return the error
+``The webhook location is invalid`` and how you can solve this.
