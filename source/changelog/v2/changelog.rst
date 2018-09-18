@@ -7,6 +7,11 @@ changes are documented here.
 September 2018
 ==============
 
+Tuesday, 18th
+-------------
+- Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`. This
+  makes it possible to, for example, link a plan to a subscription.
+
 Monday, 17th
 ------------
 - Added a new endpoint for partners to get all connected organizations. For details, see:
