@@ -148,6 +148,13 @@ Response
 
      - The URL Mollie will call as soon a payment status change takes place.
 
+   * - ``metadata``
+
+       .. type:: mixed
+
+     - The optional metadata you provided upon subscription creation. Metadata can for example be used to link a plan
+       to a subscription.
+
    * - ``_links``
 
        .. type:: object
@@ -222,6 +229,9 @@ Response
        "description": "Quarterly payment",
        "method": null,
        "webhookUrl": "https://webshop.example.org/payments/webhook",
+       "metadata": {
+           "plan": "small"
+       },
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3",
