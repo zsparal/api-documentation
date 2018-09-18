@@ -250,7 +250,7 @@ The order lines contain the actual things that your customer bought.
        .. type:: string
           :required: false
 
-     - The SKU, EAN, ISBN or UPC of the product sold.
+     - The SKU, EAN, ISBN or UPC of the product sold. The maximum character length is 64.
 
    * - ``imageUrl``
 
