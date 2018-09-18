@@ -87,7 +87,7 @@ Parameters
      - Set the webhook URL, where we will send payment status updates to.
 
        .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important
-          :doc:`status changes </payments/webhooks>` to your payment.
+          :doc:`status changes </guides/webhooks>` to your payment.
 
           The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
           you want to use webhook during development on ``localhost``, you must use a tool like
