@@ -152,7 +152,7 @@ Response
 
        .. type:: mixed
 
-     - The optional metadata you provided upon subscription creation. Metadata can for example be used to link an plan
+     - The optional metadata you provided upon subscription creation. Metadata can for example be used to link a plan
        to a subscription.
 
    * - ``_links``
