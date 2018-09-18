@@ -1,4 +1,4 @@
-Migratig v1 to v2
+Migrating v1 to v2
 =================
 .. raw:: html
 
