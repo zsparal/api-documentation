@@ -79,6 +79,15 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
 
      - Use this parameter to set a webhook URL for all subscription payments.
 
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+       subscription. Whenever you fetch the subscription with our API, we'll also include the metadata. You can use up
+       to approximately 1kB.
+
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also available.
