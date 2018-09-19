@@ -238,12 +238,14 @@ The order lines contain the actual things that your customer bought.
        .. type:: amount object
           :required: true
 
-     - The amount of value-added tax on the line. The ``vatAmount`` should be calculated over the ``totalAmount`` using
-       the ``vatRate``. Any deviations from this will result in an error.
+     - The amount of value-added tax on the line. The ``totalAmount`` field includes VAT, so the ``vatAmount`` can be
+       calculated with the formula ``totalAmount × (vatRate / (100 + vatRate))``.
 
-       For example: ``{"currency":"EUR", "value":"35.00"}`` if the VAT amount of this order line is €35.00.
+       Any deviations from this will result in an error.
 
-       The ``vatAmount`` should match the following formula: ``totalAmount × (vatRate / (100 + vatRate))``
+       For example, for a ``totalAmount`` of SEK100.00 with a 25.00% VAT rate you would get a VAT amount of ``100.00 ×
+       (25 / 125)`` = SEK20.00. The amount should be passed as an amount object, so:
+       ``{"currency":"SEK", "value":"20.00"}``.
 
    * - ``sku``
 
