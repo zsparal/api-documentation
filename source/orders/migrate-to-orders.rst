@@ -47,7 +47,6 @@ When the order is created the API response will contain a `checkout` URL just li
 
     {
         "_links": {
-            {...},
             "checkout": {
                 "href": "https://www.mollie.com/payscreen/order/checkout/pbjz8x",
                 "type": "text/html"
@@ -61,15 +60,24 @@ a longer expiry period than a payment checkout URL. The exact expiry time can be
 
 Shipping
 --------
+Contrary to the payments API an order is not automatically completed after the customer pays using
+the checkout URL. It needs to be shipped. This can be done using the
+:doc:`Create Shipment API </reference/v2/shipments-api/create-shipment>` or in the dashboard.
+You can create multiple shipments per order.  In the shipment you specify the order lines that are
+to be shipped. For some payment methods shipping is required to ensure you will be settled.
+Also note that for those methods the customer will receive an invoice per shipment.
 
+Receiving updates
+-----------------
+Just like in the payments API you can specify a ``webhookUrl`` that will be used by Mollie to
+inform your back office when the status of an order has changed. You can then use the Mollie API to
+:doc:`retrieve the order status </reference/v2/orders-api/get-order>`.
 
-Receiving updates on an order
------------------------------
-
-
-Refunding an order
-------------------
-
+Refunding
+---------
+Refunding works almost the same as in the payments API. You will have to use the
+:doc:`Create order refund </reference/v2/orders-api/create-order-refund>` endpoint and specify which
+order lines are refunded. If no lines are specified the whole order will be refunded.
 
 
 
