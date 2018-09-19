@@ -8,8 +8,8 @@ various types of discounts and promotions.
 
 2-for-1 type promotions
 ^^^^^^^^^^^^^^^^^^^^^^^
-You may want to offer 2-for-1 type promotions, or other promotions where the consumer gets a certain percentage off. In
-such cases, your customer gets (part of) one item for free.
+You may want to offer 2-for-1 type promotions, or other promotions where the consumer gets a certain percentage off if
+they buy multiple of the same product. In such cases, your customer gets some part of the order line for free. 
 
 You can do this using the ``discountAmount`` property on the ``lines`` array.
 
