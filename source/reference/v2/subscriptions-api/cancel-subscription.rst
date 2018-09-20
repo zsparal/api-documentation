@@ -68,6 +68,7 @@ Response
        },
        "times": 4,
        "interval": "3 months",
+       "nextPaymentDate": null,
        "description": "Quarterly payment",
        "method": null,
        "webhookUrl": "https://webshop.example.org/payments/webhook",

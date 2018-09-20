@@ -171,6 +171,7 @@ Response
         "times": 42,
         "interval": "15 days",
         "startDate": "2018-12-12",
+        "nextPaymentDate": "2018-12-12",
         "webhookUrl": "https://example.org/webhook",
         "_links": {
             "self": {

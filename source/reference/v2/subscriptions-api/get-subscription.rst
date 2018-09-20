@@ -122,7 +122,8 @@ Response
 
        .. type:: date
 
-     - The date of the next scheduled payment in ``YYYY-MM-DD`` format.
+     - The date of the next scheduled payment in ``YYYY-MM-DD`` format. When there is no next payment (anymore), it will
+       show ``null``.
 
    * - ``description``
 
