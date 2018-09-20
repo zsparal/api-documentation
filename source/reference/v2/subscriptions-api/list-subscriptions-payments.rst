@@ -38,10 +38,11 @@ and by the subscription's ID, for example ``sub_8JfGzs6v3K``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra query string parameter is the
-``profileId`` parameter. With it, you can specify for which profile you want to retrieve subscriptions. Organizations
-can have multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>`
-for more information.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are also
+available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing payments.
+If you omit the ``profileId`` parameter, you will get all payments on the organization. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -49,16 +50,16 @@ for more information.
    * - ``profileId``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to retrieve test mode subscriptions.
+     - Set this to ``true`` to retrieve test mode payments.
 
 Response
 --------
