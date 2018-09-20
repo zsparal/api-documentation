@@ -2,18 +2,19 @@ Handling discounts
 ==================
 
 Using the :doc:`Orders API </orders/overview>` you can pass the full details of your customers' orders to Mollie.
-Of course in some cases you might want to give the customer a discount. This document describes how you can pass
+Of course, in some cases you might want to give the customer a discount. This document describes how you can pass
 various types of discounts and promotions.
 
 
 2-for-1 type promotions
 ^^^^^^^^^^^^^^^^^^^^^^^
-You may want to offer 2-for-1 type promotions, or other promotions where the consumer gets a certain percentage off if
-they buy multiple of the same product. In such cases, your customer gets some part of the order line for free. 
+You may want to offer 2-for-1 type promotions, or other promotions where the customer gets a certain percentage off if
+they buy multiple units of the same produc of the same product. In such cases, your customer gets some part of the order
+line for free.
 
 You can do this using the ``discountAmount`` property on the ``lines`` array.
 
-An example of an order line for a 2-for-1 type promotion:
+Here's an example of an order line that has a 2-for-1 type promotion:
 
 .. code-block:: json
    :linenos:
@@ -51,7 +52,7 @@ Gift cards
 If Mollie does not handle your :doc:`gift cards</guides/gift-cards>` for you, you can add an additional line of the type
 ``giftcard`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
 
-An example where a shopper exchanges a €10.00 gift card:
+Here's an example where a shopper exchanges a €10.00 gift card:
 
 .. code-block:: json
    :linenos:
@@ -95,7 +96,7 @@ An example where a shopper exchanges a €10.00 gift card:
        }
    ]
 
-As a gift card is simply a means of payment and are untaxed, this does not affect the VAT amount charged to your
+As a gift card is simply a means of payment and is untaxed, this does not affect the VAT amount charged to your
 customer.
 
 Store credit and vouchers
@@ -104,7 +105,7 @@ Store credit and vouchers
 If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply value-added tax
 to the discount.
 
-An example where a shopper uses a voucher for 10% off:
+Here's an example where a shopper uses a voucher for 10% off:
 
 .. code-block:: json
    :linenos:
