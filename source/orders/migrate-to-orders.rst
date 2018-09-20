@@ -1,5 +1,5 @@
-Migrating from the v2 Payments API to the Orders API
-====================================================
+Migrating from Payments API to the Orders API
+=============================================
 
 If you have chosen Orders, you can use this guide to migrate from the v2 Payments API to the Orders
 API. If you are migrating from the v1 Payments API please first review the
@@ -9,8 +9,8 @@ Payments API.
 Why use orders?
 ---------------
 * *Pay after delivery* payment methods like *Klarna Pay later* or *Klarna Slice it* are only
-  available in the orders API.
-* Some payment methods communicate the order lines to the customer in the payment screen or in an
+  available when using the :doc:`Create Order API </reference/v2/orders-api/create-order>`.
+* Some payment methods communicate the order lines to the customer in the hosted payment pages or in an
   invoice.
 * The order can also be inspected in the dashboard, where individual order lines can be shipped,
   refunded or canceled. This can also be done by using the API.
