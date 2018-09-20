@@ -121,6 +121,9 @@ Parameters
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
 
+       .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
+                 please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
+
    * - ``metadata``
 
        .. type:: mixed

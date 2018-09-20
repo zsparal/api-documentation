@@ -1,4 +1,5 @@
 .DEFAULT_GOAL := html
+.PHONY: help start install clean css-reload js-reload html-reload lint-js verify Makefile
 
 # Minimal makefile for Sphinx documentation
 #
@@ -12,6 +13,9 @@ SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
 BUILDDIR       = build
+
+clean:
+	rm -rf build/
 
 node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional
@@ -33,8 +37,6 @@ js-reload:
 
 html-reload:
 	sphinx-autobuild -b html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
-
-.PHONY: help Makefile
 
 start:
 	make html-reload & make css-reload & make js-reload
