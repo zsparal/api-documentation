@@ -35,6 +35,7 @@ issuer can be specified using the following JSON body payload:
    :linenos:
 
    {
+       "orderNumber": "1337",
        "method": "ideal",
        "payment": {
            "issuer": "ideal_INGBNL2A"
@@ -46,8 +47,35 @@ Additional parameters are required to be able to create an order: ``orderNumber`
 describing the actual order contents. The ``billingAddress`` should contain the address of the
 person who will be billed for the order amount.
 
-When the order is created the API response will contain a ``checkout`` URL just like in the payments
-API:
++------------------------+--------------------------------------------+------------------------------------------------+
+|                        | Payments API                               | Orders API                                     |
++========================+============================================+================================================+
+| ``amount``             | *Identical between Payments API and Orders API.*                                            |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``redirectUrl``        | *Identical between Payments API and Orders API.*                                            |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``webhookUrl``         | See :doc:`/payments/status-changes`.       | Orders have two flows: authorized and paid. See|
+|                        |                                            | :doc:`/orders/status-changes`.                 |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``locale``             | Recommended in Payments API.               | Required for Orders API.                       |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``method``             | Does not support *pay after delivery*      | Supports *Klarna Pay later* and *Klarna Slice  |
+|                        | payment methods.                           | it*.                                           |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``metadata``           | *Identical between Payments API and Orders API.*                                            |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``description``        | Required for Payments API.                 | Not available.                                 |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``orderNumber``        | Not available.                             | Required for Orders API.                       |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``lines``              | Not available.                             | :ref:`Specify <order-lines-details>` the       |
+|                        |                                            | products sold in the order.                    |
++------------------------+--------------------------------------------+------------------------------------------------+
+| ``billingAddress``     | Optional for Payments API.                 | Required for Orders API. Has several new       |
+|                        |                                            | fields.                                        |
++------------------------+--------------------------------------------+------------------------------------------------+
+
+When the order is created the response will contain a ``checkout`` URL just like in the payments API:
 
 .. code-block:: json
    :linenos:
@@ -61,9 +89,10 @@ API:
         }
     }
 
-The customer should be redirected to this URL to complete the order payment. Note that this link has
-a longer expiry period than a payment checkout URL. The exact expiry time can be retrieved from the
-``expiresAt`` property in the API response.
+Your customer should be redirected to this URL to complete the order payment.
+
+Note that this link has a longer expiry period than a payment checkout URL. The exact expiry time can be retrieved from
+the ``expiresAt`` property in the API response.
 
 Receiving status updates
 ------------------------
