@@ -7,6 +7,11 @@ changes are documented here.
 September 2018
 ==============
 
+Thursday, 20th
+--------------
+- Added a new endpoint get all payments for a specific customer subscription. For details, see:
+  :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscriptions-payments>`
+
 Tuesday, 18th
 -------------
 - Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`. This
@@ -15,7 +20,7 @@ Tuesday, 18th
 Monday, 17th
 ------------
 - Added a new endpoint for partners to get all connected organizations. For details, see:
-  :doc:`List Organizations </reference/v2/organizations-api/list-organizations>`
+  :doc:`List organizations </reference/v2/organizations-api/list-organizations>`
 
 Wednesday, 12th
 ---------------
