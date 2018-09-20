@@ -41,12 +41,6 @@ issuer can be specified using the following JSON body payload:
        }
    }
 
-
-The orders API allows for two additional *Pay after delivery* payment methods:
-*Klarna Pay later* (``klarnapaylater``) and *Klarna Slice it* (``klarnasliceit``).
-These methods are not available in the payment API as these methods require order details.
-Note that *Klarna Slice it* is not available in all regions.
-
 Additional parameters are required to be able to create an order: ``orderNumber``, ``lines`` and
 ``billingAddress``. The ``lines`` parameter should be an array of :ref:`order lines <order-lines-details>`
 describing the actual order contents. The ``billingAddress`` should contain the address of the
