@@ -17,12 +17,12 @@ Why use orders?
 
 Differences and similarities
 ----------------------------
-To create a payment in the order API the :doc:`create order </reference/v2/orders-api/create-order>`
-endpoint needs to be used.
+To create a payment in the order API the :doc:`Create order </reference/v2/orders-api/create-order>`
+API needs to be used.
 
-The `create payment` and `create order` API endpoints are very similar. Both support the
+The `Create payment` and `Create order` APIs are very similar. Both support the
 following parameters: ``amount``, ``redirectUrl``, ``webhookUrl``, ``locale``, ``method`` and
-``metadata``.  Note that for orders ``locale`` is a *required* parameter.
+``metadata``.  For orders, ``locale`` is a *required* parameter.
 
 For orders, there is no ``description`` field. The Payment description will be automatically created
 by Mollie and will contain the order number, your profile’s name and your profile’s website.
@@ -44,8 +44,7 @@ issuer can be specified using the following JSON body payload:
 Additional parameters are required to be able to create an order: ``orderNumber``, ``lines`` and
 ``billingAddress``. The ``lines`` parameter should be an array of :ref:`order lines <order-lines-details>`
 describing the actual order contents. The ``billingAddress`` should contain the address of the
-person who will be billed for the order amount. Some payment methods also require a date of birth of
-that person. When omitted the customer can be asked to enter this in the checkout process.
+person who will be billed for the order amount.
 
 When the order is created the API response will contain a ``checkout`` URL just like in the payments
 API:
@@ -66,20 +65,23 @@ The customer should be redirected to this URL to complete the order payment. Not
 a longer expiry period than a payment checkout URL. The exact expiry time can be retrieved from the
 ``expiresAt`` property in the API response.
 
-Shipping
---------
-Contrary to the payments API an order is not automatically completed after the customer pays using
-the checkout URL. It needs to be shipped. This can be done using the
-:doc:`Create Shipment API </reference/v2/shipments-api/create-shipment>` or in the dashboard.
-You can create multiple shipments per order.  In the shipment you specify the order lines that are
-to be shipped. For some payment methods shipping is required to ensure you will be settled.
-Also note that for those methods the customer will receive an invoice per shipment.
-
 Receiving status updates
 ------------------------
 Just like in the payments API you can specify a ``webhookUrl`` that will be used by Mollie to
 inform your back office when the status of an order has changed. You can then use the Mollie API to
 :doc:`retrieve the order status </reference/v2/orders-api/get-order>`.
+
+Shipping
+--------
+Contrary to the payments API an order is not automatically completed after the customer pays using
+the checkout URL. It needs to be shipped. This can be done using the
+:doc:`Create Shipment API </reference/v2/shipments-api/create-shipment>` or directly from the `Mollie Dashboard <https://www.mollie.com/dashboard/>`_.
+
+If needed, you can create multiple shipments per order. In the shipment you specify the order lines that are to be
+shipped.
+
+For *pay after delivery* payment methods, shipping is required to ensure you will be settled. Also note that for those
+methods the customer will receive an invoice per shipment.
 
 Refunding
 ---------
