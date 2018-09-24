@@ -121,9 +121,10 @@ Response
    * - ``nextPaymentDate``
 
        .. type:: date
+          :required: false
 
-     - The date of the next scheduled payment in ``YYYY-MM-DD`` format. When there is no next payment (anymore), it will
-       show ``null``.
+     - The date of the next scheduled payment in ``YYYY-MM-DD`` format. When there will be no next payment, for example
+       when the subscription has ended, this parameter will not be returned.
 
    * - ``description``
 
