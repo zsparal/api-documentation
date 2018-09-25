@@ -359,3 +359,42 @@
 		) }}
 	</ul>
 </div>
+
+<div class="sidebar__spacing"></div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/reseller-api/') }}">
+	<p><a href="javascript:void(0)">Reseller API</a></p>
+
+	<ul>
+		{{ sidebar_item(
+		'reference/reseller-api/account-claim',
+		'Claim account',
+		'GET /reseller-api/v1/account-claim'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/account-create',
+		'Create account',
+		'POST /reseller-api/v1/account-create'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/account-edit',
+		'Edit account',
+		'PATCH /reseller-api/v1/account-edit'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/account-valid',
+		'Validate account',
+		'GET /reseller-api/v1/account-valid'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/available-payment-methods',
+		'Available payment methods',
+		'GET /reseller-api/v1/available-payment-methods'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/bankaccount-edit',
+		'Edit bankaccount',
+		'PATCH /reseller-api/v1/bankaccount-edit'
+		) }}
+	</ul>
+</div>

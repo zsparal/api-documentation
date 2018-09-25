@@ -7,9 +7,9 @@ Every API request will be answered with a **result code**. Results will look lik
 
     <?xml version="1.0"?>
     <response version="v1">
-     <success>true</success>
-     <resultcode>10</resultcode>
-     <resultmessage>It works!</resultmessage>
+        <success>true</success>
+        <resultcode>10</resultcode>
+        <resultmessage>It works!</resultmessage>
     </response>
 
 The following elements are present in every API result:
