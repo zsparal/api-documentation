@@ -139,8 +139,8 @@ Parameters
           :required: false
 
      - Indicate which type of payment this is in a recurring sequence. If set to ``first``, a
-       :ref:`first payment <payments/recurring/first-payment>` is created for the customer, allowing the customer to agree
-       to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
+       :ref:`first payment <payments/recurring/first-payment>` is created for the customer, allowing the customer to
+       agree to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
        customer's card is charged automatically.
 
        Defaults to ``oneoff``, which is a regular non-recurring payment (see also:

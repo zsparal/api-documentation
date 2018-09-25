@@ -47,8 +47,8 @@ Response
 
        .. type:: integer
 
-     - The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
-       default number.
+     - The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or
+       the default number.
 
    * - ``_embedded``
 

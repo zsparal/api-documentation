@@ -25,7 +25,8 @@ Parameters
        .. type:: string
           :required: false
 
-     - Offset the result set to the settlement with this ID. The settlement with this ID is included in the result set as well.
+     - Offset the result set to the settlement with this ID. The settlement with this ID is included in the result set
+       as well.
 
    * - ``limit``
 

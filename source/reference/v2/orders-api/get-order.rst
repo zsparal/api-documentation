@@ -23,8 +23,8 @@ Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is also
-available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
+also available.
 
 .. list-table::
    :widths: auto
@@ -206,35 +206,40 @@ Response
        .. type:: datetime
           :required: false
 
-     - If the order is expired, the time of expiration will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - If the order is expired, the time of expiration will be present in
+       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``paidAt``
 
        .. type:: datetime
           :required: false
 
-     - If the order has been paid, the time of payment will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - If the order has been paid, the time of payment will be present in
+       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``authorizedAt``
 
        .. type:: datetime
           :required: false
 
-     - If the order has been authorized, the time of authorization will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - If the order has been authorized, the time of authorization will be present in
+       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``canceledAt``
 
        .. type:: datetime
           :required: false
 
-     - If the order has been canceled, the time of cancellation will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - If the order has been canceled, the time of cancellation will be present in
+       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``completedAt``
 
        .. type:: datetime
           :required: false
 
-     - If the order is completed, the time of completion will be present in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - If the order is completed, the time of completion will be present in
+       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
    * - ``_links``
 

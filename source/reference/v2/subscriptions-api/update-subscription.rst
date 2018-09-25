@@ -55,14 +55,16 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. type:: integer
           :required: false
 
-     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription has been charged.
+     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription
+       has been charged.
 
    * - ``startDate``
 
        .. type:: date
           :required: false
 
-     - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be charged. Should always be in the future.
+     - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be
+       charged. Should always be in the future.
 
    * - ``description``
 
@@ -89,7 +91,8 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
 
 .. list-table::
    :widths: auto

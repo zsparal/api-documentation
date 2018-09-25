@@ -57,7 +57,8 @@ Response
 
               .. type:: array
 
-            - An array of organization objects as described in :doc:`Get organization </reference/v2/organizations-api/get-organization>`.
+            - An array of organization objects as described in
+              :doc:`Get organization </reference/v2/organizations-api/get-organization>`.
 
    * - ``count``
 
@@ -70,8 +71,8 @@ Response
 
        .. type:: object
 
-     - Links to help navigate through the lists of organizations. Every URL object will contain an ``href`` and a ``type``
-       field.
+     - Links to help navigate through the lists of organizations. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto

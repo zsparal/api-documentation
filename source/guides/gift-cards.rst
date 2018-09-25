@@ -31,8 +31,8 @@ PSPID.
 If you already have a PSPID that you would like to reuse, contact your account manager at Mollie.
 
 Once your account has been set up with the brand owner and you have enabled the gift card brand in the
-`Mollie Dashboard <https://www.mollie.com/dashboard>`_, Mollie will automatically verify the set up with Intersolve and enable
-the brand on your selected web site profiles once everything has been set up by the various parties involved.
+`Mollie Dashboard <https://www.mollie.com/dashboard>`_, Mollie will automatically verify the set up with Intersolve and
+enable the brand on your selected web site profiles once everything has been set up by the various parties involved.
 
 Settlement is handled by the brand owner and not by Mollie.
 
