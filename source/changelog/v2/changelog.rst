@@ -7,6 +7,11 @@ changes are documented here.
 September 2018
 ==============
 
+Monday, 25th
+------------
+- Added the ``nextPaymentDate`` field in subscriptions to see when the next payment should be initiated. For details,
+  see the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`.
+
 Thursday, 20th
 --------------
 - Added a new endpoint get all payments for a specific customer subscription. For details, see:
