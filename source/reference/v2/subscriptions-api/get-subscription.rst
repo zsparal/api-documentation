@@ -118,6 +118,14 @@ Response
 
      - The start date of the subscription in ``YYYY-MM-DD`` format.
 
+   * - ``nextPaymentDate``
+
+       .. type:: date
+          :required: false
+
+     - The date of the next scheduled payment in ``YYYY-MM-DD`` format. When there will be no next payment, for example
+       when the subscription has ended, this parameter will not be returned.
+
    * - ``description``
 
        .. type:: string
@@ -226,6 +234,8 @@ Response
        },
        "times": 4,
        "interval": "3 months",
+       "startDate": "2016-06-01",
+       "nextPaymentDate": "2016-09-01",
        "description": "Quarterly payment",
        "method": null,
        "webhookUrl": "https://webshop.example.org/payments/webhook",

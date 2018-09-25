@@ -170,6 +170,8 @@ Response
                    },
                    "times": 4,
                    "interval": "3 months",
+                   "startDate": "2016-06-01",
+                   "nextPaymentDate": "2016-09-01",
                    "description": "Quarterly payment",
                    "method": null,
                    "webhookUrl": "https://webshop.example.org/subscriptions/webhook",
