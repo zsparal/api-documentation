@@ -1,13 +1,12 @@
 Handling discounts
 ==================
-
 Using the :doc:`Orders API </orders/overview>` you can pass the full details of your customers' orders to Mollie.
 Of course, in some cases you might want to give the customer a discount. This document describes how you can pass
 various types of discounts and promotions.
 
 
 2-for-1 type promotions
-^^^^^^^^^^^^^^^^^^^^^^^
+-----------------------
 You may want to offer 2-for-1 type promotions, or other promotions where the customer gets a certain percentage off if
 they buy multiple units of the same produc of the same product. In such cases, your customer gets some part of the order
 line for free.
@@ -47,8 +46,7 @@ Here's an example of an order line that has a 2-for-1 type promotion:
 Note how the VAT is only calculated over the amount actually charged to your customer.
 
 Gift cards
-^^^^^^^^^^
-
+----------
 If Mollie does not handle your :doc:`gift cards</guides/gift-cards>` for you, you can add an additional line of the type
 ``giftcard`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
 
@@ -100,8 +98,7 @@ As a gift card is simply a means of payment and is untaxed, this does not affect
 customer.
 
 Store credit and vouchers
-^^^^^^^^^^^^^^^^^^^^^^^^^
-
+-------------------------
 If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply value-added tax
 to the discount.
 

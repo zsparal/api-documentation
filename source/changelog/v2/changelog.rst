@@ -1,6 +1,5 @@
 Changelog
 ~~~~~~~~~
-
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
@@ -29,8 +28,9 @@ Monday, 17th
 
 Wednesday, 12th
 ---------------
-- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`.
-  See the :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
+- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the
+  :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
+  :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
 
 - Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
 
