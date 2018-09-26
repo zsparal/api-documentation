@@ -7,7 +7,7 @@ September 2018
 ==============
 
 Tuesday, 25th
-------------
+-------------
 - Added the ``nextPaymentDate`` field in subscriptions to see when the next payment should be initiated. For details,
   see the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`.
 
