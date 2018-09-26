@@ -1,5 +1,5 @@
-Edit account
-=============
+Update account
+==============
 
 .. api-name:: Reseller API
    :version: 1

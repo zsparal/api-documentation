@@ -458,18 +458,18 @@
 
 	<ul>
 		{{ sidebar_item(
-		'reference/reseller-api/account-claim',
-		'Claim account',
-		'GET /reseller-api/v1/account-claim'
-		) }}
-		{{ sidebar_item(
 		'reference/reseller-api/account-create',
 		'Create account',
 		'POST /reseller-api/v1/account-create'
 		) }}
 		{{ sidebar_item(
+		'reference/reseller-api/account-claim',
+		'Claim account',
+		'GET /reseller-api/v1/account-claim'
+		) }}
+		{{ sidebar_item(
 		'reference/reseller-api/account-edit',
-		'Edit account',
+		'Update account',
 		'PATCH /reseller-api/v1/account-edit'
 		) }}
 		{{ sidebar_item(
@@ -478,14 +478,44 @@
 		'GET /reseller-api/v1/account-valid'
 		) }}
 		{{ sidebar_item(
+		'reference/reseller-api/get-login-link',
+		'Get login link',
+		'GET /reseller-api/v1/get-login-link'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/disconnect-account',
+		'Disconnect account',
+		'DELETE /reseller-api/v1/disconnect-account'
+		) }}
+		{{ sidebar_item(
 		'reference/reseller-api/available-payment-methods',
 		'Available payment methods',
 		'GET /reseller-api/v1/available-payment-methods'
 		) }}
 		{{ sidebar_item(
+		'reference/reseller-api/bankaccounts',
+		'Get bankaccounts',
+		'GET /reseller-api/v1/bankaccounts'
+		) }}
+		{{ sidebar_item(
 		'reference/reseller-api/bankaccount-edit',
-		'Edit bankaccount',
+		'Update bankaccount',
 		'PATCH /reseller-api/v1/bankaccount-edit'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/profile-create',
+		'Create profile',
+		'POST /reseller-api/v1/profile-create'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/profiles',
+		'Get profiles',
+		'GET /reseller-api/v1/profiles'
+		) }}
+		{{ sidebar_item(
+		'reference/reseller-api/set-fees',
+		'Set fees',
+		'POST /reseller-api/v1/set-fees'
 		) }}
 	</ul>
 </div>
