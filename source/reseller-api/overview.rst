@@ -2,7 +2,7 @@ Reseller API
 ============
 
 The **Reseller API** can be used to register new merchants with Mollie, link existing merchants to your reseller account,
-or change settings of merchants that you have brought in.
+or change settings of merchants that you have referred to Mollie.
 
 How to become a reseller?
 -------------------------

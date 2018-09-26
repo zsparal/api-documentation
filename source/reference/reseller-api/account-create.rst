@@ -10,8 +10,8 @@ Create account
 
 .. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
-You can use this method to create an account for a merchant. This account will appear in your list of merchants you have
-brought in.
+You can use this method to create an account for a merchant. This account will appear in your list of referred
+merchants.
 
 Parameters
 ----------
@@ -69,7 +69,7 @@ parameters:
        .. type:: string
           :required: true
 
-     - 	Postalcode
+     - 	Postal code
 
    * - ``city``
 
@@ -87,12 +87,13 @@ parameters:
 
         Example: ``NL`` ``BE``
 
-   * - ``Locale``
+   * - ``locale``
 
        .. type:: string
           :required: false
 
-     - 	Preferred locale for the merchant. Should be in locale format.
+     - 	Preferred locale for the merchant. Should be in locale format. This determines the language of any follow up
+        communications from Mollie
 
         Example: ``nl_NL`` ``en_US``
 
@@ -167,7 +168,7 @@ parameters:
        .. type:: string
           :required: false
 
-     - 	Billing City
+     - 	Billing city
 
    * - ``billing_country``
 

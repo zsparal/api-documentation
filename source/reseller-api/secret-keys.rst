@@ -1,24 +1,19 @@
 Secret keys and authentication
 ==============================
-**Secret keys** facilitate encrypted communication with Mollie's Reseller API’s. The new API's provide even better security
+**Secret keys** facilitate encrypted communication with Mollie's Reseller API’s. These API's provide even better security
 than the previous ones because:
 
-* **All API requests are routed via HTTPS:**
-  This ensures that the API request can not be viewed by others. HTTPS also guarantees that it is really Mollie that you
-  are communicating with.
-* **Authentication is performed by means of a** ``profile_key`` **:**
-  This means you don't have to include a username or password. If you so choose, you can use a different ``profile_key``
-  perwebsite.
-* **Each API request contains a timestamp:**
+**Authentication is performed by means of a** ``profile_key`` **:**
+  This means you don't have to include a username or password. You can retrieve your profile key from the Reseller
+  portal in the Mollie Dashboard.
+**Each API request contains a timestamp:**
   This means that the request cannot be resubmitted later.
-* **All API requests are signed with a secret key:**
+**All API requests are signed with a secret key:**
   This is how our platform knows that the request was made by your website and is authentic, and that the parameters
   were not changed en route.
-* **The API features versions:**
-  You can easily switch to a different version, and older versions are supported over a longer period.
 
-Always obligatory parameters
-----------------------------
+Obligatory parameters
+----------------------
 You need to send these obligatory parameters along either via ``POST`` or in the query string via ``GET``. These
 parameters are used to authenticate the API request. Please take note that you must URL-encode the values for the
 parameters: ``my value`` becomes ``my%20value``.
@@ -38,7 +33,7 @@ parameters: ``my value`` becomes ``my%20value``.
        .. type:: string
           :required: true
 
-     - Your website profile key, you can retrieve it via the profiles-page in the Dashboard.
+     - Your profile key, you can retrieve it via the Reseller portal in the Mollie Dashboard.
 
    * - ``timestamp``
 
@@ -56,10 +51,12 @@ parameters: ``my value`` becomes ``my%20value``.
 
 Creating the signature
 ----------------------
-You must sign every API-request with the **secret key** that belongs to your website profile. For this purpose, we use a
-SHA1-HMAC, or Hash-based Message Authentication Code with SHA1 as the hashing algorithm. For a key, you use the 'key'
-that belongs to the website profile, you will find it on the profiles-page. You must chose 'SHA1' as the algorithm.
+You must sign every API-request with the **secret key** that belongs to your profile key. For this purpose, we use a
+SHA1-HMAC, or Hash-based Message Authentication Code with SHA1 as the hashing algorithm.
+
+For a key, you use the secret key from the Reseller Portal. You must chose 'SHA1' as the algorithm.
 The signature is therefore always 40 characters long, for instance: ``6a018490f38ddc1571ab4cd9cd41f5e700c09ce2``.
+
 Many programming languages feature a standard implementation of the HMAC algorithm. See for instance ``hash_hmac()`` for
 PHP or the ``HMAC.hexdigest()`` method for Python.
 

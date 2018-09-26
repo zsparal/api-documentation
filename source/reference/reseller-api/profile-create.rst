@@ -25,22 +25,22 @@ parameters:
        .. type:: string
           :required: true
 
-     - The username of the account you would like to disconnect.
+     - The username of the account you would like to create a profile for.
 
    * - ``password``
 
        .. type:: string
           :required: true
 
-     - The password of the account you would like to disconnect.
+     - The password of the account you would like to create a profile for.
 
    * - ``partner_id_customer``
 
        .. type:: string
           :required: false
 
-     - 	The partner ID of the account you would like to disconnect. It can be used instead of the parameters username
-        and password.
+     -  The partner ID of the account you would like to create a profile for. It can be used instead of the parameters
+        ``username`` and ``password``.
 
    * - ``name``
 
@@ -61,14 +61,14 @@ parameters:
        .. type:: string
           :required: true
 
-     - The e-mail address at which your merchants can reach you
+     - The e-mail address at which customers can reach the merchant.
 
    * - ``phone``
 
        .. type:: string
           :required: true
 
-     - The phone number at which your merchants can reach you
+     - The phone number at which customers can reach the merchant.
 
    * - ``category``
 

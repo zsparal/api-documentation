@@ -51,14 +51,14 @@ parameters:
 
         * ``ideal``
         * ``paysafecard``
-        * ``credit card``
+        * ``creditcard``
         * ``mistercash``
-        * ``bank transfer``
+        * ``banktransfer``
         * ``paypal``
         * ``bitcoin``
         * ``sofort``
         * ``belfius``
-        * ``direct debit``
+        * ``directdebit``
         * ``podiumcadeaukaart``
         * ``refund``
 
@@ -83,8 +83,8 @@ parameters:
 
        **Only applicable to refund:**
 
-       * ``ideal`` for adjusting iDEAL/Transfer/Bancontact Mister Cash/ SOFORT Banking and PayPal refunds.
-       * ``credit card`` for adjusting credit card refunds
+       * ``creditcard`` for adjusting credit card refunds
+       * ``ideal`` for adjusting all other refunds.
 
    * - ``fee_type``
 

@@ -36,10 +36,6 @@ The following elements are present in every API result:
 
      - The parameter ``signature`` is missing.
 
-   * - ``24``
-
-     - The API request was sent via HTTP instead of HTTPS.
-
    * - ``25``
 
      - The submitted website profile cannot be found.
@@ -70,7 +66,7 @@ The following elements are present in every API result:
 
    * - ``96``
 
-     - One of the parameters contains bites that can not be read as UTF-8.
+     - One of the parameters contains bytes that can not be understood as UTF-8.
 
    * - ``97``
 

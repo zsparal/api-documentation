@@ -12,9 +12,9 @@ Claim account
 
 The account-claim method can be used to link an existing Mollie account to your own.
 
-You then become the reseller of this account, and it will appear in the list of merchants you have brought in. The
-account will receive the same iDEAL rate as your other merchants. You will also receive a partner commission for
-bringing in this merchant.
+You then become the reseller of this account, and it will appear in the list of merchants you have referred. The
+account will receive the same payment method rate as your other merchants. You will also receive a partner commission for
+referring the merchant.
 
 Parameters
 ----------

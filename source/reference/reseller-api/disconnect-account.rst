@@ -11,7 +11,7 @@ Disconnect account
 .. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 This method allows you to cancel one of your merchants as reseller. The link between your account and that of the
-merchant will be broken. Any preferential rates your merchant enjoyed via your account will be readjusted to the normal
+merchant will be broken. Any preferential rates your merchant enjoyed via your account will be re-adjusted to the normal
 rates.
 
 Parameters

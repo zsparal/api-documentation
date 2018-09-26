@@ -17,7 +17,7 @@ Parameters
 ----------
 Make sure to add the :doc:`obligatory parameters </reseller-api/secret-keys>` always. Besides that, you can add parameters
 as described in :doc:`Create account </reference/reseller-api/account-create>`. Please note that you'll need to add one
-required parameters just for this endpoint:
+additional required parameter just for this endpoint:
 
 .. list-table::
    :widths: auto
