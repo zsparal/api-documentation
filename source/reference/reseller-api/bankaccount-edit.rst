@@ -42,7 +42,7 @@ parameters:
      - The partner ID of the account of which you would like to change the bank account. It can be used instead of the
        parameters username and password.
 
-   * - ``ID``
+   * - ``id``
 
        .. type:: string
           :required: true
@@ -56,21 +56,21 @@ parameters:
 
      - Account name
 
-   * - ``IBAN``
+   * - ``iban``
 
        .. type:: string
           :required: false
 
      - Payout IBAN
 
-   * - ``BIC``
+   * - ``bic``
 
        .. type:: string
           :required: false
 
      - 	Bank BIC code
 
-   * - ``bank name``
+   * - ``bankname``
 
        .. type:: string
           :required: false

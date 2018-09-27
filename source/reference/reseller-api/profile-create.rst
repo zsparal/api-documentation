@@ -56,7 +56,7 @@ parameters:
 
      - The url of the website profile
 
-   * - ``e-mail``
+   * - ``email``
 
        .. type:: string
           :required: true
@@ -73,7 +73,7 @@ parameters:
    * - ``category``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The category in which the merchant is active. The value is a merchant category code. Must be one of the following
        values:

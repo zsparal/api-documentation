@@ -21,7 +21,7 @@ parameters:
 .. list-table::
    :widths: auto
 
-   * - ``test mode``
+   * - ``testmode``
 
        .. type:: boolean
           :required: false
@@ -50,7 +50,7 @@ parameters:
 
      - 	Company Name
 
-   * - ``e-mail``
+   * - ``email``
 
        .. type:: string
           :required: true
@@ -64,7 +64,7 @@ parameters:
 
      - Street and number
 
-   * - ``zip code``
+   * - ``zipcode``
 
        .. type:: string
           :required: true
