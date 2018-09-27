@@ -12,6 +12,8 @@ than the previous ones because:
   This is how our platform knows that the request was made by your website and is authentic, and that the parameters
   were not changed en route.
 
+.. _secret-keys:
+
 Obligatory parameters
 ----------------------
 You need to send these obligatory parameters along either via ``POST`` or in the query string via ``GET``. These

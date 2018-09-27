@@ -16,7 +16,7 @@ rates.
 
 Parameters
 ----------
-Make sure to add the :doc:`obligatory parameters </reseller-api/secret-keys>` always. Besides that, add the following
+Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
 parameters:
 
 .. list-table::
