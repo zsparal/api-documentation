@@ -6,6 +6,10 @@ changes are documented here.
 September 2018
 ==============
 
+Friday, 28th
+------------
+- Bitcoin payments can now be created in non-EUR currencies. Your account will be settled in EUR.
+
 Tuesday, 25th
 -------------
 - Added the ``nextPaymentDate`` field in subscriptions to see when the next payment should be initiated. For details,
