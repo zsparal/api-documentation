@@ -74,6 +74,14 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - A description unique per subscription . This will be included in the payment description along with the charge
        date.
 
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, this
+       will be ignored when setting this parameter.
+
    * - ``webhookUrl``
 
        .. type:: string
@@ -175,6 +183,7 @@ Response
         "interval": "15 days",
         "startDate": "2018-12-12",
         "nextPaymentDate": "2018-12-12",
+        "mandateId": "mdt_84HdeDr5",
         "webhookUrl": "https://example.org/webhook",
         "_links": {
             "self": {

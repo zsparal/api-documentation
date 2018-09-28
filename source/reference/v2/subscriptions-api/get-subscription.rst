@@ -142,6 +142,13 @@ Response
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - The mandate used for this subscription. When there is no mandate specified, this parameter will not be returned.
+
    * - ``canceledAt``
 
        .. type:: datetime
@@ -238,6 +245,7 @@ Response
        "nextPaymentDate": "2016-09-01",
        "description": "Quarterly payment",
        "method": null,
+       "mandateId": "mdt_38HS4fsS",
        "webhookUrl": "https://webshop.example.org/payments/webhook",
        "metadata": {
            "plan": "small"
