@@ -16,6 +16,7 @@ List payments
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
@@ -41,13 +42,13 @@ Parameters
 
      - The number of payments to return (with a maximum of 250).
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are
-also available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing
-payments. If you omit the ``profileId`` parameter, you will get all payments on the organization. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
+the following query string parameters are also available. With the ``profileId`` parameter, you can specify which
+profile you want to look at when listing payments. If you omit the ``profileId`` parameter, you will get all payments on
+the organization. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto

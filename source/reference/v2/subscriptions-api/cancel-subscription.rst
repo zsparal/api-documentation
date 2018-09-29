@@ -9,6 +9,7 @@ Cancel subscription
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 A subscription can be canceled any time by calling ``DELETE`` on the resource endpoint.

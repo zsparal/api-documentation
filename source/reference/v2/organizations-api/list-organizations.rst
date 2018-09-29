@@ -1,15 +1,16 @@
 List organizations
 ==================
 .. api-name:: Organizations API
-    :version: 2
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations
+   :method: GET
+   :url: https://api.mollie.com/v2/organizations
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :personal_access_tokens: true
+   :oauth: true
 
 Retrieve all organizations that are connected to your partner-account.
 

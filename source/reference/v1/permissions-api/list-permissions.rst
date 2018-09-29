@@ -9,6 +9,7 @@ List permissions
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 List all permissions available with the current OAuth access token.

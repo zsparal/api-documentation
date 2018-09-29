@@ -13,6 +13,7 @@ Update shipment
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 This endpoint can be used to update the tracking information of a shipment.
@@ -57,10 +58,10 @@ the shipment's ID, for example ``shp_3wmsgCJN4U``.
             - The URL where your customer can track the shipment, for example:
               ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
+the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

@@ -17,6 +17,7 @@ Get issuer
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve a payment method issuer by its issuer identifier.
@@ -27,10 +28,10 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the issuer's ID, for example ``ideal_ABNANL2A``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
-also available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
+the ``testmode`` query string parameter is also available.
 
 .. list-table::
    :widths: auto

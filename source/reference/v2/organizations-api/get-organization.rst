@@ -1,15 +1,16 @@
 Get organization
 ================
 .. api-name:: Organizations API
-    :version: 2
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations/*id*
+   :method: GET
+   :url: https://api.mollie.com/v2/organizations/*id*
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :personal_access_tokens: true
+   :oauth: true
 
 Retrieve an organization by its ID.
 

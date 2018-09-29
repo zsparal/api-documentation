@@ -14,6 +14,7 @@ List order refunds
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve order refunds. The results are paginated. See :doc:`pagination </guides/pagination>` for more information.

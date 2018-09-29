@@ -9,6 +9,7 @@ Get open settlement
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve the details of the open balance of the organization. This will return a settlement object representing your

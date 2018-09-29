@@ -9,6 +9,7 @@ Get invoice
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve details of an invoice, using the invoice's identifier.

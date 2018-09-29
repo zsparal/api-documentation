@@ -9,6 +9,7 @@ List invoices
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve all invoices on the account. Optionally filter on year or invoice number.

@@ -9,6 +9,7 @@ Get profile
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve details of a payment profile, using the profile's identifier.

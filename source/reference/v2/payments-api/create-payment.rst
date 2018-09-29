@@ -9,6 +9,7 @@ Create payment
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off.
@@ -516,12 +517,12 @@ SEPA Direct Debit
      - IBAN of the account holder. Only available if one-off payments are enabled on your account. Will
        pre-fill the IBAN in the checkout screen if present.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
+the only mandatory extra parameter is the ``profileId`` parameter. With it, you can specify which profile the payment
+belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto

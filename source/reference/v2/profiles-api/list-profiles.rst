@@ -9,6 +9,7 @@ List profiles
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve all profiles available on the account.

@@ -9,6 +9,7 @@ List API keys
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 List the active API keys for the given payment profile.

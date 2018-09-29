@@ -16,6 +16,7 @@ List settlement payments
 
 .. authentication::
    :api_keys: false
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve all payments included in a settlement.

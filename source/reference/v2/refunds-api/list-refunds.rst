@@ -14,6 +14,7 @@ List payment refunds
 
 .. authentication::
    :api_keys: true
+   :personal_access_tokens: true
    :oauth: true
 
 Retrieve refunds.
@@ -49,11 +50,12 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
      - The number of refunds to return (with a maximum of 250).
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are
-also available. With the ``profileId`` parameter, you can specify which profile you want to look at when listing
-refunds. If you omit the ``profileId`` parameter, you will get all refunds on the organization.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
+the following query string parameters are also available. With the ``profileId`` parameter, you can specify which
+profile you want to look at when listing refunds. If you omit the ``profileId`` parameter, you will get all refunds on
+the organization.
 
 .. list-table::
    :widths: auto
