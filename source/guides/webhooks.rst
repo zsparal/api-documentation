@@ -1,6 +1,6 @@
 Webhooks
 ========
-Webhooks are used to process realtime status updates, for example when a payment is paid. It is a URL Mollie will call
+Webhooks are used to process real-time status updates, for example when a payment is paid. It is a URL Mollie will call
 with the ID of the updated object. When Mollie calls your webhook, you should fetch the latest status and process it if
 the status was changed.
 
