@@ -4,8 +4,12 @@
   "description": "API Documentation for all of Mollie's public APIs.",
   "main": "index.js",
   "scripts": {
-    "lint:js": "eslint \"./source/theme/**/*.js\"",
-    "precommit": "lint-staged"
+    "lint:js": "eslint \"./source/theme/**/*.js\""
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
   },
   "repository": {
     "type": "git",
