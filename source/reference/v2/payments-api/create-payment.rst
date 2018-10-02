@@ -202,7 +202,7 @@ Bank transfer
           :required: false
 
      - The locale will determine the target bank account the customer has to transfer the money to. We have dedicated
-       bank accounts for Belgium, France, Germany and The Netherlands. Having the customer use a local bank account
+       bank accounts for Belgium, Germany and The Netherlands. Having the customer use a local bank account
        greatly increases the conversion and speed of payment.
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
