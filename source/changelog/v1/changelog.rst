@@ -8,7 +8,7 @@ October 2018
 
 Tuesday, 2nd
 ------------
-- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our dutch
+- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
   bank account to finish the payment.
 
 July 2018
