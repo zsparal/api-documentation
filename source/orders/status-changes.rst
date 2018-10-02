@@ -85,9 +85,9 @@ The following diagram shows how one order status leads to another:
     the order is in this state, it means that you still have some order lines that are not shipped yet.
 
     * This is not a status Mollie will call your webhook for.
-    * Order lines can be in the states ``paid``, ``authorized``, ``shipping``, ``completed`` or ``canceled``.
-      At least one line should be in ``paid`` or ``authorized`` and at least one other line should be ``shipping``
-      or ``completed``.
+    * Order lines can be in the states ``paid``, ``authorized``, ``shipping``, ``completed`` or ``canceled``. At
+      least one line should be in state ``paid`` or ``authorized`` and at least one other line should be in state
+      ``shipping`` or ``completed``.
     * Can transition to: ``completed``.
 
 .. _order-status-completed:
@@ -178,7 +178,7 @@ The following diagram shows how one order line status leads to another:
 ``completed``
 ^^^^^^^^^^^^^
     When the order line is completely shipped, it will get this status. The order line will also get this status when it
-    is e.g. partially shipped or refunded and the rest of the line is ``canceled``.
+    is partially shipped and the rest of the line is ``canceled``.
 
     * The order has status ``shipping`` or ``completed``.
     * This is a final state, the order line can't transition to another state.

@@ -78,7 +78,6 @@ Response
         "isCancelable": false,
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
-        "expiresAt": "2018-08-30T09:29:56+00:00",
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
@@ -100,6 +99,7 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
+        "canceledAt": "2018-08-03T09:29:56+00:00",
         "redirectUrl": "https://example.org/redirect",
         "lines": [
             {
