@@ -16,7 +16,7 @@ changes may result in the merchant no longer receiving any payouts.
 Parameters
 ----------
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, you can add parameters
-as described in :doc:`Create account </reference/reseller-api/account-create>`. Please note that you'll need to add one
+as described in :doc:`Create account </reference/reseller-api/endpoints/account-create>`. Please note that you'll need to add one
 additional required parameter just for this endpoint:
 
 .. list-table::
