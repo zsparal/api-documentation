@@ -1,11 +1,24 @@
 Changelog
 ~~~~~~~~~
-
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
 September 2018
 ==============
+
+Friday, 28th
+------------
+- Bitcoin payments can now be created in non-EUR currencies. Your account will be settled in EUR.
+
+Tuesday, 25th
+-------------
+- Added the ``nextPaymentDate`` field in subscriptions to see when the next payment should be initiated. For details,
+  see the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`.
+
+Thursday, 20th
+--------------
+- Added a new endpoint get all payments for a specific customer subscription. For details, see:
+  :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscriptions-payments>`
 
 Tuesday, 18th
 -------------
@@ -15,12 +28,13 @@ Tuesday, 18th
 Monday, 17th
 ------------
 - Added a new endpoint for partners to get all connected organizations. For details, see:
-  :doc:`List Organizations </reference/v2/organizations-api/list-organizations>`
+  :doc:`List organizations </reference/v2/organizations-api/list-organizations>`
 
 Wednesday, 12th
 ---------------
-- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`.
-  See the :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
+- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the
+  :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
+  :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
 
 - Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
 

@@ -57,7 +57,8 @@ Response
 
               .. type:: array
 
-            - An array of organization objects as described in :doc:`Get organization </reference/v2/organizations-api/get-organization>`.
+            - An array of organization objects as described in
+              :doc:`Get organization </reference/v2/organizations-api/get-organization>`.
 
    * - ``count``
 
@@ -70,8 +71,8 @@ Response
 
        .. type:: object
 
-     - Links to help navigate through the lists of organizations. Every URL object will contain an ``href`` and a ``type``
-       field.
+     - Links to help navigate through the lists of organizations. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto
@@ -103,13 +104,23 @@ Response
 Example
 -------
 
-Request
-^^^^^^^
+Request (curl)
+^^^^^^^^^^^^^^
 .. code-block:: bash
    :linenos:
 
    curl -X GET https://api.mollie.com/v2/organizations?limit=5 \
        -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+
+Request (PHP)
+^^^^^^^^^^^^^
+.. code-block:: php
+   :linenos:
+
+    <?php
+    $mollie = new \Mollie\Api\MollieApiClient();
+    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+    $organizations = $mollie->organizations->page();
 
 Response
 ^^^^^^^^

@@ -1,8 +1,8 @@
 Order status changes
 ====================
-
 Orders and order lines can go through a number of different statuses. First we will discuss the difference between
-two possible flows for orders. After that we will list all the possible statuses for both **orders** and **order lines**.
+two possible flows for orders. After that we will list all the possible statuses for both **orders** and
+**order lines**.
 
 Two flows: authorized and paid
 ------------------------------

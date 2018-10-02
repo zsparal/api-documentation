@@ -19,7 +19,8 @@ that have this flow are *Klarna Pay later* and *Klarna Slice it*.
 
 Parameters
 ----------
-Replace ``settlementId`` in the endpoint URL by the settlement's ID. For example: ``/v2/settlements/stl_jDk30akdN/captures``.
+Replace ``settlementId`` in the endpoint URL by the settlement's ID. For example:
+``/v2/settlements/stl_jDk30akdN/captures``.
 
 Response
 --------
@@ -32,8 +33,8 @@ Response
 
        .. type:: integer
 
-     - The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
-       default number.
+     - The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or
+       the default number.
 
    * - ``_embedded``
 

@@ -20,8 +20,8 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
 Mollie Connect/OAuth parameters
 -------------------------------
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is also
-available.
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
+also available.
 
 .. list-table::
    :widths: auto
@@ -60,7 +60,8 @@ Response
 
               .. type:: array
 
-            - An array of shipment objects as described in :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
+            - An array of shipment objects as described in
+              :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
 
    * - ``_links``
 

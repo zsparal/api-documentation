@@ -68,8 +68,10 @@ Response
        },
        "times": 4,
        "interval": "3 months",
+       "nextPaymentDate": null,
        "description": "Quarterly payment",
        "method": null,
+       "startDate": "2016-06-01",
        "webhookUrl": "https://webshop.example.org/payments/webhook",
        "canceledAt": "2018-08-01T11:04:21+00:00",
        "_links": {

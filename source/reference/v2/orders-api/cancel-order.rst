@@ -11,15 +11,17 @@ Cancel order
    :api_keys: true
    :oauth: true
 
-The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping`` [#f1]_.
+The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``
+[#f1]_.
 
 #. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
 #. In case of ``authorized``, the authorization will be released, all order lines will be canceled and the new order
    status will be ``canceled``.
-#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled and order lines that are ``shipping``
-   will be completed. The new order status will be ``completed``.
+#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled and order lines that are
+   ``shipping`` will be completed. The new order status will be ``completed``.
 
-For more information about the status transitions please check our :doc:`order status changes guide </orders/status-changes>`.
+For more information about the status transitions please check our
+:doc:`order status changes guide </orders/status-changes>`.
 
 .. [#f1] If the order status is ``shipping``, some order lines can have the status ``paid`` if the order was paid using
          a payment method that does not support authorizations (such as iDEAL) and the order lines are not shipped yet.

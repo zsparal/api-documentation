@@ -105,8 +105,8 @@ Parameters
        .. type:: string
           :required: true
 
-     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. You can provide any
-       ISO 15897 locale, but our hosted payment pages currently only support the following languages:
+     - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. You can provide
+       any ISO 15897 locale, but our hosted payment pages currently only support the following languages:
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
@@ -166,7 +166,7 @@ The order lines contain the actual things that your customer bought.
 
      - The type of product bought, for example, a physical or a digital product. Must be one of the following values:
 
-       * ``physical``
+       * ``physical`` (default)
        * ``discount``
        * ``digital``
        * ``shipping_fee``
@@ -174,7 +174,8 @@ The order lines contain the actual things that your customer bought.
        * ``gift_card``
        * ``surcharge``
 
-       Will be set to ``physical`` by default.
+       For information on the ``discount``, ``store_credit`` and ``gift_card`` types, see our guide on
+       :doc:`handling discounts </orders/handling-discounts>`.
 
    * - ``name``
 
@@ -204,8 +205,8 @@ The order lines contain the actual things that your customer bought.
        .. type:: amount object
           :required: false
 
-     - Any discounts applied to the order line. For example, if you have a two-for-one sale, you should pass the amount
-       discounted as a positive amount.
+     - Any :doc:`discounts applied </orders/handling-discounts>` to the order line. For example, if you have a
+       two-for-one sale, you should pass the amount discounted as a positive amount.
 
        For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give a €10.00 discount on this order line.
 

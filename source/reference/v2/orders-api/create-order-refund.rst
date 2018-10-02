@@ -12,8 +12,8 @@ Create order refund
    :oauth: true
 
 
-When using the Orders API, refunds should be made against the order. When using *pay after delivery* payment methods such
-as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive credit invoices with the
+When using the Orders API, refunds should be made against the order. When using *pay after delivery* payment methods
+such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive credit invoices with the
 correct product information on them.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
@@ -109,12 +109,12 @@ Request (PHP)
             'id' => 'odl_dgtxyl',
             'quantity' => 1,
         ],
-        "description": "Required quantity not in stock, refunding one photo book.",
+        "description" => "Required quantity not in stock, refunding one photo book.",
     ]);
 
     // Alternative shorthand for refunding all eligible order lines
     $order->refundAll([
-      "description": "Required quantity not in stock, refunding one photo book.",
+      "description" => "Required quantity not in stock, refunding one photo book.",
     ]);
 
 Response

@@ -70,7 +70,8 @@ Response
 
               .. type:: array
 
-            - An array of refund objects as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
+            - An array of refund objects as described in
+              :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
    * - ``_links``
 
