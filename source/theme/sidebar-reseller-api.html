@@ -2,66 +2,78 @@
 {% from 'macros/sidebar-collapse-group.html' import sidebar_collapse_group with context -%}
 
 <div class="sidebar__group {{ sidebar_collapse_group('reference/reseller-api/') }}">
-    <p><a href="javascript:void(0)">Reseller API</a></p>
+    <p><a href="javascript:void(0)">Reseller API Guides</a></p>
+
+    <ul>
+        {{ sidebar_item('reference/reseller-api/guides/overview', 'Overview') }}
+        {{ sidebar_item('reference/reseller-api/guides/result-codes', 'Result codes') }}
+        {{ sidebar_item('reference/reseller-api/guides/secret-keys', 'Secret keys and authentication') }}
+    </ul>
+</div>
+
+<div class="sidebar__spacing"></div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/reseller-api/') }}">
+    <p><a href="javascript:void(0)">Reseller API Endpoints</a></p>
 
     <ul>
         {{ sidebar_item(
-        'reference/reseller-api/account-create',
+        'reference/reseller-api/endpoints/account-create',
         'Create account',
         'POST /reseller-api/v1/account-create'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/account-claim',
+        'reference/reseller-api/endpoints/account-claim',
         'Claim account',
         'GET /reseller-api/v1/account-claim'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/account-edit',
+        'reference/reseller-api/endpoints/account-edit',
         'Update account',
         'PATCH /reseller-api/v1/account-edit'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/account-valid',
+        'reference/reseller-api/endpoints/account-valid',
         'Validate account',
         'GET /reseller-api/v1/account-valid'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/get-login-link',
+        'reference/reseller-api/endpoints/get-login-link',
         'Get login link',
         'GET /reseller-api/v1/get-login-link'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/disconnect-account',
+        'reference/reseller-api/endpoints/disconnect-account',
         'Disconnect account',
         'DELETE /reseller-api/v1/disconnect-account'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/available-payment-methods',
+        'reference/reseller-api/endpoints/available-payment-methods',
         'Available payment methods',
         'GET /reseller-api/v1/available-payment-methods'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/bankaccounts',
+        'reference/reseller-api/endpoints/bankaccounts',
         'Get bankaccounts',
         'GET /reseller-api/v1/bankaccounts'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/bankaccount-edit',
+        'reference/reseller-api/endpoints/bankaccount-edit',
         'Update bankaccount',
         'PATCH /reseller-api/v1/bankaccount-edit'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/profile-create',
+        'reference/reseller-api/endpoints/profile-create',
         'Create profile',
         'POST /reseller-api/v1/profile-create'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/profiles',
+        'reference/reseller-api/endpoints/profiles',
         'Get profiles',
         'GET /reseller-api/v1/profiles'
         ) }}
         {{ sidebar_item(
-        'reference/reseller-api/set-fees',
+        'reference/reseller-api/endpoints/set-fees',
         'Set fees',
         'POST /reseller-api/v1/set-fees'
         ) }}
