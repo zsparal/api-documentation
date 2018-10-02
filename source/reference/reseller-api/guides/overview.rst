@@ -11,7 +11,7 @@ see the `partner page <https://www.mollie.com/en/partners>`_ on our website.
 
 Different base-url comparing to other APIs
 ------------------------------------------
-The Reseller API uses an other base-url then all other Mollie APIs. Please use the following URL:
+The Reseller API uses an other base-url than all other Mollie APIs. Please use the following URL:
 ``https://www.mollie.com/api/reseller/v1/*endpoint*``
 
 Downloads, examples & support
