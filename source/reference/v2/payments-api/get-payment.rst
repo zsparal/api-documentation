@@ -100,6 +100,14 @@ Response
 
      - Whether or not the payment can be canceled.
 
+   * - ``authorizedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - The date and time the payment became authorized, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+       format. This parameter is omitted if the payment is not authorized (yet).
+
    * - ``paidAt``
 
        .. type:: datetime
@@ -204,6 +212,28 @@ Response
               .. type:: string
 
             - A string containing the exact refundable amount of the payment in the given currency.
+
+   * - ``amountCaptured``
+
+       .. type:: amount object
+          :required: false
+
+     - The total amount that is already captured for this payment. Only available when this payment supports captures.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``currency``
+
+              .. type:: string
+
+            - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+          * - ``value``
+
+              .. type:: string
+
+            - A string containing the exact captured amount of the payment in the given currency.
 
    * - ``description``
 
