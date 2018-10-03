@@ -16,7 +16,7 @@ Turn on a payment method on a specific Profile to use it.
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``method`` with the name of
-the method you want to activate, for example ``bancontact``. There is no need to set body parameters in this ``POST``
+the method's ID you want to activate, for example ``bancontact``. There is no need to set body parameters in this ``POST``
 request.
 
 Response
