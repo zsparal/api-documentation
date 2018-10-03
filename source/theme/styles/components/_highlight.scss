@@ -81,10 +81,7 @@
 }
 
 .rst-content .highlight-bash .highlight .s2,
-.rst-content .highlight-bash .highlight .se {
-  color: $brand-primary;
-}
-
+.rst-content .highlight-bash .highlight .se,
 .rst-content .highlight-php .highlight .cp,
 .rst-content .highlight-php .highlight .nv,
 .rst-content .highlight-php .highlight .k,
@@ -92,7 +89,7 @@
 .rst-content .highlight-php .highlight .c1,
 .rst-content .highlight-php .highlight .o,
 .rst-content .highlight-php .highlight .na {
-  color: $brand-primary;
+  color: #005a9a;
 }
 
 .rst-content .highlight-php .highlight .mi {
