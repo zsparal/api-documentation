@@ -50,7 +50,7 @@ The following diagram shows how one order status leads to another:
     that does not support authorizations.
 
     * Mollie will call your webhook when the order reaches this state.
-    * Order lines can be in the state ``paid``.
+    * All order lines will also be in the ``paid`` state.
     * Can transition to: ``shipping`` and ``completed``.
 
 .. _order-status-pending:
@@ -81,23 +81,24 @@ The following diagram shows how one order status leads to another:
 
 ``shipping``
 ^^^^^^^^^^^^
-    The order will move into this state when you start shipping your first order lines. When the order is in this state,
-    it means that you still have some order lines that are not shipped yet.
+    The order will move into this state when you start shipping your first order line or part of an order line. When
+    the order is in this state, it means that you still have some order lines that are not shipped yet.
 
     * This is not a status Mollie will call your webhook for.
-    * Order lines can be in the states ``paid``, ``authorized``, ``shipping``, ``completed`` or ``canceled``.
-      At least one line should be in ``paid`` or ``authorized`` and at least one other line should be ``completed``.
+    * Order lines can be in the states ``paid``, ``authorized``, ``shipping``, ``completed`` or ``canceled``. At
+      least one line should be in state ``paid`` or ``authorized`` and at least one other line should be in state
+      ``shipping`` or ``completed``.
     * Can transition to: ``completed``.
 
 .. _order-status-completed:
 
 ``completed``
 ^^^^^^^^^^^^^
-    When all order lines are shipped or canceled, the order will be set to this status. At least one line should be
-    shipped. If all lines are canceled, the status of the order will change to ``canceled`` instead.
+    When all order lines are completed or canceled, the order will be set to this status. At least one line should be
+    completed. If all lines are canceled, the status of the order will change to ``canceled`` instead.
 
     * Mollie will call your webhook when the order reaches this state.
-    * Order lines can be in the states ``completed`` or ``canceled``. At least one line should be ``completed``.
+    * Order lines can be in the state ``completed`` or ``canceled``. At least one line should be ``completed``.
     * This is a final state, the order can't transition to another state.
 
 .. _order-status-canceled:
@@ -115,8 +116,11 @@ The following diagram shows how one order status leads to another:
 
 ``expired``
 ^^^^^^^^^^^
-    The order will expire when an order is not shipped in time after an authorization. This is currently 28 days but
-    might change in the future.
+    By default, the expiry period of an order is 28 days. If no payment is initiated for an order within the given
+    expiry period, the order will expire. When an order is paid using a payment method that supports authorizations,
+    the order has to be *completed* within the given expiry period.
+
+    *Please note*: the default expiry period of 28 days might change in the future.
 
     * Mollie will call your webhook when the order reaches this state.
     * All order lines will be ``canceled``.
@@ -136,12 +140,13 @@ The following diagram shows how one order line status leads to another:
 
     * The order has status ``created`` or ``pending``.
     * Can transition to: ``paid``, ``authorized`` and ``canceled``.
+    * Only the whole order can be canceled at this point in time, not individual order lines.
 
 .. _orderline-status-paid:
 
 ``paid``
 ^^^^^^^^
-    The order line status will be set to this status when the order's payment is successfully completed with a payment
+    The order line will be set to this status when the order's payment is successfully completed with a payment
     method that does not support authorizations.
 
     * The order has status ``paid`` or ``shipping``.

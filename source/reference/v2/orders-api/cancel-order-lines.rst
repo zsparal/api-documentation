@@ -14,8 +14,9 @@ Cancel order lines
 This endpoint can be used to cancel a single or multiple order lines. Use
 :doc:`cancel order </reference/v2/orders-api/cancel-order>` when you want to cancel the entire order.
 
-An order line can only be canceled while its ``status`` field is either ``created`` or ``authorized``. You should
-cancel an order line if you don't intend to ship it.
+An order line can only be canceled while its ``status`` field is either ``authorized`` or ``shipping``. If you cancel
+an ``authorized`` order line, the new order line status will be ``canceled``. Canceling a ``shipping`` order line will
+result in a ``completed`` order line status. You should cancel an order line if you don't intend to (fully) ship it.
 
 If the order line is ``paid`` or already ``completed``, you should create a refund for that line instead.
 

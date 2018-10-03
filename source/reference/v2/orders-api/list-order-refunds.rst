@@ -12,7 +12,9 @@ List order refunds
    :api_keys: true
    :oauth: true
 
-Retrieve order refunds. The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+Retrieve all order refunds.
+
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
@@ -160,19 +162,17 @@ Response
                            "id": "odl_dgtxyl",
                            "orderId": "ord_stTC2WHAuS",
                            "name": "LEGO 42083 Bugatti Chiron",
-                           "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-                           "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                            "sku": "5702016116977",
                            "type": "physical",
-                           "status": "refunded",
-                           "quantity": 2,
+                           "status": "paid",
+                           "quantity": 1,
                            "unitPrice": {
                                "value": "399.00",
                                "currency": "EUR"
                            },
                            "vatRate": "21.00",
                            "vatAmount": {
-                               "value": "121.14",
+                               "value": "51.89",
                                "currency": "EUR"
                            },
                            "discountAmount": {
@@ -180,10 +180,20 @@ Response
                                "currency": "EUR"
                            },
                            "totalAmount": {
-                               "value": "698.00",
+                               "value": "299.00",
                                "currency": "EUR"
                            },
-                           "createdAt": "2018-08-02T09:29:56+00:00"
+                           "createdAt": "2018-08-02T09:29:56+00:00",
+                           "_links": {
+                               "productUrl": {
+                                   "href": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                                   "type": "text/html"
+                               },
+                               "imageUrl": {
+                                   "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                                   "type": "text/html"
+                               }
+                           }
                        }
                    ],
                    "_links": {

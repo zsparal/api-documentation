@@ -109,7 +109,6 @@ Response
        * ``paid``
        * ``authorized``
        * ``canceled``
-       * ``refunded``
        * ``shipping``
        * ``completed``
        * ``expired``
@@ -241,7 +240,7 @@ Response
 
        .. type:: object
 
-     - An object with several URL objects relevant to the customer. Every URL object will contain an ``href`` and a
+     - An object with several URL objects relevant to the order. Every URL object will contain an ``href`` and a
        ``type`` field.
 
        .. list-table::
@@ -330,7 +329,6 @@ The order lines contain the actual things the your customer bought.
        * ``paid``
        * ``shipping``
        * ``canceled``
-       * ``refunded``
        * ``completed``
 
    * - ``isCancelable``
@@ -381,6 +379,24 @@ The order lines contain the actual things the your customer bought.
 
      - The total amount that is canceled in this order line.
 
+   * - ``shippableQuantity``
+
+       .. type:: int
+
+     - The number of items that can still be shipped for this order line.
+
+   * - ``refundableQuantity``
+
+       .. type:: int
+
+     - The number of items that can still be refunded for this order line.
+
+   * - ``cancelableQuantity``
+
+       .. type:: int
+
+     - The number of items that can still be canceled for this order line.
+
    * - ``unitPrice``
 
        .. type:: amount object
@@ -420,25 +436,35 @@ The order lines contain the actual things the your customer bought.
 
      - The SKU, EAN, ISBN or UPC of the product sold.
 
-   * - ``imageUrl``
-
-       .. type:: string
-          :required: false
-
-     - A link pointing to an image of the product sold.
-
-   * - ``productUrl``
-
-       .. type:: string
-          :required: false
-
-     - A link pointing to the product page in your web shop of the product sold.
-
    * - ``createdAt``
 
        .. type:: datetime
 
      - The order line's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+   * - ``_links``
+
+       .. type:: object
+
+     - An object with several URL objects relevant to the order line. Every URL object will contain an ``href`` and a
+       ``type`` field.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``productUrl``
+
+              .. type:: string
+                 :required: false
+
+            - A link pointing to the product page in your web shop of the product sold.
+
+          * - ``imageUrl``
+
+              .. type:: string
+                 :required: false
+
+            - A link pointing to an image of the product sold.
 
 Addresses
 ^^^^^^^^^
@@ -529,14 +555,6 @@ Response
             "value": "1027.99",
             "currency": "EUR"
         },
-        "amountCaptured": {
-            "value": "0.00",
-            "currency": "EUR"
-        },
-        "amountRefunded": {
-            "value": "0.00",
-            "currency": "EUR"
-        },
         "status": "created",
         "isCancelable": true,
         "metadata": null,
@@ -544,7 +562,6 @@ Response
         "expiresAt": "2018-08-30T09:29:56+00:00",
         "mode": "live",
         "locale": "nl_NL",
-        "orderNumber": "18475",
         "billingAddress": {
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
@@ -554,6 +571,7 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
+        "orderNumber": "18475",
         "shippingAddress": {
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
@@ -563,18 +581,17 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
+        "redirectUrl": "https://example.org/redirect",
         "lines": [
             {
                 "resource": "orderline",
                 "id": "odl_dgtxyl",
                 "orderId": "ord_pbjz8x",
                 "name": "LEGO 42083 Bugatti Chiron",
-                "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-                "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                 "sku": "5702016116977",
                 "type": "physical",
                 "status": "created",
-                "isCancelable": true,
+                "isCancelable": false,
                 "quantity": 2,
                 "quantityShipped": 0,
                 "amountShipped": {
@@ -591,6 +608,9 @@ Response
                     "value": "0.00",
                     "currency": "EUR"
                 },
+                "shippableQuantity": 0,
+                "refundableQuantity": 0,
+                "cancelableQuantity": 0,
                 "unitPrice": {
                     "value": "399.00",
                     "currency": "EUR"
@@ -608,19 +628,27 @@ Response
                     "value": "698.00",
                     "currency": "EUR"
                 },
-                "createdAt": "2018-08-02T09:29:56+00:00"
+                "createdAt": "2018-08-02T09:29:56+00:00",
+                "_links": {
+                    "productUrl": {
+                        "href": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                        "type": "text/html"
+                    },
+                    "imageUrl": {
+                        "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                        "type": "text/html"
+                    }
+                }
             },
             {
                 "resource": "orderline",
                 "id": "odl_jp31jz",
                 "orderId": "ord_pbjz8x",
                 "name": "LEGO 42056 Porsche 911 GT3 RS",
-                "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-                "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "created",
-                "isCancelable": true,
+                "isCancelable": false,
                 "quantity": 1,
                 "quantityShipped": 0,
                 "amountShipped": {
@@ -637,6 +665,9 @@ Response
                     "value": "0.00",
                     "currency": "EUR"
                 },
+                "shippableQuantity": 0,
+                "refundableQuantity": 0,
+                "cancelableQuantity": 0,
                 "unitPrice": {
                     "value": "329.99",
                     "currency": "EUR"
@@ -650,7 +681,17 @@ Response
                     "value": "329.99",
                     "currency": "EUR"
                 },
-                "createdAt": "2018-08-02T09:29:56+00:00"
+                "createdAt": "2018-08-02T09:29:56+00:00",
+                "_links": {
+                    "productUrl": {
+                        "href": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                        "type": "text/html"
+                    },
+                    "imageUrl": {
+                        "href": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                        "type": "text/html"
+                    }
+                }
             }
         ],
         "_embedded": {

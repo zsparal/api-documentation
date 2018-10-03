@@ -110,7 +110,7 @@ Response
 
        .. type:: object
 
-     - An object with several URL objects relevant to the customer. Every URL object will contain an ``href`` and a
+     - An object with several URL objects relevant to the capture. Every URL object will contain an ``href`` and a
        ``type`` field.
 
        .. list-table::
