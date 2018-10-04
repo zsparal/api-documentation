@@ -4,13 +4,19 @@ Occasionally, we will add new resources, new fields, or new possible values to e
 changes are documented here.
 
 October 2018
-==============
+============
 
 Tuesday, 2nd
 ------------
 - We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
   bank account to finish the payment.
 
+- Added the new payment status ``authorized`` for payments that still require a capture to receive the money. Currently,
+  this status is only used for payment methods *Klarna Pay later* and *Klarna Slice it*. Because payments with these
+  payment methods can only be created with the :doc:`Orders API </reference/v2/orders-api/create-order>`, there is no
+  change required in existing implementations of the Payments API.
+
+  The new status is especially useful to give a meaningful representation when listing all payments.
 
 September 2018
 ==============
