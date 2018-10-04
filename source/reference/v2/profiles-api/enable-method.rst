@@ -11,7 +11,15 @@ Enable payment method
    :api_keys: false
    :oauth: true
 
-Enable a payment method on a specific Profile to use it with payments.
+.. endpoint::
+   :method: POST
+   :url: https://api.mollie.com/v2/profiles/me/methods/*method*
+
+.. authentication::
+   :api_keys: true
+   :oauth: false
+
+Enable a payment method on a specific or authenticated Profile to use it with payments.
 
 .. note:: Not all payment methods can be enabled via this API call. The API will return an error when this is the case
           with a link to the Mollie Dashboard.
@@ -33,7 +41,7 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/bancontact \
+   curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/bancontact \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Response
@@ -86,7 +94,7 @@ Response
    {
        "status": 422,
        "title": "Unprocessable Entity",
-       "detail": "Can not activate 'creditcard' via the API. Please go to the dashboard to enable this payment method.",
+       "detail": "Can not enable Credit card via the API. Please go to the dashboard to enable this payment method.",
        "_links": {
             "dashboard": {
                    "href": "https://www.mollie.com/dashboard/settings/profiles/pfl_v9hTwCvYqw/payment-methods",
