@@ -1,5 +1,5 @@
-Activate payment method on current
-==================================
+Enable payment method on current
+================================
 .. api-name:: Profiles API
    :version: 2
 
@@ -11,9 +11,9 @@ Activate payment method on current
    :api_keys: true
    :oauth: false
 
-Turn on a payment method on the authenticated Profile to use it with payments.
+Enable a payment method on the authenticated Profile to use it with payments.
 
-.. note:: Not all payment methods can be activated via this API call. The API will return an error when this is the case
+.. note:: Not all payment methods can be enabled via this API call. The API will return an error when this is the case
           with a link to the Mollie Dashboard.
 
 Parameters
@@ -26,9 +26,8 @@ Response
 --------
 An objects of ``method`` will be returned as described in :doc:`Get method </reference/v2/methods-api/get-method>`.
 
-Example
--------
-
+Example (method that can be enabled)
+------------------------------------
 Request
 ^^^^^^^
 .. code-block:: bash
@@ -42,7 +41,7 @@ Response
 .. code-block:: http
    :linenos:
 
-   HTTP/1.1 200 OK
+   HTTP/1.1 201 Created
    Content-Type: application/hal+json; charset=utf-8
 
    {
@@ -63,5 +62,39 @@ Response
                "href": "https://docs.mollie.com/reference/v2/profiles-api/activate-method",
                "type": "text/html"
            }
+       }
+   }
+
+Example (method that can not be enabled)
+----------------------------------------
+Request
+^^^^^^^
+.. code-block:: bash
+   :linenos:
+
+   curl -X GET https://api.mollie.com/v2/profiles/me/methods/creditcard \
+       -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+
+Response
+^^^^^^^^
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 422 Unprocessable Entity
+   Content-Type: application/hal+json; charset=utf-8
+
+   {
+       "status": 422,
+       "title": "Unprocessable Entity",
+       "detail": "Can not activate 'creditcard' via the API. Please go to the dashboard to enable this payment method.",
+       "_links": {
+            "dashboard": {
+                   "href": "https://www.mollie.com/dashboard/settings/profiles/pfl_v9hTwCvYqw/payment-methods",
+                   "type": "text/html"
+            },
+            "documentation": {
+                   "href": "https://docs.mollie.com/guides/handling-errors",
+                   "type": "text/html"
+            }
        }
    }
