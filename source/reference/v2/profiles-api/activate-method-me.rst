@@ -1,25 +1,25 @@
-Activate payment method
-=======================
+Activate payment method on current
+==================================
 .. api-name:: Profiles API
    :version: 2
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v2/profiles/*id*/methods/*method*
+   :url: https://api.mollie.com/v2/profiles/me/methods/*method*
 
 .. authentication::
-   :api_keys: false
-   :oauth: true
+   :api_keys: true
+   :oauth: false
 
-Turn on a payment method on a specific Profile to use it with payments.
+Turn on a payment method on the authenticated Profile to use it with payments.
 
 .. note:: Not all payment methods can be activated via this API call. The API will return an error when this is the case
           with a link to the Mollie Dashboard.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``method`` with the name of
-the method's ID you want to activate, for example ``bancontact``. There is no need to set body parameters in this ``POST``
+Replace ``method`` in the endpoint URL by the method's ID you want to activate, for example ``bancontact``. There is no
+need to set body parameters in this ``POST``
 request.
 
 Response
@@ -34,8 +34,8 @@ Request
 .. code-block:: bash
    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/bancontact \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+   curl -X GET https://api.mollie.com/v2/profiles/me/methods/bancontact \
+       -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 ^^^^^^^^
