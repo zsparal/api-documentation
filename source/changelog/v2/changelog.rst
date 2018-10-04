@@ -8,6 +8,9 @@ October 2018
 
 Tuesday, 2nd
 ------------
+- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
+  bank account to finish the payment.
+
 - Added the new payment status ``authorized`` for payments that still require a capture to receive the money. Currently,
   this status is only used for payment methods *Klarna Pay later* and *Klarna Slice it*. Because payments with these
   payment methods can only be created with the :doc:`Orders API </reference/v2/orders-api/create-order>`, there is no
@@ -17,6 +20,10 @@ Tuesday, 2nd
 
 September 2018
 ==============
+
+Friday, 28th
+------------
+- Bitcoin payments can now be created in non-EUR currencies. Your account will be settled in EUR.
 
 Tuesday, 25th
 -------------

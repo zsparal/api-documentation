@@ -3,10 +3,6 @@ Cancel order lines
 .. api-name:: Orders API
    :version: 2
 
-.. warning::
-   This API is currently in private beta. If you are interested in participating, please contact your account manager at
-   Mollie.
-
 .. endpoint::
    :method: DELETE
    :url: https://api.mollie.com/v2/orders/*orderId*/lines
@@ -18,8 +14,9 @@ Cancel order lines
 This endpoint can be used to cancel a single or multiple order lines. Use
 :doc:`cancel order </reference/v2/orders-api/cancel-order>` when you want to cancel the entire order.
 
-An order line can only be canceled while its ``status`` field is either ``created`` or ``authorized``. You should
-cancel an order line if you don't intend to ship it.
+An order line can only be canceled while its ``status`` field is either ``authorized`` or ``shipping``. If you cancel
+an ``authorized`` order line, the new order line status will be ``canceled``. Canceling a ``shipping`` order line will
+result in a ``completed`` order line status. You should cancel an order line if you don't intend to (fully) ship it.
 
 If the order line is ``paid`` or already ``completed``, you should create a refund for that line instead.
 
@@ -75,8 +72,19 @@ Request (curl)
 .. code-block:: bash
    :linenos:
 
-   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines/odl_dgtxyl \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+       -d '{
+         "lines": [
+             {
+                 "id": "odl_dgtxyl",
+                 "quantity": 1
+             },
+             {
+                 "id": "odl_jp31jz"
+             }
+         ]
+     }'
 
 Request (PHP)
 ^^^^^^^^^^^^^
@@ -88,7 +96,21 @@ Request (PHP)
      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
      $order = $mollie->orders->get("ord_8wmqcHMN4U");
-     $order->cancelLine("odl_dgtxyl");
+     $order->cancelLines([
+        'lines' => [
+            [
+                'id' => 'odl_dgtxyl',
+                'quantity' => 1, // you can partially cancel the line.
+            ],
+            [
+                'id' => 'odl_jp31jz', // or cancel the line completely
+            ],
+        ],
+     ]);
+
+     // if you want to cancel all eligible lines, you can use this shorthand:
+     // $order->cancelAllLines();
+
      $updatedOrder = $mollie->orders->get($order->id);
 
 Response

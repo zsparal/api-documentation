@@ -3,10 +3,6 @@ Create order
 .. api-name:: Orders API
    :version: 2
 
-.. warning::
-   This API is currently in private beta. If you are interested in participating, please contact your account manager at
-   Mollie.
-
 .. endpoint::
    :method: POST
    :url: https://api.mollie.com/v2/orders
@@ -609,14 +605,6 @@ Response
            "value": "1027.99",
            "currency": "EUR"
        },
-       "amountCaptured": {
-           "value": "0.00",
-           "currency": "EUR"
-       },
-       "amountRefunded": {
-           "value": "0.00",
-           "currency": "EUR"
-       },
        "status": "created",
        "isCancelable": true,
        "metadata": {
@@ -627,7 +615,6 @@ Response
        "expiresAt": "2018-08-30T09:29:56+00:00",
        "mode": "test",
        "locale": "nl_NL",
-       "orderNumber": "1337",
        "billingAddress": {
            "streetAndNumber": "Keizersgracht 313",
            "city": "Amsterdam",
@@ -640,6 +627,8 @@ Response
            "email": "piet@mondriaan.com",
            "phone": "+31309202070"
        },
+       "consumerDateOfBirth": "1958-01-31",
+       "orderNumber": "1337",
        "shippingAddress": {
            "streetAndNumber": "Keizersgracht 313",
            "streetAdditional": "4th floor",
@@ -652,18 +641,18 @@ Response
            "familyName": "Norris",
            "email": "norris@chucknorrisfacts.net",
        },
+       "redirectUrl": "https://example.org/redirect",
+       "webhookUrl": "https://example.org/webhook",
        "lines": [
            {
                "resource": "orderline",
                "id": "odl_dgtxyl",
                "orderId": "ord_pbjz8x",
                "name": "LEGO 42083 Bugatti Chiron",
-               "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-               "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                "sku": "5702016116977",
                "type": "physical",
                "status": "created",
-               "isCancelable": true,
+               "isCancelable": false,
                "quantity": 2,
                "quantityShipped": 0,
                "amountShipped": {
@@ -680,6 +669,9 @@ Response
                    "value": "0.00",
                    "currency": "EUR"
                },
+               "shippableQuantity": 0,
+               "refundableQuantity": 0,
+               "cancelableQuantity": 0,
                "unitPrice": {
                    "value": "399.00",
                    "currency": "EUR"
@@ -697,19 +689,27 @@ Response
                    "value": "698.00",
                    "currency": "EUR"
                },
-               "createdAt": "2018-08-02T09:29:56+00:00"
+               "createdAt": "2018-08-02T09:29:56+00:00",
+               "_links": {
+                   "productUrl": {
+                       "href": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                       "type": "text/html"
+                   },
+                   "imageUrl": {
+                       "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                       "type": "text/html"
+                   }
+               }
            },
            {
                "resource": "orderline",
                "id": "odl_jp31jz",
                "orderId": "ord_pbjz8x",
                "name": "LEGO 42056 Porsche 911 GT3 RS",
-               "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-               "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
                "sku": "5702015594028",
                "type": "physical",
                "status": "created",
-               "isCancelable": true,
+               "isCancelable": false,
                "quantity": 1,
                "quantityShipped": 0,
                "amountShipped": {
@@ -726,6 +726,9 @@ Response
                    "value": "0.00",
                    "currency": "EUR"
                },
+               "shippableQuantity": 0,
+               "refundableQuantity": 0,
+               "cancelableQuantity": 0,
                "unitPrice": {
                    "value": "329.99",
                    "currency": "EUR"
@@ -739,7 +742,17 @@ Response
                    "value": "329.99",
                    "currency": "EUR"
                },
-               "createdAt": "2018-08-02T09:29:56+00:00"
+               "createdAt": "2018-08-02T09:29:56+00:00",
+               "_links": {
+                   "productUrl": {
+                       "href": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                       "type": "text/html"
+                   },
+                   "imageUrl": {
+                       "href": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                       "type": "text/html"
+                   }
+               }
            }
        ],
        "_links": {

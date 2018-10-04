@@ -3,10 +3,6 @@ Create order refund
 .. api-name:: Orders API
    :version: 2
 
-.. warning::
-   This API is currently in private beta. If you are interested in participating, please contact your account manager at
-   Mollie.
-
 .. endpoint::
    :method: POST
    :url: https://api.mollie.com/v2/orders/*orderId*/refunds
@@ -113,12 +109,12 @@ Request (PHP)
             'id' => 'odl_dgtxyl',
             'quantity' => 1,
         ],
-        "description": "Required quantity not in stock, refunding one photo book.",
+        "description" => "Required quantity not in stock, refunding one photo book.",
     ]);
 
     // Alternative shorthand for refunding all eligible order lines
     $order->refundAll([
-      "description": "Required quantity not in stock, refunding one photo book.",
+      "description" => "Required quantity not in stock, refunding one photo book.",
     ]);
 
 Response
@@ -147,19 +143,17 @@ Response
                "id": "odl_dgtxyl",
                "orderId": "ord_stTC2WHAuS",
                "name": "LEGO 42083 Bugatti Chiron",
-               "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-               "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
                "sku": "5702016116977",
                "type": "physical",
-               "status": "refunded",
-               "quantity": 2,
+               "status": "paid",
+               "quantity": 1,
                "unitPrice": {
                    "value": "399.00",
                    "currency": "EUR"
                },
                "vatRate": "21.00",
                "vatAmount": {
-                   "value": "121.14",
+                   "value": "51.89",
                    "currency": "EUR"
                },
                "discountAmount": {
@@ -167,10 +161,20 @@ Response
                    "currency": "EUR"
                },
                "totalAmount": {
-                   "value": "698.00",
+                   "value": "299.00",
                    "currency": "EUR"
                },
-               "createdAt": "2018-08-02T09:29:56+00:00"
+               "createdAt": "2018-08-02T09:29:56+00:00",
+               "_links": {
+                   "productUrl": {
+                       "href": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                       "type": "text/html"
+                   },
+                   "imageUrl": {
+                       "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                       "type": "text/html"
+                   }
+               }
            }
        ],
        "_links": {

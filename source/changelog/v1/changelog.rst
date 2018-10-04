@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+October 2018
+==============
+
+Tuesday, 2nd
+------------
+- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
+  bank account to finish the payment.
+
 July 2018
 =========
 

@@ -26,7 +26,7 @@ connection will be set up.
 
 Sensitive information
 --------------------------
-All sensitive payment information is entered on our platform. So there is no need to jump trough hoops te make your
+All sensitive payment information is entered on our platform. So there is no need to jump trough hoops to make your
 website `PCI DSS certified <https://en.wikipedia.org/wiki/Payment_Card_Industry_Data_Security_Standard>`_. We have got
 you covered.
 
