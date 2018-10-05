@@ -6,6 +6,11 @@ changes are documented here.
 October 2018
 ============
 
+Friday, 5th
+------------
+- We have added the ``mandateId`` field in subscriptions. This makes it possible to sure a specific mandate for a
+  subscription. For details, see the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
+
 Tuesday, 2nd
 ------------
 - We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
