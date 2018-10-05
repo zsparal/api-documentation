@@ -12,7 +12,7 @@ Revoke mandate
    :oauth: true
 
 Revoke a customer's mandate. You will no longer be able to charge the consumer's bank account or credit card with this
-mandate.
+mandate and all connected subscriptions will be canceled.
 
 Parameters
 ----------
