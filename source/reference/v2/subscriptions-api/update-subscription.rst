@@ -79,8 +79,8 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. type:: string
           :required: false
 
-     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, this
-       will be ignored when setting this parameter.
+     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, it
+       will be changed to ``null`` when setting this parameter.
 
    * - ``webhookUrl``
 

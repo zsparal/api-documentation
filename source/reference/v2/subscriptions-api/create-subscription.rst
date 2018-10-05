@@ -101,7 +101,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
           :required: false
 
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
-       customer's valid mandates may be used. Note: this parameter will be ignored when ``mandateId`` is set.
+       customer's valid mandates may be used. Please note that this parameter can not set together with ``mandateId``.
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
 
@@ -110,8 +110,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        .. type:: string
           :required: false
 
-     - The mandate used for this subscription. When set the subscription will only use that mandate and will ignore
-       ``method`` if set.
+     - The mandate used for this subscription. Please note that this parameter can not set together with ``method``.
 
    * - ``webhookUrl``
 
