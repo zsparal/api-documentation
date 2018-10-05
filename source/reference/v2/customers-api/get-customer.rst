@@ -182,15 +182,15 @@ Response
                "type": "application/hal+json"
            },
            "mandates": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/mandates",
+               "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa/mandates",
                "type": "application/hal+json"
            },
            "subscriptions": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/subscriptions",
+               "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa/subscriptions",
                "type": "application/hal+json"
            },
            "payments": {
-               "href": "https://api.mollie.dev/v2/customers/cst_kEn1PlbGa/payments",
+               "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa/payments",
                "type": "application/hal+json"
            },
            "documentation": {

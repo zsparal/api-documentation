@@ -181,7 +181,7 @@ Response
                "type": "text/html"
            },
            "self": {
-               "href": "https://api.mollie.dev/v2/payments/tr_WDqYK6vllg/captures?limit=50",
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures?limit=50",
                "type": "application/hal+json"
            },
            "previous": null,

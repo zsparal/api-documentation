@@ -155,7 +155,7 @@ Response
                "type": "text/html"
            },
            "self": {
-               "href": "https://api.mollie.dev/v2/settlements/stl_jDk30akdN/captures?limit=50",
+               "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures?limit=50",
                "type": "application/hal+json"
            },
            "previous": null,

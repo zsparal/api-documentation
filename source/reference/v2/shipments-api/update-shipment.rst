@@ -178,6 +178,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "completed",
+                "isCancelable": false,
                 "quantity": 1,
                 "unitPrice": {
                     "value": "329.99",
