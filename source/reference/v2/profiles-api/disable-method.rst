@@ -1,0 +1,49 @@
+Disable payment method
+======================
+.. api-name:: Profiles API
+   :version: 2
+
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v2/profiles/*id*/methods/*method*
+
+.. authentication::
+   :api_keys: false
+   :oauth: true
+
+.. endpoint::
+   :method: DELETE
+   :url: https://api.mollie.com/v2/profiles/me/methods/*method*
+
+.. authentication::
+   :api_keys: true
+   :oauth: false
+
+Disable a payment method on a specific or authenticated Profile.
+
+Parameters
+----------
+Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``method`` with the name of
+the method's ID you want to disable, for example ``bancontact``.
+
+Response
+--------
+``204 No Content``
+
+Example
+-------
+
+Request
+^^^^^^^
+.. code-block:: bash
+   :linenos:
+
+   curl -X DELETE https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/ideal \
+       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
+Response
+^^^^^^^^
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 204 No Content
