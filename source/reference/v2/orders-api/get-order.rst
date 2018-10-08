@@ -401,7 +401,7 @@ The order lines contain the actual things the your customer bought.
 
        .. type:: amount object
 
-     - The price of a single item in the order line.
+     - The price of a single item including VAT in the order line.
 
    * - ``discountAmount``
 

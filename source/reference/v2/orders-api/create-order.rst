@@ -196,7 +196,7 @@ The order lines contain the actual things that your customer bought.
        .. type:: amount object
           :required: true
 
-     - The price of a single item in the order line.
+     - The price of a single item including VAT in this order line.
 
        For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
 
