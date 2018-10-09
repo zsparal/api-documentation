@@ -26,8 +26,8 @@ them. Then we will show you how the statuses are connected.
     created.
 
     Currently this status is only possible for the payment methods
-    `Klarna Pay now <https://www.mollie.com/en/payments/klarnapaynow>`_ and
-    `Klarna Pay later <https://www.mollie.com/en/payments/klarnapaylater>`_.
+    `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_ and
+    `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_.
 
 ``expired``
     The payment has expired, e.g. your customer has abandoned the payment.
