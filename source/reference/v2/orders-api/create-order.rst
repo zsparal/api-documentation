@@ -200,6 +200,8 @@ The order lines contain the actual things that your customer bought.
 
        For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
 
+       Can be negative in case of discounts, or zero in case of a free item. 
+
    * - ``discountAmount``
 
        .. type:: amount object
