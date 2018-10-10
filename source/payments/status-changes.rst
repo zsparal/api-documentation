@@ -51,7 +51,7 @@ How does one status lead to another?
 ------------------------------------
 Please look at the below diagram. It tells you exactly when to expect what status:
 
-.. image:: images/api-status-list-v2@2x.png
+.. image:: images/payment-status-flow@2x.png
 
 When does a payment expire?
 ---------------------------
