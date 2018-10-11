@@ -30,21 +30,21 @@ parameters:
        .. type:: string
           :required: true
 
-     - The username of the account you would like to disconnect.
+     - The username of the account you would like to generate a login link for.
 
    * - ``password``
 
        .. type:: string
           :required: true
 
-     - The password of the account you would like to disconnect.
+     - The password of the account you would like to generate a login link for.
 
    * - ``partner_id_customer``
 
        .. type:: string
           :required: false
 
-     - 	The partner ID of the account you would like to disconnect. It can be used instead of the parameters username
+     - 	The partner ID of the account you would like to generate a login link for. It can be used instead of the parameters username
         and password.
 
    * - ``redirect_URL``

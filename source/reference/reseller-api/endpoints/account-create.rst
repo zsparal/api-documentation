@@ -156,7 +156,7 @@ parameters:
 
      - 	Billing Address. When this field is included, you must fill out all ``billing_*`` fields.
 
-   * - ``billing_zip code``
+   * - ``billing_zipcode``
 
        .. type:: string
           :required: false
