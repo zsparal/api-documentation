@@ -5,7 +5,7 @@ Get profiles
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/profiles
 
 .. note:: This API is only for `partners <https://www.mollie.com/partners>`_.

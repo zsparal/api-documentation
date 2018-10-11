@@ -5,7 +5,7 @@ Available payment methods
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/available-payment-methods
 
 This method allows you to check which payment methods have been activated for a merchant.

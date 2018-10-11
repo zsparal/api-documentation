@@ -5,7 +5,7 @@ Update bankaccount
    :version: 1
 
 .. endpoint::
-   :method: PATCH
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/bankaccount-edit
 
 This method allows you to change a merchant's bank account.
