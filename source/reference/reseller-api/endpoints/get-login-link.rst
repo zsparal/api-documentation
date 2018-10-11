@@ -8,8 +8,6 @@ Get login link
    :method: GET
    :url: https://www.mollie.com/api/reseller/v1/get-login-link
 
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
-
 This method allows you to obtain a special link, with which a merchant can be directly logged in.
 
 You are to redirect the merchant to the log-in link. It will log the merchant in, if he wasn't already. In all other
@@ -22,30 +20,30 @@ Parameters
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
 parameters:
 
+.. note:: It is not necessary to set ``username`` and ``password`` if you are using ``partner_id_customer``. Otherwise
+          both are required to set.
+
 .. list-table::
    :widths: auto
 
    * - ``username``
 
        .. type:: string
-          :required: true
 
      - The username of the account you would like to generate a login link for.
 
    * - ``password``
 
        .. type:: string
-          :required: true
 
      - The password of the account you would like to generate a login link for.
 
    * - ``partner_id_customer``
 
        .. type:: string
-          :required: false
 
-     - 	The partner ID of the account you would like to generate a login link for. It can be used instead of the parameters username
-        and password.
+     - 	The partner ID of the account you would like to generate a login link for. It can be used instead of the parameters ``username``
+        and ``password``.
 
    * - ``redirect_URL``
 

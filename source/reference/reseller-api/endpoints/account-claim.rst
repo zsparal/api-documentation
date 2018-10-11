@@ -8,8 +8,6 @@ Claim account
    :method: GET
    :url: https://www.mollie.com/api/reseller/v1/account-claim
 
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
-
 The account-claim method can be used to link an existing Mollie account to your own.
 
 You then become the reseller of this account, and it will appear in the list of merchants you have referred. The

@@ -8,8 +8,6 @@ Create account
    :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-create
 
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
-
 You can use this method to create an account for a merchant. This account will appear in your list of referred
 merchants.
 
