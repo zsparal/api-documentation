@@ -5,7 +5,7 @@ Validate account
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-valid
 
 This method allows you to check whether a Mollie account actually exists and whether the password to this account is

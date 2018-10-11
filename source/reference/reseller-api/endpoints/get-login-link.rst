@@ -5,7 +5,7 @@ Get login link
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/get-login-link
 
 This method allows you to obtain a special link, with which a merchant can be directly logged in.

@@ -5,7 +5,7 @@ Disconnect account
    :version: 1
 
 .. endpoint::
-   :method: DELETE
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/disconnect-account
 
 This method allows you to cancel one of your merchants as reseller. The link between your account and that of the

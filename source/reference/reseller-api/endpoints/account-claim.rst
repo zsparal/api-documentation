@@ -5,7 +5,7 @@ Claim account
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-claim
 
 The account-claim method can be used to link an existing Mollie account to your own.

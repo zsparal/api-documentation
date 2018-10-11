@@ -5,7 +5,7 @@ Get bankaccount
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/bankaccounts
 
 This method allows you to retrieve all of a customer's bank accounts.
