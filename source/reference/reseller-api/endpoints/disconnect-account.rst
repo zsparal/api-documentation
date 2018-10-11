@@ -8,8 +8,6 @@ Disconnect account
    :method: DELETE
    :url: https://www.mollie.com/api/reseller/v1/disconnect-account
 
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
-
 This method allows you to cancel one of your merchants as reseller. The link between your account and that of the
 merchant will be broken. Any preferential rates your merchant enjoyed via your account will be re-adjusted to the normal
 rates.
@@ -19,30 +17,30 @@ Parameters
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
 parameters:
 
+.. note:: It is not necessary to set ``username`` and ``password`` if you are using ``partner_id_customer``. Otherwise
+          both are required to set.
+
 .. list-table::
    :widths: auto
 
    * - ``username``
 
        .. type:: string
-          :required: true
 
      - The username of the account you would like to disconnect.
 
    * - ``password``
 
        .. type:: string
-          :required: true
 
      - The password of the account you would like to disconnect.
 
    * - ``partner_id_customer``
 
        .. type:: string
-          :required: false
 
-     - 	The partner ID of the account you would like to disconnect. It can be used instead of the parameters username
-        and password.
+     - 	The partner ID of the account you would like to disconnect. It can be used instead of the parameters ``username``
+        and ``password``.
 
 Response
 --------
