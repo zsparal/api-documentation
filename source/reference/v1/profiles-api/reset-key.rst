@@ -21,7 +21,7 @@ example: ``/v1/profiles/pfl_v9hTwCvYqw/apikeys/live``.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -69,7 +69,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "profile_api_key",

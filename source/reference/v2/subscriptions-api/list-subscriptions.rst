@@ -61,7 +61,7 @@ Organizations can have multiple profiles for each of their websites. See
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto

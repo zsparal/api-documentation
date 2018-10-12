@@ -133,7 +133,7 @@ information.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v1/subscriptions-api/get-subscription>`.
@@ -160,7 +160,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "subscription",

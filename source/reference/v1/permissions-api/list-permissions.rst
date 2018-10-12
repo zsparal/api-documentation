@@ -34,7 +34,7 @@ Parameters
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -115,7 +115,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "totalCount": 9,

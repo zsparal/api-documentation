@@ -73,7 +73,7 @@ available.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A customer object is returned, as described in :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
@@ -109,7 +109,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "customer",

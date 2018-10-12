@@ -70,7 +70,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 An refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
@@ -123,7 +123,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "refund",

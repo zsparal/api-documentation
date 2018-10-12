@@ -33,7 +33,7 @@ Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
@@ -64,7 +64,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "order",

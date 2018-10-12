@@ -83,7 +83,7 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 The updated profile object is returned, as described in :doc:`Get profile </reference/v2/profiles-api/get-profile>`.
 
@@ -126,7 +126,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "profile",

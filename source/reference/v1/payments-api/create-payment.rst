@@ -492,7 +492,7 @@ like when the QR code is included.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
@@ -518,7 +518,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "payment",

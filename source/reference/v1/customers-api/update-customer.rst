@@ -79,7 +79,7 @@ available.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 A customer object is returned, as described in :doc:`Get customer </reference/v1/customers-api/get-customer>`.
 
@@ -102,7 +102,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "customer",

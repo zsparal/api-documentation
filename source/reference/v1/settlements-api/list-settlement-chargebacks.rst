@@ -29,7 +29,7 @@ parameters for that endpoint can be used here as well.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 This endpoint is an alias of the :doc:`List chargebacks </reference/v1/chargebacks-api/list-chargebacks>` endpoint. The
 response is therefore the exact same.
@@ -51,7 +51,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "totalCount": 28,

@@ -106,7 +106,7 @@ if you want to create a shipment in test mode.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A shipment object is returned, as described in :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
 
@@ -184,7 +184,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "shipment",
