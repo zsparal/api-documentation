@@ -4,7 +4,13 @@ Occasionally, we will add new resources, new fields, or new possible values to e
 changes are documented here.
 
 October 2018
-==============
+============
+
+Monday, 15th
+------------
+- It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
+  and *HTTPS* schemes were allowed. You can for example immediately redirect the customer back to your application after
+  completing a payment, by setting the ``redirectUrl`` to your own App Scheme, like ``my-app://payment-return``.
 
 Tuesday, 2nd
 ------------
