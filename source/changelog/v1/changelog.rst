@@ -6,6 +6,12 @@ changes are documented here.
 October 2018
 ==============
 
+Friday, 12th
+------------
+- Added new category codes ``5533`` ``5641`` ``5651`` ``5732`` ``5735`` ``5815`` ``5944`` ``5977`` ``7999``
+  to the :doc:`Create Profile </reference/v1/profiles-api/create-profile>` and
+  :doc:`Update Profile </reference/v1/profiles-api/update-profile>` endpoints.
+
 Tuesday, 2nd
 ------------
 - We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
