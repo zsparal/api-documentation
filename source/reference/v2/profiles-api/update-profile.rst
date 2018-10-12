@@ -61,12 +61,19 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
        Possible values:
 
        * ``5399`` General merchandise
-       * ``5732`` Electronics, computers, and software
-       * ``4121`` Travel, rental, and transportation
+       * ``5732`` Electronics, computers and software
+       * ``4121`` Travel, rental and transportation
        * ``6012`` Financial services
        * ``5499`` Food and drinks
-       * ``7999`` Events, festivals, and recreation
-       * ``5192`` Books, magazines, and newspapers
+       * ``5533`` Automotive Products
+       * ``5815`` Digital services
+       * ``5641`` Children Products
+       * ``5735`` Entertainment
+       * ``5944`` Jewelry & Accessories
+       * ``5977`` Health & Beauty products
+       * ``5651`` Clothing & Shoes
+       * ``7999`` Events, festivals and recreation
+       * ``5192`` Books, magazines and newspapers
        * ``7299`` Personal services
        * ``8398`` Charity and donations
        * ``0`` Other
