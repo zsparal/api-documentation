@@ -35,7 +35,7 @@ also available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto

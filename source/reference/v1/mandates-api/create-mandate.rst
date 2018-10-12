@@ -92,7 +92,7 @@ available.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A mandate object is returned, as described in :doc:`Get mandate </reference/v1/mandates-api/get-mandate>`.
 
@@ -119,7 +119,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "mandate",

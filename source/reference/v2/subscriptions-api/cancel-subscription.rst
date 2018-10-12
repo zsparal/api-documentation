@@ -20,7 +20,7 @@ example: ``/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3``.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.

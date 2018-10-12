@@ -16,7 +16,7 @@ organization's balance.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 The open balance settlement is returned in the same fashion as the
 :doc:`Get settlement </reference/v2/settlements-api/get-settlement>` endpoint.
@@ -48,7 +48,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "settlement",

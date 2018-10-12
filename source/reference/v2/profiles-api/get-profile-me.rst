@@ -42,7 +42,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "profile",

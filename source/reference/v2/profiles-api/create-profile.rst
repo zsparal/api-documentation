@@ -80,7 +80,7 @@ Parameters
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A profile object is returned, as described in :doc:`Get profile </reference/v2/profiles-api/get-profile>`.
 
@@ -124,7 +124,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "profile",

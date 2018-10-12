@@ -22,7 +22,7 @@ endpoint.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 This endpoint returns results in the same format as the :doc:`List payments </reference/v2/payments-api/list-payments>`
 endpoint.
@@ -54,7 +54,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "count": 5,

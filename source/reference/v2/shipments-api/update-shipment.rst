@@ -70,7 +70,7 @@ available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 A shipment object is returned, as described in
 :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
@@ -118,7 +118,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "shipment",

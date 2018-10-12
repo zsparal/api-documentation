@@ -102,7 +102,7 @@ available.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
@@ -142,7 +142,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "refund",

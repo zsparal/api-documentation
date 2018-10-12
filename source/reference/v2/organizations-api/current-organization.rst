@@ -22,7 +22,7 @@ No parameters applicable for this endpoint.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 For the full list of fields, see the
 :doc:`Get organization endpoint </reference/v2/organizations-api/get-organization>`. Only ``_links`` is listed here.
@@ -128,7 +128,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "organization",

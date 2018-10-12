@@ -30,7 +30,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
@@ -51,7 +51,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "payment",

@@ -19,7 +19,7 @@ Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwC
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -210,7 +210,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "profile",
