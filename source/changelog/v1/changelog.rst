@@ -9,8 +9,14 @@ October 2018
 Monday, 15th
 ------------
 - It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
-  and *HTTPS* schemes were allowed. You can for example immediately redirect the customer back to your application after
+  and *HTTPS* schemes were allowed. You can for example immediately redirect the customer back to your mobile app after
   completing a payment, by setting the ``redirectUrl`` to your own App Scheme, like ``my-app://payment-return``.
+
+Friday, 12th
+------------
+- Added new category codes ``5533`` ``5641`` ``5651`` ``5732`` ``5735`` ``5815`` ``5944`` ``5977`` ``7999``
+  to the :doc:`Create Profile </reference/v1/profiles-api/create-profile>` and
+  :doc:`Update Profile </reference/v1/profiles-api/update-profile>` endpoints.
 
 Tuesday, 2nd
 ------------
