@@ -60,6 +60,21 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
               .. note:: At the moment, it is not possible to partially cancel an order line if it has a discount.
 
+Mollie Connect/OAuth parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
+
+.. list-table::
+   :widths: auto
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to cancel test mode order lines.
+
 Response
 --------
 ``204 No Content``
