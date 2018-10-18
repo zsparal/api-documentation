@@ -6,6 +6,14 @@ changes are documented here.
 October 2018
 ============
 
+Wednesday, 17th
+---------------
+- The ``method`` field on the :doc:`Create Payment </reference/v2/payments-api/create-payment>` and
+  :doc:`Create Order </reference/v2/orders-api/create-order>` now also accepts an array of methods. By doing so you can
+  select which methods to show on the payment method selection screen. For example, you can use this functionality to
+  only show payment methods from a specific country to your customer.
+
+
 Monday, 15th
 ------------
 - It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
