@@ -79,11 +79,6 @@ parameters:
        * ``digital``
        * ``adult``
 
-       **Only applicable to refund:**
-
-       * ``creditcard`` for adjusting credit card refunds
-       * ``ideal`` for adjusting all other refunds.
-
    * - ``fee_type``
 
        .. type:: string
