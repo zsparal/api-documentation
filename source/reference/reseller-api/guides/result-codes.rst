@@ -62,7 +62,7 @@ The following elements are present in every API result:
    
    * - ``32``
 
-     - Access denied. The account is already claimed an other partner.
+     - Access denied. The account is already claimed by another partner.
 
    * - ``95``
 
