@@ -59,6 +59,10 @@ The following elements are present in every API result:
    * - ``31``
 
      - The parameter ``partner_id`` is missing.
+   
+   * - ``32``
+
+     - Access denied. The account is already claimed by another partner.
 
    * - ``95``
 
