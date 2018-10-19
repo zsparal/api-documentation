@@ -6,6 +6,11 @@ changes are documented here.
 October 2018
 ============
 
+Friday, 19th
+--------------
+
+- PayPal refund period has been increased from 60 to 180 days.
+
 Wednesday, 17th
 ---------------
 - The ``method`` field on the :doc:`Create Payment </reference/v2/payments-api/create-payment>` and
