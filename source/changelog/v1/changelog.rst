@@ -6,6 +6,11 @@ changes are documented here.
 October 2018
 ============
 
+Friday, 19th
+--------------
+
+- PayPal refund period has been increased from 60 to 180 days.
+
 Monday, 15th
 ------------
 - It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
