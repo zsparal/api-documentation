@@ -16,7 +16,7 @@ List settlement chargebacks
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all chargebacks included in a settlement.

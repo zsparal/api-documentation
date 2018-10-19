@@ -9,7 +9,7 @@ Create mandate
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card or bank account
@@ -71,8 +71,8 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the ``testmode`` parameter is also available.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

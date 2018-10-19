@@ -10,7 +10,7 @@ Create payment refund
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer.
@@ -88,8 +88,8 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the ``testmode`` parameter is also available.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

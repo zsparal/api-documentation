@@ -9,7 +9,7 @@ Revoke mandate
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Revoke a customer's mandate. You will no longer be able to charge the consumer's bank account or credit card with this

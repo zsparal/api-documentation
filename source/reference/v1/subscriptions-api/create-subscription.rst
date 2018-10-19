@@ -16,7 +16,7 @@ Create subscription
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 With subscriptions, you can schedule recurring payments to take place at regular intervals.
@@ -110,10 +110,10 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the only mandatory extra parameter is the ``profileId`` parameter. With it, you can specify to which profile the
-subscription belongs. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify to which profile the subscription belongs. Organizations can have multiple profiles for each of their websites.
+See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto

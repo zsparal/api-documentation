@@ -13,7 +13,7 @@ Cancel order lines
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 This endpoint can be used to cancel a single or multiple order lines. Use

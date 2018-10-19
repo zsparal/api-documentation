@@ -13,7 +13,7 @@ List chargebacks
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment

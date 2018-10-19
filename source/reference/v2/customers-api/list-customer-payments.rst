@@ -9,7 +9,7 @@ List customer payments
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all payments linked to the customer.

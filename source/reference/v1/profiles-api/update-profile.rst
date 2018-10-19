@@ -9,7 +9,7 @@ Update profile
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 In order to process payments, you need to create a website profile. A website profile can easily be created via the

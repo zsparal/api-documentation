@@ -9,7 +9,7 @@ Create customer payment
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Creates a payment for the customer.

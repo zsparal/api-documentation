@@ -9,7 +9,7 @@ List subscription payments
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all payments of a specific subscriptions of a customer.
@@ -39,8 +39,9 @@ and by the subscription's ID, for example ``sub_8JfGzs6v3K``.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-it is possible to get test payments by setting the ``testmode`` query string parameter to ``true``.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, it is possible to get test payments by setting the ``testmode`` query string parameter
+to ``true``.
 
 .. list-table::
    :widths: auto

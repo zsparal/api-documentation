@@ -16,7 +16,7 @@ List issuers
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all available iDEAL issuers. This endpoint enables you to integrate iDEAL's bank selection screen into your own
@@ -47,8 +47,8 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the ``testmode`` query string parameter is also available.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is also available.
 
 .. list-table::
    :widths: auto

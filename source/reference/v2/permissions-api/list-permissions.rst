@@ -9,10 +9,10 @@ List permissions
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
-List all permissions available with the current OAuth access token. The list is not paginated.
+List all permissions available with the current app access token. The list is not paginated.
 
 Parameters
 ----------

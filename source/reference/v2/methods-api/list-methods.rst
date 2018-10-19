@@ -9,7 +9,7 @@ List payment methods
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all available payment methods. The results are not paginated.
@@ -92,10 +92,11 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the following query string parameters are also available. With the ``profileId`` parameter, you must specify which
-profile you want to look at when listing payment methods. Organizations can have multiple profiles for each of their
-websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you must specify which profile you want to look at when listing payment methods. Organizations can have
+multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto

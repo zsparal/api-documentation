@@ -10,7 +10,7 @@ Get payment refund
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single refund by its ID. Note the original payment's ID is needed as well.

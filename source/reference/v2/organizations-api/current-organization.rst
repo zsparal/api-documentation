@@ -9,7 +9,7 @@ Get current organization
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve the currently authenticated organization.

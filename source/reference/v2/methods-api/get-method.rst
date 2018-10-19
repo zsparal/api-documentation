@@ -9,7 +9,7 @@ Get payment method
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single method by its ID. Note that if a method is not available on the website profile a status
@@ -39,10 +39,11 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the following query string parameters are also available. With the ``profileId`` parameter, you must specify which
-profile you want to look at when listing methods. Organizations can have multiple profiles for each of their websites.
-See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto

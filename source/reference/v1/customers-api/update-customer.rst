@@ -16,7 +16,7 @@ Update customer
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Update an existing customer.
@@ -65,8 +65,8 @@ Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqc
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the ``testmode`` parameter is also available.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

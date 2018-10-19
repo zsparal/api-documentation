@@ -9,7 +9,7 @@ List organizations
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all organizations that are connected to your partner-account.

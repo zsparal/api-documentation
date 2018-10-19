@@ -13,7 +13,7 @@ Update shipment
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 This endpoint can be used to update the tracking information of a shipment.
@@ -60,8 +60,8 @@ the shipment's ID, for example ``shp_3wmsgCJN4U``.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the ``testmode`` parameter is also available.
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

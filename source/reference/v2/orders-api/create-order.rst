@@ -13,7 +13,7 @@ Create order
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
@@ -359,9 +359,9 @@ parameters.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you're using :doc:`personal access tokens </guides/authentication>` or are creating an `OAuth app </oauth/overview>`,
-the only mandatory extra parameter is the ``profileId`` parameter. With it, you can specify which profile the payment
-belongs to. Organizations can have multiple profiles for each of their websites. See
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::

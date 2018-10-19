@@ -10,7 +10,7 @@ Cancel payment refund
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 For certain payment methods, like iDEAL, the underlying banking system will delay refunds until the next day. Until that

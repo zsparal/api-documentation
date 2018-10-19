@@ -10,7 +10,7 @@ List settlement captures
 
 .. authentication::
    :api_keys: true
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all captures for a certain settlement.

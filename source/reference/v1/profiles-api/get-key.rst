@@ -9,7 +9,7 @@ Get API key
 
 .. authentication::
    :api_keys: false
-   :personal_access_tokens: true
+   :organization_access_tokens: true
    :oauth: true
 
 Get the API key for the given payment profile and profile mode.
