@@ -66,6 +66,8 @@ Thursday, 20th
 - Added a new endpoint get all payments for a specific customer subscription. For details, see:
   :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscriptions-payments>`
 
+- Added ``amountCaptured`` and ``authorizedAt`` to the payment object.
+
 Tuesday, 18th
 -------------
 - Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`. This
