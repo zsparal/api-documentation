@@ -6,6 +6,12 @@ changes are documented here.
 October 2018
 ============
 
+Tuesday, 23th
+-------------
+
+- Adding the ``timesLeft`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`
+  to see how many charges are left for completing the subscription.
+
 Friday, 19th
 --------------
 
