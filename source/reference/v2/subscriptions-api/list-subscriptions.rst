@@ -169,7 +169,7 @@ Response
                        "currency": "EUR"
                    },
                    "times": 4,
-                   "timesLeft": 3,
+                   "timesRemaining": 3,
                    "interval": "3 months",
                    "startDate": "2016-06-01",
                    "nextPaymentDate": "2016-09-01",

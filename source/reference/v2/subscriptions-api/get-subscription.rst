@@ -104,7 +104,7 @@ Response
 
      - Total number of charges for the subscription to complete.
 
-   * - ``timesLeft``
+   * - ``timesRemaining``
 
        .. type:: integer
 
@@ -246,7 +246,7 @@ Response
            "currency": "EUR"
        },
        "times": 4,
-       "timesLeft": 4,
+       "timesRemaining": 4,
        "interval": "3 months",
        "startDate": "2016-06-01",
        "nextPaymentDate": "2016-09-01",
