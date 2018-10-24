@@ -6,6 +6,11 @@ changes are documented here.
 October 2018
 ============
 
+Wednesday, 24th
+---------------
+
+- Consumer IBAN’s of Bancontact payments will now always be shared via the API.
+
 Friday, 19th
 --------------
 

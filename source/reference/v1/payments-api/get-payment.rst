@@ -377,6 +377,25 @@ Bancontact
             - Only available if requested during payment creation - The QR code that can be scanned by the mobile
               Bancontact application. This enables the desktop to mobile feature.
 
+          * - ``consumerName``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's name.
+
+          * - ``consumerAccount``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank account. This may be an IBAN, or it
+              may be a domestic account number.
+
+          * - ``consumerBic``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank's BIC / SWIFT code.
+
 Bank transfer
 """""""""""""
 .. list-table::

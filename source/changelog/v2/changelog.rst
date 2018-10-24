@@ -11,6 +11,7 @@ Wednesday, 24th
 
 - Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`
   to see how many charges are left for completing the subscription.
+- Consumer IBAN’s of Bancontact payments will now always be shared via the API.
 
 Friday, 19th
 --------------
