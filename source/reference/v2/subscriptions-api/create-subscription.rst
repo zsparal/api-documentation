@@ -215,6 +215,7 @@ Response
            "currency": "EUR"
        },
        "times": 4,
+       "timesRemaining": 4,
        "interval": "3 months",
        "description": "Quarterly payment",
        "startDate": "2016-06-01",
