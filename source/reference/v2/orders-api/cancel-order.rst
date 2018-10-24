@@ -9,6 +9,7 @@ Cancel order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``

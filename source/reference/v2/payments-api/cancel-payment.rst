@@ -9,6 +9,7 @@ Cancel payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status

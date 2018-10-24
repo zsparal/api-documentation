@@ -9,6 +9,7 @@ Delete profile
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 This endpoint enables profile deletions, rendering the profile unavailable for further API calls and transactions.

@@ -16,6 +16,7 @@ Create subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 With subscriptions, you can schedule recurring payments to take place at regular intervals.
@@ -107,12 +108,12 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        .. warning:: The ``webhookUrl`` is optional, but without a webhook you will not be informed when new payments
           are created on your subscription.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify to which profile the subscription belongs. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify to which profile the subscription belongs. Organizations can have multiple profiles for each of their websites.
+See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto

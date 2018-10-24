@@ -9,6 +9,7 @@ Update profile
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 A profile is required to process payments. A profile can easily be created and updated via the Dashboard manually.

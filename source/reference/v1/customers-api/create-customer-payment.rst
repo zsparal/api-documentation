@@ -16,6 +16,7 @@ Create customer payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Creates a payment for the customer.

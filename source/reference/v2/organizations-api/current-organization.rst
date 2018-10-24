@@ -1,15 +1,16 @@
 Get current organization
 ========================
 .. api-name:: Organizations API
-    :version: 2
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations/me
+   :method: GET
+   :url: https://api.mollie.com/v2/organizations/me
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :organization_access_tokens: true
+   :oauth: true
 
 Retrieve the currently authenticated organization.
 

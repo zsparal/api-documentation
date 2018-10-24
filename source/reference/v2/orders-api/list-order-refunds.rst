@@ -10,6 +10,7 @@ List order refunds
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all order refunds.
