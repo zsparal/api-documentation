@@ -98,7 +98,7 @@ Response
        "resource": "chargeback",
        "id": "chb_n9z0tp",
        "payment": "tr_WDqYK6vllg",
-       "amount": "35.07",
+       "amount": "-35.07",
        "chargebackDatetime": "2018-03-14T17:00:52.0Z",
        "reversedDatetime": null
    }
