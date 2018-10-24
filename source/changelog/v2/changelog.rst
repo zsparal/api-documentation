@@ -6,6 +6,11 @@ changes are documented here.
 October 2018
 ============
 
+Thursday, 25th
+--------------
+
+- We now accept the use of an underscore ``_`` in Redirect- en Webhook-URLs.
+
 Wednesday, 24th
 ---------------
 
