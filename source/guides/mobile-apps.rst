@@ -35,11 +35,8 @@ Hence, any communication with the Mollie APIs must not be done by the app but by
 control. This service should authenticate your app, perform any needed API calls with Mollie and forward any information
 needed by your app such as the checkout URL to the app.
 
-Technical considerations
-------------------------
-
 Integrating with other mobile apps
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------
 
 Your customers will expect your app to play nice with the apps they use for making payments from their mobile device,
 such as the banking apps of iDEAL issuers or the Bancontact app.
@@ -56,7 +53,7 @@ Note that this is usually handled correctly if you open the checkout URL in the 
 of an embedded WebView inside your app.
 
 Webhooks
-^^^^^^^^
+--------
 
 Webhooks cannot be sent to mobile devices And since the payment status is not always known when your customer returns
 to the app, you cannot rely on checking on your customer's return to your app.
