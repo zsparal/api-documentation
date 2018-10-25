@@ -93,7 +93,7 @@ Parameters
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-`OAuth app </oauth/overview>`, you should use the ``testmode`` parameter if you want to create a shipment in test mode.
+:doc:`OAuth app </oauth/overview>`, you should use the ``testmode`` parameter if you want to create a shipment in test mode.
 
 .. list-table::
    :widths: auto

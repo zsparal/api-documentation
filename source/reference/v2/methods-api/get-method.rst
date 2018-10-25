@@ -40,7 +40,7 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
 profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
 information.
