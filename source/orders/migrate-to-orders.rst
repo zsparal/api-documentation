@@ -107,7 +107,7 @@ the order instead of just the order by adding a ``?embed=payments`` to the Get O
 status of the first payment under ``_embedded.payments.0.status``.
 
 Canceling an order should be done from your backend. You can use the :doc:`Cancel Order API
-</reference/v2/orders-api/cancel-order>.`
+</reference/v2/orders-api/cancel-order>`.
 
 Retrieving available payment methods
 ------------------------------------
