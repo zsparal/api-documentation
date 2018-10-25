@@ -53,7 +53,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing refunds. If you omit the ``profileId``
 parameter, you will get all refunds on the organization.
 
