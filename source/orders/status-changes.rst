@@ -105,12 +105,14 @@ The following diagram shows how one order status leads to another:
 
 ``canceled``
 ^^^^^^^^^^^^
-    When all order lines are canceled, the order is also set to canceled. Orders can only be canceled by the merchant,
-    not by the consumer.
+    When all order lines are canceled, the order is also set to canceled.
 
     * Mollie will call your webhook when the order reaches this state.
     * All order lines will also be in the ``canceled`` state.
     * This is a final state, the order can't transition to another state.
+
+    .. note:: Orders can only be canceled by the merchant, not by the shopper. Use the :doc:`Cancel Order API
+              </reference/v2/orders-api/cancel-order>` or cancel the order from the the Mollie Dashboard. 
 
 .. _order-status-expired:
 
