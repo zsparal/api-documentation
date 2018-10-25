@@ -93,20 +93,27 @@ orders' statuses.
 Note that the ``checkout`` link has a longer expiry period than a payment checkout URL. The exact expiry time can be
 retrieved from the ``expiresAt`` property in the API response.
 
-Retrieving payment methods
---------------------------
+Receiving status updates
+------------------------
+Just like in the payments API you can specify a ``webhookUrl`` that will be used by Mollie to inform your back office
+when the status of an order has changed. You can then use the Mollie API to
+:doc:`retrieve the order status </reference/v2/orders-api/get-order>`.
+
+Note that orders cannot be canceled by shoppers. The order will remain ``created`` so that you can add further payments
+to the order to give your customer a second chance to pay for the order.
+
+If you want to cancel the order if your customer cancels the payment, you will need to retrieve the payment together with
+the order instead of just the order by adding a ``?embed=payments`` to the Get Order API request. You can then find the
+status of the first payment under ``_embedded.payments.0.status``.
+
+Retrieving available payment methods
+------------------------------------
 The retrieval of a :doc:`list of payment methods </reference/v2/methods-api/list-methods>` for orders is slightly
 different from the Payments API. You will need to supply a ``resource`` parameter with value ``orders``, and a
 ``billingCountry`` parameter. This last parameter is used to check whether your customer is eligible for certain payment
 methods, such as `Klarna Slice it`.
 
 Example: ``https://api.mollie.com/v2/methods?resource=orders&billingCountry=DE``
-
-Receiving status updates
-------------------------
-Just like in the payments API you can specify a ``webhookUrl`` that will be used by Mollie to inform your back office
-when the status of an order has changed. You can then use the Mollie API to
-:doc:`retrieve the order status </reference/v2/orders-api/get-order>`.
 
 Shipping
 --------
