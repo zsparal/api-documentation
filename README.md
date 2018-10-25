@@ -21,20 +21,20 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- Python > 2.7.9
+- Python > 2.7.9 (with [pip](https://pypi.org/project/pip/) to install dependencies)
 - Node > 9.x
 
 ### Running locally
 
 Download a copy of this repository:
 
-```
+```shell
 git clone git@github.com:mollie/api-documentation.git
 ```
 
 Then visit the downloaded repository and install dependencies:
 
-```
+```shell
 cd api-documentation
 make install
 ```
@@ -43,13 +43,13 @@ make install
 
 Finally, build the documentation, its CSS and JS files by running:
 
-```
+```shell
 make html
 ```
 
 You can now preview the docs by opening `build/html/index.html`:
 
-```
+```shell
 open build/html/index.html
 ```
 
@@ -57,7 +57,7 @@ open build/html/index.html
 
 You can make changes to the styling by starting a web server locally:
 
-```
+```shell
 make start
 ```
 
