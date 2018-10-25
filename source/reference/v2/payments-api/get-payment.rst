@@ -434,8 +434,8 @@ Response
                  :required: false
 
             - Recurring payments do not have a checkout URL, because these payments are executed without
-              any user interaction. This link is only included for test recurring payments, and allows you
-              to set the final payment state for such payments.
+              any user interaction. This link is only included for test mode recurring payments, and allows
+              you to set the final payment state for such payments.
 
           * - ``refunds``
 

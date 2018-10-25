@@ -9,14 +9,17 @@ October 2018
 Thursday, 25th
 --------------
 
-- We now accept the use of an underscore ``_`` in Redirect- en Webhook-URLs.
+- We now accept the use of an underscore ``_`` in Redirect- and Webhook-URLs.
+- A :doc:`guide </guides/testing>` has been added explaining how to test your integration of the Mollie API.
+- Added the ``changePaymentState`` link to the :doc:`Payments API </reference/v2/payments-api/get-payment>`.
+  It allows you to set the final payment state for test mode recurring payments.
 
 Wednesday, 24th
 ---------------
 
 - Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`
   to see how many charges are left for completing the subscription.
-- Consumer IBAN’s of Bancontact payments will now always be shared via the API.
+- Consumer IBANs of Bancontact payments will now always be shared via the API.
 
 Friday, 19th
 --------------
@@ -94,7 +97,7 @@ Wednesday, 12th
 ---------------
 - Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the
   :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
-  :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
+  :doc:`Orders API overview </orders/overview>` for more details on how to use these APIs.
 
 - Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
 
