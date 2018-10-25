@@ -16,6 +16,7 @@ List subscriptions
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all subscriptions of a customer.
@@ -41,15 +42,15 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 
      - The number of subscriptions to return (with a maximum of 250).
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra query string
-parameter is the ``profileId`` parameter. With it, you can specify for which profile you want to retrieve subscriptions.
-Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra query string parameter is the ``profileId`` parameter. With it,
+you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles for each
+of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
-    :widths: auto
+   :widths: auto
 
    * - ``profileId``
 

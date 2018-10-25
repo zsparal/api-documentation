@@ -9,6 +9,7 @@ Create order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
@@ -331,7 +332,6 @@ least a valid address must be passed as well as fields identifying the person.
 
 Payment specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Creating an order will automatically create a payment that your customer can use to pay for the order. Creation of the
 payment can be controlled using the ``method`` and ``payment`` parameters.
 
@@ -359,12 +359,12 @@ be passed during order creation:
 See the :ref:`payment-method-specific-parameters` for more information on these
 parameters.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto

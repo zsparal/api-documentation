@@ -9,6 +9,7 @@ Get settlement
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Successful payments are collected into *settlements*, which are then paid out according to your organization's payout

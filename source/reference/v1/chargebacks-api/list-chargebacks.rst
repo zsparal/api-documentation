@@ -20,6 +20,7 @@ List chargebacks
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
@@ -150,7 +151,7 @@ Response
                "resource": "chargeback",
                "id": "chb_n9z0tp",
                "payment": "tr_WDqYK6vllg",
-               "amount": "35.07",
+               "amount": "-35.07",
                "chargebackDatetime": "2018-03-14T17:00:53.0Z",
                "reversedDatetime": null
            },

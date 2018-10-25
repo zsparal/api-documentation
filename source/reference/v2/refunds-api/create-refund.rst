@@ -10,6 +10,7 @@ Create payment refund
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer.
@@ -85,10 +86,10 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
      - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto

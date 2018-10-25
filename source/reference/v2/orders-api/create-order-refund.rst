@@ -9,6 +9,7 @@ Create order refund
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 

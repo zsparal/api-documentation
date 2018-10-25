@@ -9,6 +9,7 @@ List settlement refunds
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all refunds included in a settlement.

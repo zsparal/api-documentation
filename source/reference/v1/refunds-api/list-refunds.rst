@@ -20,6 +20,7 @@ List refunds
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.

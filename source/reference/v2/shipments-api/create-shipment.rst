@@ -9,6 +9,7 @@ Create shipment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment endpoint can be used
@@ -89,10 +90,10 @@ Parameters
               ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``.
 
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, you should use the ``testmode`` parameter
-if you want to create a shipment in test mode.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, you should use the ``testmode`` parameter if you want to create a shipment in test mode.
 
 .. list-table::
    :widths: auto

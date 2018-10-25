@@ -9,6 +9,7 @@ Get subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a subscription by its ID and its customer's ID.
@@ -18,10 +19,10 @@ Parameters
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the subscription's ID. For
 example ``/v2/customers/cst_8wmqcHMN4U/subscriptions/sub_rVKGtNd6s3``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
-also available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -103,6 +104,12 @@ Response
        .. type:: integer
 
      - Total number of charges for the subscription to complete.
+
+   * - ``timesRemaining``
+
+       .. type:: integer
+
+     - Number of charges left for the subscription to complete.
 
    * - ``interval``
 
@@ -240,6 +247,7 @@ Response
            "currency": "EUR"
        },
        "times": 4,
+       "timesRemaining": 4,
        "interval": "3 months",
        "startDate": "2016-06-01",
        "nextPaymentDate": "2016-09-01",
