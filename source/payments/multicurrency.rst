@@ -8,7 +8,7 @@ the conversion. You can retrieve the settlement amount via the API or view it in
 When creating a payment in a non-EUR currency, we will immediately give you the amount we will settle in the API
 response.
 
-Creating payments, refunds or subscriptions in a different currency than ``EUR`` is only possible via the ``v2`` API.
+Creating payments, orders, refunds or subscriptions in a different currency than ``EUR`` is only possible via the ``v2`` API.
 Review the :doc:`Payments API reference </reference/v2/payments-api/create-payment>` for more information.
 
 Payments in non-EUR currencies (created via the ``v2`` API) that are retrieved via the ``v1`` API will show the

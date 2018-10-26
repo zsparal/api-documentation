@@ -417,6 +417,7 @@ Response
           * - ``checkout``
 
               .. type:: URL object
+                 :required: false
 
             - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to.
@@ -426,6 +427,15 @@ Response
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
               Recurring payments don't have a checkout URL.
+
+          * - ``changePaymentState``
+
+              .. type:: URL object
+                 :required: false
+
+            - Recurring payments do not have a checkout URL, because these payments are executed without
+              any user interaction. This link is only included for test mode recurring payments, and allows
+              you to set the final payment state for such payments.
 
           * - ``refunds``
 

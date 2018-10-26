@@ -17,8 +17,8 @@ The first thing you need is a `website profile <https://www.mollie.com/dashboard
 profile has a *Live API key* and a *Test API key*.
 
 While building and testing your integration, you should use the *Test API key*. Read more about the
-:ref:`test mode <guides/authentication/test-mode>` below. Once you're ready to start processing real payments, switch
-out your test key for the *Live API key*.
+test mode in our :doc:`guide </guides/testing>` about testing the Mollie API. Once you're ready to
+start processing real payments, switch out your test key for the *Live API key*.
 
 Of course it's very important to keep any API keys :doc:`secure </guides/security>`. Do not ever share them. However, if
 a key leaks you can always `regenerate <https://www.mollie.com/dashboard/developers/api-keys>`_ it. Don't forget to
@@ -114,21 +114,3 @@ For completeness' sake, the following table compares the available authenticatio
      - `Dashboard: Organization access tokens <https://www.mollie.com/dashboard/developers/organization-access-tokens>`_
      - :doc:`OAuth authorization flow </oauth/overview>`
 
-.. _guides/authentication/test-mode:
-
-Test mode
----------
-You can access the test mode of the Mollie API by using the *Test API key*. Or, if you're using access tokens, by
-providing the ``testmode`` parameter in your API request.
-
-Any payments or other resources you create in test mode are isolated completely from your live mode data. Going back and
-forth between test and live mode is as easy as switching out the API key - or toggling the ``testmode`` parameter in
-case of access tokens.
-
-When creating payments in test mode, the regular checkout screens will be replaced by a test mode checkout screen. This
-test screen allows you to try out different payment statuses without spending actual money.
-
-Apart from the hosted payment pages and the fact that test payments are created instead of real ones, the Mollie API
-behaves almost identical in both environments.
-
-Just be sure to start using live mode when your site goes public, or your customers will get a free ride.

@@ -23,6 +23,8 @@ In the following sections we explain the following topics.
 * :ref:`Charging periodically with subscriptions <payments/recurring/charging-periodically>`
 * :ref:`How do webhooks for subscriptions work? <payments/recurring/subscription-webhooks>`
 
+For more information on how to test recurring payments, please refer to our :doc:`guide </guides/testing>` for testing the Mollie API.
+
 .. _payments/recurring/first-payment:
 
 Setting up the first payment
