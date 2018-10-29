@@ -6,6 +6,12 @@ changes are documented here.
 October 2018
 ============
 
+Monday, 29th
+------------
+
+- Added ``organizationName`` field for orders, so from now a customer can specify the organization name if they buy
+  something for business purposes.
+
 Thursday, 25th
 --------------
 
