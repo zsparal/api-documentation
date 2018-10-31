@@ -45,7 +45,7 @@ parameters:
      - 	The partner ID of the account you would like to generate a login link for. It can be used instead of the parameters ``username``
         and ``password``.
 
-   * - ``redirect_URL``
+   * - ``redirect_url``
 
        .. type:: URL
           :required: false
@@ -65,5 +65,5 @@ Response
         <success>true</success>
         <resultcode>10</resultcode>
         <resultmessage>Redirect the customer to the following url.</resultmessage>
-        <redirect_url>https://www.mollie.com/login/oneTimeLogin/4299193/008788d1a618c3aff51acd57ca82661c?redirect_url=%2Fbeheer%2Fbetaalmethodes%2F</redirect_url>
+        <redirect_url>https://www.mollie.com/login/onetimelogin/4299193/008788d1a618c3aff51acd57ca82661c?redirect_url=%2Fbeheer%2Fbetaalmethodes%2F</redirect_url>
     </response>
