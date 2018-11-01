@@ -191,7 +191,12 @@ Request (PHP)
     <?php
     $mollie = new \Mollie\Api\MollieApiClient();
     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+    // Methods for the Payments API
     $methods = $mollie->methods->all();
+
+    // Methods for the Orders API
+    $methods = $mollie->methods->all(['resource' => 'orders']);
 
 Response
 ^^^^^^^^
