@@ -343,8 +343,7 @@ Response
        .. type:: string
           :required: false
 
-     - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
-       the recurring payment.
+     - If the payment is a first or recurring payment, this field will hold the ID of the mandate.
 
    * - ``subscriptionId``
 
