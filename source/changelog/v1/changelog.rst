@@ -9,7 +9,8 @@ November 2018
 Monday, 5th
 -----------
 
-- Added functionality for Mollie Partners to the Connect API.
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+  for more info.
 
 October 2018
 ============
