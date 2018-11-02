@@ -64,6 +64,17 @@ Request (PHP)
     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
     $canceled_payment = $mollie->payments->delete("tr_WDqYK6vllg");
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+   canceled_payment = mollie_client.payments.delete('tr_WDqYK6vllg')
+
 Response
 ^^^^^^^^
 .. code-block:: http

@@ -167,6 +167,17 @@ Request (PHP)
     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
     $refunds = $mollie->payments->get("tr_WDqYK6vllg")->refunds();
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+   refunds = mollie_client.payments.get('tr_WDqYK6vllg').refunds
+
 Response
 ^^^^^^^^
 .. code-block:: http

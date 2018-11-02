@@ -1227,6 +1227,17 @@ Request (PHP)
     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
     $payment = $mollie->payments->get("tr_WDqYK6vllg");
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+   payment = mollie_client.payments.get('tr_WDqYK6vllg')
+
 Response
 ^^^^^^^^
 .. code-block:: http
