@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+November 2018
+=============
+
+Friday, 2nd
+-----------
+
+- Added functionality for Mollie Partners to the Connect API.
+
 October 2018
 ============
 

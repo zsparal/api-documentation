@@ -14,6 +14,9 @@ You then become the reseller of this account, and it will appear in the list of 
 account will receive the same payment method rate as your other merchants. You will also receive a partner commission for
 referring the merchant.
 
+.. note:: Claiming is also possible via :doc:`OAuth </reference/oauth2/authorize>`. When a merchant creates a new account
+          via the OAuth-flow of your application, it will be linked automatically to your partner-account.
+
 Parameters
 ----------
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
