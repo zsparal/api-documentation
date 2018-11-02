@@ -77,8 +77,7 @@ Request (Python)
    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
    payment = mollie_client.payments.get('tr_WDqYK6vllg')
-   refund = mollie_client.payment_refunds.on(payment).get('re_4qqhO89gsT')
-   refund.delete()
+   refund = mollie_client.payment_refunds.on(payment).delete('re_4qqhO89gsT')
 
 Response
 ^^^^^^^^
