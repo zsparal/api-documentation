@@ -6,7 +6,7 @@ changes are documented here.
 November 2018
 =============
 
-Friday, 2nd
+Monday, 5th
 -----------
 
 - Added functionality for Mollie Partners to the Connect API.
