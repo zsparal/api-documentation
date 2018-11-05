@@ -6,6 +6,12 @@ changes are documented here.
 November 2018
 =============
 
+Monday, 5th
+-----------
+
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+  for more info.
+
 Thursday, 1st
 -------------
 

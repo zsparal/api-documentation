@@ -41,6 +41,13 @@ How do merchants install my app?
 By implementing the authorization flow, other Mollie merchants are able to install your app on their Mollie account.
 :doc:`OAuth: Getting started </oauth/getting-started>` discusses authorizations in further detail.
 
+Can I get referral commission via OAuth as a partner of Mollie?
+---------------------------------------------------------------
+Yes, you can! When you're a Mollie Partner, all merchants that will create an account in the OAuth-flow of your app will
+be linked to your partner-account what makes it possible to receive referral commission (kickback). You don't have to do
+anything else than just integrate OAuth. For more information about the Mollie Partnership or to enable commission,
+please see our `Partner page <https://www.mollie.com/en/partners/>`_.
+
 The Connect with Mollie button
 ------------------------------
 To keep the user experience consistent, we recommend using one of the buttons below in your authorization flow.
