@@ -107,6 +107,19 @@ Request (PHP)
     $payment = $mollie->payments->get("tr_7UhSN1zuXS");
     $chargebacks = $payment->chargebacks();
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+   payment = mollie_client.payments.get('tr_WDqYK6vllg')
+   chargebacks = payment.chargebacks
+
 Response
 ^^^^^^^^
 .. code-block:: http

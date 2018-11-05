@@ -646,6 +646,28 @@ Request (PHP)
       ],
     ]);
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+   payment = mollie_client.payments.create({
+      'amount': {
+          'currency': 'EUR',
+          'value': '10.00'
+      },
+      'description': 'My first payment',
+      'webhookUrl': 'https://webshop.example.org/order/12345/',
+      'redirectUrl': 'https://webshop.example.org/payments/webhook/',
+      'metadata': {
+          'order_id': '12345'
+      }
+   })
+
 Response
 ^^^^^^^^
 .. code-block:: http

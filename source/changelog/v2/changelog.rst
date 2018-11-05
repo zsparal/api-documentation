@@ -12,8 +12,19 @@ Monday, 5th
 - Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
   for more info.
 
+Thursday, 1st
+-------------
+
+- The maximum amount for SOFORT Banking payments has been increased from €5,000 to €50,000.
+
 October 2018
 ============
+
+Monday, 29th
+------------
+
+- Added ``organizationName`` field for orders, so from now a customer can specify the organization name if they buy
+  something for business purposes.
 
 Thursday, 25th
 --------------

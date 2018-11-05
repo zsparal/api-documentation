@@ -198,6 +198,22 @@ Request (PHP)
     // Methods for the Orders API
     $methods = $mollie->methods->all(['resource' => 'orders']);
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+   # Methods for the Payments API
+   methods = mollie_client.methods.list()
+
+   # Methods for the Orders API
+   methods = mollie_client.methods.list(resource='orders')
+
 Response
 ^^^^^^^^
 .. code-block:: http

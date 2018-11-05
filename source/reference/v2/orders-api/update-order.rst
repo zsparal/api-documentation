@@ -44,6 +44,13 @@ in the request.
      - The shipping address for the order. See :ref:`order-address-details` for the exact fields
        needed.
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The name of an organization which is shopping happening for.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
