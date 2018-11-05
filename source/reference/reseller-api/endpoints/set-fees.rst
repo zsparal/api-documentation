@@ -10,6 +10,9 @@ Set fees
 
 The method set-fees can be used to change a merchant's rates.
 
+.. note::
+  The use of this API is restricted. Please contact our partner team at Partner@mollie.com if you want to use this API.
+
 Parameters
 ----------
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
