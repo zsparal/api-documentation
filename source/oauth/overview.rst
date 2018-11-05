@@ -44,7 +44,8 @@ By implementing the authorization flow, other Mollie merchants are able to insta
 Can I get referral commission, as a Mollie Partner, via OAuth?
 --------------------------------------------------------------
 Yes, you can! When you're a Mollie Partner, all merchants that will create an account in the OAuth-flow of your app will
-be linked to your partner-account what makes it possible to receive referral commission (kickback).
+be linked to your partner-account what makes it possible to receive referral commission (kickback). You don't have to do
+anything else than just integrate OAuth.
 
 The Connect with Mollie button
 ------------------------------
