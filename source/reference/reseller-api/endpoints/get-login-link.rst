@@ -16,7 +16,7 @@ cases, the merchant who was already logged in will remain logged in.
 When the customer has not yet accepted Mollie's conditions they must first do so before being redirected.
 
 .. note::
-   The use of this API is restricted. Please contact our partner team at Partner@mollie.com if you want to use this API.
+   The use of this API is restricted. Please contact our partner team at partner@mollie.com if you want to use this API.
 
 Parameters
 ----------
