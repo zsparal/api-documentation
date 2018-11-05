@@ -91,7 +91,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The name of an organization which is shopping happening for.
+     - The URL your customer will be redirected to after the payment process.
 
    * - ``webhookUrl``
 
