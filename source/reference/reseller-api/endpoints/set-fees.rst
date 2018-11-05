@@ -11,7 +11,7 @@ Set fees
 The method set-fees can be used to change a merchant's rates.
 
 .. note::
-  The use of this API is restricted. Please contact our partner team at Partner@mollie.com if you want to use this API.
+  The use of this API is restricted. Please contact our partner team at partner@mollie.com if you want to use this API.
 
 Parameters
 ----------
