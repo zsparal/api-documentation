@@ -167,6 +167,22 @@ Request (PHP)
     // get the next page
     $next_payments = $payments->next();
 
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+   # get the first page
+   payments = mollie_client.payments.list()
+
+   # get the next page
+   next_payments = payments.get_next()
+
 Response
 ^^^^^^^^
 .. code-block:: http

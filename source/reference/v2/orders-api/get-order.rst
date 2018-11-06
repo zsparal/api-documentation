@@ -71,6 +71,14 @@ Response
 
      - The payment method last used when paying for the order.
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The name of an organization which is shopping happening for. Will be present if has been specified by the
+       customer.
+
    * - ``mode``
 
        .. type:: string

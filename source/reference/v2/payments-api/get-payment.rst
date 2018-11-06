@@ -343,8 +343,7 @@ Response
        .. type:: string
           :required: false
 
-     - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
-       the recurring payment.
+     - If the payment is a first or recurring payment, this field will hold the ID of the mandate.
 
    * - ``subscriptionId``
 
@@ -1227,6 +1226,17 @@ Request (PHP)
     $mollie = new \Mollie\Api\MollieApiClient();
     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
     $payment = $mollie->payments->get("tr_WDqYK6vllg");
+
+Request (Python)
+^^^^^^^^^^^^^^^^
+.. code-block:: python
+   :linenos:
+
+   from mollie.api.client import Client
+
+   mollie_client = Client()
+   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+   payment = mollie_client.payments.get('tr_WDqYK6vllg')
 
 Response
 ^^^^^^^^

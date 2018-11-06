@@ -3,6 +3,20 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+November 2018
+=============
+
+Monday, 5th
+-----------
+
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+  for more info.
+
+Thursday, 1st
+-------------
+
+- The maximum amount for SOFORT Banking payments has been increased from €5,000 to €50,000.
+
 October 2018
 ============
 

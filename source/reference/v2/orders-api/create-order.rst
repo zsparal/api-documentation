@@ -79,6 +79,13 @@ Parameters
      - The date of birth of your customer. Some payment methods need this value and if you have it, you should send it
        so that your customer does not have to enter it again later in the checkout process.
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The URL your customer will be redirected to after the payment process.
+
    * - ``redirectUrl``
 
        .. type:: string
