@@ -97,6 +97,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",
@@ -107,6 +108,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",

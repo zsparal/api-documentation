@@ -79,13 +79,6 @@ Parameters
      - The date of birth of your customer. Some payment methods need this value and if you have it, you should send it
        so that your customer does not have to enter it again later in the checkout process.
 
-   * - ``organizationName``
-
-       .. type:: string
-          :required: false
-
-     - The URL your customer will be redirected to after the payment process.
-
    * - ``redirectUrl``
 
        .. type:: string
@@ -296,6 +289,13 @@ least a valid address must be passed as well as fields identifying the person.
 .. list-table::
    :widths: auto
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The person's organization, if applicable.
+
    * - ``title``
 
        .. type:: string
@@ -423,6 +423,7 @@ Request (curl)
                 "currency": "EUR"
             },
             "billingAddress": {
+                "organizationName": "Mollie B.V.",
                 "streetAndNumber": "Keizersgracht 313",
                 "city": "Amsterdam",
                 "region": "Noord-Holland",
@@ -435,6 +436,7 @@ Request (curl)
                 "phone": "+31208202070"
             },
             "shippingAddress": {
+                "organizationName": "Mollie B.V.",
                 "streetAndNumber": "Prinsengracht 313",
                 "streetAdditional": "4th floor",
                 "city": "Haarlem",
@@ -521,6 +523,7 @@ Request (PHP)
          "currency" => "EUR"
        ],
        "billingAddress" => [
+         "organizationName": "Mollie B.V.",
          "streetAndNumber" => "Keizersgracht 313",
          "city" => "Amsterdam",
          "region" => "Noord-Holland",
@@ -533,6 +536,7 @@ Request (PHP)
          "phone" => "+31309202070",
        ],
        "shippingAddress" => [
+         "organizationName": "Mollie B.V.",
          "streetAndNumber" => "Keizersgracht 313",
          "streetAdditional" => "4th floor",
          "city" => "Haarlem",
@@ -632,6 +636,7 @@ Response
        "mode": "test",
        "locale": "nl_NL",
        "billingAddress": {
+           "organizationName": "Mollie B.V.",
            "streetAndNumber": "Keizersgracht 313",
            "city": "Amsterdam",
            "region": "Noord-Holland",
@@ -646,6 +651,7 @@ Response
        "consumerDateOfBirth": "1958-01-31",
        "orderNumber": "1337",
        "shippingAddress": {
+           "organizationName": "Mollie B.V.",
            "streetAndNumber": "Keizersgracht 313",
            "streetAdditional": "4th floor",
            "city": "Haarlem",

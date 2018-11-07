@@ -6,6 +6,11 @@ changes are documented here.
 November 2018
 =============
 
+Wednesday, 7th
+--------------
+
+- Moved the ``organizationName`` field in the ``shippingAddress`` and ``billingAddress`` objects.
+
 Monday, 5th
 -----------
 

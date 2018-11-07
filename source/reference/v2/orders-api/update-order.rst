@@ -44,13 +44,6 @@ in the request.
      - The shipping address for the order. See :ref:`order-address-details` for the exact fields
        needed.
 
-   * - ``organizationName``
-
-       .. type:: string
-          :required: false
-
-     - The name of an organization which is shopping happening for.
-
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
@@ -85,6 +78,7 @@ Request (curl)
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d '{
            "billingAddress": {
+               "organizationName": "Mollie B.V.",
                "streetAndNumber": "Keizersgracht 313",
                "city": "Amsterdam",
                "region": "Noord-Holland",
@@ -108,6 +102,7 @@ Request (PHP)
    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
    $order = $mollie->orders->get("ord_kEn1PlbGa");
+   $order->billingAddress->organizationName = "Mollie B.V.";
    $order->billingAddress->streetAndNumber = "Keizersgracht 313";
    $order->billingAddress->city = "Amsterdam";
    $order->billingAddress->region = "Noord-Holland";
@@ -145,6 +140,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "city": "Amsterdam",
             "region": "Noord-Holland",
@@ -158,6 +154,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",

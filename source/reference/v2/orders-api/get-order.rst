@@ -71,14 +71,6 @@ Response
 
      - The payment method last used when paying for the order.
 
-   * - ``organizationName``
-
-       .. type:: string
-          :required: false
-
-     - The name of an organization which is shopping happening for. Will be present if has been specified by the
-       customer.
-
    * - ``mode``
 
        .. type:: string
@@ -485,6 +477,13 @@ These properties can be found in the ``billingAddress`` and ``shippingAddress`` 
 .. list-table::
    :widths: auto
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The person's organization, if applicable.
+
    * - ``title``
 
        .. type:: string
@@ -572,6 +571,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",
@@ -582,6 +582,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",
