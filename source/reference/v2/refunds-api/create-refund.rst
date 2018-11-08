@@ -16,8 +16,7 @@ Create payment refund
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer.
 The refunded amount will be withheld from your next settlement.
 
-Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
-please contact our support department.
+Refunds are not available at all for Bitcoin, paysafecard and gift cards.
 
 Refunds support descriptions, which we will show in the Dashboard, your exports and pass to your customer if possible.
 

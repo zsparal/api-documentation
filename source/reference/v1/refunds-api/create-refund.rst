@@ -22,8 +22,7 @@ Create refund
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer. The
 amount of the refund will be withheld from your next settlement.
 
-Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
-please contact our support department.
+Refunds are not available at all for Bitcoin, paysafecard and gift cards.
 
 By supplying the optional ``amount`` parameter, you can issue a partial refund where your customer is only refunded a
 fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,

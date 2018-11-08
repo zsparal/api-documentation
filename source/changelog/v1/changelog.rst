@@ -6,6 +6,11 @@ changes are documented here.
 November 2018
 =============
 
+Thursday, 8th
+-------------
+
+- It's now possible to refund SEPA Direct Debit payments
+
 Monday, 5th
 -----------
 
