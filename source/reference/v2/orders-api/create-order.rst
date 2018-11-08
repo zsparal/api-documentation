@@ -661,7 +661,7 @@ Response
            "title": "Mr.",
            "givenName": "Chuck",
            "familyName": "Norris",
-           "email": "norris@chucknorrisfacts.net",
+           "email": "norris@chucknorrisfacts.net"
        },
        "redirectUrl": "https://example.org/redirect",
        "webhookUrl": "https://example.org/webhook",
