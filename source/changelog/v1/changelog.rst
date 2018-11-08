@@ -9,7 +9,7 @@ November 2018
 Thursday, 8th
 -------------
 
-- SDD refunds are enabled for all the merchants
+- It's now possible to refund SEPA Direct Debit payments
 
 Monday, 5th
 -----------
