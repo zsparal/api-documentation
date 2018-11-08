@@ -6,6 +6,11 @@ changes are documented here.
 November 2018
 =============
 
+Thursday, 8th
+-------------
+
+- Ongoing subscriptions in test mode will now be canceled automatically after 10 charges.
+
 Wednesday, 7th
 --------------
 

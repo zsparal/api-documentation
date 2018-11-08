@@ -71,6 +71,10 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
      - Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
 
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 times when you do not specify a number of
+          charges.
+
    * - ``interval``
 
        .. type:: string
