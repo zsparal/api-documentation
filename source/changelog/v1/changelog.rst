@@ -6,10 +6,15 @@ changes are documented here.
 November 2018
 =============
 
+Friday, 9th
+-----------
+
+- Subscriptions in test mode will now be canceled automatically after 10 charges.
+
 Thursday, 8th
 -------------
 
-- Ongoing subscriptions in test mode will now be canceled automatically after 10 charges.
+- It's now possible to refund SEPA Direct Debit payments
 
 Monday, 5th
 -----------
