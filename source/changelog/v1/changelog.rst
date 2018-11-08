@@ -6,6 +6,11 @@ changes are documented here.
 November 2018
 =============
 
+Thursday, 8th
+-------------
+
+- SDD refunds are enabled for all the merchants
+
 Monday, 5th
 -----------
 
