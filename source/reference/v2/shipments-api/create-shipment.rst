@@ -135,7 +135,7 @@ Request (curl)
                 "carrier": "PostNL",
                 "code": "3SKABA000000000",
                 "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
-            },
+            }
         }'
 
 Request (PHP)
