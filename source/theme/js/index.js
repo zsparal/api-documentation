@@ -4,12 +4,12 @@ import navLoggedIn from './navLoggedIn';
 import productsNavigation from './productsNavigation';
 import subNavigation from './subNavigation';
 import mobileNavigationButton from './mobileNavigationButton';
-import * as mobileNavigation from './mobileNavigation';
+import toggleMobileNavigation from './mobileNavigation';
 import toggleClass from './toggleClass';
 import linkDropdown from './linkDropdown';
 import sidebar from './sidebar';
 
-const handlers = makeHandlers([toggleClass, mobileNavigation.hide, mobileNavigation.show]);
+const handlers = makeHandlers([toggleClass, toggleMobileNavigation]);
 const enhancers = makeEnhancers([
   navLoggedIn,
   productsNavigation,
