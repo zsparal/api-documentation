@@ -523,28 +523,23 @@ These properties can be found in the ``billingAddress`` and ``shippingAddress`` 
 
      - See :ref:`address-object` for details on these fields.
 
-Example
--------
+Examples
+^^^^^^^^
+.. code-block-selector::
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
+          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-.. _get-order-response:
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-     $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
 
 Response
 ^^^^^^^^
