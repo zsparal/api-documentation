@@ -297,7 +297,8 @@ Response
            },
            "pdf": {
                 "href": "https://www.mollie.com/merchant/download/invoice/xBEbP9rvAq/2ab44d60b35b1d06090bba955fa2c602",
-                "type": "application/pdf"
+                "type": "application/pdf",
+                "expiresAt": "2018-11-09T14:10:36+00:00"
            }
        }
    }
