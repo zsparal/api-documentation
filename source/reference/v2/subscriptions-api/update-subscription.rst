@@ -59,6 +59,9 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - Total number of charges for the subscription to complete. Can not be less than number of times that subscription
        has been charged.
 
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 charges.
+
    * - ``startDate``
 
        .. type:: date
