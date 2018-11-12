@@ -80,7 +80,7 @@
   }
 }
 
-@media (max-width: breakpoint("<medium")) {
+@media (max-width: breakpoint('<medium')) {
   .rst-content .section table.docutils {
     display: flex;
   }

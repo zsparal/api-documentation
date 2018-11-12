@@ -50,21 +50,20 @@ class CodeBlockSelectorDirective(Directive):
         # Build the collection of code examples using the parsed code blocks.
         code_examples = self.extract_code_examples(parsed_body.children)
         example_container = nodes.container()
+        example_container["classes"].append("code-blocks")
         example_container.extend(code_examples)
 
         return [example_selector, example_container]
 
     def create_example_selector(self):
-        selector_container = nodes.container()
-        selector_container["classes"].append("example-switcher")
-
+        selector_container = nodes.container();
+        selector_container += nodes.raw('', '<div class="examples-switcher" data-enhancer="example-switcher"/>', format='html')
         for lexer, properties in self.supported_lexers.items():
             button = nodes.inline(text=properties["language_text"])
             button["classes"].append("example-switch")
             button["ids"].append("example-switch-{}".format(properties["language"]))
 
             selector_container += button
-
         return selector_container
 
     def extract_code_examples(self, code_blocks):
@@ -93,14 +92,14 @@ class CodeBlockSelectorDirective(Directive):
             class_name = "example-{}".format(lexer_properties["language"])
 
             code_block["classes"].append(class_name)
-
+            code_block["ids"].append("request-{}".format(lexer_properties["language"]))
         return code_examples.values()
 
     def create_generic_code_block(self, lexer):
         properties = self.supported_lexers[lexer]
         content = (
-            "This API call has not yet been implemented in our {} API client. " +
-            "If you have some spare time,\nyou could open a pull request at: {}"
+            "This call has not yet been implemented in our {} API client.\n" +
+            "If you have some spare time, you can open a pull request at:\n{}"
         ).format(properties["language_text"], properties["github_url"])
 
         code_block = CodeBlock(

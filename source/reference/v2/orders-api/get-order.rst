@@ -523,8 +523,8 @@ These properties can be found in the ``billingAddress`` and ``shippingAddress`` 
 
      - See :ref:`address-object` for details on these fields.
 
-Examples
-^^^^^^^^
+Example
+^^^^^^^
 .. code-block-selector::
 
    .. code-block:: bash
