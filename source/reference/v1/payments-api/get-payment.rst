@@ -216,7 +216,7 @@ Response
        .. type:: string
 
      - If a customer was specified upon payment creation, the customer's token will be available here as
-       well. For example, ``cst_XPn78q9CfT``.
+       well. For example, ``cst_XPn78q9CfT``. When the customer has been deleted this property will still be set.
 
    * - ``recurringType``
 
