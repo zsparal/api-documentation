@@ -7,6 +7,7 @@ November 2018
 =============
 
 Wednesday, 15th
+---------------
 
 - It is now possible to pass an ``amount`` when partially shipping, canceling or refunding order lines. This is
   necessary for order lines that have a non-zero ``discountAmount``.
