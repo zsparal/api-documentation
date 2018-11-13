@@ -4,6 +4,7 @@ from .authentication_directive import AuthenticationDirective
 from .code_block_selector_directive import CodeBlockSelectorDirective
 from .data_type_directive import DataTypeDirective
 
+
 def setup(app):
     """
     :type app: sphinx.application.Sphinx

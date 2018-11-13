@@ -16,27 +16,22 @@ class CodeBlockSelectorDirective(Directive):
     supported_lexers["bash"] = {
         "language": "curl",
         "language_text": "cURL",
-        "github_url": None,
     }
     supported_lexers["php"] = {
         "language": "php",
         "language_text": "PHP",
-        "github_url": "https://github.com/mollie/mollie-api-php",
     }
     supported_lexers["python"] = {
         "language": "python",
         "language_text": "Python",
-        "github_url": "https://github.com/mollie/mollie-api-python",
     }
     supported_lexers["ruby"] = {
         "language": "ruby",
         "language_text": "Ruby",
-        "github_url": "https://github.com/mollie/mollie-api-ruby",
     }
     supported_lexers["javascript"] = {
         "language": "nodejs",
         "language_text": "Node.js",
-        "github_url": "https://github.com/mollie/mollie-api-node",
     }
 
     def run(self):
@@ -109,9 +104,6 @@ class CodeBlockSelectorDirective(Directive):
             "If you have some spare time, you can open a pull request at:\n" +
             "https://github.com/mollie/api-documentation"
         ).format(properties["language_text"])
-
-        if properties["github_url"] is None:
-            content = "We do not yet have a code example for this API call."
 
         code_block = CodeBlock(
             "generic-code-block",
