@@ -153,27 +153,27 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
-        -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
+         -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-        $mollie->methods->get("ideal", ["include" => "issuers"]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $mollie->methods->get("ideal", ["include" => "issuers"]);
 
    .. code-block:: python
-    :linenos:
+      :linenos:
 
-    from mollie.api.client import Client
+      from mollie.api.client import Client
 
-    mollie_client = Client()
-    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-    mollie_client.methods.get('ideal', include='issuers')
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      mollie_client.methods.get('ideal', include='issuers')
 
 Response
 ^^^^^^^^

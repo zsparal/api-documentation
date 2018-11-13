@@ -91,10 +91,10 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 ^^^^^^^^

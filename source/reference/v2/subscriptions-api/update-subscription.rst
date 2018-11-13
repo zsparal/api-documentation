@@ -125,35 +125,35 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X PATCH https://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d "amount[currency]=EUR" \
-        -d "amount[value]=10.00" \
-        -d "times=42" \
-        -d "startDate=2018-12-12" \
-        -d "description=Mollie Recurring subscription" \
-        -d "webhookUrl=https://example.org/webhook"
+      curl -X PATCH https://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "times=42" \
+         -d "startDate=2018-12-12" \
+         -d "description=Mollie Recurring subscription" \
+         -d "webhookUrl=https://example.org/webhook"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-        $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
 
-        $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
-        $subscription->amount = (object) [
-        "currency" => "EUR",
-        "value" => "10.00",
-        ];
-        $subscription->times = 42;
-        $subscription->startDate = "2018-12-12";
-        $subscription->description = "Mollie recurring subscription";
-        $subscription->webhookUrl = "https://example.org/webhook";
-        $updatedSubscription = $subscription->update();
+      $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
+      $subscription->amount = (object) [
+      "currency" => "EUR",
+      "value" => "10.00",
+      ];
+      $subscription->times = 42;
+      $subscription->startDate = "2018-12-12";
+      $subscription->description = "Mollie recurring subscription";
+      $subscription->webhookUrl = "https://example.org/webhook";
+      $updatedSubscription = $subscription->update();
 
 
 Response

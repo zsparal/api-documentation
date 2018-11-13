@@ -81,34 +81,34 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d '{
-                "tracking": {
-                    "carrier": "PostNL",
-                    "code": "3SKABA000000000",
-                    "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
-                },
-            }'
+      curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "tracking": {
+                     "carrier": "PostNL",
+                     "code": "3SKABA000000000",
+                     "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
+                  },
+               }'
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $order = $mollie->orders->get('ord_kEn1PlbGa');
-        $shipment = $order->getShipment("shp_3wmsgCJN4U");
+      $order = $mollie->orders->get('ord_kEn1PlbGa');
+      $shipment = $order->getShipment("shp_3wmsgCJN4U");
 
-        $shipment->tracking = [
-        'carrier' => 'PostNL',
-        'code' => '3SKABA000000000',
-        'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
-        ];
-        $shipment = $shipment->update();
+      $shipment->tracking = [
+      'carrier' => 'PostNL',
+      'code' => '3SKABA000000000',
+      'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
+      ];
+      $shipment = $shipment->update();
 
 Response
 ^^^^^^^^

@@ -613,55 +613,55 @@ Example
 .. code-block-selector::
 
    .. code-block:: bash
-        :linenos:
+      :lineos:
 
-        curl -X POST https://api.mollie.com/v2/payments \
-            -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-            -d "amount[currency]=EUR" \
-            -d "amount[value]=10.00" \
-            -d "description=Order #12345" \
-            -d "redirectUrl=https://webshop.example.org/order/12345/" \
-            -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
-            -d "metadata={\"order_id\": \"12345\"}"
+      curl -X POST https://api.mollie.com/v2/payments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "description=Order #12345" \
+         -d "redirectUrl=https://webshop.example.org/order/12345/" \
+         -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
+         -d "metadata={\"order_id\": \"12345\"}"
    .. code-block:: php
-        :linenos:
+      :lineos:
 
-            <?php
-            $mollie = new \Mollie\Api\MollieApiClient();
-            $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-            $payment = $mollie->payments->create([
-            "amount" => [
-                "currency" => "EUR",
-                "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
-            ],
-            "description" => "My first payment",
-            "redirectUrl" => "https://webshop.example.org/order/12345/",
-            "webhookUrl" => "https://webshop.example.org/payments/webhook/",
-            "metadata" => [
-                "order_id" => "12345",
-            ],
-            ]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->create([
+      "amount" => [
+            "currency" => "EUR",
+            "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
+      ],
+      "description" => "My first payment",
+      "redirectUrl" => "https://webshop.example.org/order/12345/",
+      "webhookUrl" => "https://webshop.example.org/payments/webhook/",
+      "metadata" => [
+            "order_id" => "12345",
+      ],
+      ]);
 
 
    .. code-block:: python
-        :linenos:
+      :lineos:
 
-        from mollie.api.client import Client
+      from mollie.api.client import Client
 
-        mollie_client = Client()
-        mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-        payment = mollie_client.payments.create({
-            'amount': {
-                'currency': 'EUR',
-                'value': '10.00'
-            },
-            'description': 'My first payment',
-            'webhookUrl': 'https://webshop.example.org/order/12345/',
-            'redirectUrl': 'https://webshop.example.org/payments/webhook/',
-            'metadata': {
-                'order_id': '12345'
-            }
-        })
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.create({
+         'amount': {
+               'currency': 'EUR',
+               'value': '10.00'
+         },
+         'description': 'My first payment',
+         'webhookUrl': 'https://webshop.example.org/order/12345/',
+         'redirectUrl': 'https://webshop.example.org/payments/webhook/',
+         'metadata': {
+               'order_id': '12345'
+         }
+      })
 
 Response
 ^^^^^^^^

@@ -5,15 +5,23 @@ const hideCodeBlocks = language => {
   const codeBlocks = Array.from(document.querySelectorAll('[id^="request-"]'));
   codeBlocks.forEach(block => {
     const elementId = `request-${language.toLowerCase()}`;
-    if (block.id !== elementId) block.classList.add('hidden');
-    else block.classList.remove('hidden');
+    if (block.id !== elementId) {
+      block.classList.add('hidden');
+    } else {
+      block.classList.remove('hidden');
+    }
   });
 };
 
 export default enhance('example-switcher', element => {
   // Gets stored language if present
   const storedLanguage = localStorage.getItem('preferedLanguage');
-  const language = storedLanguage && storedLanguage !== 'undefined' ? storedLanguage : 'curl';
+  let language;
+  if (storedLanguage && storedLanguage !== 'undefined') {
+    language = storedLanguage;
+  } else {
+    language = 'curl';
+  }
   const selectedLanguage = document.getElementById(`example-switch-${language}`);
 
   // Sets initial state: selected and language on switcher and hiding all other blocks

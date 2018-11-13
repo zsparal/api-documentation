@@ -90,31 +90,31 @@ Example
 .. code-block-selector::
 
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $payment = $mollie->payments->get("tr_7UhSN1zuXS");
-        $chargebacks = $payment->chargebacks();
+      $payment = $mollie->payments->get("tr_7UhSN1zuXS");
+      $chargebacks = $payment->chargebacks();
 
    .. code-block:: python
-    :linenos:
+      :linenos:
 
-    from mollie.api.client import Client
+      from mollie.api.client import Client
 
-    mollie_client = Client()
-    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-    payment = mollie_client.payments.get('tr_WDqYK6vllg')
-    chargebacks = payment.chargebacks
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
+      chargebacks = payment.chargebacks
 
 Response
 ^^^^^^^^

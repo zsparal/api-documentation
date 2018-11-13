@@ -154,20 +154,20 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+       curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT \
+           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $payment = $mollie->payments->get("tr_WDqYK6vllg");
-        $capture = $payment->getCapture("cpt_4qqhO89gsT");
+      $payment = $mollie->payments->get("tr_WDqYK6vllg");
+      $capture = $payment->getCapture("cpt_4qqhO89gsT");
 
 Response
 ^^^^^^^^

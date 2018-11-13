@@ -121,23 +121,23 @@ Example
 .. code-block-selector::
 
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/customers \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/customers \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        // First page
-        $customers = $mollie->customers->page();
+      // First page
+      $customers = $mollie->customers->page();
 
-        // Next page
-        $customers->next();
+      // Next page
+      $customers->next();
 
 
 Response

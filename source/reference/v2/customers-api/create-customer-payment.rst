@@ -64,34 +64,34 @@ Example
 .. code-block-selector::
 
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/payments \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d "amount[currency]=EUR" \
-        -d "amount[value]=10.00" \
-        -d "description=Order #12345" \
-        -d "sequenceType=first" \
-        -d "redirectUrl=https://webshop.example.org/order/12345/" \
-        -d "webhookUrl=https://webshop.example.org/payments/webhook/"
+      curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/payments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "description=Order #12345" \
+         -d "sequenceType=first" \
+         -d "redirectUrl=https://webshop.example.org/order/12345/" \
+         -d "webhookUrl=https://webshop.example.org/payments/webhook/"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
-        "amount" => [
-            "currency" => "EUR",
-            "value" => "10.00",
-        ],
-        "description" => "Order #12345",
-        "sequenceType" => "first",
-        "redirectUrl" => "https://webshop.example.org/order/12345/",
-        "webhookUrl => "https://webshop.example.org/payments/webhook/",
-        ]);
+      $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
+      "amount" => [
+         "currency" => "EUR",
+         "value" => "10.00",
+      ],
+      "description" => "Order #12345",
+      "sequenceType" => "first",
+      "redirectUrl" => "https://webshop.example.org/order/12345/",
+      "webhookUrl => "https://webshop.example.org/payments/webhook/",
+      ]);
 
 Response
 ^^^^^^^^

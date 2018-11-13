@@ -85,45 +85,45 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d '{
-            "lines": [
-                {
-                    "id": "odl_dgtxyl",
-                    "quantity": 1
-                },
-                {
-                    "id": "odl_jp31jz"
-                }
-            ]
-        }'
+      curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+               "lines": [
+                  {
+                     "id": "odl_dgtxyl",
+                     "quantity": 1
+                  },
+                  {
+                     "id": "odl_jp31jz"
+                  }
+               ]
+         }'
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $order = $mollie->orders->get("ord_8wmqcHMN4U");
-        $order->cancelLines([
-            'lines' => [
-                [
-                    'id' => 'odl_dgtxyl',
-                    'quantity' => 1, // you can partially cancel the line.
-                ],
-                [
-                    'id' => 'odl_jp31jz', // or cancel the line completely
-                ],
-            ],
-        ]);
+      $order = $mollie->orders->get("ord_8wmqcHMN4U");
+      $order->cancelLines([
+         'lines' => [
+               [
+                  'id' => 'odl_dgtxyl',
+                  'quantity' => 1, // you can partially cancel the line.
+               ],
+               [
+                  'id' => 'odl_jp31jz', // or cancel the line completely
+               ],
+         ],
+      ]);
 
-        // if you want to cancel all eligible lines, you can use this shorthand:
-        // $order->cancelAllLines();
+      // if you want to cancel all eligible lines, you can use this shorthand:
+      // $order->cancelAllLines();
 
-        $updatedOrder = $mollie->orders->get($order->id);
+      $updatedOrder = $mollie->orders->get($order->id);
 
 Response
 ^^^^^^^^

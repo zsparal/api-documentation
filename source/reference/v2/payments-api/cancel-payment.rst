@@ -48,27 +48,27 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X DELETE https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X DELETE https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-        $canceled_payment = $mollie->payments->delete("tr_WDqYK6vllg");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $canceled_payment = $mollie->payments->delete("tr_WDqYK6vllg");
 
    .. code-block:: python
-    :linenos:
+      :linenos:
 
-    from mollie.api.client import Client
+      from mollie.api.client import Client
 
-    mollie_client = Client()
-    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-    canceled_payment = mollie_client.payments.delete('tr_WDqYK6vllg')
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      canceled_payment = mollie_client.payments.delete('tr_WDqYK6vllg')
 
 Response
 ^^^^^^^^

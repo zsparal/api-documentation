@@ -164,35 +164,35 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d "amount[currency]=EUR" \
-        -d "amount[value]=25.00" \
-        -d "times=4" \
-        -d "interval=3 months" \
-        -d "description=Quarterly payment" \
-        -d "webhookUrl=https://webshop.example.org/subscriptions/webhook/"
+      curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=25.00" \
+         -d "times=4" \
+         -d "interval=3 months" \
+         -d "description=Quarterly payment" \
+         -d "webhookUrl=https://webshop.example.org/subscriptions/webhook/"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $customer = $mollie->customers->get("cst_stTC2WHAuS");
-        $customer->createSubscription([
-            "amount" => [
-                "currency" => "EUR",
-                "value" => "25.00",
-            ],
-            "times" => 4,
-            "interval" => "3 months",
-            "description" => "Quarterly payment",
-            "webhookUrl" => "https://webshop.example.org/subscriptions/webhook/",
-        ]);
+      $customer = $mollie->customers->get("cst_stTC2WHAuS");
+      $customer->createSubscription([
+         "amount" => [
+               "currency" => "EUR",
+               "value" => "25.00",
+         ],
+         "times" => 4,
+         "interval" => "3 months",
+         "description" => "Quarterly payment",
+         "webhookUrl" => "https://webshop.example.org/subscriptions/webhook/",
+      ]);
 
 Response
 ^^^^^^^^

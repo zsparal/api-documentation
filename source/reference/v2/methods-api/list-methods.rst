@@ -177,37 +177,37 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X GET https://api.mollie.com/v2/methods \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/methods \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        // Methods for the Payments API
-        $methods = $mollie->methods->all();
+      // Methods for the Payments API
+      $methods = $mollie->methods->all();
 
-        // Methods for the Orders API
-        $methods = $mollie->methods->all(['resource' => 'orders']);
+      // Methods for the Orders API
+      $methods = $mollie->methods->all(['resource' => 'orders']);
 
    .. code-block:: python
-    :linenos:
+      :linenos:
 
-    from mollie.api.client import Client
+      from mollie.api.client import Client
 
-    mollie_client = Client()
-    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-    # Methods for the Payments API
-    methods = mollie_client.methods.list()
+      # Methods for the Payments API
+      methods = mollie_client.methods.list()
 
-    # Methods for the Orders API
-    methods = mollie_client.methods.list(resource='orders')
+      # Methods for the Orders API
+      methods = mollie_client.methods.list(resource='orders')
 
 Response
 ^^^^^^^^

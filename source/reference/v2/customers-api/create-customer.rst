@@ -84,23 +84,23 @@ Example
 .. code-block-selector::
 
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X POST https://api.mollie.com/v2/customers \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d "name=Customer A" \
-        -d "email=customer@example.org"
+      curl -X POST https://api.mollie.com/v2/customers \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "name=Customer A" \
+         -d "email=customer@example.org"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-        $customer = $mollie->customers->create([
-        "name" => "Customer A",
-        "email" => "customer@example.org",
-        ]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $customer = $mollie->customers->create([
+      "name" => "Customer A",
+      "email" => "customer@example.org",
+      ]);
 
 Response
 ^^^^^^^^

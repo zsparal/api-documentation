@@ -100,30 +100,30 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X PATCH https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw \
-        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
-        -d "name=My website name - Update 1" \
-        -d "website=https://www.mywebsite2.com" \
-        -d "email=info@mywebsite2.com" \
-        -d "phone=+31208202070" \
-        -d "categoryCode=5399"
+      curl -X PATCH https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw \
+         -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
+         -d "name=My website name - Update 1" \
+         -d "website=https://www.mywebsite2.com" \
+         -d "email=info@mywebsite2.com" \
+         -d "phone=+31208202070" \
+         -d "categoryCode=5399"
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-        $profile = $mollie->profiles->get("pfl_v9hTwCvYqw");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      $profile = $mollie->profiles->get("pfl_v9hTwCvYqw");
 
-        $profile->name = "My website name - Update 1";
-        $profile->website = "https://www.mywebsite2.com";
-        $profile->email = "info@mywebsite2.com";
-        $profile->phone = "+31208202070";
-        $profile->categoryCode = "5399";
-        $updatedProfile = $profile->update();
+      $profile->name = "My website name - Update 1";
+      $profile->website = "https://www.mywebsite2.com";
+      $profile->email = "info@mywebsite2.com";
+      $profile->phone = "+31208202070";
+      $profile->categoryCode = "5399";
+      $updatedProfile = $profile->update();
 
 Response
 ^^^^^^^^

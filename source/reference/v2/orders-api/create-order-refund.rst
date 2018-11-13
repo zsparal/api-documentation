@@ -95,40 +95,40 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X POST https://api.mollie.com/v2/orders/ord_stTC2WHAuS/refunds \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d '{
-                "lines": [
-                    {
+      curl -X POST https://api.mollie.com/v2/orders/ord_stTC2WHAuS/refunds \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "lines": [
+                     {
                         "id": "odl_dgtxyl",
                         "quantity": 1
-                    }
-                ],
-                "description": "Required quantity not in stock, refunding one photo book."
-        }'
+                     }
+                  ],
+                  "description": "Required quantity not in stock, refunding one photo book."
+         }'
 
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $order = $mollie->orders->get("ord_stTC2WHAuS");
-        $order->refund([
+      $order = $mollie->orders->get("ord_stTC2WHAuS");
+      $order->refund([
             'lines' => [
-                'id' => 'odl_dgtxyl',
-                'quantity' => 1,
+               'id' => 'odl_dgtxyl',
+               'quantity' => 1,
             ],
             "description" => "Required quantity not in stock, refunding one photo book.",
-        ]);
+      ]);
 
-        // Alternative shorthand for refunding all eligible order lines
-        $order->refundAll([
-        "description" => "Required quantity not in stock, refunding one photo book.",
-        ]);
+      // Alternative shorthand for refunding all eligible order lines
+      $order->refundAll([
+      "description" => "Required quantity not in stock, refunding one photo book.",
+      ]);
 
 Response
 ^^^^^^^^

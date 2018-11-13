@@ -82,23 +82,23 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-    :linenos:
+      :linenos:
 
-    curl -X PATCH https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
-        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-        -d "name=Updated Customer A" \
-        -d "email=updated-customer@example.org"
+      curl -X PATCH https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "name=Updated Customer A" \
+         -d "email=updated-customer@example.org"
    .. code-block:: php
-    :linenos:
+      :linenos:
 
-        <?php
-        $mollie = new \Mollie\Api\MollieApiClient();
-        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-        $customer = $mollie->customers->get("cst_8wmqcHMN4U");
-        $customer->name = "Updated Customer A";
-        $customer->email = "updated-customer@example.org";
-        $customer->update();
+      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+      $customer->name = "Updated Customer A";
+      $customer->email = "updated-customer@example.org";
+      $customer->update();
 
 Response
 ^^^^^^^^
