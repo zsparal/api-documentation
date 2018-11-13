@@ -64,16 +64,20 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
               .. type:: amount object
                  :required: false
 
-            - The amount that you want to cancel. The amount you can cancel depends on various properties of the order
-              line and the cancel order lines request. The maximum that can be canceled is
-              ``unit price x quantity to cancel``. The minimum amount is the amount for which the formula still holds
-              for the remaining items in the order line.
+            - The amount that you want to cancel. In almost all cases, Mollie can determine the amount automatically.
+
+              The amount is required only if you are *partially* canceling an order line which has a non-zero
+              ``discountAmount``.
+
+              The amount you can cancel depends on various properties of the order line and the cancel order lines request.
+              The maximum that can be canceled is ``unit price x quantity to cancel``.
+
+              The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled,
+              the amounts already shipped or canceled and the quantity you want to cancel.
 
               If you do not send an amount, Mollie will determine the amount automatically or respond with an error
-              if the amount cannot be determined automatically.
-
-              The amount is required if you are partially canceling an order line which has a non-zero
-              ``discountAmount``. In other cases, Mollie can determine the amount automatically.
+              if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
+              ``extra.maximumAmount`` properties that allow you pick the right amount.
 
 
 Mollie Connect/OAuth parameters
