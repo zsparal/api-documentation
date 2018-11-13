@@ -1,6 +1,7 @@
 from docutils import nodes
 from docutils.parsers.rst import Directive
 
+from collections import OrderedDict
 from sphinx.directives.code import CodeBlock
 
 
@@ -11,32 +12,31 @@ class CodeBlockSelectorDirective(Directive):
 
     # The programming language of the code examples is recognized by the lexer
     # that is used to parse the example.
-    supported_lexers = {
-        "bash": {
-            "language": "curl",
-            "language_text": "cURL",
-            "github_url": None,
-        },
-        "php": {
-            "language": "php",
-            "language_text": "PHP",
-            "github_url": "https://github.com/mollie/mollie-api-php",
-        },
-        "ruby": {
-            "language": "ruby",
-            "language_text": "Ruby",
-            "github_url": "https://github.com/mollie/mollie-api-ruby",
-        },
-        "python": {
-            "language": "python",
-            "language_text": "Python",
-            "github_url": "https://github.com/mollie/mollie-api-python",
-        },
-        "javascript": {
-            "language": "nodejs",
-            "language_text": "Node.js",
-            "github_url": "https://github.com/mollie/mollie-api-node",
-        },
+    supported_lexers = OrderedDict()
+    supported_lexers["bash"] = {
+        "language": "curl",
+        "language_text": "cURL",
+        "github_url": None,
+    }
+    supported_lexers["php"] = {
+        "language": "php",
+        "language_text": "PHP",
+        "github_url": "https://github.com/mollie/mollie-api-php",
+    }
+    supported_lexers["python"] = {
+        "language": "python",
+        "language_text": "Python",
+        "github_url": "https://github.com/mollie/mollie-api-python",
+    }
+    supported_lexers["ruby"] = {
+        "language": "ruby",
+        "language_text": "Ruby",
+        "github_url": "https://github.com/mollie/mollie-api-ruby",
+    }
+    supported_lexers["javascript"] = {
+        "language": "nodejs",
+        "language_text": "Node.js",
+        "github_url": "https://github.com/mollie/mollie-api-node",
     }
 
     def run(self):
@@ -56,8 +56,15 @@ class CodeBlockSelectorDirective(Directive):
         return [example_selector, example_container]
 
     def create_example_selector(self):
-        selector_container = nodes.container();
-        selector_container += nodes.raw('', '<div class="examples-switcher" data-enhancer="example-switcher"/>', format='html')
+        selector_container = nodes.container()
+
+        # We need to inject HTML here to make the JS functionality work.
+        selector_container += nodes.raw(
+          '',
+          '<div class="examples-switcher" data-enhancer="example-switcher"/>',
+          format='html'
+        )
+
         for lexer, properties in self.supported_lexers.items():
             button = nodes.inline(text=properties["language_text"])
             button["classes"].append("example-switch")
@@ -102,9 +109,12 @@ class CodeBlockSelectorDirective(Directive):
             "If you have some spare time, you can open a pull request at:\n{}"
         ).format(properties["language_text"], properties["github_url"])
 
+        if properties["github_url"] is None:
+            content = "We do not yet have a code example for this API call."
+
         code_block = CodeBlock(
             "generic-code-block",
-            ["bash"],
+            ["html"],
             {"linenos": True},
             [content],
             self.lineno,
