@@ -105,9 +105,10 @@ class CodeBlockSelectorDirective(Directive):
     def create_generic_code_block(self, lexer):
         properties = self.supported_lexers[lexer]
         content = (
-            "This call has not yet been implemented in our {} API client.\n" +
-            "If you have some spare time, you can open a pull request at:\n{}"
-        ).format(properties["language_text"], properties["github_url"])
+            "We do not yet have a {} code example for this API call.\n" +
+            "If you have some spare time, you can open a pull request at:\n" +
+            "https://github.com/mollie/api-documentation"
+        ).format(properties["language_text"])
 
         if properties["github_url"] is None:
             content = "We do not yet have a code example for this API call."

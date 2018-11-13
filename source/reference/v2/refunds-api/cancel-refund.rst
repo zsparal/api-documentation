@@ -48,13 +48,13 @@ Example
 
 .. code-block-selector::
    .. code-block:: bash
-      :lineos:
+      :linenos:
 
       curl -X DELETE https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT \
             -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
-      :lineos:
+      :linenos:
 
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
@@ -64,7 +64,7 @@ Example
       $canceledRefund = $refund->cancel();
 
    .. code-block:: python
-      :lineos:
+      :linenos:
 
       from mollie.api.client import Client
 

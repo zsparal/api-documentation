@@ -611,9 +611,8 @@ A payment object is returned, as described in :doc:`Get payment </reference/v2/p
 Example
 -------
 .. code-block-selector::
-
    .. code-block:: bash
-      :lineos:
+      :linenos:
 
       curl -X POST https://api.mollie.com/v2/payments \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
@@ -624,7 +623,7 @@ Example
          -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
          -d "metadata={\"order_id\": \"12345\"}"
    .. code-block:: php
-      :lineos:
+      :linenos:
 
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
@@ -644,7 +643,7 @@ Example
 
 
    .. code-block:: python
-      :lineos:
+      :linenos:
 
       from mollie.api.client import Client
 
