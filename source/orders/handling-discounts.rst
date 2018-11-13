@@ -48,7 +48,7 @@ Note how the VAT is only calculated over the amount actually charged to your cus
 Gift cards
 ----------
 If Mollie does not handle your :doc:`gift cards</guides/gift-cards>` for you, you can add an additional line of the type
-``giftcard`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
+``gift_card`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
 
 Here's an example where a shopper exchanges a €10.00 gift card:
 
@@ -97,12 +97,12 @@ Here's an example where a shopper exchanges a €10.00 gift card:
 As a gift card is simply a means of payment and is untaxed, this does not affect the VAT amount charged to your
 customer.
 
-Store credit and vouchers
--------------------------
-If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply value-added tax
-to the discount.
+Discounts and vouchers
+----------------------
+If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply a negative
+value-added tax to the discount.
 
-Here's an example where a shopper uses a voucher for 10% off:
+Here's an example where a shopper uses a discount code for 10% off:
 
 .. code-block:: json
    :linenos:
@@ -128,7 +128,7 @@ Here's an example where a shopper uses a voucher for 10% off:
        },
        {
            "name": "HERFST10 voucher code",
-           "type": "store_credit",
+           "type": "discount",
            "unitPrice": {
                "currency": "EUR",
                "value": "-3.90"
