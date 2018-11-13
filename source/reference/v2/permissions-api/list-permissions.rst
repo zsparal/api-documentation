@@ -71,23 +71,20 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/permissions \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+    curl -X GET https://api.mollie.com/v2/permissions \
+        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $permissions = $mollie->permissions->all();
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+        $permissions = $mollie->permissions->all();
 
 Response
 ^^^^^^^^

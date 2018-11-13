@@ -81,28 +81,26 @@ A customer object is returned, as described in :doc:`Get customer </reference/v2
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X POST https://api.mollie.com/v2/customers \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "name=Customer A" \
-       -d "email=customer@example.org"
+   .. code-block:: bash
+    :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+    curl -X POST https://api.mollie.com/v2/customers \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+        -d "name=Customer A" \
+        -d "email=customer@example.org"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $customer = $mollie->customers->create([
-      "name" => "Customer A",
-      "email" => "customer@example.org",
-    ]);
+   .. code-block:: php
+    :linenos:
+
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        $customer = $mollie->customers->create([
+        "name" => "Customer A",
+        "email" => "customer@example.org",
+        ]);
 
 Response
 ^^^^^^^^

@@ -86,7 +86,7 @@ Parameters
 
      - The billing country of your customer in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
        format. This parameter can be used to check whether your customer is eligible for certain payment methods, for
-       example *Klarna Slice it*. 
+       example *Klarna Slice it*.
 
        Example: ``https://api.mollie.com/v2/methods?resource=orders&billingCountry=DE``
 
@@ -175,44 +175,39 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/methods \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+    curl -X GET https://api.mollie.com/v2/methods \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    // Methods for the Payments API
-    $methods = $mollie->methods->all();
+        // Methods for the Payments API
+        $methods = $mollie->methods->all();
 
-    // Methods for the Orders API
-    $methods = $mollie->methods->all(['resource' => 'orders']);
+        // Methods for the Orders API
+        $methods = $mollie->methods->all(['resource' => 'orders']);
 
-Request (Python)
-^^^^^^^^^^^^^^^^
-.. code-block:: python
-   :linenos:
+   .. code-block:: python
+    :linenos:
 
-   from mollie.api.client import Client
+    from mollie.api.client import Client
 
-   mollie_client = Client()
-   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+    mollie_client = Client()
+    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-   # Methods for the Payments API
-   methods = mollie_client.methods.list()
+    # Methods for the Payments API
+    methods = mollie_client.methods.list()
 
-   # Methods for the Orders API
-   methods = mollie_client.methods.list(resource='orders')
+    # Methods for the Orders API
+    methods = mollie_client.methods.list(resource='orders')
 
 Response
 ^^^^^^^^

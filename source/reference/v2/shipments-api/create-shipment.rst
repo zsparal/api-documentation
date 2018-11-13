@@ -114,70 +114,67 @@ A shipment object is returned, as described in :doc:`Get shipment </reference/v2
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "lines": [
-                {
-                    "id": "odl_dgtxyl",
-                    "quantity": 1
-                },
-                {
-                    "id": "odl_jp31jz"
+    curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+        -d '{
+                "lines": [
+                    {
+                        "id": "odl_dgtxyl",
+                        "quantity": 1
+                    },
+                    {
+                        "id": "odl_jp31jz"
+                    }
+                ],
+                "tracking": {
+                    "carrier": "PostNL",
+                    "code": "3SKABA000000000",
+                    "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
                 }
-            ],
-            "tracking": {
-                "carrier": "PostNL",
-                "code": "3SKABA000000000",
-                "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
-            }
-        }'
+            }'
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
 
-     $order = $mollie->orders->get('ord_kEn1PlbGa');
-     $shipment = $order->createShipment(
-        [
-          'lines' => [
+        $order = $mollie->orders->get('ord_kEn1PlbGa');
+        $shipment = $order->createShipment(
             [
-              'id' => 'odl_dgtxyl',
-              'quantity' => 1, // you can set the quantity if not all is shipped at once
+            'lines' => [
+                [
+                'id' => 'odl_dgtxyl',
+                'quantity' => 1, // you can set the quantity if not all is shipped at once
+                ],
+                [
+                'id' => 'odl_jp31jz',
+                // assume all is shipped if no quantity is specified
+                ],
             ],
             [
-              'id' => 'odl_jp31jz',
-              // assume all is shipped if no quantity is specified
+                'tracking' => [
+                'carrier' => 'PostNL',
+                'code' => '3SKABA000000000',
+                'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+                ],
             ],
-          ],
-          [
-            'tracking' => [
-              'carrier' => 'PostNL',
-              'code' => '3SKABA000000000',
-              'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
-            ],
-          ],
-        ]
-    );
+            ]
+        );
 
-    // Alternative shorthand for shipping all remaining order lines
-    $shipment = $order->shipAll([
-      'tracking' => [
-        'carrier' => 'PostNL',
-        'code' => '3SKABA000000000',
-        'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
-      ],
-    ]);
+        // Alternative shorthand for shipping all remaining order lines
+        $shipment = $order->shipAll([
+        'tracking' => [
+            'carrier' => 'PostNL',
+            'code' => '3SKABA000000000',
+            'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+        ],
+        ]);
 
 Response
 ^^^^^^^^

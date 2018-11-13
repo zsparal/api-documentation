@@ -102,23 +102,21 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X GET https://api.mollie.com/v2/profiles?limit=5 \
+   .. code-block:: bash
+    :linenos:
+
+    curl -X GET https://api.mollie.com/v2/profiles?limit=5 \
        -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $profiles = $mollie->profiles->page();
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+        $profiles = $mollie->profiles->page();
 
 Response
 ^^^^^^^^

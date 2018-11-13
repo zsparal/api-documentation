@@ -44,25 +44,22 @@ A subscription object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X DELETE https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3 \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+    curl -X DELETE https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3 \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $customer = $mollie->customers->get("cst_stTC2WHAuS");
-    $subscription = $customer->cancelSubscription("sub_rVKGtNd6s3");
+        $customer = $mollie->customers->get("cst_stTC2WHAuS");
+        $subscription = $customer->cancelSubscription("sub_rVKGtNd6s3");
 
 Response
 ^^^^^^^^

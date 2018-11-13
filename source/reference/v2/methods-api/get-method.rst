@@ -118,7 +118,7 @@ Response
               .. type:: string
 
             - The URL for a payment method icon of 64x48 pixels.
-            
+
           * - ``svg``
 
               .. type:: string
@@ -151,34 +151,29 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
-       -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+    curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
+        -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $mollie->methods->get("ideal", ["include" => "issuers"]);
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        $mollie->methods->get("ideal", ["include" => "issuers"]);
 
-Request (Python)
-^^^^^^^^^^^^^^^^
-.. code-block:: python
-   :linenos:
+   .. code-block:: python
+    :linenos:
 
-   from mollie.api.client import Client
+    from mollie.api.client import Client
 
-   mollie_client = Client()
-   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-   mollie_client.methods.get('ideal', include='issuers')
+    mollie_client = Client()
+    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+    mollie_client.methods.get('ideal', include='issuers')
 
 Response
 ^^^^^^^^
@@ -205,7 +200,7 @@ Response
                 "image": {
                     "size1x": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.png",
                     "size2x": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A%402x.png",
-                    "svg": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.svg"                    
+                    "svg": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.svg"
                 }
             },
             {

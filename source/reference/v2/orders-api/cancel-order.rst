@@ -56,23 +56,20 @@ An order object is returned, as described in :doc:`Get order </reference/v2/orde
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+    curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-     $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
 
 Response
 ^^^^^^^^

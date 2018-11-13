@@ -118,28 +118,26 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X GET https://api.mollie.com/v2/customers \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   .. code-block:: bash
+    :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+    curl -X GET https://api.mollie.com/v2/customers \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+   .. code-block:: php
+    :linenos:
 
-    // First page
-    $customers = $mollie->customers->page();
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    // Next page
-    $customers->next();
+        // First page
+        $customers = $mollie->customers->page();
+
+        // Next page
+        $customers->next();
 
 
 Response

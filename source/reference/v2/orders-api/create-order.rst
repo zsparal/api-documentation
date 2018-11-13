@@ -208,7 +208,7 @@ The order lines contain the actual things that your customer bought.
 
        For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
 
-       Can be negative in case of discounts, or zero in case of a free item. 
+       Can be negative in case of discounts, or zero in case of a free item.
 
    * - ``discountAmount``
 
@@ -410,203 +410,199 @@ An order object is returned, as described in :doc:`Get order </reference/v2/orde
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "amount": {
-                "value": "1027.99",
-                "currency": "EUR"
-            },
-            "billingAddress": {
-                "organizationName": "Mollie B.V.",
-                "streetAndNumber": "Keizersgracht 313",
-                "city": "Amsterdam",
-                "region": "Noord-Holland",
-                "postalCode": "1234AB",
-                "country": "NL",
-                "title": "Dhr",
-                "givenName": "Piet",
-                "familyName": "Mondriaan",
-                "email": "piet@mondriaan.com",
-                "phone": "+31208202070"
-            },
-            "shippingAddress": {
-                "organizationName": "Mollie B.V.",
-                "streetAndNumber": "Prinsengracht 313",
-                "streetAdditional": "4th floor",
-                "city": "Haarlem",
-                "region": "Noord-Holland",
-                "postalCode": "5678AB",
-                "country": "NL",
-                "title": "Mr",
-                "givenName": "Chuck",
-                "familyName": "Norris",
-                "email": "norris@chucknorrisfacts.net"
-            },
-            "metadata": {
-                "order_id": "1337",
-                "description": "Lego cars"
-            },
-            "consumerDateOfBirth": "1958-01-31",
-            "locale": "nl_NL",
-            "orderNumber": "1337",
-            "redirectUrl": "https://example.org/redirect",
-            "webhookUrl": "https://example.org/webhook",
-            "method": "klarnapaylater",
-            "lines": [
-                {
-                    "type": "physical",
-                    "sku": "5702016116977",
-                    "name": "LEGO 42083 Bugatti Chiron",
-                    "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-                    "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
-                    "quantity": 2,
-                    "vatRate": "21.00",
-                    "unitPrice": {
-                        "currency": "EUR",
-                        "value": "399.00"
-                    },
-                    "totalAmount": {
-                        "currency": "EUR",
-                        "value": "698.00"
-                    },
-                    "discountAmount": {
-                        "currency": "EUR",
-                        "value": "100.00"
-                    },
-                    "vatAmount": {
-                        "currency": "EUR",
-                        "value": "121.14"
-                    }
+    curl -X POST https://api.mollie.com/v2/orders \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+        -d '{
+                "amount": {
+                    "value": "1027.99",
+                    "currency": "EUR"
                 },
-                {
-                    "type": "physical",
-                    "sku": "5702015594028",
-                    "name": "LEGO 42056 Porsche 911 GT3 RS",
-                    "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-                    "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
-                    "quantity": 1,
-                    "vatRate": "21.00",
-                    "unitPrice": {
-                        "currency": "EUR",
-                        "value": "329.99"
+                "billingAddress": {
+                    "organizationName": "Mollie B.V.",
+                    "streetAndNumber": "Keizersgracht 313",
+                    "city": "Amsterdam",
+                    "region": "Noord-Holland",
+                    "postalCode": "1234AB",
+                    "country": "NL",
+                    "title": "Dhr",
+                    "givenName": "Piet",
+                    "familyName": "Mondriaan",
+                    "email": "piet@mondriaan.com",
+                    "phone": "+31208202070"
+                },
+                "shippingAddress": {
+                    "organizationName": "Mollie B.V.",
+                    "streetAndNumber": "Prinsengracht 313",
+                    "streetAdditional": "4th floor",
+                    "city": "Haarlem",
+                    "region": "Noord-Holland",
+                    "postalCode": "5678AB",
+                    "country": "NL",
+                    "title": "Mr",
+                    "givenName": "Chuck",
+                    "familyName": "Norris",
+                    "email": "norris@chucknorrisfacts.net"
+                },
+                "metadata": {
+                    "order_id": "1337",
+                    "description": "Lego cars"
+                },
+                "consumerDateOfBirth": "1958-01-31",
+                "locale": "nl_NL",
+                "orderNumber": "1337",
+                "redirectUrl": "https://example.org/redirect",
+                "webhookUrl": "https://example.org/webhook",
+                "method": "klarnapaylater",
+                "lines": [
+                    {
+                        "type": "physical",
+                        "sku": "5702016116977",
+                        "name": "LEGO 42083 Bugatti Chiron",
+                        "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                        "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                        "quantity": 2,
+                        "vatRate": "21.00",
+                        "unitPrice": {
+                            "currency": "EUR",
+                            "value": "399.00"
+                        },
+                        "totalAmount": {
+                            "currency": "EUR",
+                            "value": "698.00"
+                        },
+                        "discountAmount": {
+                            "currency": "EUR",
+                            "value": "100.00"
+                        },
+                        "vatAmount": {
+                            "currency": "EUR",
+                            "value": "121.14"
+                        }
                     },
-                    "totalAmount": {
-                        "currency": "EUR",
-                        "value": "329.99"
-                    },
-                    "vatAmount": {
-                        "currency": "EUR",
-                        "value": "57.27"
+                    {
+                        "type": "physical",
+                        "sku": "5702015594028",
+                        "name": "LEGO 42056 Porsche 911 GT3 RS",
+                        "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                        "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                        "quantity": 1,
+                        "vatRate": "21.00",
+                        "unitPrice": {
+                            "currency": "EUR",
+                            "value": "329.99"
+                        },
+                        "totalAmount": {
+                            "currency": "EUR",
+                            "value": "329.99"
+                        },
+                        "vatAmount": {
+                            "currency": "EUR",
+                            "value": "57.27"
+                        }
                     }
-                }
+                ]
+            }'
+   .. code-block:: php
+    :linenos:
+
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+        $order = $mollie->orders->create([
+        "amount" => [
+            "value" => "1027.99",
+            "currency" => "EUR"
+        ],
+        "billingAddress" => [
+            "organizationName": "Mollie B.V.",
+            "streetAndNumber" => "Keizersgracht 313",
+            "city" => "Amsterdam",
+            "region" => "Noord-Holland",
+            "postalCode" => "1234AB",
+            "country" => "NL",
+            "title" => "Dhr.",
+            "givenName" => "Piet",
+            "familyName" => "Mondriaan",
+            "email" => "piet@mondriaan.com",
+            "phone" => "+31309202070",
+        ],
+        "shippingAddress" => [
+            "organizationName": "Mollie B.V.",
+            "streetAndNumber" => "Keizersgracht 313",
+            "streetAdditional" => "4th floor",
+            "city" => "Haarlem",
+            "region" => "Noord-Holland",
+            "postalCode" => "5678AB",
+            "country" => "NL",
+            "title" => "Mr.",
+            "givenName" => "Chuck",
+            "familyName" => "Norris",
+            "email" => "norris@chucknorrisfacts.net",
+        ],
+        "metadata" => [
+            "order_id" => "1337",
+            "description" => "Lego cars"
+        ],
+        "consumerDateOfBirth" => "1958-01-31",
+        "locale" => "nl_NL",
+        "orderNumber" => "1337",
+        "redirectUrl" => "https://example.org/redirect",
+        "webhookUrl" => "https://example.org/webhook",
+        "method" => "klarnapaylater",
+        "lines" => [
+            [
+            "type" => "physical",
+            "sku" => "5702016116977",
+            "name" => "LEGO 42083 Bugatti Chiron",
+            "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+            "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
+            "quantity" => 2,
+            "vatRate" => "21.00",
+            "unitPrice" => [
+                "currency" => "EUR",
+                "value" => "399.00"
+            ],
+            "totalAmount" => [
+                "currency" => "EUR",
+                "value" => "698.00"
+            ],
+            "discountAmount" => [
+                "currency" => "EUR",
+                "value" => "100.00"
+            ],
+            "vatAmount" => [
+                "currency" => "EUR",
+                "value" => "121.14"
             ]
-        }'
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-     $order = $mollie->orders->create([
-       "amount" => [
-         "value" => "1027.99",
-         "currency" => "EUR"
-       ],
-       "billingAddress" => [
-         "organizationName": "Mollie B.V.",
-         "streetAndNumber" => "Keizersgracht 313",
-         "city" => "Amsterdam",
-         "region" => "Noord-Holland",
-         "postalCode" => "1234AB",
-         "country" => "NL",
-         "title" => "Dhr.",
-         "givenName" => "Piet",
-         "familyName" => "Mondriaan",
-         "email" => "piet@mondriaan.com",
-         "phone" => "+31309202070",
-       ],
-       "shippingAddress" => [
-         "organizationName": "Mollie B.V.",
-         "streetAndNumber" => "Keizersgracht 313",
-         "streetAdditional" => "4th floor",
-         "city" => "Haarlem",
-         "region" => "Noord-Holland",
-         "postalCode" => "5678AB",
-         "country" => "NL",
-         "title" => "Mr.",
-         "givenName" => "Chuck",
-         "familyName" => "Norris",
-         "email" => "norris@chucknorrisfacts.net",
-       ],
-       "metadata" => [
-         "order_id" => "1337",
-         "description" => "Lego cars"
-       ],
-       "consumerDateOfBirth" => "1958-01-31",
-       "locale" => "nl_NL",
-       "orderNumber" => "1337",
-       "redirectUrl" => "https://example.org/redirect",
-       "webhookUrl" => "https://example.org/webhook",
-       "method" => "klarnapaylater",
-       "lines" => [
-         [
-           "type" => "physical",
-           "sku" => "5702016116977",
-           "name" => "LEGO 42083 Bugatti Chiron",
-           "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-           "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
-           "quantity" => 2,
-           "vatRate" => "21.00",
-           "unitPrice" => [
-             "currency" => "EUR",
-             "value" => "399.00"
-           ],
-           "totalAmount" => [
-             "currency" => "EUR",
-             "value" => "698.00"
-           ],
-           "discountAmount" => [
-             "currency" => "EUR",
-             "value" => "100.00"
-           ],
-           "vatAmount" => [
-             "currency" => "EUR",
-             "value" => "121.14"
-           ]
-         ],
-         [
-           "type" => "physical",
-           "sku" => "5702015594028",
-           "name" => "LEGO 42056 Porsche 911 GT3 RS",
-           "productUrl" => "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-           "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$',
-           "quantity" => 1,
-           "vatRate" => "21.00",
-           "unitPrice" => [
-             "currency" => "EUR",
-             "value" => "329.99"
-           ],
-           "totalAmount" => [
-             "currency" => "EUR",
-             "value" => "329.99"
-           ],
-           "vatAmount" => [
-             "currency" => "EUR",
-             "value" => "57.27"
-           ]
-         ]
-       ]
-   ]);
+            ],
+            [
+            "type" => "physical",
+            "sku" => "5702015594028",
+            "name" => "LEGO 42056 Porsche 911 GT3 RS",
+            "productUrl" => "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+            "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$',
+            "quantity" => 1,
+            "vatRate" => "21.00",
+            "unitPrice" => [
+                "currency" => "EUR",
+                "value" => "329.99"
+            ],
+            "totalAmount" => [
+                "currency" => "EUR",
+                "value" => "329.99"
+            ],
+            "vatAmount" => [
+                "currency" => "EUR",
+                "value" => "57.27"
+            ]
+            ]
+        ]
+    ]);
 
 Response
 ^^^^^^^^

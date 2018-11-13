@@ -147,38 +147,34 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   .. code-block:: bash
+    :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+    curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+   .. code-block:: php
+    :linenos:
 
-    $payment = $mollie->payments->get("tr_WDqYK6vllg");
-    $chargeback = $payment->getChargeback("chb_n9z0tp");
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-Request (Python)
-^^^^^^^^^^^^^^^^
-.. code-block:: python
-   :linenos:
+        $payment = $mollie->payments->get("tr_WDqYK6vllg");
+        $chargeback = $payment->getChargeback("chb_n9z0tp");
 
-   from mollie.api.client import Client
+   .. code-block:: python
+    :linenos:
 
-   mollie_client = Client()
-   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+    from mollie.api.client import Client
 
-   payment = mollie_client.payments.get('tr_WDqYK6vllg')
-   chargeback = mollie_client.payment_chargebacks.on(payment).get('chb_n9z0tp')
+    mollie_client = Client()
+    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+    payment = mollie_client.payments.get('tr_WDqYK6vllg')
+    chargeback = mollie_client.payment_chargebacks.on(payment).get('chb_n9z0tp')
 
 Response
 ^^^^^^^^

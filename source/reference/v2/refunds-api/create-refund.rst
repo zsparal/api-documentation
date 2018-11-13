@@ -109,50 +109,45 @@ A refund object is returned, as described in :doc:`Get payment refund </referenc
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=5.95"
+    curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
+        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+        -d "amount[currency]=EUR" \
+        -d "amount[value]=5.95"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+    :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+        <?php
+        $mollie = new \Mollie\Api\MollieApiClient();
+        $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $payment = $mollie->payments->get("tr_WDqYK6vllg");
-    $refund = $payment->refund([
-      "amount" => [
-        "currency" => "EUR",
-        "value" => "5.95" // You must send the correct number of decimals, thus we enforce the use of strings
-      ]
-    ]);
+        $payment = $mollie->payments->get("tr_WDqYK6vllg");
+        $refund = $payment->refund([
+        "amount" => [
+            "currency" => "EUR",
+            "value" => "5.95" // You must send the correct number of decimals, thus we enforce the use of strings
+        ]
+        ]);
 
-Request (Python)
-^^^^^^^^^^^^^^^^
-.. code-block:: python
-   :linenos:
+   .. code-block:: python
+    :linenos:
 
-   from mollie.api.client import Client
+    from mollie.api.client import Client
 
-   mollie_client = Client()
-   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+    mollie_client = Client()
+    mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-   payment = mollie_client.payments.get('tr_WDqYK6vllg')
-   refund = mollie_client.payment_refunds.on(payment).create({
-      'amount': {
-         'value': '5.95',
-         'currency': 'EUR'
-      }
-   })
+    payment = mollie_client.payments.get('tr_WDqYK6vllg')
+    refund = mollie_client.payment_refunds.on(payment).create({
+        'amount': {
+            'value': '5.95',
+            'currency': 'EUR'
+        }
+    })
 
 Response
 ^^^^^^^^
