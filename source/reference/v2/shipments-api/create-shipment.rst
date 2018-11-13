@@ -54,7 +54,25 @@ Parameters
 
               Must be less than the number of items already shipped for this order line.
 
-              .. note:: At the moment, it is not possible to partially ship an order line if it has a discount.
+          * - ``amount``
+
+              .. type:: amount object
+                 :required: false
+
+            - The amount that you want to ship. In almost all cases, Mollie can determine the amount automatically.
+
+              The amount is required only if you are *partially* shipping an order line which has a non-zero
+              ``discountAmount``.
+
+              The amount you can ship depends on various properties of the order line and the create shipment request.
+              The maximum that can be shipped is ``unit price x quantity to ship``.
+
+              The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled,
+              the amounts already shipped or canceled and the quantity you want to ship.
+
+              If you do not send an amount, Mollie will determine the amount automatically or respond with an error
+              if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
+              ``extra.maximumAmount`` properties that allow you pick the right amount.
 
    * - ``tracking``
 
@@ -284,6 +302,38 @@ Response
             },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/shipments-api/get-shipment",
+                "type": "text/html"
+            }
+        }
+    }
+
+Response (amount required)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 422 Unprocessable Entity
+   Content-Type: application/hal+json
+
+   {
+        "status": 422,
+        "title": "Unprocessable Entity",
+        "detail": "Line 0 contains invalid data. An amount is required for this API call. The amount must be between €0.00 and €50.00.",
+        "field": "lines.0.amount",
+        "extra": {
+            "minimumAmount": {
+                "value": "0.00",
+                "currency": "EUR"
+            },
+            "maximumAmount": {
+                "value": "50.00",
+                "currency": "EUR"
+            }
+        },
+        "_links": {
+            "documentation": {
+                "href": "https://docs.mollie.com/reference/v2/shipments-api/create-shipment",
                 "type": "text/html"
             }
         }
