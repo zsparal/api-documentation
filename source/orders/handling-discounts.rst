@@ -45,6 +45,10 @@ Here's an example of an order line that has a 2-for-1 type promotion:
 
 Note how the VAT is only calculated over the amount actually charged to your customer.
 
+.. note:: If you want to partially cancel, ship or refund an order line with a non-zero ``discountAmount``, you will
+          have to pass the ``amount`` too as Mollie cannot automatically determine the amount to cancel, ship or refund.
+          See the respective API reference documentation pages for details.
+
 Gift cards
 ----------
 If Mollie does not handle your :doc:`gift cards</guides/gift-cards>` for you, you can add an additional line of the type
