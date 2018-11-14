@@ -93,45 +93,42 @@ An refund object is returned, as described in :doc:`Get payment refund </referen
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders/ord_stTC2WHAuS/refunds \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "lines": [
-                {
-                    "id": "odl_dgtxyl",
-                    "quantity": 1
-                }
+      curl -X POST https://api.mollie.com/v2/orders/ord_stTC2WHAuS/refunds \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "lines": [
+                     {
+                        "id": "odl_dgtxyl",
+                        "quantity": 1
+                     }
+                  ],
+                  "description": "Required quantity not in stock, refunding one photo book."
+         }'
+
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      $order = $mollie->orders->get("ord_stTC2WHAuS");
+      $order->refund([
+            'lines' => [
+               'id' => 'odl_dgtxyl',
+               'quantity' => 1,
             ],
-            "description": "Required quantity not in stock, refunding one photo book."
-       }'
+            "description" => "Required quantity not in stock, refunding one photo book.",
+      ]);
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-     $order = $mollie->orders->get("ord_stTC2WHAuS");
-     $order->refund([
-        'lines' => [
-            'id' => 'odl_dgtxyl',
-            'quantity' => 1,
-        ],
-        "description" => "Required quantity not in stock, refunding one photo book.",
-    ]);
-
-    // Alternative shorthand for refunding all eligible order lines
-    $order->refundAll([
+      // Alternative shorthand for refunding all eligible order lines
+      $order->refundAll([
       "description" => "Required quantity not in stock, refunding one photo book.",
-    ]);
+      ]);
 
 Response
 ^^^^^^^^
