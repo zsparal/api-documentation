@@ -46,8 +46,8 @@ Here's an example of an order line that has a 2-for-1 type promotion:
 Note how the VAT is only calculated over the amount actually charged to your customer.
 
 .. note:: If you want to partially cancel, ship or refund an order line with a non-zero ``discountAmount``, you will
-          have to pass the ``amount`` too as Mollie cannot automatically determine the amount to cancel, ship or refund.
-          See the respective API reference documentation pages for details.
+          have to pass the ``amount`` parameter too. See the :ref:`Partial discounts<partial-discounts>` section for
+          an explanation and an example.
 
 Gift cards
 ----------
@@ -149,3 +149,25 @@ Here's an example where a shopper uses a discount code for 10% off:
            }
        }
    ]
+
+.. _partial-discounts:
+
+Partial discounts
+-----------------
+In most cases, canceling, shipping or refunding orders is quite straightforward. You specify which
+order lines you want to act on and the quantity of each line you want to act on.
+
+However, when partially canceling, shipping or refunding an order line that has a non-zero
+``discountAmount``, you will have to pass the ``amount`` parameter as well, as Mollie cannot
+automatically determine the amount to cancel, ship or refund.
+
+To put this into perspective, let us show an example of shipping the 2-for-1 promotion as mentioned
+above, in two steps.
+
+When shipping the first unit, we will have to decide whether we want to apply the discount as part
+of this shipment, partly apply the discount, or not apply the discount at all at this point in time.
+This means that the ``amount`` parameter that we can pass can range between €0.00 and €19.99:
+
+* *€0.00*: Fully apply the discount as part of this shipment. As a result, this unit will be shipped for free. The second unit will have to be shipped for the full price.
+* *€5.00*: Partially apply the discount. As a result, you will have to apply €14.99 discount as part of the second shipment.
+* *€19.99*: Do not apply the discount as part of this shipment. As a result, you will have to apply the full discount as part of the second shipment.
