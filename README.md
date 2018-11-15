@@ -39,7 +39,7 @@ cd api-documentation
 make install
 ```
 
-### Generate docs
+### Generate HTML and supporting files
 
 Finally, build the documentation, its CSS and JS files by running:
 
@@ -53,6 +53,25 @@ You can now preview the docs by opening `build/html/index.html`:
 open build/html/index.html
 ```
 
+### Making changes to copy 
+
+After running `make html` at least once, you can use `make html-only` to only update the HTML files if you changed some
+copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).  
+
+```shell
+$ make html-only
+Running Sphinx v1.7.1
+...
+updating environment: 0 added, 2 changed, 0 removed
+...
+build succeeded.
+
+The HTML pages are in build/html.
+$ open build/html/index.html
+```
+
+Sphinx will only update files for which the source files changed. 
+
 ### Styling docs
 
 You can make changes to the styling by starting a web server locally:
@@ -61,7 +80,7 @@ You can make changes to the styling by starting a web server locally:
 make start
 ```
 
-Visit http://localhost:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your 
+Visit `http://localhost:8000` to preview your changes. CSS & JS changes will appear without the need to refresh your 
 browser.
 
 ## Support
