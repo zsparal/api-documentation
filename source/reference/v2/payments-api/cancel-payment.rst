@@ -5,7 +5,7 @@ Cancel payment
 
 .. endpoint::
    :method: DELETE
-   :url: https://api.mollie.com/v2/payments
+   :url: https://api.mollie.com/v2/payments/*id*
 
 .. authentication::
    :api_keys: true
