@@ -175,7 +175,7 @@ Response
 
        Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
        ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``paypal``
-       ``paysafecard`` ``sofort``
+       ``paysafecard`` ``sofort`` ``klarnasliceit`` ``klarnapaylater``
 
    * - ``metadata``
 
