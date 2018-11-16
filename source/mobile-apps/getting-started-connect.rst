@@ -5,8 +5,7 @@ Mollie Connect makes it possible to login and authorize directly from your app. 
 mind while integrating Mollie Connect. For iOS example we only show Swift snippets while for Android we show both Java
 and Kotlin snippets.
 
-.. note:: We don't give support on integrating Mollie Connect in apps. When you start working on integrating Mollie
-          Connect in your App, we assume that you have enough knowledge to do it by yourself.
+.. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
 
 Step 1: Create an OAuth App
 ---------------------------

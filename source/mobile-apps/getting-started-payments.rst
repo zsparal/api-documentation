@@ -4,8 +4,7 @@ Getting started with Payments in your App
 Accepting payments in your App can improve orders from mobile devices. In this guide we'll show you a basic example of
 integrating Mollie Payments in your iOS or Android App.
 
-.. note:: We don't give support on integrating Mollie Connect in apps. When you start working on integrating Mollie
-          Connect in your App, we assume that you have enough knowledge to do it by yourself.
+.. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
 
 Keep the Guidelines of the platform you're developing on in mind!
 -----------------------------------------------------------------
