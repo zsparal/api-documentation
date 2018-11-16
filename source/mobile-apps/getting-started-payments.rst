@@ -149,7 +149,7 @@ Android
 We use the `OkHttp <https://github.com/square/okhttp>`_ library in this example. Therefor, add the following line to
 your Project's ``build.gradle`` file:
 
-.. code-block:: http
+.. code-block:: bash
    :linenos:
 
    compile 'com.squareup.okhttp3:okhttp:3.5.0'
