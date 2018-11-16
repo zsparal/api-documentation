@@ -1,5 +1,5 @@
-Integrating payments in mobile apps
-===================================
+Mollie in Mobile Apps
+=====================
 
 This guide will help you to integrate Mollie in a mobile app for devices such as mobile phones and tables. Several
 factors should be considered, such as legal, security and technical considerations.
@@ -60,4 +60,3 @@ to the app, you cannot rely on checking on your customer's return to your app.
 
 You should set the ``webhookUrl`` parameters to and endpoint on your trusted back end service, which then sends a silent
 push notification to the app. The app can then show the appropriate messages or take appropriate action.
-
