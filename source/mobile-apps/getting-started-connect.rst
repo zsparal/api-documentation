@@ -63,6 +63,8 @@ Step 4: Let your App open the authorization page
 Let's assume that you put a login button in your app that needs to open the Mollie OAuth flow. Add the following code to
 your button's action.
 
+.. warning:: Generate a random string for the ``state`` parameter. Checking this parameter on return will prevent CSRF attacks.
+
 iOS
 ^^^
 .. code-block:: swift
@@ -91,9 +93,9 @@ Android (Kotlin)
 
       button.setOnClickListener {
             val browserIntent = Intent(android.content.Intent.ACTION_VIEW)
-            String authorizeLink = "https://www.mollie.com/oauth2/authorize?client_id=xxx&state=xxx&scope=payments.read&response_type=code&approval_prompt=auto";
+            String authorizeLink = "https://www.mollie.com/oauth2/authorize?client_id=xxx&state=xxx&scope=payments.read&response_type=code&approval_prompt=auto"
             browserIntent.data = Uri.parse(authorizeLink)
-            startActivity(browserIntent);
+            startActivity(browserIntent)
       }
 
 Step 5: Handle the redirect
