@@ -1,59 +1,45 @@
 Getting started with Payments in your App
 =========================================
 
-Accepting payments in your App can improve orders from mobile devices. In this guide we'll show you a basic example of
-integrating Mollie Payments in your iOS or Android App.
+Accepting payments in your app can improve conversion of orders from mobile devices. In this guide we will show you a
+basic example of integrating Mollie Payments in your iOS or Android App.
 
 .. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
 
-Keep the Guidelines of the platform you're developing on in mind!
------------------------------------------------------------------
-Every platform has it's own guidelines for accepting of rejecting Apps in the App Store or Marketplace. We're focussing
-on the two major platforms; Apple with iOS and Google with Android.
+Keep the guidelines of the platform you're developing on in mind
+----------------------------------------------------------------
+Every platform has it's own guidelines for accepting of rejecting apps in the App Store or Marketplace. See
+:ref:`app-store-r-r` for an in depth review.
 
-iOS
-^^^
-Apple is very strict when it comes to following the guidelines. They have an mandatory review what means that your app
-must be reviewed by Apple before it can be downloaded from the App Store. All the *rules* for iOS Apps can be found in
-the `App Store Review Guidelines <https://developer.apple.com/app-store/review/guidelines/#payments>`_ under the section
-**Payments**.
+Step 1: Create a Payment-creation script on your server
+-------------------------------------------------------
 
-The conclusion: you're not allowed to use an external payment service (like Mollie) if you offering digital goods or
-services, it's only allowed for physical goods. Ignoring this guideline will delay your App review and may trigger a
-rejection.
+Storing API keys in your app is insecure. Hence, you need to create a script on your server what you app can call to
+create the payment for the app. The task of this script is to ensure that the Mollie APIs are called the way you want.
 
-Android
-^^^^^^^
-Google is somewhat looser when it comes to checking Apps before they can be downloaded. However, Google also has a
-number of guidelines for its Google Play store what you can found in the
-`Google Play Developer Policy <https://play.google.com/about/monetization-ads/payments/>`_. They hold random checks to
-verify that Apps comply with the guidelines. We recommend that you follow these.
+In particular, do **not** pass the amount from the app to your script but use your own business rules in the script to
+prevent users of your app from messing with your payments. Remember that the app is installed on a device outside of
+your control and thus untrusted.
 
-Summary: You must use Google Play In-app Billing in any case, except:
-
-* Payment is solely for physical products
-* Payment is for digital content that may be consumed outside of the app itself (e.g. songs that can be played on other
-  music players).
-
-Step 1: Create a Payment-creation file on your server
------------------------------------------------------
-Because you don't want to add your API-keys in your app, for safety purposes, you need to create a file on your server
-what you App can all to create the payment. You'll need an API-key for this what you can find in your
+You will need an API-key for this what you can find in your
 `Dashboard <https://www.mollie.com/dashboard/developers/api-keys>`_. You'll find examples in other languages in the
-:doc:`Create payment reference </reference/v2/payments-api/create-payment>`.
+:doc:`/reference/v2/payments-api/create-payment` documentation.
 
 .. code-block:: php
       :linenos:
 
       <?php
+
+      // You have validated you are communicating with a trusted installation of your app.
+
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
       $payment = $mollie->payments->create([
             "amount" => [
                   "currency" => "EUR",
-                  "value" => $_POST['amountValue'],
+                  "value" => "10.00",
             ],
-            "description" => $_POST['description'],
+            "description" => "Order 12345",
             "redirectUrl" => "mollie-app://payment-return",
             "webhookUrl" => "https://webshop.example.org/payments/webhook/",
             "metadata" => [
@@ -63,9 +49,14 @@ what you App can all to create the payment. You'll need an API-key for this what
 
       return $payment->getCheckoutUrl();
 
-Step 2: Make your App accepting the Redirect URL
-------------------------------------------------
-Since we specified the custom URL scheme iOS or Android should know that the URL scheme belongs to your App.
+Ensure that this file can only be called by genuine installations of your own app.
+
+.. _apps-configure-redirect-url:
+
+Step 2: Configure your app to accept the Redirect URL
+-----------------------------------------------------
+We will be using a custom URL scheme to ensure your customer is redirected back to the app after the payment. Configure
+iOS or Android to link your URL scheme with your app.
 
 iOS
 ^^^
@@ -78,7 +69,7 @@ an array item. You can further click the disclosure icon to expand it and you ne
 row as well and you should see ``URL identifier``. Double-click the value field and fill in your identifier. Most of the
 time will this be the same as your bundle ID, e.g. ``com.mollie.MollieApp``. Click on the plus-button next to ``Item 0``
 and choose ``URL Schemes`` from the drop-down menu. Expand the ``URL Schemes`` row and another ``Item 0`` will show up.
-Type in the value-field the scheme you want to handle, in our case ``mollie-app``.
+Type in the value-field the scheme you want to handle, in our case ``mollie-app``. Make sure to pick a unique scheme.
 
 .. image:: images/ios-scheme_plist-2@2x.png
 

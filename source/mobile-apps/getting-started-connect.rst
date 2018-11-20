@@ -1,69 +1,44 @@
 Getting started with Mollie Connect in your App
 ===============================================
 
-Mollie Connect makes it possible to login and authorize directly from your app. Make sure to keep the security risk in
-mind while integrating Mollie Connect. For iOS example we only show Swift snippets while for Android we show both Java
-and Kotlin snippets.
+*Mollie Connect* makes it possible to login and authorize directly from your app. Make sure to keep the security risks
+in mind while integrating Mollie Connect. For iOS example we only show Swift snippets while for Android we show both
+Java and Kotlin snippets.
 
 .. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
 
 Step 1: Create an OAuth App
 ---------------------------
 The first step is to `register your app in your Dashboard <https://www.mollie.com/dashboard/developers/applications>`_.
-You'll need to provide an App Name, description, and Redirect URL. The Redirect URL can be a custom App Scheme to redirect
+You will need to provide an App Name, description, and Redirect URL. The Redirect URL can be a custom App Scheme to redirect
 back to your App immediately. To make this possible you should specify this in your App's manifest. In the following examples
 we want to use ``mollie-app://authorize`` as Redirect URL.
 
-Step 2: Make your App accepting the Redirect URL
-------------------------------------------------
+Step 2: Configure your app to accept the Redirect URL
+-----------------------------------------------------
 Since we specified the custom URL scheme iOS or Android should know that the URL scheme belongs to your App.
 
-iOS
-^^^
-Go to your ``Info.plist`` file. Right click any blank area and select ``Add Row`` to create a new key.
+See :ref:`apps-configure-redirect-url` on how to configure your app.
 
-.. image:: images/ios-scheme_plist-1@2x.png
+Step 3: Create a server-side script for storing OAuth Access tokens
+-------------------------------------------------------------------
+For security reasons you don't want the Client Secret inside your app. Anyone who retrieves this secret can masquerade
+as your app. The same applies to OAuth Access tokens.
 
-You’ll be prompted to select a key from a drop-down menu. Scroll to the bottom and select ``URL types``. This creates
-an array item. You can further click the disclosure icon to expand it and you need to select ``Item 0``. Expand that
-row as well and you should see ``URL identifier``. Double-click the value field and fill in your identifier. Most of the
-time will this be the same as your bundle ID, e.g. ``com.mollie.MollieApp``. Click on the plus-button next to ``Item 0``
-and choose ``URL Schemes`` from the drop-down menu. Expand the ``URL Schemes`` row and another ``Item 0`` will show up.
-Type in the value-field the scheme you want to handle, in our case ``mollie-app``.
+Therefor you should create a script on your server where you can send the authentication code (what you get from the
+OAuth authorize screen). The script should convert authentication token to an OAuth Access Token and link the token
+with the device and user session. Your back end should then perform the API calls to the Mollie API on behalf of the
+user of your app.  
 
-.. image:: images/ios-scheme_plist-2@2x.png
-
-Android
-^^^^^^^
-Open your ``AndroidManifest.xml`` file. Decide for what activity you want to support the URL scheme and add the following
-code inside your ``<activity>`` object. Replace ``android:scheme`` with your URL scheme and ``android:host`` with the
-commando, in our example ``authorize``.
-
-.. code-block:: xml
-      :linenos:
-
-        <intent-filter>
-            <data
-                android:host="authorize"
-                android:scheme="mollie-app" />
-            <action android:name="android.intent.action.VIEW" />
-            <category android:name="android.intent.category.DEFAULT" />
-            <category android:name="android.intent.category.BROWSABLE" />
-        </intent-filter>
-
-Step 3: Create a server-side file for Access-tokens
----------------------------------------------------
-For safety-reasons you don't want the Client Secret inside your app. Therefor you should create a file on your server
-that converts the authentication code (what you get from the OAuth authorize-screen) to an actual Access-token what you
-can call the Mollie API with. Make sure the line between your app and your server is **secure and not accessable for someone
-else except your app**. Please see the :doc:`OAuth documentation </reference/oauth2/tokens>` how to set this up.
+Make sure the script cannot be called by anyone else or by untrusted installations of your app.
 
 Step 4: Let your App open the authorization page
 ------------------------------------------------
 Let's assume that you put a login button in your app that needs to open the Mollie OAuth flow. Add the following code to
 your button's action.
 
-.. warning:: Generate a random string for the ``state`` parameter. Checking this parameter on return will prevent CSRF attacks.
+.. warning:: Generate a random string for the ``state`` parameter. Checking this parameter on return will prevent CSRF
+             attacks. Any responese where the ``state`` parameter does not match your initial value should be discarded.
 
 iOS
 ^^^
