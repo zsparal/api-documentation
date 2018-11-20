@@ -55,11 +55,15 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The URL your customer will be redirected to after the payment process. It could make sense for the
-       ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
-       the order when your customer returns.
+     - The URL your customer will be redirected to after the payment process.
+
+       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter. *For all
+       other payments, this parameter is mandatory.*
+
+       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
+       the right page referencing the order when your customer returns.
 
    * - ``webhookUrl``
 
