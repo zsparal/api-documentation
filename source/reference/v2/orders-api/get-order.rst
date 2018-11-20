@@ -270,7 +270,7 @@ Response
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Recurring orders do not have a checkout URL.
+              Recurring, authorized, paid and finalized orders do not have a checkout URL.
 
           * - ``documentation``
 
