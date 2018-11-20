@@ -82,9 +82,13 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The URL your customer will be redirected to after the payment process.
+
+       .. note::
+          For orders with ``payment.sequenceType`` set to ``recurring``, you can omit this parameter. For all other
+          orders, this parameter is required.
 
    * - ``webhookUrl``
 

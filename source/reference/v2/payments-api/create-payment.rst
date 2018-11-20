@@ -77,7 +77,7 @@ Parameters
        the order when your customer returns.
 
        .. note::
-          For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
+          For payments with ``sequenceType`` ``recurring``, you can omit this parameter. For all other payments, this
           parameter is required.
 
    * - ``webhookUrl``
