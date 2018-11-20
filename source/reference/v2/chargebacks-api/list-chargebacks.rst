@@ -125,6 +125,7 @@ Example
       $chargebacks = $payment->chargebacks();
 
       // List chargebacks across all payments on the payment profile
+      // (For all chargebacks on the organizations, use an OAuth or Organization access token.)
       $all_chargebacks = $mollie->chargebacks->page();
 
    .. code-block:: python
