@@ -98,6 +98,48 @@ Response
 
      - The full name of the payment method, translated in the optional locale passed.
 
+   * - ``pricing``
+
+       .. type:: array
+
+     - Pricing set of the payment method.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``description``
+
+              .. type:: string
+
+            - The area or product-type where the pricing is applied for, translated in the optional locale passed.
+
+          * - ``fixed``
+
+              .. type:: money object
+
+            - The fixed price per transaction
+
+               .. list-table::
+                  :widths: auto
+
+                  * - ``currency``
+
+                      .. type:: string
+
+                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                  * - ``value``
+
+                      .. type:: string
+
+                    - A string containing the exact amount in the given currency.
+
+          * - ``variable``
+
+              .. type:: string
+
+            - A string containing the percentage what will be charged over the payment amount besides the fixed price.
+
    * - ``image``
 
        .. type:: image object
@@ -192,6 +234,14 @@ Response
             "size2x": "https://www.mollie.com/external/icons/payment-methods/ideal%402x.png",
             "svg": "https://www.mollie.com/external/icons/payment-methods/ideal.svg"
         },
+        "pricing": [
+            "description": "The Netherlands",
+            "fixed": {
+                "value": "0.29",
+                "currency": "EUR"
+            },
+            "variable": "0"
+        ],
         "issuers": [
             {
                 "resource": "issuer",
