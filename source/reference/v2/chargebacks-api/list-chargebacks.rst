@@ -19,12 +19,30 @@ List chargebacks
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are not paginated.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
+
+.. list-table::
+   :widths: auto
+
+   * - ``from``
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the chargeback with this ID. The chargeback with this ID is included in the result
+       set as well.
+
+   * - ``limit``
+
+       .. type:: integer
+          :required: false
+
+     - The number of chargebacks to return (with a maximum of 250).
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -106,8 +124,8 @@ Example
       $payment = $mollie->payments->get("tr_7UhSN1zuXS");
       $chargebacks = $payment->chargebacks();
 
-      // Listing all chargebacks
-      $all_chargebacks = $mollie->chargebacks->all();
+      // Listing chargebacks across all payments
+      $all_chargebacks = $mollie->chargebacks->page();
 
    .. code-block:: python
       :linenos:
