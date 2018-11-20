@@ -6,6 +6,14 @@ changes are documented here.
 November 2018
 =============
 
+Wednesday, 15th
+---------------
+
+- It is now possible to pass an ``amount`` when partially shipping, canceling or refunding order lines. This is
+  necessary for order lines that have a non-zero ``discountAmount``.
+
+  Before, it was not possible to partially ship, cancel or refund such order lines.
+
 Monday, 12th
 ------------
 
@@ -126,8 +134,7 @@ Tuesday, 18th
 
 Monday, 17th
 ------------
-- Added a new endpoint for partners to get all connected organizations. For details, see:
-  :doc:`List organizations </reference/v2/organizations-api/list-organizations>`
+- Added a new endpoint for partners to get all connected organizations. See the Reseller API Docs for more information.
 
 Wednesday, 12th
 ---------------
