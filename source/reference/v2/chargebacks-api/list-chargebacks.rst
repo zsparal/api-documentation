@@ -120,11 +120,11 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-      // Listing chargebacks for a single payment
+      // List chargebacks for a single payment
       $payment = $mollie->payments->get("tr_7UhSN1zuXS");
       $chargebacks = $payment->chargebacks();
 
-      // Listing chargebacks across all payments
+      // List chargebacks across all payments on the payment profile
       $all_chargebacks = $mollie->chargebacks->page();
 
    .. code-block:: python
