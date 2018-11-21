@@ -21,7 +21,8 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- Python > 2.7.9 (with [pip](https://pypi.org/project/pip/) to install dependencies)
+- Python > 2.7.9 
+- [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/). 
 - Node > 9.x
 
 ### Running locally

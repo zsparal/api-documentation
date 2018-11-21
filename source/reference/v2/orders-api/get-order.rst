@@ -261,11 +261,16 @@ Response
             - The URL your customer should visit to make the payment for the order. This is where you should redirect
               the customer to after creating the order.
 
+              As long as order is still in the ``created`` state, this link can be used by your customer to pay for this
+              order. You can safely share this URL with your customer.
+
+              The URL can also be retrieved and copied from the Mollie Dashboard.
+
               .. note :: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Recurring orders do not have a checkout URL.
+              Recurring, authorized, paid and finalized orders do not have a checkout URL.
 
           * - ``documentation``
 
