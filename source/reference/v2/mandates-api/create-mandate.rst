@@ -93,36 +93,33 @@ A mandate object is returned, as described in :doc:`Get mandate </reference/v2/m
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "method=directdebit" \
-       -d "consumerName=John Doe" \
-       -d "consumerAccount=NL55INGB0000000000" \
-       -d "consumerBic=INGBNL2A" \
-       -d "signatureDate=2018-05-07" \
-       -d "mandateReference=YOUR-COMPANY-MD13804"
+      curl -X POST https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "method=directdebit" \
+         -d "consumerName=John Doe" \
+         -d "consumerAccount=NL55INGB0000000000" \
+         -d "consumerBic=INGBNL2A" \
+         -d "signatureDate=2018-05-07" \
+         -d "mandateReference=YOUR-COMPANY-MD13804"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $mandate = $mollie->customers->get("cst_4qqhO89gsT")->createMandate([
-        "method" => \Mollie\Api\Types\MandateMethod::DIRECTDEBIT,
-        "consumerName" => "John Doe",
-        "consumerAccount" => "NL55INGB0000000000",
-        "consumerBic" => "INGBNL2A",
-        "signatureDate" => "2018-05-07",
-        "mandateReference" => "YOUR-COMPANY-MD13804",
-    ]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $mandate = $mollie->customers->get("cst_4qqhO89gsT")->createMandate([
+         "method" => \Mollie\Api\Types\MandateMethod::DIRECTDEBIT,
+         "consumerName" => "John Doe",
+         "consumerAccount" => "NL55INGB0000000000",
+         "consumerBic" => "INGBNL2A",
+         "signatureDate" => "2018-05-07",
+         "mandateReference" => "YOUR-COMPANY-MD13804",
+      ]);
 
 Response
 ^^^^^^^^

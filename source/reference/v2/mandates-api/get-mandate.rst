@@ -194,24 +194,21 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates/mdt_h3gAaD5zP \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates/mdt_h3gAaD5zP \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $customer = $mollie->customers->get("cst_4qqhO89gsT");
-    $mandate = $customer->getMandate("mdt_h3gAaD5zP");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $customer = $mollie->customers->get("cst_4qqhO89gsT");
+      $mandate = $customer->getMandate("mdt_h3gAaD5zP");
 
 Response
 ^^^^^^^^

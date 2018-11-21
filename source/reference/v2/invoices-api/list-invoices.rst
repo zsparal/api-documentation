@@ -117,23 +117,20 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET "https://api.mollie.com/v2/invoices" \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+      curl -X GET "https://api.mollie.com/v2/invoices" \
+         -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $invoices = $mollie->invoices->page();
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      $invoices = $mollie->invoices->page();
 
 Response
 ^^^^^^^^
@@ -186,7 +183,8 @@ Response
                        },
                        "pdf": {
                             "href": "https://www.mollie.com/merchant/download/invoice/xBEbP9rvAq/2ab44d60b35955fa2c602",
-                            "type": "application/pdf"
+                            "type": "application/pdf",
+                            "expiresAt": "2018-11-09T14:10:36+00:00"
                        }
                    }
                },

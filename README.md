@@ -26,7 +26,7 @@ some syntax highlighting.
 
 ### Running locally
 
-Download a copy of this repository:
+Create a fork, or clone this repository if you have write access:
 
 ```shell
 git clone git@github.com:mollie/api-documentation.git
@@ -39,7 +39,7 @@ cd api-documentation
 make install
 ```
 
-### Generate docs
+### Generate HTML and supporting files
 
 Finally, build the documentation, its CSS and JS files by running:
 
@@ -47,11 +47,30 @@ Finally, build the documentation, its CSS and JS files by running:
 make html
 ```
 
-You can now preview the docs by opening `build/html/index.html`:
+You can now preview the generated documentation by opening `build/html/index.html`:
 
 ```shell
 open build/html/index.html
 ```
+
+### Making changes to copy 
+
+After running `make html` at least once, you can use `make html-only` to quickly update the HTML files if you changed 
+some copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).  
+
+```shell
+$ make html-only
+Running Sphinx v1.7.1
+...
+updating environment: 0 added, 2 changed, 0 removed
+...
+build succeeded.
+
+The HTML pages are in build/html.
+$ open build/html/index.html
+```
+
+Sphinx will only update files for which the source files have changed. 
 
 ### Styling docs
 
@@ -61,8 +80,13 @@ You can make changes to the styling by starting a web server locally:
 make start
 ```
 
-Visit http://localhost:8000 to preview your changes. CSS & JS changes will appear without the need to refresh your 
+Visit `http://localhost:8000` to preview your changes. CSS & JS changes will appear without the need to refresh your 
 browser.
+
+### Releasing new versions of the documentation
+
+Deployment is handled using continuous deployment via [Travis CI](https://docs.travis-ci.com/user/deployment/). 
+Successful builds on the `master` branch will be automatically deployed. 
 
 ## Support
 

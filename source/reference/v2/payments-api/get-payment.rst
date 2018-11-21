@@ -268,8 +268,9 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``paypal``
+       ``paysafecard`` ``sofort``
 
    * - ``metadata``
 
@@ -1209,34 +1210,29 @@ For an implemention guide, see our :doc:`QR codes guide </guides/qr-codes>`.
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $payment = $mollie->payments->get("tr_WDqYK6vllg");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->get("tr_WDqYK6vllg");
 
-Request (Python)
-^^^^^^^^^^^^^^^^
-.. code-block:: python
-   :linenos:
+   .. code-block:: python
+      :linenos:
 
-   from mollie.api.client import Client
+      from mollie.api.client import Client
 
-   mollie_client = Client()
-   mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-   payment = mollie_client.payments.get('tr_WDqYK6vllg')
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
 
 Response
 ^^^^^^^^

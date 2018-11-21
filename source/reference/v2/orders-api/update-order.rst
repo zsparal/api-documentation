@@ -69,51 +69,47 @@ An order object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X PATCH https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-           "billingAddress": {
-               "organizationName": "Mollie B.V.",
-               "streetAndNumber": "Keizersgracht 313",
-               "city": "Amsterdam",
-               "region": "Noord-Holland",
-               "postalCode": "1234AB",
-               "country": "NL",
-               "title": "Dhr",
-               "givenName": "Piet",
-               "familyName": "Mondriaan",
-               "email": "piet@mondriaan.com",
-               "phone": "+31208202070"
-           }
-       }'
+      curl -X PATCH https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+               "billingAddress": {
+                  "organizationName": "Mollie B.V.",
+                  "streetAndNumber": "Keizersgracht 313",
+                  "city": "Amsterdam",
+                  "region": "Noord-Holland",
+                  "postalCode": "1234AB",
+                  "country": "NL",
+                  "title": "Dhr",
+                  "givenName": "Piet",
+                  "familyName": "Mondriaan",
+                  "email": "piet@mondriaan.com",
+                  "phone": "+31208202070"
+               }
+         }'
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-   <?php
-   $mollie = new \Mollie\Api\MollieApiClient();
-   $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-   $order = $mollie->orders->get("ord_kEn1PlbGa");
-   $order->billingAddress->organizationName = "Mollie B.V.";
-   $order->billingAddress->streetAndNumber = "Keizersgracht 313";
-   $order->billingAddress->city = "Amsterdam";
-   $order->billingAddress->region = "Noord-Holland";
-   $order->billingAddress->postalCode = "1234AB";
-   $order->billingAddress->country = "NL";
-   $order->billingAddress->title = "Dhr";
-   $order->billingAddress->givenName = "Piet";
-   $order->billingAddress->familyName = "Mondriaan";
-   $order->billingAddress->email = "piet@mondriaan.com";
-   $order->billingAddress->phone = "+31208202070";
-   $order->update();
+      $order = $mollie->orders->get("ord_kEn1PlbGa");
+      $order->billingAddress->organizationName = "Mollie B.V.";
+      $order->billingAddress->streetAndNumber = "Keizersgracht 313";
+      $order->billingAddress->city = "Amsterdam";
+      $order->billingAddress->region = "Noord-Holland";
+      $order->billingAddress->postalCode = "1234AB";
+      $order->billingAddress->country = "NL";
+      $order->billingAddress->title = "Dhr";
+      $order->billingAddress->givenName = "Piet";
+      $order->billingAddress->familyName = "Mondriaan";
+      $order->billingAddress->email = "piet@mondriaan.com";
+      $order->billingAddress->phone = "+31208202070";
+      $order->update();
 
 Response
 ^^^^^^^^

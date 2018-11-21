@@ -61,39 +61,37 @@ A payment object is returned, as described in :doc:`Get payment </reference/v2/p
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/payments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=10.00" \
-       -d "description=Order #12345" \
-       -d "sequenceType=first" \
-       -d "redirectUrl=https://webshop.example.org/order/12345/" \
-       -d "webhookUrl=https://webshop.example.org/payments/webhook/"
+   .. code-block:: bash
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      curl -X POST https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/payments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "description=Order #12345" \
+         -d "sequenceType=first" \
+         -d "redirectUrl=https://webshop.example.org/order/12345/" \
+         -d "webhookUrl=https://webshop.example.org/payments/webhook/"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+   .. code-block:: php
+      :linenos:
 
-    $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
       "amount" => [
-        "currency" => "EUR",
-        "value" => "10.00",
+         "currency" => "EUR",
+         "value" => "10.00",
       ],
       "description" => "Order #12345",
       "sequenceType" => "first",
       "redirectUrl" => "https://webshop.example.org/order/12345/",
       "webhookUrl => "https://webshop.example.org/payments/webhook/",
-    ]);
+      ]);
 
 Response
 ^^^^^^^^
