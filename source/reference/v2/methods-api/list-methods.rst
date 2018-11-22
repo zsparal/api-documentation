@@ -231,12 +231,14 @@ Response
                         "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
                     "pricing": [
-                        "description": "The Netherlands",
-                        "fixed": {
-                            "value": "0.29",
-                            "currency": "EUR"
-                        },
-                        "variable": "0"
+                        {
+                            "description": "The Netherlands",
+                            "fixed": {
+                                "value": "0.29",
+                                "currency": "EUR"
+                            },
+                            "variable": "0"
+                        }
                     ],
                     "_links": {
                         "self": {
