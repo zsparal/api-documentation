@@ -6,8 +6,8 @@ basic example of integrating Mollie Payments in your iOS or Android App.
 
 .. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
 
-Keep the guidelines of the platform you're developing on in mind
-----------------------------------------------------------------
+Keep the guidelines of the platform you are developing on in mind
+-----------------------------------------------------------------
 Every platform has it's own guidelines for accepting of rejecting apps in the App Store or Marketplace. See
 :ref:`app-store-r-r` for an in depth review.
 
@@ -96,6 +96,9 @@ Step 3: Call your server and open the Checkout URL
 To initiate a payment from your app you need to call the file you have created in step 1 and open the browser with the
 Checkout URL you will receive.
 
+.. warning:: Never send an amount to your server for creating a payment to prevent price changes between the payment and
+             the actual price the customer needs to pay.
+
 iOS
 ^^^
 
@@ -103,7 +106,7 @@ iOS
       :linenos:
 
       func startPayment(order: Order) {
-            let parameters = ["amountValue": "25.00", "description": "Order 12345"]
+            let parameters = ["orderId": order.id]
             let url        = URL(string: "https://www.thisismylink.com/api/create-payment")!
             let session    = URLSession.shared
 
@@ -150,13 +153,12 @@ your Project's ``build.gradle`` file:
 .. code-block:: java
     :linenos:
 
-    private void startPayment() {
+    private void startPayment(Order order) {
         OkHttpClient client = new OkHttpClient();
 
         RequestBody requestBody = new MultipartBody.Builder()
             .setType(MultipartBody.FORM)
-            .addFormDataPart("amountValue", "25.00")
-            .addFormDataPart("description", "order 12345)
+            .addFormDataPart("orderId", order.getId())
             .build();
 
         Request request = new Request.Builder()
@@ -183,13 +185,12 @@ your Project's ``build.gradle`` file:
 .. code-block:: kotlin
     :linenos:
 
-    private fun startPayment() {
+    private fun startPayment(order: Order) {
         OkHttpClient client = new OkHttpClient();
 
         RequestBody requestBody = new MultipartBody.Builder()
             .setType(MultipartBody.FORM)
-            .addFormDataPart("amountValue", "25.00")
-            .addFormDataPart("description", "order 12345)
+            .addFormDataPart("orderId", order.id)
             .build();
 
         Request request = new Request.Builder()
@@ -282,3 +283,12 @@ handling code in the ``onCreate`` method.
                   // Optional: Do stuff with the payment ID
             }
       }
+
+Step 5: Share the status of the payment with your App
+-----------------------------------------------------
+Since the API-key is not included in your App, you can not request the status of the payment directly from Mollie.
+Therefor you should create a way to inform your App about the status update of the payment from your server. An option
+you have is to use a Silence Notification. Please see the guides for
+`iOS <https://developer.apple.com/documentation/usernotifications/setting_up_a_remote_notification_server/pushing_updates_to_your_app_silently>`_
+and `Android <https://firebase.google.com/docs/cloud-messaging/concept-options#notifications_and_data_messages>`_ about
+how to integrate this in your App.
