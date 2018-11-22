@@ -22,7 +22,7 @@ prevent users of your app from messing with your payments. Remember that the app
 your control and thus untrusted.
 
 You will need an API-key for this what you can find in your
-`Dashboard <https://www.mollie.com/dashboard/developers/api-keys>`_. You'll find examples in other languages in the
+`Dashboard <https://www.mollie.com/dashboard/developers/api-keys>`_. You will find examples in other languages in the
 :doc:`/reference/v2/payments-api/create-payment` documentation.
 
 .. code-block:: php
@@ -93,8 +93,8 @@ commando, in our example ``payment-return``.
 
 Step 3: Call your server and open the Checkout URL
 --------------------------------------------------
-To initiate a payment from your app you need to call the file you've created in step 1 and open the browser with the
-Checkout URL you'll receive.
+To initiate a payment from your app you need to call the file you have created in step 1 and open the browser with the
+Checkout URL you will receive.
 
 iOS
 ^^^
