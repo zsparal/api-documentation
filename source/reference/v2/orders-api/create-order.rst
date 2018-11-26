@@ -365,7 +365,6 @@ be passed during order creation:
 * ``payment.dueDate``
 * ``payment.issuer``
 * ``payment.mandateId``
-* ``payment.routing``
 * ``payment.sequenceType``
 * ``payment.voucherNumber``
 * ``payment.voucherPin``
