@@ -121,6 +121,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuer details such as which iDEAL or gift card issuers are available.
+* ``pricing`` Include pricing for the every payment method.
 
 Response
 --------
@@ -230,16 +231,6 @@ Response
                         "size2x": "https://mollie.com/external/icons/payment-methods/ideal%402x.png",
                         "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
-                    "pricing": [
-                        {
-                            "description": "The Netherlands",
-                            "fixed": {
-                                "value": "0.29",
-                                "currency": "EUR"
-                            },
-                            "variable": "0"
-                        }
-                    ],
                     "_links": {
                         "self": {
                             "href": "https://api.mollie.com/v2/methods/ideal",

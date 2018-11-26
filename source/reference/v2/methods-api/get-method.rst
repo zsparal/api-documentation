@@ -70,6 +70,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuers available for the payment method (e.g. for iDEAL, KBC/CBC payment button or gift cards).
+* ``pricing`` Include pricing for the every payment method.
 
 Response
 --------
@@ -98,11 +99,39 @@ Response
 
      - The full name of the payment method, translated in the optional locale passed.
 
+   * - ``image``
+
+       .. type:: image object
+
+     - The URLs of images representing the payment method.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``size1x``
+
+              .. type:: string
+
+            - The URL for a payment method icon of 32x24 pixels.
+
+          * - ``size2x``
+
+              .. type:: string
+
+            - The URL for a payment method icon of 64x48 pixels.
+
+          * - ``svg``
+
+              .. type:: string
+
+            - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
+              to any desired size.
+
    * - ``pricing``
 
        .. type:: array
 
-     - Pricing set of the payment method.
+     - Pricing set of the payment method what will be include if you add the :ref:`parameter <method-includes>`.
 
        .. list-table::
           :widths: auto
@@ -139,34 +168,6 @@ Response
               .. type:: string
 
             - A string containing the percentage what will be charged over the payment amount besides the fixed price.
-
-   * - ``image``
-
-       .. type:: image object
-
-     - The URLs of images representing the payment method.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``size1x``
-
-              .. type:: string
-
-            - The URL for a payment method icon of 32x24 pixels.
-
-          * - ``size2x``
-
-              .. type:: string
-
-            - The URL for a payment method icon of 64x48 pixels.
-
-          * - ``svg``
-
-              .. type:: string
-
-            - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
-              to any desired size.
 
    * - ``_links``
 
@@ -206,7 +207,7 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $mollie->methods->get("ideal", ["include" => "issuers"]);
+      $mollie->methods->get("ideal", ["include" => "issuers,pricing"]);
 
    .. code-block:: python
       :linenos:
@@ -215,7 +216,7 @@ Example
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-      mollie_client.methods.get('ideal', include='issuers')
+      mollie_client.methods.get('ideal', include='issuers,pricing')
 
 Response
 ^^^^^^^^
@@ -234,16 +235,6 @@ Response
             "size2x": "https://www.mollie.com/external/icons/payment-methods/ideal%402x.png",
             "svg": "https://www.mollie.com/external/icons/payment-methods/ideal.svg"
         },
-        "pricing": [
-            {
-                "description": "The Netherlands",
-                "fixed": {
-                    "value": "0.29",
-                    "currency": "EUR"
-                },
-                "variable": "0"
-            }
-        ],
         "issuers": [
             {
                 "resource": "issuer",
@@ -267,6 +258,16 @@ Response
             },
             { },
             { }
+        ],
+        "pricing": [
+            {
+                "description": "The Netherlands",
+                "fixed": {
+                    "value": "0.29",
+                    "currency": "EUR"
+                },
+                "variable": "0"
+            }
         ],
         "_links": {
             "self": {
