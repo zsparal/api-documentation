@@ -100,8 +100,8 @@ class CodeBlockSelectorDirective(Directive):
     def create_generic_code_block(self, lexer):
         properties = self.supported_lexers[lexer]
         content = (
-            "We do not yet have a {} code example for this API call.\n" +
-            "If you have some spare time, you can open a pull request at:\n" +
+            "We don't have a {} code example for this API call yet.\n\n" +
+            "If you have some time to spare, feel free to open pull request at:\n" +
             "https://github.com/mollie/api-documentation"
         ).format(properties["language_text"])
 
