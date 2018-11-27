@@ -79,27 +79,18 @@ For example:
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
-specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``testmode`` parameter.
+This is only the case for test orders. For live orders the ``testmode`` parameter can be omitted.
 
 .. list-table::
    :widths: auto
-
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
-       The profile ID should match the profile ID that was used to create the order.
 
    * - ``testmode``
 
        .. type:: boolean
           :required: false
 
-     - If this payment is for a test order you have to set this to ``true``.
+     - If the new payment is for a test order this parameter is required and you have to set this to ``true``.
 
    * - ``applicationFee``
 
