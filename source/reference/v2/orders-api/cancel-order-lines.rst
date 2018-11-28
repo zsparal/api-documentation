@@ -12,14 +12,22 @@ Cancel order lines
    :organization_access_tokens: true
    :oauth: true
 
-This endpoint can be used to cancel a single or multiple order lines. Use
-:doc:`cancel order </reference/v2/orders-api/cancel-order>` when you want to cancel the entire order.
+This endpoint can be used to cancel one or more order lines that were previously authorized using a *pay after delivery*
+payment method. Use the :doc:`Cancel Order API </reference/v2/orders-api/cancel-order>` if you want to cancel the entire
+order or the remainder of the order.
+
+Canceling or partially canceling an order line will immediately release the authorization held for that amount. Your
+customer will be able to see the updated order in his portal / app. Any canceled lines will be removed from the
+customer's point of view, but will remain visible in the Mollie Dashboard.
+
+You should cancel an order line if you don't intend to (fully) ship it.
 
 An order line can only be canceled while its ``status`` field is either ``authorized`` or ``shipping``. If you cancel
 an ``authorized`` order line, the new order line status will be ``canceled``. Canceling a ``shipping`` order line will
-result in a ``completed`` order line status. You should cancel an order line if you don't intend to (fully) ship it.
+result in a ``completed`` order line status.
 
-If the order line is ``paid`` or already ``completed``, you should create a refund for that line instead.
+If the order line is ``paid`` or already ``completed``, you should create a refund using the
+:doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>` instead.
 
 For more information about the status transitions please check our
 :doc:`order status changes guide </orders/status-changes>`.
@@ -182,3 +190,25 @@ Response (amount required)
             }
         }
     }
+
+Response (cancellation rejected)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: http
+   :linenos:
+
+
+   HTTP/1.1 422 Unprocessable Entity
+   Content-Type: application/hal+json
+
+   {
+       "status": 422,
+       "title": "Unprocessable Entity",
+       "detail": "Update authorization not allowed. Decision is based on order state and outcome of risk assessment.",
+       "_links": {
+           "documentation": {
+               "href": "https://docs.mollie.com/guides/handling-errors",
+               "type": "text/html"
+           }
+       }
+   }
