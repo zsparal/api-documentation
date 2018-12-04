@@ -21,12 +21,13 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- Python > 2.7.9 (with [pip](https://pypi.org/project/pip/) to install dependencies)
+- Python > 2.7.9 
+- [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/). 
 - Node > 9.x
 
 ### Running locally
 
-Download a copy of this repository:
+Create a fork, or clone this repository if you have write access:
 
 ```shell
 git clone git@github.com:mollie/api-documentation.git
@@ -47,7 +48,7 @@ Finally, build the documentation, its CSS and JS files by running:
 make html
 ```
 
-You can now preview the docs by opening `build/html/index.html`:
+You can now preview the generated documentation by opening `build/html/index.html`:
 
 ```shell
 open build/html/index.html
@@ -55,8 +56,8 @@ open build/html/index.html
 
 ### Making changes to copy 
 
-After running `make html` at least once, you can use `make html-only` to only update the HTML files if you changed some
-copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).  
+After running `make html` at least once, you can use `make html-only` to quickly update the HTML files if you changed 
+some copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).  
 
 ```shell
 $ make html-only
@@ -70,7 +71,7 @@ The HTML pages are in build/html.
 $ open build/html/index.html
 ```
 
-Sphinx will only update files for which the source files changed. 
+Sphinx will only update files for which the source files have changed. 
 
 ### Styling docs
 
@@ -82,6 +83,11 @@ make start
 
 Visit `http://localhost:8000` to preview your changes. CSS & JS changes will appear without the need to refresh your 
 browser.
+
+### Releasing new versions of the documentation
+
+Deployment is handled using continuous deployment via [Travis CI](https://docs.travis-ci.com/user/deployment/). 
+Successful builds on the `master` branch will be automatically deployed. 
 
 ## Support
 

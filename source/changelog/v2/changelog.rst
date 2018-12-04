@@ -134,8 +134,7 @@ Tuesday, 18th
 
 Monday, 17th
 ------------
-- Added a new endpoint for partners to get all connected organizations. For details, see:
-  :doc:`List organizations </reference/v2/organizations-api/list-organizations>`
+- Added a new endpoint for partners to get all connected organizations. See the Reseller API Docs for more information.
 
 Wednesday, 12th
 ---------------

@@ -1,18 +1,43 @@
-Integrating payments in mobile apps
-===================================
+Integrating Mollie in your mobile app
+=====================================
 
-This guide will help you to integrate Mollie in a mobile app for devices such as mobile phones and tables. Several
-factors should be considered, such as legal, security and technical considerations.
+This guide will help you to integrate Mollie in a mobile app for devices such as mobile phones and tablets. Several
+factors should be considered, such as store rules and regulations, and security and technical considerations.
 
-Legal considerations
---------------------
+.. _app-store-r-r:
+
+App store rules and regulations
+-------------------------------
 
 Some app stores place limitations on the any payment mechanism that does not use the app store's billing APIs.
 
-For example, in the `Apple App Store <https://developer.apple.com/app-store/review/guidelines/#payments>`_ you may only
-use external payment methods (such as provided by Mollie) for selling physical goods, not for digital goods or services.
+iOS
+^^^
+Apple is very strict when it comes to following the guidelines. They have an mandatory review what means that your app
+must be reviewed by Apple before it can be downloaded from the App Store. All the rules for iOS apps can be found in
+the `App Store Review Guidelines <https://developer.apple.com/app-store/review/guidelines/#payments>`_ under the section
+**Payments**.
+
+Under these guidelines you may only use external payment methods (such as provided by Mollie) for selling physical
+goods, not for digital goods or services.
+
+Android
+^^^^^^^
+Google is somewhat looser when it comes to checking apps before they can be distributed via the store. However, Google
+also has a number of guidelines for its Google Play store which you can found in the
+`Google Play Developer Policy <https://play.google.com/about/monetization-ads/payments/>`_. Google performs random
+checks to verify that apps comply with their guidelines.
+
+You must use Google Play In-app Billing in any case, except when:
+
+* Payment is solely for physical products
+* Payment is for digital content that may be consumed outside of the app itself (e.g. songs that can be played on other
+  music players).
 
 Consult your app store's terms and conditions to get the exact limitations that apply to your situation.
+
+Payment method rules and regulations
+------------------------------------
 
 Additionally, some payment methods place limitations on how they can be embedded in a WebView. For example, the iDEAL
 R&R disallows hiding the URL of the issuer's hosted payment pages and forbids placing the payment in a WebView, since that
@@ -34,6 +59,10 @@ apps that use the same API key.
 Hence, any communication with the Mollie APIs must not be done by the app but by a trusted back end service under your
 control. This service should authenticate your app, perform any needed API calls with Mollie and forward any information
 needed by your app such as the checkout URL to the app.
+
+The app is untrusted, so you cannot accept any values from the app (for example, an amount). In your trusted back end
+service you must always determine the parameters for creating payments, orders or refunds according to your business
+rules.
 
 Integrating with other mobile apps
 ----------------------------------
@@ -60,4 +89,3 @@ to the app, you cannot rely on checking on your customer's return to your app.
 
 You should set the ``webhookUrl`` parameters to and endpoint on your trusted back end service, which then sends a silent
 push notification to the app. The app can then show the appropriate messages or take appropriate action.
-
