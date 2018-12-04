@@ -121,6 +121,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuer details such as which iDEAL or gift card issuers are available.
+* ``pricing`` Include pricing for the every payment method.
 
 Response
 --------

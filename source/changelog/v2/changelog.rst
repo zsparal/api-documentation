@@ -3,6 +3,16 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+December 2018
+=============
+
+Tuesday, 4th
+------------
+
+- It is now possible to get the pricing of the payment methods that are active on the payment profile. Add the
+  ``include=pricing`` parameter to the :doc:`Methods API </reference/v2/methods-api/list-methods>` to get the pricing
+  object in your response.
+
 November 2018
 =============
 

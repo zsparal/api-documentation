@@ -70,6 +70,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuers available for the payment method (e.g. for iDEAL, KBC/CBC payment button or gift cards).
+* ``pricing`` Include pricing for the every payment method.
 
 Response
 --------
@@ -126,6 +127,48 @@ Response
             - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
               to any desired size.
 
+   * - ``pricing``
+
+       .. type:: array
+
+     - Pricing set of the payment method what will be include if you add the :ref:`parameter <method-includes>`.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``description``
+
+              .. type:: string
+
+            - The area or product-type where the pricing is applied for, translated in the optional locale passed.
+
+          * - ``fixed``
+
+              .. type:: amount object
+
+            - The fixed price per transaction
+
+               .. list-table::
+                  :widths: auto
+
+                  * - ``currency``
+
+                      .. type:: string
+
+                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                  * - ``value``
+
+                      .. type:: string
+
+                    - A string containing the exact amount in the given currency.
+
+          * - ``variable``
+
+              .. type:: string
+
+            - A string containing the percentage what will be charged over the payment amount besides the fixed price.
+
    * - ``_links``
 
        .. type:: object
@@ -164,7 +207,7 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $mollie->methods->get("ideal", ["include" => "issuers"]);
+      $mollie->methods->get("ideal", ["include" => "issuers,pricing"]);
 
    .. code-block:: python
       :linenos:
@@ -173,7 +216,7 @@ Example
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-      mollie_client.methods.get('ideal', include='issuers')
+      mollie_client.methods.get('ideal', include='issuers,pricing')
 
 Response
 ^^^^^^^^
@@ -215,6 +258,16 @@ Response
             },
             { },
             { }
+        ],
+        "pricing": [
+            {
+                "description": "The Netherlands",
+                "fixed": {
+                    "value": "0.29",
+                    "currency": "EUR"
+                },
+                "variable": "0"
+            }
         ],
         "_links": {
             "self": {
