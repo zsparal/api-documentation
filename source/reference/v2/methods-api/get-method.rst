@@ -70,7 +70,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuers available for the payment method (e.g. for iDEAL, KBC/CBC payment button or gift cards).
-* ``pricing`` Include pricing for the every payment method.
+* ``pricing`` Include pricing for each payment method.
 
 Response
 --------
