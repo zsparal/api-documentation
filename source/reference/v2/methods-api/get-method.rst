@@ -144,7 +144,7 @@ Response
 
           * - ``fixed``
 
-              .. type:: money object
+              .. type:: amount object
 
             - The fixed price per transaction
 
