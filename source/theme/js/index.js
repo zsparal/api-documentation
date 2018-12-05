@@ -8,6 +8,7 @@ import toggleMobileNavigation from './mobileNavigation';
 import toggleClass from './toggleClass';
 import exampleSwitcher from './exampleSwitcher';
 import linkDropdown from './linkDropdown';
+import { addPaymentMethodDropdown, linkDropdownPaymentMethods } from './linkDropdownPaymentMethods';
 import sidebar from './sidebar';
 
 const handlers = makeHandlers([toggleClass, toggleMobileNavigation]);
@@ -18,10 +19,12 @@ const enhancers = makeEnhancers([
   mobileNavigationButton,
   sidebar,
   linkDropdown,
+  linkDropdownPaymentMethods,
   exampleSwitcher,
 ]);
 
 const main = () => {
+  addPaymentMethodDropdown();
   bindHandlers(handlers);
   executeEnhancers(enhancers);
 };
