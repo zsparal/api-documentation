@@ -369,9 +369,12 @@ be passed during order creation:
 * ``payment.sequenceType``
 * ``payment.voucherNumber``
 * ``payment.voucherPin``
+* ``payment.webhookUrl``
 
 See the :ref:`payment-method-specific-parameters` for more information on these
 parameters.
+
+.. note:: We do not call your ``payment.webhookUrl`` on a successful payment.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
