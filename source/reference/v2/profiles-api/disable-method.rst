@@ -10,6 +10,7 @@ Disable payment method
 .. authentication::
    :api_keys: false
    :oauth: true
+   :organization_access_tokens: true
 
 .. endpoint::
    :method: DELETE
@@ -18,8 +19,12 @@ Disable payment method
 .. authentication::
    :api_keys: true
    :oauth: false
+   :organization_access_tokens: false
 
-Disable a payment method on a specific or authenticated Profile.
+Disable a payment method on a specific or authenticated profile.
+
+.. warning:: Disabling a payment method may affect more integrations of the organization than just your own. In general,
+             explicitly disabling a payment method is not necessary.
 
 Parameters
 ----------

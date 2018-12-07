@@ -10,6 +10,7 @@ Enable payment method
 .. authentication::
    :api_keys: false
    :oauth: true
+   :organization_access_tokens: true
 
 .. endpoint::
    :method: POST
@@ -18,11 +19,12 @@ Enable payment method
 .. authentication::
    :api_keys: true
    :oauth: false
+   :organization_access_tokens: false
 
-Enable a payment method on a specific or authenticated Profile to use it with payments.
+Enable a payment method on a specific or authenticated profile to use it with payments.
 
 .. note:: Not all payment methods can be enabled via this API call. The API will return an error when this is the case
-          with a link to the Mollie Dashboard.
+          with a link to the Mollie Dashboard where the method can be enabled manually.
 
 Parameters
 ----------
@@ -101,7 +103,7 @@ Response
                    "type": "text/html"
             },
             "documentation": {
-                   "href": "https://docs.mollie.com/guides/handling-errors",
+                   "href": ":doc:`https://docs.mollie.com/guides/handling-errors </guides/handling-errors>`",
                    "type": "text/html"
             }
        }
