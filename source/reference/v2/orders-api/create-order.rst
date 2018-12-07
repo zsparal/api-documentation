@@ -9,6 +9,7 @@ Create order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
@@ -81,9 +82,13 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The URL your customer will be redirected to after the payment process.
+
+       .. note::
+          For orders with ``payment.sequenceType`` set to ``recurring``, you can omit this parameter. For all other
+          orders, this parameter is required.
 
    * - ``webhookUrl``
 
@@ -117,12 +122,16 @@ Parameters
 
    * - ``method``
 
-       .. type:: string
+       .. type:: string|array
           :required: false
 
-     - Normally, a payment method selection screen is shown. However, when using this parameter, your
-       customer will skip the selection screen and will be sent directly to the chosen payment method. The parameter
-       enables you to fully integrate the payment method selection into your website.
+     - Normally, a payment method screen is shown. However, when using this parameter, you can choose a specific payment
+       method and your customer will skip the selection screen and is sent directly to the chosen payment method.
+       The parameter enables you to fully integrate the payment method selection into your website.
+
+       You can also specify the methods in an array. By doing so we will still show the payment method selection
+       screen but will only show the methods specified in the array. For example, you can use this functionality to only
+       show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
@@ -177,6 +186,9 @@ The order lines contain the actual things that your customer bought.
        For information on the ``discount``, ``store_credit`` and ``gift_card`` types, see our guide on
        :doc:`handling discounts </orders/handling-discounts>`.
 
+       .. note:: For selling digitally delivered goods through PayPal, you will need to request PayPal to `enable this on
+                 your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
+
    * - ``name``
 
        .. type:: string
@@ -196,9 +208,11 @@ The order lines contain the actual things that your customer bought.
        .. type:: amount object
           :required: true
 
-     - The price of a single item in the order line.
+     - The price of a single item including VAT in the order line.
 
        For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
+
+       Can be negative in case of discounts, or zero in case of a free item.
 
    * - ``discountAmount``
 
@@ -279,6 +293,13 @@ least a valid address must be passed as well as fields identifying the person.
 .. list-table::
    :widths: auto
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The person's organization, if applicable.
+
    * - ``title``
 
        .. type:: string
@@ -325,7 +346,6 @@ least a valid address must be passed as well as fields identifying the person.
 
 Payment specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Creating an order will automatically create a payment that your customer can use to pay for the order. Creation of the
 payment can be controlled using the ``method`` and ``payment`` parameters.
 
@@ -353,12 +373,12 @@ be passed during order creation:
 See the :ref:`payment-method-specific-parameters` for more information on these
 parameters.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -387,214 +407,216 @@ information.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "amount": {
-                "value": "1027.99",
-                "currency": "EUR"
-            },
-            "billingAddress": {
-                "streetAndNumber": "Keizersgracht 313",
-                "city": "Amsterdam",
-                "region": "Noord-Holland",
-                "postalCode": "1234AB",
-                "country": "NL",
-                "title": "Dhr",
-                "givenName": "Piet",
-                "familyName": "Mondriaan",
-                "email": "piet@mondriaan.com",
-                "phone": "+31208202070"
-            },
-            "shippingAddress": {
-                "streetAndNumber": "Prinsengracht 313",
-                "streetAdditional": "4th floor",
-                "city": "Haarlem",
-                "region": "Noord-Holland",
-                "postalCode": "5678AB",
-                "country": "NL",
-                "title": "Mr",
-                "givenName": "Chuck",
-                "familyName": "Norris",
-                "email": "norris@chucknorrisfacts.net"
-            },
-            "metadata": {
-                "order_id": "1337",
-                "description": "Lego cars"
-            },
-            "consumerDateOfBirth": "1958-01-31",
-            "locale": "nl_NL",
-            "orderNumber": "1337",
-            "redirectUrl": "https://example.org/redirect",
-            "webhookUrl": "https://example.org/webhook",
-            "method": "klarnapaylater",
-            "lines": [
-                {
-                    "type": "physical",
-                    "sku": "5702016116977",
-                    "name": "LEGO 42083 Bugatti Chiron",
-                    "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-                    "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
-                    "quantity": 2,
-                    "vatRate": "21.00",
-                    "unitPrice": {
-                        "currency": "EUR",
-                        "value": "399.00"
-                    },
-                    "totalAmount": {
-                        "currency": "EUR",
-                        "value": "698.00"
-                    },
-                    "discountAmount": {
-                        "currency": "EUR",
-                        "value": "100.00"
-                    },
-                    "vatAmount": {
-                        "currency": "EUR",
-                        "value": "121.14"
-                    }
-                },
-                {
-                    "type": "physical",
-                    "sku": "5702015594028",
-                    "name": "LEGO 42056 Porsche 911 GT3 RS",
-                    "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-                    "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
-                    "quantity": 1,
-                    "vatRate": "21.00",
-                    "unitPrice": {
-                        "currency": "EUR",
-                        "value": "329.99"
-                    },
-                    "totalAmount": {
-                        "currency": "EUR",
-                        "value": "329.99"
-                    },
-                    "vatAmount": {
-                        "currency": "EUR",
-                        "value": "57.27"
-                    }
-                }
+      curl -X POST https://api.mollie.com/v2/orders \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "amount": {
+                     "value": "1027.99",
+                     "currency": "EUR"
+                  },
+                  "billingAddress": {
+                     "organizationName": "Mollie B.V.",
+                     "streetAndNumber": "Keizersgracht 313",
+                     "city": "Amsterdam",
+                     "region": "Noord-Holland",
+                     "postalCode": "1234AB",
+                     "country": "NL",
+                     "title": "Dhr",
+                     "givenName": "Piet",
+                     "familyName": "Mondriaan",
+                     "email": "piet@mondriaan.com",
+                     "phone": "+31208202070"
+                  },
+                  "shippingAddress": {
+                     "organizationName": "Mollie B.V.",
+                     "streetAndNumber": "Prinsengracht 313",
+                     "streetAdditional": "4th floor",
+                     "city": "Haarlem",
+                     "region": "Noord-Holland",
+                     "postalCode": "5678AB",
+                     "country": "NL",
+                     "title": "Mr",
+                     "givenName": "Chuck",
+                     "familyName": "Norris",
+                     "email": "norris@chucknorrisfacts.net"
+                  },
+                  "metadata": {
+                     "order_id": "1337",
+                     "description": "Lego cars"
+                  },
+                  "consumerDateOfBirth": "1958-01-31",
+                  "locale": "nl_NL",
+                  "orderNumber": "1337",
+                  "redirectUrl": "https://example.org/redirect",
+                  "webhookUrl": "https://example.org/webhook",
+                  "method": "klarnapaylater",
+                  "lines": [
+                     {
+                           "type": "physical",
+                           "sku": "5702016116977",
+                           "name": "LEGO 42083 Bugatti Chiron",
+                           "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                           "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                           "quantity": 2,
+                           "vatRate": "21.00",
+                           "unitPrice": {
+                              "currency": "EUR",
+                              "value": "399.00"
+                           },
+                           "totalAmount": {
+                              "currency": "EUR",
+                              "value": "698.00"
+                           },
+                           "discountAmount": {
+                              "currency": "EUR",
+                              "value": "100.00"
+                           },
+                           "vatAmount": {
+                              "currency": "EUR",
+                              "value": "121.14"
+                           }
+                     },
+                     {
+                           "type": "physical",
+                           "sku": "5702015594028",
+                           "name": "LEGO 42056 Porsche 911 GT3 RS",
+                           "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                           "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                           "quantity": 1,
+                           "vatRate": "21.00",
+                           "unitPrice": {
+                              "currency": "EUR",
+                              "value": "329.99"
+                           },
+                           "totalAmount": {
+                              "currency": "EUR",
+                              "value": "329.99"
+                           },
+                           "vatAmount": {
+                              "currency": "EUR",
+                              "value": "57.27"
+                           }
+                     }
+                  ]
+               }'
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      $order = $mollie->orders->create([
+      "amount" => [
+            "value" => "1027.99",
+            "currency" => "EUR"
+      ],
+      "billingAddress" => [
+            "organizationName": "Mollie B.V.",
+            "streetAndNumber" => "Keizersgracht 313",
+            "city" => "Amsterdam",
+            "region" => "Noord-Holland",
+            "postalCode" => "1234AB",
+            "country" => "NL",
+            "title" => "Dhr.",
+            "givenName" => "Piet",
+            "familyName" => "Mondriaan",
+            "email" => "piet@mondriaan.com",
+            "phone" => "+31309202070",
+      ],
+      "shippingAddress" => [
+            "organizationName": "Mollie B.V.",
+            "streetAndNumber" => "Keizersgracht 313",
+            "streetAdditional" => "4th floor",
+            "city" => "Haarlem",
+            "region" => "Noord-Holland",
+            "postalCode" => "5678AB",
+            "country" => "NL",
+            "title" => "Mr.",
+            "givenName" => "Chuck",
+            "familyName" => "Norris",
+            "email" => "norris@chucknorrisfacts.net",
+      ],
+      "metadata" => [
+            "order_id" => "1337",
+            "description" => "Lego cars"
+      ],
+      "consumerDateOfBirth" => "1958-01-31",
+      "locale" => "nl_NL",
+      "orderNumber" => "1337",
+      "redirectUrl" => "https://example.org/redirect",
+      "webhookUrl" => "https://example.org/webhook",
+      "method" => "klarnapaylater",
+      "lines" => [
+            [
+            "type" => "physical",
+            "sku" => "5702016116977",
+            "name" => "LEGO 42083 Bugatti Chiron",
+            "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+            "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
+            "quantity" => 2,
+            "vatRate" => "21.00",
+            "unitPrice" => [
+               "currency" => "EUR",
+               "value" => "399.00"
+            ],
+            "totalAmount" => [
+               "currency" => "EUR",
+               "value" => "698.00"
+            ],
+            "discountAmount" => [
+               "currency" => "EUR",
+               "value" => "100.00"
+            ],
+            "vatAmount" => [
+               "currency" => "EUR",
+               "value" => "121.14"
             ]
-        }'
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-     $order = $mollie->orders->create([
-       "amount" => [
-         "value" => "1027.99",
-         "currency" => "EUR"
-       ],
-       "billingAddress" => [
-         "streetAndNumber" => "Keizersgracht 313",
-         "city" => "Amsterdam",
-         "region" => "Noord-Holland",
-         "postalCode" => "1234AB",
-         "country" => "NL",
-         "title" => "Dhr.",
-         "givenName" => "Piet",
-         "familyName" => "Mondriaan",
-         "email" => "piet@mondriaan.com",
-         "phone" => "+31309202070",
-       ],
-       "shippingAddress" => [
-         "streetAndNumber" => "Keizersgracht 313",
-         "streetAdditional" => "4th floor",
-         "city" => "Haarlem",
-         "region" => "Noord-Holland",
-         "postalCode" => "5678AB",
-         "country" => "NL",
-         "title" => "Mr.",
-         "givenName" => "Chuck",
-         "familyName" => "Norris",
-         "email" => "norris@chucknorrisfacts.net",
-       ],
-       "metadata" => [
-         "order_id" => "1337",
-         "description" => "Lego cars"
-       ],
-       "consumerDateOfBirth" => "1958-01-31",
-       "locale" => "nl_NL",
-       "orderNumber" => "1337",
-       "redirectUrl" => "https://example.org/redirect",
-       "webhookUrl" => "https://example.org/webhook",
-       "method" => "klarnapaylater",
-       "lines" => [
-         [
-           "type" => "physical",
-           "sku" => "5702016116977",
-           "name" => "LEGO 42083 Bugatti Chiron",
-           "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-           "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
-           "quantity" => 2,
-           "vatRate" => "21.00",
-           "unitPrice" => [
-             "currency" => "EUR",
-             "value" => "399.00"
-           ],
-           "totalAmount" => [
-             "currency" => "EUR",
-             "value" => "698.00"
-           ],
-           "discountAmount" => [
-             "currency" => "EUR",
-             "value" => "100.00"
-           ],
-           "vatAmount" => [
-             "currency" => "EUR",
-             "value" => "121.14"
-           ]
-         ],
-         [
-           "type" => "physical",
-           "sku" => "5702015594028",
-           "name" => "LEGO 42056 Porsche 911 GT3 RS",
-           "productUrl" => "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
-           "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$',
-           "quantity" => 1,
-           "vatRate" => "21.00",
-           "unitPrice" => [
-             "currency" => "EUR",
-             "value" => "329.99"
-           ],
-           "totalAmount" => [
-             "currency" => "EUR",
-             "value" => "329.99"
-           ],
-           "vatAmount" => [
-             "currency" => "EUR",
-             "value" => "57.27"
-           ]
+            ],
+            [
+            "type" => "physical",
+            "sku" => "5702015594028",
+            "name" => "LEGO 42056 Porsche 911 GT3 RS",
+            "productUrl" => "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+            "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$',
+            "quantity" => 1,
+            "vatRate" => "21.00",
+            "unitPrice" => [
+               "currency" => "EUR",
+               "value" => "329.99"
+            ],
+            "totalAmount" => [
+               "currency" => "EUR",
+               "value" => "329.99"
+            ],
+            "vatAmount" => [
+               "currency" => "EUR",
+               "value" => "57.27"
+            ]
+            ]
          ]
-       ]
-   ]);
+      ]);
 
 Response
 ^^^^^^^^
+.. _create-order-response:
+
 .. code-block:: http
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "order",
@@ -616,6 +638,7 @@ Response
        "mode": "test",
        "locale": "nl_NL",
        "billingAddress": {
+           "organizationName": "Mollie B.V.",
            "streetAndNumber": "Keizersgracht 313",
            "city": "Amsterdam",
            "region": "Noord-Holland",
@@ -630,6 +653,7 @@ Response
        "consumerDateOfBirth": "1958-01-31",
        "orderNumber": "1337",
        "shippingAddress": {
+           "organizationName": "Mollie B.V.",
            "streetAndNumber": "Keizersgracht 313",
            "streetAdditional": "4th floor",
            "city": "Haarlem",
@@ -639,7 +663,7 @@ Response
            "title": "Mr.",
            "givenName": "Chuck",
            "familyName": "Norris",
-           "email": "norris@chucknorrisfacts.net",
+           "email": "norris@chucknorrisfacts.net"
        },
        "redirectUrl": "https://example.org/redirect",
        "webhookUrl": "https://example.org/webhook",

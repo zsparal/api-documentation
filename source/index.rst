@@ -49,6 +49,8 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `iDEAL <https://www.mollie.com/en/payments/ideal>`_
 * `ING Home'Pay <https://www.mollie.com/en/payments/ing-homepay>`_
 * `KBC/CBC Payment Button <https://www.mollie.com/en/payments/kbc-cbc>`_
+* `Klarna Pay later  <https://www.mollie.com/en/payments/klarna-pay-later>`_
+* `Klarna Slice it <https://www.mollie.com/en/payments/klarna-slice-it>`_
 * `PayPal <https://www.mollie.com/en/payments/paypal>`_
 * `paysafecard <https://www.mollie.com/en/payments/paysafecard>`_
 * `SOFORT Banking <https://www.mollie.com/en/payments/sofort>`_

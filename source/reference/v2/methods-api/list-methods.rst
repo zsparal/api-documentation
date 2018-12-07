@@ -9,6 +9,7 @@ List payment methods
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all available payment methods. The results are not paginated.
@@ -85,16 +86,17 @@ Parameters
 
      - The billing country of your customer in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
        format. This parameter can be used to check whether your customer is eligible for certain payment methods, for
-       example *Klarna Slice it*. 
+       example *Klarna Slice it*.
 
        Example: ``https://api.mollie.com/v2/methods?resource=orders&billingCountry=DE``
 
-Mollie Connect/OAuth parameters
--------------------------------
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are
-also available. With the ``profileId`` parameter, you must specify which profile you want to look at when listing
-payment methods. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you must specify which profile you want to look at when listing payment methods. Organizations can have
+multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -119,10 +121,11 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuer details such as which iDEAL or gift card issuers are available.
+* ``pricing`` Include pricing for each payment method.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -173,23 +176,39 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/methods \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/methods \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $methods = $mollie->methods->all();
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      // Methods for the Payments API
+      $methods = $mollie->methods->all();
+
+      // Methods for the Orders API
+      $methods = $mollie->methods->all(['resource' => 'orders']);
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+      # Methods for the Payments API
+      methods = mollie_client.methods.list()
+
+      # Methods for the Orders API
+      methods = mollie_client.methods.list(resource='orders')
 
 Response
 ^^^^^^^^
@@ -197,7 +216,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "count": 13,

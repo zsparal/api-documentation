@@ -16,13 +16,13 @@ Create refund
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer. The
 amount of the refund will be withheld from your next settlement.
 
-Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
-please contact our support department.
+Refunds are not available at all for Bitcoin, paysafecard and gift cards.
 
 By supplying the optional ``amount`` parameter, you can issue a partial refund where your customer is only refunded a
 fraction of the total payment. It is also possible to refund up to €25.00 more than the original transaction amount,
@@ -76,10 +76,10 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
      - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -93,7 +93,7 @@ available.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A refund object is returned, as described in :doc:`Get refund </reference/v1/refunds-api/get-refund>`.
 
@@ -115,7 +115,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "id": "re_4qqhO89gsT",

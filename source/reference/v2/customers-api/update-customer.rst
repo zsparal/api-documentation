@@ -9,6 +9,7 @@ Update customer
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Update an existing customer.
@@ -55,10 +56,10 @@ Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqc
      - Provide any data you like, and we will save the data alongside the customer. Whenever
        you fetch the customer with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -72,36 +73,32 @@ available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 A customer object is returned, as described in :doc:`Get customer </reference/v2/customers-api/get-customer>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X PATCH https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "name=Updated Customer A" \
-       -d "email=updated-customer@example.org"
+      curl -X PATCH https://api.mollie.com/v2/customers/cst_8wmqcHMN4U \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "name=Updated Customer A" \
+         -d "email=updated-customer@example.org"
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-    $customer = $mollie->customers->get("cst_8wmqcHMN4U");
-    $customer->name = "Updated Customer A";
-    $customer->email = "updated-customer@example.org";
-    $customer->update();
+      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+      $customer->name = "Updated Customer A";
+      $customer->email = "updated-customer@example.org";
+      $customer->update();
 
 Response
 ^^^^^^^^
@@ -109,7 +106,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "customer",

@@ -13,17 +13,36 @@ List chargebacks
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are not paginated.
+The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
 Parameters
 ----------
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
+
+.. list-table::
+   :widths: auto
+
+   * - ``from``
+
+       .. type:: string
+          :required: false
+
+     - Offset the result set to the chargeback with this ID. The chargeback with this ID is included in the result
+       set as well.
+
+   * - ``limit``
+
+       .. type:: integer
+          :required: false
+
+     - The number of chargebacks to return (with a maximum of 250).
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -34,7 +53,7 @@ query string parameter.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -86,25 +105,39 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+   .. code-block:: bash
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/chargebacks \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+   .. code-block:: php
+      :linenos:
 
-    $payment = $mollie->payments->get("tr_7UhSN1zuXS");
-    $chargebacks = $payment->chargebacks();
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      // List chargebacks for a single payment
+      $payment = $mollie->payments->get("tr_7UhSN1zuXS");
+      $chargebacks = $payment->chargebacks();
+
+      // List chargebacks across all payments on the payment profile
+      // (For all chargebacks on the organizations, use an OAuth or Organization access token.)
+      $all_chargebacks = $mollie->chargebacks->page();
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
+      chargebacks = payment.chargebacks
 
 Response
 ^^^^^^^^
@@ -112,7 +145,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "count": 3,

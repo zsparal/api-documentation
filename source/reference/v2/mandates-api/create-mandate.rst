@@ -9,6 +9,7 @@ Create mandate
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card or bank account
@@ -68,10 +69,10 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
      - A custom mandate reference.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -85,43 +86,40 @@ available.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A mandate object is returned, as described in :doc:`Get mandate </reference/v2/mandates-api/get-mandate>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "method=directdebit" \
-       -d "consumerName=John Doe" \
-       -d "consumerAccount=NL55INGB0000000000" \
-       -d "consumerBic=INGBNL2A" \
-       -d "signatureDate=2018-05-07" \
-       -d "mandateReference=YOUR-COMPANY-MD13804"
+      curl -X POST https://api.mollie.com/v2/customers/cst_4qqhO89gsT/mandates \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "method=directdebit" \
+         -d "consumerName=John Doe" \
+         -d "consumerAccount=NL55INGB0000000000" \
+         -d "consumerBic=INGBNL2A" \
+         -d "signatureDate=2018-05-07" \
+         -d "mandateReference=YOUR-COMPANY-MD13804"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $mandate = $mollie->customers->get("cst_4qqhO89gsT")->createMandate([
-        "method" => \Mollie\Api\Types\MandateMethod::DIRECTDEBIT,
-        "consumerName" => "John Doe",
-        "consumerAccount" => "NL55INGB0000000000",
-        "consumerBic" => "INGBNL2A",
-        "signatureDate" => "2018-05-07",
-        "mandateReference" => "YOUR-COMPANY-MD13804",
-    ]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $mandate = $mollie->customers->get("cst_4qqhO89gsT")->createMandate([
+         "method" => \Mollie\Api\Types\MandateMethod::DIRECTDEBIT,
+         "consumerName" => "John Doe",
+         "consumerAccount" => "NL55INGB0000000000",
+         "consumerBic" => "INGBNL2A",
+         "signatureDate" => "2018-05-07",
+         "mandateReference" => "YOUR-COMPANY-MD13804",
+      ]);
 
 Response
 ^^^^^^^^
@@ -129,7 +127,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "mandate",

@@ -16,6 +16,7 @@ Create subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 With subscriptions, you can schedule recurring payments to take place at regular intervals.
@@ -55,6 +56,9 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
           :required: false
 
      - Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
+
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 charges.
 
    * - ``interval``
 
@@ -107,12 +111,12 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        .. warning:: The ``webhookUrl`` is optional, but without a webhook you will not be informed when new payments
           are created on your subscription.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify to which profile the subscription belongs. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify to which profile the subscription belongs. Organizations can have multiple profiles for each of their websites.
+See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -133,7 +137,7 @@ information.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v1/subscriptions-api/get-subscription>`.
@@ -160,7 +164,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "subscription",

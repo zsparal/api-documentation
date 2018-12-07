@@ -9,6 +9,7 @@ List settlement refunds
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all refunds included in a settlement.
@@ -22,7 +23,7 @@ for that endpoint can be used here as well.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 This endpoint is an alias of the :doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint. The response is
 therefore the exact same.
@@ -44,7 +45,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "_embedded": {

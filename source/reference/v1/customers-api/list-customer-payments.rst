@@ -16,6 +16,7 @@ List customer payments
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all payments linked to the customer.
@@ -29,7 +30,7 @@ endpoint.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 This endpoint returns results in the same format as the :doc:`List payments </reference/v1/payments-api/list-payments>`
 endpoint.
@@ -51,7 +52,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "totalCount": 280,

@@ -9,6 +9,7 @@ Reset API key
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 You can reset the API keys, for instance when you feel your keys may have been compromised. Please note the old API key
@@ -21,7 +22,7 @@ example: ``/v1/profiles/pfl_v9hTwCvYqw/apikeys/live``.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -69,7 +70,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "profile_api_key",

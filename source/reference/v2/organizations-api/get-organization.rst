@@ -1,15 +1,16 @@
 Get organization
 ================
 .. api-name:: Organizations API
-    :version: 2
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations/*id*
+   :method: GET
+   :url: https://api.mollie.com/v2/organizations/*id*
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :organization_access_tokens: true
+   :oauth: true
 
 Retrieve an organization by its ID.
 
@@ -26,7 +27,7 @@ No parameters applicable for this endpoint.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -93,23 +94,20 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-       curl -X GET https://api.mollie.com/v2/organizations/org_12345678 \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+      curl -X GET https://api.mollie.com/v2/organizations/org_12345678 \
+      -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $organization = $mollie->organizations->get("org_12345678");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      $organization = $mollie->organizations->get("org_12345678");
 
 Response
 ^^^^^^^^
@@ -117,7 +115,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "organization",

@@ -9,6 +9,7 @@ Update shipment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 This endpoint can be used to update the tracking information of a shipment.
@@ -53,10 +54,10 @@ the shipment's ID, for example ``shp_3wmsgCJN4U``.
             - The URL where your customer can track the shipment, for example:
               ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -70,7 +71,7 @@ available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 A shipment object is returned, as described in
 :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
@@ -78,39 +79,36 @@ A shipment object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "tracking": {
-                "carrier": "PostNL",
-                "code": "3SKABA000000000",
-                "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
-            },
-        }'
+      curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "tracking": {
+                     "carrier": "PostNL",
+                     "code": "3SKABA000000000",
+                     "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
+                  },
+               }'
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-     $order = $mollie->orders->get('ord_kEn1PlbGa');
-     $shipment = $order->getShipment("shp_3wmsgCJN4U");
+      $order = $mollie->orders->get('ord_kEn1PlbGa');
+      $shipment = $order->getShipment("shp_3wmsgCJN4U");
 
-     $shipment->tracking = [
-       'carrier' => 'PostNL',
-       'code' => '3SKABA000000000',
-       'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
-     ];
-     $shipment = $shipment->update();
+      $shipment->tracking = [
+      'carrier' => 'PostNL',
+      'code' => '3SKABA000000000',
+      'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
+      ];
+      $shipment = $shipment->update();
 
 Response
 ^^^^^^^^
@@ -118,7 +116,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "shipment",
@@ -178,6 +176,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "completed",
+                "isCancelable": false,
                 "quantity": 1,
                 "unitPrice": {
                     "value": "329.99",

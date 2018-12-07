@@ -9,6 +9,7 @@ Create shipment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment endpoint can be used
@@ -53,7 +54,25 @@ Parameters
 
               Must be less than the number of items already shipped for this order line.
 
-              .. note:: At the moment, it is not possible to partially ship an order line if it has a discount.
+          * - ``amount``
+
+              .. type:: amount object
+                 :required: false
+
+            - The amount that you want to ship. In almost all cases, Mollie can determine the amount automatically.
+
+              The amount is required only if you are *partially* shipping an order line which has a non-zero
+              ``discountAmount``.
+
+              The amount you can ship depends on various properties of the order line and the create shipment request.
+              The maximum that can be shipped is ``unit price x quantity to ship``.
+
+              The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled,
+              the amounts already shipped or canceled and the quantity you want to ship.
+
+              If you do not send an amount, Mollie will determine the amount automatically or respond with an error
+              if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
+              ``extra.maximumAmount`` properties that allow you pick the right amount.
 
    * - ``tracking``
 
@@ -89,10 +108,10 @@ Parameters
               ``http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C``.
 
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, you should use the ``testmode`` parameter
-if you want to create a shipment in test mode.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, you should use the ``testmode`` parameter if you want to create a shipment in test mode.
 
 .. list-table::
    :widths: auto
@@ -106,77 +125,74 @@ if you want to create a shipment in test mode.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A shipment object is returned, as described in :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-            "lines": [
-                {
-                    "id": "odl_dgtxyl",
-                    "quantity": 1
-                },
-                {
-                    "id": "odl_jp31jz"
-                }
-            ],
-            "tracking": {
-                "carrier": "PostNL",
-                "code": "3SKABA000000000",
-                "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
-            },
-        }'
+      curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+                  "lines": [
+                     {
+                           "id": "odl_dgtxyl",
+                           "quantity": 1
+                     },
+                     {
+                           "id": "odl_jp31jz"
+                     }
+                  ],
+                  "tracking": {
+                     "carrier": "PostNL",
+                     "code": "3SKABA000000000",
+                     "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
+                  }
+               }'
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
 
-     $order = $mollie->orders->get('ord_kEn1PlbGa');
-     $shipment = $order->createShipment(
-        [
-          'lines' => [
-            [
-              'id' => 'odl_dgtxyl',
-              'quantity' => 1, // you can set the quantity if not all is shipped at once
-            ],
-            [
-              'id' => 'odl_jp31jz',
-              // assume all is shipped if no quantity is specified
-            ],
-          ],
-          [
-            'tracking' => [
-              'carrier' => 'PostNL',
-              'code' => '3SKABA000000000',
-              'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
-            ],
-          ],
-        ]
-    );
+      $order = $mollie->orders->get('ord_kEn1PlbGa');
+      $shipment = $order->createShipment(
+         [
+         'lines' => [
+               [
+               'id' => 'odl_dgtxyl',
+               'quantity' => 1, // you can set the quantity if not all is shipped at once
+               ],
+               [
+               'id' => 'odl_jp31jz',
+               // assume all is shipped if no quantity is specified
+               ],
+         ],
+         [
+               'tracking' => [
+               'carrier' => 'PostNL',
+               'code' => '3SKABA000000000',
+               'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+               ],
+         ],
+         ]
+      );
 
-    // Alternative shorthand for shipping all remaining order lines
-    $shipment = $order->shipAll([
+      // Alternative shorthand for shipping all remaining order lines
+      $shipment = $order->shipAll([
       'tracking' => [
-        'carrier' => 'PostNL',
-        'code' => '3SKABA000000000',
-        'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+         'carrier' => 'PostNL',
+         'code' => '3SKABA000000000',
+         'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
       ],
-    ]);
+      ]);
 
 Response
 ^^^^^^^^
@@ -184,7 +200,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "shipment",
@@ -244,6 +260,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "completed",
+                "isCancelable": false,
                 "quantity": 1,
                 "unitPrice": {
                     "value": "329.99",
@@ -282,6 +299,38 @@ Response
             },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/shipments-api/get-shipment",
+                "type": "text/html"
+            }
+        }
+    }
+
+Response (amount required)
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 422 Unprocessable Entity
+   Content-Type: application/hal+json
+
+   {
+        "status": 422,
+        "title": "Unprocessable Entity",
+        "detail": "Line 0 contains invalid data. An amount is required for this API call. The amount must be between €0.00 and €50.00.",
+        "field": "lines.0.amount",
+        "extra": {
+            "minimumAmount": {
+                "value": "0.00",
+                "currency": "EUR"
+            },
+            "maximumAmount": {
+                "value": "50.00",
+                "currency": "EUR"
+            }
+        },
+        "_links": {
+            "documentation": {
+                "href": "https://docs.mollie.com/reference/v2/shipments-api/create-shipment",
                 "type": "text/html"
             }
         }

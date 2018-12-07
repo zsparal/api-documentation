@@ -9,6 +9,7 @@ Create profile
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 In order to process payments, you need to create a website profile. A website profile can easily be created via the
@@ -58,14 +59,21 @@ Parameters
 
        Possible values:
 
+       * ``4121`` Travel, rental and transportation
+       * ``5192`` Books, magazines and newspapers
        * ``5399`` General merchandise
-       * ``5732`` Electronics, computers, and software
-       * ``4121`` Travel, rental, and transportation
-       * ``6012`` Financial services
        * ``5499`` Food and drinks
-       * ``7999`` Events, festivals, and recreation
-       * ``5192`` Books, magazines, and newspapers
+       * ``5533`` Automotive Products
+       * ``5641`` Children Products
+       * ``5651`` Clothing & Shoes
+       * ``5732`` Electronics, computers and software
+       * ``5735`` Entertainment
+       * ``5815`` Digital services
+       * ``5944`` Jewelry & Accessories
+       * ``5977`` Health & Beauty products
+       * ``6012`` Financial services
        * ``7299`` Personal services
+       * ``7999`` Events, festivals and recreation
        * ``8398`` Charity and donations
        * ``0`` Other
 
@@ -81,7 +89,7 @@ Parameters
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A profile object is returned, as described in :doc:`Get profile </reference/v1/profiles-api/get-profile>`.
 
@@ -108,7 +116,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "profile",

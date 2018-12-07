@@ -21,6 +21,14 @@ them. Then we will show you how the statuses are connected.
     yet. Nothing really needs to happen on your end when this status occurs. Mollie will not call your webhook when this
     status occurs.
 
+``authorized``
+    If the payment method supports captures, the payment method will have this status for as long as new captures can be
+    created.
+
+    Currently this status is only possible for the payment methods
+    `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_ and
+    `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_.
+
 ``expired``
     The payment has expired, e.g. your customer has abandoned the payment.
 
@@ -43,7 +51,7 @@ How does one status lead to another?
 ------------------------------------
 Please look at the below diagram. It tells you exactly when to expect what status:
 
-.. image:: images/api-status-list-v2@2x.png
+.. image:: images/payment-status-flow@2x.png
 
 When does a payment expire?
 ---------------------------

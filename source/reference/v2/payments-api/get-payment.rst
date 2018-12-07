@@ -9,6 +9,7 @@ Get payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single payment object by its payment token.
@@ -20,10 +21,11 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you are creating an app with Mollie Connect (OAuth), the ``testmode`` query string parameter is available. You must
-pass this as a parameter in the query string if you want to retrieve a payment that was created in test mode.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is available. You must pass this as a parameter
+in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::
    :widths: auto
@@ -54,7 +56,7 @@ query string parameter.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -99,6 +101,14 @@ Response
        .. type:: boolean
 
      - Whether or not the payment can be canceled.
+
+   * - ``authorizedAt``
+
+       .. type:: datetime
+          :required: false
+
+     - The date and time the payment became authorized, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+       format. This parameter is omitted if the payment is not authorized (yet).
 
    * - ``paidAt``
 
@@ -205,6 +215,28 @@ Response
 
             - A string containing the exact refundable amount of the payment in the given currency.
 
+   * - ``amountCaptured``
+
+       .. type:: amount object
+          :required: false
+
+     - The total amount that is already captured for this payment. Only available when this payment supports captures.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``currency``
+
+              .. type:: string
+
+            - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+          * - ``value``
+
+              .. type:: string
+
+            - A string containing the exact captured amount of the payment in the given currency.
+
    * - ``description``
 
        .. type:: string
@@ -236,8 +268,9 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``paysafecard`` ``sofort``
+       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``paypal``
+       ``paysafecard`` ``sofort``
 
    * - ``metadata``
 
@@ -311,8 +344,7 @@ Response
        .. type:: string
           :required: false
 
-     - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
-       the recurring payment.
+     - If the payment is a first or recurring payment, this field will hold the ID of the mandate.
 
    * - ``subscriptionId``
 
@@ -385,6 +417,7 @@ Response
           * - ``checkout``
 
               .. type:: URL object
+                 :required: false
 
             - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to.
@@ -394,6 +427,15 @@ Response
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
               Recurring payments don't have a checkout URL.
+
+          * - ``changePaymentState``
+
+              .. type:: URL object
+                 :required: false
+
+            - Recurring payments do not have a checkout URL, because these payments are executed without
+              any user interaction. This link is only included for test mode recurring payments, and allows
+              you to set the final payment state for such payments.
 
           * - ``refunds``
 
@@ -497,6 +539,25 @@ Bancontact
 
             - Only available if requested during payment creation - The QR code that can be scanned by the mobile
               Bancontact application. This enables the desktop to mobile feature.
+
+          * - ``consumerName``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's name.
+
+          * - ``consumerAccount``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank account. This may be an IBAN, or it
+              may be a domestic account number.
+
+          * - ``consumerBic``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank's BIC / SWIFT code.
 
 Bank transfer
 """""""""""""
@@ -1149,23 +1210,29 @@ For an implemention guide, see our :doc:`QR codes guide </guides/qr-codes>`.
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $payment = $mollie->payments->get("tr_WDqYK6vllg");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->get("tr_WDqYK6vllg");
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
 
 Response
 ^^^^^^^^
@@ -1173,7 +1240,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "payment",

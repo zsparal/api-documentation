@@ -9,6 +9,7 @@ Get payment method
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single method by its ID. Note that if a method is not available on the website profile a status
@@ -36,12 +37,13 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
-Mollie Connect/OAuth parameters
--------------------------------
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the following query string parameters are
-also available. With the ``profileId`` parameter, you must specify which profile you want to look at when listing
-methods. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
 
 .. list-table::
    :widths: auto
@@ -68,10 +70,11 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``issuers`` Include issuers available for the payment method (e.g. for iDEAL, KBC/CBC payment button or gift cards).
+* ``pricing`` Include pricing for each payment method.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -116,13 +119,55 @@ Response
               .. type:: string
 
             - The URL for a payment method icon of 64x48 pixels.
-            
+
           * - ``svg``
 
               .. type:: string
 
             - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
               to any desired size.
+
+   * - ``pricing``
+
+       .. type:: array
+
+     - Pricing set of the payment method what will be include if you add the :ref:`parameter <method-includes>`.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``description``
+
+              .. type:: string
+
+            - The area or product-type where the pricing is applied for, translated in the optional locale passed.
+
+          * - ``fixed``
+
+              .. type:: amount object
+
+            - The fixed price per transaction
+
+               .. list-table::
+                  :widths: auto
+
+                  * - ``currency``
+
+                      .. type:: string
+
+                    - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                  * - ``value``
+
+                      .. type:: string
+
+                    - A string containing the exact amount in the given currency.
+
+          * - ``variable``
+
+              .. type:: string
+
+            - A string containing the percentage what will be charged over the payment amount besides the fixed price.
 
    * - ``_links``
 
@@ -149,23 +194,29 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
-       -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/methods/ideal?include=issuers \
+         -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $mollie->methods->get("ideal", ["include" => "issuers"]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $mollie->methods->get("ideal", ["include" => "issuers,pricing"]);
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      mollie_client.methods.get('ideal', include='issuers,pricing')
 
 Response
 ^^^^^^^^
@@ -173,7 +224,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "method",
@@ -192,7 +243,7 @@ Response
                 "image": {
                     "size1x": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.png",
                     "size2x": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A%402x.png",
-                    "svg": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.svg"                    
+                    "svg": "https://www.mollie.com/external/icons/ideal-issuers/ABNANL2A.svg"
                 }
             },
             {
@@ -207,6 +258,16 @@ Response
             },
             { },
             { }
+        ],
+        "pricing": [
+            {
+                "description": "The Netherlands",
+                "fixed": {
+                    "value": "0.29",
+                    "currency": "EUR"
+                },
+                "variable": "0"
+            }
         ],
         "_links": {
             "self": {

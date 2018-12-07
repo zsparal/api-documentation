@@ -5,10 +5,8 @@ Update account
    :version: 1
 
 .. endpoint::
-   :method: PATCH
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-edit
-
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 This method allows you to change an existing merchant. You can only change your own merchants. Please take note: some
 changes may result in the merchant no longer receiving any payouts.

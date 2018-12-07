@@ -10,6 +10,7 @@ List settlement captures
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all captures for a certain settlement.
@@ -24,7 +25,7 @@ Replace ``settlementId`` in the endpoint URL by the settlement's ID. For example
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -88,13 +89,12 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 ^^^^^^^^
@@ -102,7 +102,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "_embedded": {
@@ -155,7 +155,7 @@ Response
                "type": "text/html"
            },
            "self": {
-               "href": "https://api.mollie.dev/v2/settlements/stl_jDk30akdN/captures?limit=50",
+               "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures?limit=50",
                "type": "application/hal+json"
            },
            "previous": null,

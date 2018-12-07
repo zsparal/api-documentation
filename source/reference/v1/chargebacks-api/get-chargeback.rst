@@ -16,6 +16,7 @@ Get chargeback
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.
@@ -37,7 +38,7 @@ querystring parameter.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -91,13 +92,13 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "chargeback",
        "id": "chb_n9z0tp",
        "payment": "tr_WDqYK6vllg",
-       "amount": "35.07",
+       "amount": "-35.07",
        "chargebackDatetime": "2018-03-14T17:00:52.0Z",
        "reversedDatetime": null
    }

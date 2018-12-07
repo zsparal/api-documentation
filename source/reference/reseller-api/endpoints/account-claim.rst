@@ -5,16 +5,17 @@ Claim account
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-claim
-
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 The account-claim method can be used to link an existing Mollie account to your own.
 
 You then become the reseller of this account, and it will appear in the list of merchants you have referred. The
 account will receive the same payment method rate as your other merchants. You will also receive a partner commission for
 referring the merchant.
+
+.. note:: Claiming is also possible via :doc:`OAuth </reference/oauth2/authorize>`. When a merchant creates a new account
+          via the OAuth-flow of your application, it will be linked automatically to your partner-account.
 
 Parameters
 ----------

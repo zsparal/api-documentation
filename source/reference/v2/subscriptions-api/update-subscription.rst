@@ -9,6 +9,7 @@ Update subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Some fields of a subscription can be updated by calling ``PATCH`` on the resource endpoint. Each field is optional.
@@ -58,6 +59,9 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - Total number of charges for the subscription to complete. Can not be less than number of times that subscription
        has been charged.
 
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 charges.
+
    * - ``startDate``
 
        .. type:: date
@@ -74,6 +78,14 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - A description unique per subscription . This will be included in the payment description along with the charge
        date.
 
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, it
+       will be changed to ``null`` when setting this parameter.
+
    * - ``webhookUrl``
 
        .. type:: string
@@ -89,10 +101,10 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - Provide any data you like, and we will save the data alongside the subscription. Whenever you fetch the
        subscription with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -106,7 +118,7 @@ available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
@@ -114,40 +126,37 @@ A subscription object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X PATCH https://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=10.00" \
-       -d "times=42" \
-       -d "startDate=2018-12-12" \
-       -d "description=Mollie Recurring subscription" \
-       -d "webhookUrl=https://example.org/webhook"
+      curl -X PATCH https://api.mollie.com/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "times=42" \
+         -d "startDate=2018-12-12" \
+         -d "description=Mollie Recurring subscription" \
+         -d "webhookUrl=https://example.org/webhook"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
 
-    $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
-    $subscription->amount = (object) [
+      $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
+      $subscription->amount = (object) [
       "currency" => "EUR",
       "value" => "10.00",
-    ];
-    $subscription->times = 42;
-    $subscription->startDate = "2018-12-12";
-    $subscription->description = "Mollie recurring subscription";
-    $subscription->webhookUrl = "https://example.org/webhook";
-    $updatedSubscription = $subscription->update();
+      ];
+      $subscription->times = 42;
+      $subscription->startDate = "2018-12-12";
+      $subscription->description = "Mollie recurring subscription";
+      $subscription->webhookUrl = "https://example.org/webhook";
+      $updatedSubscription = $subscription->update();
 
 
 Response
@@ -172,9 +181,11 @@ Response
         "description": "Mollie Recurring subscription",
         "method": null,
         "times": 42,
+        "timesRemaining": 38,
         "interval": "15 days",
         "startDate": "2018-12-12",
         "nextPaymentDate": "2018-12-12",
+        "mandateId": "mdt_84HdeDr5",
         "webhookUrl": "https://example.org/webhook",
         "_links": {
             "self": {

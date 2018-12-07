@@ -5,10 +5,8 @@ Validate account
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/account-valid
-
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 This method allows you to check whether a Mollie account actually exists and whether the password to this account is
 correct. The method returns the account's partner ID.

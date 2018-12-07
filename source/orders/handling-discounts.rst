@@ -45,10 +45,14 @@ Here's an example of an order line that has a 2-for-1 type promotion:
 
 Note how the VAT is only calculated over the amount actually charged to your customer.
 
+.. note:: If you want to partially cancel, ship or refund an order line with a non-zero ``discountAmount``, you will
+          have to pass the ``amount`` parameter too. See the :ref:`Partial discounts<partial-discounts>` section for
+          an explanation and an example.
+
 Gift cards
 ----------
 If Mollie does not handle your :doc:`gift cards</guides/gift-cards>` for you, you can add an additional line of the type
-``giftcard`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
+``gift_card`` instead if your customer wants to apply a gift card. The line must then have a negative amount.
 
 Here's an example where a shopper exchanges a €10.00 gift card:
 
@@ -67,7 +71,7 @@ Here's an example where a shopper exchanges a €10.00 gift card:
            "quantity": 2,
            "totalAmount": {
                "currency": "EUR",
-               "value": "38.98"
+               "value": "39.98"
            },
            "vatAmount": {
                "currency": "EUR",
@@ -97,12 +101,12 @@ Here's an example where a shopper exchanges a €10.00 gift card:
 As a gift card is simply a means of payment and is untaxed, this does not affect the VAT amount charged to your
 customer.
 
-Store credit and vouchers
--------------------------
-If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply value-added tax
-to the discount.
+Discounts and vouchers
+----------------------
+If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply a negative
+value-added tax to the discount.
 
-Here's an example where a shopper uses a voucher for 10% off:
+Here's an example where a shopper uses a discount code for 10% off:
 
 .. code-block:: json
    :linenos:
@@ -128,7 +132,7 @@ Here's an example where a shopper uses a voucher for 10% off:
        },
        {
            "name": "HERFST10 voucher code",
-           "type": "store_credit",
+           "type": "discount",
            "unitPrice": {
                "currency": "EUR",
                "value": "-3.90"
@@ -145,3 +149,34 @@ Here's an example where a shopper uses a voucher for 10% off:
            }
        }
    ]
+
+.. _partial-discounts:
+
+Partial discounts
+-----------------
+In most cases, canceling, shipping or refunding orders is quite straightforward. You specify which
+order lines you want to act on and the quantity of each line you want to act on. Amounts are determined automatically by
+Mollie.
+
+
+However, when partially canceling, shipping or refunding an order line that has a non-zero ``discountAmount``, you will
+have to pass the ``amount`` parameter as well, as Mollie cannot automatically determine the amount you intended to
+cancel, ship or refund.
+
+To put this into perspective, let us show an example of shipping the 2-for-1 promotion as mentioned above, in two steps.
+
+When shipping the first item, we will have to decide whether we want to apply the discount as part of this shipment,
+partly apply the discount, or not apply the discount to this shipment.
+
+This means that the ``amount`` parameter that we can pass has to be between €0.00 and €19.99:
+
+``amount`` €0.00
+    Fully apply the discount as part of the first shipment. As a result, this unit will be shipped for free. The second
+    item will have to be shipped for the full price.
+
+``amount`` €5.00
+    Partially apply the discount. As a result, you will have to apply €14.99 discount as part of the next shipment.
+
+``amount`` €19.99
+    Do not apply the discount as part of this shipment. As a result, you will have to apply the full discount as part of
+    the next shipment.

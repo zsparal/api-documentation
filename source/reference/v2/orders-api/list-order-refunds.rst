@@ -10,6 +10,7 @@ List order refunds
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all order refunds.
@@ -38,6 +39,21 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbj
 
      - The number of refunds to return (with a maximum of 250).
 
+Mollie Connect/OAuth parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is also
+available.
+
+.. list-table::
+   :widths: auto
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to list test mode order refunds.
+
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
@@ -47,7 +63,7 @@ query string parameter.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -112,25 +128,22 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/orders/ord_pbjz8x/refunds \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/orders/ord_pbjz8x/refunds \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-     $order = $mollie->orders->get("ord_stTC2WHAuS");
-     $refunds = $order->refunds();
+      $order = $mollie->orders->get("ord_stTC2WHAuS");
+      $refunds = $order->refunds();
 
 Response
 ^^^^^^^^
@@ -138,7 +151,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "count": 1,

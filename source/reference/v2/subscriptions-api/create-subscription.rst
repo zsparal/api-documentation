@@ -9,6 +9,7 @@ Create subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 With subscriptions, you can schedule :doc:`recurring payments </payments/recurring>` to take place at regular intervals.
@@ -70,6 +71,9 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
      - Total number of charges for the subscription to complete. Leave empty for an ongoing subscription.
 
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 charges.
+
    * - ``interval``
 
        .. type:: string
@@ -101,9 +105,16 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
           :required: false
 
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
-       customer's valid mandates may be used.
+       customer's valid mandates may be used. Please note that this parameter can not set together with ``mandateId``.
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
+
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - The mandate used for this subscription. Please note that this parameter can not set together with ``method``.
 
    * - ``webhookUrl``
 
@@ -120,12 +131,12 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - Provide any data you like, and we will save the data alongside the subscription. Whenever you fetch the
        subscription with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify to which profile the subscription belongs. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify to which profile the subscription belongs. Organizations can have multiple profiles for each of their websites.
+See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -146,7 +157,7 @@ information.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A subscription object is returned, as described in
 :doc:`Get subscription </reference/v2/subscriptions-api/get-subscription>`.
@@ -154,40 +165,37 @@ A subscription object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=25.00" \
-       -d "times=4" \
-       -d "interval=3 months" \
-       -d "description=Quarterly payment" \
-       -d "webhookUrl=https://webshop.example.org/subscriptions/webhook/"
+      curl -X POST https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=25.00" \
+         -d "times=4" \
+         -d "interval=3 months" \
+         -d "description=Quarterly payment" \
+         -d "webhookUrl=https://webshop.example.org/subscriptions/webhook/"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $customer = $mollie->customers->get("cst_stTC2WHAuS");
-    $customer->createSubscription([
-        "amount" => [
-            "currency" => "EUR",
-            "value" => "25.00",
-        ],
-        "times" => 4,
-        "interval" => "3 months",
-        "description" => "Quarterly payment",
-        "webhookUrl" => "https://webshop.example.org/subscriptions/webhook/",
-    ]);
+      $customer = $mollie->customers->get("cst_stTC2WHAuS");
+      $customer->createSubscription([
+         "amount" => [
+               "currency" => "EUR",
+               "value" => "25.00",
+         ],
+         "times" => 4,
+         "interval" => "3 months",
+         "description" => "Quarterly payment",
+         "webhookUrl" => "https://webshop.example.org/subscriptions/webhook/",
+      ]);
 
 Response
 ^^^^^^^^
@@ -208,6 +216,7 @@ Response
            "currency": "EUR"
        },
        "times": 4,
+       "timesRemaining": 4,
        "interval": "3 months",
        "description": "Quarterly payment",
        "startDate": "2016-06-01",

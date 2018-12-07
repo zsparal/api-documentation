@@ -5,7 +5,7 @@ Get profiles
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/profiles
 
 .. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
@@ -17,30 +17,30 @@ Parameters
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
 parameters:
 
+.. note:: It is not necessary to set ``username`` and ``password`` if you are using ``partner_id_customer``. Otherwise
+          both are required to set.
+
 .. list-table::
    :widths: auto
 
    * - ``username``
 
        .. type:: string
-          :required: true
 
      - The username of the account of which you would like to retrieve the bank accounts
 
    * - ``password``
 
        .. type:: string
-          :required: true
 
      - The password of the account of which you would like to retrieve the bank accounts
 
    * - ``partner_id_customer``
 
        .. type:: string
-          :required: false
 
      - The partner ID of the account of which you would like to retrieve the bank accounts. It can be used instead of
-       the parameters username and password
+       the parameters ``username`` and ``password``
 
 Response
 --------

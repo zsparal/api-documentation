@@ -9,6 +9,7 @@ Cancel order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``
@@ -31,32 +32,44 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
+Mollie Connect/OAuth parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+available.
+
+.. list-table::
+   :widths: auto
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to cancel a test mode order.
+
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-     $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
 
 Response
 ^^^^^^^^
@@ -64,7 +77,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "order",
@@ -81,6 +94,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",
@@ -91,6 +105,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",

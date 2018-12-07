@@ -20,6 +20,7 @@ List refunds
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
@@ -50,7 +51,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -130,7 +131,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "totalCount": 3,

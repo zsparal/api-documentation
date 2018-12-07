@@ -1,21 +1,20 @@
 List organizations
 ==================
-.. api-name:: Organizations API
-    :version: 2
+.. api-name:: Reseller API
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations
+   :method: GET
+   :url: https://api.mollie.com/v2/reseller/organizations
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :organization_access_tokens: true
+   :oauth: true
 
 Retrieve all organizations that are connected to your partner-account.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
-
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 Parameters
 ----------
@@ -39,7 +38,7 @@ Parameters
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -104,23 +103,11 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
 .. code-block:: bash
-   :linenos:
+  :linenos:
 
-   curl -X GET https://api.mollie.com/v2/organizations?limit=5 \
-       -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $organizations = $mollie->organizations->page();
+  curl -X GET https://api.mollie.com/v2/reseller/organizations?limit=5 \
+     -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
 ^^^^^^^^
@@ -128,7 +115,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "_embedded": {

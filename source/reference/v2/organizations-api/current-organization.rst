@@ -1,15 +1,16 @@
 Get current organization
 ========================
 .. api-name:: Organizations API
-    :version: 2
+   :version: 2
 
 .. endpoint::
-    :method: GET
-    :url: https://api.mollie.com/v2/organizations/me
+   :method: GET
+   :url: https://api.mollie.com/v2/organizations/me
 
 .. authentication::
-    :api_keys: false
-    :oauth: true
+   :api_keys: false
+   :organization_access_tokens: true
+   :oauth: true
 
 Retrieve the currently authenticated organization.
 
@@ -22,7 +23,7 @@ No parameters applicable for this endpoint.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 For the full list of fields, see the
 :doc:`Get organization endpoint </reference/v2/organizations-api/get-organization>`. Only ``_links`` is listed here.
@@ -104,23 +105,19 @@ For the full list of fields, see the
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-       curl -X GET https://api.mollie.com/v2/organizations/me \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+      curl -X GET https://api.mollie.com/v2/organizations/me \
+      -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $currentOrganization = $mollie->organizations->current();
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      $currentOrganization = $mollie->organizations->current();
 
 Response
 ^^^^^^^^
@@ -128,7 +125,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "organization",

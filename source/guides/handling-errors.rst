@@ -29,7 +29,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "payment",
@@ -93,7 +93,7 @@ Response
    :linenos:
 
    HTTP/1.1 401 Unauthorized
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "status": 401,
@@ -127,7 +127,7 @@ Response
    :linenos:
 
    HTTP/1.1 404 Not Found
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "status": 404,
@@ -166,7 +166,7 @@ Response
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "status": 422,

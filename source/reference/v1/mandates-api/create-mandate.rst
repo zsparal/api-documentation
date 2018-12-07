@@ -16,6 +16,7 @@ Create mandate
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card or bank account
@@ -75,10 +76,10 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
      - A custom mandate reference.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -92,7 +93,7 @@ available.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A mandate object is returned, as described in :doc:`Get mandate </reference/v1/mandates-api/get-mandate>`.
 
@@ -119,7 +120,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "mandate",

@@ -9,6 +9,7 @@ Get current profile
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: false
    :oauth: false
 
 Use this API if you are creating a plugin or SaaS application that allows users to enter a Mollie API key, and you want
@@ -42,7 +43,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "profile",

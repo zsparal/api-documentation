@@ -16,6 +16,7 @@ Create payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional
@@ -54,11 +55,15 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The URL your customer will be redirected to after the payment process. It could make sense for the
-       ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
-       the order when your customer returns.
+     - The URL your customer will be redirected to after the payment process.
+
+       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter. *For all
+       other payments, this parameter is mandatory.*
+
+       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
+       the right page referencing the order when your customer returns.
 
    * - ``webhookUrl``
 
@@ -423,12 +428,12 @@ SEPA Direct Debit
      - IBAN of the account holder. Only available if one-off payments are enabled on your account. Will
        pre-fill the IBAN in the checkout screen if present.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -492,7 +497,7 @@ like when the QR code is included.
 
 Response
 --------
-``201`` ``application/json; charset=utf-8``
+``201`` ``application/json``
 
 A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
@@ -518,7 +523,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "payment",

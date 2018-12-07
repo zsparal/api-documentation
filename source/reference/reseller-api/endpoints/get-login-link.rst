@@ -5,10 +5,8 @@ Get login link
    :version: 1
 
 .. endpoint::
-   :method: GET
+   :method: POST
    :url: https://www.mollie.com/api/reseller/v1/get-login-link
-
-.. note:: This API is only for `partners <https://www.mollie.com/partners>`_.
 
 This method allows you to obtain a special link, with which a merchant can be directly logged in.
 
@@ -17,10 +15,16 @@ cases, the merchant who was already logged in will remain logged in.
 
 When the customer has not yet accepted Mollie's conditions they must first do so before being redirected.
 
+.. note::
+   The use of this API is restricted. Please contact our partner team at partner@mollie.com if you want to use this API.
+
 Parameters
 ----------
 Make sure to add the :ref:`obligatory parameters <secret-keys>` always. Besides that, add the following
 parameters:
+
+.. note:: It is not necessary to set ``username`` and ``password`` if you are using ``partner_id_customer``. Otherwise
+          both are required to set.
 
 .. list-table::
    :widths: auto
@@ -28,26 +32,23 @@ parameters:
    * - ``username``
 
        .. type:: string
-          :required: true
 
-     - The username of the account you would like to disconnect.
+     - The username of the account you would like to generate a login link for.
 
    * - ``password``
 
        .. type:: string
-          :required: true
 
-     - The password of the account you would like to disconnect.
+     - The password of the account you would like to generate a login link for.
 
    * - ``partner_id_customer``
 
        .. type:: string
-          :required: false
 
-     - 	The partner ID of the account you would like to disconnect. It can be used instead of the parameters username
-        and password.
+     - 	The partner ID of the account you would like to generate a login link for. It can be used instead of the parameters ``username``
+        and ``password``.
 
-   * - ``redirect_URL``
+   * - ``redirect_url``
 
        .. type:: URL
           :required: false
@@ -67,5 +68,5 @@ Response
         <success>true</success>
         <resultcode>10</resultcode>
         <resultmessage>Redirect the customer to the following url.</resultmessage>
-        <redirect_url>https://www.mollie.com/login/oneTimeLogin/4299193/008788d1a618c3aff51acd57ca82661c?redirect_url=%2Fbeheer%2Fbetaalmethodes%2F</redirect_url>
+        <redirect_url>https://www.mollie.com/login/onetimelogin/4299193/008788d1a618c3aff51acd57ca82661c?redirect_url=%2Fbeheer%2Fbetaalmethodes%2F</redirect_url>
     </response>

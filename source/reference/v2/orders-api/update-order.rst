@@ -9,13 +9,14 @@ Update order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 This endpoint can be used to update the billing and/or shipping address of an order.
 
-When updating an order that uses a *pay after delivery* method such as *Klarna Pay later*, it can be
-the case that Klarna does not accept the requested changes. In that case the order is still valid,
-though the requested changes have not been applied to the order.
+When updating an order that uses a *pay after delivery* method such as *Klarna Pay later*,
+Klarna may decline the requested changes, resulting in an error response from the Mollie API.
+The order remains intact, though the requested changes are not persisted.
 
 Parameters
 ----------
@@ -43,10 +44,10 @@ in the request.
      - The shipping address for the order. See :ref:`order-address-details` for the exact fields
        needed.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -60,7 +61,7 @@ available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 An order object is returned, as described in
 :doc:`Get order </reference/v2/orders-api/get-order>`.
@@ -68,49 +69,47 @@ An order object is returned, as described in
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X PATCH https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d '{
-           "billingAddress": {
-               "streetAndNumber": "Keizersgracht 313",
-               "city": "Amsterdam",
-               "region": "Noord-Holland",
-               "postalCode": "1234AB",
-               "country": "NL",
-               "title": "Dhr",
-               "givenName": "Piet",
-               "familyName": "Mondriaan",
-               "email": "piet@mondriaan.com",
-               "phone": "+31208202070"
-           }
-       }'
+      curl -X PATCH https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+               "billingAddress": {
+                  "organizationName": "Mollie B.V.",
+                  "streetAndNumber": "Keizersgracht 313",
+                  "city": "Amsterdam",
+                  "region": "Noord-Holland",
+                  "postalCode": "1234AB",
+                  "country": "NL",
+                  "title": "Dhr",
+                  "givenName": "Piet",
+                  "familyName": "Mondriaan",
+                  "email": "piet@mondriaan.com",
+                  "phone": "+31208202070"
+               }
+         }'
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-   <?php
-   $mollie = new \Mollie\Api\MollieApiClient();
-   $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-   $order = $mollie->orders->get("ord_kEn1PlbGa");
-   $order->billingAddress->streetAndNumber = "Keizersgracht 313";
-   $order->billingAddress->city = "Amsterdam";
-   $order->billingAddress->region = "Noord-Holland";
-   $order->billingAddress->postalCode = "1234AB";
-   $order->billingAddress->country = "NL";
-   $order->billingAddress->title = "Dhr";
-   $order->billingAddress->givenName = "Piet";
-   $order->billingAddress->familyName = "Mondriaan";
-   $order->billingAddress->email = "piet@mondriaan.com";
-   $order->billingAddress->phone = "+31208202070";
-   $order->update();
+      $order = $mollie->orders->get("ord_kEn1PlbGa");
+      $order->billingAddress->organizationName = "Mollie B.V.";
+      $order->billingAddress->streetAndNumber = "Keizersgracht 313";
+      $order->billingAddress->city = "Amsterdam";
+      $order->billingAddress->region = "Noord-Holland";
+      $order->billingAddress->postalCode = "1234AB";
+      $order->billingAddress->country = "NL";
+      $order->billingAddress->title = "Dhr";
+      $order->billingAddress->givenName = "Piet";
+      $order->billingAddress->familyName = "Mondriaan";
+      $order->billingAddress->email = "piet@mondriaan.com";
+      $order->billingAddress->phone = "+31208202070";
+      $order->update();
 
 Response
 ^^^^^^^^
@@ -118,7 +117,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "order",
@@ -137,6 +136,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "city": "Amsterdam",
             "region": "Noord-Holland",
@@ -150,6 +150,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",

@@ -9,6 +9,7 @@ Get order
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single order by its ID.
@@ -17,10 +18,10 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
-also available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -41,7 +42,7 @@ query string parameter.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -260,11 +261,16 @@ Response
             - The URL your customer should visit to make the payment for the order. This is where you should redirect
               the customer to after creating the order.
 
+              As long as order is still in the ``created`` state, this link can be used by your customer to pay for this
+              order. You can safely share this URL with your customer.
+
+              The URL can also be retrieved and copied from the Mollie Dashboard.
+
               .. note :: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Recurring orders do not have a checkout URL.
+              Recurring, authorized, paid and finalized orders do not have a checkout URL.
 
           * - ``documentation``
 
@@ -401,7 +407,7 @@ The order lines contain the actual things the your customer bought.
 
        .. type:: amount object
 
-     - The price of a single item in the order line.
+     - The price of a single item including VAT in the order line.
 
    * - ``discountAmount``
 
@@ -476,6 +482,13 @@ These properties can be found in the ``billingAddress`` and ``shippingAddress`` 
 .. list-table::
    :widths: auto
 
+   * - ``organizationName``
+
+       .. type:: string
+          :required: false
+
+     - The person's organization, if applicable.
+
    * - ``title``
 
        .. type:: string
@@ -516,27 +529,22 @@ These properties can be found in the ``billingAddress`` and ``shippingAddress`` 
      - See :ref:`address-object` for details on these fields.
 
 Example
--------
+^^^^^^^
+.. code-block-selector::
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
+          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-.. _get-order-response:
+   .. code-block:: php
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient();
-     $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-     $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
 
 Response
 ^^^^^^^^
@@ -544,7 +552,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
         "resource": "order",
@@ -563,6 +571,7 @@ Response
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",
@@ -573,6 +582,7 @@ Response
         },
         "orderNumber": "18475",
         "shippingAddress": {
+            "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
             "postalCode": "1016 EE",
             "city": "Amsterdam",

@@ -10,13 +10,13 @@ Create payment refund
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer.
 The refunded amount will be withheld from your next settlement.
 
-Refunds are not available at all for Bitcoin, paysafecard and gift cards. If you need to refund direct debit payments,
-please contact our support department.
+Refunds are not available at all for Bitcoin, paysafecard and gift cards.
 
 Refunds support descriptions, which we will show in the Dashboard, your exports and pass to your customer if possible.
 
@@ -25,7 +25,7 @@ process the refund once your balance increases.
 
 Any payments created for Orders can also be refunded using the Payment Refunds API. However, we recommend using the
 :doc:`Order Refund API </reference/v2/orders-api/create-order-refund>` in those cases so you can pass the order lines
-you are refunding too. For pay after delivery methods, this is mandatory.
+you are refunding too. For pay after delivery methods, this will improve your customer's experience.
 
 Possible errors
 ---------------
@@ -85,10 +85,10 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
      - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -102,39 +102,52 @@ available.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=5.95"
+      curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=5.95"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $payment = $mollie->payments->get("tr_WDqYK6vllg");
-    $refund = $payment->refund([
+      $payment = $mollie->payments->get("tr_WDqYK6vllg");
+      $refund = $payment->refund([
       "amount" => [
-        "currency" => "EUR",
-        "value" => "5.95" // You must send the correct number of decimals, thus we enforce the use of strings
+         "currency" => "EUR",
+         "value" => "5.95" // You must send the correct number of decimals, thus we enforce the use of strings
       ]
-    ]);
+      ]);
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
+      refund = mollie_client.payment_refunds.on(payment).create({
+         'amount': {
+               'value': '5.95',
+               'currency': 'EUR'
+         }
+      })
 
 Response
 ^^^^^^^^
@@ -142,7 +155,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "refund",

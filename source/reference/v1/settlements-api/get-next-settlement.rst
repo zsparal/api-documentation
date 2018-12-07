@@ -16,13 +16,14 @@ Get next settlement
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve the details of the current settlement that has not yet been paid out.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 The next settlement is returned in the same fashion as the
 :doc:`Get settlement </reference/v1/settlements-api/get-settlement>` endpoint.
@@ -44,7 +45,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "settlement",

@@ -9,6 +9,7 @@ Get subscription
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a subscription by its ID and its customer's ID.
@@ -18,10 +19,10 @@ Parameters
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the subscription's ID. For
 example ``/v2/customers/cst_8wmqcHMN4U/subscriptions/sub_rVKGtNd6s3``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter is
-also available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -35,7 +36,7 @@ also available.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -104,6 +105,12 @@ Response
 
      - Total number of charges for the subscription to complete.
 
+   * - ``timesRemaining``
+
+       .. type:: integer
+
+     - Number of charges left for the subscription to complete.
+
    * - ``interval``
 
        .. type:: string
@@ -141,6 +148,13 @@ Response
        customer's valid mandates may be used.
 
        Possible values: ``creditcard`` ``directdebit`` ``null``
+
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - The mandate used for this subscription. When there is no mandate specified, this parameter will not be returned.
 
    * - ``canceledAt``
 
@@ -194,25 +208,22 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3 \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3 \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $customer = $mollie->customers->get("cst_stTC2WHAuS");
-    $subscription = $customer->getSubscription("sub_rVKGtNd6s3");
+      $customer = $mollie->customers->get("cst_stTC2WHAuS");
+      $subscription = $customer->getSubscription("sub_rVKGtNd6s3");
 
 Response
 ^^^^^^^^
@@ -233,11 +244,13 @@ Response
            "currency": "EUR"
        },
        "times": 4,
+       "timesRemaining": 4,
        "interval": "3 months",
        "startDate": "2016-06-01",
        "nextPaymentDate": "2016-09-01",
        "description": "Quarterly payment",
        "method": null,
+       "mandateId": "mdt_38HS4fsS",
        "webhookUrl": "https://webshop.example.org/payments/webhook",
        "metadata": {
            "plan": "small"

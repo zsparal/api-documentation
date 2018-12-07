@@ -3,14 +3,126 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+December 2018
+=============
+
+Friday, 7th
+-----------
+
+- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
+  </reference/v2/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+
+Tuesday, 4th
+------------
+
+- It is now possible to get the pricing of the payment methods that are active on the payment profile. Add the
+  ``include=pricing`` parameter to the :doc:`Methods API </reference/v2/methods-api/list-methods>` to get the pricing
+  object in your response.
+
+November 2018
+=============
+
+Wednesday, 15th
+---------------
+
+- It is now possible to pass an ``amount`` when partially shipping, canceling or refunding order lines. This is
+  necessary for order lines that have a non-zero ``discountAmount``.
+
+  Before, it was not possible to partially ship, cancel or refund such order lines.
+
+Monday, 12th
+------------
+
+- Subscriptions in test mode will now be canceled automatically after 10 charges.
+
+Thursday, 8th
+-------------
+
+- It's now possible to refund SEPA Direct Debit payments
+
+Wednesday, 7th
+--------------
+
+- Moved the ``organizationName`` field in the ``shippingAddress`` and ``billingAddress`` objects.
+
+Monday, 5th
+-----------
+
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+  for more info.
+
+Thursday, 1st
+-------------
+
+- The maximum amount for SOFORT Banking payments has been increased from €5,000 to €50,000.
+
 October 2018
-==============
+============
+
+Monday, 29th
+------------
+
+- Added ``organizationName`` field for orders, so from now a customer can specify the organization name if they buy
+  something for business purposes.
+
+Thursday, 25th
+--------------
+
+- We now accept the use of an underscore ``_`` in Redirect- and Webhook-URLs.
+- A :doc:`guide </guides/testing>` has been added explaining how to test your integration of the Mollie API.
+- Added the ``changePaymentState`` link to the :doc:`Payments API </reference/v2/payments-api/get-payment>`.
+  It allows you to set the final payment state for test mode recurring payments.
+
+Wednesday, 24th
+---------------
+
+- Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`
+  to see how many charges are left for completing the subscription.
+- Consumer IBANs of Bancontact payments will now always be shared via the API.
+- Added :doc:`Organization access tokens </guides/authentication>` as an authentication method.
+
+Friday, 19th
+--------------
+
+- PayPal refund period has been increased from 60 to 180 days.
+
+Wednesday, 17th
+---------------
+- The ``method`` field on the :doc:`Create Payment </reference/v2/payments-api/create-payment>` and
+  :doc:`Create Order </reference/v2/orders-api/create-order>` now also accepts an array of methods. By doing so you can
+  select which methods to show on the payment method selection screen. For example, you can use this functionality to
+  only show payment methods from a specific country to your customer.
+
+
+Monday, 15th
+------------
+- It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
+  and *HTTPS* schemes were allowed. You can for example immediately redirect the customer back to your mobile app after
+  completing a payment, by setting the ``redirectUrl`` to your own App Scheme, like ``my-app://payment-return``.
+
+Friday, 12th
+------------
+- Added new category codes ``5533`` ``5641`` ``5651`` ``5732`` ``5735`` ``5815`` ``5944`` ``5977`` ``7999``
+  to the :doc:`Create Profile </reference/v2/profiles-api/create-profile>` and
+  :doc:`Update Profile </reference/v2/profiles-api/update-profile>` endpoints.
+
+Friday, 5th
+------------
+- We have added the ``mandateId`` field in subscriptions. This makes it possible to sure a specific mandate for a
+  subscription. For details, see the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
 
 Tuesday, 2nd
 ------------
 - We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
   bank account to finish the payment.
 
+- Added the new payment status ``authorized`` for payments that still require a capture to receive the money. Currently,
+  this status is only used for payment methods `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_
+  and `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_. Because payments with these payment methods
+  can only be created with the :doc:`Orders API </reference/v2/orders-api/create-order>`, there is no change required in
+  existing implementations of the Payments API.
+
+  The new status is especially useful to give a meaningful representation when listing all payments.
 
 September 2018
 ==============
@@ -29,6 +141,8 @@ Thursday, 20th
 - Added a new endpoint get all payments for a specific customer subscription. For details, see:
   :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscriptions-payments>`
 
+- Added ``amountCaptured`` and ``authorizedAt`` to the payment object.
+
 Tuesday, 18th
 -------------
 - Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`. This
@@ -36,14 +150,13 @@ Tuesday, 18th
 
 Monday, 17th
 ------------
-- Added a new endpoint for partners to get all connected organizations. For details, see:
-  :doc:`List organizations </reference/v2/organizations-api/list-organizations>`
+- Added a new endpoint for partners to get all connected organizations. See the Reseller API Docs for more information.
 
 Wednesday, 12th
 ---------------
 - Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the
   :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
-  :doc:`Orders API overview </orders/overview>` for more details on how to use these API's.
+  :doc:`Orders API overview </orders/overview>` for more details on how to use these APIs.
 
 - Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
 

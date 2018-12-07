@@ -7,7 +7,7 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-SPHINXOPTS     = -W
+SPHINXOPTS     = -W -n
 SPHINXPRODOPTS = -j auto -D html_file_suffix=''
 SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
@@ -42,7 +42,7 @@ start:
 	make html-reload & make css-reload & make js-reload
 
 install:
-	pip install -U -r requirements.txt
+	pip install --user -r requirements.txt --no-warn-script-location
 
 lint-js:
 	npm run lint:js
@@ -57,6 +57,7 @@ verify:
 html: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
+.PHONY: html-only
 html-only:
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 

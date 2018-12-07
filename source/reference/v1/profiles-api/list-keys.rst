@@ -9,6 +9,7 @@ List API keys
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 List the active API keys for the given payment profile.
@@ -25,7 +26,7 @@ Replace ``id`` in the endpoint URL by the payment profile's ID, for example ``pf
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -59,7 +60,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "count": 2,

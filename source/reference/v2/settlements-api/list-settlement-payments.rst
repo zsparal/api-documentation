@@ -9,6 +9,7 @@ List settlement payments
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all payments included in a settlement.
@@ -22,7 +23,7 @@ parameters for that endpoint can be used here as well.
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 This endpoint is an alias of the :doc:`List payments </reference/v2/payments-api/list-payments>` endpoint. The response
 is therefore the exact same.
@@ -44,7 +45,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "count": 5,

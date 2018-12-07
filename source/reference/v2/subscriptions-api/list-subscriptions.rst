@@ -9,6 +9,7 @@ List subscriptions
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve all subscriptions of a customer.
@@ -35,12 +36,12 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 
      - The number of subscriptions to return (with a maximum of 250).
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra query string
-parameter is the ``profileId`` parameter. With it, you can specify for which profile you want to retrieve subscriptions.
-Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra query string parameter is the ``profileId`` parameter. With it,
+you can specify for which profile you want to retrieve subscriptions. Organizations can have multiple profiles for each
+of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -61,7 +62,7 @@ Organizations can have multiple profiles for each of their websites. See
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 .. list-table::
    :widths: auto
@@ -126,25 +127,22 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/subscriptions \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+      curl -X GET https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/subscriptions \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+   .. code-block:: php
+      :linenos:
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-    $customer = $mollie->customers->get("cst_8wmqcHMN4U");
-    $subscriptions = $customer->subscriptions();
+      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
+      $subscriptions = $customer->subscriptions();
 
 Response
 ^^^^^^^^
@@ -169,6 +167,7 @@ Response
                        "currency": "EUR"
                    },
                    "times": 4,
+                   "timesRemaining": 3,
                    "interval": "3 months",
                    "startDate": "2016-06-01",
                    "nextPaymentDate": "2016-09-01",

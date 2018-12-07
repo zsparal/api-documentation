@@ -9,6 +9,7 @@ Get invoice
 
 .. authentication::
    :api_keys: false
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve details of an invoice, using the invoice's identifier.
@@ -23,7 +24,7 @@ Replace ``id`` in the endpoint URL by the invoice ID, for example ``inv_FrvewDA3
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -231,23 +232,21 @@ Response
 Example
 -------
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
 
-       curl -X GET "https://api.mollie.com/v2/invoices/inv_xBEbP9rvAq" \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+   .. code-block:: bash
+      :linenos:
 
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
+      curl -X GET "https://api.mollie.com/v2/invoices/inv_xBEbP9rvAq" \
+      -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-    $invoice = $mollie->invoices->get("inv_xBEbP9rvAq");
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      $invoice = $mollie->invoices->get("inv_xBEbP9rvAq");
 
 Response
 ^^^^^^^^
@@ -255,7 +254,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "invoice",
@@ -296,7 +295,8 @@ Response
            },
            "pdf": {
                 "href": "https://www.mollie.com/merchant/download/invoice/xBEbP9rvAq/2ab44d60b35b1d06090bba955fa2c602",
-                "type": "application/pdf"
+                "type": "application/pdf",
+                "expiresAt": "2018-11-09T14:10:36+00:00"
            }
        }
    }

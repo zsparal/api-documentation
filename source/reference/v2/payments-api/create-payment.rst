@@ -9,6 +9,7 @@ Create payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off.
@@ -69,15 +70,15 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The URL your customer will be redirected to after the payment process. It could make sense for the
-       ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show the right page referencing
-       the order when your customer returns.
+     - The URL your customer will be redirected to after the payment process.
 
-       .. note::
-          For payments with ``sequenceType`` ``recurring``, you can skip this parameter. For all other payments, this
-          parameter is required.
+       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter. *For all
+       other payments, this parameter is mandatory.*
+
+       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
+       the right page referencing the order when your customer returns.
 
    * - ``webhookUrl``
 
@@ -110,13 +111,16 @@ Parameters
 
    * - ``method``
 
-       .. type:: string
+       .. type:: string|array
           :required: false
 
-     - Normally, a payment method selection screen is shown. However, when using this parameter, your
-       customer will skip the selection screen and will be sent directly to the chosen payment method. The parameter
-       enables you to fully integrate the payment method selection into your website, however note Mollie's country
-       based conversion optimization is lost.
+     - Normally, a payment method screen is shown. However, when using this parameter, you can choose a specific payment
+       method and your customer will skip the selection screen and is sent directly to the chosen payment method.
+       The parameter enables you to fully integrate the payment method selection into your website.
+
+       You can also specify the methods in an array. By doing so we will still show the payment method selection
+       screen but will only show the methods specified in the array. For example, you can use this functionality to only
+       show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
@@ -492,7 +496,7 @@ SEPA Direct Debit
 .. note::
     One-off SEPA Direct Debit payments using Mollie Checkout can only be created if this is enabled on your account. In
     general, it is not very useful for webshops but may be useful for charities.
-    
+
     Please contact our support department at info@mollie.com to enable this.
 
     If you want to use recurring payments, take a look at our :doc:`Recurring payments guide </payments/recurring>`.
@@ -516,12 +520,12 @@ SEPA Direct Debit
      - IBAN of the account holder. Only available if one-off payments are enabled on your account. Will
        pre-fill the IBAN in the checkout screen if present.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the only mandatory extra parameter is the
-``profileId`` parameter. With it, you can specify which profile the payment belongs to. Organizations can have multiple
-profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -600,47 +604,63 @@ like when the QR code is included.
 
 Response
 --------
-``201`` ``application/hal+json; charset=utf-8``
+``201`` ``application/hal+json``
 
 A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 
 Example
 -------
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-Request (curl)
-^^^^^^^^^^^^^^
-.. code-block:: bash
-   :linenos:
+      curl -X POST https://api.mollie.com/v2/payments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "description=Order #12345" \
+         -d "redirectUrl=https://webshop.example.org/order/12345/" \
+         -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
+         -d "metadata={\"order_id\": \"12345\"}"
+   .. code-block:: php
+      :linenos:
 
-   curl -X POST https://api.mollie.com/v2/payments \
-       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-       -d "amount[currency]=EUR" \
-       -d "amount[value]=10.00" \
-       -d "description=Order #12345" \
-       -d "redirectUrl=https://webshop.example.org/order/12345/" \
-       -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
-       -d "metadata={\"order_id\": \"12345\"}"
-
-Request (PHP)
-^^^^^^^^^^^^^
-.. code-block:: php
-   :linenos:
-
-    <?php
-    $mollie = new \Mollie\Api\MollieApiClient();
-    $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-    $payment = $mollie->payments->create([
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->create([
       "amount" => [
-          "currency" => "EUR",
-          "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
+            "currency" => "EUR",
+            "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
       ],
       "description" => "My first payment",
       "redirectUrl" => "https://webshop.example.org/order/12345/",
       "webhookUrl" => "https://webshop.example.org/payments/webhook/",
       "metadata" => [
-          "order_id" => "12345",
+            "order_id" => "12345",
       ],
-    ]);
+      ]);
+
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.create({
+         'amount': {
+               'currency': 'EUR',
+               'value': '10.00'
+         },
+         'description': 'My first payment',
+         'webhookUrl': 'https://webshop.example.org/order/12345/',
+         'redirectUrl': 'https://webshop.example.org/payments/webhook/',
+         'metadata': {
+               'order_id': '12345'
+         }
+      })
 
 Response
 ^^^^^^^^
@@ -648,7 +668,7 @@ Response
    :linenos:
 
    HTTP/1.1 201 Created
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "payment",

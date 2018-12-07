@@ -1,6 +1,6 @@
 Secret keys and authentication
 ==============================
-**Secret keys** facilitate encrypted communication with Mollie's Reseller API’s. These API's provide even better security
+**Secret keys** facilitate encrypted communication with Mollie's Reseller APIs. These APIs provide even better security
 than the previous ones because:
 
 **Authentication is performed by means of a** ``profile_key`` **:**

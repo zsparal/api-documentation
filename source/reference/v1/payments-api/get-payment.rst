@@ -16,6 +16,7 @@ Get payment
 
 .. authentication::
    :api_keys: true
+   :organization_access_tokens: true
    :oauth: true
 
 Retrieve a single payment object by its payment token.
@@ -27,10 +28,11 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you are creating an app with Mollie Connect (OAuth), the ``testmode`` query string parameter is available. You must
-pass this as a parameter in the query string if you want to retrieve a payment that was created in test mode.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is available. You must pass this as a parameter
+in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::
    :widths: auto
@@ -54,7 +56,7 @@ querystring parameter.
 
 Response
 --------
-``200`` ``application/json; charset=utf-8``
+``200`` ``application/json``
 
 .. list-table::
    :widths: auto
@@ -214,7 +216,7 @@ Response
        .. type:: string
 
      - If a customer was specified upon payment creation, the customer's token will be available here as
-       well. For example, ``cst_XPn78q9CfT``.
+       well. For example, ``cst_XPn78q9CfT``. When the customer has been deleted this property will still be set.
 
    * - ``recurringType``
 
@@ -229,8 +231,7 @@ Response
 
        .. type:: string
 
-     - If the payment is a recurring payment, this field will hold the ID of the mandate used to authorize
-       the recurring payment.
+     - If the payment is a first or recurring payment, this field will hold the ID of the mandate.
 
    * - ``subscriptionId``
 
@@ -374,6 +375,25 @@ Bancontact
 
             - Only available if requested during payment creation - The QR code that can be scanned by the mobile
               Bancontact application. This enables the desktop to mobile feature.
+
+          * - ``consumerName``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's name.
+
+          * - ``consumerAccount``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank account. This may be an IBAN, or it
+              may be a domestic account number.
+
+          * - ``consumerBic``
+
+              .. type:: string
+
+            - Only available if the payment is completed – The consumer's bank's BIC / SWIFT code.
 
 Bank transfer
 """""""""""""
@@ -1044,7 +1064,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/json; charset=utf-8
+   Content-Type: application/json
 
    {
        "resource": "payment",

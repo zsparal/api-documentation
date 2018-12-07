@@ -3,8 +3,69 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+.. warning:: The v1 API has been deprecated. The v1 API will be supported for the foreseeable future, at least until
+             July 2023. However, new features will only be added to the v2 API.
+
+             For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
+
+December 2018
+=============
+
+Friday, 7th
+-----------
+
+- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
+  </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+
+November 2018
+=============
+
+Monday, 12th
+------------
+
+- Subscriptions in test mode will now be canceled automatically after 10 charges.
+
+Thursday, 8th
+-------------
+
+- It's now possible to refund SEPA Direct Debit payments
+
+Monday, 5th
+-----------
+
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+  for more info.
+
+Thursday, 1st
+-------------
+
+- The maximum amount for SOFORT Banking payments has been increased from €5,000 to €50,000.
+
 October 2018
-==============
+============
+
+Wednesday, 24th
+---------------
+
+- Consumer IBANs of Bancontact payments will now always be shared via the API.
+- Added :doc:`Organization access tokens </guides/authentication>` as an authentication method.
+
+Friday, 19th
+--------------
+
+- PayPal refund period has been increased from 60 to 180 days.
+
+Monday, 15th
+------------
+- It is now possible to specify a URL with a custom URI scheme as ``redirectUrl`` parameter. Previously, only the *HTTP*
+  and *HTTPS* schemes were allowed. You can for example immediately redirect the customer back to your mobile app after
+  completing a payment, by setting the ``redirectUrl`` to your own App Scheme, like ``my-app://payment-return``.
+
+Friday, 12th
+------------
+- Added new category codes ``5533`` ``5641`` ``5651`` ``5732`` ``5735`` ``5815`` ``5944`` ``5977`` ``7999``
+  to the :doc:`Create Profile </reference/v1/profiles-api/create-profile>` and
+  :doc:`Update Profile </reference/v1/profiles-api/update-profile>` endpoints.
 
 Tuesday, 2nd
 ------------
