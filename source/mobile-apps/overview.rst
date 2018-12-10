@@ -9,7 +9,7 @@ factors should be considered, such as store rules and regulations, and security 
 App store rules and regulations
 -------------------------------
 
-Some app stores place limitations on the any payment mechanism that does not use the app store's billing APIs.
+Some app stores place limitations on any payment mechanism that does not use the app store's billing APIs.
 
 iOS
 ^^^
