@@ -1,7 +1,7 @@
 import { enhance } from './utils';
 import Dropkick from 'dropkickjs';
 
-const DEFAULT_METHOD = 'bancontact';
+const DEFAULT_METHOD = 'banktransfer';
 
 // Adds the onchange listener that hides/shows methods based on selection
 export const linkDropdownPaymentMethods = enhance('payment-method-switcher', element => {
