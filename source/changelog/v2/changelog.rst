@@ -6,6 +6,12 @@ changes are documented here.
 December 2018
 =============
 
+Monday, 10th
+------------
+
+- Enabling and disabling payment methods via the API is now possible via the
+  :doc:`Profiles API </reference/v2/profiles-api/enable-method>`.
+
 Friday, 7th
 -----------
 
