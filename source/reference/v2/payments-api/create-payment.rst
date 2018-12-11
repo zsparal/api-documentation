@@ -404,6 +404,8 @@ KBC/CBC Payment Button
 
        Possible values: ``kbc`` ``cbc``
 
+.. _paypal-method-details:
+
 PayPal
 """"""
 .. list-table::
