@@ -83,14 +83,14 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       $payment = $mollie->customers->get("cst_8wmqcHMN4U")->createPayment([
-      "amount" => [
-         "currency" => "EUR",
-         "value" => "10.00",
-      ],
-      "description" => "Order #12345",
-      "sequenceType" => "first",
-      "redirectUrl" => "https://webshop.example.org/order/12345/",
-      "webhookUrl => "https://webshop.example.org/payments/webhook/",
+          "amount" => [
+             "currency" => "EUR",
+             "value" => "10.00",
+          ],
+          "description" => "Order #12345",
+          "sequenceType" => "first",
+          "redirectUrl" => "https://webshop.example.org/order/12345/",
+          "webhookUrl" => "https://webshop.example.org/payments/webhook/",
       ]);
 
 Response
