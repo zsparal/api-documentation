@@ -16,7 +16,7 @@ Cancel subscription
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 A subscription can be canceled any time by calling ``DELETE`` on the resource endpoint.

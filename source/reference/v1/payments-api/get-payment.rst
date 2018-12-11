@@ -16,7 +16,7 @@ Get payment
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a single payment object by its payment token.

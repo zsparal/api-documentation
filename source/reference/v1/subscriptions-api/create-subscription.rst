@@ -16,7 +16,7 @@ Create subscription
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 With subscriptions, you can schedule recurring payments to take place at regular intervals.

@@ -17,7 +17,7 @@ Get issuer
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a payment method issuer by its issuer identifier.

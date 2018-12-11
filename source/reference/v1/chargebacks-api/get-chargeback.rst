@@ -16,7 +16,7 @@ Get chargeback
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a single chargeback by its ID. Note the original payment's ID is needed as well.

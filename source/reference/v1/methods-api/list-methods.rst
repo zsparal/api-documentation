@@ -16,7 +16,7 @@ List payment methods
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all payment methods activated on the payment profile.

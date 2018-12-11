@@ -16,7 +16,7 @@ List settlements
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all settlements, ordered from new to old.
