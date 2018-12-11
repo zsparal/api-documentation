@@ -16,7 +16,7 @@ List issuers
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all available iDEAL issuers. This endpoint enables you to integrate iDEAL's bank selection screen into your own

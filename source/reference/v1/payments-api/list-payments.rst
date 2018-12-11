@@ -16,7 +16,7 @@ List payments
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.

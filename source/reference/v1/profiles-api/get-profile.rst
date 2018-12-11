@@ -3,13 +3,20 @@ Get profile
 .. api-name:: Profiles API
    :version: 1
 
+.. warning:: The v1 API has been deprecated. The v1 API will be supported for the foreseeable future, at least until
+             July 2023. However, new features will only be added to the v2 API.
+
+             The documentation for retrieving profiles in the new v2 API can be found
+             :doc:`here </reference/v2/profiles-api/get-profile>`. For more information on the v2 API, refer to our
+             :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
+
 .. endpoint::
    :method: GET
    :url: https://api.mollie.com/v1/profiles/*id*
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve details of a payment profile, using the profile's identifier.

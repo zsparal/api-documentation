@@ -16,7 +16,7 @@ List mandates
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all mandates of a customer.
