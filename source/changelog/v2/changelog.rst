@@ -6,6 +6,12 @@ changes are documented here.
 December 2018
 =============
 
+Tuesday, 11th
+-------------
+
+- We are now offering webhooks for order payments. Please note that when the status of the payment becomes ``paid`` we
+  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/create-order>` for more info.
+
 Monday, 10th
 ------------
 
