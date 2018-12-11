@@ -16,7 +16,7 @@ Create payment
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Payment creation is elemental to the Mollie API: this is where most payment implementations start off. Note optional

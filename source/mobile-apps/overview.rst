@@ -9,22 +9,22 @@ factors should be considered, such as store rules and regulations, and security 
 App store rules and regulations
 -------------------------------
 
-Some app stores place limitations on the any payment mechanism that does not use the app store's billing APIs.
+Some app stores place limitations on any payment mechanism that does not use the app store's billing APIs.
 
 iOS
 ^^^
-Apple is very strict when it comes to following the guidelines. They have an mandatory review what means that your app
+Apple is very strict when it comes to following the guidelines. They have a mandatory review which means that your app
 must be reviewed by Apple before it can be downloaded from the App Store. All the rules for iOS apps can be found in
 the `App Store Review Guidelines <https://developer.apple.com/app-store/review/guidelines/#payments>`_ under the section
 **Payments**.
 
-Under these guidelines you may only use external payment methods (such as provided by Mollie) for selling physical
-goods, not for digital goods or services.
+Under these guidelines you may only use external payment methods (e.g. the methods provided by Mollie) for selling
+physical goods, not for digital goods or services.
 
 Android
 ^^^^^^^
 Google is somewhat looser when it comes to checking apps before they can be distributed via the store. However, Google
-also has a number of guidelines for its Google Play store which you can found in the
+also has a number of guidelines for its Google Play store which you can find in the
 `Google Play Developer Policy <https://play.google.com/about/monetization-ads/payments/>`_. Google performs random
 checks to verify that apps comply with their guidelines.
 
@@ -34,7 +34,7 @@ You must use Google Play In-app Billing in any case, except when:
 * Payment is for digital content that may be consumed outside of the app itself (e.g. songs that can be played on other
   music players).
 
-Consult your app store's terms and conditions to get the exact limitations that apply to your situation.
+Consult your app store's terms and conditions to find out what exact limitations apply to your situation.
 
 Payment method rules and regulations
 ------------------------------------
@@ -84,8 +84,8 @@ of an embedded WebView inside your app.
 Webhooks
 --------
 
-Webhooks cannot be sent to mobile devices And since the payment status is not always known when your customer returns
+Webhooks cannot be sent to mobile devices and since the payment status is not always known when your customer returns
 to the app, you cannot rely on checking on your customer's return to your app.
 
-You should set the ``webhookUrl`` parameters to and endpoint on your trusted back end service, which then sends a silent
+You should set the ``webhookUrl`` parameters to an endpoint on your trusted back end service, which then sends a silent
 push notification to the app. The app can then show the appropriate messages or take appropriate action.

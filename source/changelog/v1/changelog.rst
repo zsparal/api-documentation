@@ -3,6 +3,20 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
+.. warning:: The v1 API has been deprecated. The v1 API will be supported for the foreseeable future, at least until
+             July 2023. However, new features will only be added to the v2 API.
+
+             For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
+
+December 2018
+=============
+
+Friday, 7th
+-----------
+
+- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
+  </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+
 November 2018
 =============
 
@@ -34,7 +48,6 @@ Wednesday, 24th
 ---------------
 
 - Consumer IBANs of Bancontact payments will now always be shared via the API.
-- Added :doc:`Organization access tokens </guides/authentication>` as an authentication method.
 
 Friday, 19th
 --------------

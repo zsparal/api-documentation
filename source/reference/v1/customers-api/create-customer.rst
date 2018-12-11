@@ -16,7 +16,7 @@ Create customer
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Creates a simple minimal representation of a customer in the Mollie API to use for the

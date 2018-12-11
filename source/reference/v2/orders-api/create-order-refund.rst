@@ -15,7 +15,9 @@ Create order refund
 
 When using the Orders API, refunds should be made against the order. When using *pay after delivery* payment methods
 such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive credit invoices with the
-correct product information on them.
+correct product information on them and have a great experience.
+
+However, if you want to refund arbitrary amounts you can use the Create Payment Refund API for Pay later and Slice it.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
 :doc:`cancel it instead </reference/v2/orders-api/cancel-order-lines>`. Order lines that are ``paid``, ``shipping`` or

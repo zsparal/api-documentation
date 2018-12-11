@@ -16,7 +16,7 @@ List subscriptions
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve all subscriptions of a customer.

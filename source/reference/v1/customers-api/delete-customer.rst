@@ -16,7 +16,7 @@ Delete customer
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Delete a customer. All mandates and subscriptions created for this customer will be canceled as well.

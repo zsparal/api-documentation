@@ -16,7 +16,7 @@ Get subscription
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a subscription by its ID and its customer's ID.

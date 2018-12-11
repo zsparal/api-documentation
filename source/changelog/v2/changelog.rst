@@ -6,6 +6,18 @@ changes are documented here.
 December 2018
 =============
 
+Monday, 10th
+------------
+
+- Enabling and disabling payment methods via the API is now possible via the
+  :doc:`Profiles API </reference/v2/profiles-api/enable-method>`.
+
+Friday, 7th
+-----------
+
+- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
+  </reference/v2/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+
 Tuesday, 4th
 ------------
 

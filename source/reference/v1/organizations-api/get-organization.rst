@@ -16,7 +16,7 @@ Get organization
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Organizations reflect the legal entities associated with the Mollie account. Payments, Refunds, Profiles, Settlements,

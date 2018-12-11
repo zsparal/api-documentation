@@ -25,7 +25,7 @@ process the refund once your balance increases.
 
 Any payments created for Orders can also be refunded using the Payment Refunds API. However, we recommend using the
 :doc:`Order Refund API </reference/v2/orders-api/create-order-refund>` in those cases so you can pass the order lines
-you are refunding too. For pay after delivery methods, this is mandatory.
+you are refunding too. For pay after delivery methods, this will improve your customer's experience.
 
 Possible errors
 ---------------

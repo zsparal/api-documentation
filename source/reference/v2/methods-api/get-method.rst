@@ -13,7 +13,9 @@ Get payment method
    :oauth: true
 
 Retrieve a single method by its ID. Note that if a method is not available on the website profile a status
-``404 Not found`` is returned. When the method is not enabled, a status ``403 Forbidden`` is returned.
+``404 Not found`` is returned. When the method is not enabled, a status ``403 Forbidden`` is returned. You can enable
+payments methods via the :doc:`Enable payment method endpoint </reference/v2/profiles-api/enable-method>` in the
+Profiles API.
 
 If you do not know the method's ID, you can use the
 :doc:`methods list endpoint </reference/v2/methods-api/list-methods>` to retrieve all payment methods that are
