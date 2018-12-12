@@ -116,7 +116,6 @@ Example
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-
       mollie_client.order.update('ord_kEn1PlbGa', {
         'billingAddress': {
             'organizationName': 'Mollie B.V.',

@@ -150,7 +150,6 @@ Example
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-
       order = mollie_client.orders.get('ord_stTC2WHAuS')
       refunds = order.refunds()
 
