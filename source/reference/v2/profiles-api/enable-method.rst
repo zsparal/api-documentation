@@ -59,9 +59,9 @@ Response
        "id": "bancontact",
        "description": "Bancontact",
        "image": {
-           "size1x": "https://mollie.com/external/icons/payment-methods/bancontact.png",
-           "size2x": "https://mollie.com/external/icons/payment-methods/bancontact%402x.png",
-           "svg": "https://mollie.com/external/icons/payment-methods/bancontact.svg"
+           "size1x": "https://www.mollie.com/external/icons/payment-methods/bancontact.png",
+           "size2x": "https://www.mollie.com/external/icons/payment-methods/bancontact%402x.png",
+           "svg": "https://www.mollie.com/external/icons/payment-methods/bancontact.svg"
        },
        "_links": {
            "self": {
