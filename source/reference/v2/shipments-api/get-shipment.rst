@@ -151,6 +151,14 @@ Example
       $order = $mollie->orders->get('ord_kEn1PlbGa');
       $shipment = $order->getShipment("shp_3wmsgCJN4U");
 
+   .. code-block:: python
+      :linenos:
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      order = mollie_client.orders.get('ord_kEn1PlbGa')
+      shipment = order.get_shipment('shp_3wmsgCJN4U')
+
 Response
 ^^^^^^^^
 .. code-block:: http
