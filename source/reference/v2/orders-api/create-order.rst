@@ -372,9 +372,17 @@ be passed during order creation:
 * ``payment.sequenceType``
 * ``payment.voucherNumber``
 * ``payment.voucherPin``
+* ``payment.webhookUrl``
 
 See the :ref:`payment-method-specific-parameters` for more information on these
 parameters.
+
+.. note:: You can set the ``payment.webhookUrl`` if you want to receive notifications about failed, canceled, or expired
+          order payments. Since we do not call your order webhook for these payment events, it can be useful for e.g.
+          sending your own payment reminders to your customers.
+
+          **Keep in mind:** When the status of the payment becomes ``paid`` we are calling your order webhook instead.
+          This prevents you from getting a double notification about one and the same.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
