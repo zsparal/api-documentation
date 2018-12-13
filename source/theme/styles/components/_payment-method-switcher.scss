@@ -1,5 +1,10 @@
 .dk-select.payment-methods {
-    float: right;
-    margin-top: -5px;
-    width: 240px;
+  float: right;
+  width: 240px;
+  z-index: 1;
+
+  @media (max-width: breakpoint('<medium')) {
+    float: none;
+    margin-bottom: 15px;
+  }
 }

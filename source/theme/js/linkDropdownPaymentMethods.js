@@ -30,15 +30,21 @@ export const addPaymentMethodDropdown = () => {
   //Gets all possible payment methods and the preferred one from storage
 
   // We need to get the payment methods block (different names in different pages, same prefix)
-  const paymentMethodsBlockArray = document.querySelectorAll('[id^=payment-method]');
+  const paymentMethods = document.querySelectorAll('[id^=payment-method-specific]');
 
-  if (paymentMethodsBlockArray.length) {
-    const paymentMethodsBlock = paymentMethodsBlockArray[0];
+  if (paymentMethods.length) {
+    const paymentMethodsBlock = paymentMethods[0];
+    const paymentMethodsBlockArray = Array.from(paymentMethodsBlock.childNodes);
 
-    // Get the prefered method, either from storage or the default one.
+    // Get the prefered method, from hash, storage or the default one.
     const storedMethod = localStorage.getItem('preferredPaymentMethod');
+    const hashMethod = window.location.hash && window.location.hash.replace('#', '');
+
     let preferredMethod;
-    if (storedMethod && storedMethod !== 'undefined') {
+
+    if (hashMethod) {
+      preferredMethod = hashMethod;
+    } else if (storedMethod && storedMethod !== 'undefined') {
       preferredMethod = storedMethod;
     } else {
       preferredMethod = DEFAULT_METHOD;
@@ -46,30 +52,30 @@ export const addPaymentMethodDropdown = () => {
 
     let options = '';
     let firstMethod;
-
-    // Adds the selector option for each method
-    paymentMethodsBlock.childNodes.forEach(method => {
+    paymentMethodsBlockArray.forEach(method => {
+      // Adds the selector option for each method (use classic for loop for IE11)
       // Inside the block, we are interested in the divs, not the title nor the description
-      if (method.nodeName === 'DIV') {
-        // We save the first payment method to append the dropdown to it later.
-        if (!firstMethod) {
-          firstMethod = method;
-        }
-        // Defined which one is selected && hide the rest
-        const isSelected = method.id === preferredMethod;
-        if (!isSelected) {
-          method.classList.add('u-screenreader-only');
-          method.setAttribute('aria-hidden', 'true');
-        }
-        // We need the payment method title to display it in the options
-        const methodTitle = method.getElementsByTagName('H4');
-        if (methodTitle.length) {
-          const methodName = methodTitle[0].textContent.replace('¶', '');
-          // Build the options, with their names and if they are selected or not
-          options += `<option value="${method.id}" ${
-            isSelected ? ' selected' : ''
-          }>${methodName}</option>`;
-        }
+      if (method.nodeName !== 'DIV') {
+        return;
+      }
+      // We save the first payment method to append the dropdown to it later.
+      if (!firstMethod) {
+        firstMethod = method;
+      }
+      // Defined which one is selected && hide the rest
+      const isSelected = method.id === preferredMethod;
+      if (!isSelected) {
+        method.classList.add('u-screenreader-only');
+        method.setAttribute('aria-hidden', 'true');
+      }
+      // We need the payment method title to display it in the options
+      const methodTitle = method.getElementsByTagName('H4');
+      if (methodTitle.length) {
+        const methodName = methodTitle[0].textContent.replace('¶', '');
+        // Build the options, with their names and if they are selected or not
+        options += `<option value="${method.id}" ${
+          isSelected ? ' selected' : ''
+        }>${methodName}</option>`;
       }
     });
     // We build the element and add it to the DOM
