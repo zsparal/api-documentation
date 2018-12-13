@@ -68,6 +68,10 @@ Response
                "href": "https://api.mollie.com/v2/methods/bancontact",
                "type": "application/hal+json"
            },
+           "profile": {
+               "href": "https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw",
+               "type": "application/hal+json"
+           },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/profiles-api/activate-method",
                "type": "text/html"

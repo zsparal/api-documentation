@@ -58,7 +58,7 @@ html: Makefile source/_static/style.css source/_static/index.js source/_static/g
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 .PHONY: html-only
-html-only:
+html-only: verify
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 html-production: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
