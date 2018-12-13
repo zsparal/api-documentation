@@ -111,6 +111,28 @@ Example
       $order->billingAddress->phone = "+31208202070";
       $order->update();
 
+   .. code-block:: python
+      :linenos:
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+      mollie_client.order.update('ord_kEn1PlbGa', {
+        'billingAddress': {
+            'organizationName': 'Mollie B.V.',
+            'streetAndNumber': 'Keizersgracht 313',
+            'city': 'Amsterdam',
+            'region': 'Noord-Holland',
+            'postalCode': '1234AB',
+            'country': 'NL',
+            'title': 'Dhr',
+            'givenName': 'Piet',
+            'familyName': 'Mondriaan',
+            'email': 'piet@mondriaan.com',
+            'phone': '+31208202070'
+        }
+      }
+
 Response
 ^^^^^^^^
 .. code-block:: http

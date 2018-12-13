@@ -546,6 +546,13 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
       $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
 
+   .. code-block:: python
+      :linenos:
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      order = mollie_client.orders.get('ord_stTC2WHAuS')
+
 Response
 ^^^^^^^^
 .. code-block:: http
