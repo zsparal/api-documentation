@@ -138,3 +138,11 @@ Refunding
 Refunding works almost the same as in the payments API. You will have to use the
 :doc:`Create order refund </reference/v2/orders-api/create-order-refund>` API and specify which order lines are to be
 refunded. If no lines are specified the whole order will be refunded.
+
+Payments
+--------
+An order always has a payment that is used by your customer to pay for the order. If the payment is
+canceled, expires, or fails, it is possible to create a new payment using the
+:doc:`Create order payment </reference/v2/orders-api/create-order-payment>` API. This has the
+advantage that you do not need to create a new order, and can keep the order relation with your
+internal e-commerce system. Note that this is only possible for orders that have a ``created`` status.
