@@ -4,6 +4,8 @@ Webhooks are used to process real-time status updates, for example when a paymen
 with the ID of the updated object. When Mollie calls your webhook, you should fetch the latest status and process it if
 the status was changed.
 
+.. note:: Check against your records that the resource actually has been changed when your webhook is called.
+
 Example
 -------
 The most important example of a webhook is when a payment is paid. If you created the payment with a webhook URL, we
@@ -74,6 +76,10 @@ the webhook call as failed and try again later.
 
 In total we will call your webhook 10 times with an increasing interval. If after the 10\ :sup:`th` call we still do not
 get a ``200 OK`` response, we will stop trying.
+
+How to handle unknown IDs?
+--------------------------
+To not leak any information to malicious third parties, it is recommended to return a ``200 OK`` response even if the ID is not known to your system.
 
 What IPs will the webhook requests be originating from?
 -------------------------------------------------------
