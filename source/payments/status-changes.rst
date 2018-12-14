@@ -71,6 +71,7 @@ Expiry times per payment method
 | - Credit card             | 30 minutes                        |
 +---------------------------+-----------------------------------+
 | - Bancontact              | 1 hour                            |
+| - Belfius Pay Button      |                                   |
 | - Bitcoin                 |                                   |
 | - EPS                     |                                   |
 | - Giropay                 |                                   |
@@ -79,8 +80,7 @@ Expiry times per payment method
 +---------------------------+-----------------------------------+
 | - PayPal                  | 3 hours                           |
 +---------------------------+-----------------------------------+
-| - Belfius Pay Button      | Next business day at 09:00 AM     |
-| - ING Home'Pay            |                                   |
+| - ING Home'Pay            | Next business day at 09:00 AM     |
 +---------------------------+-----------------------------------+
 | - Bank transfer [#f1]_    | 12(+2) days                       |
 +---------------------------+-----------------------------------+

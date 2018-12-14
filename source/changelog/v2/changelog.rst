@@ -6,6 +6,11 @@ changes are documented here.
 December 2018
 =============
 
+Friday, 14th
+------------
+
+- The expiry period for `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_ has been decreased from 1 day to 1 hour.
+
 Thursday, 13th
 --------------
 
