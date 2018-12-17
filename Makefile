@@ -50,7 +50,9 @@ lint-js:
 # This checks for links that are missing the trailing underscore. They are valid reStructured text but probably not your
 # intention.
 verify:
-	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)'
+	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)' ;
+	! grep 'mollie\.test' -r  source/ ;
+	! grep 'mollie\.dev' -r  source/ ;
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
@@ -58,7 +60,7 @@ html: Makefile source/_static/style.css source/_static/index.js source/_static/g
 	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 .PHONY: html-only
-html-only:
+html-only: verify
 	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 html-production: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify

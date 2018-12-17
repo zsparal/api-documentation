@@ -59,13 +59,17 @@ Response
        "id": "bancontact",
        "description": "Bancontact",
        "image": {
-           "size1x": "https://mollie.dev/external/icons/payment-methods/bancontact.png",
-           "size2x": "https://mollie.dev/external/icons/payment-methods/bancontact%402x.png",
-           "svg": "https://mollie.dev/external/icons/payment-methods/bancontact.svg"
+           "size1x": "https://www.mollie.com/external/icons/payment-methods/bancontact.png",
+           "size2x": "https://www.mollie.com/external/icons/payment-methods/bancontact%402x.png",
+           "svg": "https://www.mollie.com/external/icons/payment-methods/bancontact.svg"
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.dev/v2/methods/bancontact",
+               "href": "https://api.mollie.com/v2/methods/bancontact",
+               "type": "application/hal+json"
+           },
+           "profile": {
+               "href": "https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw",
                "type": "application/hal+json"
            },
            "documentation": {
