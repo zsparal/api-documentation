@@ -124,10 +124,15 @@
 			'Get order',
 			'GET /v2/orders/*'
 		) }}
-    {{ sidebar_item(
+		{{ sidebar_item(
 			'reference/v2/orders-api/update-order',
 			'Update order',
 			'PATCH /v2/orders/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/orders-api/update-orderline',
+			'Update order line',
+			'PATCH /v2/orders/*/lines/*'
 		) }}
 		{{ sidebar_item(
 		'reference/v2/orders-api/cancel-order',
