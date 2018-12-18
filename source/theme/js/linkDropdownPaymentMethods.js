@@ -42,7 +42,7 @@ export const addPaymentMethodDropdown = () => {
 
     let preferredMethod;
 
-    if (hashMethod) {
+    if (hashMethod && paymentMethodsBlockArray.some(m => m.id === hashMethod)) {
       preferredMethod = hashMethod;
     } else if (storedMethod && storedMethod !== 'undefined') {
       preferredMethod = storedMethod;
