@@ -12,7 +12,8 @@ Update order line
    :organization_access_tokens: true
    :oauth: true
 
-This endpoint can be used to update the order line.
+This endpoint can be used to update the order line. Only the lines that belong to an order with status ``created``,
+``pending`` or ``authorized`` can be updated.
 
 When updating an order line that uses a *pay after delivery* method such as *Klarna Pay later*,
 Klarna may decline the requested changes, resulting in an error response from the Mollie API.
