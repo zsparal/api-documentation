@@ -12,6 +12,11 @@ Thursday, 20th
 - Added the ``locale`` field to organization details. This represents the locale that the merchant has set in their
   Mollie Dashboard.
 
+Tuesday, 18th
+-------------
+
+- Added a new endpoint to update order lines. For details, see: :doc:`Update order line </reference/v2/orders-api/update-orderline>`
+
 Friday, 14th
 ------------
 
