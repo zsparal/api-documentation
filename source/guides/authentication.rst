@@ -6,7 +6,7 @@ Getting started
 The Mollie API offers three authentication methods:
 
 * **API keys**: basic API access for a specific payment profile.
-* **Organization access tokens**: advanced API access for organization-level data.
+* **Organization access tokens**: advanced API access for organization-level data. (API v2 and later)
 * **App access tokens (OAuth)**: for app developers who need access to the Mollie accounts of their app users.
 
 We recommend creating basic API keys to get started.

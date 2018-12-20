@@ -124,10 +124,15 @@
 			'Get order',
 			'GET /v2/orders/*'
 		) }}
-    {{ sidebar_item(
+		{{ sidebar_item(
 			'reference/v2/orders-api/update-order',
 			'Update order',
 			'PATCH /v2/orders/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/orders-api/update-orderline',
+			'Update order line',
+			'PATCH /v2/orders/*/lines/*'
 		) }}
 		{{ sidebar_item(
 		'reference/v2/orders-api/cancel-order',
@@ -145,14 +150,19 @@
 			'DELETE /v2/orders/*/lines'
 		) }}
 		{{ sidebar_item(
+			'reference/v2/orders-api/create-order-payment',
+			'Create order payment',
+			'POST /v2/orders/*/payments'
+		) }}
+		{{ sidebar_item(
 			'reference/v2/orders-api/create-order-refund',
 			'Create order refund',
-			'POST /v2/orders/*/refunds/'
+			'POST /v2/orders/*/refunds'
 		) }}
 		{{ sidebar_item(
 			'reference/v2/orders-api/list-order-refunds',
 			'List order refunds',
-			'GET /v2/orders/*/refunds/'
+			'GET /v2/orders/*/refunds'
 		) }}
 	</ul>
 </div>
@@ -373,6 +383,16 @@
 			'reference/v2/profiles-api/delete-profile',
 			'Delete profile',
 			'DELETE /v2/profiles/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/profiles-api/enable-method',
+			'Enable payment method',
+			'POST /v2/profiles/*/methods/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/profiles-api/disable-method',
+			'Disable payment method',
+			'DELETE /v2/profiles/*/methods/*'
 		) }}
 		{{ sidebar_item(
 			'reference/v2/profiles-api/list-profiles',

@@ -16,7 +16,7 @@ Update customer
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Update an existing customer.

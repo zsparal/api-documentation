@@ -9,7 +9,7 @@ Get permission
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 All API actions through OAuth are by default protected for privacy and/or money related reasons and therefore require

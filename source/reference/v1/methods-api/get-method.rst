@@ -16,7 +16,7 @@ Get payment method
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a payment method object by its payment method identifier.

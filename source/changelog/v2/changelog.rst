@@ -12,6 +12,25 @@ Thursday, 20th
 - Added the ``locale`` field to organization details. This represents the locale that the merchant has set in their
   Mollie Dashboard.
 
+Friday, 14th
+------------
+
+- The expiry period for `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_ has been decreased from 1 day to 1 hour.
+
+Thursday, 13th
+--------------
+
+- It is now possible to create (another) payment for an order via the
+  :doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>` on the Orders API.
+- We are now offering webhooks for order payments. Please note that when the status of the payment becomes ``paid`` we
+  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/create-order>` for more info.
+
+Monday, 10th
+------------
+
+- Enabling and disabling payment methods via the API is now possible via the
+  :doc:`Profiles API </reference/v2/profiles-api/enable-method>`.
+
 Friday, 7th
 -----------
 

@@ -48,7 +48,6 @@ Wednesday, 24th
 ---------------
 
 - Consumer IBANs of Bancontact payments will now always be shared via the API.
-- Added :doc:`Organization access tokens </guides/authentication>` as an authentication method.
 
 Friday, 19th
 --------------

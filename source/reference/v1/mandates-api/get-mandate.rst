@@ -16,7 +16,7 @@ Get mandate
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve a mandate by its ID and its customer's ID. The mandate will either contain IBAN or credit card details,

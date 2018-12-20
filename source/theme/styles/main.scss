@@ -135,7 +135,7 @@ a.headerlink::before {
 :target::before {
   content: '';
   display: block;
-  height: 130px;
+  height: 150px;
   margin: -130px 0 0;
 }
 
@@ -204,6 +204,7 @@ a.headerlink::before {
 @import 'components/sub-navigation';
 @import 'components/sub-navigation-item';
 @import 'components/type';
+@import 'components/payment-method-switcher';
 
 /**
  * Utilities

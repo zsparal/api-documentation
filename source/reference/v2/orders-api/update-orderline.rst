@@ -1,41 +1,60 @@
-Cancel order
-==============
+Update order line
+=================
 .. api-name:: Orders API
    :version: 2
 
 .. endpoint::
-   :method: DELETE
-   :url: https://api.mollie.com/v2/orders/*id*
+   :method: PATCH
+   :url: https://api.mollie.com/v2/orders/*orderId*/lines/*orderlineId*
 
 .. authentication::
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
 
-The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``
-[#f1]_.
+This endpoint can be used to update the order line. Only the lines that belong to an order with status ``created``,
+``pending`` or ``authorized`` can be updated.
 
-#. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
-#. In case of ``authorized``, the authorization will be released, all order lines will be canceled and the new order
-   status will be ``canceled``.
-#. In case of ``shipping``, any order lines that are still ``authorized`` will be canceled and order lines that are
-   ``shipping`` will be completed. The new order status will be ``completed``.
-
-For more information about the status transitions please check our
-:doc:`order status changes guide </orders/status-changes>`.
-
-.. [#f1] If the order status is ``shipping``, some order lines can have the status ``paid`` if the order was paid using
-         a payment method that does not support authorizations (such as iDEAL) and the order lines are not shipped yet.
-         In this case, the order cannot be canceled. You should create refunds for these order lines instead.
+When updating an order line that uses a *pay after delivery* method such as *Klarna Pay later*,
+Klarna may decline the requested changes, resulting in an error response from the Mollie API.
+The order remains intact, though the requested changes are not persisted.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
+Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbjz8x``. And replace the
+``orderlineId`` in the URL by the order line ID, for example ``odl_dgtxyl``
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Please note that even though all parameters are optional, at least one of them needs to be provided
+in the request.
+
+.. list-table::
+   :widths: auto
+
+   * - ``name``
+
+       .. type:: string
+          :required: false
+
+     - A description of the order line, for example *LEGO 4440 Forest Police Station*.
+
+   * - ``imageUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to an image of the product sold.
+
+   * - ``productUrl``
+
+       .. type:: string
+          :required: false
+
+     - A link pointing to the product page in your web shop of the product sold.
+
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
 
 .. list-table::
    :widths: auto
@@ -45,13 +64,14 @@ available.
        .. type:: boolean
           :required: false
 
-     - Set this to ``true`` to cancel a test mode order.
+     - Set this to ``true`` to update a test mode order line.
 
 Response
 --------
 ``200`` ``application/hal+json``
 
-An order object is returned, as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
+An order object is returned, as described in
+:doc:`Get order </reference/v2/orders-api/get-order>`.
 
 Example
 -------
@@ -60,23 +80,13 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U \
-         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-
-   .. code-block:: php
-      :linenos:
-
-      <?php
-      $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $order = $mollie->orders->cancel("ord_8wmqcHMN4U");
-
-   .. code-block:: python
-      :linenos:
-
-      mollie_client = Client()
-      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-      order = mollie_client.orders.delete('ord_8wmqcHMN4U')
+      curl -X PATCH https://api.mollie.com/v2/orders/ord_pbjz8x/lines/odl_dgtxyl \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d '{
+               "name": "LEGO 71043 Hogwarts™ Castle",
+               "productUrl": "https://shop.lego.com/en-GB/product/Hogwarts-Castle-71043",
+               "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/71043_alt1?$main$"
+         }'
 
 Response
 ^^^^^^^^
@@ -88,27 +98,32 @@ Response
 
    {
         "resource": "order",
-        "id": "ord_8wmqcHMN4U",
+        "id": "ord_pbjz8x",
         "profileId": "pfl_URR55HPMGx",
+        "method": "ideal",
         "amount": {
             "value": "1027.99",
             "currency": "EUR"
         },
-        "status": "canceled",
-        "isCancelable": false,
+        "status": "created",
+        "isCancelable": true,
         "metadata": null,
         "createdAt": "2018-08-02T09:29:56+00:00",
+        "expiresAt": "2018-08-30T09:29:56+00:00",
         "mode": "live",
         "locale": "nl_NL",
         "billingAddress": {
             "organizationName": "Mollie B.V.",
             "streetAndNumber": "Keizersgracht 313",
-            "postalCode": "1016 EE",
             "city": "Amsterdam",
-            "country": "nl",
-            "givenName": "Luke",
-            "familyName": "Skywalker",
-            "email": "luke@skywalker.com"
+            "region": "Noord-Holland",
+            "postalCode": "1234AB",
+            "country": "NL",
+            "title": "Dhr",
+            "givenName": "Piet",
+            "familyName": "Mondriaan",
+            "email": "piet@mondriaan.com",
+            "phone": "+31208202070"
         },
         "orderNumber": "18475",
         "shippingAddress": {
@@ -121,17 +136,16 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
-        "canceledAt": "2018-08-03T09:29:56+00:00",
-        "redirectUrl": "https://example.org/redirect",
+       "redirectUrl": "https://example.org/redirect",
         "lines": [
             {
                 "resource": "orderline",
                 "id": "odl_dgtxyl",
                 "orderId": "ord_pbjz8x",
-                "name": "LEGO 42083 Bugatti Chiron",
+                "name": "LEGO 71043 Hogwarts™ Castle",
                 "sku": "5702016116977",
                 "type": "physical",
-                "status": "canceled",
+                "status": "created",
                 "isCancelable": false,
                 "quantity": 2,
                 "quantityShipped": 0,
@@ -144,14 +158,14 @@ Response
                     "value": "0.00",
                     "currency": "EUR"
                 },
-                "quantityCanceled": 2,
+                "quantityCanceled": 0,
                 "amountCanceled": {
-                    "value": "698.00",
+                    "value": "0.00",
                     "currency": "EUR"
                 },
-                "shippableQuantity": 0,
-                "refundableQuantity": 0,
-                "cancelableQuantity": 0,
+               "shippableQuantity": 0,
+               "refundableQuantity": 0,
+               "cancelableQuantity": 0,
                 "unitPrice": {
                     "value": "399.00",
                     "currency": "EUR"
@@ -172,11 +186,11 @@ Response
                 "createdAt": "2018-08-02T09:29:56+00:00",
                 "_links": {
                     "productUrl": {
-                        "href": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                        "href": "https://shop.lego.com/en-GB/product/Hogwarts-Castle-71043",
                         "type": "text/html"
                     },
                     "imageUrl": {
-                        "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                        "href": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/71043_alt1?$main$",
                         "type": "text/html"
                     }
                 }
@@ -188,7 +202,7 @@ Response
                 "name": "LEGO 42056 Porsche 911 GT3 RS",
                 "sku": "5702015594028",
                 "type": "physical",
-                "status": "canceled",
+                "status": "created",
                 "isCancelable": false,
                 "quantity": 1,
                 "quantityShipped": 0,
@@ -201,14 +215,14 @@ Response
                     "value": "0.00",
                     "currency": "EUR"
                 },
-                "quantityCanceled": 1,
+                "quantityCanceled": 0,
                 "amountCanceled": {
-                    "value": "329.99",
+                    "value": "0.00",
                     "currency": "EUR"
                 },
-                "shippableQuantity": 0,
-                "refundableQuantity": 0,
-                "cancelableQuantity": 0,
+               "shippableQuantity": 0,
+               "refundableQuantity": 0,
+               "cancelableQuantity": 0,
                 "unitPrice": {
                     "value": "329.99",
                     "currency": "EUR"
@@ -249,4 +263,4 @@ Response
                 "type": "text/html"
             }
         }
-    }
+   }

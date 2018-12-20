@@ -9,7 +9,7 @@ List permissions
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 List all permissions available with the current app access token.

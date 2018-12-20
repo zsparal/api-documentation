@@ -16,7 +16,7 @@ Get next settlement
 
 .. authentication::
    :api_keys: false
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Retrieve the details of the current settlement that has not yet been paid out.

@@ -16,7 +16,7 @@ Create refund
 
 .. authentication::
    :api_keys: true
-   :organization_access_tokens: true
+   :organization_access_tokens: false
    :oauth: true
 
 Most payment methods support refunds. This means you can request your payment to be refunded to your customer. The
