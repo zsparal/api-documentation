@@ -6,6 +6,12 @@ changes are documented here.
 December 2018
 =============
 
+Thursday, 20th
+--------------
+
+- Added the ``locale`` field to organization details. This represents the locale that the merchant has set in their
+  Mollie Dashboard.
+
 Friday, 7th
 -----------
 

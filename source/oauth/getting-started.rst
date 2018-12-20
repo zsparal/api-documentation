@@ -44,3 +44,6 @@ Have merchants start using your app
 -----------------------------------
 Using the access token on the Mollie API, your app may now access the merchant's account data, allowing the merchant to
 start using your app.
+
+It's possible to retrieve the merchants preferred locale via :doc:`Organization details </reference/v2/organizations-api/get-organization>`.
+It is recommended to switch your app's locale to the merchant's locale after the OAuth flow.
