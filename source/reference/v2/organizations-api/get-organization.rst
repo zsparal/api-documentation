@@ -50,6 +50,12 @@ Response
 
      - The name of the organization.
 
+   * - ``locale``
+
+       .. type:: string
+
+     - The preferred locale of the merchant which has been set in Mollie Dashboard.
+
    * - ``address``
 
        .. type:: address object
