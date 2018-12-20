@@ -6,6 +6,11 @@ changes are documented here.
 December 2018
 =============
 
+Tuesday, 18th
+-------------
+
+- Added a new endpoint to update order lines. For details, see: :doc:`Update order line </reference/v2/orders-api/update-orderline>`
+
 Friday, 14th
 ------------
 
