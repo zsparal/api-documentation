@@ -92,3 +92,7 @@ Permissions can be requested by redirecting the resource owner to the
    * - | ``organizations.write``
        | Organizations API
      - Change the merchant's organizational details.
+
+   * - | ``onboarding.read``
+       | Onboarding API
+     - View the merchant's onboarding status.
