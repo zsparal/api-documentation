@@ -37,12 +37,6 @@ Response
 
      - The name of the organization.
 
-   * - ``email``
-
-       .. type:: string
-
-     - The email address of the organization.
-
    * - ``signedUpAt``
 
        .. type:: datetime
@@ -127,7 +121,6 @@ Response
    {
        "resource": "onboarding",
        "name": "Mollie B.V.",
-       "email": "info@mollie.com",
        "signedUpAt": "2018-12-20T10:49:08+00:00",
        "status": "completed",
        "canReceivePayments": true,
