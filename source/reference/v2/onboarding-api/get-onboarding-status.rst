@@ -58,7 +58,6 @@ Response
        * ``needs-data`` The onboarding is not completed and the merchant needs to provide (more) information
        * ``in-review`` The merchant provided all information and Mollie needs to check this
        * ``completed`` The onboarding is completed
-       * ``rejected`` The merchant is rejected as a customer of Mollie
 
    * - ``canReceivePayments``
 
