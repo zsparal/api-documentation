@@ -111,6 +111,7 @@ Example
 
       curl -X GET https://api.mollie.com/v2/organizations/me \
       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
    .. code-block:: php
       :linenos:
 
@@ -118,6 +119,17 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $currentOrganization = $mollie->organizations->current();
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      organization = Mollie::Organization.current
 
 Response
 ^^^^^^^^
