@@ -74,6 +74,7 @@ Example
       :linenos:
 
       curl -X PATCH https://api.mollie.com/v2/orders/ord_kEn1PlbGa \
+         -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
                "billingAddress": {
@@ -90,6 +91,7 @@ Example
                   "phone": "+31208202070"
                }
          }'
+
    .. code-block:: php
       :linenos:
 

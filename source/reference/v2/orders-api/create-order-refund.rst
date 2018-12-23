@@ -118,6 +118,7 @@ Example
       :linenos:
 
       curl -X POST https://api.mollie.com/v2/orders/ord_stTC2WHAuS/refunds \
+         -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
                   "lines": [

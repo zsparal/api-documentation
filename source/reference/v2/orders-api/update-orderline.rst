@@ -81,6 +81,7 @@ Example
       :linenos:
 
       curl -X PATCH https://api.mollie.com/v2/orders/ord_pbjz8x/lines/odl_dgtxyl \
+         -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
                "name": "LEGO 71043 Hogwarts™ Castle",
