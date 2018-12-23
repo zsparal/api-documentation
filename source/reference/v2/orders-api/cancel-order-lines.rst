@@ -115,6 +115,7 @@ Example
       :linenos:
 
       curl -X DELETE https://api.mollie.com/v2/orders/ord_8wmqcHMN4U/lines \
+         -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
                "lines": [
@@ -127,6 +128,7 @@ Example
                   }
                ]
          }'
+
    .. code-block:: php
       :linenos:
 
