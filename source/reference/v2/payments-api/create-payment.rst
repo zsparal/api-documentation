@@ -622,6 +622,7 @@ Example
          -d "redirectUrl=https://webshop.example.org/order/12345/" \
          -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
          -d "metadata={\"order_id\": \"12345\"}"
+
    .. code-block:: php
       :linenos:
 
@@ -640,7 +641,6 @@ Example
             "order_id" => "12345",
       ],
       ]);
-
 
    .. code-block:: python
       :linenos:
@@ -661,6 +661,28 @@ Example
                'order_id': '12345'
          }
       })
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      payment = Mollie::Payment.create(
+        amount: {
+          currency: 'EUR',
+          value: '10.00'
+        },
+        description: 'My first payment',
+        redirect_url: 'https://webshop.example.org/order/12345/',
+        webhook_url: 'https://webshop.example.org/payments/webhook/',
+        metadata: {
+          order_id: '12345'
+        }
+      )
 
 Response
 ^^^^^^^^

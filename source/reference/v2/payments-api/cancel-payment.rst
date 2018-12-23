@@ -70,6 +70,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       canceled_payment = mollie_client.payments.delete('tr_WDqYK6vllg')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      canceled_payment = Mollie::Payment.cancel('tr_WDqYK6vllg')
+
 Response
 ^^^^^^^^
 .. code-block:: http
