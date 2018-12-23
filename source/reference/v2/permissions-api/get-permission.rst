@@ -97,6 +97,17 @@ Example
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $permission = $mollie->permissions->get("payments.read");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      permission = Mollie::Permission.get('payments.read')
+
 Response
 ^^^^^^^^
 .. code-block:: http
