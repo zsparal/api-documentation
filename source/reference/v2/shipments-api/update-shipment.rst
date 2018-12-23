@@ -84,6 +84,7 @@ Example
       :linenos:
 
       curl -X POST https://api.mollie.com/v2/orders/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U \
+         -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
                  "tracking": {
@@ -91,7 +92,7 @@ Example
                      "code": "3SKABA000000000",
                      "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C"
                  }
-             }
+             }'
 
    .. code-block:: php
       :linenos:
