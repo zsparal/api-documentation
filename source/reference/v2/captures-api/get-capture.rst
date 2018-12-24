@@ -169,6 +169,20 @@ Example
       $payment = $mollie->payments->get("tr_WDqYK6vllg");
       $capture = $payment->getCapture("cpt_4qqhO89gsT");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      capture = Mollie::Payment::Capture.get(
+        'cpt_4qqhO89gsT',
+        payment_id: 'tr_WDqYK6vllg'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

@@ -176,6 +176,20 @@ Example
       payment = mollie_client.payments.get('tr_WDqYK6vllg')
       chargeback = mollie_client.payment_chargebacks.on(payment).get('chb_n9z0tp')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      chargeback = Mollie::Payment::Chargeback.get(
+        'chb_n9z0tp',
+        payment_id: 'tr_WDqYK6vllg'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

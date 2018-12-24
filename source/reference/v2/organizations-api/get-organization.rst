@@ -115,6 +115,17 @@ Example
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $organization = $mollie->organizations->get("org_12345678");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      organization = Mollie::Organization.get('org_12345678')
+
 Response
 ^^^^^^^^
 .. code-block:: http

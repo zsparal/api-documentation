@@ -139,6 +139,23 @@ Example
       payment = mollie_client.payments.get('tr_WDqYK6vllg')
       chargebacks = payment.chargebacks
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      # List chargebacks for a single payment
+      payment = Mollie::Payment.get('tr_WDqYK6vllg')
+      chargebacks = payment.chargebacks
+
+      # List chargebacks across all payments on the payment profile
+      # (For all chargebacks on the organizations, use an OAuth or Organization access token.)
+      chargebacks = Mollie::Chargeback.all
+
 Response
 ^^^^^^^^
 .. code-block:: http

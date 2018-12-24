@@ -178,6 +178,21 @@ Example
       # get the next page
       next_payments = payments.get_next()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      # get the first page
+      payments = Mollie::Payment.all
+
+      # get the next page
+      next_payments = payments.next
+
 Response
 ^^^^^^^^
 .. code-block:: http
