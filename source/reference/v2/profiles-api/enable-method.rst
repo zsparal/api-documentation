@@ -75,7 +75,7 @@ Response
        }
    }
 
-Example (method that can not be enabled)
+Example (method that cannot be enabled)
 ----------------------------------------
 Request
 ^^^^^^^
@@ -103,7 +103,7 @@ Response
                    "type": "text/html"
             },
             "documentation": {
-                   "href": ":doc:`https://docs.mollie.com/guides/handling-errors </guides/handling-errors>`",
+                   "href": "https://docs.mollie.com/guides/handling-errors",
                    "type": "text/html"
             }
        }
