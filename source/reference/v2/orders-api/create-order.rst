@@ -416,6 +416,13 @@ specify which profile the payment belongs to. Organizations can have multiple pr
      - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
        payment and transfer this to your own account.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint also allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payments`` Include all :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
+
 Response
 --------
 ``201`` ``application/hal+json``
