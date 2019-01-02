@@ -178,7 +178,7 @@ Response
                "metadata": {
                    "order_id": "12345"
                },
-               "locale": "nl_NL",
+               "locale": "nl",
                "profileId": "pfl_QkEhN94Ba",
                "links": {
                    "redirectUrl": "https://webshop.example.org/order/12345/"
