@@ -38,12 +38,7 @@ Response
 
        .. type:: string
 
-     - The permission's unique identifier, for example ``payments.read``. See
-       :doc:`Permissions </oauth/permissions>` for details about the available permissions.
-
-       Possible values: ``customers.read`` ``customers.write`` ``invoices.read`` ``mandates.read``
-       ``mandates.write`` ``organizations.read`` ``organizations.write`` ``payments.read`` ``payments.write``
-       ``profiles.read`` ``profiles.write`` ``refunds.read`` ``refunds.write`` ``settlements.read``
+     - The permission's unique identifier, for example ``payments.read``
 
    * - ``description``
 
