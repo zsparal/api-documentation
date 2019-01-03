@@ -18,7 +18,7 @@ When the payment expires you can create a new payment for the order using this e
 A new payment can only be created while the status of the order is ``created``, and when the status
 of the existing payment is either ``expired``, ``canceled`` or ``failed``.
 
-Not that order details (for example ``amount`` or ``webhookUrl``) can not be changed using this endpoint.
+Note that order details (for example ``amount`` or ``webhookUrl``) can not be changed using this endpoint.
 
 Parameters
 ----------
