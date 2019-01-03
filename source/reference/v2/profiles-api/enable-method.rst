@@ -40,6 +40,7 @@ Example (method that can be enabled)
 ------------------------------------
 Request
 ^^^^^^^
+
 .. code-block-selector::
   .. code-block:: bash
       :linenos:
