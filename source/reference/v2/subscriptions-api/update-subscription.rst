@@ -149,8 +149,8 @@ Example
 
       $subscription = $customer->getSubscription("sub_8EjeBVgtEn");
       $subscription->amount = (object) [
-      "currency" => "EUR",
-      "value" => "10.00",
+            "currency" => "EUR",
+            "value" => "10.00",
       ];
       $subscription->times = 42;
       $subscription->startDate = "2018-12-12";

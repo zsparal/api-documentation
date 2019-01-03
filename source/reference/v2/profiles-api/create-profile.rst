@@ -115,12 +115,12 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $profile = $mollie->profiles->create([
-      "name" => "My website name",
-      "website" => "https://www.mywebsite.com",
-      "email" => "info@mywebsite.com",
-      "phone" => "+31208202070",
-      "categoryCode" => "5399",
-      "mode" => "live",
+            "name" => "My website name",
+            "website" => "https://www.mywebsite.com",
+            "email" => "info@mywebsite.com",
+            "phone" => "+31208202070",
+            "categoryCode" => "5399",
+            "mode" => "live",
       ]);
 
 Response

@@ -148,7 +148,7 @@ Example
 
       // Alternative shorthand for refunding all eligible order lines
       $order->refundAll([
-      "description" => "Required quantity not in stock, refunding one photo book.",
+            "description" => "Required quantity not in stock, refunding one photo book.",
       ]);
 
    .. code-block:: python
