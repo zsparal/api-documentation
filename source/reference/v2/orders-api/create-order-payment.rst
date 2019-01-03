@@ -129,10 +129,15 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       $order = $mollie->orders->get("ord_stTC2WHAuS");
-      $order->payments([
+      $payment = $order->createPayment([
           "method" => "banktransfer",
           "dueDate" => "2018-12-21",
       ]);
+
+      $checkoutUrl = $payment->getCheckoutUrl();
+      if(! is_null($checkoutUrl)) {
+          // ... redirect the customer to the checkout url
+      }
 
 Response
 ^^^^^^^^
