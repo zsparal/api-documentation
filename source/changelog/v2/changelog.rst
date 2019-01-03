@@ -3,6 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+January 2019
+============
+
+Thursday, 3th
+-------------
+
+- Added a new API for getting the onboarding status of a merchant. You will need the new OAuth scope ``onboarding.read``
+  to access the data. For details, see the :doc:`Onboarding API </reference/v2/onboarding-api/get-onboarding-status>`.
+
 December 2018
 =============
 
