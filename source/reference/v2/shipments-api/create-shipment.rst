@@ -188,11 +188,11 @@ Example
 
       // Alternative shorthand for shipping all remaining order lines
       $shipment = $order->shipAll([
-      'tracking' => [
-         'carrier' => 'PostNL',
-         'code' => '3SKABA000000000',
-         'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
-      ],
+         'tracking' => [
+            'carrier' => 'PostNL',
+            'code' => '3SKABA000000000',
+            'url' => 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+         ],
       ]);
 
    .. code-block:: python
