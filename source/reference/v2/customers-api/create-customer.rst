@@ -98,8 +98,8 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
       $customer = $mollie->customers->create([
-         "name" => "Customer A",
-         "email" => "customer@example.org",
+            "name" => "Customer A",
+            "email" => "customer@example.org",
       ]);
 
 Response
