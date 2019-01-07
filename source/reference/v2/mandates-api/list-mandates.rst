@@ -136,6 +136,18 @@ Example
       $customer = $mollie->customers->get("cst_stTC2WHAuS");
       $mandates = $customer->mandates();
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      customer = Mollie::Customer.get('cst_stTC2WHAuS')
+      mandates = customer.mandates
+
 Response
 ^^^^^^^^
 .. code-block:: http
