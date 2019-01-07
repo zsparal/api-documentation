@@ -96,3 +96,7 @@ Permissions can be requested by redirecting the resource owner to the
    * - | ``onboarding.read``
        | Onboarding API
      - View the merchant's onboarding status.
+
+   * - | ``onboarding.write``
+       | Onboarding API
+     - Submit (personal) onboarding data for the merchant.
