@@ -213,6 +213,21 @@ Example
       # Methods for the Orders API
       methods = mollie_client.methods.list(resource='orders')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      # Methods for the Payments API
+      methods = Mollie::Method.all
+
+      # Methods for the Orders API
+      methods = Mollie::Method.all(resource: 'orders')
+
 Response
 ^^^^^^^^
 .. code-block:: http

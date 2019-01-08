@@ -59,6 +59,17 @@ Example
       $mandate = $customer->getMandate("mdt_pWUnw6pkBN");
       $mandate->revoke();
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Customer::Mandate.delete('mdt_pWUnw6pkBN', customer_id: 'cst_stTC2WHAuS')
+
 Response
 ^^^^^^^^
 .. code-block:: http
