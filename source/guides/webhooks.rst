@@ -17,7 +17,7 @@ and act accordingly. If the new payment status is ``paid`` you can start shippin
       :linenos:
 
       POST /payments/webhook HTTP/1.0
-      Host: https://webshop.example.org
+      Host: webshop.example.org
       Via: 1.1 tinyproxy (tinyproxy/1.8.3)
       Content-Type: application/x-www-form-urlencoded
       Accept: */*
