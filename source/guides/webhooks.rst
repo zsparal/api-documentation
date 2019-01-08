@@ -16,14 +16,15 @@ and act accordingly. If the new payment status is ``paid`` you can start shippin
 .. code-block:: bash
       :linenos:
 
-          POST / HTTP/1.0
-            Host: https://webshop.example.org/payments/webhook
-            Via: 1.1 tinyproxy (tinyproxy/1.8.3)
-            Content-Type: application/x-www-form-urlencoded
-            Accept: */*
-            Accept-Encoding: deflate, gzip
-            Content-Length: 16
-            id=tr_d0b0E3EA3v
+      POST /payments/webhook HTTP/1.0
+      Host: https://webshop.example.org
+      Via: 1.1 tinyproxy (tinyproxy/1.8.3)
+      Content-Type: application/x-www-form-urlencoded
+      Accept: */*
+      Accept-Encoding: deflate, gzip
+      Content-Length: 16
+
+      id=tr_d0b0E3EA3v
 
 It might seem a little cumbersome that we don't post the new status immediately, but :doc:`proper security </guides/security>`
 dictates this flow. Since the status is not transmitted in the webhook, fake calls to your webhook will never result in
