@@ -12,8 +12,9 @@ List all payment methods
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all payment methods that Mollie offers. The results are not paginated. New payment methods can be activated
-via the :doc:`Enable payment method endpoint </reference/v2/profiles-api/enable-method>` in the Profiles API.
+Retrieve all payment methods that Mollie offers and can be activated by the Organization. The results are not paginated.
+New payment methods can be activated via the :doc:`Enable payment method endpoint </reference/v2/profiles-api/enable-method>`
+in the Profiles API.
 
 Parameters
 ----------
@@ -25,37 +26,11 @@ Parameters
        .. type:: string
           :required: false
 
-     - Passing a locale will sort the payment methods in the preferred order for the country, and translate
-       the payment method names in the corresponding language.
+     - Passing a locale will translate the payment method names in the corresponding language.
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
-
-Access token parameters
-^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
-parameter, you must specify which profile you want to look at when listing payment methods. Organizations can have
-multiple profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
-information.
-
-.. list-table::
-   :widths: auto
-
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to list all payment methods available in testmode.
 
 Includes
 --------
