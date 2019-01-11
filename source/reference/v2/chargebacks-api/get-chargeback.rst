@@ -36,6 +36,12 @@ Response
 .. list-table::
    :widths: auto
 
+   * - ``resource``
+
+       .. type:: string
+
+     - Indicates the response contains a chargeback object. Will always contain ``chargeback`` for this endpoint.
+
    * - ``id``
 
        .. type:: string
