@@ -258,6 +258,16 @@ Example
 
       Mollie::Method.get('ideal', include: 'issuers,pricing')
 
+   .. code-block:: javascript
+      :linenos:
+
+      const mollie = require('@mollie/api-client');
+      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const method = await mollieClient.methods.get('ideal', { include: ['issuers', 'pricing'] });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http
