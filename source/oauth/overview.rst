@@ -48,6 +48,8 @@ be linked to your partner-account what makes it possible to receive referral com
 anything else than just integrate OAuth. For more information about the Mollie Partnership or to enable commission,
 please see our `Partner page <https://www.mollie.com/en/partners/>`_.
 
+.. _connect-button:
+
 The Connect with Mollie button
 ------------------------------
 To keep the user experience consistent, we recommend using one of the buttons below in your authorization flow.
