@@ -135,6 +135,7 @@ Response
           * - ``settlement``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
