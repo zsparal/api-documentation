@@ -237,6 +237,23 @@ Response
      - If the order is completed, the time of completion will be present in
        `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+   * - ``_embedded``
+
+       .. type:: object
+          :required: false
+
+     - An object with the requested embedded resources, such as payments, that belong to this order.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``payments``
+
+              .. type:: Payment object
+                 :required: false
+
+            - An array of embedded payment resources.
+
    * - ``_links``
 
        .. type:: object
