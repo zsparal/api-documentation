@@ -197,6 +197,7 @@ Response
                "sku": "5702016116977",
                "type": "physical",
                "status": "paid",
+               "metadata": null,
                "quantity": 1,
                "unitPrice": {
                    "value": "399.00",
