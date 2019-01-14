@@ -6,6 +6,12 @@ changes are documented here.
 January 2019
 ============
 
+Monday, 14th
+-------------
+
+- We've added the ``metadata`` field to the order line entity. You can now store up to 1Kb of information with your
+  order line, see :doc:`Create order </reference/v2/orders-api/create-order>`.
+
 Thursday, 3th
 -------------
 
