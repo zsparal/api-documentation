@@ -496,6 +496,10 @@ Example
                            "name": "LEGO 42083 Bugatti Chiron",
                            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
                            "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                           "metadata": {
+                              "order_id": "1337",
+                              "description": "Bugatti Chiron"
+                           },
                            "quantity": 2,
                            "vatRate": "21.00",
                            "unitPrice": {
@@ -594,6 +598,10 @@ Example
                   "name" => "LEGO 42083 Bugatti Chiron",
                   "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
                   "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
+                  "metadata": [
+                     "order_id" => "1337",
+                     "description" => "Bugatti Chiron"
+                  ],
                   "quantity" => 2,
                   "vatRate" => "21.00",
                   "unitPrice" => [
@@ -690,6 +698,10 @@ Example
               'name': 'LEGO 42083 Bugatti Chiron',
               'productUrl': 'https://shop.lego.com/nl-NL/Bugatti-Chiron-42083',
               'imageUrl': 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
+              'metadata': {
+                'order_id': '1337',
+                'description': 'Bugatti Chiron'
+              },
               'quantity': 2,
               'vatRate': '21.00',
               'unitPrice': {
@@ -800,7 +812,10 @@ Response
                "sku": "5702016116977",
                "type": "physical",
                "status": "created",
-               "metadata": null,
+               "metadata": {
+                  "order_id": "1337",
+                  "description": "Bugatti Chiron"
+               },
                "isCancelable": false,
                "quantity": 2,
                "quantityShipped": 0,
