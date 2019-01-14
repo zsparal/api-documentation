@@ -6,7 +6,7 @@ to sending data about your customer, all steps will be covered.
 We are using the concept of a new customer but you can use the Onboarding APIs also for existing merchants that have
 already an account at Mollie.
 
-.. note:: We assume in this guide that you have already created an OAuth app in the Mollie Dashboard. If you do not know
+.. note:: In this guide we assume that you have already created an OAuth app in the Mollie Dashboard. If you do not know
           how to do this, please see the :doc:`Getting started guide </oauth/getting-started>`.
 
 Step 1: Create a page with the Mollie Connect button
@@ -18,13 +18,15 @@ but creating an own button is also possible. For the official Mollie button, see
 
 For using this flow we need, besides your self chosen scopes, permission to the scopes ``onboarding.read`` and
 ``onboarding.write``. Besides that we are using our OAuth app Client ID and a random string for the state to prevent
-CSRF-attacks. We can now compose the authorize URL as described in the :doc:`Authorize endpoint </reference/oauth2/authorize>`
+CSRF-attacks. We can now compose the authorize URL as described in the :doc:`Authorize endpoint </reference/oauth2/authorize>`.
 
 Step 2: Your customer signs up and gives permission
 ---------------------------------------------------
 Once you redirected your customer to the authorize URL he or she will see the Mollie login screen. By clicking on the
-sign up link the customer can create their Mollie account. After signing up the OAuth permission screen will show up.
-Your customer should give you permission to view their onboarding status and submitting data.
+sign up link the customer can create their Mollie account. When you are a partner of Mollie which can receive commission
+for referred merchants, the process of connecting the merchant to your partner account will happen automatically on sign
+up. After signing up the OAuth permission screen will show up. Your customer should give you permission to view their
+onboarding status and submitting data.
 
 .. image:: images/oauth-permission-onboarding@2x.png
 
@@ -37,4 +39,17 @@ you want to. Before sending your customer to it, you can submit data about the c
 onboarding of Mollie.
 
 Submitting data about your customer is possible via the Submit onboarding data endpoint **-- TO DO: LINK!! --**. as long
-as the account is in the ``needs-data`` state. Sending data should be done before sending your customer to the onboarding.
+as the account is in the ``needs-data`` state. Sending data should be done before sending your customer to the onboarding,
+otherwise it can be happen that your submitted data is not prefilled at the moment your customer arrives at the onboarding
+pages.
+
+Step 4: Wait for your customer to complete the onboarding
+---------------------------------------------------------
+Depending on your application or service you will need to wait until your customer is able to receive payments or
+settlements. Since we do not have any webhook available for the onboarding status, you should call the
+:doc:`Get onboarding status endpoint </reference/v2/onboarding-api/get-onboarding-status>` by yourself once in a while to
+see if your customer reaches the point in the onboarding you are require to start working with.
+
+.. warning:: Customer who were rejected as a merchant of Mollie, for any reason, will be deactivated. Therefor it is not
+             possible anymore to get access via OAuth what makes it impossible to get the onboarding status from that
+             moment on.
