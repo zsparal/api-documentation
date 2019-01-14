@@ -6,6 +6,12 @@ changes are documented here.
 January 2019
 ============
 
+Monday, 14th
+------------
+
+- Added a new endpoint to retrieve all payment methods Mollie is offering to an organization.
+  See :doc:`List all payment methods  </reference/v2/methods-api/list-all-methods>` for details.
+
 Thursday, 3th
 -------------
 
