@@ -283,6 +283,15 @@ The order lines contain the actual things that your customer bought.
 
      - A link pointing to the product page in your web shop of the product sold.
 
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+       order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
+       approximately 1kB.
+
 .. note::
    All order lines must have the same currency as the order. You cannot mix currencies within a single order.
 
@@ -791,6 +800,7 @@ Response
                "sku": "5702016116977",
                "type": "physical",
                "status": "created",
+               "metadata": null,
                "isCancelable": false,
                "quantity": 2,
                "quantityShipped": 0,
@@ -848,6 +858,7 @@ Response
                "sku": "5702015594028",
                "type": "physical",
                "status": "created",
+               "metadata": null,
                "isCancelable": false,
                "quantity": 1,
                "quantityShipped": 0,
