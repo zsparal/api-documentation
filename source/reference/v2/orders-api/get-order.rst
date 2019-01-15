@@ -97,6 +97,7 @@ Response
    * - ``amountRefunded``
 
        .. type:: amount object
+          :required: false
 
      - The total amount refunded, thus far.
 
