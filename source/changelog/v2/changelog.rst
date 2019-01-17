@@ -6,6 +6,12 @@ changes are documented here.
 January 2019
 ============
 
+Thursday, 17th
+--------------
+
+- It is now possible to also update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount``
+  and ``vatRate`` of the order line, see :doc:`Update order line </reference/v2/orders-api/update-orderline>`.
+
 Monday, 14th
 -------------
 
