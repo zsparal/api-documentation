@@ -12,8 +12,8 @@ Submit onboarding data
    :organization_access_tokens: true
    :oauth: true
 
-Submit data that will be prefilled in the merchant's onboarding. Please note that submitting data is only possible when
-the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` is ``needs-data``.
+Submit data that will be prefilled in the merchant's onboarding. Please note that the data you submit will only be
+processed when the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` is ``needs-data``.
 
 Parameters
 ----------
@@ -183,7 +183,7 @@ Example
                       "vatNumber": "NL815839091B01"
                    },
                    "profile": {
-                      "name": "Mollie.",
+                      "name": "Mollie",
                       "website": "https://www.mollie.com",
                       "email": "info@mollie.com",
                       "phone": "+31208202070",
