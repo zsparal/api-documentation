@@ -88,6 +88,7 @@ Response
    * - ``amountCaptured``
 
        .. type:: amount object
+          :required: false
 
      - The amount captured, thus far. The captured amount will be settled to your account.
 
