@@ -12,14 +12,18 @@ Update order line
    :organization_access_tokens: true
    :oauth: true
 
-This endpoint can be used to update the order line. Only the lines that belong to an order with status ``created``,
+This endpoint can be used to update an order line. Only the lines that belong to an order with status ``created``,
 ``pending`` or ``authorized`` can be updated.
 
 Use cases for this endpoint could be updating the ``name``, ``productUrl`` and ``imageUrl`` for a certain order line
-because the consumer wanted to swap the item for a different one.
+because your customer wants to swap the item for a different variant, for example exchanging a blue skirt for the same
+skirt in red.
 
-Or update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` and ``vatRate`` because
-the quantity actually exceeded the stock you have of this particular item.
+Or update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` and ``vatRate`` if you
+want to substitute a product for an entirely different one.
+
+Alternatively, you can also (partially) `:doc:cancel order lines <reference/v2/orders-api/cancel-order-lines>` instead
+of updating the quantity.
 
 When updating an order line that uses a *pay after delivery* method such as *Klarna Pay later*,
 Klarna may decline the requested changes, resulting in an error response from the Mollie API.
