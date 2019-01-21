@@ -39,6 +39,7 @@ This endpoint also allows for embedding additional information by appending the 
 query string parameter.
 
 * ``payments`` Include all :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
+* ``refunds`` Include all :doc:`refunds </reference/v2/orders-api/list-order-refunds>` created for the order.
 
 Response
 --------
@@ -255,6 +256,13 @@ Response
                  :required: false
 
             - An array of embedded payment resources.
+
+          * - ``refunds``
+
+              .. type:: Refund object
+                  :required: false
+
+            - An array of embedded refunds.
 
    * - ``_links``
 
@@ -554,7 +562,7 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments \
+      curl -X GET https://api.mollie.com/v2/orders/ord_kEn1PlbGa?embed=payments,refunds \
           -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
@@ -563,7 +571,7 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments"]);
+      $order = $mollie->orders->get("ord_kEn1PlbGa", ["embed" => "payments,refunds"]);
 
    .. code-block:: python
       :linenos:
@@ -761,6 +769,76 @@ Response
                         "checkout": {
                             "href": "https://www.mollie.com/payscreen/select-method/ncaPcAhuUV",
                             "type": "text/html"
+                        },
+                        "order": {
+                            "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
+                            "type": "application/hal+json"
+                        }
+                    }
+                }
+            ],
+            "refunds": [
+                {
+                    "resource": "refund",
+                    "id": "re_vD3Jm32wQt",
+                    "amount": {
+                        "value": "329.99",
+                        "currency": "EUR"
+                    },
+                    "status": "pending",
+                    "createdAt": "2019-01-15T15:41:21+00:00",
+                    "description": "Required quantity not in stock, refunding one photo book.",
+                    "orderId": "ord_kEn1PlbGa",
+                    "paymentId": "tr_mjvPwykz3x",
+                    "settlementAmount": {
+                        "value": "-329.99",
+                        "currency": "EUR"
+                    },
+                    "lines": [
+                        {
+                            "resource": "orderline",
+                            "id": "odl_dgtxyl",
+                            "orderId": "ord_kEn1PlbGa",
+                            "name": "LEGO 42056 Porsche 911 GT3 RS",
+                            "sku": "5702015594028",
+                            "type": "physical",
+                            "status": "completed",
+                            "isCancelable": false,
+                            "quantity": 1,
+                            "unitPrice": {
+                                "value": "329.99",
+                                "currency": "EUR"
+                            },
+                            "vatRate": "21.00",
+                            "vatAmount": {
+                                "value": "57.27",
+                                "currency": "EUR"
+                            },
+                            "totalAmount": {
+                                "value": "329.99",
+                                "currency": "EUR"
+                            },
+                            "createdAt": "2019-01-15T15:22:45+00:00",
+                            "_links": {
+                                "productUrl": {
+                                    "href": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
+                                    "type": "text/html"
+                                },
+                                "imageUrl": {
+                                    "href": "https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$",
+                                    "type": "text/html"
+                                }
+                            }
+                        }
+                    ],
+                    "_links": {
+                        "self": {
+                            "href": "https://api.mollie.com/v2/payments/tr_mjvPwykz3x/refunds/re_vD3Jm32wQt",
+                            "type": "application/hal+json"
+                        },
+                        "payment": {
+                            "href": "https://api.mollie.com/v2/payments/tr_mjvPwykz3x",
+                            "type": "application/hal+json"
                         },
                         "order": {
                             "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
