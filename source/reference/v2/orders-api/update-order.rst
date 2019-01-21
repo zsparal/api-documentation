@@ -44,6 +44,15 @@ in the request.
      - The shipping address for the order. See :ref:`order-address-details` for the exact fields
        needed.
 
+   * - ``orderNumber``
+
+       .. type:: string
+          :required: false
+
+     - The order number. For example, ``16738``.
+
+       We recommend that each order should have a unique order number.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
