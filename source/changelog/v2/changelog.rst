@@ -6,6 +6,11 @@ changes are documented here.
 January 2019
 ============
 
+Tuesday, 22th
+-------------
+
+- It is now possible to also update the ``orderNumber`` of an order, see :doc:`Update order </reference/v2/orders-api/update-order>`.
+
 Thursday, 17th
 --------------
 
