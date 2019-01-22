@@ -375,7 +375,6 @@ be passed during order creation:
 * ``payment.consumerAccount``
 * ``payment.customerId``
 * ``payment.customerReference``
-* ``payment.dueDate``
 * ``payment.issuer``
 * ``payment.mandateId``
 * ``payment.sequenceType``
