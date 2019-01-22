@@ -97,10 +97,12 @@ Response
        }
    }
 
-Example (method that cannot be enabled)
-----------------------------------------
+Example
+-------
+
 Request
 ^^^^^^^
+
 .. code-block-selector::
   .. code-block:: bash
     :linenos:
