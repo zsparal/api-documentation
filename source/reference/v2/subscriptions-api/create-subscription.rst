@@ -84,7 +84,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
        Possible values: ``... months`` ``... weeks`` ``... days``
        
        .. note::
-          The maximum interval is 1 year (``12 months``, ``52 weeks`` or ``356 days``).
+          The maximum interval is 1 year (``12 months``, ``52 weeks`` or ``365 days``).
 
    * - ``startDate``
 
