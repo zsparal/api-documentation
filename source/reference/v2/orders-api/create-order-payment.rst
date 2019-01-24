@@ -117,8 +117,7 @@ Example
          -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
-                 "method": "banktransfer",
-                 "dueDate": "2018-12-21"
+                 "method": "banktransfer"
          }'
 
    .. code-block:: php
@@ -131,7 +130,6 @@ Example
       $order = $mollie->orders->get("ord_stTC2WHAuS");
       $payment = $order->createPayment([
           "method" => "banktransfer",
-          "dueDate" => "2018-12-21",
       ]);
 
       $checkoutUrl = $payment->getCheckoutUrl();
