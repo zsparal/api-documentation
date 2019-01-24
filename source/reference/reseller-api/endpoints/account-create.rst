@@ -119,7 +119,7 @@ parameters:
         * ``bvba-be`` Private limited liability company (Belgium)
         * ``cv`` Limited partnership (Netherlands)
         * ``commv-be`` Limited partnership (Belgium)
-        * ``commva-ve`` Publicly traded partnership (Belgium)
+        * ``commva-be`` Publicly traded partnership (Belgium)
         * ``nv`` Corp. (Netherlands)
         * ``nv-be`` Corp. (Belgium)
         * ``cooperatie`` Co-operative society (Netherlands)
