@@ -43,7 +43,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
-       ``paysafecard`` ``sofort``
+       ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``customerId``
 

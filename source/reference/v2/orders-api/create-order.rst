@@ -139,7 +139,7 @@ Parameters
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
-       ``paysafecard`` ``sofort``
+       ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``payment``
 
