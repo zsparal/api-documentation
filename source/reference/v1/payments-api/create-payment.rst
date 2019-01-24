@@ -410,7 +410,7 @@ Przelewy24
        .. type:: string
           :required: true
 
-     - Consumer's email address, this is required for ``przelewy24`` payments.
+     - Consumer's email address, this is required for Przelewy24 payments.
 
 SEPA Direct Debit
 """""""""""""""""
