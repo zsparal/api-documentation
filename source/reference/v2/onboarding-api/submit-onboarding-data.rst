@@ -15,6 +15,9 @@ Submit onboarding data
 Submit data that will be prefilled in the merchant's onboarding. Please note that the data you submit will only be
 processed when the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` is ``needs-data``.
 
+.. note:: Information what the merchant have been entered via the dashboard by itself will not be overwritten by this
+          API endpoint.
+
 Parameters
 ----------
 .. list-table::
