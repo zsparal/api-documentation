@@ -99,4 +99,4 @@ Permissions can be requested by redirecting the resource owner to the
 
    * - | ``onboarding.write``
        | Onboarding API
-     - Submit (personal) onboarding data for the merchant.
+     - Submit onboarding data for the merchant.
