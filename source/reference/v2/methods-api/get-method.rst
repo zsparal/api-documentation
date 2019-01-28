@@ -220,6 +220,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       mollie_client.methods.get('ideal', include='issuers,pricing')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Method.get('ideal', include: 'issuers,pricing')
+
 Response
 ^^^^^^^^
 .. code-block:: http

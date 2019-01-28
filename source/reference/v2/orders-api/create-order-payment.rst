@@ -18,7 +18,7 @@ When the payment expires you can create a new payment for the order using this e
 A new payment can only be created while the status of the order is ``created``, and when the status
 of the existing payment is either ``expired``, ``canceled`` or ``failed``.
 
-Not that order details (for example ``amount`` or ``webhookUrl``) can not be changed using this endpoint.
+Note that order details (for example ``amount`` or ``webhookUrl``) can not be changed using this endpoint.
 
 Parameters
 ----------
@@ -43,7 +43,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
-       ``paysafecard`` ``sofort``
+       ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``customerId``
 
@@ -117,8 +117,7 @@ Example
          -H "Content-Type: application/json" \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d '{
-                 "method": "banktransfer",
-                 "dueDate": "2018-12-21"
+                 "method": "banktransfer"
          }'
 
    .. code-block:: php
@@ -129,10 +128,14 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       $order = $mollie->orders->get("ord_stTC2WHAuS");
-      $order->payments([
+      $payment = $order->createPayment([
           "method" => "banktransfer",
-          "dueDate" => "2018-12-21",
       ]);
+
+      $checkoutUrl = $payment->getCheckoutUrl();
+      if(! is_null($checkoutUrl)) {
+          // ... redirect the customer to the checkout url
+      }
 
 Response
 ^^^^^^^^

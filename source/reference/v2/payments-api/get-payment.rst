@@ -268,9 +268,9 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``paypal``
-       ``paysafecard`` ``sofort``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``paypal``
+       ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``metadata``
 

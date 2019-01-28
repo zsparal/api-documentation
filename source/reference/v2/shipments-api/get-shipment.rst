@@ -186,6 +186,7 @@ Response
                 "sku": "5702016116977",
                 "type": "physical",
                 "status": "shipping",
+                "metadata": null,
                 "isCancelable": true,
                 "quantity": 1,
                 "unitPrice": {
@@ -225,6 +226,7 @@ Response
                 "sku": "5702015594028",
                 "type": "physical",
                 "status": "completed",
+                "metadata": null,
                 "isCancelable": false,
                 "quantity": 1,
                 "unitPrice": {

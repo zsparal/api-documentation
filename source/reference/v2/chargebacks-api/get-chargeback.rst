@@ -36,6 +36,12 @@ Response
 .. list-table::
    :widths: auto
 
+   * - ``resource``
+
+       .. type:: string
+
+     - Indicates the response contains a chargeback object. Will always contain ``chargeback`` for this endpoint.
+
    * - ``id``
 
        .. type:: string
@@ -135,6 +141,7 @@ Response
           * - ``settlement``
 
               .. type:: URL object
+                 :required: false
 
             - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 

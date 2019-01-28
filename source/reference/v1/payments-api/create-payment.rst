@@ -102,7 +102,7 @@ Parameters
        based conversion optimization is lost.
 
        Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``sofort``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
                  please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
@@ -291,8 +291,8 @@ Gift cards
        the list, contact our support department. If only one issuer is activated on your account, you can omit this
        parameter.
 
-       Possible values: ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
-       ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift``
+       Possible values: ``fashioncheque`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
+       ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift`` ``travelcheq``
 
    * - ``voucherNumber``
 
@@ -399,6 +399,18 @@ paysafecard
           :required: false
 
      - Used for consumer identification. For example, you could use the consumer's IP address.
+
+Przelewy24
+""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``billingEmail``
+
+       .. type:: string
+          :required: true
+
+     - Consumer's email address, this is required for Przelewy24 payments.
 
 SEPA Direct Debit
 """""""""""""""""
