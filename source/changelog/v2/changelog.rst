@@ -6,6 +6,13 @@ changes are documented here.
 January 2019
 ============
 
+Tuesday, 29th
+-------------
+
+- Added a new API for submitting onboarding data of a merchant. These data will be prefilled in the onboarding forms of
+  the merchant. You will need the new OAuth scope ``onboarding.write`` to submit data. For details, see the
+  :doc:`Submit onboarding data API </reference/v2/onboarding-api/submit-onboarding-data>`.
+
 Tuesday, 22th
 -------------
 
