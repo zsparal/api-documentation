@@ -38,10 +38,10 @@ find a link to the onboarding in the response of the endpoint so you can send yo
 you want to. Before sending your customer to it, you can submit data about the customer what will be prefilled in the
 onboarding of Mollie.
 
-Submitting data about your customer is possible via the Submit onboarding data endpoint **-- TO DO: LINK!! --**. as long
-as the account is in the ``needs-data`` state. Sending data should be done before sending your customer to the onboarding,
-otherwise it can be happen that your submitted data is not prefilled at the moment your customer arrives at the onboarding
-pages.
+Submitting data about your customer is possible via the
+:doc:`Submit onboarding data endpoint </reference/v2/onboarding-api/submit-onboarding-data>`. as long as the account is
+in the ``needs-data`` state. Sending data should be done before sending your customer to the onboarding, otherwise it
+can be happen that your submitted data is not prefilled at the moment your customer arrives at the onboarding pages.
 
 Step 4: Wait for your customer to complete the onboarding
 ---------------------------------------------------------
