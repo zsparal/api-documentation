@@ -77,7 +77,7 @@ Please note that even though all parameters are optional, at least one of them n
                      .. type:: string
                         :required: false
 
-                   - TThe country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+                   - The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
           * - ``registrationNumber``
 
@@ -163,7 +163,6 @@ Please note that even though all parameters are optional, at least one of them n
               * ``7299`` Personal services
               * ``7999`` Events, festivals and recreation
               * ``8398`` Charity and donations
-              * ``0`` Other
 
 Example
 -------
