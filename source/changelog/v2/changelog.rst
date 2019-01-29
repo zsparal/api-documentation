@@ -6,6 +6,33 @@ changes are documented here.
 January 2019
 ============
 
+Tuesday, 29th
+-------------
+
+- Added a new API for submitting onboarding data of a merchant. This data will be prefilled in the onboarding forms of
+  the merchant. You will need the new OAuth scope ``onboarding.write`` to submit data. For details, see the
+  :doc:`Submit onboarding data API </reference/v2/onboarding-api/submit-onboarding-data>`.
+
+Tuesday, 22th
+-------------
+
+- It is now possible to also update the ``orderNumber`` of an order, see :doc:`Update order </reference/v2/orders-api/update-order>`.
+
+Thursday, 17th
+--------------
+
+- It is now possible to also update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount``
+  and ``vatRate`` of the order line, see :doc:`Update order line </reference/v2/orders-api/update-orderline>`.
+
+Monday, 14th
+-------------
+
+- We've added the ``metadata`` field to the order line entity. You can now store up to 1Kb of information with your
+  order line, see :doc:`Create order </reference/v2/orders-api/create-order>`.
+
+- Added a new endpoint to retrieve all payment methods Mollie is offering to an organization.
+  See :doc:`List all payment methods  </reference/v2/methods-api/list-all-methods>` for details.
+
 Thursday, 3th
 -------------
 

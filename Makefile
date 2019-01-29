@@ -51,8 +51,7 @@ lint-js:
 # intention.
 verify:
 	! find source -name '*.rst' | xargs grep --color -E '<http.*>`([^_]|$$)' ;
-	! grep 'mollie\.test' -r  source/ ;
-	! grep 'mollie\.dev' -r  source/ ;
+	! egrep -B3 -A3 -n --color 'mollie\.(test|dev)' -r  source ;
 
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.

@@ -123,7 +123,7 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
                  please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
@@ -490,6 +490,18 @@ paysafecard
           :required: false
 
      - Used for consumer identification. For example, you could use the consumer's IP address.
+
+Przelewy24
+""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``billingEmail``
+
+       .. type:: string
+          :required: true
+
+     - Consumer's email address, this is required for Przelewy24 payments.
 
 SEPA Direct Debit
 """""""""""""""""

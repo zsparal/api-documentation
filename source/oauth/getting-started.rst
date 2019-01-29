@@ -38,7 +38,7 @@ Working with access tokens
 --------------------------
 The merchant will be redirected back to your app, along with an auth code. With the auth code, you can retrieve an
 *access token* using default OAuth library functionality. Note access tokens are time limited - you need to refresh them
-periodically using the *refresh token*.
+periodically using the *refresh token*. An access token expires after 1 hour. A refresh token does not expire.
 
 Have merchants start using your app
 -----------------------------------

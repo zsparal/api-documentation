@@ -6,6 +6,7 @@ cache:
   - npm
   - directories:
     - .cache
+    - /home/travis/.nvm
 env:
   global:
     # Upload credentials

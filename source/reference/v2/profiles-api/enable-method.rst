@@ -36,10 +36,11 @@ Response
 --------
 An objects of ``method`` will be returned as described in :doc:`Get method </reference/v2/methods-api/get-method>`.
 
-Example (method that can be enabled)
-------------------------------------
-Request
-^^^^^^^
+Example
+-------
+
+Request (method that can be enabled)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block-selector::
   .. code-block:: bash
@@ -97,10 +98,12 @@ Response
        }
    }
 
-Example (method that cannot be enabled)
-----------------------------------------
-Request
-^^^^^^^
+Example
+-------
+
+Request (method that can't be enabled)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
 .. code-block-selector::
   .. code-block:: bash
     :linenos:

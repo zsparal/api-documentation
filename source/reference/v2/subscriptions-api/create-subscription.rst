@@ -82,6 +82,9 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
        Possible values: ``... months`` ``... weeks`` ``... days``
+       
+       .. note::
+          The maximum interval is 1 year (``12 months``, ``52 weeks`` or ``365 days``).
 
    * - ``startDate``
 
