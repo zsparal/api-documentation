@@ -120,7 +120,7 @@ Request (method that can't be enabled)
       $profile = $mollie->profiles->get('pfl_v9hTwCvYqw'));
 
       try {
-          $profile->enableMethod('bancontact');
+          $profile->enableMethod('creditcard');
       } catch (ApiException $e) {
           $dashboardUrl = $e->getDashboardUrl();
 
