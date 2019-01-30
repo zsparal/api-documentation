@@ -72,11 +72,12 @@
         'Get profiles',
         'POST /api/reseller/v1/profiles'
         ) }}
-        {{ sidebar_item(
-        'reference/reseller-api/endpoints/set-fees',
-        'Set fees',
-        'POST /api/reseller/v1/set-fees'
-        ) }}
+        {# 
+            The Set Fees endpoint is omitted from this list on purpose. It’s still accessible 
+            directly at https://docs.mollie.com/reference/reseller-api/endpoints/set-fees.
+
+            See https://mollie.atlassian.net/browse/ONB-170 for more details.
+        #}
     </ul>
 </div>
 
