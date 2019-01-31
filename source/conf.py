@@ -65,6 +65,9 @@ todo_include_todos = False
 
 # -- Options for HTML output ----------------------------------------------
 
+# Add the pathname of pages you want to prevent from being indexed by search engines here.
+do_not_index = ['reference/reseller-api/endpoints/set-fees']
+
 # The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.
 #
@@ -76,6 +79,7 @@ html_context = {
     'github_user': 'mollie',
     'github_repo': 'api-documentation',
     'github_version': 'master/source/',
+    'do_not_index': do_not_index,
 }
 
 html_logo = '_static/img/mollie-logo.png'
