@@ -12,6 +12,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  {% if pagename in do_not_index %}
+    <meta name="robots" content="noindex" />
+  {% endif %}
   {% if versionName %}
     <title>{{ title|striptags|e }} &mdash; API {{ versionName }} documentation &mdash; Mollie</title>
   {% else %}
