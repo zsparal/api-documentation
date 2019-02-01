@@ -199,6 +199,9 @@ Example
       // Methods for the Orders API
       $methods = $mollie->methods->all(['resource' => 'orders']);
 
+      // Methods including pricing
+      $methods = $mollie->methods->all(['include' => 'pricing']);
+
    .. code-block:: python
       :linenos:
 
@@ -249,14 +252,62 @@ Response
                         "size2x": "https://mollie.com/external/icons/payment-methods/ideal%402x.png",
                         "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
+                    "pricing": [
+                        {
+                            "description": "Netherlands",
+                            "fixed": {
+                                "value": "0.29",
+                                "currency": "EUR"
+                            },
+                            "variable": "0"
+                        }
+                    ],
                     "_links": {
                         "self": {
                             "href": "https://api.mollie.com/v2/methods/ideal",
                             "type": "application/hal+json"
+                        }
+                    }
+               },
+               {
+                    "resource": "method",
+                    "id": "creditcard",
+                    "description": "Credit card",
+                    "image": {
+                        "size1x": "https://mollie.com/external/icons/payment-methods/creditcard.png",
+                        "size2x": "https://mollie.com/external/icons/payment-methods/creditcard%402x.png",
+                        "svg": "https://mollie.com/external/icons/payment-methods/creditcard.svg"
+                    },
+                    "pricing": [
+                        {
+                            "description": "Commercial & non-European cards",
+                            "fixed": {
+                                "value": "0.25",
+                                "currency": "EUR"
+                            },
+                            "variable": "2.8"
                         },
-                        "documentation": {
-                            "href": "https://mollie.com/en/docs/reference/methods/get",
-                            "type": "text/html"
+                        {
+                            "description": "European cards",
+                            "fixed": {
+                                "value": "0.25",
+                                "currency": "EUR"
+                            },
+                            "variable": "1.8"
+                        },
+                        {
+                            "description": "American Express",
+                            "fixed": {
+                                "value": "0.25",
+                                "currency": "EUR"
+                            },
+                            "variable": "2.8"
+                        }
+                    ],
+                    "_links": {
+                        "self": {
+                            "href": "https://api.mollie.com/v2/methods/creditcard",
+                            "type": "application/hal+json"
                         }
                     }
                },
