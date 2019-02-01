@@ -78,6 +78,8 @@ periodically through *subscriptions*.
           support a first payment and are thus allowed as a value for the ``method`` parameter of a first payment:
           ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``sofort``
 
+.. note:: Created mandates are unique to your account and can not be transferred to other accounts.
+
 .. _payments/recurring/charging-on-demand:
 
 Charging immediately on-demand

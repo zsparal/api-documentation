@@ -25,6 +25,8 @@ recurrently.
 It is only possible to create mandates for IBANs with this endpoint. To create mandates for credit cards, have your
 customers perform a :ref:`'first payment' <payments/recurring/first-payment>` with their credit card.
 
+.. note:: Created mandates are unique to your account and can not be transferred to other accounts.
+
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/v1/customers/cst_8wmqcHMN4U/mandates``.
