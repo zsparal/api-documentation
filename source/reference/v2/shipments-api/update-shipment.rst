@@ -125,6 +125,25 @@ Example
          },
       })
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      shipment = Mollie::Order::Shipment.update(
+        'shp_3wmsgCJN4U',
+        order_id: 'ord_kEn1PlbGa',
+        tracking: {
+          carrier: 'PostNL',
+          code: '3SKABA000000000',
+          url: 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+        }
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

@@ -230,6 +230,33 @@ Example
       # or when no tracking is specified:
       shipment = order.create_shipment()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      shipment = Mollie::Order::Shipment.create(
+        order_id: 'ord_kEn1PlbGa',
+        lines: [
+          {
+            id: 'odl_dgtxyl',
+            quantity: 1 # you can set the quantity if not all is shipped at once
+          },
+          {
+            id: 'odl_jp31jz' # assume all is shipped if no quantity is specified
+          }
+        ],
+        tracking: {
+          carrier: 'PostNL',
+          code: '3SKABA000000000',
+          url: 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C'
+        }
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http
