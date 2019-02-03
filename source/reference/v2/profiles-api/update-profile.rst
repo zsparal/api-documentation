@@ -125,6 +125,24 @@ Example
       $profile->categoryCode = "5399";
       $updatedProfile = $profile->update();
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      profile = Mollie::Profile.update(
+        'pfl_v9hTwCvYqw',
+        name: 'My website name - Update 1',
+        website: 'https://www.mywebsite2.com',
+        email: 'info@mywebsite2.com',
+        phone: '+31208202070',
+        categoryCode: '5399'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

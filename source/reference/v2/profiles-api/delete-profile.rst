@@ -40,6 +40,17 @@ Example
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $mollie->profiles->delete("pfl_v9hTwCvYqw");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      Mollie::Profile.delete('pfl_v9hTwCvYqw')
+
 Response
 ^^^^^^^^
 .. code-block:: http
