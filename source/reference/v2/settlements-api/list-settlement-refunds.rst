@@ -33,11 +33,23 @@ Example
 
 Request
 ^^^^^^^
-.. code-block:: bash
-   :linenos:
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
 
-   curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/refunds \
-       -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+      curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/refunds \
+          -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      refunds = Mollie::Settlement::Refund.all(settlement_id: 'stl_jDk30akdN')
 
 Response
 ^^^^^^^^
