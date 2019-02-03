@@ -158,6 +158,24 @@ Example
       $subscription->webhookUrl = "https://example.org/webhook";
       $updatedSubscription = $subscription->update();
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      subscription = Mollie::Customer::Subscription.update(
+        'sub_8EjeBVgtEn',
+        customer_id: 'cst_8wmqcHMN4U',
+        amount: { value: '10.00', currency: 'EUR' },
+        times: 42,
+        start_date: '2018-12-12',
+        description: 'Mollie recurring subscription',
+        webhook_url: 'https://example.org/webhook'
+      )
 
 Response
 ^^^^^^^^

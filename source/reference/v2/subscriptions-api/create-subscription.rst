@@ -82,7 +82,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
        Possible values: ``... months`` ``... weeks`` ``... days``
-       
+
        .. note::
           The maximum interval is 1 year (``12 months``, ``52 weeks`` or ``365 days``).
 
@@ -199,6 +199,24 @@ Example
          "description" => "Quarterly payment",
          "webhookUrl" => "https://webshop.example.org/subscriptions/webhook/",
       ]);
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      subscription = Mollie::Customer::Subscription.create(
+        customer_id: 'cst_stTC2WHAuS',
+        amount:      { value: '25.00', currency: 'EUR' },
+        times:       4,
+        interval:    '3 months',
+        description: 'Quarterly payment',
+        webhook_url: 'https://webshop.example.org/subscriptions/webhook/'
+      )
 
 Response
 ^^^^^^^^
