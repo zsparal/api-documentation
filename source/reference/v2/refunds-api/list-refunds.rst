@@ -173,6 +173,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       refunds = mollie_client.payments.get('tr_WDqYK6vllg').refunds
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      refunds = Mollie::Payment.get('tr_7UhSN1zuXS').refunds
+
 Response
 ^^^^^^^^
 .. code-block:: http

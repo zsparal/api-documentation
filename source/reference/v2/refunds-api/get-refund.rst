@@ -251,6 +251,20 @@ Example
       payment = mollie_client.payments.get('tr_WDqYK6vllg')
       refund = mollie_client.payment_refunds.on(payment).get('re_4qqhO89gsT')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      refund = Mollie::Payment::Refund.get(
+        're_4qqhO89gsT',
+        payment_id: 'tr_WDqYK6vllg'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http
