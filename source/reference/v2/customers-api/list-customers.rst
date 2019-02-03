@@ -139,6 +139,20 @@ Example
       // Next page
       $customers->next();
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      # First page
+      customers = Mollie::Customer.all
+
+      # Next page
+      customers.next
 
 Response
 ^^^^^^^^

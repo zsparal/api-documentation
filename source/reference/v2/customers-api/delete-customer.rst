@@ -55,6 +55,17 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
       $mollie->customers->delete("cst_8wmqcHMN4U");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Customer.delete('cst_8wmqcHMN4U')
+
 Response
 ^^^^^^^^
 .. code-block:: http
