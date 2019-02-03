@@ -580,6 +580,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       order = mollie_client.orders.get('ord_stTC2WHAuS')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      order = Mollie::Order.get('ord_stTC2WHAuS')
+
 Response
 ^^^^^^^^
 .. code-block:: http

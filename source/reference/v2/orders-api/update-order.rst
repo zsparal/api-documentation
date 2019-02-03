@@ -143,6 +143,32 @@ Example
         }
       }
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      order = Mollie::Order.update(
+        'ord_kEn1PlbGa',
+        billing_address: {
+          organizationName: 'Mollie B.V.',
+          streetAndNumber: 'Keizersgracht 313',
+          city: 'Amsterdam',
+          region: 'Noord-Holland',
+          postalCode: '1234AB',
+          country: 'NL',
+          title: 'Dhr',
+          givenName: 'Piet',
+          familyName: 'Mondriaan',
+          email: 'piet@mondriaan.com',
+          phone: '+31208202070'
+        }
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

@@ -78,6 +78,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       order = mollie_client.orders.delete('ord_8wmqcHMN4U')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Order.cancel('ord_8wmqcHMN4U')
+
 Response
 ^^^^^^^^
 .. code-block:: http

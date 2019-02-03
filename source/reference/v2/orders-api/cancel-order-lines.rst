@@ -174,6 +174,25 @@ Example
 
       updated_order = mollie_client.orders.get('ord_8wmqcHMN4U')
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      order = Mollie::Order.get('ord_8wmqcHMN4U')
+
+      # you can partially cancel the line.
+      order.lines[0].cancel(qty: 1)
+
+      # or cancel the line completely
+      order.lines[0].cancel
+
+      updated_order = Mollie::Order.get('ord_8wmqcHMN4U')
+
 Response
 ^^^^^^^^
 .. code-block:: http

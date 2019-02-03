@@ -153,6 +153,18 @@ Example
       most_recent_orders = mollie_client.orders.list()
       previous_orders = most_recent_orders.get_next()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      most_recent_orders = Mollie::Order.all
+      previous_orders = most_recent_orders.next
+
 Response
 ^^^^^^^^
 .. code-block:: http
