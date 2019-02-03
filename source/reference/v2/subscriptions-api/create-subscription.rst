@@ -82,7 +82,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - Interval to wait between charges, for example ``1 month`` or ``14 days``.
 
        Possible values: ``... months`` ``... weeks`` ``... days``
-       
+
        .. note::
           The maximum interval is 1 year (``12 months``, ``52 weeks`` or ``365 days``).
 
@@ -222,10 +222,10 @@ Response
        "timesRemaining": 4,
        "interval": "3 months",
        "description": "Quarterly payment",
-       "startDate": "2016-06-01",
-       "nextPaymentDate": "2016-09-01",
+       "startDate": "2018-06-01",
+       "nextPaymentDate": "2018-09-01",
        "method": null,
-       "webhookUrl": "https://webshop.example.org/payments/webhook/",
+       "webhookUrl": "https://webshop.example.org/subscriptions/webhook/",
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3",
