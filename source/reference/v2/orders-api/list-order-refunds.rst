@@ -153,6 +153,17 @@ Example
       order = mollie_client.orders.get('ord_stTC2WHAuS')
       refunds = order.refunds()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      refunds = Order::Refund.all(order_id: 'ord_stTC2WHAuS')
+
 Response
 ^^^^^^^^
 .. code-block:: http

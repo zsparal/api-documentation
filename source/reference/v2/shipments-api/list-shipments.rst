@@ -114,6 +114,17 @@ Example
       order = mollie_client.orders.get('ord_kEn1PlbGa')
       shipments = order.shipments
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      shipments = Mollie::Order::Shipment.all(order_id: 'ord_kEn1PlbGa')
+
 Response
 ^^^^^^^^
 .. code-block:: http

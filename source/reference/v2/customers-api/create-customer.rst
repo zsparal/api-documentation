@@ -102,6 +102,20 @@ Example
             "email" => "customer@example.org",
       ]);
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      customer = Mollie::Customer.create(
+        name: 'Customer A',
+        email: 'customer@example.org'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

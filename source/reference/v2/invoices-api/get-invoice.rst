@@ -248,6 +248,17 @@ Example
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $invoice = $mollie->invoices->get("inv_xBEbP9rvAq");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      invoice = Mollie::Invoice.get('inv_xBEbP9rvAq')
+
 Response
 ^^^^^^^^
 .. code-block:: http

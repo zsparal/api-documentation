@@ -61,6 +61,20 @@ Example
       $customer = $mollie->customers->get("cst_stTC2WHAuS");
       $subscription = $customer->cancelSubscription("sub_rVKGtNd6s3");
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Customer::Subscription.cancel(
+        'sub_rVKGtNd6s3',
+        customer_id: 'cst_stTC2WHAuS'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: json

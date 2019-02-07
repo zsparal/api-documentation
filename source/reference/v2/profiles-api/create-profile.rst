@@ -123,6 +123,24 @@ Example
             "mode" => "live",
       ]);
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ'
+      end
+
+      profile = Mollie::Profile.create(
+        name:         'My website name',
+        website:      'https://www.mywebsite.com',
+        email:        'info@mywebsite.com',
+        phone:        '+31208202070',
+        categoryCode: '5399',
+        mode:         'live'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

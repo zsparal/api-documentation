@@ -168,6 +168,29 @@ Example
       # Alternative shorthand for refunding all eligible order lines
       order.create_refund()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      order  = Mollie::Order.get('ord_stTC2WHAuS')
+      refund = order.refund!(
+        lines: [
+          {
+            id: 'odl_dgtxyl',
+            quantity: 1
+          }
+        ],
+        description: 'Required quantity not in stock, refunding one photo book.'
+      )
+
+      # Alternative shorthand for refunding all eligible order lines
+      order.refund!
+
 Response
 ^^^^^^^^
 .. code-block:: http

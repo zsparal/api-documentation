@@ -88,6 +88,7 @@ Example
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d "name=Updated Customer A" \
          -d "email=updated-customer@example.org"
+
    .. code-block:: php
       :linenos:
 
@@ -99,6 +100,21 @@ Example
       $customer->name = "Updated Customer A";
       $customer->email = "updated-customer@example.org";
       $customer->update();
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      customer = Mollie::Customer.update(
+        'cst_8wmqcHMN4U',
+        name: 'Updated Customer A',
+        email: 'updated-customer@example.org'
+      )
 
 Response
 ^^^^^^^^

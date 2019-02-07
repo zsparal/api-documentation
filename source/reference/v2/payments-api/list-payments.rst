@@ -187,11 +187,7 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      # get the first page
       payments = Mollie::Payment.all
-
-      # get the next page
-      next_payments = payments.next
 
 Response
 ^^^^^^^^

@@ -149,6 +149,21 @@ Example
          }
       })
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      refund = Mollie::Payment::Refund.create(
+        payment_id: 'tr_WDqYK6vllg',
+        amount:      { value: '5.00', currency: 'EUR' }
+        description: 'Example refund description'
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http
