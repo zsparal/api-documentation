@@ -189,7 +189,7 @@ Example
       order.lines.first.cancel(qty: 1)
 
       # or cancel the line completely
-      order.lines[0].cancel
+      order.lines.first.cancel
 
       updated_order = Mollie::Order.get('ord_8wmqcHMN4U')
 
