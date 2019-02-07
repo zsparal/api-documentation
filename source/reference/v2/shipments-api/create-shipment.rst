@@ -244,7 +244,7 @@ Example
         lines: [
           {
             id: 'odl_dgtxyl',
-            quantity: 1 # you can set the quantity if not all is shipped at once
+            quantity: 1 # Ship one item from this order line
           },
           {
             id: 'odl_jp31jz' # assume all is shipped if no quantity is specified
