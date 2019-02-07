@@ -247,7 +247,7 @@ Example
             quantity: 1 # Ship one item from this order line
           },
           {
-            id: 'odl_jp31jz' # assume all is shipped if no quantity is specified
+            id: 'odl_jp31jz' # Ship every item in this order line, as quantity is not specified
           }
         ],
         tracking: {
