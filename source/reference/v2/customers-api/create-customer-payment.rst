@@ -103,12 +103,12 @@ Example
       end
 
       payment = Mollie::Customer::Payment.create(
-        customer_id:  'cst_8wmqcHMN4U',
-        amount:       { value: '10.00', currency: 'EUR' },
-        description:  'Order #12345',
+        customer_id:   'cst_8wmqcHMN4U',
+        amount:        { value: '10.00', currency: 'EUR' },
+        description:   'Order #12345',
         sequence_type: 'first',
-        redirect_url: 'https://webshop.example.org/order/12345/',
-        webhook_url: 'https://webshop.example.org/payments/webhook/'
+        redirect_url:  'https://webshop.example.org/order/12345/',
+        webhook_url:   'https://webshop.example.org/payments/webhook/'
       )
 
 Response
