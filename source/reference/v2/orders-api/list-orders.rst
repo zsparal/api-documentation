@@ -162,8 +162,7 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      most_recent_orders = Mollie::Order.all
-      previous_orders = most_recent_orders.next
+      orders = Mollie::Order.all
 
 Response
 ^^^^^^^^

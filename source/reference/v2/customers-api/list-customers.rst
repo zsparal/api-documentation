@@ -148,11 +148,7 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      # First page
       customers = Mollie::Customer.all
-
-      # Next page
-      customers.next
 
 Response
 ^^^^^^^^
