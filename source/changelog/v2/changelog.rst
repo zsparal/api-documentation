@@ -9,7 +9,8 @@ February 2019
 Thursday, 21st
 --------------
 - The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available
-  for paid payments. This allows you to create refunds and chargebacks for test mode payments from the checkout screen.
+  for paid payments in test mode. This allows you to create refunds and chargebacks for test mode payments from the
+  checkout screen.
 
 January 2019
 ============
