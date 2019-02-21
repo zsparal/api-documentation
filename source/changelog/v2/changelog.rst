@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+February 2019
+=============
+
+Wednesday, 21st
+---------------
+- The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available
+  for paid payments. This allows you to create refunds and chargebacks for test mode payments from the checkout screen.
+
 January 2019
 ============
 

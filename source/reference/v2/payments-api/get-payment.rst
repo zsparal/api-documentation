@@ -434,8 +434,11 @@ Response
                  :required: false
 
             - Recurring payments do not have a checkout URL, because these payments are executed without
-              any user interaction. This link is only included for test mode recurring payments, and allows
+              any user interaction. This link is included for test mode recurring payments, and allows
               you to set the final payment state for such payments.
+
+              This link is also included for paid test mode payments. This allows you to create a refund or chargeback
+              for the payment. This works for all payment types that can be charged back and/or refunded.
 
           * - ``refunds``
 
