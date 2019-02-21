@@ -20,6 +20,10 @@ For test mode *recurring* payments, the resource will not contain a ``checkout``
 payments are executed without any interaction of your customer. Instead, a ``changePaymentState``
 URL is added, which allows you to set the final payment state for these payments.
 
+For paid test mode payments the resource will also include the ``changePaymentState`` URL which allows you to create a
+refund or chargeback for that payment from the checkout screen. This can be used to test refund and chargeback
+functionality.
+
 Apart from the hosted payment pages and the fact that test mode payments are created instead of real
 ones, the Mollie API behaves almost identical in both environments. This includes calling your
 :doc:`webhook </guides/webhooks>`. Just make sure to start using live mode when your site goes public,
