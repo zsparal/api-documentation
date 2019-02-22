@@ -28,7 +28,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - ``amount``
+   * - .. param-name:: amount
 
        .. type:: amount object
           :required: true
@@ -39,7 +39,7 @@ Parameters
        .. list-table::
           :widths: auto
 
-          * - ``currency``
+          * - .. param-name:: currency
 
               .. type:: string
                  :required: true
@@ -95,7 +95,7 @@ Parameters
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
-   * - ``locale``
+   * - .. param-name:: locale
 
        .. type:: string
           :required: false
@@ -182,7 +182,8 @@ Bank transfer
 .. list-table::
    :widths: auto
 
-   * - ``billingEmail``
+   * - .. param-name:: billingEmail
+          :prefix: bankTransfer
 
        .. type:: string
           :required: false
