@@ -28,7 +28,7 @@ Parameters
 .. list-table::
    :widths: auto
 
-   * - ``amount``
+   * - .. param-name:: amount
 
        .. type:: amount object
           :required: true
@@ -39,7 +39,7 @@ Parameters
        .. list-table::
           :widths: auto
 
-          * - ``currency``
+          * - .. param-name:: currency
 
               .. type:: string
                  :required: true
@@ -182,7 +182,8 @@ Bank transfer
 .. list-table::
    :widths: auto
 
-   * - ``billingEmail``
+   * - .. param-name:: billingEmail
+          :prefix: bankTransfer
 
        .. type:: string
           :required: false
