@@ -6,6 +6,11 @@ changes are documented here.
 February 2019
 =============
 
+Monday, 25th
+------------
+
+- Updated the list of available profile :doc:`merchant category codes </reference/v2/profiles-api/create-profile>`
+
 Thursday, 21st
 --------------
 - The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available

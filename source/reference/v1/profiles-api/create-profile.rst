@@ -66,7 +66,6 @@ Parameters
 
        Possible values:
 
-       * ``4121`` Travel, rental and transportation
        * ``5192`` Books, magazines and newspapers
        * ``5399`` General merchandise
        * ``5499`` Food and drinks
@@ -74,14 +73,18 @@ Parameters
        * ``5641`` Children Products
        * ``5651`` Clothing & Shoes
        * ``5732`` Electronics, computers and software
+       * ``5734`` Hosting/VPN services
        * ``5735`` Entertainment
-       * ``5815`` Digital services
+       * ``5815`` Credits/vouchers/giftcards       
+       * ``5921`` Alcohol
        * ``5944`` Jewelry & Accessories
        * ``5977`` Health & Beauty products
        * ``6012`` Financial services
-       * ``7299`` Personal services
-       * ``7999`` Events, festivals and recreation
+       * ``7299`` Consultancy
+       * ``7999`` Travel, rental and transportation
+       * ``8299`` Advising/coaching/training
        * ``8398`` Charity and donations
+       * ``8699`` Political parties
        * ``0`` Other
 
    * - ``mode``

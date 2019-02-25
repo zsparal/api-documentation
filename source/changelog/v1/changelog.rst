@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+February 2019
+=============
+
+Monday, 25th
+------------
+
+- Updated the list of available profile :doc:`merchant category codes </reference/v1/profiles-api/create-profile>`
+
 December 2018
 =============
 
