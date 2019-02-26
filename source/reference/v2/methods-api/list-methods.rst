@@ -12,7 +12,7 @@ List payment methods
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all available payment methods. The results are not paginated.
+Retrieve all enabled payment methods. The results are not paginated.
 
 * For test mode, payment methods are returned that are enabled in the Dashboard (or the activation is pending).
 * For live mode, payment methods are returned that have been activated on your account and have been enabled in the
@@ -194,13 +194,13 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       // Methods for the Payments API
-      $methods = $mollie->methods->all();
+      $methods = $mollie->methods->allActive();
 
       // Methods for the Orders API
-      $methods = $mollie->methods->all(['resource' => 'orders']);
+      $methods = $mollie->methods->allActive(['resource' => 'orders']);
 
       // Methods including pricing
-      $methods = $mollie->methods->all(['include' => 'pricing']);
+      $methods = $mollie->methods->allActive(['include' => 'pricing']);
 
    .. code-block:: python
       :linenos:

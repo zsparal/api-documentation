@@ -49,6 +49,15 @@ Example
       curl -X GET https://api.mollie.com/v2/methods/all \
            -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      $methods = $mollie->methods->allAvailable();
+
 Response
 --------
 ``200`` ``application/hal+json``
