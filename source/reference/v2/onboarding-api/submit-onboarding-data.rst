@@ -118,7 +118,7 @@ Please note that even though all parameters are optional, at least one of them n
             - The URL to the profile’s website or application. The URL must be compliant to
               `RFC3986 <https://tools.ietf.org/html/rfc3986>`_ with the exception that we only accept URLs with
               ``http://`` or ``https://`` schemes and domains that contain a TLD. URLs containing an ``@`` are not
-              allowed. For example ``https://mollie.com``.
+              allowed.
 
           * - ``email``
 
