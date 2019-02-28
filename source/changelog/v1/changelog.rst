@@ -11,6 +11,12 @@ changes are documented here.
 February 2019
 =============
 
+Thursday, 28th
+--------------
+
+- Added profile website URL validation to the :doc:`Create profile </reference/v1/profiles-api/create-profile>`
+  endpoint.
+
 Monday, 25th
 ------------
 

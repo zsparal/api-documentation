@@ -6,6 +6,15 @@ changes are documented here.
 February 2019
 =============
 
+Thursday, 28th
+--------------
+
+- Added profile website URL validation to the :doc:`Create profile </reference/v2/profiles-api/create-profile>`
+  endpoint.
+- Added profile website URL validation to the
+  :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>` endpoint.
+
+
 Monday, 25th
 ------------
 
