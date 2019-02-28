@@ -54,7 +54,7 @@ parameters:
 
      - The url of the website profile. The URL must be compliant to `RFC3986 <https://tools.ietf.org/html/rfc3986>`_
        with the exception that we only accept URLs with ``http://`` or ``https://`` schemes and domains that contain a
-       TLD. For example ``https://mollie.com``.
+       TLD. URLs containing an ``@`` are not allowed. For example ``https://mollie.com``.
 
    * - ``email``
 
