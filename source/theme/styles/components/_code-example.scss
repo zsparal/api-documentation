@@ -1,8 +1,11 @@
 .rst-content #example {
   max-width: 700px;
-   @media (min-width: breakpoint('extra-large')) {
-      max-width: 846px;
-   }
+  @media (min-width: breakpoint('extra-large')) {
+    max-width: 846px;
+  }
+}
+
+.rst-content {
   .examples-switcher {
     .example-switch {
       font-weight: 300;
@@ -19,8 +22,6 @@
       &:hover,
       &:focus {
         color: $brand-primary-hover;
-        text-decoration: none;
-        border-bottom: none;
       }
 
       &.is-selected {
