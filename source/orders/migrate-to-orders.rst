@@ -99,7 +99,7 @@ Just like in the payments API you can specify a ``webhookUrl`` that will be used
 when the status of an order has changed. You can then use the Mollie API to
 :doc:`retrieve the order status </reference/v2/orders-api/get-order>`.
 
-Note that orders cannot be canceled by shoppers. The order will remain ``created`` so that you can so that you can add
+Note that orders cannot be canceled by shoppers. The order will remain ``created`` so that you can add
 further payments to the order to give your customer a second chance to pay for the order.
 
 If you want to know if your customer canceled the first payment, you will need to retrieve the payment together with
