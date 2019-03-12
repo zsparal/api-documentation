@@ -53,6 +53,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Klarna Slice it <https://www.mollie.com/en/payments/klarna-slice-it>`_
 * `PayPal <https://www.mollie.com/en/payments/paypal>`_
 * `paysafecard <https://www.mollie.com/en/payments/paysafecard>`_
+* `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_
 * `SOFORT Banking <https://www.mollie.com/en/payments/sofort>`_
 
 All of the payment methods you have enabled are – where relevant – shown to the consumer. You can enable payment methods
