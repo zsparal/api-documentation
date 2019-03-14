@@ -76,6 +76,7 @@ Expiry times per payment method
 | - EPS                     |                                   |
 | - Giropay                 |                                   |
 | - KBC                     |                                   |
+| - Przelewy24              |                                   |
 | - SOFORT Banking          |                                   |
 +---------------------------+-----------------------------------+
 | - PayPal                  | 3 hours                           |

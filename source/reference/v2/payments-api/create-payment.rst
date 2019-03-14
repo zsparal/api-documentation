@@ -500,9 +500,9 @@ Przelewy24
    * - ``billingEmail``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - Consumer's email address, this is required for Przelewy24 payments.
+     - Consumer's email address.
 
 SEPA Direct Debit
 """""""""""""""""
