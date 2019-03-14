@@ -1,5 +1,9 @@
 Secret keys and authentication
 ==============================
+
+.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
+             change to the Mollie v2 API.
+
 **Secret keys** facilitate encrypted communication with Mollie's Reseller APIs. These APIs provide even better security
 than the previous ones because:
 
