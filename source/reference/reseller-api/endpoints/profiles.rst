@@ -4,6 +4,9 @@ Get profiles
 .. api-name:: Reseller API
    :version: 1
 
+.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
+             use the :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for this action.
+
 .. endpoint::
    :method: POST
    :url: https://www.mollie.com/api/reseller/v1/profiles

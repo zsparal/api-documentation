@@ -1,5 +1,9 @@
 Result codes
 ============
+
+.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
+             change to the Mollie v2 API.
+
 Every API request will be answered with a **result code**. Results will look like:
 
 .. code-block:: XML

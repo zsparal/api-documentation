@@ -1,6 +1,9 @@
 Reseller API
 ============
 
+.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
+             change to the Mollie v2 API.
+
 The **Reseller API** can be used to register new merchants with Mollie, link existing merchants to your reseller account,
 or change settings of merchants that you have referred to Mollie.
 
