@@ -32,6 +32,16 @@ Parameters
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
+   * - ``amount``
+
+       .. type:: amount object
+          :required: false
+
+     - An object containing ``value`` and ``currency``. Only payment methods that support the amount and currency
+       are returned.
+
+       Example: ``https://api.mollie.com/v2/methods/all?amount[value]=100.00&amount[currency]=USD``
+
 Includes
 --------
 This endpoint allows you to include additional information by appending the following values via the ``include``

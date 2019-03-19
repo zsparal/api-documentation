@@ -39,6 +39,13 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
 
+   * - ``currency``
+
+       .. type:: string
+          :required: false
+
+     - The currency to receiving the ``minimumAmount`` and ``maximumAmount`` in.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
@@ -100,6 +107,20 @@ Response
        .. type:: string
 
      - The full name of the payment method, translated in the optional locale passed.
+
+   * - ``minimumAmount``
+
+       .. type:: amount object
+
+     - An object containing ``value`` and ``currency``. It represents the minimum payment amount required to use this
+       payment method.
+
+   * - ``maximumAmount``
+
+       .. type:: amount object
+
+     - An object containing ``value`` and ``currency``. It represents the maximum payment amount allowed when using this
+       payment method.
 
    * - ``image``
 
@@ -243,6 +264,14 @@ Response
         "resource": "method",
         "id": "ideal",
         "description": "iDEAL",
+        "minimumAmount": {
+            "value": "0.01",
+            "currency": "EUR"
+        },
+        "maximumAmount": {
+            "value": "50000.00",
+            "currency": "EUR"
+        },
         "image": {
             "size1x": "https://www.mollie.com/external/icons/payment-methods/ideal.png",
             "size2x": "https://www.mollie.com/external/icons/payment-methods/ideal%402x.png",
