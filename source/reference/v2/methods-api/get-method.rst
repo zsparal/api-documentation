@@ -122,6 +122,8 @@ Response
      - An object containing ``value`` and ``currency``. It represents the maximum payment amount allowed when using this
        payment method.
 
+       .. note:: When there is no maximum amount for the payment method, this parameter will return ``null``.
+
    * - ``image``
 
        .. type:: image object
