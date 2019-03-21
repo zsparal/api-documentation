@@ -97,7 +97,7 @@ This is only the case for test orders. For live orders the ``testmode`` paramete
        .. type:: object
           :required: false
 
-     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
+     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant for the
        payment and transfer this to your own account.
 
 Response

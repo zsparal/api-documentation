@@ -3,6 +3,18 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+March 2019
+==========
+
+Blah, nnth
+----------
+
+- Added the ``profile`` key to the ``_links`` object in the
+  :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
+
+- Subscriptions can now be created with :doc:`application fees </oauth/application-fees>`. The application fees will be
+  applied on each created Payment for the Subscription.
+
 February 2019
 =============
 

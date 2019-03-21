@@ -601,6 +601,8 @@ specify which profile the payment belongs to. Organizations can have multiple pr
 
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
+              The maximum length is 255 characters.
+
 QR codes
 ^^^^^^^^
 To create a payment with a QR code embedded in the API response, call the API endpoint with an

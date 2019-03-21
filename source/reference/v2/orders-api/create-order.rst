@@ -421,7 +421,7 @@ specify which profile the payment belongs to. Organizations can have multiple pr
        .. type:: object
           :required: false
 
-     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
+     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant for the
        payment and transfer this to your own account.
 
 Embedding of related resources
