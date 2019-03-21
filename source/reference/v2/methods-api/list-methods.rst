@@ -109,7 +109,7 @@ information.
        .. type:: string
           :required: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 
