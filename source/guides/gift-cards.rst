@@ -15,6 +15,8 @@ brands are supported:
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
 * `Travelcheq <https://www.travelcheq.com/>`_
+* `Nationale Golfbon <https://www.golfbon.nl/>`_
+* `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
 
 If you need a different brand, please reach out to your account manager or our support department.
 
