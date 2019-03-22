@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+March 2019
+==========
+
+Thursday, 21th
+--------------
+
+- Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
+
 February 2019
 =============
 
