@@ -16,6 +16,11 @@ Thursday, 21th
 
 - Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
 
+Tuesday, 12th
+-------------
+
+- Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
+
 February 2019
 =============
 
