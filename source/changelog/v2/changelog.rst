@@ -8,7 +8,7 @@ March 2019
 
 Wednesday, 27th
 ---------------
-- Added the ``minimumAmount`` and ``maximumAmount`` parameters to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
+- Added the ``minimumAmount`` and ``maximumAmount`` properties to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
   endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
 - Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
   endpoint.
