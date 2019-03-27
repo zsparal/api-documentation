@@ -6,6 +6,15 @@ changes are documented here.
 March 2019
 ==========
 
+Wednesday, 27th
+---------------
+- Added the ``minimumAmount`` and ``maximumAmount`` parameters to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
+  endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
+- Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
+  endpoint.
+- Added the ``currency`` query paramter to the :doc:`Get payment method </reference/v2/methods-api/get-method>` endpoint.
+- The ``.dev`` TLD is now supported for webhooks.
+
 Thursday, 21th
 --------------
 
