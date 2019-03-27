@@ -182,7 +182,8 @@ Changes in the Methods API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The following fields have been changed, renamed or moved:
 
-* ``amount`` including ``minimum`` and ``maximum`` have been removed.
+* ``amount`` including ``minimum`` and ``maximum`` have been renamed to ``minimumAmount`` and ``maximumAmount``. This
+  should be an object containing ``value`` and ``currency``.
 * The ``image`` fields ``normal`` and ``bigger`` have been renamed to ``size1x`` and ``size2x``.
 * Pagination has been removed, so all fields related to pagination are not available anymore. The list method will now
   return all payment methods.

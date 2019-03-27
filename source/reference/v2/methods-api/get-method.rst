@@ -44,7 +44,8 @@ Replace ``id`` in the endpoint URL by the methods's ID. For example: ``https://a
        .. type:: string
           :required: false
 
-     - The currency to receiving the ``minimumAmount`` and ``maximumAmount`` in.
+     - The currency to receiving the ``minimumAmount`` and ``maximumAmount`` in. We will return an error when the currency
+       is not supported by the payment method.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
