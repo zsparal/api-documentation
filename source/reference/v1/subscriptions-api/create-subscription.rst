@@ -22,7 +22,7 @@ Create subscription
 With subscriptions, you can schedule recurring payments to take place at regular intervals.
 
 For example, by simply specifying an ``amount`` and an ``interval``, you can create an endless subscription to charge a
-monthly fee, until the consumer cancels their subscription.
+monthly fee, until you cancel the subscription.
 
 Or, you could use the ``times`` parameter to only charge a limited number of times, for example to split a big
 transaction in multiple parts.
@@ -126,7 +126,7 @@ See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more inform
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 

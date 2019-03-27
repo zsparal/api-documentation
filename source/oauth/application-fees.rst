@@ -3,8 +3,8 @@ Application fees
 With **Application fees**, you can split a payment between a platform and connected merchant accounts.
 
 An example use case is a ticketing platform that charges a fee per successful payment to each connected theatre. In this
-case, each theatre has an account with Mollie with the ticketing platform's app authorized to create payments on their
-behalf.
+case, each theatre has an account with Mollie with the ticketing platform's OAuth app authorized to create payments on
+their behalf.
 
 The ticketing platform can add an application fee to each payment. When the payment is successful, the fee specified in
 the application fee is transferred from the theatre's account to the platforms account.
@@ -23,9 +23,14 @@ enabled.
 
 How to create an application fee
 --------------------------------
-Application fees are created by passing additional parameters to the
-:doc:`Create payment </reference/v2/payments-api/create-payment>` or
-:doc:`Create order </reference/v2/orders-api/create-order>` API:
+
+One-off application fees can be created on Payments or Orders. Application fees can also be set on Subscriptions, in
+which case the application fee will be added to *each Payment* created for the Subscription.
+
+They are created by passing additional parameters to the
+:doc:`Create payment </reference/v2/payments-api/create-payment>`,
+:doc:`Create order </reference/v2/orders-api/create-order>` or the
+:doc:`Create subscription </reference/v2/subscriptions-api/create-subscription>` API:
 
 .. list-table::
    :widths: auto
@@ -35,7 +40,7 @@ Application fees are created by passing additional parameters to the
        .. type:: object
           :required: false
 
-     - Adding an application fee allows you to charge the merchant a small sum for the payment and transfer this to your
+     - Adding an application fee allows you to charge the merchant for the payment and transfer this to your
        own account. The application fee is deducted from the payment.
 
        .. list-table::
@@ -59,7 +64,7 @@ Application fees are created by passing additional parameters to the
                         :required: true
 
                    - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. For application fees, this
-                     must always be ``EUR`` regardless of the currency of the payment or order.
+                     must always be ``EUR`` regardless of the currency of the payment, order or subscription.
 
                  * - ``value``
 
@@ -76,7 +81,14 @@ Application fees are created by passing additional parameters to the
 
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
+              The maximum length is 255 characters.
+
+Recurring
+-------------
+Application fees are both supported on recurring payment and on subscriptions.
+
 Multicurrency
 -------------
-Application fees are supported on all payments regardless of currency. However, the application fee itself must always
-be created in ``EUR``. For example, you can charge a €1.00 application fee on a US$10.00 payment.
+Application fees are supported on all payments regardless of :doc:`currency </payments/multicurrency>`. However, the
+application fee itself must always be created in ``EUR``. For example, you can charge a €1.00 application fee on a
+US$10.00 payment.

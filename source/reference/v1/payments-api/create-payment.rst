@@ -455,7 +455,7 @@ specify which profile the payment belongs to. Organizations can have multiple pr
        .. type:: string
           :required: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 
@@ -469,7 +469,7 @@ specify which profile the payment belongs to. Organizations can have multiple pr
        .. type:: object
           :required: false
 
-     - Adding an Application Fee allows you to charge the merchant a small sum for the payment and transfer
+     - Adding an Application Fee allows you to charge the merchant for the payment and transfer
        this to your own account. Set the ``applicationFee`` parameter as a small object with it’s own amount and
        description. The application fee amount must be at least about €1.00 less than the payment's ``amount``
        parameter.
@@ -494,6 +494,8 @@ specify which profile the payment belongs to. Organizations can have multiple pr
                  :required: true
 
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
+
+              The maximum length is 255 characters.
 
 QR codes
 ^^^^^^^^
