@@ -9,12 +9,14 @@ brands are supported:
 * `fashioncheque <https://www.fashioncheque.com/>`_
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
+* `Nationale Golfbon <https://www.golfbon.nl/>`_
 * `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`_
 * `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
+* `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
+* `Travelcheq <https://www.travelcheq.com/>`_
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
-* `Travelcheq <https://www.travelcheq.com/>`_
 
 If you need a different brand, please reach out to your account manager or our support department.
 

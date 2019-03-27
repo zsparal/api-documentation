@@ -8,6 +8,19 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+March 2019
+==========
+
+Thursday, 21th
+--------------
+
+- Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
+
+Tuesday, 12th
+-------------
+
+- Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
+
 February 2019
 =============
 

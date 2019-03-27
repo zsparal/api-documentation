@@ -6,14 +6,24 @@ changes are documented here.
 March 2019
 ==========
 
-Blah, nnth
-----------
+Wednesday, 27th
+---------------
 
 - Added the ``profile`` key to the ``_links`` object in the
   :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
 
 - Subscriptions can now be created with :doc:`application fees </oauth/application-fees>`. The application fees will be
   applied on each created Payment for the Subscription.
+
+Thursday, 21th
+--------------
+
+- Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
+
+Tuesday, 12th
+-------------
+
+- Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
 
 February 2019
 =============
