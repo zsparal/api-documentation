@@ -16,7 +16,8 @@ Our OAuth platform allows you to:
 * View a merchants' transaction and settlement data
 * Show the next settlement and balance at Mollie in your app
 * Integrate merchants' invoices from Mollie in your app
-* Charge merchants for payments initiated through your app (:doc:`application fees </oauth/application-fees>`)
+* Charge merchants for payments, orders and subscriptions initiated through your app
+  (:doc:`application fees </oauth/application-fees>`)
 
 What does the Mollie OAuth flow look like?
 ------------------------------------------

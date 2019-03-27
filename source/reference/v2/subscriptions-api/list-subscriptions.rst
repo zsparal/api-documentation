@@ -51,7 +51,7 @@ of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profil
        .. type:: string
           :required: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. This field is mandatory.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
    * - ``testmode``
 
@@ -189,6 +189,10 @@ Response
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3",
+                           "type": "application/hal+json"
+                       },
+                       "profile": {
+                           "href": "https://api.mollie.com/v2/profiles/pfl_URR55HPMGx",
                            "type": "application/hal+json"
                        },
                        "customer": {

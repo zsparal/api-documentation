@@ -177,6 +177,29 @@ Response
      - The optional metadata you provided upon subscription creation. Metadata can for example be used to link a plan
        to a subscription.
 
+   * - ``applicationFee``
+
+       .. type:: object
+
+     - The application fee, if the subscription was created with one. This will be applied on each payment created for
+       the subscription.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``amount``
+
+              .. type:: decimal
+
+            - The application fee amount in EUR as specified during subscription creation.
+
+          * - ``description``
+
+              .. type:: string
+
+            - The description of the application fee as specified during subscription creation.
+
+
    * - ``_links``
 
        .. type:: object
@@ -276,6 +299,10 @@ Response
            },
            "customer": {
                "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS",
+               "type": "application/hal+json"
+           },
+           "profile": {
+               "href": "https://api.mollie.com/v2/profiles/pfl_URR55HPMGx",
                "type": "application/hal+json"
            },
            "documentation": {
