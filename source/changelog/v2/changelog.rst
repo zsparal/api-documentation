@@ -11,9 +11,14 @@ Wednesday, 27th
 
 - Added the ``profile`` key to the ``_links`` object in the
   :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
-
 - Subscriptions can now be created with :doc:`application fees </oauth/application-fees>`. The application fees will be
   applied on each created Payment for the Subscription.
+- Added the ``minimumAmount`` and ``maximumAmount`` properties to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
+  endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
+- Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
+  endpoint.
+- Added the ``currency`` query paramter to the :doc:`Get payment method </reference/v2/methods-api/get-method>` endpoint.
+- The ``.dev`` TLD is now supported for webhooks.
 
 Thursday, 21th
 --------------
