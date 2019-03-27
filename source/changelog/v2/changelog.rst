@@ -6,14 +6,15 @@ changes are documented here.
 March 2019
 ==========
 
-Day, xx
--------
+Thursday, 21th
+--------------
 
-- Added the ``minimumAmount`` and ``maximumAmount`` parameters to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
-  endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
-- Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
-  endpoint.
-- Added the ``currency`` query paramter to the :doc:`Get payment method </reference/v2/methods-api/get-method>` endpoint.
+- Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
+
+Tuesday, 12th
+-------------
+
+- Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
 
 February 2019
 =============
