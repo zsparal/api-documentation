@@ -42,6 +42,24 @@ Parameters
 
        Example: ``https://api.mollie.com/v2/methods/all?amount[value]=100.00&amount[currency]=USD``
 
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you must specify which profile you want to look at when listing methods. Organizations can have multiple
+profiles for each of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more
+information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: true
+
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
 Includes
 --------
 This endpoint allows you to include additional information by appending the following values via the ``include``
