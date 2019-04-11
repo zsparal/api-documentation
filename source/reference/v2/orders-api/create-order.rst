@@ -387,7 +387,8 @@ parameters.
 
 .. note:: You can set the ``payment.webhookUrl`` if you want to receive notifications about failed, canceled, or expired
           order payments. Since we do not call your order webhook for these payment events, it can be useful for e.g.
-          sending your own payment reminders to your customers.
+          sending your own payment reminders to your customers. Note that the ``payment.webhookUrl`` is copied when a
+          new order payment is created.
 
           **Keep in mind:** When the status of the payment becomes ``paid`` we are calling your order webhook instead.
           This prevents you from getting a double notification about one and the same.
