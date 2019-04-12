@@ -75,6 +75,8 @@ For example:
        "issuer": "ideal_INGBNL2A"
    }
 
+.. note:: When the payment ``webhook`` parameter is not specified it is copied from the previous order
+          payment (if it was set).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
