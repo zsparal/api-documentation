@@ -103,7 +103,7 @@ Response
 
      - Payment methods that the customer recently used for payments.
 
-       Possible array values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       Possible array values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard``
        ``przelewy24`` ``sofort``
 
