@@ -8,6 +8,15 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+April 2019
+==========
+
+Friday, 19th
+------------
+
+- Added a new endpoint for Mollie Connect to revoke access and refresh tokens. See the
+  :doc:`Revoke Token endpoint </reference/oauth2/revoke-token>` for details.
+
 March 2019
 ==========
 
