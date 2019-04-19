@@ -46,7 +46,7 @@ payment methods.
 
 .. note :: Apple Pay should only be shown if it is available on the device, hence the need to indicate your support.
 
-Then, during checkout, you should check if the Apple Pay method is available by using the
+Then, during checkout, you should check if the Apple Pay method is available on the shopper's device by using the
 ``canMakePayments`` method on the ``window.ApplePaySession`` object. For more details, see the `article by Apple
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_.
 
@@ -61,5 +61,5 @@ Finally, when the shopper selects Apple Pay from your method selection, you shou
 a payment with the ``method`` parameter set to ``applepay`` and redirect the shopper to the ``_links.checkout`` URL
 returned.
 
-When the shopper pays with Apple pay, a payment of the method ``creditcard`` will be created. We will then call your
+When the shopper authorizes the payment, a payment of the method ``creditcard`` will be created. We will then call your
 :doc:`webhook </guides/webhooks>` and redirect the shopper back to your webshop as normal.
