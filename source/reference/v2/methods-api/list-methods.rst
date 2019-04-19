@@ -93,6 +93,18 @@ Parameters
 
        Example: ``https://api.mollie.com/v2/methods?resource=orders&billingCountry=DE``
 
+   * - ``includeWallets``
+
+       .. type:: string
+          :required: false
+
+     - A comma separated list of the wallets you support in your checkout. Wallets often require custom code to check if
+       they are available on the shoppers device, hence the need to indicate your support.
+
+       At the moment, the only supported wallet is ``applepay``.
+
+       Example: ``https://api.mollie.com/v2/methods?includeWallets=applepay``
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
