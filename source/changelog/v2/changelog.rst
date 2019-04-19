@@ -3,6 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+April 2019
+==========
+
+Friday, 19th
+------------
+
+- Added a new endpoint for Mollie Connect to revoke access and refresh tokens. See the
+  :doc:`Revoke Token endpoint </reference/oauth2/revoke-token>` for details.
+
 March 2019
 ==========
 
