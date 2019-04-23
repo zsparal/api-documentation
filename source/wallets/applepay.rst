@@ -44,10 +44,9 @@ support in your checkout by adding the ``includeWallets=applepay`` parameter.
 If Apple Pay is enabled on the website profile, a method with the id ``applepay`` will be returned in the list of
 payment methods.
 
-.. note :: Apple Pay should only be shown if it is available on the device, hence the need to indicate your support.
-
 Then, during checkout, you should check if the Apple Pay method is available on the shopper's device by using the
-``canMakePayments`` method on the ``window.ApplePaySession`` object. For more details, see the `article by Apple
+``canMakePayments`` method on the ``window.ApplePaySession`` object. Apple requires you that you only show the Apple Pay
+option when it is actually supported by the device. For more details, see the `article by Apple
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_.
 
 .. code-block:: javascript
@@ -61,5 +60,5 @@ Finally, when the shopper selects Apple Pay from your method selection, you shou
 a payment with the ``method`` parameter set to ``applepay`` and redirect the shopper to the ``_links.checkout`` URL
 returned.
 
-When the shopper authorizes the payment, a payment with the method ``creditcard`` will be created. We will then call your
-:doc:`webhook </guides/webhooks>` and redirect the shopper back to your webshop as normal.
+When the shopper authorizes the payment, Mollie will create a payment with the method ``creditcard``. We will then call
+your :doc:`webhook </guides/webhooks>` and redirect the shopper back to your website as normal.
