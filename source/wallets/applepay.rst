@@ -32,7 +32,7 @@ Integrating in your own check out
 
 At the moment, only limited support for integrating Apple Pay in your own checkout is available.
 
-First, you must indicate to the :doc:`List Method API </reference/v2/methods-api/list-methods>` which wallets you
+First, you must indicate to the :doc:`List Methods API </reference/v2/methods-api/list-methods>` which wallets you
 support in your checkout by adding the ``includeWallets=applepay`` parameter.
 
 .. code-block:: bash
@@ -61,5 +61,5 @@ Finally, when the shopper selects Apple Pay from your method selection, you shou
 a payment with the ``method`` parameter set to ``applepay`` and redirect the shopper to the ``_links.checkout`` URL
 returned.
 
-When the shopper authorizes the payment, a payment of the method ``creditcard`` will be created. We will then call your
+When the shopper authorizes the payment, a payment with the method ``creditcard`` will be created. We will then call your
 :doc:`webhook </guides/webhooks>` and redirect the shopper back to your webshop as normal.
