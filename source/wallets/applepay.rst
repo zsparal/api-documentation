@@ -93,7 +93,7 @@ If you need a more control or have complex HTML, see :ref:`Adding Apple Pay serv
    </form>
 
    <!-- Only load this script if Apple Pay is enabled on your profile. See step 1 above. -->
-   <script src="/apple-pay.js"></script>
+   <script src="/path/to/apple-pay.js"></script>
 
 *JavaScript*
 
@@ -167,6 +167,9 @@ Note this requires changes to HTML, CSS, and JavaScript.
      </ul>
    </form>
 
+   <!-- Only load this script if Apple Pay is enabled on your profile. See step 1 above. -->
+   <script src="/path/to/apple-pay.js"></script>
+
 *CSS*
 
 .. code-block:: css
@@ -181,6 +184,7 @@ Note this requires changes to HTML, CSS, and JavaScript.
 .. code-block:: javascript
    :linenos:
 
+   // apple-pay.js
    const detectApplePay = () => {
       if (!window.ApplePaySession || !ApplePaySession.canMakePayments()) {
         // Apple Pay is not available
