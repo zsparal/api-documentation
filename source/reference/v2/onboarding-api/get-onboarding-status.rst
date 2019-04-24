@@ -110,6 +110,15 @@ Example
       curl -X GET https://api.mollie.com/v2/onboarding/me \
            -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      
+      $onboarding = $mollie->onboarding->get();
+
 Response
 ^^^^^^^^
 .. code-block:: http
