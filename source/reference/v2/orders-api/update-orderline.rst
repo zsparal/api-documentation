@@ -68,9 +68,9 @@ in the request.
 
      - The number of items in the order line.
 
-        .. note::
-           This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
-           is also provided in the request.
+       .. note::
+          This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
+          is also provided in the request.
 
    * - ``unitPrice``
 
