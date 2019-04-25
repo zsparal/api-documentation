@@ -71,7 +71,7 @@ Examples
 Option 1. Adding Apple Pay client-side with JavaScript
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-When using a <select> dropdown or equivalent, we recommend handling adding Apple Pay to your checkout entirely with 
+When using a ``<select>`` dropdown or equivalent, we recommend handling adding Apple Pay to your checkout entirely with
 JavaScript. This prevents you from having to edit your HTML or CSS.
 
 If you need a more control or have complex HTML, see :ref:`Adding Apple Pay server-side <adding-apple-pay-server-side>`.
