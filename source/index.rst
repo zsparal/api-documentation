@@ -39,7 +39,6 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Bancontact <https://www.mollie.com/en/payments/bancontact>`_
 * `Bank transfer <https://www.mollie.com/en/payments/bank-transfer>`_
 * `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_
-* `Bitcoin <https://www.mollie.com/en/payments/bitcoin>`_
 * `Credit card <https://www.mollie.com/en/payments/credit-card>`_ (VISA, MasterCard, Maestro and American Express)
 * `EPS <https://www.mollie.com/en/payments/eps>`_
 * `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart,
