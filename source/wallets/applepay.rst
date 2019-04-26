@@ -30,7 +30,9 @@ without the ``method`` parameter, the Apple Pay button will be shown in the chec
 Integrating in your own check out
 ---------------------------------
 
-At the moment, only limited support for integrating Apple Pay in your own checkout is available.
+At the moment, only limited support for integrating Apple Pay in your own checkout is available. You cannot add the
+"Checkout with Pay" button to your own checkout, but you can add Apple Pay to the method selection. The "Checkout
+with Pay" button will then be shown in the Mollie Checkout.
 
 First, you must indicate to the :doc:`List Methods API </reference/v2/methods-api/list-methods>` which wallets you
 support in your checkout by adding the ``includeWallets=applepay`` parameter.
@@ -42,7 +44,7 @@ support in your checkout by adding the ``includeWallets=applepay`` parameter.
       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 If Apple Pay is enabled on the website profile, a method with the id ``applepay`` will be returned in the list of
-payment methods.
+payment methods. Apple Pay can be enabled in the `Dashboard <https://www.mollie.com/dashboard>`_.
 
 Then, during checkout, you should check if the Apple Pay method is available on the shopper's device by using the
 ``canMakePayments`` method on the ``window.ApplePaySession`` object. Apple requires you that you only show the Apple Pay
