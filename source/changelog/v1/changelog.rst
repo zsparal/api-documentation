@@ -11,6 +11,11 @@ changes are documented here.
 April 2019
 ==========
 
+Placeholder
+-----------
+
+- Added "VVV Dinercheque" and "VVV Lekkerweg" as giftcard issuers.
+
 Friday, 19th
 ------------
 
