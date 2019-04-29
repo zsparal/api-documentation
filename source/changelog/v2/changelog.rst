@@ -6,6 +6,13 @@ changes are documented here.
 April 2019
 ==========
 
+Placeholder
+-----------
+
+- Refunds can now contain ``metadata``. We will save the data alongside the refund. Whenever you fetch the refund with
+  our API, we'll also include the metadata. See the :doc:`Create Payment Refund </reference/v2/refunds-api/create-refund>`
+  and :doc:`Create Order Refund </reference/v2/orders-api/create-order-refund>` documentation for more info.
+
 Friday, 19th
 ------------
 
