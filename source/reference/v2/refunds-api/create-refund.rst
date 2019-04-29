@@ -85,6 +85,15 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
      - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+       refund. Whenever you fetch the refund with our API, we'll also include the metadata. You can use up to
+       approximately 1kB.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
@@ -116,7 +125,8 @@ Example
       curl -X POST https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
          -d "amount[currency]=EUR" \
-         -d "amount[value]=5.95"
+         -d "amount[value]=5.95" \
+         -d "metadata={\"bookkeeping_id\": 12345}"
 
    .. code-block:: php
       :linenos:
@@ -182,6 +192,9 @@ Response
        "status": "pending",
        "createdAt": "2018-03-14T17:09:02.0Z",
        "description": "Order #33",
+       "metadata": {
+            "bookkeeping_id": 12345
+       },
        "paymentId": "tr_WDqYK6vllg",
        "_links": {
            "self": {

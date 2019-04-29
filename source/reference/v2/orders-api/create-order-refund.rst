@@ -89,6 +89,15 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
      - The description of the refund you are creating. This will be shown to the consumer on their card or
        bank statement when possible. Max. 140 characters.
 
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
+       refund. Whenever you fetch the refund with our API, we'll also include the metadata. You can use up to
+       approximately 1kB.
+
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
@@ -127,7 +136,10 @@ Example
                         "quantity": 1
                      }
                   ],
-                  "description": "Required quantity not in stock, refunding one photo book."
+                  "description": "Required quantity not in stock, refunding one photo book.",
+                  "metadata": {
+                     "bookkeeping_id": 12345
+                  }
          }'
 
    .. code-block:: php
@@ -209,6 +221,9 @@ Response
        "status": "pending",
        "createdAt": "2018-03-14T17:09:02.0Z",
        "description": "Required quantity not in stock, refunding one photo book.",
+       "metadata": {
+            "bookkeeping_id": 12345
+       },
        "paymentId": "tr_WDqYK6vllg",
        "orderId": "ord_stTC2WHAuS",
        "lines": [
