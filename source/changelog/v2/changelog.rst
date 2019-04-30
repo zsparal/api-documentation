@@ -56,7 +56,7 @@ Monday, 25th
 
 - Updated the list of available profile :doc:`merchant category codes </reference/v2/profiles-api/create-profile>`
 
-Wednesday, 7th
+Wednesday, 6th
 --------------
 
 - We will now also call the webhook when a refund got canceled
