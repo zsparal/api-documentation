@@ -56,6 +56,11 @@ Monday, 25th
 
 - Updated the list of available profile :doc:`merchant category codes </reference/v2/profiles-api/create-profile>`
 
+Wednesday, 7th
+--------------
+
+- We will now also call the webhook when a refund got canceled
+
 Thursday, 21st
 --------------
 - The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available
