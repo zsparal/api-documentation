@@ -1,5 +1,5 @@
-Tokens
-======
+Generate tokens
+===============
 .. api-name:: Connect API
 
 .. endpoint::

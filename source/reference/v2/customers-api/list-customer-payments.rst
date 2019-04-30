@@ -21,6 +21,31 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 This endpoint accepts the same parameters as the :doc:`List payments </reference/v2/payments-api/list-payments>`
 endpoint.
 
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: true
+
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to ``true`` to get payments made in test mode. If you omit this parameter, you can only retrieve live
+       mode payments.
+
 Response
 --------
 ``200`` ``application/hal+json``

@@ -22,7 +22,7 @@ skirt in red.
 Or update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` and ``vatRate`` if you
 want to substitute a product for an entirely different one.
 
-Alternatively, you can also (partially) `:doc:cancel order lines <reference/v2/orders-api/cancel-order-lines>` instead
+Alternatively, you can also (partially) :doc:`cancel order lines </reference/v2/orders-api/cancel-order-lines>` instead
 of updating the quantity.
 
 When updating an order line that uses a *pay after delivery* method such as *Klarna Pay later*,
@@ -68,9 +68,9 @@ in the request.
 
      - The number of items in the order line.
 
-        .. note::
-           This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
-           is also provided in the request.
+       .. note::
+          This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
+          is also provided in the request.
 
    * - ``unitPrice``
 

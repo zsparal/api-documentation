@@ -11,6 +11,15 @@ Wednesday, 1st
 
 - Removed ``bitcoin`` as payment method.
 
+April 2019
+==========
+
+Friday, 19th
+------------
+
+- Added a new endpoint for Mollie Connect to revoke access and refresh tokens. See the
+  :doc:`Revoke Token endpoint </reference/oauth2/revoke-token>` for details.
+
 March 2019
 ==========
 
