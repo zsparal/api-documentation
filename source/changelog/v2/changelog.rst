@@ -56,16 +56,17 @@ Monday, 25th
 
 - Updated the list of available profile :doc:`merchant category codes </reference/v2/profiles-api/create-profile>`
 
-Wednesday, 6th
---------------
-
-- We will now also call the webhook when a refund got canceled
-
 Thursday, 21st
 --------------
 - The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available
   for paid payments in test mode. This allows you to create refunds and chargebacks for test mode payments from the
   checkout screen.
+
+Wednesday, 6th
+--------------
+
+- We will now also call the webhook when a refund got canceled
+
 
 January 2019
 ============
