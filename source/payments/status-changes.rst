@@ -72,7 +72,6 @@ Expiry times per payment method
 +---------------------------+-----------------------------------+
 | - Bancontact              | 1 hour                            |
 | - Belfius Pay Button      |                                   |
-| - Bitcoin                 |                                   |
 | - EPS                     |                                   |
 | - Giropay                 |                                   |
 | - KBC                     |                                   |

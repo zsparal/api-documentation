@@ -75,7 +75,7 @@ querystring parameter.
 
 * ``settlement`` Include the settlement a payment belongs to, when available.
 * ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object for each payment that supports it. Only
-  available for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+  available for iDEAL, Bancontact and bank transfer payments.
 
 Response
 --------
