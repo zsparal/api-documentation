@@ -70,6 +70,12 @@ Thursday, 21st
   for paid payments in test mode. This allows you to create refunds and chargebacks for test mode payments from the
   checkout screen.
 
+Wednesday, 6th
+--------------
+
+- We will now also call the webhook when a refund got canceled
+
+
 January 2019
 ============
 
