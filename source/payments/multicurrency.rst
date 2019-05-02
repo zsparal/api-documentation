@@ -24,69 +24,69 @@ Support for other currencies than ``EUR`` varies per payment method.
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | Currency             | ISO code | Decimal places | Payment methods                                                   |
 +======================+==========+================+===================================================================+
-| Australian dollar    | ``AUD``  |              2 | PayPal, credit card, bitcoin                                      |
+| Australian dollar    | ``AUD``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Bulgarian lev        | ``BGN``  |              2 | Credit card, bitcoin                                              |
+| Bulgarian lev        | ``BGN``  |              2 | Credit card                                                       |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Brazilian real       | ``BRL``  |              2 | PayPal, bitcoin                                                   |
+| Brazilian real       | ``BRL``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Canadian dollar      | ``CAD``  |              2 | PayPal, credit card, bitcoin                                      |
+| Canadian dollar      | ``CAD``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Swiss franc          | ``CHF``  |              2 | PayPal, credit card, bitcoin                                      |
+| Swiss franc          | ``CHF``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Czech koruna         | ``CZK``  |              2 | PayPal, credit card, bitcoin                                      |
+| Czech koruna         | ``CZK``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Danish krone         | ``DKK``  |              2 | PayPal, credit card, bitcoin                                      |
+| Danish krone         | ``DKK``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | Euro                 | ``EUR``  |              2 | All payment methods                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| British pound        | ``GBP``  |              2 | PayPal, credit card, bitcoin                                      |
+| British pound        | ``GBP``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Hong Kong dollar     | ``HKD``  |              2 | PayPal, credit card, bitcoin                                      |
+| Hong Kong dollar     | ``HKD``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Croatian kuna        | ``HRK``  |              2 | Credit card, bitcoin                                              |
+| Croatian kuna        | ``HRK``  |              2 | Credit card                                                       |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Hungarian forint     | ``HUF``  |              2 | PayPal, credit card, bitcoin                                      |
+| Hungarian forint     | ``HUF``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | .. note::                                                                                                            |
 |    Note that at PayPal, fillér are not supported, but at Mollie they                                                 |
 |    are. We will round the amount sent to PayPal to whole florints.                                                   |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Israeli new shekel   | ``ILS``  |              2 | PayPal, credit card, bitcoin                                      |
+| Israeli new shekel   | ``ILS``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Icelandic króna      | ``ISK``  |              0 | Credit card, bitcoin                                              |
+| Icelandic króna      | ``ISK``  |              0 | Credit card                                                       |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Japanese yen         | ``JPY``  |              0 | PayPal, credit card, bitcoin                                      |
+| Japanese yen         | ``JPY``  |              0 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Mexican peso         | ``MXN``  |              2 | PayPal, bitcoin                                                   |
+| Mexican peso         | ``MXN``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Malaysian ringgit    | ``MYR``  |              2 | PayPal, bitcoin                                                   |
+| Malaysian ringgit    | ``MYR``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Norwegian krone      | ``NOK``  |              2 | PayPal, credit card, bitcoin                                      |
+| Norwegian krone      | ``NOK``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| New Zealand dollar   | ``NZD``  |              2 | PayPal, bitcoin                                                   |
+| New Zealand dollar   | ``NZD``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Philippine piso      | ``PHP``  |              2 | PayPal, bitcoin                                                   |
+| Philippine piso      | ``PHP``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Polish złoty         | ``PLN``  |              2 | PayPal, credit card, bitcoin                                      |
+| Polish złoty         | ``PLN``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Romanian leu         | ``RON``  |              2 | Credit card, bitcoin                                              |
+| Romanian leu         | ``RON``  |              2 | Credit card                                                       |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Russian ruble        | ``RUB``  |              2 | PayPal, bitcoin                                                   |
+| Russian ruble        | ``RUB``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Swedish krona        | ``SEK``  |              2 | PayPal, credit card, bitcoin                                      |
+| Swedish krona        | ``SEK``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Singapore dollar     | ``SGD``  |              2 | PayPal, bitcoin                                                   |
+| Singapore dollar     | ``SGD``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| Thai baht            | ``THB``  |              2 | PayPal, bitcoin                                                   |
+| Thai baht            | ``THB``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| New Taiwan dollar    | ``TWD``  |              2 | PayPal, bitcoin                                                   |
+| New Taiwan dollar    | ``TWD``  |              2 | PayPal                                                            |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | .. note::                                                                                                            |
 |    Note that at PayPal, cents are not supported, but at Mollie they                                                  |
 |    are. We will round the amount sent to PayPal to whole dollars.                                                    |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
-| United States dollar | ``USD``  |              2 | PayPal, credit card, bitcoin                                      |
+| United States dollar | ``USD``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 
 Filtering payment methods
@@ -140,21 +140,6 @@ Response
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/methods/paypal",
-                           "type": "application/hal+json"
-                       }
-                   }
-               },
-               {
-                   "resource": "method",
-                   "id": "bitcoin",
-                   "description": "Bitcoin",
-                   "image": {
-                       "size1x": "https://www.mollie.com/images/payscreen/methods/bitcoin.png",
-                       "size2x": "https://www.mollie.com/images/payscreen/methods/bitcoin%402x.png"
-                   },
-                   "_links": {
-                       "self": {
-                           "href": "https://api.mollie.com/v2/methods/bitcoin",
                            "type": "application/hal+json"
                        }
                    }

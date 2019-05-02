@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+May 2019
+==========
+
+Wednesday, 1st
+--------------
+
+- Removed ``bitcoin`` as payment method.
+
 April 2019
 ==========
 
@@ -66,6 +74,12 @@ Thursday, 21st
 - The ``changePaymentState`` link in the :doc:`Payments API </reference/v2/payments-api/get-payment>` is now available
   for paid payments in test mode. This allows you to create refunds and chargebacks for test mode payments from the
   checkout screen.
+
+Wednesday, 6th
+--------------
+
+- We will now also call the webhook when a refund got canceled
+
 
 January 2019
 ============
@@ -256,10 +270,6 @@ Tuesday, 2nd
 
 September 2018
 ==============
-
-Friday, 28th
-------------
-- Bitcoin payments can now be created in non-EUR currencies. Your account will be settled in EUR.
 
 Tuesday, 25th
 -------------

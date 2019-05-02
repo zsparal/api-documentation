@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+May 2019
+==========
+
+Wednesday, 1st
+--------------
+
+- Removed ``bitcoin`` as payment method.
+
 April 2019
 ==========
 
@@ -48,6 +56,11 @@ Monday, 25th
 ------------
 
 - Updated the list of available profile :doc:`merchant category codes </reference/v1/profiles-api/create-profile>`
+
+Wednesday, 6th
+--------------
+
+- We will now also call the webhook when a refund got canceled
 
 December 2018
 =============
@@ -192,14 +205,6 @@ Tuesday, 2nd
 
 - PayPal payments now expire after three hours, instead of after 15 minutes.
 
-December 2017
-=============
-
-Wednesday, 6th
---------------
-- The payment create API call now supports the billingEmail field for Bitcoin payments. The email address is used for
-  handling failed transactions (e.g. wrong amount transferred, Bitcoins transferred too late).
-
 November 2017
 =============
 
@@ -280,7 +285,7 @@ Wednesday, 13th
 Tuesday, 12th
 -------------
 - We've added a new integration guide for QR codes. At the moment, we support the desktop-to-mobile flow with QR codes
-  for the payment methods iDEAL, bank transfer and Bitcoin. We've also fully integrated iDEAL QR into Mollie Checkout.
+  for the payment methods iDEAL and bank transfer. We've also fully integrated iDEAL QR into Mollie Checkout.
 
 Thursday, 7th
 -------------
@@ -380,11 +385,10 @@ Wednesday, 1st
 
 QR codes can be scanned by mobile applications to continue the payment on the mobile device.
 
-At the moment, the QR code is only available for Bank transfer and Bitcoin payments but we will add support for more
+At the moment, the QR code is only available for Bank transfer payments but we will add support for more
 payment methods soon.
 
-In the Netherlands, the bank transfer QR code can be scanned by the mobile banking apps from ING and bunq. Bitcoin QR
-codes can be scanned by bitcoin wallet clients.
+In the Netherlands, the bank transfer QR code can be scanned by the mobile banking apps from ING and bunq.
 
 January 2017
 ============

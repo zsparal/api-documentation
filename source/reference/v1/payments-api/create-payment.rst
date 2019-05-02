@@ -101,7 +101,7 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
+       Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
        ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
@@ -183,19 +183,6 @@ Bank transfer
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
-
-Bitcoin
-"""""""
-.. list-table::
-   :widths: auto
-
-   * - ``billingEmail``
-
-       .. type:: string
-          :required: false
-
-     - The email address of the customer. This is used when handling invalid transactions (wrong amount
-       transferred, transfer of expired or canceled payments, et cetera).
 
 Credit card
 """""""""""
@@ -505,7 +492,7 @@ include request for ``details.qrCode`` in the query string:
 
 ``POST https://api.mollie.com/v1/payments?include=details.qrCode``
 
-QR codes can be generated for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+QR codes can be generated for iDEAL, Bancontact and bank transfer payments.
 
 Refer to the :doc:`Get payment </reference/v1/payments-api/get-payment>` reference to see what the API response looks
 like when the QR code is included.
