@@ -13,10 +13,12 @@ List settlement captures
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all captures for a certain settlement.
+Retrieve all captures in a certain settlement.
 
-Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment
-that have this flow are *Klarna Pay later* and *Klarna Slice it*.
+Captures are used for *pay after delivery* payment methods. The only payment methods at the moment that have this flow
+are *Klarna Pay later* and *Klarna Slice it*.
+
+.. note:: There will be one capture per payment for each shipment, so there can be multiple captures per payment.
 
 Parameters
 ----------
