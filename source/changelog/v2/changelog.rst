@@ -6,6 +6,11 @@ changes are documented here.
 May 2019
 ==========
 
+TBD
+---
+
+- Polish złoty is now supported as a currency for the Przelewy24 payment method.
+
 Wednesday, 8th
 --------------
 
