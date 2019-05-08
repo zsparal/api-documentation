@@ -15,6 +15,8 @@ brands are supported:
 * `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
 * `Travelcheq <https://www.travelcheq.com/>`_
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_
+* `VVV Dinercheque <https://www.vvvcadeaukaarten.nl/vvv-dinercheque>`_
+* `VVV Lekkerweg <https://www.vvvcadeaukaarten.nl/vvv-lekkerweg>`_
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
 

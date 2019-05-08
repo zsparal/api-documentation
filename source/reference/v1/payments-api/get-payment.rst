@@ -51,7 +51,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``settlement`` Include the settlement this payment belongs to, when available.
-* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bitcoin, Bancontact
+* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bancontact
   and bank transfer payments.
 
 Response
@@ -173,7 +173,7 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
+       Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
        ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``paypal``
        ``paysafecard`` ``przelewy24`` ``sofort``
 
@@ -491,47 +491,6 @@ Belfius Pay Button
               .. type:: string
 
             - Only available one banking day after the payment has been completed – ``GKCCBEBB``.
-
-Bitcoin
-"""""""
-.. list-table::
-   :widths: auto
-
-   * - ``details``
-
-       .. type:: object
-
-     - An object with payment details.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``bitcoinAddress``
-
-              .. type:: string
-
-            - Only available if the payment has been completed – The bitcoin address the bitcoins were transferred to.
-
-          * - ``bitcoinAmount``
-
-              .. type:: object
-
-            - The amount transferred in BTC.
-
-          * - ``bitcoinUri``
-
-              .. type:: string
-
-            - An URI that is understood by Bitcoin wallet clients and will cause such clients to prepare the
-              transaction. Follows the
-              `BIP 21 URI scheme <https://github.com/bitcoin/bips/blob/master/bip-0021.mediawiki>`_.
-
-          * - ``qrCode``
-
-              .. type:: object
-
-            - Only available if requested during payment creation - The QR code that can be scanned by Bitcoin wallet
-              clients and will cause such clients to prepare the transaction.
 
 Credit card
 """""""""""

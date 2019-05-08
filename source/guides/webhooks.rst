@@ -51,6 +51,7 @@ following statuses:
 Furthermore, the webhook will be called when:
 
 * A refund is performed on the payment
+* A refund has been canceled
 * A chargeback is received on the payment.
 
 Read more about :doc:`payment status changes </payments/status-changes>`.

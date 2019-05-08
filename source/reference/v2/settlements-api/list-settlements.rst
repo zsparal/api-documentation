@@ -64,7 +64,7 @@ Response
               .. type:: array
 
             - An array of settlement objects as described in
-              :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`.
+              :doc:`Get settlement <get-settlement>`.
 
    * - ``_links``
 

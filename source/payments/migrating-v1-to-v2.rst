@@ -112,7 +112,6 @@ The following fields have been changed, renamed or moved:
 * ``links.paymentUrl`` has been renamed to ``_links.checkout`` as per HAL specifications.
 * ``failureReason`` has been moved from the Payment resource to the credit card detail object, and no longer available
   for Bancontact payments.
-* ``details.bitcoinAmount`` is now an amount object in the ``XBT`` currency.
 
 The following fields have been removed:
 
@@ -121,6 +120,7 @@ The following fields have been removed:
 * ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
   :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
 * ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
+* ``details.bitcoinAmount`` has been removed from the Bitcoin detail object.
 * ``details.cardCountry`` has been removed from the credit card detail object.
 * The option to include the settlement using the ``include`` query string parameter has been removed.
 

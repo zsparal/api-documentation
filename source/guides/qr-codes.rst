@@ -6,8 +6,8 @@ flow from their desktop or laptop computer to their mobile device. This is the s
 QR codes also allow your customers to pay without requiring manual input leading to lower error rates.
 
 In most cases, this works by scanning a QR code during the payment using a dedicated app on a phone. For example,
-Bitcoin payments support a QR code that can be scanned using a wallet app. The customer then completes the transaction
-from his or her mobile device.
+iDEAL payments support a QR code that can be scanned using the iDEAL app or directly from within the banking app.
+The customer then completes the transaction from his or her mobile device.
 
 How do QR codes work?
 ---------------------
@@ -29,8 +29,6 @@ Supported payment methods
 +-------------+--------------------------------------------------------------------------------------------------------+
 |Bank transfer|Many mobile banking apps support scanning EPC QR codes for SEPA credit transfers. Note that there is no |
 |             |real-time feedback for this payment method.                                                             |
-+-------------+--------------------------------------------------------------------------------------------------------+
-|Bitcoin      |Most Bitcoin wallet apps support sending Bitcoins by scanning a QR code.                                |
 +-------------+--------------------------------------------------------------------------------------------------------+
 
 Implementation options

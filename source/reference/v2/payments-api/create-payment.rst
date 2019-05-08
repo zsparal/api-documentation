@@ -122,7 +122,7 @@ Parameters
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``bitcoin`` ``creditcard`` ``directdebit`` ``eps``
+       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
@@ -213,19 +213,6 @@ Bank transfer
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
        ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
        ``lt_LT``
-
-Bitcoin
-"""""""
-.. list-table::
-   :widths: auto
-
-   * - ``billingEmail``
-
-       .. type:: string
-          :required: false
-
-     - The email address of the customer. This is used when handling invalid transactions (wrong amount
-       transferred, transfer of expired or canceled payments, et cetera).
 
 Credit card
 """""""""""
@@ -353,7 +340,8 @@ Gift cards
        If only one issuer is activated on your account, you can omit this parameter.
 
        Possible values: ``fashioncheque`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
-       ``podiumcadeaukaart`` ``vvvgiftcard`` ``webshopgiftcard`` ``yourgift`` ``travelcheq`` ``nationalegolfbon`` ``sportenfitcadeau``
+       ``podiumcadeaukaart`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift`` ``travelcheq``
+       ``nationalegolfbon`` ``sportenfitcadeau``
 
    * - ``voucherNumber``
 
@@ -612,7 +600,7 @@ include request for ``details.qrCode`` in the query string:
    :method: POST
    :url: https://api.mollie.com/v2/payments?include=details.qrCode
 
-QR codes can be generated for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+QR codes can be generated for iDEAL, Bancontact and bank transfer payments.
 
 Refer to the :doc:`Get payment </reference/v2/payments-api/get-payment>` reference to see what the API response looks
 like when the QR code is included.
