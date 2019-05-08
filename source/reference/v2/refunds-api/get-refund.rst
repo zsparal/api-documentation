@@ -126,6 +126,13 @@ Response
 
      - The description of the refund that may be shown to your customer, depending on the payment method used.
 
+   * - ``metadata``
+
+       .. type:: mixed
+
+     - The optional metadata you provided upon refund creation. Metadata can for example be used to link an bookkeeping
+       ID to a refund.
+
    * - ``status``
 
        .. type:: string
@@ -283,6 +290,9 @@ Response
        "status": "pending",
        "createdAt": "2018-03-14T17:09:02.0Z",
        "description": "Order #33",
+       "metadata": {
+            "bookkeeping_id": 12345
+       },
        "paymentId": "tr_WDqYK6vllg",
        "_links": {
            "self": {

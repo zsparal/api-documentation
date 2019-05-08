@@ -186,6 +186,9 @@ Response
                    "status": "processing",
                    "createdAt": "2018-03-14T17:09:02.0Z",
                    "description": "Required quantity not in stock, refunding one photo book.",
+                   "metadata": {
+                        "bookkeeping_id": 12345
+                   },
                    "paymentId": "tr_WDqYK6vllg",
                    "orderId": "ord_stTC2WHAuS",
                    "lines": [
