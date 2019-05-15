@@ -757,6 +757,8 @@ Credit card
             - Only available if the payment has been completed – The fee region for the payment: ``intra-eu`` for
               consumer cards from the EU, and ``other`` for all other cards.
 
+              Note that American Express cards will always be set to ``other``.
+
               Possible values: ``intra-eu`` ``other``
 
           * - ``failureReason``
