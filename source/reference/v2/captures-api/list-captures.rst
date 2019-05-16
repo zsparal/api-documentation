@@ -22,6 +22,13 @@ Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID. For example: ``/v2/payments/tr_7UhSN1zuXS/captures``.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the captures were created for.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
