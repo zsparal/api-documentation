@@ -44,6 +44,23 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
      - The number of chargebacks to return (with a maximum of 250).
 
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: true
+
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This endpoint allows for embedding additional information by appending the following values via the ``embed``

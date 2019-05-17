@@ -59,7 +59,6 @@ parameters:
         * ``mistercash``
         * ``banktransfer``
         * ``paypal``
-        * ``bitcoin``
         * ``sofort``
         * ``belfius``
         * ``directdebit``

@@ -68,7 +68,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object for each payment that supports it. Only
-  available for iDEAL, Bitcoin, Bancontact and bank transfer payments.
+  available for iDEAL, Bancontact and bank transfer payments.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

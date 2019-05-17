@@ -12,14 +12,12 @@ Get settlement
    :organization_access_tokens: true
    :oauth: true
 
-Successful payments are collected into *settlements*, which are then paid out according to your organization's payout
-schedule. By retrieving a single settlement, you can check which payments were paid out with it, when the settlement
-took place, and what invoice reference was used for it.
+Successful payments, together with refunds, captures and chargebacks are collected into *settlements*, which are then
+paid out according to your organization's payout schedule. By retrieving a single settlement, you can check which
+payments were paid out with it, when the settlement took place, and what invoice reference was used for it.
 
-Beside payments, settlements can be composed of other entities such as
-:doc:`refunds </reference/v2/settlements-api/list-settlement-refunds>`,
-:doc:`chargebacks </reference/v2/settlements-api/list-settlement-chargebacks>` or
-:doc:`captures </reference/v2/settlements-api/list-settlement-captures>`.
+Beside payments, settlements can be composed of other entities such as :doc:`refunds <list-settlement-refunds>`,
+:doc:`chargebacks <list-settlement-chargebacks>` or :doc:`captures <list-settlement-captures>`.
 
 Parameters
 ----------
@@ -61,8 +59,8 @@ Response
        .. type:: string
 
      - The date on which the settlement was settled, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-       When requesting the :doc:`open settlement </reference/v2/settlements-api/get-open-settlement>` or
-       :doc:`next settlement </reference/v2/settlements-api/get-next-settlement>` the return value is ``null``.
+       When requesting the :doc:`open settlement <get-open-settlement>` or  :doc:`next settlement <get-next-settlement>`
+       the return value is ``null``.
 
    * - ``status``
 

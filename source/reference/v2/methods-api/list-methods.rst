@@ -195,7 +195,7 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v2/methods \
+      curl -X GET https://api.mollie.com/v2/methods?include=pricing \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php

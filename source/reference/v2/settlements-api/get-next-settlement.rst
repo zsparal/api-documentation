@@ -18,8 +18,7 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-The next settlement is returned in the same fashion as the
-:doc:`Get settlement </reference/v2/settlements-api/get-settlement>` endpoint.
+The next settlement is returned in the same fashion as the :doc:`Get settlement <get-settlement>` endpoint.
 
 Example
 -------
