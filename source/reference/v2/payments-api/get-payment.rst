@@ -754,12 +754,10 @@ Credit card
 
               .. type:: string
 
-            - Only available if the payment has been completed – The fee region for the payment: ``intra-eu`` for
-              consumer cards from the EU, and ``other`` for all other cards.
+            - Only available if the payment has been completed – The fee region for the payment.
+              The ``intra-eu`` value is for consumer cards from the EU.
 
-              Note that American Express cards will always be set to ``other``.
-
-              Possible values: ``intra-eu`` ``other``
+              Possible values: ``american-express`` ``carte-bancaire`` ``intra-eu`` ``maestro`` ``other``
 
           * - ``failureReason``
 
