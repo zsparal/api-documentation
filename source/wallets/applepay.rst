@@ -14,7 +14,7 @@ Accepting Apple Pay via Mollie
 In order to accept Apple Pay via Mollie, you need:
 
 #. The payment method `credit card <https://www.mollie.com/creditcard>`_ must be enabled on your website profile;
-#. You must enable Apple Pay on your website profile in the Dashboard.
+#. You must enable Apple Pay on your website profile in the `Dashboard <https://www.mollie.com/dashboard>`_.
 
 Shoppers using an Apple device with Apple Pay configured will automatically be offered Apple Pay in the :doc:`Mollie
 Checkout </guides/checkout>`. Additionally, limited support for integrating Apple Pay in your own checkout is available.
@@ -27,10 +27,10 @@ without the ``method`` parameter, the Apple Pay button will be shown in the chec
 
 .. figure:: images/checkout-with-apple-pay@2x.jpg
 
-Integrating in your own check out
----------------------------------
+Adding Apple Pay to the method selection
+----------------------------------------
 
-At the moment, only limited support for integrating Apple Pay in your own checkout is available. You cannot add the
+At the moment, only limited support for integrating Apple Pay in your own checkout is available. You can not yet add the
 "Checkout with Pay" button to your own checkout, but you can add Apple Pay to the method selection. The "Checkout
 with Pay" button will then be shown in the Mollie Checkout.
 
@@ -66,12 +66,12 @@ When the shopper authorizes the payment, Mollie will create a payment with the m
 your :doc:`webhook </guides/webhooks>` and redirect the shopper back to your website as normal.
 
 Examples
---------
+^^^^^^^^
 
 .. _adding-apple-pay-client-side:
 
 Option 1. Adding Apple Pay client-side with JavaScript
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""""""""""""""""""
 
 When using a ``<select>`` dropdown or equivalent, we recommend handling adding Apple Pay to your checkout entirely with
 JavaScript. This prevents you from having to edit your HTML or CSS.
@@ -126,7 +126,7 @@ For more details on detecting the support of Apple Pay on a device, see `Apple�
 .. _adding-apple-pay-server-side:
 
 Option 2. Adding Apple Pay server-side
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+""""""""""""""""""""""""""""""""""""""
 
 If you use a more complex HTML structure, or you need data which is only available server-side, your
 best option is to add Apple Pay to the DOM and hide it both visually as well as from screen-readers.
@@ -200,3 +200,12 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
 
 For more details on detecting the support of Apple Pay on a device, see `Apple’s documentation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_.
+
+Direct integration of Apple Pay
+-------------------------------
+
+At the moment, direct integration (where you interact with
+`Apple's APIs <https://developer.apple.com/documentation/apple_pay_on_the_web>`_ and pass the encrypted
+`paymentData <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata>`_
+to the Mollie API) is not yet available. If you are interested, please reach out to your account manager or our
+support department.
