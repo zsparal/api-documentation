@@ -11,6 +11,11 @@ changes are documented here.
 May 2019
 ==========
 
+TBD
+---
+
+- :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout.
+
 Thursday, 2nd
 -------------
 

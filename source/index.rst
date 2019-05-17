@@ -57,7 +57,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 
 Additionally, the following wallets are supported:
 
-* `Apple Pay <https://www.mollie.com/applepay>`_
+* `Apple Pay <https://www.mollie.com/payments/apple-pay>`_
 
 All of the payment methods you have enabled are – where relevant – shown to the consumer. You can enable payment methods
 using the `Mollie Dashboard <https://www.mollie.com/dashboard/settings/profiles>`_.
