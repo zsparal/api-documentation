@@ -48,7 +48,7 @@ Request
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       
       $settlement = $mollie->settlements->get("stl_jDk30akdN");
-      $payments = $settlement->refunds();
+      $refunds = $settlement->refunds();
 
    .. code-block:: ruby
       :linenos:
