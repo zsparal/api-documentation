@@ -98,6 +98,16 @@ Example
       curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      
+      $settlement = $mollie->settlements->get("stl_jDk30akdN");
+      $payments = $settlement->captures();
+
 Response
 ^^^^^^^^
 .. code-block:: http
