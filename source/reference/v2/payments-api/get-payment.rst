@@ -771,6 +771,15 @@ Credit card
               ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card`` ``unknown_reason``
               ``possible_fraud``
 
+          * - ``wallet``
+
+              .. type:: string
+                 :required: false
+
+            - The wallet used when creating the payment.
+
+              Possible values: ``applepay``
+
 Gift cards
 """"""""""
 .. list-table::

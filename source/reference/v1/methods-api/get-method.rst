@@ -33,7 +33,7 @@ Replace ``id`` in the endpoint URL by the payment method's ID, for example ``cre
        .. type:: string
           :required: true
 
-     - Include additional data. Must be a comma separated list of one or more includes.
+     - Include additional data. Must be a comma-separated list of one or more includes.
 
    * - ``locale``
 

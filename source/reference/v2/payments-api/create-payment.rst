@@ -122,7 +122,7 @@ Parameters
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
+       Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
