@@ -682,6 +682,8 @@ Belfius Pay Button
 
             - Only available one banking day after the payment has been completed – ``GKCCBEBB``.
 
+.. _Credit card v2:
+
 Credit card
 """""""""""
 .. list-table::
