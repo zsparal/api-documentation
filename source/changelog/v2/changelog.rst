@@ -6,8 +6,8 @@ changes are documented here.
 May 2019
 ==========
 
-TBD
----
+Monday, 20th
+------------
 
 - :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout and can be integrated in your webshop's method selection.
 
