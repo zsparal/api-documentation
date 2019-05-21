@@ -38,6 +38,13 @@ If you are using :doc:`organization access tokens </guides/authentication>` or a
 
      - Set this to ``true`` to retrieve a test mode capture.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` the capture were created for.
+
 Response
 --------
 ``200`` ``application/hal+json``

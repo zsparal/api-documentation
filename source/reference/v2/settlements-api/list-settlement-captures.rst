@@ -16,14 +16,20 @@ List settlement captures
 Retrieve all captures in a certain settlement.
 
 Captures are used for *pay after delivery* payment methods. The only payment methods at the moment that have this flow
-are *Klarna Pay later* and *Klarna Slice it*.
-
-.. note:: There will be one capture per payment for each shipment, so there can be multiple captures per payment.
+are *Klarna Pay later* and *Klarna Slice it*. Captures are created when (part of) an Order is shipped. The capture is
+then settled to the merchant.
 
 Parameters
 ----------
 Replace ``settlementId`` in the endpoint URL by the settlement's ID. For example:
 ``/v2/settlements/stl_jDk30akdN/captures``.
+
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the captures were created for.
 
 Response
 --------
