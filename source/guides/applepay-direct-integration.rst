@@ -76,8 +76,41 @@ One the shopper has authorized the payment, you will receive the `Apple Pay Paym
 You must then add the `token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken>`_
 when invoking the :doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
 
-Example
-^^^^^^^
+Example request
+^^^^^^^^^^^^^^^
 
+.. code-block:: http
+   :linenos:
+
+   POST /v2/payments HTTP/1.1
+   Content-Type: application/json
+
+   {
+      "method": "applepay",
+      "amount": {
+          "currency": "EUR",
+          "value": "100.00"
+      },
+      "description": "Order #1337",
+      "applePayPaymentToken": {
+          "paymentData": {
+              "version": "EC_v1",
+              "data": "vK3Bbr...lg==",
+              "signature": "MIAGC...AAA==",
+              "header": {
+                  "ephemeralPublicKey": "MFkwE...Nvg==",
+                  "publicKeyHash": "E7Ial...aH4M=",
+                  "transactionId": "a2a10...70641"
+              }
+          },
+          "paymentMethod": {
+              "displayName": "MasterCard 1471",
+              "network": "MasterCard",
+              "type": "debit"
+            },
+            "transactionIdentifier": "A2A10...70641"
+          },
+      "webhookUrl": "https://example.org/webhook"
+   }
 
 
