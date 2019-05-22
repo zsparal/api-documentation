@@ -19,8 +19,8 @@ You do not need to join the Apple Developer Program for this integration.
 
 Follow these steps to offer Apple Pay in your own checkout:
 
-1. Prepare your server
-----------------------
+Prepare your server
+-------------------
 
 Your checkout *must* be served over HTTPS. Up to date TLS ciphers are required. For more information, see Apple's
 documentation on `setting up your server
@@ -32,8 +32,8 @@ presence and validity of this file will be validated by Apple.
 Download the `domain validation file <http://www.mollie.com/.well-known/apple-developer-merchantid-domain-association>`_
 and place it on your server at ``https://[domain]/.well-known/apple-developer-merchantid-domain-association``.
 
-2. Check if Apple Pay is available on the device
-------------------------------------------------
+Check if Apple Pay is available on the device
+---------------------------------------------
 
 Check if Apple Pay is `available on the device
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_
@@ -43,8 +43,8 @@ using the `canMakePayments
 If Apple Pay is available on the device, you should `display the Apple Pay Buttons
 <https://developer.apple.com/documentation/apple_pay_on_the_web/displaying_apple_pay_buttons>`_.
 
-3. Create an Apple Pay Session
-------------------------------
+Create an Apple Pay Session
+---------------------------
 
 When the shopper taps or clicks the Apple Pay Button, you should create an `Apple Pay Session
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/creating_an_apple_pay_session>`_. This
@@ -69,8 +69,8 @@ details.
 Instead of using Apple's API, you must use a :doc:`dedicated endpoint in the  Mollie API
 </reference/v2/miscellaneous/request-apple-pay-payment-session>`.
 
-4. Send the paymentToken to Mollie
-----------------------------------
+Send the paymentToken to Mollie
+-------------------------------
 
 One the shopper has authorized the payment, you will receive the `Apple Pay Payment object <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_.
 You must then add the `token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken>`_
