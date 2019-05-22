@@ -14,7 +14,8 @@ Requesting Apple Pay Payment Session
 
 For integrating :doc:`Apple Pay </wallets/applepay>` in your own checkout on the web, you need to `provide merchant validation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation>`_. This
-is normally done using Apple's `Requesting Apple Pay Session <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/requesting_an_apple_pay_payment_session>`_.
+is normally done using Apple's `Requesting Apple Pay Session
+<https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/requesting_an_apple_pay_payment_session>`_.
 The merchant validation proves (to Apple) that a validated merchant is calling the Apple Pay Javascript APIs.
 
 When integrating Apple Pay via Mollie, you cannot call Apple's API but you should call this API instead. The response of

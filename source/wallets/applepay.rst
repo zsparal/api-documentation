@@ -204,25 +204,4 @@ For more details on detecting the support of Apple Pay on a device, see `Appleâ€
 Direct integration of Apple Pay
 -------------------------------
 
-Additionally, you can `display <https://developer.apple.com/documentation/apple_pay_on_the_web/displaying_apple_pay_buttons>`_
-the "Checkout with ï£¿Pay" button to your own checkout as you deem fit. Apple provides some `guidelines
-<https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/>`_ on how you should do this.
-
-In this case, you are responsible for implementing `Apple's JS APIs <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api>`_.
-Mollie will provide API endpoints needed by the JS APIs and the ability to send the encrypted Apple Pay Payment Token
-when creating a payment.
-
-#. Place the `domain validation file <http://www.mollie.com/.well-known/apple-developer-merchantid-domain-association>`_
-   on your server at: ``https://[domain]/.well-known/apple-developer-merchantid-domain-association``.
-
-#. Check if Apple Pay is `available on the device <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_
-   using the `canMakePayments <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaysession/1778027-canmakepayments>`_ method.
-
-#. Create an `Apple Pay Session <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/creating_an_apple_pay_session>`_.
-
-#. `Provide merchant validation <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation>`_.
-   Instead of using Apple's API, you can use a :doc:`dedicated endpoint in the  Mollie API </reference/v2/miscellaneous/request-apple-pay-payment-session>`.
-
-#. One the shopper has authorized the payment, you will receive the `Apple Pay Payment object <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_.
-   You must then add the `token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken>`_
-   when invoking the :doc:`Create Payment API </reference/v1/payments-api/create-payment>`.
+Integrating Apple Pay in your own checkout is available. See our :doc:`full guide </guides/applepay-direct-integration>`.
