@@ -6,6 +6,8 @@ with Pay" button as you deem fit. Apple provides `guidelines
 <https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/>`_ on how how and where
 you should add the Apple Pay buttons.
 
+.. figure:: images/applepay-web@2x.png
+
 Beside payments information, Apple Pay allows you to get the billing and shipping addresses from the shopper too. This
 enables a fast and frictionless checkout.
 
@@ -69,12 +71,13 @@ details.
 Instead of using Apple's API, you must use a :doc:`dedicated endpoint in the  Mollie API
 </reference/v2/miscellaneous/request-apple-pay-payment-session>`.
 
-Send the paymentToken to Mollie
--------------------------------
+Send the Apple Pay Payment Token to Mollie
+------------------------------------------
 
-One the shopper has authorized the payment, you will receive the `Apple Pay Payment object <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_.
-You must then add the `token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken>`_
-when invoking the :doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
+Once the shopper has authorized the payment, you will receive the `Apple Pay Payment object
+<https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_. You must then encode the object's
+``token`` property to JSON and add the JSON as the ``applePayPaymentToken`` parameter when invoking the
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
 
 Example request
 ^^^^^^^^^^^^^^^
@@ -92,24 +95,7 @@ Example request
           "value": "100.00"
       },
       "description": "Order #1337",
-      "applePayPaymentToken": {
-          "paymentData": {
-              "version": "EC_v1",
-              "data": "vK3Bbr...lg==",
-              "signature": "MIAGC...AAA==",
-              "header": {
-                  "ephemeralPublicKey": "MFkwE...Nvg==",
-                  "publicKeyHash": "E7Ial...aH4M=",
-                  "transactionId": "a2a10...70641"
-              }
-          },
-          "paymentMethod": {
-              "displayName": "MasterCard 1471",
-              "network": "MasterCard",
-              "type": "debit"
-            },
-            "transactionIdentifier": "A2A10...70641"
-          },
+      "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
       "webhookUrl": "https://example.org/webhook"
    }
 
