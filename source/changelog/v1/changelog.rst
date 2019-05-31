@@ -8,8 +8,18 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+June 2019
+=========
+
+TBA
+---
+
+- Added support for PayPal Recurring payments. Make sure that the
+  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
+  are set before using this.
+
 May 2019
-==========
+========
 
 Tuesday, 21st
 -------------

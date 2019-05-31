@@ -3,6 +3,16 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+June 2019
+=========
+
+TBA
+---
+
+- Added support for PayPal Recurring payments. Make sure that the
+  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
+  are set before using this.
+
 May 2019
 ==========
 
