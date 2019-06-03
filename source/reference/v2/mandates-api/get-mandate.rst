@@ -82,68 +82,7 @@ Response
 
        .. type:: object
 
-     - The mandate detail object contains different fields per payment method.
-
-       For direct debit mandates, the following details are returned:
-
-       .. list-table::
-          :widths: auto
-
-          * - ``consumerName``
-
-              .. type:: string
-
-            - The account holder's name.
-
-          * - ``consumerAccount``
-
-              .. type:: string
-
-            - The account holder's IBAN.
-
-          * - ``consumerBic``
-
-              .. type:: string
-
-            - The account holder's bank's BIC.
-
-       For credit card mandates, the following details are returned:
-
-       .. list-table::
-          :widths: auto
-
-          * - ``cardHolder``
-
-              .. type:: string
-
-            - The credit card holder's name.
-
-          * - ``cardNumber``
-
-              .. type:: string
-
-            - The last four digits of the credit card number.
-
-          * - ``cardLabel``
-
-              .. type:: string
-
-            - The credit card's label. Note that not all labels can be processed through Mollie.
-
-              Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
-              ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
-
-          * - ``cardFingerprint``
-
-              .. type:: string
-
-            - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
-
-          * - ``cardExpiryDate``
-
-              .. type:: date
-
-            - Expiry date of the credit card in ``YYYY-MM-DD`` format.
+     - The mandate detail object contains different fields per payment method. See the list below.
 
    * - ``mandateReference``
 
@@ -190,6 +129,88 @@ Response
               .. type:: URL object
 
             - The URL to the mandate retrieval endpoint documentation.
+
+Payment method specific details
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The mandate detail object contains different fields per payment method.
+
+Direct Debit
+""""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``consumerName``
+
+        .. type:: string
+
+      - The account holder's name.
+
+   * - ``consumerAccount``
+
+        .. type:: string
+
+      - The account holder's IBAN.
+
+   * - ``consumerBic``
+
+        .. type:: string
+
+      - The account holder's bank's BIC.
+
+Credit Card
+"""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``cardHolder``
+
+       .. type:: string
+
+      - The credit card holder's name.
+
+   * - ``cardNumber``
+
+       .. type:: string
+
+      - The last four digits of the credit card number.
+
+   * - ``cardLabel``
+
+       .. type:: string
+
+      - The credit card's label. Note that not all labels can be processed through Mollie.
+
+        Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
+        ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
+
+   * - ``cardFingerprint``
+
+       .. type:: string
+
+      - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
+
+   * - ``cardExpiryDate``
+
+       .. type:: date
+
+      - Expiry date of the credit card in ``YYYY-MM-DD`` format.
+
+PayPal
+""""""
+.. list-table::
+   :widths: auto
+
+   * - ``consumerName``
+
+        .. type:: string
+
+      - The consumer's first and last name.
+
+   * - ``consumerAccount``
+
+        .. type:: string
+
+      - The consumer's email address.
 
 Example
 -------
