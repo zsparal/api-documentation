@@ -147,7 +147,7 @@ Response
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
 
-       Possible values: ``creditcard`` ``directdebit`` ``null``
+       Possible values: ``creditcard`` ``directdebit`` ``paypal`` ``null``
 
    * - ``mandateId``
 

@@ -71,7 +71,9 @@ periodically through *subscriptions*.
    redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
-   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``, the resulting mandate method will be ``creditcard`` as well. All other first payment methods result in a ``directdebit`` mandate.
+   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``,
+   the resulting mandate method will be ``creditcard`` as well, the same goes for ``paypal`` which will result in a
+   ``paypal`` mandate. All other first payment methods will be a ``directdebit`` mandate.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our :doc:`Checkout </guides/checkout>`. The following payment methods
