@@ -126,21 +126,21 @@ Direct Debit
 
    * - ``consumerName``
 
-        .. type:: string
+       .. type:: string
 
-      - The account holder's name.
+     - The account holder's name.
 
    * - ``consumerAccount``
 
-        .. type:: string
+       .. type:: string
 
-      - The account holder's IBAN.
+     - The account holder's IBAN.
 
    * - ``consumerBic``
 
-        .. type:: string
+       .. type:: string
 
-      - The account holder's bank's BIC.
+     - The account holder's bank's BIC.
 
 Credit Card
 """""""""""
@@ -151,34 +151,34 @@ Credit Card
 
        .. type:: string
 
-      - The credit card holder's name.
+     - The credit card holder's name.
 
    * - ``cardNumber``
 
        .. type:: string
 
-      - The last four digits of the credit card number.
+     - The last four digits of the credit card number.
 
    * - ``cardLabel``
 
        .. type:: string
 
-      - The credit card's label. Note that not all labels can be processed through Mollie.
+     - The credit card's label. Note that not all labels can be processed through Mollie.
 
-        Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club``
-        ``Discover`` ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
+       Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club`` ``Discover``
+       ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
 
    * - ``cardFingerprint``
 
        .. type:: string
 
-      - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
+     - Unique alphanumeric representation of the credit card, usable for identifying returning customers.
 
    * - ``cardExpiryDate``
 
        .. type:: date
 
-      - Expiry date of the credit card in ``YYYY-MM-DD`` format.
+     - Expiry date of the credit card in ``YYYY-MM-DD`` format.
 
 PayPal
 """"""
@@ -187,15 +187,15 @@ PayPal
 
    * - ``consumerName``
 
-        .. type:: string
+       .. type:: string
 
-      - The consumer's first and last name.
+     - The consumer's first and last name.
 
    * - ``consumerAccount``
 
-        .. type:: string
+       .. type:: string
 
-      - The consumer's email address.
+     - The consumer's email address.
 
 Example
 -------
