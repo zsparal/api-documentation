@@ -126,6 +126,8 @@ Parameters
 
        Possible values: ``first`` ``recurring``
 
+       .. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
+
    * - ``customerId``
 
        .. type:: string

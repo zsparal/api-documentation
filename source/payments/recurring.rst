@@ -82,6 +82,8 @@ periodically through *subscriptions*.
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 
+.. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
+
 .. _payments/recurring/charging-on-demand:
 
 Charging immediately on-demand

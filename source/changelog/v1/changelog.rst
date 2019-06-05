@@ -16,7 +16,7 @@ TBA
 
 - Added support for PayPal Recurring payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
-  are set before using this.
+  are set and your merchant-account has been approved by PayPal before using this.
 
 May 2019
 ========
