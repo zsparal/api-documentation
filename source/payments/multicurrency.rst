@@ -50,7 +50,7 @@ Support for other currencies than ``EUR`` varies per payment method.
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | .. note::                                                                                                            |
 |    Note that at PayPal, fillér are not supported, but at Mollie they                                                 |
-|    are. We will round the amount sent to PayPal to whole florints.                                                   |
+|    are. We will round the amount sent to PayPal to whole forints.                                                    |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
 | Israeli new shekel   | ``ILS``  |              2 | PayPal, credit card                                               |
 +----------------------+----------+----------------+-------------------------------------------------------------------+
