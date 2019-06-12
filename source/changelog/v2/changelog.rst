@@ -3,8 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+June, 2019
+
+Wednesday, 12th
+---------------
+
+- :doc:`/guides/applepay-direct-integration` is now available.
+
 May 2019
-==========
+========
 
 Tuesday, 21st
 -------------
