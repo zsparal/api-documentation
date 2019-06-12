@@ -21,10 +21,10 @@ How do QR codes work?
 Supported payment methods
 -------------------------
 +-------------+--------------------------------------------------------------------------------------------------------+
-|iDEAL        |iDEAL QR codes can be scanned using the dedicated iDEAL app. The customer can select the issuer in the  |
-|             |app and the payment flow is then transferred to the mobile banking app installed on the phone.          |
+|iDEAL        |iDEAL QR codes can be scanned using the app of you bank, the dedicated iDEAL app, or the iPhone         |
+|             |camera app directly. After scanning the code, the customer can easily pay via their banking app.        |
 +-------------+--------------------------------------------------------------------------------------------------------+
-|Bancontact   |Bancontact QR codes can be scanned using the Bancontact app, Belgian mobile banking apps or the iPhone  |
+|Bancontact   |Bancontact QR codes can be scanned using the Bancontact app, Belgian mobile banking apps, or the iPhone |
 |             |camera app directly. The QR code is only available for payments under €500.00.                          |
 +-------------+--------------------------------------------------------------------------------------------------------+
 |Bank transfer|Many mobile banking apps support scanning EPC QR codes for SEPA credit transfers. Note that there is no |

@@ -309,7 +309,8 @@ Response
      -   This optional field will contain the amount that will be settled to your account, converted to the currency
          your account is settled in. It follows the same syntax as the ``amount`` property.
 
-         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards. If no 
+         amount is settled by Mollie the ``settlementAmount`` is omitted from the response.
 
    * - ``settlementId``
 
@@ -682,6 +683,8 @@ Belfius Pay Button
 
             - Only available one banking day after the payment has been completed – ``GKCCBEBB``.
 
+.. _Credit card v2:
+
 Credit card
 """""""""""
 .. list-table::
@@ -754,12 +757,10 @@ Credit card
 
               .. type:: string
 
-            - Only available if the payment has been completed – The fee region for the payment: ``intra-eu`` for
-              consumer cards from the EU, and ``other`` for all other cards.
+            - Only available if the payment has been completed – The fee region for the payment.
+              The ``intra-eu`` value is for consumer cards from the EU.
 
-              Note that American Express cards will always be set to ``other``.
-
-              Possible values: ``intra-eu`` ``other``
+              Possible values: ``american-express`` ``carte-bancaire`` ``intra-eu`` ``maestro`` ``other``
 
           * - ``failureReason``
 

@@ -148,6 +148,7 @@ Response
                    "reference": "1234567.1804.03",
                    "createdAt": "2018-04-06T06:00:01.0Z",
                    "settledAt": "2018-04-06T09:41:44.0Z",
+                   "status": "paidout",
                    "amount": {
                        "currency": "EUR",
                        "value": "39.75"
