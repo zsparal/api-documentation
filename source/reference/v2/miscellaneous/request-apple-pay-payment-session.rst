@@ -5,7 +5,7 @@ Requesting Apple Pay Payment Session
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v2/request-apple-pay-payment-session
+   :url: https://api.mollie.com/v2/wallets/applepay/sessions
 
 .. authentication::
    :api_keys: true
@@ -87,7 +87,7 @@ Request
 .. code-block:: http
    :linenos:
 
-   POST /v2/request-apple-pay-payment-session HTTP/1.1
+   POST /v2/wallets/applepay/sessions HTTP/1.1
    Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM
    Content-Type: application/json
 
