@@ -180,6 +180,27 @@ If you specify the ``method`` parameter, optional parameters may be available fo
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
+Apple Pay
+"""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``applePayPaymentToken``
+
+       .. type:: string
+          :required: false
+
+     - The `Apple Pay Payment
+       Token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment/1916095-token>`_  object
+       (encoded as JSON) that is part of the result of authorizing a payment request. The token contains the payment
+       information needed to authorize the payment.
+
+       The object should be passed encoded in a JSON string. Example:
+
+       ``{"paymentData": {"version": "EC_v1", "data": "vK3BbrCbI/...."}}``
+
+       For documentation on how to get this token, see :doc:`/guides/applepay-direct-integration`.
+
 Bank transfer
 """""""""""""
 .. list-table::
@@ -221,21 +242,6 @@ Credit card
 """""""""""
 .. list-table::
    :widths: auto
-
-   * - ``applePayPaymentToken``
-
-       .. type:: string
-          :required: false
-
-     - The `Apple Pay Payment Token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment/1916095-token>`_
-       object (encoded as JSON) that is part of the result of authorizing a payment request. The token contains the
-       payment information needed to authorize the payment.
-
-       The object should be passed encoded in a JSON string. Example:
-
-       ``{"paymentData": {"version": "EC_v1", "data": "vK3BbrCbI/...."}}``
-
-       For documentation on how to get this token, see :doc:`/guides/applepay-direct-integration`.
 
    * - ``billingAddress``
 
