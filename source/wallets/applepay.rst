@@ -204,8 +204,4 @@ For more details on detecting the support of Apple Pay on a device, see `Appleâ€
 Direct integration of Apple Pay
 -------------------------------
 
-At the moment, direct integration (where you interact with
-`Apple's APIs <https://developer.apple.com/documentation/apple_pay_on_the_web>`_ and pass the encrypted
-`paymentData <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymenttoken/1916115-paymentdata>`_
-to the Mollie API) is not yet available. If you are interested, please reach out to your account manager or our
-support department.
+Integrating Apple Pay in your own checkout is available. See our :doc:`full guide </guides/applepay-direct-integration>`.

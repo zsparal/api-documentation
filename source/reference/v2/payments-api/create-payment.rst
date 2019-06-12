@@ -74,8 +74,11 @@ Parameters
 
      - The URL your customer will be redirected to after the payment process.
 
-       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter. *For all
-       other payments, this parameter is mandatory.*
+       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
+       Additionally, for payments that are created with the ``applePayPaymentToken`` parameter, the redirect URL can
+       also be omitted.
+
+       *For all other payments, this parameter is mandatory.*
 
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
@@ -176,6 +179,27 @@ Payment method specific parameters
 If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
+
+Apple Pay
+"""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``applePayPaymentToken``
+
+       .. type:: string
+          :required: false
+
+     - The `Apple Pay Payment
+       Token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment/1916095-token>`_  object
+       (encoded as JSON) that is part of the result of authorizing a payment request. The token contains the payment
+       information needed to authorize the payment.
+
+       The object should be passed encoded in a JSON string. Example:
+
+       ``{"paymentData": {"version": "EC_v1", "data": "vK3BbrCbI/...."}}``
+
+       For documentation on how to get this token, see :doc:`/guides/applepay-direct-integration`.
 
 Bank transfer
 """""""""""""
