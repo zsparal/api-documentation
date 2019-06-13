@@ -3,7 +3,7 @@ Direct integration of Apple Pay
 
 Integrating `Apple Pay <https://developer.apple.com/apple-pay/>`_ in your own checkout allows you to add the "Checkout
 with Pay" button as you deem fit. Apple provides `guidelines
-<https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/>`_ on how how and where
+<https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/>`_ on how and where
 you should add the Apple Pay buttons.
 
 .. figure:: images/applepay-web@2x.png
