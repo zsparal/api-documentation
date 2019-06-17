@@ -3,7 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
-June, 2019
+June 2019
+=========
+
+Thursday, 13th
+---------------
+
+- Changed the conditions for when an order is cancelable. Canceling an order is not longer possible when there are any
+  open payments for the order, unless for four specific methods. See :doc:`Cancel Order </reference/v2/orders-api/cancel-order>`
+  for more info.
 
 Wednesday, 12th
 ---------------
