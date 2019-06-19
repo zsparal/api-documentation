@@ -89,7 +89,14 @@ Our webhook calls time out after 15 seconds. Even if you return a ``200 OK`` HTT
 the webhook call as failed and try again later.
 
 In total we will call your webhook 10 times with an increasing interval. If after the 10\ :sup:`th` call we still do not
-get a ``200 OK`` response, we will stop trying.
+get a ``200 OK`` response (which is after ~4,5 hours), we will stop trying.
+
+For completeness' sake, we use the following intervals between trying to call your webhook:
+
+* **Attempts 2 - 5:** 1 minute
+* **Attempts 6 - 9:** 6 minutes
+* **Attempt 10:** 4 hours
+
 
 How to handle unknown IDs?
 --------------------------
