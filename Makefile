@@ -9,7 +9,7 @@
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
 SPHINXOPTS     = -W -n
 SPHINXPRODOPTS = -D html_file_suffix=''
-SPHINXBUILD    = python -msphinx
+SPHINXBUILD    = python3 -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
 BUILDDIR       = build
@@ -42,7 +42,7 @@ start:
 	make html-reload & make css-reload & make js-reload
 
 install:
-	pip install --user -r requirements.txt --no-warn-script-location
+	pip3 install --user -r requirements.txt --no-warn-script-location
 
 lint-js:
 	npm run lint:js

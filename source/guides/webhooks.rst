@@ -91,7 +91,7 @@ the webhook call as failed and try again later.
 In total we will call your webhook 10 times with an increasing interval. If after the 10\ :sup:`th` call we still do not
 get a ``200 OK`` response (which is after ~4,5 hours), we will stop trying.
 
-For completeness' sake, we use the following intervals between trying to call your webhook:
+We use the following intervals between trying to call your webhook:
 
 * **Attempts 2 - 5:** 1 minute
 * **Attempts 6 - 9:** 6 minutes
