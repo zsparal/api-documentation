@@ -6,8 +6,8 @@ changes are documented here.
 June 2019
 =========
 
-TBD
----
+Thursday, 20th
+--------------
 
 - Added the ``settlementId`` field to the refund response. See :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`
   for more info.
