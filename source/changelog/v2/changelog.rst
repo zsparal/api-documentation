@@ -6,6 +6,12 @@ changes are documented here.
 June 2019
 =========
 
+TBD
+---
+
+- Settlements can now be retrieved using either their ID or their bank reference. See :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`
+  for more info.
+
 Thursday, 20th
 --------------
 

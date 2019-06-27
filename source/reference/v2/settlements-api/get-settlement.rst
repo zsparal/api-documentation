@@ -21,7 +21,8 @@ Beside payments, settlements can be composed of other entities such as :doc:`ref
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
+Replace ``id`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN`` or by the settlement's bank
+reference, for example ``1234567.1804.03``.
 
 Response
 --------
@@ -290,6 +291,11 @@ Example
       curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN \
          -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
+      # or, by bank reference
+
+      curl -X GET https://api.mollie.com/v2/settlements/1234567.1804.03 \
+         -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
    .. code-block:: php
       :linenos:
 
@@ -297,6 +303,10 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $settlement = $mollie->settlements->get("stl_jDk30akdN");
+
+      // or, by bank reference
+
+      $settlement = $mollie->settlements->get("1234567.1804.03");
 
    .. code-block:: ruby
       :linenos:
@@ -308,6 +318,10 @@ Example
       end
 
       settlement = Mollie::Settlement.get('stl_jDk30akdN')
+
+      # or, by bank reference
+
+      settlement = Mollie::Settlement.get('1234567.1804.03')
 
 Response
 ^^^^^^^^
