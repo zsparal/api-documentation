@@ -3,14 +3,17 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
-June 2019
+July 2019
 =========
 
-TBD
----
+Tuesday, 2nd
+------------
 
 - Settlements can now be retrieved using either their ID or their bank reference. See :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`
   for more info.
+
+June 2019
+=========
 
 Thursday, 20th
 --------------
