@@ -6,6 +6,11 @@ changes are documented here.
 July 2019
 =========
 
+Thursday, 4th
+-------------
+
+- Polish złoty (``PLN``) is now supported as a currency for the Przelewy24 payment method.
+
 Tuesday, 2nd
 ------------
 

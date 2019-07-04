@@ -44,8 +44,8 @@ Parameters
               .. type:: string
                  :required: true
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
-              the payment methods that are enabled on your account.
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The :doc:`currencies supported
+              </payments/multicurrency>` depend on the payment methods that are enabled on your account.
 
           * - ``value``
 
@@ -74,14 +74,14 @@ Parameters
 
      - The URL your customer will be redirected to after the payment process.
 
+       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
+       the right page referencing the order when your customer returns.
+
        Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
        Additionally, for payments that are created with the ``applePayPaymentToken`` parameter, the redirect URL can
        also be omitted.
 
        *For all other payments, this parameter is mandatory.*
-
-       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
-       the right page referencing the order when your customer returns.
 
    * - ``webhookUrl``
 
