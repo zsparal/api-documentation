@@ -102,7 +102,7 @@ Parameters
        based conversion optimization is lost.
 
        Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
                  please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
