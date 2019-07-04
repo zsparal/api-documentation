@@ -33,7 +33,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - Include additional data. Must be a comma separated list of one or more includes. See
+     - Include additional data. Must be a comma-separated list of one or more includes. See
        :doc:`Get method </reference/v1/methods-api/get-method>` for available includes.
 
    * - ``recurringType``

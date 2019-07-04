@@ -11,6 +11,18 @@ changes are documented here.
 May 2019
 ==========
 
+Tuesday, 21st
+-------------
+
+- Added ``american-express``, ``carte-bancaire`` and ``maestro`` as possible values for the
+  ``feeRegion`` in the credit card payment details. See the
+  :ref:`Get Payment endpoint <Credit card v1>` for details.
+
+Monday, 20th
+------------
+
+- :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout.
+
 Thursday, 2nd
 -------------
 

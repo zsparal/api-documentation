@@ -3,8 +3,50 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+July 2019
+=========
+
+Tuesday, 2nd
+------------
+
+- Settlements can now be retrieved using either their ID or their bank reference. See :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`
+  for more info.
+
+June 2019
+=========
+
+Thursday, 20th
+--------------
+
+- Added the ``settlementId`` field to the refund response. See :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`
+  for more info.
+
+Thursday, 13th
+---------------
+
+- Changed the conditions for when an order is cancelable. Canceling an order is not longer possible when there are any
+  open payments for the order, unless for four specific methods. See :doc:`Cancel Order </reference/v2/orders-api/cancel-order>`
+  for more info.
+
+Wednesday, 12th
+---------------
+
+- :doc:`/guides/applepay-direct-integration` is now available.
+
 May 2019
-==========
+========
+
+Tuesday, 21st
+-------------
+
+- Added ``american-express``, ``carte-bancaire`` and ``maestro`` as possible values for the
+  ``feeRegion`` in the credit card payment details. See the
+  :ref:`Get Payment endpoint <Credit card v2>` for details.
+
+Monday, 20th
+------------
+
+- :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout and can be integrated in your webshop's method selection.
 
 TBD
 ---

@@ -145,6 +145,7 @@ Response
                "id": "stl_jDk30akdN",
                "reference": "123456.1501.02",
                "settledDatetime": "2015-01-09T07:00:00.0Z",
+               "status": "paidout",
                "amount": "994.55",
                "periods": {
                    "2015": {
@@ -187,6 +188,7 @@ Response
                "id": "stl_pAd3Vq83",
                "reference": "123456.1501.01",
                "settledDatetime": "2015-01-02T07:00:00.0Z",
+               "status": "paidout",
                "amount": "993.58",
                "periods": {
                    "2015": {

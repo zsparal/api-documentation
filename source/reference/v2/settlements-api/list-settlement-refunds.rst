@@ -21,6 +21,13 @@ Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example
 This endpoint is an alias of the :doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint. All parameters
 for that endpoint can be used here as well.
 
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the refunds were created for.
+
 Response
 --------
 ``200`` ``application/hal+json``
@@ -39,6 +46,16 @@ Request
 
       curl -X GET https://api.mollie.com/v2/settlements/stl_jDk30akdN/refunds \
           -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
+      
+      $settlement = $mollie->settlements->get("stl_jDk30akdN");
+      $refunds = $settlement->refunds();
 
    .. code-block:: ruby
       :linenos:

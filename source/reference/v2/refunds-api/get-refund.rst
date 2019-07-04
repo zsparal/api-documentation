@@ -87,6 +87,14 @@ Response
 
             - A string containing the exact amount that was refunded in the given currency.
 
+   * - ``settlementId``
+
+       .. type:: string
+          :required: false
+
+     - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``. This
+       field is omitted if the refund is not settled (yet).
+
    * - ``settlementAmount``
 
        .. type:: amount object

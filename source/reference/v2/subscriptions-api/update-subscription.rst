@@ -70,6 +70,9 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be
        charged. Should always be in the future.
 
+       .. note::
+          A subscription's start date cannot be changed if it has already been charged.
+
    * - ``description``
 
        .. type:: string

@@ -137,7 +137,7 @@ Parameters
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
+       Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
        ``paysafecard`` ``przelewy24`` ``sofort``
 
@@ -556,7 +556,7 @@ Example
                   "currency" => "EUR"
             ],
             "billingAddress" => [
-                  "organizationName": "Mollie B.V.",
+                  "organizationName" => "Mollie B.V.",
                   "streetAndNumber" => "Keizersgracht 313",
                   "city" => "Amsterdam",
                   "region" => "Noord-Holland",
@@ -598,7 +598,7 @@ Example
                   "name" => "LEGO 42083 Bugatti Chiron",
                   "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
                   "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
-                  "metadata": [
+                  "metadata" => [
                      "order_id" => "1337",
                      "description" => "Bugatti Chiron"
                   ],

@@ -8,7 +8,7 @@
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
 SPHINXOPTS     = -W -n
-SPHINXPRODOPTS = -j auto -D html_file_suffix=''
+SPHINXPRODOPTS = -D html_file_suffix=''
 SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
@@ -56,7 +56,7 @@ verify:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
 html: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
-	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
+	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} -j auto ${O}
 
 .PHONY: html-only
 html-only: verify

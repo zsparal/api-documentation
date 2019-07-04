@@ -40,7 +40,6 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `Bank transfer <https://www.mollie.com/en/payments/bank-transfer>`_
 * `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_
 * `Credit card <https://www.mollie.com/en/payments/credit-card>`_ (VISA, MasterCard, Maestro and American Express)
-* `SEPA Direct Debit <https://www.mollie.com/en/payments/direct-debit>`_
 * `EPS <https://www.mollie.com/en/payments/eps>`_
 * `Gift cards <https://www.mollie.com/en/payments/gift-cards>`_ (Webshop Giftcard, Podium Cadeaukaart, VVV Cadeaukaart,
   YourGift etc.)
@@ -53,7 +52,12 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `PayPal <https://www.mollie.com/en/payments/paypal>`_
 * `paysafecard <https://www.mollie.com/en/payments/paysafecard>`_
 * `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_
+* `SEPA Direct Debit <https://www.mollie.com/en/payments/direct-debit>`_
 * `SOFORT Banking <https://www.mollie.com/en/payments/sofort>`_
+
+Additionally, the following wallets are supported:
+
+* `Apple Pay <https://www.mollie.com/payments/apple-pay>`_
 
 All of the payment methods you have enabled are – where relevant – shown to the consumer. You can enable payment methods
 using the `Mollie Dashboard <https://www.mollie.com/dashboard/settings/profiles>`_.
