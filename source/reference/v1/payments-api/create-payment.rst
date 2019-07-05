@@ -390,6 +390,10 @@ paysafecard
 
 Przelewy24
 """"""""""
+
+.. note:: Using the v1 API, only payments denominated in Euro can be created. Migrate to the v2 API to create payments
+          in Polish złoty.
+
 .. list-table::
    :widths: auto
 
