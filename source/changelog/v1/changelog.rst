@@ -14,7 +14,7 @@ July 2019
 Thursday, 4th
 -------------
 
-- Added ``mybank`` as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
+- Added MyBank (``mybank``) as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
   Please contact your account manager to enable this new method.
 
 May 2019
