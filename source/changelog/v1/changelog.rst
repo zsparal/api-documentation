@@ -8,8 +8,17 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+July 2019
+=========
+
+Thursday, 4th
+-------------
+
+- Added MyBank (``mybank``) as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
+  Please contact your account manager to enable this new method.
+
 May 2019
-==========
+========
 
 Tuesday, 21st
 -------------
