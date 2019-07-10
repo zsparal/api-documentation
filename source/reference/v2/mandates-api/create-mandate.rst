@@ -70,7 +70,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
           :required: false
 
      - A custom mandate reference. Use an unique ``mandateReference`` as some banks decline a
-       Direct Debit payment if the ``mandateReference``is not unique.
+       Direct Debit payment if the ``mandateReference`` is not unique.
 
 
 Access token parameters
