@@ -41,7 +41,7 @@
   },
   "dependencies": {
     "dropkickjs": "^2.2.4",
-    "lodash": "^4.17.11"
+    "lodash": "^4.17.13"
   },
   "private": true,
   "lint-staged": {
