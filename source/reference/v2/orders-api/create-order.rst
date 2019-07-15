@@ -158,7 +158,7 @@ Parameters
        order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
-   * - ``expiryDate``
+   * - ``expiresAt``
 
        .. type:: string
           :required: false

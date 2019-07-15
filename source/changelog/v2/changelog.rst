@@ -9,7 +9,7 @@ July 2019
 TBD
 ---
 
-- Orders can now be created with a custom expiry date. Use the new ``expiryDate`` parameter to set the custom date. See
+- Orders can now be created with a custom expiry date. Use the new ``expiresAt`` parameter to set the custom date. See
   :doc:`Create order </reference/v2/orders-api/create-order>` for more info.
 
 Thursday, 4th
