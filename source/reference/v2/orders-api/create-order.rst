@@ -158,6 +158,17 @@ Parameters
        order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
+   * - ``expiresAt``
+
+       .. type:: string
+          :required: false
+
+     - The date the order should expire in ``YYYY-MM-DD`` format. The minimum date is tomorrow and the maximum date is
+       100 days after tomorrow.
+
+       .. note:: It is not posible to use Klarna Slice it or Klarna Pay later as method when your expiry date is more
+                 than 28 days in the future.
+
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
    Mollie and will contain the order number, your profile's name and your profile's website.
