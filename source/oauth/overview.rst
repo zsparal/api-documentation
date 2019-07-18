@@ -29,6 +29,21 @@ visualized below.
 
 The authorization flow is explained in further detail in :doc:`OAuth: Getting started </oauth/getting-started>`.
 
+What are the lifetime of the tokens?
+------------------------------------
+Some tokens will expire after a certain time. You should ask for a new :doc:`authorization </reference/oauth2/authorize>`
+or :doc:`access token </reference/oauth2/tokens>` if needed.
+
++-------------------------------+-----------------------------------+
+| **Authorization code**        | 30 seconds                        |
++-------------------------------+-----------------------------------+
+| **Access token**              | 1 hour                            |
++-------------------------------+-----------------------------------+
+| **Refresh token**             | Does not expire automatically     |
++-------------------------------+-----------------------------------+
+| **Organization access token** | Does not expire automatically     |
++-------------------------------+-----------------------------------+
+
 What merchant data can I access?
 --------------------------------
 As with all OAuth platforms, you tell Mollie what data you need when requesting an authorization by listing the
