@@ -167,7 +167,7 @@ Parameters
        100 days after tomorrow.
 
        .. note:: It is not posible to use Klarna Slice it or Klarna Pay later as method when your expiry date is more
-                 than 28 days in the future.
+                 than 28 days in the future, unless another maximum is agreed between the merchant and Klarna.
 
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
