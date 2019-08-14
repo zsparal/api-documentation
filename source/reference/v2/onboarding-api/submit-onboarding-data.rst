@@ -190,7 +190,7 @@ Example
                    },
                    "profile": {
                       "name": "Mollie",
-                      "website": "https://www.mollie.com",
+                      "url": "https://www.mollie.com",
                       "email": "info@mollie.com",
                       "phone": "+31208202070",
                       "categoryCode": 6012
@@ -218,7 +218,7 @@ Example
           ],
           "profile" => [
               "name" => "Mollie",
-              "website" => "https://www.mollie.com",
+              "url" => "https://www.mollie.com",
               "email" => "info@mollie.com",
               "phone" => "+31208202070",
               "categoryCode" => 6012,
