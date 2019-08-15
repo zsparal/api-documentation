@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+August 2019
+===========
+
+TBD
+---
+
+- Introduced the new endpoint to update some details of open payments. See :doc:`Update payment </reference/v2/payments-api/update-payment>`
+
 July 2019
 =========
 
