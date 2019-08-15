@@ -57,7 +57,7 @@ Parameters
        payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
-.. _payment-method-specific-parameters:
+.. _payment-method-specific-parameters-update:
 
 Payment method specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
