@@ -99,8 +99,9 @@ Response
    * - ``isCancelable``
 
        .. type:: boolean
+          :required: false
 
-     - Whether or not the payment can be canceled.
+     - Whether or not the payment can be canceled. This parameter is omitted if the payment reaches a final state.
 
    * - ``authorizedAt``
 
