@@ -129,8 +129,10 @@ Response
    * - ``expiresAt``
 
        .. type:: datetime
+          :required: false
 
-     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. 
+       This parameter is omitted if the payment can no longer expire.
 
    * - ``expiredAt``
 
