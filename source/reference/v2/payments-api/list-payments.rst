@@ -195,8 +195,8 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
         const payments = await mollieClient.payments.list();

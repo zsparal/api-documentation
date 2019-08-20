@@ -78,11 +78,11 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const status = await mollieClient.customers_subscriptions.cancel('sub_rVKGtNd6s3', { customerId: 'cst_stTC2WHAuS' });
+        const subscription = await mollieClient.customers_subscriptions.cancel('sub_rVKGtNd6s3', { customerId: 'cst_stTC2WHAuS' });
       })();
 
 Response

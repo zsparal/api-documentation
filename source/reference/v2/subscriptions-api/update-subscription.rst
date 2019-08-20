@@ -183,11 +183,11 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const updatedSubscription = await mollieClient.customers_subscriptions.update('sub_8EjeBVgtEn', {
+        const subscription = await mollieClient.customers_subscriptions.update('sub_8EjeBVgtEn', {
           customerId: 'cst_8wmqcHMN4U',
           amount: {
             currency: 'EUR',

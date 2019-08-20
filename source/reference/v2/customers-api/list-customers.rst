@@ -153,15 +153,15 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
         // First page
-        const customers = await mollie.customers.page();
+        let customers = await mollieClient.customers.page();
 
         // Next page
-        const nextPage = await customers.nextPage();
+        customers = await customers.nextPage();
       })();
 
 Response

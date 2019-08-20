@@ -202,11 +202,11 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const updatedOrders = await mollieClient.orders_lines.update('odl_dgtxyl', {
+        const order = await mollieClient.orders_lines.update('odl_dgtxyl', {
           orderId: 'ord_pbjz8x',
           name: 'LEGO 71043 Hogwarts™ Castle',
           productUrl: 'https://shop.lego.com/en-GB/product/Hogwarts-Castle-71043',

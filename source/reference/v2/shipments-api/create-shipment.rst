@@ -260,8 +260,8 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
         let shipment = await mollieClient.orders_shipments.create({
@@ -292,10 +292,10 @@ Example
             url: 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
           },
         });
-      })();
 
-      // Or when no tracking is specified:
-      shipment = await mollieClient.orders_shipments.create({ orderId: 'ord_kEn1PlbGa', lines: [] });
+        // Or when no tracking is specified:
+        shipment = await mollieClient.orders_shipments.create({ orderId: 'ord_kEn1PlbGa', lines: [] });
+      })();
 
 Response
 ^^^^^^^^

@@ -147,11 +147,11 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const updatedOrder = await mollieClient.orders_shipments.update('', {
+        const shipment = await mollieClient.orders_shipments.update('shp_3wmsgCJN4U', {
           tracking: {
             carrier: 'PostNL',
             code: '3SKABA000000000',

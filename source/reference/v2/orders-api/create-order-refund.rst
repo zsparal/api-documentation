@@ -206,11 +206,11 @@ Example
    .. code-block:: javascript
       :linenos:
 
-      const mollie = require('@mollie/api-client');
-      const mollieClient = mollie({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const updatedOrder = await mollieClient.orders_refunds.create({
+        const refund = await mollieClient.orders_refunds.create({
           orderId: 'ord_stTC2WHAuS',
           lines: {
             id: 'odl_dgtxyl',
