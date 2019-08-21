@@ -6,8 +6,8 @@ changes are documented here.
 August 2019
 ===========
 
-Monday, 12th
-------------
+Wednesday, 21st
+---------------
 
 - Lowered the minimum amount for credit card payments with `sequenceType=first` to zero. See
   :doc:`Recurring payments </payments/recurring>` for more info.
