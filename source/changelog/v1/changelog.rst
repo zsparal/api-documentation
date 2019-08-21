@@ -8,6 +8,15 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+August 2019
+===========
+
+Wednesday, 21st
+---------------
+
+- Lowered the minimum amount for credit card payments with `sequenceType=first` to zero. See
+  :doc:`Recurring payments </payments/recurring>` for more info.
+
 July 2019
 =========
 
