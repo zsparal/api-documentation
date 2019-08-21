@@ -9,7 +9,7 @@ August 2019
 Wednesday, 21st
 ---------------
 
-- Introduced the new endpoint to update some details of open payments. See :doc:`Update payment </reference/v2/payments-api/update-payment>`
+- Introduced the new endpoint to update some details of created payments. See :doc:`Update payment </reference/v2/payments-api/update-payment>`
 - Lowered the minimum amount for credit card payments with `sequenceType=first` to zero. See
   :doc:`Recurring payments </payments/recurring>` for more info.
 
