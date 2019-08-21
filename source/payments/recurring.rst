@@ -51,8 +51,8 @@ periodically through *subscriptions*.
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
 
-.. note:: For credit card payments, you can create a payment with a zero amount which means,
-          no money will be debited from the card when doing the first payment.
+   .. note:: For credit card payments, you can create a payment with a zero amount which means,
+             no money will be debited from the card when doing the first payment.
 
    .. code-block:: bash
       :linenos:
