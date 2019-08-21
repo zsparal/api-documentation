@@ -12,7 +12,7 @@ Update payment
    :organization_access_tokens: true
    :oauth: true
 
-This endpoint can be used to update some details of a created payment when it is not yet finalized.
+This endpoint can be used to update some details of a created payment.
 
 Parameters
 ----------
@@ -40,6 +40,8 @@ Parameters
 
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
+
+       **Updating this field is only possible when the payment is not yet finalized.**
 
    * - ``webhookUrl``
 
@@ -77,6 +79,8 @@ Bank transfer
 
      - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
+
+       **Updating this field is only possible when the payment is not yet finalized.**
 
 Response
 --------
