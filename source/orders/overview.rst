@@ -1,9 +1,24 @@
 Orders API
 ==========
 
-The **Orders API** allows you to use Mollie for your order management. *Pay after delivery* payment methods, such as
-*Klarna Pay later* and *Klarna Slice it* require the Orders API and cannot be used with the
-:doc:`Payments API </payments/overview>`.
+The **Orders API** allows you to use Mollie for your order management.
+
+For each order in your shop, you can create an Order via the Mollie API. The order will remain valid for a certain
+amount of time (default 28 days).
+
+Just as a Payment, the Order will have a ``_links.checkout`` property where you can send yourr customer send to pay for
+the Order. For each attempt to Pay, a Payment is created. If the customer pays for the Order, the Order will transition
+to the ``paid`` state (or ``authorized`` in case of pay after delivery).
+
+Should the initial Payment fail, the customer can try to pay again using a special link available in the Dashboard or
+you can create an additional :doc:`Payment on the Order via the API </reference/v2/orders-api/create-order-payment>`.
+During that time, the Order will remain in the ``open`` state.
+
+*Pay after delivery* payment methods, such as *Klarna Pay later* and *Klarna Slice it* require the Orders API and cannot
+be used with the :doc:`Payments API </payments/overview>`.
+
+Once you ship the goods to your customer, you should inform Mollie of the shipments via the API or via the Dashboard.
+This is required for pay after delivery methods.
 
 How does the Orders API work?
 -----------------------------
