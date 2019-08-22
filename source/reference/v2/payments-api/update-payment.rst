@@ -101,6 +101,21 @@ Example
          -d "webhookUrl=https://example.org/webshop/payments/webhook/" \
          -d "metadata={\"order_id\": \"98765\"}"
 
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->get("tr_7UhSN1zuXS");
+
+      $payment->description = "Order #98765";
+      $payment->redirectUrl = "https://example.org/webshop/order/98765/";
+      $payment->webhookUrl = "https://example.org/webshop/payments/webhook/";
+      $payment->metadata = ["order_id" => "98765"];
+
+      $payment = $payment->update();
+
 Response
 ^^^^^^^^
 .. code-block:: http
