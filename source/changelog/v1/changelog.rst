@@ -14,7 +14,7 @@ August 2019
 Wednesday, 21st
 ---------------
 
-- Lowered the minimum amount for credit card payments with `sequenceType=first` to zero. See
+- Lowered the minimum amount for credit card payments with `recurringType=first` to zero. See
   :doc:`Recurring payments </payments/recurring>` for more info.
 
 July 2019
