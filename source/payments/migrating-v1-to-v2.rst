@@ -8,6 +8,7 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 * Fully supports :doc:`multicurrency </payments/multicurrency>`. You can create payments, subscriptions, and refunds in
   non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
   reflect the settlement amount for various resources.
+* Possible to update details of payments via the new :doc:`Update Payment </reference/v2/payments-api/update-payment>` endpoint.
 * Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
@@ -206,7 +207,7 @@ Changes in the Customers API
 The following fields have been changed, renamed or moved:
 
 * ``createdDatetime`` has been renamed to ``createdAt``.
-* ``recentlyUsedMethods`` has been removed. 
+* ``recentlyUsedMethods`` has been removed.
 
 Changes in the Subscriptions API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
