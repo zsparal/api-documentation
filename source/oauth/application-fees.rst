@@ -52,7 +52,8 @@ They are created by passing additional parameters to the
                  :required: true
 
             - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would want to
-              charge €10.00. The maximum value is (1.21 × (0.29 + (0.05 × the amount of the payment)). The minimum is €0.01.
+              charge €10.00. The maximum value is (the amount of the payment - (1.21 × (0.29 + (0.05 × the amount of
+              the payment))). The minimum is €0.01.
 
 
               .. list-table::
