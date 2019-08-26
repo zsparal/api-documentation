@@ -84,7 +84,7 @@ Bank transfer
 
 Response
 --------
-``201`` ``application/hal+json``
+``200`` ``application/hal+json``
 
 A payment object is returned, as described in :doc:`Get payment </reference/v2/payments-api/get-payment>`.
 

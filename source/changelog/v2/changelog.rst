@@ -9,7 +9,8 @@ August 2019
 Monday, 26th
 ------------
 
-- Introduced the new endpoint to update some details of created payments. See :doc:`Update payment </reference/v2/payments-api/update-payment>`
+- Introduced a new endpoint to update some details of created payments. See
+  :doc:`Update payment </reference/v2/payments-api/update-payment>` for more info.
 
 Wednesday, 21st
 ---------------
