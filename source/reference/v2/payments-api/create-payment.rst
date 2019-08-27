@@ -225,6 +225,9 @@ Bank transfer
      - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
+       After you created the payment, you can still update the ``dueDate`` via the
+       :doc:`Update Payment </reference/v2/payments-api/update-payment>` endpoint.
+
    * - ``locale``
 
        .. type:: string
