@@ -69,7 +69,7 @@ Parameters
        * ``5732`` Electronics, computers and software
        * ``5734`` Hosting/VPN services
        * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards       
+       * ``5815`` Credits/vouchers/giftcards
        * ``5921`` Alcohol
        * ``5944`` Jewelry & Accessories
        * ``5977`` Health & Beauty products

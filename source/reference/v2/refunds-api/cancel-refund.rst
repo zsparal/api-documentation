@@ -74,6 +74,16 @@ Example
       payment = mollie_client.payments.get('tr_WDqYK6vllg')
       mollie_client.payment_refunds.on(payment).delete('re_4qqhO89gsT')
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const status = await mollieClient.payments_refunds.cancel('re_4qqhO89gsT', { paymentId: 'tr_WDqYK6vllg' });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

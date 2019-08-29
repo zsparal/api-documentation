@@ -280,6 +280,16 @@ Example
         payment_id: 'tr_WDqYK6vllg'
       )
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const refund = await mollieClient.payments_refunds.get('re_4qqhO89gsT', { paymentId: 'tr_WDqYK6vllg' });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http
