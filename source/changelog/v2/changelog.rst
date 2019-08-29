@@ -6,6 +6,11 @@ changes are documented here.
 August 2019
 ===========
 
+Thursday, 29th
+--------------
+
+- Removed the charge date from the description of payments created by a subscription.
+
 Monday, 26th
 ------------
 

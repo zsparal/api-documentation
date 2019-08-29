@@ -137,8 +137,7 @@ Response
 
        .. type:: string
 
-     - The description specified during subscription creation. This will be included in the payment description along
-       with the charge date in ``YYYY-MM-DD`` format.
+     - The description specified during subscription creation. This will be included in the payment description.
 
    * - ``method``
 
