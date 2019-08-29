@@ -78,8 +78,7 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. type:: string
           :required: false
 
-     - A description unique per subscription . This will be included in the payment description along with the charge
-       date.
+     - A description unique per subscription. This will be included in the payment description.
 
    * - ``mandateId``
 
