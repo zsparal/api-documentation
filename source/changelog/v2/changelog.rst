@@ -12,6 +12,11 @@ Monday, 9th
 - Added the ``payments`` key to the ``_links`` object in the
   :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
 
+Wednesday, 4th
+--------------
+
+- Add property ``vatRegulation`` to :doc:`Get organization </reference/v2/organizations-api/get-organization>` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
+
 August 2019
 ===========
 
