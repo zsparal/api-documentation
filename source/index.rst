@@ -30,7 +30,7 @@ Well begun is half done. Save time and build on solid foundations. Mollie API cl
 `PHP <https://github.com/mollie/mollie-api-php>`_, `Ruby <https://github.com/mollie/mollie-api-ruby>`_,
 `Node.js <https://github.com/mollie/mollie-api-node>`_ and `Python <https://github.com/mollie/mollie-api-python>`_.
 
-Of course we also provide `modules and plugins <https://www.mollie.com/integrations>` for just about every webshop software out there.
+Of course we also provide `modules and plugins <https://www.mollie.com/integrations>`_ for just about every webshop software out there.
 
 Payment methods
 ---------------
