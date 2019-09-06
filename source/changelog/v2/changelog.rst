@@ -15,7 +15,7 @@ Monday, 9th
 Wednesday, 4th
 --------------
 
-- Add property ``vatRegulation`` to :doc:`Get organization </reference/v2/organizations-api/get-organization>` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
+- Added property ``vatRegulation`` to :doc:`Get organization </reference/v2/organizations-api/get-organization>` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
 
 August 2019
 ===========
