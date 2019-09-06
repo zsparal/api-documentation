@@ -30,11 +30,11 @@ Well begun is half done. Save time and build on solid foundations. Mollie API cl
 `PHP <https://github.com/mollie/mollie-api-php>`_, `Ruby <https://github.com/mollie/mollie-api-ruby>`_,
 `Node.js <https://github.com/mollie/mollie-api-node>`_ and `Python <https://github.com/mollie/mollie-api-python>`_.
 
-Of course we also provide modules and plugins for about every webshop software out there.
+Of course we also provide `modules and plugins <https://www.mollie.com/integrations>`_ for just about every webshop software out there.
 
 Payment methods
 ---------------
-Mollie is always adding new payment methods. The Mollie API currently supports these payments methods:
+Mollie is always adding new payment methods. The Mollie API currently supports the following payments methods:
 
 * `Bancontact <https://www.mollie.com/en/payments/bancontact>`_
 * `Bank transfer <https://www.mollie.com/en/payments/bank-transfer>`_
