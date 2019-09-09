@@ -179,6 +179,7 @@ Response
    * - ``applicationFee``
 
        .. type:: object
+          :required: false
 
      - The application fee, if the subscription was created with one. This will be applied on each payment created for
        the subscription.
