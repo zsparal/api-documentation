@@ -221,6 +221,13 @@ Response
 
             - The API resource URL of the customer the subscription is for.
 
+          * - ``payments``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the payments that are created by this subscription. Not present if no payments yet created.
+
           * - ``documentation``
 
               .. type:: URL object

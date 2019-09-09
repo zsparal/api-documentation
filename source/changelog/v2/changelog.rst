@@ -3,6 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+September 2019
+==============
+
+Monday, 9th
+-----------
+
+- Added the ``payments`` key to the ``_links`` object in the
+  :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
+
 August 2019
 ===========
 
