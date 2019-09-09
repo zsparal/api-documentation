@@ -91,7 +91,15 @@ Please note that even though all parameters are optional, at least one of them n
               .. type:: string
                  :required: false
 
-            - The VAT number of the company.
+            - The VAT number of the company, if based in the European Union. The VAT number will be checked with the
+              `VIES <http://ec.europa.eu/taxation_customs/vies/>`_ service by Mollie.
+
+          * - ``vatRegulation``
+
+              .. type:: string
+                 :required: false
+
+            - The organization's VAT regulation, if based in the European Union. Either ``shifted`` (VAT is shifted) or ``dutch`` (Dutch VAT rate) is accepted.
 
    * - ``profile``
 
