@@ -6,6 +6,10 @@ changes are documented here.
 September 2019
 ==============
 
+Thursday, 12th
+--------------
+- Added "Reiscadeau" as giftcard issuer.
+
 Monday, 9th
 -----------
 
