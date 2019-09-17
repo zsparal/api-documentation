@@ -279,9 +279,9 @@ Gift cards
        parameter.
 
        Possible values: ``fashioncheque`` ``nationalebioscoopbon`` ``nationaleentertainmentcard``
-       ``kunstencultuurcadeaukaart`` ``nationalegolfbon`` ``sportenfitcadeau`` ``reiscadeau``
-       ``podiumcadeaukaart`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard``
-       ``yourgift`` ``travelcheq``
+       ``kunstencultuurcadeaukaart`` ``nationalegolfbon`` ``ohmygood`` ``sportenfitcadeau``
+       ``reiscadeau`` ``podiumcadeaukaart`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg``
+       ``webshopgiftcard`` ``yourgift`` ``travelcheq``
 
    * - ``voucherNumber``
 
