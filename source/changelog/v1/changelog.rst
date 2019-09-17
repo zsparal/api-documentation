@@ -11,16 +11,6 @@ changes are documented here.
 September 2019
 ==============
 
-TBA
----
-
-- Added "OhMyGood" as giftcard issuer.
-
-Thursday, 12th
---------------
-
-- Added "Reiscadeau" as giftcard issuer.
-
 Wednesday, 4th
 --------------
 
