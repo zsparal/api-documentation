@@ -4,7 +4,7 @@ Plugin / platform developers
 Mollie <3 developers. We have a large community of partners and developers building an ever-growing ecosystem of `integrations <https://mollie.com/integrations>`_. Many of these integrations are open source and/or maintained by our community.
 
 If you're integrating the Mollie API into a plugin, module or SaaS platform, we'd love to work with you!
-Be sure to reach out to our `technical partner team <https://www.mollie.com/nl/partners>`_ and we'll make sure you get all the help you need.
+Be sure to reach out to our `technical partner team <https://www.mollie.com/partners>`_ and we'll make sure you get all the help you need.
 Partnered developers are also invited to join our Slack community, where other members and Mollie developers will be happy to answer your questions.
 
 Questions?
