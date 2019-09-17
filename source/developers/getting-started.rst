@@ -9,7 +9,7 @@ Partnered developers are also invited to join our Slack community, where other m
 
 Questions?
 ^^^^^^^^^^
-Please reach out to us at techsupport@mollie.com. We're happy to help!
+Please reach out to us at support@mollie.com. We're happy to help!
 
 .. note:: Heads up! This section is intended for developers who are integrating the Mollie API into an eCommerce or SaaS platform.
 
