@@ -1,5 +1,5 @@
-Plugin / platform developers
-============================
+Platform developers
+===================
 
 Mollie <3 developers. We have a large community of partners and developers building an ever-growing ecosystem of `integrations <https://mollie.com/integrations>`_. Many of these integrations are open source and/or maintained by our community.
 

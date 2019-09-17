@@ -78,5 +78,4 @@ If, however, you're integrating our native REST API, use your HTTP client of cho
 
 Option C: Using Mollie Connect (OAuth)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're using OAuth - great! There's no need to supply version strings.
-
+If you're using OAuth - great! There's no need to supply version strings. By using OAuth, all API calls are automatically tied to your OAuth app.
