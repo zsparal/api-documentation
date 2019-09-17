@@ -6,8 +6,8 @@ changes are documented here.
 September 2019
 ==============
 
-TBA
----
+Tuesday, 17th
+-------------
 - Added "OhMyGood" as giftcard issuer.
 
 Thursday, 12th
