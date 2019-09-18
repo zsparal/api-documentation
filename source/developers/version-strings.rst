@@ -1,6 +1,6 @@
 Version strings
 ---------------
-When Mollie merchants contact our support department, knowing which integration the merchant uses in incredibly helpful in offering them the fastest and best possible support.  Having this information helps us understand which features are supported by your integration and pinpoint any issues.
+When Mollie merchants contact our support department, knowing which integration the merchant uses is incredibly helpful in offering them the fastest and best possible support.  Having this information helps us understand which features are supported by your integration and pinpoint any issues.
 
 The Mollie API gathers information about your plugin or platform with every API call. You can pass this information to the Mollie by amending the user agent with what we call *"version strings"*.
 
