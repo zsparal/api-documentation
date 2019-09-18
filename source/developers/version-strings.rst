@@ -58,6 +58,16 @@ The code examples below illustrate how the Mollie plugin (v0.9.9) for Magento 2 
       mollie_client.set_user_agent_component('MollieMagento2', 0.9.9)
       mollie_client.set_user_agent_component('Magento', 2.1.5)
 
+   .. code-block:: ruby
+      :linenos:
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Client.instance.add_version_string('MollieMagento2/0.9.9')
+      Mollie::Client.instance.add_version_string('Magento/2.1.5')
+
    .. code-block:: javascript
       :linenos:
 
