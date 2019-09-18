@@ -1,5 +1,5 @@
-Platform developers
-===================
+Integration partners
+====================
 
 .. note:: Heads up! This section is intended for developers who are integrating the Mollie API into an eCommerce or SaaS platform.
 
