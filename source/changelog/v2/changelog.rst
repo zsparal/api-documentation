@@ -6,6 +6,11 @@ changes are documented here.
 September 2019
 ==============
 
+TBA
+---
+- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
+  total now. See the :doc:`webhooks guide </guides/webhooks>` for the full new schedule.
+
 Tuesday, 17th
 -------------
 - Added "OhMyGood" as giftcard issuer.
