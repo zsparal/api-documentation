@@ -6,6 +6,11 @@ changes are documented here.
 September 2019
 ==============
 
+TBA
+---
+- Introduced a new endpoint for getting all subscriptions created for a website profile. See
+  :doc:`List all subscriptions </reference/v2/subscriptions-api/list-all-subscriptions>` for more info.
+
 Friday, 20th
 ------------
 - Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
