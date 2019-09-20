@@ -12,7 +12,7 @@ List all subscriptions
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all subscriptions created with the current website profile, ordered from newest to oldest.
+Retrieve all subscriptions created with the current website profile or merchant, ordered from newest to oldest.
 
 Parameters
 ----------
@@ -47,7 +47,7 @@ of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profil
    * - ``profileId``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
