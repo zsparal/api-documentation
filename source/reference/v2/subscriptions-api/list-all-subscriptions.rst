@@ -183,16 +183,16 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions",
+               "href": "https://api.mollie.com/v2/subscriptions",
                "type": "application/hal+json"
            },
            "previous": null,
            "next": {
-               "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions?from=sub_mnfbwhMfvo",
+               "href": "https://api.mollie.com/v2/subscriptions?from=sub_mnfbwhMfvo",
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-subscriptions",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-all-subscriptions",
                "type": "text/html"
            }
        }
