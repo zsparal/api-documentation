@@ -12,7 +12,10 @@ List all subscriptions
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all subscriptions created with the current website profile or merchant, ordered from newest to oldest.
+Retrieve all subscriptions, ordered from newest to oldest.
+By using an API key all the subscriptions created with the current website profile will be returned.
+In the case of an OAuth Access Token relies the website profile on the ``profileId`` field. All
+subscriptions of the merchant will be returned if you do not provide it.
 
 Parameters
 ----------
