@@ -11,6 +11,8 @@ Tuesday, 24th
 - Introduced a new endpoint for getting all subscriptions created for a website profile. See
   :doc:`List all subscriptions </reference/v2/subscriptions-api/list-all-subscriptions>` for more info.
 
+- Added new currencies for credit card: ``AED``, ``NZD``, ``PHP``, ``RUB``, ``SGD`` and ``ZAR``.
+
 Friday, 20th
 ------------
 - Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
