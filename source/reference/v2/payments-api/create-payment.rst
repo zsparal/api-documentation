@@ -498,6 +498,17 @@ PayPal
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
 
+   * - ``sessionId``
+
+       .. type:: string
+          :required: false
+
+     - The unique ID you have used for the PayPal fraud library. You should include this if you use
+       PayPal for an on-demand payment. The maximum character length is 32.
+
+       Please refer to the :doc:`Recurring payments guide </payments/recurring>` for more information
+       on how to implement the fraud library.
+
 paysafecard
 """""""""""
 .. list-table::

@@ -128,6 +128,8 @@ Please note that in order to do recurring payments, direct debit or credit card 
 
 #. Like regular payments your :doc:`webhook </guides/webhooks>` is called for retrieving status updates.
 
+.. note:: You should include the PayPal fraud library when you use PayPal for on-demand payments.
+
 .. _payments/recurring/charging-periodically:
 
 Charging periodically with subscriptions
@@ -188,3 +190,60 @@ The payment object will, however, contain a ``subscriptionId`` field that contai
 the subscription was created. This allows you to recognize where the payment belongs to.
 
 We do not provide webhooks specifically for status changes of a Subscription itself.
+
+How to implement the PayPal fraud library?
+------------------------------------------
+Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud
+library of PayPal by adding the Javascript library to your checkout page with the necessary configuration
+included.
+
+You need to load the library from the PayPal domain through a ``<script>``-tag. Before that, you should
+provide the configuration for the library with a ``<script>``-tag of the type ``application/json``.
+Both tags should be placed inside the ``<head>`` section.
+
+In the configuration block you need to make sure that you include the ``fncls`` attribute as follows:
+``fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99"``. The library can not find your configuration
+without that attribute.
+
+The configuration should contain JSON with the following attributes:
+
+.. list-table::
+   :widths: auto
+
+   * - ``s``
+
+       .. type:: string
+          :required: true
+
+     - Your profile ID where you creating the payment for, like ``pfl_QkEhN94Ba``. You can use the
+       :doc:`Get current profile API </reference/v2/profiles-api/get-profile-me>` if you do not know
+       your profile ID.
+
+   * - ``f``
+
+       .. type:: string
+          :required: true
+
+     - An unique session ID for the current payment. It should be different on every page load and can be
+       32 characters long. This ID should be posted to us when you create the actual payment.
+
+
+.. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
+             it will not work.
+
+**Example**
+
+.. code-block:: html
+      :linenos:
+
+      <head>
+        ...
+        <script type="application/json" fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99">
+            {
+               "f": "Tk149lticPjL40UUj9cb", // A random session ID, max. 32 characters
+               "s": "pfl_QkEhN94Ba"         // Your profile ID
+            }
+        </script>
+        <script type="text/javascript" src="https://c.paypal.com/da/r/fb.js"></script>
+        ...
+      </head>
