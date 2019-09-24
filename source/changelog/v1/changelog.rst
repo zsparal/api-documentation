@@ -8,15 +8,57 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
-June 2019
-=========
-
 TBA
 ---
 
 - Added support for PayPal Recurring payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
+
+September 2019
+==============
+
+Friday, 20th
+------------
+- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
+  total now. See the :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+
+Tuesday, 17th
+-------------
+- Added "OhMyGood" as giftcard issuer.
+
+Thursday, 12th
+--------------
+
+- Added "Reiscadeau" as giftcard issuer.
+
+Wednesday, 4th
+--------------
+
+- Added property ``vatRegulation`` to :doc:`Get organization </reference/v1/organizations-api/get-organization>`.
+
+August 2019
+===========
+
+Thursday, 29th
+--------------
+
+- Removed the charge date from the description of payments created by a subscription.
+
+Wednesday, 21st
+---------------
+
+- Lowered the minimum amount for credit card payments with `recurringType=first` to zero. See
+  :doc:`Recurring payments </payments/recurring>` for more info.
+
+July 2019
+=========
+
+Thursday, 4th
+-------------
+
+- Added MyBank (``mybank``) as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
+  Please contact your account manager to enable this new method.
 
 May 2019
 ========

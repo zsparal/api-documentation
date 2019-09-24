@@ -75,6 +75,16 @@ Example
         customer_id: 'cst_stTC2WHAuS'
       )
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const subscription = await mollieClient.customers_subscriptions.cancel('sub_rVKGtNd6s3', { customerId: 'cst_stTC2WHAuS' });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: json

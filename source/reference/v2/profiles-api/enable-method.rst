@@ -55,7 +55,7 @@ Request (method that can be enabled)
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-      $profile = $mollie->profiles->get('pfl_v9hTwCvYqw'));
+      $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
       try {
           $profile->enableMethod('bancontact');
@@ -117,7 +117,7 @@ Request (method that can't be enabled)
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-      $profile = $mollie->profiles->get('pfl_v9hTwCvYqw'));
+      $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
       try {
           $profile->enableMethod('creditcard');

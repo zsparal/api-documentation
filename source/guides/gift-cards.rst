@@ -11,7 +11,9 @@ brands are supported:
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
 * `Nationale Golfbon <https://www.golfbon.nl/>`_
 * `Nationale Kunst & Cultuur Cadeaukaart <https://www.kunstcultuurcadeaukaart.nl/>`_
+* `OhMyGood <https://www.ohmygood.nl/>`_
 * `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
+* Reiscadeau
 * `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
 * `Travelcheq <https://www.travelcheq.com/>`_
 * `VVV Cadeaukaart <https://www.vvvcadeaubonnen.nl/>`_

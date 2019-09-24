@@ -87,6 +87,14 @@ Response
 
             - A string containing the exact amount that was refunded in the given currency.
 
+   * - ``settlementId``
+
+       .. type:: string
+          :required: false
+
+     - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``. This
+       field is omitted if the refund is not settled (yet).
+
    * - ``settlementAmount``
 
        .. type:: amount object
@@ -271,6 +279,16 @@ Example
         're_4qqhO89gsT',
         payment_id: 'tr_WDqYK6vllg'
       )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const refund = await mollieClient.payments_refunds.get('re_4qqhO89gsT', { paymentId: 'tr_WDqYK6vllg' });
+      })();
 
 Response
 ^^^^^^^^

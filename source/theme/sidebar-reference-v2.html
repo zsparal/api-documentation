@@ -18,6 +18,11 @@
 			'GET /v2/payments/*'
 		) }}
 		{{ sidebar_item(
+			'reference/v2/payments-api/update-payment',
+			'Update payment',
+			'PATCH /v2/payments/*'
+		) }}
+		{{ sidebar_item(
 			'reference/v2/payments-api/cancel-payment',
 			'Cancel payment',
 			'DELETE /v2/payments/*'
@@ -294,6 +299,11 @@
 			'List subscriptions',
 			'GET /v2/customers/*/subscriptions'
 		) }}
+    {{ sidebar_item(
+      'reference/v2/subscriptions-api/list-all-subscriptions',
+      'List all subscriptions',
+      'GET /v2/subscriptions'
+    ) }}
 		{{ sidebar_item(
 			'reference/v2/subscriptions-api/list-subscriptions-payments',
 			'List subscription payments',
@@ -489,6 +499,18 @@
 			'reference/v2/invoices-api/list-invoices',
 			'List invoices',
 			'GET /v2/invoices'
+		) }}
+	</ul>
+</div>
+
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/methods-api/') }}">
+	<p><a href="javascript:void(0)">Miscellaneous</a></p>
+
+	<ul>
+		{{ sidebar_item(
+			'reference/v2/wallets-api/request-apple-pay-payment-session',
+			'Request Apple Pay Payment Session',
+			'POST /v2/wallets/request-apple-pay-payment-session'
 		) }}
 	</ul>
 </div>

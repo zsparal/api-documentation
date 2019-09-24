@@ -54,6 +54,7 @@ Response
        "reference": null,
        "createdDatetime": "2015-11-06T06:00:01.0Z",
        "settledDatetime": null,
+       "status": "open",
        "amount": "39.75",
        "periods": {
            "2015": {

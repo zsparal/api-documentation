@@ -199,6 +199,21 @@ Example
                }
          }'
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const order = await mollieClient.orders_lines.update('odl_dgtxyl', {
+          orderId: 'ord_pbjz8x',
+          name: 'LEGO 71043 Hogwarts™ Castle',
+          productUrl: 'https://shop.lego.com/en-GB/product/Hogwarts-Castle-71043',
+          imageUrl: 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/71043_alt1?$main$',
+        });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

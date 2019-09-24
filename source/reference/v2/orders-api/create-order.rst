@@ -138,7 +138,7 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank`` ``paypal``
        ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``payment``
@@ -157,6 +157,17 @@ Parameters
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
        order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
+
+   * - ``expiresAt``
+
+       .. type:: string
+          :required: false
+
+     - The date the order should expire in ``YYYY-MM-DD`` format. The minimum date is tomorrow and the maximum date is
+       100 days after tomorrow.
+
+       .. note:: It is not posible to use Klarna Slice it or Klarna Pay later as method when your expiry date is more
+                 than 28 days in the future, unless another maximum is agreed between the merchant and Klarna.
 
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
@@ -556,7 +567,7 @@ Example
                   "currency" => "EUR"
             ],
             "billingAddress" => [
-                  "organizationName": "Mollie B.V.",
+                  "organizationName" => "Mollie B.V.",
                   "streetAndNumber" => "Keizersgracht 313",
                   "city" => "Amsterdam",
                   "region" => "Noord-Holland",
@@ -598,7 +609,7 @@ Example
                   "name" => "LEGO 42083 Bugatti Chiron",
                   "productUrl" => "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
                   "imageUrl" => 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
-                  "metadata": [
+                  "metadata" => [
                      "order_id" => "1337",
                      "description" => "Bugatti Chiron"
                   ],
@@ -841,6 +852,105 @@ Example
           }
         ]
       )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const order = await mollieClient.orders.create({
+          amount: {
+            value: '1027.99',
+            currency: 'EUR',
+          },
+          billingAddress: {
+            organizationName: 'Mollie B.V.',
+            streetAndNumber: 'Keizersgracht 313',
+            city: 'Amsterdam',
+            region: 'Noord-Holland',
+            postalCode: '1234AB',
+            country: 'NL',
+            title: 'Dhr.',
+            givenName: 'Piet',
+            familyName: 'Mondriaan',
+            email: 'piet@mondriaan.com',
+            phone: '+31309202070',
+          },
+          shippingAddress: {
+            organizationName: 'Mollie B.V.',
+            streetAndNumber: 'Prinsengracht 313',
+            streetAdditional: '4th floor',
+            city: 'Haarlem',
+            region: 'Noord-Holland',
+            postalCode: '5678AB',
+            country: 'NL',
+            title: 'Mr.',
+            givenName: 'Chuck',
+            familyName: 'Norris',
+            email: 'norris@chucknorrisfacts.net',
+          },
+          metadata: {
+            order_id: '1337',
+            description: 'Lego cars',
+          },
+          consumerDateOfBirth: '1958-01-31',
+          locale: 'nl_NL',
+          orderNumber: '1337',
+          redirectUrl: 'https://example.org/redirect',
+          webhookUrl: 'https://example.org/webhook',
+          method: 'klarnapaylater',
+          lines: [
+            {
+              type: 'physical',
+              sku: '5702016116977',
+              name: 'LEGO 42083 Bugatti Chiron',
+              productUrl: 'https://shop.lego.com/nl-NL/Bugatti-Chiron-42083',
+              imageUrl: 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$',
+              quantity: 2,
+              vatRate: '21.00',
+              unitPrice: {
+                currency: 'EUR',
+                value: '399.00',
+              },
+              totalAmount: {
+                currency: 'EUR',
+                value: '698.00',
+              },
+              discountAmount: {
+                currency: 'EUR',
+                value: '100.00',
+              },
+              vatAmount: {
+                currency: 'EUR',
+                value: '121.14',
+              },
+            },
+            {
+              type: 'physical',
+              sku: '5702015594028',
+              name: 'LEGO 42056 Porsche 911 GT3 RS',
+              productUrl: 'https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056',
+              imageUrl: 'https://sh-s7-live-s.legocdn.com/is/image/LEGO/42056?$PDPDefault$',
+              quantity: 1,
+              vatRate: '21.00',
+              unitPrice: {
+                currency: 'EUR',
+                value: '329.99',
+              },
+              totalAmount: {
+                currency: 'EUR',
+                value: '329.99',
+              },
+              vatAmount: {
+                currency: 'EUR',
+                value: '57.27',
+              },
+            },
+          ],
+        });
+      })();
 
 Response
 ^^^^^^^^

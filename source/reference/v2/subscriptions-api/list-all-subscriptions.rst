@@ -1,23 +1,24 @@
-List subscriptions
-==================
+List all subscriptions
+======================
 .. api-name:: Subscriptions API
    :version: 2
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/customers/*customerId*/subscriptions
+   :url: https://api.mollie.com/v2/subscriptions
 
 .. authentication::
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all subscriptions of a customer.
+Retrieve all subscriptions, ordered from newest to oldest.
+By using an API key all the subscriptions created with the current website profile will be returned.
+In the case of an OAuth Access Token relies the website profile on the ``profileId`` field. All
+subscriptions of the merchant will be returned if you do not provide it.
 
 Parameters
 ----------
-Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
-
 .. list-table::
    :widths: auto
 
@@ -49,7 +50,7 @@ of their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profil
    * - ``profileId``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
@@ -131,40 +132,8 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v2/customers/cst_8wmqcHMN4U/subscriptions \
+      curl -X GET https://api.mollie.com/v2/subscriptions \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
-
-   .. code-block:: php
-      :linenos:
-
-      <?php
-      $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-
-      $customer = $mollie->customers->get("cst_8wmqcHMN4U");
-      $subscriptions = $customer->subscriptions();
-
-   .. code-block:: ruby
-      :linenos:
-
-      require 'mollie-api-ruby'
-
-      Mollie::Client.configure do |config|
-        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
-      end
-
-      customer = Mollie::Customer.get('cst_8wmqcHMN4U')
-      subscriptions = customer.subscriptions
-
-   .. code-block:: javascript
-      :linenos:
-
-      const { createMollieClient } = require('@mollie/api-client');
-      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
-
-      (async () => {
-        const subscriptions = await mollieClient.customers_subscriptions.all({ customerId: 'cst_8wmqcHMN4U' });
-      })();
 
 Response
 ^^^^^^^^
@@ -217,16 +186,16 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions",
+               "href": "https://api.mollie.com/v2/subscriptions",
                "type": "application/hal+json"
            },
            "previous": null,
            "next": {
-               "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions?from=sub_mnfbwhMfvo",
+               "href": "https://api.mollie.com/v2/subscriptions?from=sub_mnfbwhMfvo",
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-subscriptions",
+               "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-all-subscriptions",
                "type": "text/html"
            }
        }

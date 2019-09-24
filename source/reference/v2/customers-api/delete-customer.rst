@@ -66,6 +66,16 @@ Example
 
       Mollie::Customer.delete('cst_8wmqcHMN4U')
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const status = mollieClient.customers.delete('cst_8wmqcHMN4U');
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

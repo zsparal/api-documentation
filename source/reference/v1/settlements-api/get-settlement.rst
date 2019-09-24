@@ -250,6 +250,7 @@ Response
        "reference": "1234567.1511.03",
        "createdDatetime": "2015-11-06T06:00:01.0Z",
        "settledDatetime": "2015-11-06T09:41:44.0Z",
+       "status": "paidout",
        "amount": "39.75",
        "periods": {
            "2015": {

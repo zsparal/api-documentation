@@ -53,17 +53,25 @@ parameters:
 
      - The payment method of which you would like to adjust the rate. Possible values are:
 
-        * ``ideal``
-        * ``paysafecard``
-        * ``creditcard``
-        * ``mistercash``
         * ``banktransfer``
-        * ``paypal``
-        * ``sofort``
         * ``belfius``
+        * ``creditcard``
         * ``directdebit``
+        * ``eps``
+        * ``giftcard``
+        * ``giropay``
+        * ``ideal``
+        * ``inghomepay``
+        * ``kbc``
+        * ``klarnapaylater``
+        * ``klarnasliceit``
+        * ``mistercash``
+        * ``paypal``
+        * ``paysafecard``
         * ``podiumcadeaukaart``
         * ``refund``
+        * ``sofort``
+
 
    * - ``payment_subtype``
 
@@ -83,6 +91,13 @@ parameters:
        * ``retail``
        * ``digital``
        * ``adult``
+
+       **Only applicable to Klarna methods:**
+
+       * ``AT``
+       * ``FI``
+       * ``DE``
+       * ``NL``
 
    * - ``fee_type``
 

@@ -99,8 +99,9 @@ Response
    * - ``isCancelable``
 
        .. type:: boolean
+          :required: false
 
-     - Whether or not the payment can be canceled.
+     - Whether or not the payment can be canceled. This parameter is omitted if the payment reaches a final state.
 
    * - ``authorizedAt``
 
@@ -129,8 +130,10 @@ Response
    * - ``expiresAt``
 
        .. type:: datetime
+          :required: false
 
-     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. 
+       This parameter is omitted if the payment can no longer expire.
 
    * - ``expiredAt``
 
@@ -268,8 +271,8 @@ Response
 
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-       Possible values: ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``paypal``
+       Possible values: ``null`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mybank`` ``paypal``
        ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``metadata``
@@ -309,7 +312,8 @@ Response
      -   This optional field will contain the amount that will be settled to your account, converted to the currency
          your account is settled in. It follows the same syntax as the ``amount`` property.
 
-         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards.
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards. If no 
+         amount is settled by Mollie the ``settlementAmount`` is omitted from the response.
 
    * - ``settlementId``
 
@@ -1218,6 +1222,16 @@ Example
       end
 
       payment = Mollie::Payment.get('tr_WDqYK6vllg')
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const payment = await mollieClient.payments.get('tr_Eq8xzWUPA4');
+      })();
 
 Response
 ^^^^^^^^

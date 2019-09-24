@@ -61,7 +61,7 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       $refund = $mollie->payments->get("tr_WDqYK6vllg")->getRefund("re_4qqhO89gsT");
-      $canceledRefund = $refund->cancel();
+      $refund->cancel();
 
    .. code-block:: python
       :linenos:
@@ -72,7 +72,17 @@ Example
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
       payment = mollie_client.payments.get('tr_WDqYK6vllg')
-      refund = mollie_client.payment_refunds.on(payment).delete('re_4qqhO89gsT')
+      mollie_client.payment_refunds.on(payment).delete('re_4qqhO89gsT')
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const status = await mollieClient.payments_refunds.cancel('re_4qqhO89gsT', { paymentId: 'tr_WDqYK6vllg' });
+      })();
 
 Response
 ^^^^^^^^

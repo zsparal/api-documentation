@@ -51,6 +51,9 @@ periodically through *subscriptions*.
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
 
+   .. note:: For credit card payments, you can create a payment with a zero amount which means,
+             no money will be debited from the card when doing the first payment.
+
    .. code-block:: bash
       :linenos:
 
@@ -78,7 +81,7 @@ periodically through *subscriptions*.
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our :doc:`Checkout </guides/checkout>`. The following payment methods
           support a first payment and are thus allowed as a value for the ``method`` parameter of a first payment:
-          ``applepay`` ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``paypal`` ``sofort``
+          ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank`` ``paypal`` ``sofort``
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 

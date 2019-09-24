@@ -203,6 +203,23 @@ Example
       # Alternative shorthand for refunding all eligible order lines
       order.refund!
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const refund = await mollieClient.orders_refunds.create({
+          orderId: 'ord_stTC2WHAuS',
+          lines: {
+            id: 'odl_dgtxyl',
+            quantity: 1,
+          },
+          description: 'Required quantity not in stock, refunding one photo book.',
+        });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

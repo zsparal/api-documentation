@@ -168,6 +168,16 @@ Example
 
       customer = Mollie::Customer.get('cst_8wmqcHMN4U')
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const customer = await mollieClient.customers.get('cst_kEn1PlbGa');
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

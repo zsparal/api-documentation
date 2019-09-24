@@ -137,8 +137,7 @@ Response
 
        .. type:: string
 
-     - The description specified during subscription creation. This will be included in the payment description along
-       with the charge date in ``YYYY-MM-DD`` format.
+     - The description specified during subscription creation. This will be included in the payment description.
 
    * - ``method``
 
@@ -180,6 +179,7 @@ Response
    * - ``applicationFee``
 
        .. type:: object
+          :required: false
 
      - The application fee, if the subscription was created with one. This will be applied on each payment created for
        the subscription.
@@ -222,6 +222,13 @@ Response
 
             - The API resource URL of the customer the subscription is for.
 
+          * - ``payments``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the payments that are created by this subscription. Not present if no payments yet created.
+
           * - ``documentation``
 
               .. type:: URL object
@@ -261,6 +268,16 @@ Example
         'sub_rVKGtNd6s3',
         customer_id: 'cst_stTC2WHAuS'
       )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const subscription = await mollieClient.customers_subscriptions.get('sub_rVKGtNd6s3', { customerId: 'cst_stTC2WHAuS' });
+      })();
 
 Response
 ^^^^^^^^
@@ -303,6 +320,10 @@ Response
            },
            "profile": {
                "href": "https://api.mollie.com/v2/profiles/pfl_URR55HPMGx",
+               "type": "application/hal+json"
+           },
+          "payments": {
+               "href": "https://api.mollie.com/v2/customers/cst_stTC2WHAuS/subscriptions/sub_rVKGtNd6s3/payments",
                "type": "application/hal+json"
            },
            "documentation": {

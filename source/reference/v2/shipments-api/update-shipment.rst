@@ -144,6 +144,22 @@ Example
         }
       )
 
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const shipment = await mollieClient.orders_shipments.update('shp_3wmsgCJN4U', {
+          tracking: {
+            carrier: 'PostNL',
+            code: '3SKABA000000000',
+            url: 'http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1016EE&D=NL&T=C',
+          },
+        });
+      })();
+
 Response
 ^^^^^^^^
 .. code-block:: http

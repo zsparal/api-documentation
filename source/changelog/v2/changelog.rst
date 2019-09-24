@@ -3,9 +3,6 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
-June 2019
-=========
-
 TBA
 ---
 
@@ -13,8 +10,106 @@ TBA
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
 
+September 2019
+==============
+
+Tuesday, 24th
+-------------
+- Introduced a new endpoint for getting all subscriptions created for a website profile. See
+  :doc:`List all subscriptions </reference/v2/subscriptions-api/list-all-subscriptions>` for more info.
+
+Friday, 20th
+------------
+- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
+  total now. See the :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+
+Tuesday, 17th
+-------------
+- Added "OhMyGood" as giftcard issuer.
+
+Thursday, 12th
+--------------
+- Added "Reiscadeau" as giftcard issuer.
+
+Monday, 9th
+-----------
+
+- Added the ``payments`` key to the ``_links`` object in the
+  :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
+
+Wednesday, 4th
+--------------
+
+- Added property ``vatRegulation`` to :doc:`Get organization </reference/v2/organizations-api/get-organization>` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
+
+August 2019
+===========
+
+Thursday, 29th
+--------------
+
+- Removed the charge date from the description of payments created by a subscription.
+
+Monday, 26th
+------------
+
+- Introduced a new endpoint to update some details of created payments. See
+  :doc:`Update payment </reference/v2/payments-api/update-payment>` for more info.
+
+Wednesday, 21st
+---------------
+
+- Lowered the minimum amount for credit card payments with `sequenceType=first` to zero. See
+  :doc:`Recurring payments </payments/recurring>` for more info.
+
+July 2019
+=========
+
+Wednesday, 17th
+---------------
+
+- Orders can now be created with a custom expiry date. Use the new ``expiresAt`` parameter to set the custom date. See
+  :doc:`Create order </reference/v2/orders-api/create-order>` for more info.
+
+Thursday, 4th
+-------------
+
+- Added MyBank (``mybank``) as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
+  Please contact your account manager to enable this new method.
+- Polish złoty (``PLN``) is now supported as a currency for the Przelewy24 payment method.
+
+Tuesday, 2nd
+------------
+
+- Settlements can now be retrieved using either their ID or their bank reference. See :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`
+  for more info.
+
+June 2019
+=========
+
+Thursday, 20th
+--------------
+
+- Added the ``settlementId`` field to the refund response. See :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`
+  for more info.
+
+Thursday, 13th
+---------------
+
+- Changed the conditions for when an order is cancelable. Canceling an order is not longer possible when there are any
+  open payments for the order, unless for four specific methods. See :doc:`Cancel Order </reference/v2/orders-api/cancel-order>`
+  for more info.
+
+Wednesday, 12th
+---------------
+
+- :doc:`/guides/applepay-direct-integration` is now available.
+
+June 2019
+=========
+
 May 2019
-==========
+========
 
 Tuesday, 21st
 -------------

@@ -44,8 +44,8 @@ Parameters
               .. type:: string
                  :required: true
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
-              the payment methods that are enabled on your account.
+            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The :doc:`currencies supported
+              </payments/multicurrency>` depend on the payment methods that are enabled on your account.
 
           * - ``value``
 
@@ -74,11 +74,14 @@ Parameters
 
      - The URL your customer will be redirected to after the payment process.
 
-       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter. *For all
-       other payments, this parameter is mandatory.*
-
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
+
+       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
+       Additionally, for payments that are created with the ``applePayPaymentToken`` parameter, the redirect URL can
+       also be omitted.
+
+       *For all other payments, this parameter is mandatory.*
 
    * - ``webhookUrl``
 
@@ -123,7 +126,7 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
                  please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
@@ -179,6 +182,27 @@ If you specify the ``method`` parameter, optional parameters may be available fo
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
 payment method.
 
+Apple Pay
+"""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``applePayPaymentToken``
+
+       .. type:: string
+          :required: false
+
+     - The `Apple Pay Payment
+       Token <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment/1916095-token>`_  object
+       (encoded as JSON) that is part of the result of authorizing a payment request. The token contains the payment
+       information needed to authorize the payment.
+
+       The object should be passed encoded in a JSON string. Example:
+
+       ``{"paymentData": {"version": "EC_v1", "data": "vK3BbrCbI/...."}}``
+
+       For documentation on how to get this token, see :doc:`/guides/applepay-direct-integration`.
+
 Bank transfer
 """""""""""""
 .. list-table::
@@ -202,6 +226,9 @@ Bank transfer
 
      - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
+
+       After you created the payment, you can still update the ``dueDate`` via the
+       :doc:`Update Payment </reference/v2/payments-api/update-payment>` endpoint.
 
    * - ``locale``
 
@@ -341,9 +368,10 @@ Gift cards
 
        If only one issuer is activated on your account, you can omit this parameter.
 
-       Possible values: ``fashioncheque`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
-       ``podiumcadeaukaart`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift`` ``travelcheq``
-       ``nationalegolfbon`` ``sportenfitcadeau``
+       Possible values: ``fashioncheque`` ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon``
+       ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart``
+       ``reiscadeau`` ``sportenfitcadeau`` ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque``
+       ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
 
    * - ``voucherNumber``
 
@@ -688,6 +716,27 @@ Example
           order_id: '12345'
         }
       )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const payment = await mollieClient.payments.create({
+          amount: {
+            currency: 'EUR',
+            value: '10.00', // We enforce the correct number of decimals through strings
+          },
+          description: 'My first payment',
+          redirectUrl: 'https://webshop.example.org/order/12345/',
+          webhookUrl: 'https://webshop.example.org/payments/webhook/',
+          metadata: {
+            order_id: '12345',
+          },
+        });
+      })();
 
 Response
 ^^^^^^^^

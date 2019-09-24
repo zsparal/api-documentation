@@ -102,7 +102,7 @@ Parameters
        based conversion optimization is lost.
 
        Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
                  please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
@@ -280,9 +280,10 @@ Gift cards
        the list, contact our support department. If only one issuer is activated on your account, you can omit this
        parameter.
 
-       Possible values: ``fashioncheque`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``kunstencultuurcadeaukaart``
-       ``podiumcadeaukaart`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift`` ``travelcheq``
-       ``nationalegolfbon`` ``sportenfitcadeau``
+       Possible values: ``fashioncheque`` ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon``
+       ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart``
+       ``reiscadeau`` ``sportenfitcadeau`` ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque``
+       ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
 
    * - ``voucherNumber``
 
@@ -392,6 +393,10 @@ paysafecard
 
 Przelewy24
 """"""""""
+
+.. note:: Using the v1 API, only payments denominated in Euro can be created. Migrate to the v2 API to create payments
+          in Polish złoty.
+
 .. list-table::
    :widths: auto
 

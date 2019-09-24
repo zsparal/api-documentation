@@ -63,6 +63,7 @@ Response
        "reference": null,
        "createdAt": "2018-04-06T06:00:01.0Z",
        "settledAt": null,
+       "status": "open",
        "amount": {
            "currency": "EUR",
            "value": "39.75"

@@ -70,13 +70,15 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
      - The start date of the subscription in ``YYYY-MM-DD`` format. This is the first day on which your customer will be
        charged. Should always be in the future.
 
+       .. note::
+          A subscription's start date cannot be changed if it has already been charged.
+
    * - ``description``
 
        .. type:: string
           :required: false
 
-     - A description unique per subscription . This will be included in the payment description along with the charge
-       date.
+     - A description unique per subscription. This will be included in the payment description.
 
    * - ``mandateId``
 
@@ -176,6 +178,26 @@ Example
         description: 'Mollie recurring subscription',
         webhook_url: 'https://example.org/webhook'
       )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const subscription = await mollieClient.customers_subscriptions.update('sub_8EjeBVgtEn', {
+          customerId: 'cst_8wmqcHMN4U',
+          amount: {
+            currency: 'EUR',
+            value: '10.00',
+          },
+          times: 42,
+          startDate: '2018-12-12',
+          description: 'Mollie recurring subscription',
+          webhookUrl: 'https://example.org/webhook',
+        });
+      })();
 
 Response
 ^^^^^^^^

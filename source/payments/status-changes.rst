@@ -75,6 +75,7 @@ Expiry times per payment method
 | - EPS                     |                                   |
 | - Giropay                 |                                   |
 | - KBC                     |                                   |
+| - MyBank                  |                                   |
 | - Przelewy24              |                                   |
 | - SOFORT Banking          |                                   |
 +---------------------------+-----------------------------------+

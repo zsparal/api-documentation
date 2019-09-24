@@ -12,8 +12,11 @@ Cancel order
    :organization_access_tokens: true
    :oauth: true
 
-The order can only be canceled while the order's ``status`` field is either ``created``, ``authorized`` or ``shipping``
-[#f1]_.
+The order can only be canceled while:
+
+* the order doesn't have any open payments except for the methods ``banktransfer``, ``directdebit``, ``klarnapaylater``,
+  and ``klarnasliceit``.
+* the order's ``status`` field is either ``created``, ``authorized`` or ``shipping`` [#f1]_.
 
 #. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
 #. In case of ``authorized``, the authorization will be released, all order lines will be canceled and the new order
@@ -88,6 +91,16 @@ Example
       end
 
       Mollie::Order.cancel('ord_8wmqcHMN4U')
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const canceledOrder = await mollieClient.orders.cancel('ord_8wmqcHMN4U');
+      })();
 
 Response
 ^^^^^^^^
