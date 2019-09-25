@@ -26,7 +26,7 @@ Using Mollie.JS object.
 ***********************
 After loading the ``mollie.js`` script you can use the global ``Mollie(profileId[, options])`` this will create 
 an object. You need the ``profile_id`` of your organization. This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_  
-settings in the dashboard. A profile id looks like ``pfl_test12345678`` and are bound to a website profile.
+settings in the dashboard. A profile id looks like ``pfl_test12345678`` and are bound to a website profile. Your profile key can be found in the URL.
 
 .. note:: Be aware the profile id is *not* your API key nor your development API Key. Your API key is private and should never be used in a browser context.
 
