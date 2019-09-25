@@ -1,5 +1,5 @@
-Reference
-=========
+Mollie.JS Reference guide
+=========================
 
 
 Add Mollie.JS to your project
@@ -18,19 +18,17 @@ Example of integrating the script
       </head>
       <body>
         <!-- Your HTML  --->
-        <script src="https://js.mollie.com/public/mollie.js"></script>
+        <script src="https://js.mollie.com/v1/"></script>
       </body>
     </html>
 
-Get started with Mollie.JS 
-**************************
+Using Mollie.JS object.
+***********************
 After loading the ``mollie.js`` script you can use the global ``Mollie(profileId[, options])`` this will create 
 an object. You need the ``profile_id`` of your organization. This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_  
 settings in the dashboard. A profile id looks like ``pfl_test12345678`` and are bound to a website profile.
 
-.. note:: Be aware the profile id is *not* your development api_key.
-
-The global `Mollie` method will accept two arguments, these are documented below
+.. note:: Be aware the profile id is *not* your API key nor your development API Key. Your API key is private and should never be used in a browser context.
 
 Mollie(profileId[, options])
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -49,7 +47,7 @@ Mollie(profileId[, options])
        .. type:: options object
           :required: false
 
-     - The options you want to give to mollie JS. E.g. ``{ locale: "nl_NL"}`` 
+     - The options you want to give to Mollie.js. E.g. ``{ locale: "nl_NL"}`` 
 
        .. list-table::
           :widths: auto
@@ -59,7 +57,7 @@ Mollie(profileId[, options])
               .. type:: string
                  :required: false
 
-            - Allows you to preset the language to be used in the Javascript. When this 
+            - Allows you to preset the language to be used. When this 
               parameter is not provided, the browser language will be used instead. We recommend you
               provide the language tag because this is usually more accurate.
 
@@ -76,7 +74,7 @@ Mollie(profileId[, options])
 
 mollie.createToken()
 ^^^^^^^^^^^^^^^^^^^^
-With ``createToken`` method you can make a request to receive a token. This token can be safely send to your server and used to create a payment via an API call. (TODO: see link to api create payment docs)
+Calling the ``createToken`` will receive a token if successful. This token can be safely send to the server and used to create a payment via an API call. (TODO: see link to api create payment docs)
 
 .. list-table::
    :widths: auto
@@ -220,7 +218,7 @@ Element methods
 
 element.mount(targetElement)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Mounts an element to the DOM.  This means you need to setup your dom accordingly HTML standards. 
+Adds the element to the DOM, meaning it will become visible for the user from this point onwards.
 
 .. code-block:: HTML
    :linenos:
@@ -236,7 +234,7 @@ Mounts an element to the DOM.  This means you need to setup your dom accordingly
        .. type:: domElement
           :required: true
 
-     - Valid HTML ``ID`` or ``class`` that's in the DOM when the mount method is been called.
+     - Valid CSS Selector such as ``ID`` and ``class``.
 
 Javascript
 ----------
@@ -254,7 +252,7 @@ ES6
 
 element.on(event, callback)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Elements can listen to several ``events``. This will be emitted by mollie je. The callback recieves an object with all the related information.
+Elements can listen to several ``events``. This will be emitted by Mollie.js. The callback receives an object with all the related information.
 
 .. list-table::
    :widths: auto
@@ -264,7 +262,7 @@ Elements can listen to several ``events``. This will be emitted by mollie je. Th
        .. type:: event type
           :required: true
 
-     - Subscribe to the event that are emitted by mollie js.
+     - Subscribe to the event that are emitted by Mollie js.
 
        Possible values: ``blur`` ``focus`` ``change``
 
@@ -294,8 +292,7 @@ ES6
 
 element.unmount()
 ^^^^^^^^^^^^^^^^^
-Whenever you want to remove all of the intance of the element you can use `unmount` method. By calling it the element will also be removed from the DOM.
-
+Removes the element from the DOM. Note that state—such as input values—is not preserved when re-mounting.
 
 Javascript
 ----------
