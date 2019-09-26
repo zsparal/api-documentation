@@ -142,7 +142,7 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-      $customer = $mollie->subscriptions->page();
+      $subscriptions = $mollie->subscriptions->page();
 
 Response
 ^^^^^^^^
