@@ -3,7 +3,7 @@ Mollie.JS Reference guide
 
 
 Add Mollie.JS to your project
-*****************************
+-----------------------------
 Always start by including mollie.js in to your project. Make sure it's been loaded from *https://js.mollie.com* and not from anywhere else.
 
 Example of integrating the script
@@ -23,9 +23,9 @@ Example of integrating the script
     </html>
 
 Using Mollie.JS object.
-***********************
-After loading the ``mollie.js`` script you can use the global ``Mollie(profileId[, options])`` this will create 
-an object. You need the ``profile_id`` of your organization. This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_  
+-----------------------
+After the script is loaded you can use the ``Mollie(profileId[, options])`` function. This will return 
+an object that you may use. You need the ``profile_id`` of your organization. This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_  
 settings in the dashboard. A profile id looks like ``pfl_test12345678`` and are bound to a website profile. Your profile key can be found in the URL.
 
 .. note:: Be aware the profile id is *not* your API key nor your development API Key. Your API key is private and should never be used in a browser context.
@@ -73,7 +73,7 @@ Mollie(profileId[, options])
             - An object of all the styles a ref of the values you can find here. (Yet to be determined)
 
 mollie.createToken()
-^^^^^^^^^^^^^^^^^^^^
+--------------------
 Calling the ``createToken`` will receive a token if successful. This token can be safely send to the server and used to create a payment via an API call. (TODO: see link to api create payment docs)
 
 .. list-table::
@@ -86,7 +86,7 @@ Calling the ``createToken`` will receive a token if successful. This token can b
 
      - The createElement method will create an element ready to be mounted. 
 
-       Possible values: ``card`` ``cardNumber`` ``verificationCode`` ``expiryDate``
+       Possible values:  ``cardNumber`` ``verificationCode`` ``expiryDate``
 
    * - ``options``
 
@@ -106,7 +106,7 @@ Calling the ``createToken`` will receive a token if successful. This token can b
             - An object of all the styles a ref of the values you can find here. (Yet to be determined)
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
@@ -121,7 +121,7 @@ Javascript
     var cardEl =  mollie.createElement('card', options)
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
@@ -139,21 +139,21 @@ ES6
 
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
     var mollie =  Mollie('pfl_test12345678', {locale: 'nl_NL', styles: { backgroundColor: '#ff00ff' } }])
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
     const mollie =  Mollie('pfl_test12345678', {locale: 'nl_NL', styles: { backgroundColor: '#ff00ff' } }])
 
 mollie.createElement(element[, options])
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------------------
 .. list-table::
    :widths: auto
 
@@ -164,7 +164,7 @@ mollie.createElement(element[, options])
 
      - The createElement method will create an element ready to be mounted. 
 
-       Possible values: ``card`` ``cardNumber`` ``verificationCode`` ``expiryDate``
+       Possible values: ``cardNumber`` ``verificationCode`` ``expiryDate``
 
    * - ``options``
 
@@ -184,7 +184,7 @@ mollie.createElement(element[, options])
             - An object of all the styles a ref of the values you can find here. (Yet to be determined)
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
@@ -199,7 +199,7 @@ Javascript
     var cardEl =  mollie.createElement('card', options)
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
@@ -217,7 +217,8 @@ Element methods
 ===============
 
 element.mount(targetElement)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+----------------------------
+
 Adds the element to the DOM, meaning it will become visible for the user from this point onwards.
 
 .. code-block:: HTML
@@ -237,21 +238,21 @@ Adds the element to the DOM, meaning it will become visible for the user from th
      - Valid CSS Selector such as ``ID`` and ``class``.
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
     cardEl.mount('#card');
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
     cardEl.mount('#card');
 
 element.on(event, callback)
-***************************
+---------------------------
 
 Elements can listen to several ``events``. This will be emitted by Mollie.js. The callback receives an object with all the related information.
 
@@ -276,7 +277,7 @@ Elements can listen to several ``events``. This will be emitted by Mollie.js. Th
 
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
@@ -284,7 +285,7 @@ Javascript
     cardEl.on('change', callback);
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
@@ -292,18 +293,18 @@ ES6
     cardEl.on('change', callback);
 
 element.unmount()
-^^^^^^^^^^^^^^^^^
+-----------------
 Removes the element from the DOM. Note that state—such as input values—is not preserved when re-mounting.
 
 Javascript
-----------
+^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
     cardEl.unmount();
 
 ES6
----
+^^^
 .. code-block:: js
    :linenos:
 
