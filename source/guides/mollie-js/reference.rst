@@ -251,7 +251,8 @@ ES6
     cardEl.mount('#card');
 
 element.on(event, callback)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+***************************
+
 Elements can listen to several ``events``. This will be emitted by Mollie.js. The callback receives an object with all the related information.
 
 .. list-table::
