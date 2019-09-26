@@ -76,81 +76,24 @@ mollie.createToken()
 --------------------
 Calling the ``createToken`` will receive a token if successful. This token can be safely send to the server and used to create a payment via an API call. (TODO: see link to api create payment docs)
 
-.. list-table::
-   :widths: auto
-
-   * - ``element``
-
-       .. type:: element type
-          :required: true
-
-     - The createElement method will create an element ready to be mounted. 
-
-       Possible values:  ``cardNumber`` ``verificationCode`` ``expiryDate``
-
-   * - ``options``
-
-       .. type:: options object
-          :required: false
-
-     - The options you want to give to mollie JS. E.g. ``{ styles: fontSize: "10px"}`` 
-
-       .. list-table::
-          :widths: auto
-
-          * - ``styles``
-
-              .. type:: style object
-                  :required: false
-
-            - An object of all the styles a ref of the values you can find here. (Yet to be determined)
 
 Javascript
 ^^^^^^^^^^
 .. code-block:: js
    :linenos:
 
-    var options = { 
-                    styles : {
-                      base: {
-                        fontSize: '10px;
-                      }
-                    }
-                  }
-
-    var cardEl =  mollie.createElement('card', options)
+    mollie.createToken('card', options).then(function(result) {
+      // Handle the result this can be either result.token or result.error.
+    })
 
 ES6
 ^^^
 .. code-block:: js
    :linenos:
 
-    const options = { 
-                      styles : {
-                        base: {
-                          fontSize: '10px;
-                        }
-                      }
-                    }
-    
-    const cardEl =  mollie.createElement('card', options)
+   // Inside a async function (e.g. submit handler)
+   const {token, error } = await mollie.createToken()
 
-
-
-
-Javascript
-^^^^^^^^^^
-.. code-block:: js
-   :linenos:
-
-    var mollie =  Mollie('pfl_test12345678', {locale: 'nl_NL', styles: { backgroundColor: '#ff00ff' } }])
-
-ES6
-^^^
-.. code-block:: js
-   :linenos:
-
-    const mollie =  Mollie('pfl_test12345678', {locale: 'nl_NL', styles: { backgroundColor: '#ff00ff' } }])
 
 mollie.createElement(element[, options])
 ----------------------------------------
@@ -196,7 +139,7 @@ Javascript
                     }
                   }
 
-    var cardEl =  mollie.createElement('card', options)
+    var cardNumberEl =  mollie.createElement('cardNumber', options)
 
 ES6
 ^^^
@@ -211,7 +154,7 @@ ES6
                       }
                     }
     
-    const cardEl =  mollie.createElement('card', options)
+    const cardNumberEl =  mollie.createElement('cardNumber', options)
 
 Element methods
 ===============
@@ -242,14 +185,14 @@ Javascript
 .. code-block:: js
    :linenos:
 
-    cardEl.mount('#card');
+    cardNumberEl.mount('#card');
 
 ES6
 ^^^
 .. code-block:: js
    :linenos:
 
-    cardEl.mount('#card');
+    cardNumberEl.mount('#card');
 
 element.on(event, callback)
 ---------------------------
@@ -282,7 +225,7 @@ Javascript
    :linenos:
 
     var callback = function(event) { console.log('We need a real world example here', event.type) }
-    cardEl.on('change', callback);
+    cardNumberEl.on('change', callback);
 
 ES6
 ^^^
@@ -290,7 +233,7 @@ ES6
    :linenos:
 
     const callback = (event)=> { console.log('We need a real world example here', event.type) }
-    cardEl.on('change', callback);
+    cardNumberEl.on('change', callback);
 
 element.unmount()
 -----------------
@@ -301,12 +244,12 @@ Javascript
 .. code-block:: js
    :linenos:
 
-    cardEl.unmount();
+    cardNumberEl.unmount();
 
 ES6
 ^^^
 .. code-block:: js
    :linenos:
 
-    cardEl.unmount();
+    cardNumberEl.unmount();
 
