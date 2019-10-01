@@ -211,7 +211,7 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      
+
       $mollie->onboarding->submit([
           "organization" => [
               "name" => "Mollie B.V.",
@@ -233,6 +233,33 @@ Example
           ],
       ]);
 
+   .. code-block:: ruby
+      :linenos:
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Onboarding.submit(
+        organization: {
+          name: "Mollie B.V.",
+          address: {
+             streetAndNumber: "Keizersgracht 313",
+             postalCode: "1018 EE",
+             city: "Amsterdam",
+             country: "NL"
+          },
+          registrationNumber: "30204462",
+          vatNumber: "NL815839091B01"
+        },
+        profile: {
+          name: "Mollie",
+          url: "https://www.mollie.com",
+          email: "info@mollie.com",
+          phone: "+31208202070",
+          categoryCode: 6012
+        }
+      )
 
 Response
 ^^^^^^^^
