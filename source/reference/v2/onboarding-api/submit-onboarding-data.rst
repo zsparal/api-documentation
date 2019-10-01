@@ -245,7 +245,7 @@ Example
           name: "Mollie B.V.",
           address: {
              streetAndNumber: "Keizersgracht 313",
-             postalCode: "1018 EE",
+             postalCode: "1016 EE",
              city: "Amsterdam",
              country: "NL"
           },
