@@ -828,6 +828,12 @@ PayPal
 
             - PayPal's reference for the transaction, for instance ``9AL35361CF606152E``.
 
+          * - ``paypalPayerId``
+
+              .. type:: string
+
+            - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
+
 paysafecard
 """""""""""
 .. list-table::

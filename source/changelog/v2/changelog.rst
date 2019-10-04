@@ -6,6 +6,10 @@ changes are documented here.
 September 2019
 ==============
 
+TBA
+---
+- Added the ``paypalPayerId`` field to the PayPal payment details.
+
 Tuesday, 24th
 -------------
 - Introduced a new endpoint for getting all subscriptions created for a website profile. See
