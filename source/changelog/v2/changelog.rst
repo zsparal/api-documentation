@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+October 2019
+============
+
+Monday, 7th
+-----------
+
+- Added the ``paypalPayerId`` field to the PayPal payment details.
+
 September 2019
 ==============
 

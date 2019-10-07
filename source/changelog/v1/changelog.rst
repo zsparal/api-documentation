@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+October 2019
+============
+
+Monday, 7th
+-----------
+
+- Added the ``paypalPayerId`` field to the PayPal payment details.
+
 September 2019
 ==============
 
