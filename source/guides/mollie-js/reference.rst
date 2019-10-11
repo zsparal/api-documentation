@@ -1,10 +1,14 @@
-Mollie.JS Reference guide
-=========================
+Mollie Components reference guide
+=================================
 
+*Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card payments to your
+own checkout, in a way that is fully PCI-DSS SAQ-A compliant.
 
-Add Mollie.JS to your project
------------------------------
-Always start by including mollie.js in to your project. Make sure it's been loaded from *https://js.mollie.com* and not from anywhere else.
+Add our Javascript to your project
+----------------------------------
+
+Always start by including ``mollie.js`` in to your project. Make sure it's been loaded from ``https://js.mollie.com`` and
+not from anywhere else. It should be added just before the ``</body>`` tag.
 
 Example of integrating the script
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -18,7 +22,7 @@ Example of integrating the script
       </head>
       <body>
         <!-- Your HTML  --->
-        <script src="https://js.mollie.com/v1/"></script>
+        <script src="https://js.mollie.com/v1/mollie.js"></script>
       </body>
     </html>
 
@@ -149,7 +153,7 @@ ES6
     const options = {
                       styles : {
                         base: {
-                          fontSize: '10px;
+                          fontSize: '10px;'
                         }
                       }
                     }
