@@ -1,5 +1,5 @@
-Mollie Components overview
-==========================
+Mollie Components
+=================
 
 *Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card payments to your
 own checkout, in a way that is fully PCI-DSS SAQ-A compliant.
