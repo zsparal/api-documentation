@@ -114,7 +114,7 @@ mollie.createElement(element[, options])
        .. type:: options object
           :required: false
 
-     - The options you want to give to mollie JS. E.g. ``{ styles: fontSize: "10px"}`` 
+     - The options you want to give to mollie JS. E.g. ``{ styles: fontSize: "10px"}``
 
        .. list-table::
           :widths: auto
@@ -131,10 +131,10 @@ Javascript
 .. code-block:: js
    :linenos:
 
-    var options = { 
+    var options = {
                     styles : {
                       base: {
-                        fontSize: '10px;
+                        fontSize: '10px;'
                       }
                     }
                   }
@@ -146,14 +146,14 @@ ES6
 .. code-block:: js
    :linenos:
 
-    const options = { 
+    const options = {
                       styles : {
                         base: {
                           fontSize: '10px;
                         }
                       }
                     }
-    
+
     const cardNumberEl =  mollie.createElement('cardNumber', options)
 
 Element methods
@@ -216,7 +216,7 @@ Elements can listen to several ``events``. This will be emitted by Mollie.js. Th
        .. type:: function
           :required: true
 
-     - A function that will be called whenever the event is been emitted. 
+     - A function that will be called whenever the event is been emitted.
 
 
 Javascript
