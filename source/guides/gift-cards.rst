@@ -22,7 +22,8 @@ brands are supported:
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
 
-If you need a different brand, please reach out to your account manager or our support department.
+If you need a different brand, please reach out to your account manager or our support department. We can also support
+closed-loop gift cards. 
 
 Using the :doc:`checkout </guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
 remaining amount due using the other payment methods enabled on your website profile.
