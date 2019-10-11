@@ -1,8 +1,15 @@
-Mollie Components reference guide
-=================================
+Mollie Components overview
+==========================
 
 *Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card payments to your
 own checkout, in a way that is fully PCI-DSS SAQ-A compliant.
+
+At a high level, it works by using a Javascript API to add fields to your checkout that the consumer will use to enter
+their credit card details, such as their card number.
+
+When the checkout is submitted, Mollie Components will exchange the card data for a ``cardToken`` which you can use with
+the :doc:`Create payment API </reference/v2/payments-api/create-payment>`. The API will then return a
+``_links.checkout`` where the consumer can do the 3-D Secure authentication. After that, the payment will be completed.
 
 Add our Javascript to your project
 ----------------------------------
@@ -29,10 +36,11 @@ Example of integrating the script
 Using Mollie.JS object.
 -----------------------
 After the script is loaded you can use the ``Mollie(profileId[, options])`` function. This will return 
-an object that you may use. You need the ``profile_id`` of your organization. This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_  
-settings in the dashboard. A profile id looks like ``pfl_test12345678`` and are bound to a website profile. Your profile key can be found in the URL.
+an object that you may use. You need the Profile Id of the website profile that you want to use.
+This can be found in the `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_ settings in the Dashboard.
 
-.. note:: Be aware the profile id is *not* your API key nor your development API Key. Your API key is private and should never be used in a browser context.
+.. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
+          context.
 
 Mollie(profileId[, options])
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -44,14 +52,14 @@ Mollie(profileId[, options])
        .. type:: string
           :required: true
 
-     - Your profile id ``pfl_test12345678``.
+     - Your Profile Id, for example ``pfl_3RkSN1zuPE``.
 
    * - ``options``
 
        .. type:: options object
           :required: false
 
-     - The options you want to give to Mollie.js. E.g. ``{ locale: "nl_NL"}`` 
+     - Any options you want to set. E.g. ``{ locale: "nl_NL"}``
 
        .. list-table::
           :widths: auto
@@ -78,8 +86,9 @@ Mollie(profileId[, options])
 
 mollie.createToken()
 --------------------
-Calling the ``createToken`` will receive a token if successful. This token can be safely send to the server and used to create a payment via an API call. (TODO: see link to api create payment docs)
-
+Calling the ``createToken`` method will receive a token if successful. This token must then be sent to your back end
+where it can be passed as the ``cardToken`` parameter to the
+:doc:`Create payment API </reference/v2/payments-api/create-payment>`.
 
 Javascript
 ^^^^^^^^^^
