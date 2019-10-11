@@ -108,26 +108,26 @@ ES6
    const {token, error } = await mollie.createToken()
 
 
-mollie.createElement(element[, options])
+mollie.createElement(type[, options])
 ----------------------------------------
 .. list-table::
    :widths: auto
 
-   * - ``element``
+   * - ``type``
 
-       .. type:: element type
+       .. type:: string
           :required: true
 
-     - The createElement method will create an element ready to be mounted. 
+     - The ``createElement`` method will create an element ready to be mounted.
 
-       Possible values: ``cardNumber`` ``verificationCode`` ``expiryDate``
+       Possible values: ``"cardHolder"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
 
    * - ``options``
 
        .. type:: options object
           :required: false
 
-     - The options you want to give to mollie JS. E.g. ``{ styles: fontSize: "10px"}``
+     - The options you want to give to Mollie Components. E.g. ``{ styles: fontSize: "10px"}``
 
        .. list-table::
           :widths: auto
@@ -152,7 +152,7 @@ Javascript
                     }
                   }
 
-    var cardNumberEl =  mollie.createElement('cardNumber', options)
+    var cardNumberEl = mollie.createElement('cardNumber', options)
 
 ES6
 ^^^
@@ -167,7 +167,7 @@ ES6
                       }
                     }
 
-    const cardNumberEl =  mollie.createElement('cardNumber', options)
+    const cardNumberEl = mollie.createElement('cardNumber', options)
 
 Element methods
 ===============
@@ -210,19 +210,19 @@ ES6
 element.on(event, callback)
 ---------------------------
 
-Elements can listen to several ``events``. This will be emitted by Mollie.js. The callback receives an object with all the related information.
+Elements can listen to several ``events``. The callback receives an object with all the related information.
 
 .. list-table::
    :widths: auto
 
    * - ``event``
 
-       .. type:: event type
+       .. type:: string
           :required: true
 
      - Subscribe to the event that are emitted by Mollie js.
 
-       Possible values: ``blur`` ``focus`` ``change``
+       Possible values: ``"blur"`` ``"focus"`` ``"change"``
 
    * - ``callback``
 
@@ -250,7 +250,7 @@ ES6
 
 element.unmount()
 -----------------
-Removes the element from the DOM. Note that state—such as input values—is not preserved when re-mounting.
+Removes the element from the DOM. Note that state — such as input values — is not preserved when re-mounting.
 
 Javascript
 ^^^^^^^^^^

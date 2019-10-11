@@ -298,6 +298,14 @@ Credit card
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
 
+   * - ``cardToken``
+
+       .. type:: string
+          :required: false
+
+     - The card token you got from :doc:`Mollie Components </guides/mollie-components/overview>`.  The token contains
+       the card information (such as card holder, card number and expiry date) needed to complete the payment.
+
    * - ``shippingAddress``
 
        .. type:: address object
