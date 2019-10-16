@@ -51,8 +51,8 @@ Parameters
        :doc:`registering your app </oauth/getting-started>`.
 
        .. note::
-          When refreshing a token, this parameter **is** required if the initial ``authorization_code`` contained a
-          ``redirect_uri``.
+          When refreshing a token, this parameter **is** required if the initial ``authorization_code`` grant request
+          contained a ``redirect_uri``.
 
 Response
 --------
