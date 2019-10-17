@@ -119,16 +119,19 @@ place the ``cardToken`` in a hidden input to submit it to your back end, for exa
 Create the Payment with the card token
 --------------------------------------
 
-On your back end, you will receive the ``cardToken``. This can be added to the Create Payment API:
+On your back end, you will receive the ``cardToken``. You need to pass this when
+:doc:`creating a Payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
+``creditcard``. 
 
 Example
--------
+^^^^^^^
 .. code-block-selector::
    .. code-block:: bash
       :linenos:
 
       curl -X POST https://api.mollie.com/v2/payments \
-         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -H "Authorization: Bearer live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "method=creditcard" \
          -d "amount[currency]=EUR" \
          -d "amount[value]=10.00" \
          -d "description=Order #12345" \
@@ -141,8 +144,9 @@ Example
 
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $mollie->setApiKey("live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
       $payment = $mollie->payments->create([
+            "method" => "creditcard",
             "amount" => [
                   "currency" => "EUR",
                   "value" => "10.00"
@@ -159,8 +163,9 @@ Example
       from mollie.api.client import Client
 
       mollie_client = Client()
-      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      mollie_client.set_api_key('live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
       payment = mollie_client.payments.create({
+         'method': 'creditcard',
          'amount': {
                'currency': 'EUR',
                'value': '10.00'
@@ -177,10 +182,11 @@ Example
       require 'mollie-api-ruby'
 
       Mollie::Client.configure do |config|
-        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+        config.api_key = 'live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
       payment = Mollie::Payment.create(
+        method: 'creditcard',
         amount: {
           currency: 'EUR',
           value: '10.00'
@@ -195,10 +201,11 @@ Example
       :linenos:
 
       const { createMollieClient } = require('@mollie/api-client');
-      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+      const mollieClient = createMollieClient({ apiKey: 'live_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
         const payment = await mollieClient.payments.create({
+          method: 'creditcard',
           amount: {
             currency: 'EUR',
             value: '10.00', // We enforce the correct number of decimals through strings
