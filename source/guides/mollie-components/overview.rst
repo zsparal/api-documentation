@@ -21,6 +21,8 @@ Implementation steps
 
 Follow these steps to implement Mollie Components in your checkout:
 
+.. figure:: ../images/mollie-components@2x.png
+
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
 #. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and
