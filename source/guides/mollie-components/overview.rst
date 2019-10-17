@@ -27,7 +27,8 @@ Follow these steps to implement Mollie Components in your checkout:
    :abbr:`CVC (Card Verification Code)`).
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken``.
 #. Send the ``cardToken`` to your back end.
-#. From your back end, call the :doc:`Create payment API </reference/v2/payments-api/create-payment>` with the ``cardToken``.
+#. From your back end, create a credit card payment with the ``cardToken`` using the
+   :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
 Add the Mollie Components Javascript library to your checkout
