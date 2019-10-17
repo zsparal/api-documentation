@@ -1,8 +1,9 @@
 Mollie Components
 =================
 
-*Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card payments to your
-own checkout, in a way that is fully PCI-DSS SAQ-A compliant.
+*Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card holder data to
+your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
+Self-Assessment Questionnaire A)` compliant.
 
 At a high level, it works by using a Javascript API to add fields to your checkout that your customer will use to enter
 their credit card details, such as their card number.
@@ -19,7 +20,8 @@ Follow these steps to implement Mollie Components in your checkout:
 
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
-#. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and :abbr:`CVC (Card Verification Code)`).
+#. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and
+   :abbr:`CVC (Card Verification Code)`).
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken``.
 #. Send the ``cardToken`` to your back end.
 #. From your back end, call the :doc:`Create payment API </reference/v2/payments-api/create-payment>` with the ``cardToken``.
@@ -111,7 +113,7 @@ place the ``cardToken`` in a hidden input to submit it to your back end, for exa
 Create the Payment with the card token
 --------------------------------------
 
-From your back end, ...
+On your back end, you will receive the ``cardToken``. This can be added to the 
 
 
 Redirect the shopper to the 3-D Secure authentication page

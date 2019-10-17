@@ -92,7 +92,7 @@ mollie.createElement(type[, options])
 This will create the Elements which the shopper uses to enter the card holder data. After creating, the elements should
 be mounted in your checkout.
 
-You need to create four elements, one for each card holder data field.  
+You need to create four elements, one for each card holder data field.
 
 .. list-table::
    :widths: auto
