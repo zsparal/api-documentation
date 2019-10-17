@@ -673,7 +673,7 @@ Example
                   "currency" => "EUR",
                   "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
             ],
-            "description" => "My first payment",
+            "description" => "Order #12345",
             "redirectUrl" => "https://webshop.example.org/order/12345/",
             "webhookUrl" => "https://webshop.example.org/payments/webhook/",
             "metadata" => [
@@ -693,7 +693,7 @@ Example
                'currency': 'EUR',
                'value': '10.00'
          },
-         'description': 'My first payment',
+         'description': 'Order #12345',
          'webhookUrl': 'https://webshop.example.org/order/12345/',
          'redirectUrl': 'https://webshop.example.org/payments/webhook/',
          'metadata': {
@@ -715,7 +715,7 @@ Example
           currency: 'EUR',
           value: '10.00'
         },
-        description: 'My first payment',
+        description: 'Order #12345',
         redirect_url: 'https://webshop.example.org/order/12345/',
         webhook_url: 'https://webshop.example.org/payments/webhook/',
         metadata: {
@@ -735,7 +735,7 @@ Example
             currency: 'EUR',
             value: '10.00', // We enforce the correct number of decimals through strings
           },
-          description: 'My first payment',
+          description: 'Order #12345',
           redirectUrl: 'https://webshop.example.org/order/12345/',
           webhookUrl: 'https://webshop.example.org/payments/webhook/',
           metadata: {

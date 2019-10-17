@@ -8,10 +8,13 @@ Self-Assessment Questionnaire A)` compliant.
 At a high level, it works by using a Javascript API to add fields to your checkout that your customer will use to enter
 their credit card details, such as their card number.
 
-Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, Mollie
-Components will exchange the card data for a ``cardToken`` which you can use with the
-:doc:`Create payment API </reference/v2/payments-api/create-payment>`. The API will then return a ``_links.checkout``
-URL where your customer can do the 3-D Secure authentication. After that, the payment will be completed.
+Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
+Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
+:doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+
+Depending on various factors, the payment will either be completed immediately or you will get a ``_links.checkout``
+URL where your customer can do the 3-D Secure authentication. If the customer authenticates successfully, the payment is
+completed.
 
 Implementation steps
 --------------------
@@ -46,6 +49,9 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
         <script src="https://js.mollie.com/v1/mollie.js"></script>
       </body>
     </html>
+
+.. note:: If you are using `Content Security Policy <https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP>`_, you
+          should whitelist the ``js.mollie.com`` domain. We recommend using a strict CSP on your checkout.
 
 Initialize the Mollie object
 ----------------------------
@@ -113,7 +119,147 @@ place the ``cardToken`` in a hidden input to submit it to your back end, for exa
 Create the Payment with the card token
 --------------------------------------
 
-On your back end, you will receive the ``cardToken``. This can be added to the 
+On your back end, you will receive the ``cardToken``. This can be added to the Create Payment API:
+
+Example
+-------
+.. code-block-selector::
+   .. code-block:: bash
+      :linenos:
+
+      curl -X POST https://api.mollie.com/v2/payments \
+         -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
+         -d "amount[currency]=EUR" \
+         -d "amount[value]=10.00" \
+         -d "description=Order #12345" \
+         -d "redirectUrl=https://webshop.example.org/order/12345/" \
+         -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
+         -d "cardToken=tkn_UqAvArS3gw"
+
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $payment = $mollie->payments->create([
+            "amount" => [
+                  "currency" => "EUR",
+                  "value" => "10.00"
+            ],
+            "description" => "Order #12345",
+            "redirectUrl" => "https://webshop.example.org/order/12345/",
+            "webhookUrl" => "https://webshop.example.org/payments/webhook/",
+            "cardToken" => "tkn_UqAvArS3gw",
+      ]);
+
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.create({
+         'amount': {
+               'currency': 'EUR',
+               'value': '10.00'
+         },
+         'description': 'Order #12345',
+         'webhookUrl': 'https://webshop.example.org/order/12345/',
+         'redirectUrl': 'https://webshop.example.org/payments/webhook/',
+         'cardToken': 'tkn_UqAvArS3gw'
+      })
+
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      payment = Mollie::Payment.create(
+        amount: {
+          currency: 'EUR',
+          value: '10.00'
+        },
+        description: 'Order #12345',
+        redirect_url: 'https://webshop.example.org/order/12345/',
+        webhook_url: 'https://webshop.example.org/payments/webhook/',
+        card_token: 'tkn_UqAvArS3gw'
+      )
+
+   .. code-block:: javascript
+      :linenos:
+
+      const { createMollieClient } = require('@mollie/api-client');
+      const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
+
+      (async () => {
+        const payment = await mollieClient.payments.create({
+          amount: {
+            currency: 'EUR',
+            value: '10.00', // We enforce the correct number of decimals through strings
+          },
+          description: 'Order #12345',
+          redirectUrl: 'https://webshop.example.org/order/12345/',
+          webhookUrl: 'https://webshop.example.org/payments/webhook/',
+          cardToken: 'tkn_UqAvArS3gw'
+        });
+      })();
+
+Response
+^^^^^^^^
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 201 Created
+   Content-Type: application/hal+json
+
+   {
+       "resource": "payment",
+       "id": "tr_7UhSN1zuXS",
+       "mode": "test",
+       "createdAt": "2018-03-20T09:13:37+00:00",
+       "amount": {
+           "value": "10.00",
+           "currency": "EUR"
+       },
+       "description": "Order #12345",
+       "method": null,
+       "metadata": {
+           "order_id": "12345"
+       },
+       "status": "open",
+       "isCancelable": false,
+       "expiresAt": "2018-03-20T09:28:37+00:00",
+       "details": null,
+       "profileId": "pfl_3RkSN1zuPE",
+       "sequenceType": "oneoff",
+       "details": {
+          "cardToken": "tkn_UqAvArS3gw"
+       },
+       "redirectUrl": "https://webshop.example.org/order/12345/",
+       "webhookUrl": "https://webshop.example.org/payments/webhook/",
+       "_links": {
+           "self": {
+               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
+               "type": "application/json"
+           },
+           "checkout": {
+               "href": "https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c",
+               "type": "text/html"
+           },
+           "documentation": {
+               "href": "https://docs.mollie.com/reference/v2/payments-api/create-payment",
+               "type": "text/html"
+           }
+       }
+   }
+
+Make sure you use the API key that belongs to the same profile you used when initializing the `Mollie` object.
 
 
 Redirect the shopper to the 3-D Secure authentication page
