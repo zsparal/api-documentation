@@ -73,7 +73,7 @@ Javascript
     form.addEventListener('submit', e => {
       e.preventDefault();
 
-      mollie.createToken('card', options).then(function(result) {
+      mollie.createToken().then(function(result) {
         // Handle the result this can be either result.token or result.error.
       });
     });
