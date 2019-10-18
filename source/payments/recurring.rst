@@ -96,7 +96,8 @@ regular payment with a ``redirectUrl``, a recurring payment happens in the backg
 without the customer going through payments steps. You can create a recurring payment with the ``sequenceType`` set to
 ``recurring`` when creating a payment with the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 
-Please note that in order to do recurring payments, direct debit or credit card has to be activated on your profile.
+Please note that in order to do recurring payments, SEPA Direct Debit, PayPal or credit card has to be activated on
+your profile.
 
 #. Make sure the customer has valid mandates. Find out using the
    :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
