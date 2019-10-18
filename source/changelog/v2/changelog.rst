@@ -3,12 +3,20 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+October 2019
+============
+
 TBA
 ---
 
 - Added support for PayPal Recurring payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
+
+Monday, 7th
+-----------
+
+- Added the ``paypalPayerId`` field to the PayPal payment details.
 
 September 2019
 ==============
@@ -17,6 +25,8 @@ Tuesday, 24th
 -------------
 - Introduced a new endpoint for getting all subscriptions created for a website profile. See
   :doc:`List all subscriptions </reference/v2/subscriptions-api/list-all-subscriptions>` for more info.
+
+- Added new currencies for credit card: ``AED``, ``NZD``, ``PHP``, ``RUB``, ``SGD`` and ``ZAR``.
 
 Friday, 20th
 ------------

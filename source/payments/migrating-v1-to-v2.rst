@@ -84,7 +84,7 @@ have been replaced by address objects. Instead of passing ``billingAddress``, ``
 
    {
        "amount": {"currency": "USD", "value": "100.00"},
-       "description": "My first payment",
+       "description": "Order #12345",
        "billingAddress": {
            "streetAndNumber": "Dorpstraat 1",
            "postalCode": "1122 AA",

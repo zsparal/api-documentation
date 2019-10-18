@@ -45,10 +45,14 @@ Parameters
    * - ``redirect_uri``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The URL the merchant is sent back to once the request has been authorized. It must match the URL you set when
        :doc:`registering your app </oauth/getting-started>`.
+
+       .. note::
+          When refreshing a token, this parameter **is** required if the initial ``authorization_code`` grant request
+          contained a ``redirect_uri``.
 
 Response
 --------

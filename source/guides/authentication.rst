@@ -12,7 +12,7 @@ The Mollie API offers three authentication methods:
 We recommend creating basic API keys to get started.
 
 Creating API keys
-^^^^^^^^^^^^^^^^^
+-----------------
 The first thing you need is a `website profile <https://www.mollie.com/dashboard/settings/profiles>`_. Each website
 profile has a *Live API key* and a *Test API key*.
 
@@ -25,7 +25,7 @@ a key leaks you can always `regenerate <https://www.mollie.com/dashboard/develop
 apply new keys to your code. Until you do your integration will not work.
 
 Authenticating an API call
-^^^^^^^^^^^^^^^^^^^^^^^^^^
+--------------------------
 The API key or token must be sent along with each API request, by providing it in the HTTP call's ``Authorization``
 header using the ``Bearer`` method. For example: a valid ``Authorization`` header is
 ``Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM``. Our default API clients provide shortcuts to easily set the API key or
