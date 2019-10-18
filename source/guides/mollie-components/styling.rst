@@ -7,7 +7,6 @@ Styling can be applied to Elements in the three states ``base``, ``valid`` and `
 
 For each of these there is an set of properties you can use.
 
-* ``thing``
 * ``backgroundColor`` of type 'color',
 * ``color`` of type 'color',
 * ``fontSize`` of type 'number',
@@ -53,6 +52,9 @@ Javascript
                         '::placeholder' : {
                           color: 'rgba(68, 68, 68, 0.2)',
                         }
+                      }
+                      valid: {
+                        color: '#090',
                       }
                     }
                   }
