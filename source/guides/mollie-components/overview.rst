@@ -1,6 +1,9 @@
 Mollie Components
 =================
 
+.. warning:: *Mollie Components* is currently in a closed beta. If you are interested in participating, reach out to
+             your account manager.
+
 *Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card holder data to
 your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
 Self-Assessment Questionnaire A)` compliant.
@@ -26,9 +29,10 @@ Follow these steps to implement Mollie Components in your checkout:
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
 #. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and
-   :abbr:`CVC (Card Verification Code)`).
-#. Add a ``submit`` event listener to your form to retrieve the ``cardToken``.
-#. Send the ``cardToken`` to your back end.
+   :abbr:`CVC (Card Verification Code)`). This will add the fields to your checkout.
+#. Add a ``submit`` event listener to your form to retrieve the ``cardToken`` when your customer has completed the
+   checkout form.
+#. Send the ``cardToken`` to your back end, by adding it to your form.
 #. From your back end, create a credit card payment with the ``cardToken`` using the
    :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
@@ -83,19 +87,20 @@ checkout:
 .. code-block:: js
    :linenos:
 
-   var cardHolder = mollie.createElement('cardHolder', { styles });
+   var cardHolder = mollie.createElement('cardHolder');
    cardHolder.mount('#card-holder');
 
-   var cardNumber = mollie.createElement('cardNumber', { styles });
+   var cardNumber = mollie.createElement('cardNumber');
    cardNumber.mount('#card-number');
 
-   var expiryDate = mollie.createElement('expiryDate', { styles });
+   var expiryDate = mollie.createElement('expiryDate');
    expiryDate.mount('#expiry-date');
 
-   var verificationCode = mollie.createElement('verificationCode', { styles });
+   var verificationCode = mollie.createElement('verificationCode');
    verificationCode.mount('#verification-code');
 
-This will add the input fields to your checkout and make them visible for your customer.
+This will add the input fields to your checkout and make them visible for your customer. To add styling to the Elements,
+see :doc:`styling`. 
 
 Add a submit event listener to your form
 ----------------------------------------
