@@ -3,6 +3,8 @@ Mollie Components reference
 
 The ``Mollie`` object is used to initialize :doc:`Mollie Components <overview>`.
 
+.. _components-mollie-constructor:
+
 Mollie(profileId[, options])
 ----------------------------
 
@@ -52,6 +54,8 @@ Mollie(profileId[, options])
                  :required: false
 
             - See :doc:`styling`.
+
+.. _components-mollie-create-token:
 
 mollie.createToken()
 --------------------
@@ -167,6 +171,8 @@ ES6
 
 Element methods
 ===============
+
+.. _components-mollie-element-mount:
 
 element.mount(targetElement)
 ----------------------------

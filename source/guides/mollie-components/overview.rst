@@ -67,7 +67,7 @@ First, you need the Profile Id of the profile that you want to use. This can be 
 `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_ settings in the Dashboard or retrieved programmatically
 using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
 
-After the script has loaded you can use the ``Mollie(profileId[, options])`` function. This will return
+After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
 an object that you can use for creating the four Elements your customer will use to enter their card holder data.
 
 .. code-block:: js
@@ -81,8 +81,9 @@ an object that you can use for creating the four Elements your customer will use
 Create and mount the card holder data Elements
 ----------------------------------------------
 
-After initializing the Mollie object, you should create the four card holder data Elements and mount them in your
-checkout:
+After initializing the Mollie object, you should create the four card holder data Elements using the
+:ref:`components-mollie-create-element` function and mount them in your checkout using the
+:ref:`components-mollie-element-mount` function:
 
 .. code-block:: js
    :linenos:
@@ -105,8 +106,8 @@ see :doc:`styling`.
 Add a submit event listener to your form
 ----------------------------------------
 
-Add a submit event listener to your form and use the ``mollie.createToken()`` function to get the token. You can then
-place the ``cardToken`` in a hidden input to submit it to your back end, for example:
+Add a submit event listener to your form and use the :ref:`components-mollie-create-token` function to get the token.
+You can then place the ``cardToken`` in a hidden input to submit it to your back end, for example:
 
 .. code-block:: js
    :linenos:
