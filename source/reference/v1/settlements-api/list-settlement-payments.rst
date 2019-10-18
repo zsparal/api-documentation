@@ -67,7 +67,7 @@ Response
                "createdDatetime": "2018-03-17T01:47:50.0Z"
                "status": "paid",
                "amount": "10.00",
-               "description": "My first payment",
+               "description": "Order #12345",
                "metadata": null,
                "profileId": "pfl_QkEhN94Ba",
                "customerId": "cst_4qqhO89gsT",

@@ -298,6 +298,14 @@ Credit card
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
 
+   * - ``cardToken``
+
+       .. type:: string
+          :required: false
+
+     - The card token you got from :doc:`Mollie Components </guides/mollie-components/overview>`.  The token contains
+       the card information (such as card holder, card number and expiry date) needed to complete the payment.
+
    * - ``shippingAddress``
 
        .. type:: address object
@@ -665,7 +673,7 @@ Example
                   "currency" => "EUR",
                   "value" => "10.00" // You must send the correct number of decimals, thus we enforce the use of strings
             ],
-            "description" => "My first payment",
+            "description" => "Order #12345",
             "redirectUrl" => "https://webshop.example.org/order/12345/",
             "webhookUrl" => "https://webshop.example.org/payments/webhook/",
             "metadata" => [
@@ -685,7 +693,7 @@ Example
                'currency': 'EUR',
                'value': '10.00'
          },
-         'description': 'My first payment',
+         'description': 'Order #12345',
          'webhookUrl': 'https://webshop.example.org/order/12345/',
          'redirectUrl': 'https://webshop.example.org/payments/webhook/',
          'metadata': {
@@ -707,7 +715,7 @@ Example
           currency: 'EUR',
           value: '10.00'
         },
-        description: 'My first payment',
+        description: 'Order #12345',
         redirect_url: 'https://webshop.example.org/order/12345/',
         webhook_url: 'https://webshop.example.org/payments/webhook/',
         metadata: {
@@ -727,7 +735,7 @@ Example
             currency: 'EUR',
             value: '10.00', // We enforce the correct number of decimals through strings
           },
-          description: 'My first payment',
+          description: 'Order #12345',
           redirectUrl: 'https://webshop.example.org/order/12345/',
           webhookUrl: 'https://webshop.example.org/payments/webhook/',
           metadata: {

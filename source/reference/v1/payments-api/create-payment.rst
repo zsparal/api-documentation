@@ -519,7 +519,7 @@ Request
    curl -X POST https://api.mollie.com/v1/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "amount=10.00" \
-       -d "description=My first payment" \
+       -d "description=Order #12345" \
        -d "redirectUrl=https://webshop.example.org/order/12345/" \
        -d "webhookUrl=https://webshop.example.org/payments/webhook/" \
        -d "metadata[order_id]=12345"
@@ -540,7 +540,7 @@ Response
        "status": "open",
        "expiryPeriod": "PT15M",
        "amount": "10.00",
-       "description": "My first payment",
+       "description": "Order #12345",
        "metadata": {
            "order_id": "12345"
        },
