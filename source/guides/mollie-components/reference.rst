@@ -1,7 +1,7 @@
 Mollie Components reference
 ===========================
 
-The ``Mollie`` object is used to initialize :doc:`Mollie Components </guides/mollie-components/overview>`.
+The ``Mollie`` object is used to initialize :doc:`Mollie Components <overview>`.
 
 Mollie(profileId[, options])
 ----------------------------
@@ -51,7 +51,7 @@ Mollie(profileId[, options])
               .. type:: styles object
                  :required: false
 
-            - An object of all the styles a ref of the values you can find here. (Yet to be determined)
+            - See :doc:`styling`.
 
 mollie.createToken()
 --------------------
@@ -86,6 +86,8 @@ ES6
    });
 
 
+.. _components-mollie-create-element:
+
 mollie.createElement(type[, options])
 -------------------------------------
 
@@ -118,10 +120,10 @@ You need to create four elements, one for each card holder data field.
 
           * - ``styles``
 
-              .. type:: style object
+              .. type:: styles object
                   :required: false
 
-            - An object of all the styles a ref of the values you can find here. (Yet to be determined)
+            - See :doc:`styling`.
 
 Javascript
 ^^^^^^^^^^
@@ -131,7 +133,12 @@ Javascript
     var options = {
                     styles : {
                       base: {
-                        fontSize: '10px;'
+                        color: '#eee',
+                        fontSize: '10px;',
+                        padding: '10px 15px',
+                        '::placeholder' : {
+                          color: 'rgba(68, 68, 68, 0.2)',
+                        }
                       }
                     }
                   }
@@ -146,7 +153,12 @@ ES6
     const options = {
                       styles : {
                         base: {
-                          fontSize: '10px;'
+                          color: '#eee',
+                          fontSize: '10px;',
+                          padding: '10px 15px',
+                          '::placeholder' : {
+                            color: 'rgba(68, 68, 68, 0.2)',
+                          }
                         }
                       }
                     }

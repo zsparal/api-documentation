@@ -269,7 +269,7 @@ Response
        }
    }
 
-Make sure you use the API key that belongs to the same profile you used when initializing the `Mollie` object.
+Make sure you use the API key that belongs to the same profile you used when initializing the ``Mollie`` object.
 
 
 Redirect the shopper to the 3-D Secure authentication page
