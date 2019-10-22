@@ -6,6 +6,12 @@ changes are documented here.
 October 2019
 ============
 
+TBA
+---
+
+- Added the ``feeRegion`` to the pricing object for credit card in the
+  :doc:`Methods API </reference/v2/methods-api/list-methods>`.
+
 Monday, 7th
 -----------
 
