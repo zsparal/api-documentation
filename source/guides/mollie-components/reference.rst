@@ -110,7 +110,7 @@ You need to create four components, one for each card holder data field.
 
      - The ``createComponent`` method will create an component ready to be mounted.
 
-       Possible values: ``"cardHolderName"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
+       Possible values: ``"cardHolder"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
 
    * - ``options``
 
