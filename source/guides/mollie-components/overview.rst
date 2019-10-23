@@ -88,8 +88,8 @@ After initializing the Mollie object, you should create the four card holder dat
 .. code-block:: js
    :linenos:
 
-   var cardHolder = mollie.createComponent('cardHolderName');
-   cardHolder.mount('#card-holder');
+   var cardHolderName = mollie.createComponent('cardHolderName');
+   cardHolderName.mount('#card-holder');
 
    var cardNumber = mollie.createComponent('cardNumber');
    cardNumber.mount('#card-number');
