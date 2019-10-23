@@ -209,8 +209,8 @@ ES6
 
     cardNumberEl.mount('#card');
 
-element.on(event, callback)
----------------------------
+element.addEventListener(event, callback)
+-----------------------------------------
 
 Elements can listen to several ``events``. The callback receives an object with all the related information.
 
@@ -240,7 +240,7 @@ Javascript
    :linenos:
 
     var callback = function(event) { console.log('We need a real world example here', event.type) }
-    cardNumberEl.on('change', callback);
+    cardNumberEl.addEventListener('change', callback);
 
 ES6
 ^^^
@@ -248,7 +248,7 @@ ES6
    :linenos:
 
     const callback = (event)=> { console.log('We need a real world example here', event.type) }
-    cardNumberEl.on('change', callback);
+    cardNumberEl.addEventListener('change', callback);
 
 element.unmount()
 -----------------
