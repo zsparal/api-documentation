@@ -28,7 +28,7 @@ Follow these steps to implement Mollie Components in your checkout:
 
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
-#. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and
+#. Create and mount the four Components for the four credit card fields (card holder, card number, expiry date and
    :abbr:`CVC (Card Verification Code)`). This will add the fields to your checkout.
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken`` when your customer has completed the
    checkout form.
@@ -68,7 +68,7 @@ First, you need the Profile Id of the profile that you want to use. This can be 
 using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
 
 After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
-an object that you can use for creating the four Elements your customer will use to enter their card holder data.
+an object that you can use for creating the four Components your customer will use to enter their card holder data.
 
 .. code-block:: js
    :linenos:
@@ -78,29 +78,29 @@ an object that you can use for creating the four Elements your customer will use
 .. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
           context. The Profile Id starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
 
-Create and mount the card holder data Elements
-----------------------------------------------
+Create and mount the card holder data Components
+------------------------------------------------
 
-After initializing the Mollie object, you should create the four card holder data Elements using the
-:ref:`components-mollie-create-element` function and mount them in your checkout using the
-:ref:`components-mollie-element-mount` function:
+After initializing the Mollie object, you should create the four card holder data Components using the
+:ref:`components-mollie-create-component` function and mount them in your checkout using the
+:ref:`components-mollie-component-mount` function:
 
 .. code-block:: js
    :linenos:
 
-   var cardHolder = mollie.createElement('cardHolder');
+   var cardHolder = mollie.createComponent('cardHolderName');
    cardHolder.mount('#card-holder');
 
-   var cardNumber = mollie.createElement('cardNumber');
+   var cardNumber = mollie.createComponent('cardNumber');
    cardNumber.mount('#card-number');
 
-   var expiryDate = mollie.createElement('expiryDate');
+   var expiryDate = mollie.createComponent('expiryDate');
    expiryDate.mount('#expiry-date');
 
-   var verificationCode = mollie.createElement('verificationCode');
+   var verificationCode = mollie.createComponent('verificationCode');
    verificationCode.mount('#verification-code');
 
-This will add the input fields to your checkout and make them visible for your customer. To add styling to the Elements,
+This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
 see :doc:`styling`. 
 
 Add a submit event listener to your form
