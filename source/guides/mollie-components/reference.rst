@@ -61,7 +61,7 @@ mollie.createToken()
 --------------------
 Calling the ``createToken`` method will receive a token if successful. This token must then be sent to your back end
 where it can be passed as the ``cardToken`` parameter to the
-:doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
 
 This method has to be invoked from the ``submit`` event of your checkout form:
 
