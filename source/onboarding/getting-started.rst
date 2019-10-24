@@ -1,5 +1,10 @@
 Onboard your customers at Mollie
 ================================
+
+.. warning:: *Mollie Onboarding* is currently in a closed beta. If you are interested in participating, reach out to
+             your account manager.
+
+
 This guide section will help you in the process of getting your customers onboarded at Mollie. From the first OAuth permission
 to sending data about your customer, all steps will be covered.
 
@@ -67,7 +72,7 @@ After the authorization, the customer will be sent to the redirect URL provided 
 
   .. note::  With successful authorization a query string will be added to the redirect URL, for example: ``https://www.yourapp.com/payments/settings?code=bvS9VpCVbvBrQVfSdG9F3aNtWszdQnzz``
 
-You can now generate the oAuth access tokens for this customer using the :doc:`Generate tokens endpoint </oauth2/generate-tokens>` and store them. You will use this token for all the requests regarding that customer.
+You can now generate the oAuth access tokens for this customer using the :doc:`Generate tokens endpoint </reference/oauth2/tokens>` and store them. You will use this token for all the requests regarding that customer.
 
 Step 4: Customer starts onboarding
 -------------------------------------------
