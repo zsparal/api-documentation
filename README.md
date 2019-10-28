@@ -21,9 +21,9 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- Python > 2.7.9
+- Python > 2.7.9.
 - [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/).
-- Node > 12.x
+- Node > 12.x. Installation using the [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended. 
 
 ### Running locally
 

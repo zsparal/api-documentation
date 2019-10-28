@@ -102,7 +102,7 @@ the gift card will be returned to the gift card. This will show up as a refund i
 Refunds
 -------
 You cannot perform any gift card refunds. However, if another payment method was used during the checkout, you can
-refund the payment paid with the other payment method (and optionally an additional part).
+refund the part paid with the other payment method (and optionally an additional part).
 
 Tips
 ----
