@@ -23,7 +23,8 @@ List refunds
    :organization_access_tokens: false
    :oauth: true
 
-Retrieve all refunds. If the payment-specific endpoint is used, only refunds for that specific payment are returned.
+Retrieve all :doc:`refunds </payments/refunds>`. If the payment-specific endpoint is used, only refunds for that
+specific payment are returned.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
