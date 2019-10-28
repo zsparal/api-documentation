@@ -80,6 +80,10 @@ Step 4: Customer starts onboarding
 You can now check the Onboarding Status of your
 customer using the :doc:`Get onboarding status endpoint </reference/v2/onboarding-api/get-onboarding-status>`
 
+We recommend to handle the status of the customer like shown in the following flowchart:
+
+.. image:: ./images/merchant-status.png
+
 If your customer just authorized with Mollie, you probably want the customer to immediately start the Onboarding process with Mollie.
 In that case, the customer will be returning from the oauth flow and the response status from the previous request will be ``needs-data``.
 
