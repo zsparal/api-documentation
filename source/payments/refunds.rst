@@ -4,7 +4,7 @@ Refunds
 A *refund* allows an amount to be returned to your customer. The refunded amount will be withheld from your next
 settlement.
 
-Refunds are create using the :doc:`/reference/v2/refunds-api/create-refund`. When using Orders, we recommend using the
+Refunds are created using the :doc:`/reference/v2/refunds-api/create-refund`. When using Orders, we recommend using the
 :doc:`/reference/v2/orders-api/create-order-refund` instead.
 
 Most payment methods support refunds. Refunds are not available for paysafecard and gift cards.
@@ -19,11 +19,11 @@ Refund statuses
 Refunds have their own status, independent of the Payment or Order they were created for.
 
 *queued*
-  The refund is queued due to a lack of balance. Once your account has sufficient balance or you manually top up the
-  account, the refund automatically transitions to the next status. A queued refund can be canceled.
+  The refund is queued due to a lack of balance. Once your account has sufficient balance or you manually top up
+  your balance, the refund automatically transitions to the next status. A queued refund can be canceled.
 
 *pending*
-  The refund is ready to be sent to the bank. You can still cancel the refund is you like.
+  The refund is ready to be sent to the bank. You can still cancel the refund if you like.
 
 *processing*
   The refund is being processed. Cancellation is no longer possible.
