@@ -5,7 +5,9 @@ A *refund* allows an amount to be returned to your customer. The refunded amount
 settlement.
 
 Refunds are created using the :doc:`/reference/v2/refunds-api/create-refund`. When using Orders, we recommend using the
-:doc:`/reference/v2/orders-api/create-order-refund` instead.
+:doc:`/reference/v2/orders-api/create-order-refund` instead. Additionally, you can `create refunds manually
+<https://help.mollie.com/hc/en-us/articles/115000014489-How-do-I-refund-a-payment-to-one-of-my-consumers->`_ via the
+Mollie Dashboard.
 
 Most payment methods support refunds. Refunds are not available for paysafecard and gift cards.
 
