@@ -13,6 +13,8 @@ The ``v2`` API endpoints use the so-called cursor pagination method. In short, t
 get shifted when a new object is created with the same account in the meantime, by paginating by object ID rather than
 by page number.
 
+You can get the next page of objects by following the ``next`` link. 
+
 Response object
 ^^^^^^^^^^^^^^^
 .. list-table::

@@ -13,10 +13,10 @@ Get payment refund
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single refund by its ID. Note the original payment's ID is needed as well.
+Retrieve a single :doc:`refund </payments/refunds>` by its ID. Note the original payment's ID is needed as well.
 
 If you do not know the original payment's ID, you can use the
-:doc:`List payment refunds </reference/v2/refunds-api/list-refunds>` endpoint.
+:doc:`/reference/v2/refunds-api/list-refunds`.
 
 Parameters
 ----------
@@ -145,16 +145,9 @@ Response
 
        .. type:: string
 
-     - Since refunds may be delayed for certain payment methods, the refund carries a status field.
+     - Since refunds may not be instant for certain payment methods, the refund carries a status field.
 
-       Possible values:
-
-       * ``queued`` The refund will be processed once you have enough balance. You can still cancel this refund.
-       * ``pending`` The refund will be processed soon (usually the next business day). You can still cancel this
-         refund.
-       * ``processing`` The refund is being processed. Cancellation is no longer possible.
-       * ``refunded`` The refund has been paid out to your customer.
-       * ``failed`` The refund has failed during processing.
+       For a full overview, see :ref:`refund-statuses`.
 
    * - ``lines``
 

@@ -1,5 +1,5 @@
-List payment refunds
-====================
+List Payment Refunds API
+========================
 
 .. api-name:: Refunds API
    :version: 2

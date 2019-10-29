@@ -13,11 +13,12 @@ their credit card details, such as their card number.
 
 Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
 Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
-:doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 Depending on various factors, the payment will either be completed immediately or you will get a ``_links.checkout``
-URL where your customer can do the 3-D Secure authentication. If the customer authenticates successfully, the payment is
-completed.
+URL where your customer can perform the 3-D Secure authentication. If the customer authenticates successfully, the
+payment is completed.
 
 Implementation steps
 --------------------
@@ -33,8 +34,9 @@ Follow these steps to implement Mollie Components in your checkout:
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken`` when your customer has completed the
    checkout form.
 #. Send the ``cardToken`` to your back end, by adding it to your form.
-#. From your back end, create a credit card payment with the ``cardToken`` using the
-   :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+#. From your back end, create a credit card Payment or Order with the ``cardToken`` using the
+   :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+   :doc:`Create Order API </reference/v2/orders-api/create-order>` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
 Add the Mollie Components Javascript library to your checkout
@@ -125,12 +127,15 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
      form.submit();
    });
 
-Create the Payment with the card token
---------------------------------------
+Create a Payment or Order with the card token
+---------------------------------------------
 
 On your back end, you will receive the ``cardToken``. You need to pass this when
 :doc:`creating a Payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
-``creditcard``. 
+``creditcard``.
+
+Alternatively, you can use the :doc:`Create Order API </reference/v2/orders-api/create-order>`. and pass the card token
+via the ``payment.cardToken`` parameter.
 
 Example
 ^^^^^^^
@@ -282,8 +287,9 @@ Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
 
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
-customer. You should redirect your customer to the ``_links.checkout`` URL returned by the Create Payment API from the
-previous step.
+customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 .. code-block:: http
    :linenos:

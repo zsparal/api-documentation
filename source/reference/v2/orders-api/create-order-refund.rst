@@ -1,5 +1,5 @@
-Create order refund
-===================
+Create Order Refund API
+=======================
 .. api-name:: Orders API
    :version: 2
 
@@ -13,17 +13,18 @@ Create order refund
    :oauth: true
 
 
-When using the Orders API, refunds should be made against the order. When using *pay after delivery* payment methods
-such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive credit invoices with the
-correct product information on them and have a great experience.
+When using the Orders API, :doc:`refunds </payments/refunds>` should be made against the Order. When using *pay after
+delivery* payment methods such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive
+credit invoices with the correct product information on them and generally have a great experience.
 
-However, if you want to refund arbitrary amounts you can use the Create Payment Refund API for Pay later and Slice it.
+However, if you want to refund arbitrary amounts you can use the :doc:`/reference/v2/refunds-api/create-refund` for Pay
+later and Slice it.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
 :doc:`cancel it instead </reference/v2/orders-api/cancel-order-lines>`. Order lines that are ``paid``, ``shipping`` or
 ``completed`` can be refunded.
 
-For more details on how refunds work, see :doc:`Create Payment Refund API </reference/v2/refunds-api/create-refund>`.
+For more details on how refunds work, see :doc:`/payments/refunds`.
 
 Parameters
 ----------
