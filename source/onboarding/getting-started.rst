@@ -8,15 +8,12 @@ Onboard your customers at Mollie
 This guide section will help you in the process of getting your customers onboarded at Mollie. From the first OAuth permission
 to sending data about your customer, all steps will be covered.
 
-We are using the concept of a new customer but you can use the Onboarding APIs also for existing merchants that have
-already an account at Mollie.
-
 Prerequisites
 -------------
 In order to onboard your customers at Mollie using our hosted onboarding you will need to `turn on hosted onboarding
 <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_ in your Mollie account.
 
-You will have to provide a logo, name and description for the app that will be created.
+You will have to provide a logo, name and redirect URL for the OAuth app that will be automatically created.
 
 That page will display the Client ID and secret needed for the steps below.
 
@@ -28,7 +25,7 @@ Mollie account your customer creates or logs into. This :doc:`page </oauth/overv
 
   .. note::  Make sure to use the Client Id and secret provided by the `hosted onboarding settings <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_.
 
-The permission scopes you should require to board merchants and create payments for them are:
+Require the following scopes to board merchants and create payments on their behalf:
 
 .. list-table::
    :widths: auto
@@ -36,10 +33,6 @@ The permission scopes you should require to board merchants and create payments 
    * - | ``payments.write``
        | Payments API
      - Create payments for the merchant. The received payment will be added to the merchant's balance.
-
-   * - | ``organizations.read``
-       | Organizations API
-     - View the merchant's organizational details.
 
    * - | ``organizations.write``
        | Organizations API
@@ -58,10 +51,9 @@ The permission scopes you should require to board merchants and create payments 
 Step 2: Customer signs up and gives authorization
 -------------------------------------------------
 Once you send your customer to the authorize URL they will see a welcome screen.
-This page informs the customer that the application is using Mollie to create payments and displays the logo you've
-configured in the `hosted onboarding settings <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_.
+This page informs the customer that the application is using Mollie to create payments.
 
-When the customer continues they will be shown a signup form (they can also login if they already have an account). Then, the oAuth permission screen will ask for permissions to view their onboarding status and submit data.
+When the customer continues they will be shown a signup form (they can also login if they already have an account). Then, the OAuth permission screen will ask for permissions to view their onboarding status and submit data.
 
 .. image:: ../oauth/images/oauth-permission-onboarding@2x.png
 
@@ -70,7 +62,7 @@ Step 3: Customer returns from authorization
 After the authorization, the customer will be sent to the redirect URL provided in the `hosted onboarding settings
 <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_.
 
-  .. note::  With successful authorization a query string will be added to the redirect URL, for example: ``https://www.yourapp.com/payments/settings?code=bvS9VpCVbvBrQVfSdG9F3aNtWszdQnzz``
+  .. note::  A query string containing an auth code will be added to the redirect URL, for example: ``https://www.yourapp.com/payments/settings?code=bvS9VpCVbvBrQVfSdG9F3aNtWszdQnzz``
 
 You can now generate the oAuth access tokens for this customer using the :doc:`Generate tokens endpoint </reference/oauth2/tokens>` and store them. You will use this token for all the requests regarding that customer.
 
@@ -85,7 +77,7 @@ We recommend to handle the status of the customer like shown in the following fl
 .. image:: ./images/merchant-status.png
 
 If your customer just authorized with Mollie, you probably want the customer to immediately start the Onboarding process with Mollie.
-In that case, the customer will be returning from the oauth flow and the response status from the previous request will be ``needs-data``.
+In that case, the customer will be returning from the OAuth flow and the response status from the previous request will be ``needs-data``.
 
 In that situation you will want to redirect them straight to the onboarding URL (received in the Onboarding Status call you just made) instead of them landing in the platform.
 
@@ -112,7 +104,7 @@ As a basic implementation, we recommend handling the following cases:
       {
         canReceivePayments: false,
         canReceiveSettlements: false,
-        status: needs-data
+        status: "needs-data"
       }
 
   .. list-table::
@@ -132,7 +124,7 @@ As a basic implementation, we recommend handling the following cases:
       {
         canReceivePayments: true,
         canReceiveSettlements: false,
-        status: needs-data
+        status: "needs-data"
       }
 
   .. list-table::
@@ -152,7 +144,7 @@ As a basic implementation, we recommend handling the following cases:
       {
         canReceivePayments: false,
         canReceiveSettlements: false,
-        status: in-review
+        status: "in-review"
       }
 
   .. list-table::
@@ -172,7 +164,7 @@ As a basic implementation, we recommend handling the following cases:
       {
         canReceivePayments: true,
         canReceiveSettlements: false,
-        status: in-review
+        status: "in-review"
       }
 
 
@@ -193,7 +185,7 @@ As a basic implementation, we recommend handling the following cases:
       {
         canReceivePayments: true,
         canReceiveSettlements: true,
-        status: completed
+        status: "completed"
       }
 
   .. list-table::
