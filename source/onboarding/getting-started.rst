@@ -144,7 +144,7 @@ As a basic implementation, we recommend handling the following cases:
     * - | ``Action``
       - `Add more information` (link to Onboarding URL)
 
-3) Payments are NOT enabled and the status is ``in-review``
+3) Payments are **not** enabled and the status is ``in-review``
 
   .. code-block:: javascript
     :linenos:
