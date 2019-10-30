@@ -104,7 +104,7 @@ There's also the `status`: ``needs-data``, ``in-review`` and ``completed``
 
 As a basic implementation, we recommend handling the following cases:
 
-1) Payments are NOT enabled and the status is ``needs-data``
+1) Payments are **not** enabled and the status is ``needs-data``
 
   .. code-block:: javascript
     :linenos:
