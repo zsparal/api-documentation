@@ -96,7 +96,7 @@ There's also the `status`: ``needs-data``, ``in-review`` and ``completed``
 
 As a basic implementation, we recommend handling the following cases:
 
-1) Payments are NOT enabled and the status is ``needs-data``
+1) Payments are **not** enabled and the status is ``needs-data``
 
   .. code-block:: javascript
     :linenos:
@@ -136,7 +136,7 @@ As a basic implementation, we recommend handling the following cases:
     * - | ``Action``
       - `Add more information` (link to Onboarding URL)
 
-3) Payments are NOT enabled and the status is ``in-review``
+3) Payments are **not** enabled and the status is ``in-review``
 
   .. code-block:: javascript
     :linenos:
