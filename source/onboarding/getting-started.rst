@@ -126,6 +126,9 @@ As a basic implementation, we recommend handling the following cases:
         status: "needs-data"
       }
 
+  .. note::  If you are only interested in your merchants accepting payments, you should redirect them to your default landing page.
+
+
   .. list-table::
     :widths: auto
 
