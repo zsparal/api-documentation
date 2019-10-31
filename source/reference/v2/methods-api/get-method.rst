@@ -198,6 +198,14 @@ Response
 
             - A string containing the percentage what will be charged over the payment amount besides the fixed price.
 
+          * - ``feeRegion``
+
+              .. type:: string
+                 :required: false
+
+            - This value is only available for credit card rates. It will correspond with the regions as documented in
+              the :doc:`Payments API </reference/v2/payments-api/get-payment>`.
+
    * - ``_links``
 
        .. type:: object

@@ -7,8 +7,8 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-SPHINXOPTS     = -W -n
-SPHINXPRODOPTS = -D html_file_suffix=''
+SPHINXOPTS     = -W
+SPHINXPRODOPTS = -n -D html_file_suffix=''
 SPHINXBUILD    = python -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
@@ -21,13 +21,13 @@ node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional --no-audit
 
 source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
-	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --no-source-maps --detailed-report
+	node_modules/.bin/parcel build $< --out-dir source/_static --out-file style --no-source-maps --detailed-report
 
 source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
-	node_modules/.bin/parcel build source/theme/js/index.js --out-dir source/_static --out-file index --no-source-maps --detailed-report
+	node_modules/.bin/parcel build $< --out-dir source/_static --out-file index --no-source-maps --detailed-report
 
 source/_static/gtm.js: source/theme/js/gtm.js
-	cp source/theme/js/gtm.js $@
+	cp $< $@
 
 css-reload:
 	@./node_modules/.bin/parcel source/theme/styles/main.scss --out-dir build/_static --out-file style --no-hmr --port 8001
@@ -42,7 +42,7 @@ start:
 	make html-reload & make css-reload & make js-reload
 
 install:
-	pip install --user -r requirements.txt --no-warn-script-location
+	pip -q install --user -r requirements.txt --no-warn-script-location
 
 lint-js:
 	npm run lint:js

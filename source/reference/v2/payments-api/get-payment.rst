@@ -132,7 +132,7 @@ Response
        .. type:: datetime
           :required: false
 
-     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. 
+     - The date and time the payment will expire, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        This parameter is omitted if the payment can no longer expire.
 
    * - ``expiredAt``
@@ -312,7 +312,7 @@ Response
      -   This optional field will contain the amount that will be settled to your account, converted to the currency
          your account is settled in. It follows the same syntax as the ``amount`` property.
 
-         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards. If no 
+         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards. If no
          amount is settled by Mollie the ``settlementAmount`` is omitted from the response.
 
    * - ``settlementId``
@@ -1004,6 +1004,12 @@ PayPal
               .. type:: string
 
             - PayPal's reference for the transaction, for instance ``9AL35361CF606152E``.
+
+          * - ``paypalPayerId``
+
+              .. type:: string
+
+            - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
 
 paysafecard
 """""""""""

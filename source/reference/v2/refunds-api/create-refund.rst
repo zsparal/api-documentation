@@ -1,5 +1,5 @@
-Create payment refund
-=====================
+Create Payment Refund API
+=========================
 
 .. api-name:: Refunds API
    :version: 2
@@ -13,36 +13,7 @@ Create payment refund
    :organization_access_tokens: true
    :oauth: true
 
-Most payment methods support refunds. This means you can request your payment to be refunded to your customer.
-The refunded amount will be withheld from your next settlement.
-
-Refunds are not available at all for paysafecard and gift cards.
-
-Refunds support descriptions, which we will show in the Dashboard, your exports and pass to your customer if possible.
-
-If you have insufficient balance with Mollie to perform the refund, the refund will be ``queued``. We will automatically
-process the refund once your balance increases.
-
-Any payments created for Orders can also be refunded using the Payment Refunds API. However, we recommend using the
-:doc:`Order Refund API </reference/v2/orders-api/create-order-refund>` in those cases so you can pass the order lines
-you are refunding too. For pay after delivery methods, this will improve your customer's experience.
-
-Possible errors
----------------
-Sometimes a situation can occur in which it is not possible to perform the refund. In such cases an HTTP ``4xx`` error
-will be returned. Some of these situations are illustrated here:
-
-* There might not be enough balance on your account with the payment provider (e.g. PayPal).
-* You may have forgotten to grant the appropriate rights to Mollie for the payment provider (PayPal only).
-* It is possible that the payment has already been (partially) refunded.
-* It is not always possible to do a partial refund.
-
-If you perform many refunds in parallel, you may get an HTTP ``503 Service unavailable`` error. In this case, you can be
-certain the refund was not performed and you can safely retry the refund.
-
-If there is a connection issue during the creation of a refund (e.g. a client-side time out is triggered) you should
-**not retry automatically** as you cannot be sure the refund has been performed or not. In this case we suggest logging
-into the Mollie Dashboard, or retrieving the payment's refunds via the API to validate if the refund has been created.
+Creates a :doc:`refund </payments/refunds>` on the Payment. The refunded amount is credited to your customer.
 
 Parameters
 ----------

@@ -21,9 +21,9 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- Python > 2.7.9 
-- [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/). 
-- Node > 9.x
+- Python > 2.7.9.
+- [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/).
+- Node > 12.x. Installation using the [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended. 
 
 ### Running locally
 
@@ -54,10 +54,10 @@ You can now preview the generated documentation by opening `build/html/index.htm
 open build/html/index.html
 ```
 
-### Making changes to copy 
+### Making changes to copy
 
-After running `make html` at least once, you can use `make html-only` to quickly update the HTML files if you changed 
-some copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).  
+After running `make html` at least once, you can use `make html-only` to quickly update the HTML files if you changed
+some copy. This way, you can have a quick [REPL](https://en.wikipedia.org/wiki/Read%E2%80%93eval%E2%80%93print_loop).
 
 ```shell
 $ make html-only
@@ -71,7 +71,7 @@ The HTML pages are in build/html.
 $ open build/html/index.html
 ```
 
-Sphinx will only update files for which the source files have changed. 
+Sphinx will only update files for which the source files have changed.
 
 ### Styling docs
 
@@ -81,13 +81,13 @@ You can make changes to the styling by starting a web server locally:
 make start
 ```
 
-Visit `http://localhost:8000` to preview your changes. CSS & JS changes will appear without the need to refresh your 
+Visit `http://localhost:8000` to preview your changes. CSS & JS changes will appear without the need to refresh your
 browser.
 
 ### Releasing new versions of the documentation
 
-Deployment is handled using continuous deployment via [Travis CI](https://docs.travis-ci.com/user/deployment/). 
-Successful builds on the `master` branch will be automatically deployed. 
+Deployment is handled using continuous deployment via [Travis CI](https://docs.travis-ci.com/user/deployment/).
+Successful builds on the `master` branch will be automatically deployed.
 
 ## Support
 
@@ -98,7 +98,7 @@ You can get support via info@mollie.com.
 ## Working at Mollie
 
 Mollie is always looking for new talent to join our teams. We’re looking for inquisitive minds with good ideas and
-strong opinions, and, most importantly, who know how to ship great products. Want to join the future of payments? 
+strong opinions, and, most importantly, who know how to ship great products. Want to join the future of payments?
 [Check out our vacancies](https://jobs.mollie.com).
 
 ## License

@@ -134,6 +134,15 @@ Example
 
       curl -X GET https://api.mollie.com/v2/subscriptions \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
+         
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+
+      $subscriptions = $mollie->subscriptions->page();
 
 Response
 ^^^^^^^^

@@ -220,7 +220,7 @@ Response
            "currency": "EUR"
        },
        "settlementAmount": {
-           "value": "399.00",
+           "value": "1027.99",
            "currency": "EUR"
        },
        "paymentId": "tr_WDqYK6vllg",

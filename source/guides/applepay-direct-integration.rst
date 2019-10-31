@@ -99,4 +99,27 @@ Example request
       "webhookUrl": "https://example.org/webhook"
    }
 
+Handling errors
+^^^^^^^^^^^^^^^
 
+After your customer authorized the payment, you will still need authorization from the issuer of the card. This
+authorization may fail, for example if your customer has insufficient balance remaining on the card. You will then
+receive an error when creating the payment:
+
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 422 Unprocessable Entity
+   Content-Type: application/hal+json
+
+   {
+        "status": 422,
+        "title": "Unprocessable Entity",
+        "detail": "The transaction was declined by the issuer",
+        "_links": {
+            "documentation": {
+                "href": "https://docs.mollie.com/guides/handling-errors",
+                "type": "text/html"
+            }
+        }
+    }

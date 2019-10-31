@@ -116,8 +116,17 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      
+
       $onboarding = $mollie->onboarding->get();
+
+   .. code-block:: ruby
+      :linenos:
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      Mollie::Onboarding.me
 
 Response
 ^^^^^^^^

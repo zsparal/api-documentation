@@ -84,7 +84,7 @@ Request
    curl -X POST https://api.mollie.com/v1/customers/cst_8wmqcHMN4U/payments \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "amount=10.00" \
-       -d "description=My first payment" \
+       -d "description=Order #12345" \
        -d "redirectUrl=https://webshop.example.org/order/12345/"
 
 Response
@@ -103,7 +103,7 @@ Response
        "status": "open",
        "expiryPeriod": "PT15M",
        "amount": "10.00",
-       "description": "My first payment",
+       "description": "Order #12345",
        "metadata": null,
        "locale": "nl_NL",
        "profileId": "pfl_QkEhN94Ba",

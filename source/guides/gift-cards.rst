@@ -22,7 +22,8 @@ brands are supported:
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
 
-If you need a different brand, please reach out to your account manager or our support department.
+If you need a different brand, please reach out to your account manager or our support department. We can also support
+closed-loop gift cards. 
 
 Using the :doc:`checkout </guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
 remaining amount due using the other payment methods enabled on your website profile.
@@ -101,7 +102,7 @@ the gift card will be returned to the gift card. This will show up as a refund i
 Refunds
 -------
 You cannot perform any gift card refunds. However, if another payment method was used during the checkout, you can
-refund the payment paid with the other payment method (and optionally an additional part).
+refund the part paid with the other payment method (and optionally an additional part).
 
 Tips
 ----
