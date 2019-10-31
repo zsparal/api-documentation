@@ -171,7 +171,7 @@ As a basic implementation, we recommend handling the following cases:
     :widths: auto
 
     * - | ``Key information``
-      - `You are ready to start accepting your first payments. Mollie is verifying your details to enable settlements.`
+      - `You are ready to start accepting payments. Mollie is verifying your details to enable settlements.`
 
     * - | ``Action``
       - `None`
