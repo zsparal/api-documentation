@@ -12,10 +12,10 @@ Create shipment
    :organization_access_tokens: true
    :oauth: true
 
-In addition to the :doc:`Orders API </reference/v2/orders-api/create-order>`, the create shipment endpoint can be used
-to ship order lines.
+The **Create Shipment API** is used to ship order lines created by the
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
-When using *Klarna Pay later* and *Klarna Slice it* this is mandatory for the order amount to be captured. An capture
+When using *Klarna Pay later* and *Klarna Slice it* this is mandatory for the order amount to be captured. A capture
 will automatically be created for the shipment.
 
 The word "shipping" is used in the figurative sense here. It can also mean that a service was provided or digital
