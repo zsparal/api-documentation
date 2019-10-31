@@ -133,7 +133,7 @@ As a basic implementation, we recommend handling the following cases:
       - `You are ready to start accepting payments. Before Mollie can pay out to your bank, you will need to provide some additional information.`
 
     * - | ``Action``
-      - `Add more information` (link to Onboarding URL)
+      - `Complete your Mollie account` (link to Onboarding URL)
 
 3) Payments are **not** enabled and the status is ``in-review``
 
