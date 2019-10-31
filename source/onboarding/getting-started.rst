@@ -76,8 +76,7 @@ We recommend to handle the status of the customer like shown in the following fl
 
 .. image:: ./images/merchant-status.png
 
-If your customer just authorized with Mollie, you probably want the customer to immediately start the Onboarding process with Mollie.
-In that case, the customer will be returning from the OAuth flow and the response status from the previous request will be ``needs-data``.
+If your customer just completed the authorization step and the onboarding status from the previous request was ``needs-data``, you probably want the customer to immediately start the Onboarding process with Mollie.
 
 In that situation you will want to redirect them straight to the onboarding URL (received in the Onboarding Status call you just made) instead of them landing in the platform.
 
@@ -131,7 +130,7 @@ As a basic implementation, we recommend handling the following cases:
     :widths: auto
 
     * - | ``Key information``
-      - `You are ready to start accepting your first payments. To receive payments in your bank account complete your account.`
+      - `You are ready to start accepting your first payments. For complete functionality complete your account.` (Here you can tell them about receiving settlements.)
 
     * - | ``Action``
       - `Add more information` (link to Onboarding URL)
