@@ -51,8 +51,8 @@ periodically through *subscriptions*.
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
 
-   .. note:: For credit card payments, you can create a payment with a zero amount which means,
-             no money will be debited from the card when doing the first payment.
+   .. note:: For credit card and PayPal payments, you can create a payment with a zero amount which
+             means, no money will be debited from the card or account when doing the first payment.
 
    .. code-block:: bash
       :linenos:
@@ -85,7 +85,11 @@ periodically through *subscriptions*.
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 
-.. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
+.. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
+             Transactions on your merchant account. Check if you account is eligible via our
+             :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
+             ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
+             method returned.
 
 .. _payments/recurring/charging-on-demand:
 
@@ -194,6 +198,8 @@ We do not provide webhooks specifically for status changes of a Subscription its
 
 How to implement the PayPal fraud library?
 ------------------------------------------
+.. note:: You don't have to implement the library for recurring payments.
+
 Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud
 library of PayPal by adding the Javascript library to your checkout page with the necessary configuration
 included.
@@ -216,17 +222,16 @@ The configuration should contain JSON with the following attributes:
        .. type:: string
           :required: true
 
-     - Your profile ID where you creating the payment for, like ``pfl_QkEhN94Ba``. You can use the
-       :doc:`Get current profile API </reference/v2/profiles-api/get-profile-me>` if you do not know
-       your profile ID.
+     - Your unique PayPal Website ID. Please contact your PayPal account manager to get this identifier.
 
    * - ``f``
 
        .. type:: string
           :required: true
 
-     - An unique session ID for the current payment. It should be different on every page load and can be
-       32 characters long. This ID should be posted to us when you create the actual payment.
+     - A unique session ID for the current payment. It should be different on every page load and can be
+       32 characters long. This ID should be posted to us when you create the actual payment via the
+       ``sessionId`` parameter.
 
 
 .. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
@@ -242,7 +247,7 @@ The configuration should contain JSON with the following attributes:
         <script type="application/json" fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99">
             {
                "f": "Tk149lticPjL40UUj9cb", // A random session ID, max. 32 characters
-               "s": "pfl_QkEhN94Ba"         // Your profile ID
+               "s": "pfl_QkEhN94Ba"         // Your PayPal Website ID
             }
         </script>
         <script type="text/javascript" src="https://c.paypal.com/da/r/fb.js"></script>

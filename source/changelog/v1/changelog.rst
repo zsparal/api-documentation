@@ -14,7 +14,7 @@ October 2019
 TBA
 ---
 
-- Added support for PayPal Recurring payments. Make sure that the
+- Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
 

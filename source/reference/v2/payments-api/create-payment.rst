@@ -155,7 +155,11 @@ Parameters
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
-       .. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
+       .. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
+                    Transactions on your merchant account. Check if you account is eligible via our
+                    :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
+                    ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
+                    method returned.
 
    * - ``customerId``
 
