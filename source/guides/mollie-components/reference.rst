@@ -90,15 +90,15 @@ ES6
    });
 
 
-.. _components-mollie-create-element:
+.. _components-mollie-create-component:
 
-mollie.createElement(type[, options])
--------------------------------------
+mollie.createComponent(type[, options])
+---------------------------------------
 
-This will create the Elements which the shopper uses to enter the card holder data. After creating, the elements should
+This will create the Components which the shopper uses to enter the card holder data. After creating, the components should
 be mounted in your checkout.
 
-You need to create four elements, one for each card holder data field.
+You need to create four components, one for each card holder data field.
 
 .. list-table::
    :widths: auto
@@ -108,7 +108,7 @@ You need to create four elements, one for each card holder data field.
        .. type:: string
           :required: true
 
-     - The ``createElement`` method will create an element ready to be mounted.
+     - The ``createComponent`` method will create an component ready to be mounted.
 
        Possible values: ``"cardHolder"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
 
@@ -147,7 +147,7 @@ Javascript
                     }
                   }
 
-    var cardNumberEl = mollie.createElement('cardNumber', options)
+    var cardNumberEl = mollie.createComponent('cardNumber', options)
 
 ES6
 ^^^
@@ -167,17 +167,17 @@ ES6
                       }
                     }
 
-    const cardNumberEl = mollie.createElement('cardNumber', options)
+    const cardNumberEl = mollie.createComponent('cardNumber', options)
 
-Element methods
-===============
+Component methods
+=================
 
-.. _components-mollie-element-mount:
+.. _components-mollie-component-mount:
 
-element.mount(targetElement)
-----------------------------
+component.mount(targetElement)
+------------------------------
 
-Adds the element to the DOM, meaning it will become visible for the user from this point onwards.
+Adds the component to the DOM, meaning it will become visible for the user from this point onwards.
 
 .. code-block:: HTML
    :linenos:
@@ -209,10 +209,10 @@ ES6
 
     cardNumberEl.mount('#card');
 
-element.addEventListener(event, callback)
------------------------------------------
+component.addEventListener(event, callback)
+-------------------------------------------
 
-Elements can listen to several ``events``. The callback receives an object with all the related information.
+Components can listen to several ``events``. The callback receives an object with all the related information.
 
 .. list-table::
    :widths: auto
@@ -250,9 +250,9 @@ ES6
     const callback = (event)=> { console.log('We need a real world example here', event.type) }
     cardNumberEl.addEventListener('change', callback);
 
-element.unmount()
------------------
-Removes the element from the DOM. Note that state — such as input values — is not preserved when re-mounting.
+component.unmount()
+-------------------
+Removes the component from the DOM. Note that state — such as input values — is not preserved when re-mounting.
 
 Javascript
 ^^^^^^^^^^
