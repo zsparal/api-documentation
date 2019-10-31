@@ -121,6 +121,9 @@ Wednesday, 12th
 
 - :doc:`/guides/applepay-direct-integration` is now available.
 
+June 2019
+=========
+
 May 2019
 ========
 
