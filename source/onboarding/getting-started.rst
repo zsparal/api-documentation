@@ -150,7 +150,7 @@ As a basic implementation, we recommend handling the following cases:
     :widths: auto
 
     * - | ``Key information``
-      - `You’ve supplied us with all information we need. Mollie is verifying your details.`
+      - `Mollie has all the required information and is verifying your details.`
 
     * - | ``Action``
       - `None`
