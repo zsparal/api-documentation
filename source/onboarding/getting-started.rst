@@ -110,7 +110,7 @@ As a basic implementation, we recommend handling the following cases:
     :widths: auto
 
     * - | ``Key information``
-      - `Before you can accept live payments, Mollie needs more information`
+      - `Before you can accept payments, Mollie needs more information.`
 
     * - | ``Action``
       - `Continue with Mollie` (link to Onboarding URL)
