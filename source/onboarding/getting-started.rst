@@ -130,7 +130,7 @@ As a basic implementation, we recommend handling the following cases:
     :widths: auto
 
     * - | ``Key information``
-      - `You are ready to start accepting your first payments. For complete functionality complete your account.` (Here you can tell them about receiving settlements.)
+      - `You are ready to start accepting payments. Before Mollie can pay out to your bank, you will need to provide some additional information.`
 
     * - | ``Action``
       - `Add more information` (link to Onboarding URL)
