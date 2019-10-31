@@ -113,7 +113,7 @@ As a basic implementation, we recommend handling the following cases:
       - `Before you can accept live payments, Mollie needs more information`
 
     * - | ``Action``
-      - `Add more information` (link to Onboarding URL)
+      - `Continue with Mollie` (link to Onboarding URL)
 
 2) Payments are enabled and the status is ``needs-data``
 
