@@ -834,6 +834,13 @@ PayPal
 
             - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
 
+          * - ``paypalFee``
+
+              .. type:: decimal
+
+            - The amount of fee PayPal will charge for this transaction. This field is omitted
+              if PayPal will not charge a fee for this transaction.
+
 paysafecard
 """""""""""
 .. list-table::

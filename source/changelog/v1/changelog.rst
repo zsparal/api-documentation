@@ -17,6 +17,8 @@ TBA
 - Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
+- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is
+  charging for that transaction.
 
 Monday, 7th
 -----------
