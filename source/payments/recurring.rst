@@ -74,8 +74,8 @@ periodically through *subscriptions*.
    redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
-   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard`` (for example with ``applepay``),
-   the resulting mandate method will be ``creditcard`` as well, the same goes for ``paypal`` which will result in a
+   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``,
+   the resulting mandate method will be ``creditcard`` as well. ``paypal`` will result in a
    ``paypal`` mandate. All other first payment methods will be a ``directdebit`` mandate.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
@@ -86,7 +86,7 @@ periodically through *subscriptions*.
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 
 .. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
-             Transactions on your merchant account. Check if you account is eligible via our
+             Transactions on your merchant account. Check if your account is eligible via our
              :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
              ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
              method returned.
@@ -247,7 +247,7 @@ The configuration should contain JSON with the following attributes:
         <script type="application/json" fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99">
             {
                "f": "Tk149lticPjL40UUj9cb", // A random session ID, max. 32 characters
-               "s": "pfl_QkEhN94Ba"         // Your PayPal Website ID
+               "s": "QkEhN94Ba"            // Your PayPal Website ID
             }
         </script>
         <script type="text/javascript" src="https://c.paypal.com/da/r/fb.js"></script>
