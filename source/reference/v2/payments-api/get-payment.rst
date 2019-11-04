@@ -1011,6 +1011,29 @@ PayPal
 
             - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
 
+          * - ``paypalFee``
+
+              .. type:: amount object
+                 :required: false
+
+            - The amount of fee PayPal will charge for this transaction. This field is omitted if
+              PayPal will not charge a fee for this transaction.
+
+                     .. list-table::
+                        :widths: auto
+
+                        * - ``currency``
+
+                            .. type:: string
+
+                          - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+                        * - ``value``
+
+                            .. type:: string
+
+                          - A string containing the exact amount of the fee in the given currency.
+
 paysafecard
 """""""""""
 .. list-table::

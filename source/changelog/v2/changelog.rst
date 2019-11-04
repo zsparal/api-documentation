@@ -3,6 +3,18 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+November 2019
+=============
+
+Monday, 4th
+-----------
+
+- Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
+  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
+  are set and your merchant-account has been approved by PayPal before using this.
+- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is
+  charging for that transaction.
+
 October 2019
 ============
 
@@ -113,6 +125,7 @@ Wednesday, 12th
 ---------------
 
 - :doc:`/guides/applepay-direct-integration` is now available.
+
 
 May 2019
 ========

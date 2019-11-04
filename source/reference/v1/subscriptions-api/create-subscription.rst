@@ -92,7 +92,9 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
      - The payment method used for this subscription, either forced on creation or ``null`` if any of the
        customer's valid mandates may be used.
 
-       Possible values: ``creditcard`` ``directdebit`` ``null``
+       Possible values: ``creditcard`` ``directdebit`` ``paypal`` ``null``
+
+       .. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
 
    * - ``webhookUrl``
 
