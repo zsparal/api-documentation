@@ -33,8 +33,8 @@ Parameters
        .. type:: amount object
           :required: true
 
-     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"100.00"}`` if you would want to charge
-       €100.00.
+     - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"1000.00"}`` if you would want to charge
+       €1000.00.
 
        .. list-table::
           :widths: auto
@@ -53,7 +53,7 @@ Parameters
                  :required: true
 
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
-              amount of decimals. Non-string values are not accepted.
+              amount of decimals and omit the thousands separator. Non-string values are not accepted. 
 
    * - ``description``
 
