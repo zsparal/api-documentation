@@ -3,7 +3,7 @@ Migrating from v1 to v2
 
 Why upgrade to v2?
 ------------------
-The Mollie API ``v2`` offers some compelling new features compared to the older ``v1`` API:
+The **Mollie API v2** offers some compelling new features compared to the older ``v1`` API:
 
 * Fully supports :doc:`multicurrency </payments/multicurrency>`. You can create payments, subscriptions, and refunds in
   non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
@@ -12,6 +12,9 @@ The Mollie API ``v2`` offers some compelling new features compared to the older 
 * Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
+* New features such as :doc:`Mollie Components </guides/mollie-components/overview>`, using
+  :doc:`/orders/overview` for Pay later and Slice it, and wallets such as :doc:`/wallets/applepay` are
+  only available in the Mollie API v2.
 * Improved error messages. Error message will contain more details to help you quickly resolve any implementation
   problems.
 
@@ -27,7 +30,7 @@ API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
 embedded by using the ``embed=refunds`` query string parameter. See the
-:doc:`Get payment documentation </reference/v2/payments-api/get-payment>` for more information.
+:doc:`Get Payment API</reference/v2/payments-api/get-payment>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -119,7 +122,7 @@ The following fields have been removed:
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
 * ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
-  :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+  :doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
 * ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
 * ``details.bitcoinAmount`` has been removed from the Bitcoin detail object.
 * ``details.cardCountry`` has been removed from the credit card detail object.
@@ -231,6 +234,8 @@ The following fields have been changed, renamed or removed:
 * ``updatedDatetime`` has been removed.
 * ``phone`` is now formatted in `E.164 <https://en.wikipedia.org/wiki/E.164>`_ formatting.
 * The API keys subresource has been removed.
+
+New APIs have been added, such as het :doc:`/reference/v2/profiles-api/get-profile-me`. 
 
 Changes in the Settlements API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

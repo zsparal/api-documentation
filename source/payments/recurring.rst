@@ -51,8 +51,8 @@ periodically through *subscriptions*.
 #. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
    ``first``.
 
-   .. note:: For credit card payments, you can create a payment with a zero amount which means,
-             no money will be debited from the card when doing the first payment.
+   .. note:: For credit card and PayPal payments, you can create a payment with a zero amount which
+             means, no money will be debited from the card or account when doing the first payment.
 
    .. code-block:: bash
       :linenos:
@@ -74,14 +74,22 @@ periodically through *subscriptions*.
    redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
-   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``, the resulting mandate method will be ``creditcard`` as well. All other first payment methods result in a ``directdebit`` mandate.
+   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``,
+   the resulting mandate method will be ``creditcard`` as well. ``paypal`` will result in a
+   ``paypal`` mandate. All other first payment methods will be a ``directdebit`` mandate.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our :doc:`Checkout </guides/checkout>`. The following payment methods
           support a first payment and are thus allowed as a value for the ``method`` parameter of a first payment:
-          ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank`` ``sofort``
+          ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank`` ``paypal`` ``sofort``
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
+
+.. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
+             Transactions on your merchant account. Check if your account is eligible via our
+             :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
+             ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
+             method returned.
 
 .. _payments/recurring/charging-on-demand:
 
@@ -92,7 +100,8 @@ regular payment with a ``redirectUrl``, a recurring payment happens in the backg
 without the customer going through payments steps. You can create a recurring payment with the ``sequenceType`` set to
 ``recurring`` when creating a payment with the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 
-Please note that in order to do recurring payments, direct debit or credit card has to be activated on your profile.
+Please note that in order to do recurring payments, SEPA Direct Debit, PayPal or credit card has to be activated on
+your profile.
 
 #. Make sure the customer has valid mandates. Find out using the
    :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
@@ -123,6 +132,8 @@ Please note that in order to do recurring payments, direct debit or credit card 
           }"
 
 #. Like regular payments your :doc:`webhook </guides/webhooks>` is called for retrieving status updates.
+
+.. note:: You should include the PayPal fraud library when you use PayPal for on-demand payments.
 
 .. _payments/recurring/charging-periodically:
 
@@ -184,3 +195,61 @@ The payment object will, however, contain a ``subscriptionId`` field that contai
 the subscription was created. This allows you to recognize where the payment belongs to.
 
 We do not provide webhooks specifically for status changes of a Subscription itself.
+
+How to implement the PayPal fraud library?
+------------------------------------------
+.. note:: You don't have to implement the library for recurring payments.
+
+Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud
+library of PayPal by adding the Javascript library to your checkout page with the necessary configuration
+included.
+
+You need to load the library from the PayPal domain through a ``<script>``-tag. Before that, you should
+provide the configuration for the library with a ``<script>``-tag of the type ``application/json``.
+Both tags should be placed inside the ``<head>`` section.
+
+In the configuration block you need to make sure that you include the ``fncls`` attribute as follows:
+``fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99"``. The library can not find your configuration
+without that attribute.
+
+The configuration should contain JSON with the following attributes:
+
+.. list-table::
+   :widths: auto
+
+   * - ``s``
+
+       .. type:: string
+          :required: true
+
+     - Your unique PayPal Website ID. Please contact your PayPal account manager to get this identifier.
+
+   * - ``f``
+
+       .. type:: string
+          :required: true
+
+     - A unique session ID for the current payment. It should be different on every page load and can be
+       32 characters long. This ID should be posted to us when you create the actual payment via the
+       ``sessionId`` parameter.
+
+
+.. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
+             it will not work.
+
+**Example**
+
+.. code-block:: html
+      :linenos:
+
+      <head>
+        ...
+        <script type="application/json" fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99">
+            {
+               "f": "Tk149lticPjL40UUj9cb", // A random session ID, max. 32 characters
+               "s": "QkEhN94Ba"            // Your PayPal Website ID
+            }
+        </script>
+        <script type="text/javascript" src="https://c.paypal.com/da/r/fb.js"></script>
+        ...
+      </head>

@@ -327,7 +327,8 @@ Response
                                 "value": "0.25",
                                 "currency": "EUR"
                             },
-                            "variable": "2.8"
+                            "variable": "2.8",
+                            "feeRegion": "other"
                         },
                         {
                             "description": "European cards",
@@ -335,7 +336,8 @@ Response
                                 "value": "0.25",
                                 "currency": "EUR"
                             },
-                            "variable": "1.8"
+                            "variable": "1.8",
+                            "feeRegion": "eu-cards"
                         },
                         {
                             "description": "American Express",
@@ -343,7 +345,8 @@ Response
                                 "value": "0.25",
                                 "currency": "EUR"
                             },
-                            "variable": "2.8"
+                            "variable": "2.8",
+                            "feeRegion": "amex"
                         }
                     ],
                     "_links": {

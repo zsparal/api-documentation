@@ -155,6 +155,12 @@ Parameters
 
        Possible values: ``oneoff`` ``first`` ``recurring``
 
+       .. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
+                    Transactions on your merchant account. Check if you account is eligible via our
+                    :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
+                    ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
+                    method returned.
+
    * - ``customerId``
 
        .. type:: string
@@ -503,6 +509,17 @@ PayPal
 
        Please refer to the documentation of the :ref:`address object <address-object>`
        for more information on which inputs are accepted inputs.
+
+   * - ``sessionId``
+
+       .. type:: string
+          :required: false
+
+     - The unique ID you have used for the PayPal fraud library. You should include this if you use
+       PayPal for an on-demand payment. The maximum character length is 32.
+
+       Please refer to the :doc:`Recurring payments guide </payments/recurring>` for more information
+       on how to implement the fraud library.
 
 paysafecard
 """""""""""

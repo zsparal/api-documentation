@@ -13,11 +13,12 @@ their credit card details, such as their card number.
 
 Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
 Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
-:doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 Depending on various factors, the payment will either be completed immediately or you will get a ``_links.checkout``
-URL where your customer can do the 3-D Secure authentication. If the customer authenticates successfully, the payment is
-completed.
+URL where your customer can perform the 3-D Secure authentication. If the customer authenticates successfully, the
+payment is completed.
 
 Implementation steps
 --------------------
@@ -28,13 +29,14 @@ Follow these steps to implement Mollie Components in your checkout:
 
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
-#. Create and mount the four Elements for the four credit card fields (card holder, card number, expiry date and
+#. Create and mount the four Components for the four credit card fields (card holder, card number, expiry date and
    :abbr:`CVC (Card Verification Code)`). This will add the fields to your checkout.
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken`` when your customer has completed the
    checkout form.
 #. Send the ``cardToken`` to your back end, by adding it to your form.
-#. From your back end, create a credit card payment with the ``cardToken`` using the
-   :doc:`Create payment API </reference/v2/payments-api/create-payment>`.
+#. From your back end, create a credit card Payment or Order with the ``cardToken`` using the
+   :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+   :doc:`Create Order API </reference/v2/orders-api/create-order>` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
 Add the Mollie Components Javascript library to your checkout
@@ -68,7 +70,7 @@ First, you need the Profile Id of the profile that you want to use. This can be 
 using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
 
 After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
-an object that you can use for creating the four Elements your customer will use to enter their card holder data.
+an object that you can use for creating the four Components your customer will use to enter their card holder data.
 
 .. code-block:: js
    :linenos:
@@ -78,29 +80,29 @@ an object that you can use for creating the four Elements your customer will use
 .. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
           context. The Profile Id starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
 
-Create and mount the card holder data Elements
-----------------------------------------------
+Create and mount the card holder data Components
+------------------------------------------------
 
-After initializing the Mollie object, you should create the four card holder data Elements using the
-:ref:`components-mollie-create-element` function and mount them in your checkout using the
-:ref:`components-mollie-element-mount` function:
+After initializing the Mollie object, you should create the four card holder data Components using the
+:ref:`components-mollie-create-component` function and mount them in your checkout using the
+:ref:`components-mollie-component-mount` function:
 
 .. code-block:: js
    :linenos:
 
-   var cardHolder = mollie.createElement('cardHolder');
+   var cardHolder = mollie.createComponent('cardHolder');
    cardHolder.mount('#card-holder');
 
-   var cardNumber = mollie.createElement('cardNumber');
+   var cardNumber = mollie.createComponent('cardNumber');
    cardNumber.mount('#card-number');
 
-   var expiryDate = mollie.createElement('expiryDate');
+   var expiryDate = mollie.createComponent('expiryDate');
    expiryDate.mount('#expiry-date');
 
-   var verificationCode = mollie.createElement('verificationCode');
+   var verificationCode = mollie.createComponent('verificationCode');
    verificationCode.mount('#verification-code');
 
-This will add the input fields to your checkout and make them visible for your customer. To add styling to the Elements,
+This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
 see :doc:`styling`. 
 
 Add a submit event listener to your form
@@ -125,12 +127,15 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
      form.submit();
    });
 
-Create the Payment with the card token
---------------------------------------
+Create a Payment or Order with the card token
+---------------------------------------------
 
 On your back end, you will receive the ``cardToken``. You need to pass this when
 :doc:`creating a Payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
-``creditcard``. 
+``creditcard``.
+
+Alternatively, you can use the :doc:`Create Order API </reference/v2/orders-api/create-order>`. and pass the card token
+via the ``payment.cardToken`` parameter.
 
 Example
 ^^^^^^^
@@ -282,8 +287,9 @@ Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
 
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
-customer. You should redirect your customer to the ``_links.checkout`` URL returned by the Create Payment API from the
-previous step.
+customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 .. code-block:: http
    :linenos:

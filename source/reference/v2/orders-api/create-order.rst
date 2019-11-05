@@ -383,6 +383,7 @@ parameters and we will apply them when your customer selects the relevant paymen
 All payment specific parameters must be passed in the ``payment`` object. The following payment specific parameters can
 be passed during order creation:
 
+* ``payment.cardToken``
 * ``payment.consumerAccount``
 * ``payment.customerId``
 * ``payment.customerReference``
@@ -393,8 +394,7 @@ be passed during order creation:
 * ``payment.voucherPin``
 * ``payment.webhookUrl``
 
-See the :ref:`payment-method-specific-parameters` for more information on these
-parameters.
+See the :ref:`payment-method-specific-parameters` for more information on these parameters.
 
 .. note:: You can set the ``payment.webhookUrl`` if you want to receive notifications about failed, canceled, or expired
           order payments. Since we do not call your order webhook for these payment events, it can be useful for e.g.

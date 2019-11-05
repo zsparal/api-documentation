@@ -3,16 +3,16 @@ Styling Mollie Components
 
 :doc:`Mollie Components <overview>` can be fully styled to ensure a smooth blend-in with your checkout.
 
-Styling can be applied to Elements in the three states ``base``, ``valid`` and ``invalid``:
+Styling can be applied to Components in the three states ``base``, ``valid`` and ``invalid``:
 
 ``base``
-  The state of the Element when your customer has not entered any data yet or is entering data.
+  The state of the Component when your customer has not entered any data yet or is entering data.
 
 ``valid``
-  The state of the Element when your customer has entered valid data, such as a valid credit card number.
+  The state of the Component when your customer has entered valid data, such as a valid credit card number.
 
 ``invalid``
-  The state of the Element when your customer entered invalid data, such as an expiry date in the past.
+  The state of the Component when your customer entered invalid data, such as an expiry date in the past.
 
 For each of these there is an set of properties you can use.
 
@@ -45,7 +45,7 @@ We allow the following pseudo-classes. These will be autoprefixed and can be nes
 Example
 -------
 
-Using styles with :ref:`components-mollie-create-element`:
+Using styles with :ref:`components-mollie-create-component`:
 
 Javascript
 ^^^^^^^^^^
@@ -68,4 +68,4 @@ Javascript
       }
     };
 
-    var cardNumberEl = mollie.createElement('cardNumber', options)
+    var cardNumberEl = mollie.createComponent('cardNumber', options)

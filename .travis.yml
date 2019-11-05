@@ -19,7 +19,7 @@ env:
     - AWS_REGION="eu-central-1"
 install:
   - nvm install $(cat .nvmrc)
-  - travis_retry npm install --no-optional
+  - travis_retry npm install --no-optional --no-audit
   - pip install -r requirements.txt
 script:
   - make html-production
