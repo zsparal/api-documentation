@@ -298,3 +298,9 @@ customer. You should redirect your customer to the ``_links.checkout`` URL retur
    Date: Mon, 27 Jul 2019 12:28:53 GMT
    Location: https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
+
+Browser support
+---------------
+
+The lowest supported browser is Microsoft Internet Explorer 11 which was released in 2013. If you need to support older
+browsers, you cannot use Mollie Components.
