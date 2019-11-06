@@ -104,8 +104,8 @@ Initial request
 .. code-block:: bash
    :linenos:
 
-   curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
-       -d "grant_type=authorization_code&code=abc123"
+   curl -u app_j9Pakf56Ajta6Y65AkdTtAv:S5lTvMDTjl95HGnwYmsszDtbMp8QBE2lLcRJbD7I https://api.mollie.com/oauth2/tokens \
+       -d "grant_type=authorization_code&code=auth_IbyEKUrXmGW1J8hPg6Ciyo4aaU6OAu"
 
 Initial response
 ^^^^^^^^^^^^^^^^
@@ -130,7 +130,7 @@ Refresh request
 .. code-block:: bash
    :linenos:
 
-   curl -u client_id:client_secret https://api.mollie.com/oauth2/tokens \
+   curl -u app_j9Pakf56Ajta6Y65AkdTtAv:S5lTvMDTjl95HGnwYmsszDtbMp8QBE2lLcRJbD7I https://api.mollie.com/oauth2/tokens \
        -d "grant_type=refresh_token&refresh_token=refresh_FS4xc3Mgci2xQ5s5DzaLXh3HhaTZOP"
 
 Refresh response
