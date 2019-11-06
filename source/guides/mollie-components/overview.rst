@@ -302,5 +302,7 @@ customer. You should redirect your customer to the ``_links.checkout`` URL retur
 Browser support
 ---------------
 
-The lowest supported browser is Microsoft Internet Explorer 11 which was released in 2013. If you need to support older
-browsers, you cannot use Mollie Components.
+The oldest supported browser is Microsoft Internet Explorer 11 which was released in 2013. For all other browser
+vendors (Microsoft Edge, Google Chrome, Opera, Safari and Firefox) the last two major releases will be supported.
+
+If you need to support older browsers, you cannot use Mollie Components.
