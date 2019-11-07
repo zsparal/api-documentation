@@ -65,9 +65,9 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
 Initialize the Mollie object
 ----------------------------
 
-First, you need the Profile Id of the profile that you want to use. This can be found in the
-`Profiles <https://www.mollie.com/dashboard/settings/profiles>`_ settings in the Dashboard or retrieved programmatically
-using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
+First, you need the Profile Id of the profile that you want to use. This can be found on the
+`Developers - API-keys <https://www.mollie.com/dashboard/developers/api-keys>`_ page in the Dashboard or retrieved
+programmatically using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
 
 After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
 an object that you can use for creating the four Components your customer will use to enter their card holder data.
