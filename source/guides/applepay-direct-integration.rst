@@ -77,10 +77,11 @@ Send the Apple Pay Payment Token to Mollie
 Once the shopper has authorized the payment, you will receive the `Apple Pay Payment object
 <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_. You must then encode the object's
 ``token`` property to JSON and add the JSON as the ``applePayPaymentToken`` parameter when invoking the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
+:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or the
+:doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
-Example request
-^^^^^^^^^^^^^^^
+Example request (create payment API)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: http
    :linenos:
@@ -96,6 +97,50 @@ Example request
       },
       "description": "Order #1337",
       "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
+      "webhookUrl": "https://example.org/webhook"
+   }
+
+Example request (create order API)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: http
+   :linenos:
+
+   POST /v2/orders HTTP/1.1
+   Content-Type: application/json
+
+   {
+      "method": "applepay",
+      "amount": {
+          "currency": "EUR",
+          "value": "100.00"
+      },
+      "orderNumber": 1337,
+      "description": "Order #1337",
+      "payment": {
+          "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
+      },
+      "lines": [{
+            "type": "physical",
+            "sku": "5702016116977",
+            "name": "LEGO 42083 Bugatti Chiron",
+            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+            "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+            "metadata": "Some extra information about this orderline.",
+            "quantity": 1,
+            "vatRate": "25.00",
+            "unitPrice": {
+                "currency": "EUR",
+                "value": "100.00"
+            },
+            "totalAmount": {
+                "currency": "EUR",
+                "value": "100.00"
+            },
+            "vatAmount": {
+                "currency": "EUR",
+                "value": "20.00"
+            }
+      }],
       "webhookUrl": "https://example.org/webhook"
    }
 

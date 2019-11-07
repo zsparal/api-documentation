@@ -6,6 +6,11 @@ changes are documented here.
 November 2019
 =============
 
+Thursday, 7th
+-------------
+
+- The Apple Pay direct integration can now also be used with the Create Order API.
+
 Monday, 4th
 -----------
 
