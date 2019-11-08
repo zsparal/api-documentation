@@ -16,7 +16,7 @@ Retrieve a mandate by its ID and its customer's ID. The mandate will either cont
 depending on the type of mandate.
 
 .. note::
-   :ref: Trying to retrieve a revoked mandate will result in a 410 exception.
+   Trying to retrieve a revoked mandate will result in a 410 exception.
 
 Parameters
 ----------
