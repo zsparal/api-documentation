@@ -19,7 +19,7 @@ If you do not know the original payment's ID, you can use the
 :doc:`/reference/v2/refunds-api/list-refunds`.
 
 .. note::
-    :ref: Retrieving a canceled refund will result in a 404 exception.
+    Trying to retrieve a canceled refund will result in a 404 exception.
 
 
 Parameters
