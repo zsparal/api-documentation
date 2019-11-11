@@ -761,7 +761,7 @@ Credit card
               .. type:: string
 
             - Only available if the payment has been completed – The fee region for the payment.
-              The ``intra-eu`` value is for consumer cards from the EU.
+              The ``intra-eu`` value is for consumer cards from the EEA.
 
               Possible values: ``american-express`` ``carte-bancaire`` ``intra-eu`` ``maestro`` ``other``
 
