@@ -116,6 +116,20 @@ Example
 
       $payment = $payment->update();
 
+   .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+      payment = mollie_client.payments.update("tr_7UhSN1zuXS", {
+        'description': 'Order #98765',
+        'webhookUrl': 'https://webshop.example.org/order/98765/',
+        'redirectUrl': 'https://webshop.example.org/payments/webhook/',
+        'metadata': {'order_id': '98765'}
+      })
+
 Response
 ^^^^^^^^
 .. code-block:: http
