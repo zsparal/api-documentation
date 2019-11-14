@@ -521,6 +521,18 @@ PayPal
        Please refer to the :doc:`Recurring payments guide </payments/recurring>` for more information
        on how to implement the fraud library.
 
+   * - ``digitalGoods``
+
+       .. type:: boolean
+          :required: false
+
+     - Indicate if you're about to deliver digital goods, like for example a license. Setting this
+       parameter can have consequences for your Seller Protection by PayPal. Please see
+       `PayPal's help article <https://www.paypal.com/us/brc/article/seller-protection>`_ about
+       Seller Protection for more information.
+
+       **Default**: ``false``
+
 paysafecard
 """""""""""
 .. list-table::
