@@ -288,8 +288,7 @@ Redirect the shopper to the 3-D Secure authentication page
 
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
 customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
-:doc:`Create Order API </reference/v2/orders-api/create-order>`.
+:doc:`/reference/v2/payments-api/create-payment` or :doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 .. code-block:: http
    :linenos:

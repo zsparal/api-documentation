@@ -1,5 +1,5 @@
-Get payment
-===========
+Get Payment API
+===============
 .. api-name:: Payments API
    :version: 2
 
@@ -774,6 +774,14 @@ Credit card
               Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
               ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card`` ``unknown_reason``
               ``possible_fraud``
+
+          * - ``failureMessage``
+
+              .. type:: string
+
+            - A localized message that can be shown to your customer, depending on the ``failureReason``.
+
+              Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
           * - ``wallet``
 
