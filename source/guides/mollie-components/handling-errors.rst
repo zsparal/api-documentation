@@ -16,13 +16,12 @@ There are *two flows* to consider, depending on whether or not 3-D Secure authen
 step during payment aimed at reducing credit card fraud. It requires the card holder to authenticate him / herself
 with the card issuer during the payment.
 
-
 #. If **no 3-D Secure authentication is necessary**, an error will be returned when when calling the
    :doc:`/reference/v2/payments-api/create-payment`.
    Should an error occur, then Mollie will not create a Payment.
-#. If 3-D Secure authentication is necessary, Mollie will create a Payment and give you the ``_links.checkoutUrl`` where
-   your customer can authenticate the payment. If any errors occur during or after authentication, they will be part of
-   the response when retrieving the payment via the :doc:`/reference/v2/payments-api/get-payment`.
+#. If **3-D Secure authentication is necessary**, Mollie will create a Payment and give you the ``_links.checkoutUrl``
+   where your customer can authenticate the payment. If any errors occur during or after authentication, they will be
+   part of the response when retrieving the payment via the :doc:`/reference/v2/payments-api/get-payment`.
 
 The need for 3-D Secure authentication is determined by various factors, such as the estimated fraud risk for the
 payment and any agreements between you and Mollie. In the general case, 3-D Secure authentication will be necessary.
