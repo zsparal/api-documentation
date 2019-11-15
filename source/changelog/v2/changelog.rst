@@ -6,7 +6,7 @@ changes are documented here.
 November 2019
 =============
 
-Thursday, 14th
+Friday, 15th
 --------------
 
 - Added the ``digitalGoods`` field as PayPal parameter. See :doc:`Create Payment </reference/v2/payments-api/create-payment>`
