@@ -41,7 +41,7 @@ Mollie(profileId[, options])
               ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
               ``lt_LT``
 
-          * - ``testMode``
+          * - ``testmode``
 
               .. type:: boolean
                  :required: false
