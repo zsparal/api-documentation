@@ -1011,6 +1011,19 @@ PayPal
 
             - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
 
+          * - ``sellerProtection``
+
+              .. type:: string
+                 :required: false
+
+            - Indicates if the payment is eligible for PayPal's Seller Protection.
+
+              Possible values: ``Eligible`` ``Ineligible`` ``Partially Eligible - INR Only``
+              ``Partially Eligible - Unauth Only`` ``PartiallyEligible`` ``None``
+              ``Active Fraud Control - Unauth Premium Eligible``
+
+              This parameter is omitted if we did not received the information from PayPal.
+
           * - ``paypalFee``
 
               .. type:: amount object
