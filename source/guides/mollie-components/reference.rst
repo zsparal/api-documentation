@@ -41,19 +41,13 @@ Mollie(profileId[, options])
               ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
               ``lt_LT``
 
-          * - ``testmode``
+          * - ``testMode``
 
               .. type:: boolean
                  :required: false
 
-            - Set to ``true`` to enable test mode.
+            - Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix e.g. `tkn_123abctest`. 
 
-          * - ``styles``
-
-              .. type:: styles object
-                 :required: false
-
-            - See :doc:`styling`.
 
 .. _components-mollie-create-token:
 
