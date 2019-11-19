@@ -65,9 +65,9 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
 Initialize the Mollie object
 ----------------------------
 
-First, you need the Profile Id of the profile that you want to use. This can be found in the
-`Profiles <https://www.mollie.com/dashboard/settings/profiles>`_ settings in the Dashboard or retrieved programmatically
-using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
+First, you need the Profile Id of the profile that you want to use. This can be found on the
+`Developers - API-keys <https://www.mollie.com/dashboard/developers/api-keys>`_ page in the Dashboard or retrieved
+programmatically using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
 
 After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
 an object that you can use for creating the four Components your customer will use to enter their card holder data.
@@ -298,3 +298,20 @@ customer. You should redirect your customer to the ``_links.checkout`` URL retur
    Date: Mon, 27 Jul 2019 12:28:53 GMT
    Location: https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
+
+Browser support
+---------------
+
+Mollie Components supports the current and previous major release of the following browsers:
+
+- Chrome
+- Chrome for Android
+- Safari
+- Safari iOS
+- Opera
+- Firefox
+- Edge
+
+The latest release of Microsoft Internet Explorer 11 is supported as well.
+
+If you need to support older browsers, you cannot use Mollie Components.

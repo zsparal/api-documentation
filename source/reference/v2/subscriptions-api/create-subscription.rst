@@ -111,7 +111,8 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 
        Possible values: ``creditcard`` ``directdebit`` ``paypal`` ``null``
 
-       .. warning:: Using PayPal Recurring is only possible if PayPal has activated this feature on your merchant-account.
+       .. warning:: Using PayPal Reference Transactions is only possible if PayPal has activated this feature on your
+                    merchant-account.
 
    * - ``mandateId``
 

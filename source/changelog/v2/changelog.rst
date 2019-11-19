@@ -6,10 +6,17 @@ changes are documented here.
 November 2019
 =============
 
-Thursday, 7th
+Tuesday, 19th
 -------------
 
+- Added the ``sellerProtection`` field to the PayPal payment details.
 - The Apple Pay direct integration can now also be used with the Create Order API.
+
+Friday, 15th
+--------------
+
+- Added the ``digitalGoods`` field as PayPal parameter. See :doc:`Create Payment </reference/v2/payments-api/create-payment>`
+  for more information.
 
 Monday, 4th
 -----------

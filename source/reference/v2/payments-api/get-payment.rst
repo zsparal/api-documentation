@@ -761,7 +761,7 @@ Credit card
               .. type:: string
 
             - Only available if the payment has been completed – The fee region for the payment.
-              The ``intra-eu`` value is for consumer cards from the EU.
+              The ``intra-eu`` value is for consumer cards from the EEA.
 
               Possible values: ``american-express`` ``carte-bancaire`` ``intra-eu`` ``maestro`` ``other``
 
@@ -1010,6 +1010,19 @@ PayPal
               .. type:: string
 
             - ID for the consumer's PayPal account, for instance ``WDJJHEBZ4X2LY``.
+
+          * - ``sellerProtection``
+
+              .. type:: string
+                 :required: false
+
+            - Indicates if the payment is eligible for PayPal's Seller Protection.
+
+              Possible values: ``Eligible`` ``Ineligible`` ``Partially Eligible - INR Only``
+              ``Partially Eligible - Unauth Only`` ``PartiallyEligible`` ``None``
+              ``Active Fraud Control - Unauth Premium Eligible``
+
+              This parameter is omitted if we did not received the information from PayPal.
 
           * - ``paypalFee``
 
