@@ -6,8 +6,8 @@ changes are documented here.
 November 2019
 =============
 
-TBA
----
+Tuesday, 19th
+-------------
 
 - Added the ``sellerProtection`` field to the PayPal payment details.
 
