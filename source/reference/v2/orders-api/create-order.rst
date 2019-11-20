@@ -384,6 +384,7 @@ All payment specific parameters must be passed in the ``payment`` object. The fo
 be passed during order creation:
 
 * ``payment.cardToken``
+* ``payment.applePayPaymentToken``
 * ``payment.consumerAccount``
 * ``payment.customerId``
 * ``payment.customerReference``
