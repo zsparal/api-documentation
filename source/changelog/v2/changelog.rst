@@ -10,7 +10,7 @@ Tuesday, 19th
 -------------
 
 - Added the ``sellerProtection`` field to the PayPal payment details.
-- The Apple Pay direct integration can now also be used with the Create Order API.
+- The :doc:`Apple Pay direct integration </guides/applepay-direct-integration>` can now also be used with the :doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
 Friday, 15th
 --------------
