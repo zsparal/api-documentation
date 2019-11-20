@@ -580,7 +580,7 @@ Example
                   "phone" => "+31309202070",
             ],
             "shippingAddress" => [
-                  "organizationName": "Mollie B.V.",
+                  "organizationName" => "Mollie B.V.",
                   "streetAndNumber" => "Keizersgracht 313",
                   "streetAdditional" => "4th floor",
                   "city" => "Haarlem",
