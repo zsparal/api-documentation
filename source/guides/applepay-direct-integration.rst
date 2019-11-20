@@ -80,69 +80,70 @@ Once the shopper has authorized the payment, you will receive the `Apple Pay Pay
 :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or the
 :doc:`Create Order API </reference/v2/orders-api/create-order>`.
 
-Example request (create payment API)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Example request
+^^^^^^^^^^^^^^^
 
 .. code-block:: http
-   :linenos:
+    :caption: Create Payment API
+    :linenos:
 
-   POST /v2/payments HTTP/1.1
-   Content-Type: application/json
+    POST /v2/payments HTTP/1.1
+    Content-Type: application/json
 
-   {
-      "method": "applepay",
-      "amount": {
-          "currency": "EUR",
-          "value": "100.00"
-      },
-      "description": "Order #1337",
-      "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
-      "webhookUrl": "https://example.org/webhook"
-   }
+    {
+        "method": "applepay",
+        "amount": {
+            "currency": "EUR",
+            "value": "100.00"
+        },
+        "description": "Order #1337",
+        "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
+        "webhookUrl": "https://example.org/webhook"
+    }
 
-Example request (create order API)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+
 .. code-block:: http
-   :linenos:
+    :caption: Create Order API
+    :linenos:
 
-   POST /v2/orders HTTP/1.1
-   Content-Type: application/json
+    POST /v2/orders HTTP/1.1
+    Content-Type: application/json
 
-   {
-      "method": "applepay",
-      "amount": {
-          "currency": "EUR",
-          "value": "100.00"
-      },
-      "orderNumber": 1337,
-      "description": "Order #1337",
-      "payment": {
-          "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
-      },
-      "lines": [{
-            "type": "physical",
-            "sku": "5702016116977",
-            "name": "LEGO 42083 Bugatti Chiron",
-            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
-            "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
-            "metadata": "Some extra information about this orderline.",
-            "quantity": 1,
-            "vatRate": "25.00",
-            "unitPrice": {
-                "currency": "EUR",
-                "value": "100.00"
-            },
-            "totalAmount": {
-                "currency": "EUR",
-                "value": "100.00"
-            },
-            "vatAmount": {
-                "currency": "EUR",
-                "value": "20.00"
-            }
-      }],
-      "webhookUrl": "https://example.org/webhook"
-   }
+    {
+        "method": "applepay",
+        "amount": {
+            "currency": "EUR",
+            "value": "100.00"
+        },
+        "orderNumber": 1337,
+        "payment": {
+            "applePayPaymentToken": "{\"paymentData\": {\"version\": \"EC_v1\", \"data\": \"vK3Bbr...lg==\"}}",
+        },
+        "lines": [{
+                "type": "physical",
+                "sku": "5702016116977",
+                "name": "LEGO 42083 Bugatti Chiron",
+                "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
+                "imageUrl": "https://sh-s7-live-s.legocdn.com/is/image//LEGO/42083_alt1?$main$",
+                "metadata": "Some extra information about this orderline.",
+                "quantity": 1,
+                "vatRate": "25.00",
+                "unitPrice": {
+                    "currency": "EUR",
+                    "value": "100.00"
+                },
+                "totalAmount": {
+                    "currency": "EUR",
+                    "value": "100.00"
+                },
+                "vatAmount": {
+                    "currency": "EUR",
+                    "value": "20.00"
+                }
+        }],
+        "webhookUrl": "https://example.org/webhook"
+    }
 
 Handling errors
 ^^^^^^^^^^^^^^^
@@ -168,3 +169,6 @@ receive an error when creating the payment:
             }
         }
     }
+
+
+
