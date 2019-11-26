@@ -125,6 +125,18 @@ Response
 
                    - A description of the revenue subtotal.
 
+                 * - ``method``
+
+                     .. type:: string
+
+                   - The payment method ID, if applicable.
+
+                 * - ``count``
+
+                     .. type:: integer
+
+                   - The number of payments received for this payment method.
+
                  * - ``amountNet``
 
                      .. type:: amount object
@@ -143,18 +155,6 @@ Response
 
                    - The gross total of received funds for this payment method (includes VAT).
 
-                 * - ``count``
-
-                     .. type:: integer
-
-                   - The number of payments received for this payment method.
-
-                 * - ``method``
-
-                     .. type:: string
-
-                   - The payment method ID, if applicable.
-
           * - ``costs``
 
               .. type:: array
@@ -171,23 +171,11 @@ Response
 
                    - A description of the subtotal.
 
-                 * - ``amountNet``
+                 * - ``method``
 
-                     .. type:: amount object
+                     .. type:: string
 
-                   - The net total costs for this payment method (excludes VAT).
-
-                 * - ``amountVat``
-
-                     .. type:: amount object
-
-                   - The VAT amount applicable to the costs.
-
-                 * - ``amountGross``
-
-                     .. type:: amount object
-
-                   - The gross total costs for this payment method (includes VAT).
+                   - The payment method ID, if applicable.
 
                  * - ``count``
 
@@ -216,11 +204,23 @@ Response
 
                           - A string describing the variable costs as a percentage.
 
-                 * - ``method``
+                 * - ``amountNet``
 
-                     .. type:: string
+                     .. type:: amount object
 
-                   - The payment method ID, if applicable.
+                   - The net total costs for this payment method (excludes VAT).
+
+                 * - ``amountVat``
+
+                     .. type:: amount object
+
+                   - The VAT amount applicable to the costs.
+
+                 * - ``amountGross``
+
+                     .. type:: amount object
+
+                   - The gross total costs for this payment method (includes VAT).
 
    * - ``invoiceId``
 
@@ -339,25 +339,25 @@ Response
        "settledAt": "2018-04-06T09:41:44.0Z",
        "status": "paidout",
        "amount": {
-           "currency": "EUR",
-           "value": "39.75"
+           "value": "39.75",
+           "currency": "EUR"
        },
        "periods": {
            "2018": {
-               "4": {
+               "04": {
                    "revenue": [
                        {
                            "description": "iDEAL",
                            "method": "ideal",
                            "count": 6,
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "86.1000"
+                               "value": "86.1000",
+                               "currency": "EUR"
                            },
                            "amountVat": null,
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "86.1000"
+                               "value": "86.1000",
+                               "currency": "EUR"
                            }
                        },
                        {
@@ -365,13 +365,13 @@ Response
                            "method": "refund",
                            "count": 2,
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "-43.2000"
+                               "value": "-43.2000",
+                               "currency": "EUR"
                            },
                            "amountVat": null,
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "43.2000"
+                               "value": "43.2000",
+                               "currency": "EUR"
                            }
                        }
                    ],
@@ -382,22 +382,22 @@ Response
                            "count": 6,
                            "rate": {
                                "fixed": {
-                                   "currency": "EUR",
-                                   "value": "0.3500"
+                                   "value": "0.3500",
+                                   "currency": "EUR"
                                },
                                "percentage": null
                            },
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "2.1000"
+                               "value": "2.1000",
+                               "currency": "EUR"
                            },
                            "amountVat": {
-                               "currency": "EUR",
-                               "value": "0.4410"
+                               "value": "0.4410",
+                               "currency": "EUR"
                            },
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "2.5410"
+                               "value": "2.5410",
+                               "currency": "EUR"
                            }
                        },
                        {
@@ -406,22 +406,22 @@ Response
                            "count": 2,
                            "rate": {
                                "fixed": {
-                                   "currency": "EUR",
-                                   "value": "0.2500"
+                                   "value": "0.2500",
+                                   "currency": "EUR"
                                },
                                "percentage": null
                            },
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "0.5000"
+                               "value": "0.5000",
+                               "currency": "EUR"
                            },
                            "amountVat": {
-                               "currency": "EUR",
-                               "value": "0.1050"
+                               "value": "0.1050",
+                               "currency": "EUR"
                            },
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "0.6050"
+                               "value": "0.6050",
+                               "currency": "EUR"
                            }
                        }
                    ]
@@ -431,8 +431,12 @@ Response
        "invoiceId": "inv_FrvewDA3Pr",
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/settlements/next",
+               "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN",
                "type": "application/hal+json"
+           },
+           "invoice": {
+                "href": "https://api.mollie.com/v2/invoices/inv_FrvewDA3Pr",
+                "type": "application/hal+json"
            },
            "payments": {
                "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/payments",
@@ -449,10 +453,6 @@ Response
            "captures": {
                "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/captures",
                "type": "application/hal+json"
-           },
-           "invoice": {
-                "href": "https://api.mollie.com/v2/invoices/inv_FrvewDA3Pr",
-                "type": "application/hal+json"
            },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/settlements-api/get-settlement",

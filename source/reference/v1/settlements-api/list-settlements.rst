@@ -144,6 +144,7 @@ Response
                "resource": "settlement",
                "id": "stl_jDk30akdN",
                "reference": "123456.1501.02",
+               "createdDatetime": "2015-01-09T07:00:00.0Z",
                "settledDatetime": "2015-01-09T07:00:00.0Z",
                "status": "paidout",
                "amount": "994.55",
@@ -176,6 +177,11 @@ Response
                            ]
                        }
                    }
+               },
+               "links": {
+                   "chargebacks": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/chargebacks",
+                   "payments": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/payments",
+                   "refunds": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/refunds"
                },
                "paymentIds": [
                    "tr_RpAwK4A7dg",
@@ -237,6 +243,11 @@ Response
                            ]
                        }
                    }
+               },
+               "links": {
+                   "chargebacks": "https://api.mollie.com/v1/settlements/stl_pAd3Vq83/chargebacks",
+                   "payments": "https://api.mollie.com/v1/settlements/stl_pAd3Vq83/payments",
+                   "refunds": "https://api.mollie.com/v1/settlements/stl_pAd3Vq83/refunds"
                },
                "paymentIds": [
                    "tr_s3cMndA7dg",
