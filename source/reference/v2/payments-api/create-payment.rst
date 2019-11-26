@@ -36,6 +36,9 @@ Parameters
      - The amount that you want to charge, e.g. ``{"currency":"EUR", "value":"1000.00"}`` if you would want to charge
        €1000.00.
 
+       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365-What-are-the-minimum-and-maximum-amounts-per-payment-method->`_
+       per payment method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v2/methods-api/get-method`.
+
        .. list-table::
           :widths: auto
 

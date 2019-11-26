@@ -37,6 +37,9 @@ Parameters
      - The total amount of the order, including VAT and discounts. This is the amount that will be charged to your
        customer.
 
+       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365-What-are-the-minimum-and-maximum-amounts-per-payment-method->`_
+       per payment method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v2/methods-api/get-method`.
+
        For example: ``{"currency":"EUR", "value":"100.00"}`` if the total order amount is €100.00.
 
        .. note::
