@@ -6,6 +6,11 @@ changes are documented here.
 November 2019
 =============
 
+TBA
+---
+
+- Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+
 Tuesday, 19th
 -------------
 
