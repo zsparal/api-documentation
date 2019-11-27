@@ -6,6 +6,12 @@ changes are documented here.
 November 2019
 =============
 
+Wednesday, 27th
+---------------
+
+- Added ``authentication_failed`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v2/payments-api/get-payment>` for Credit Card payments.
+
 Tuesday, 19th
 -------------
 
