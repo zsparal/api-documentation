@@ -370,6 +370,9 @@ Bancontact
             - Only available if the payment is completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
 
+              .. warning:: The fingerprint is now (as of November 28th, 2019) unique per transaction what makes it
+                           not usefull anymore for identifying returning customers. Use the ``consumerAccount`` field instead.
+
           * - ``qrCode``
 
               .. type:: object

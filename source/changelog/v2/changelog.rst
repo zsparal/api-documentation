@@ -6,6 +6,12 @@ changes are documented here.
 November 2019
 =============
 
+Thursday, 28th
+--------------
+
+- We made the ``cardFingerprint`` field for Bancontact deprecated. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
+  for more information.
+
 Wednesday, 27th
 ---------------
 
