@@ -294,7 +294,8 @@ Response
        .. type:: string
           :required: false
 
-     -
+     - The country code you provided upon payment creation, to restrict the payment methods available to
+       your customer to methods from a single country only.
 
    * - ``countryCode``
 
@@ -1310,6 +1311,8 @@ Response
        },
        "status": "open",
        "isCancelable": false,
+       "locale": "nl_NL",
+       "allowedShopperCountry": "NL",
        "expiresAt": "2018-03-20T13:28:37+00:00",
        "details": null,
        "profileId": "pfl_QkEhN94Ba",

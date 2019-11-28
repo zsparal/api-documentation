@@ -177,7 +177,8 @@ Parameters
        .. type:: boolean
           :required: false
 
-     -
+     - For digital goods, you must make sure to apply the VAT rate from your customer’s country in most jurisdictions.
+       Use this parameter to restrict the payment methods available to your customer to methods from a single country only.
 
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
