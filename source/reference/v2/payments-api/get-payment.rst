@@ -289,6 +289,13 @@ Response
      - The customer's locale, either forced on creation by specifying the ``locale`` parameter, or detected
        by us during checkout. Will be a full locale, for example ``nl_NL``.
 
+   * - ``allowedShopperCountry``
+
+       .. type:: string
+          :required: false
+
+     -
+
    * - ``countryCode``
 
        .. type:: string

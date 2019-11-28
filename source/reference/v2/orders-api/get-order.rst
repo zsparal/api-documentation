@@ -131,6 +131,12 @@ Response
 
      - The person and the address the order is billed to. See below.
 
+   * - ``shopperCountryMustMatchBillingCountry``
+
+       .. type:: boolean
+
+     -
+
    * - ``consumerDateOfBirth``
 
        .. type:: date

@@ -56,7 +56,7 @@ Parameters
                  :required: true
 
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
-              amount of decimals and omit the thousands separator. Non-string values are not accepted. 
+              amount of decimals and omit the thousands separator. Non-string values are not accepted.
 
    * - ``description``
 
@@ -180,6 +180,13 @@ Parameters
 
      - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
        may be supplied to indicate which of the consumer's accounts should be credited.
+
+   * - ``allowedShopperCountry``
+
+       .. type:: string
+          :required: false
+
+     -
 
 .. _payment-method-specific-parameters:
 
