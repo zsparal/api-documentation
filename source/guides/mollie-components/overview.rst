@@ -54,7 +54,6 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
         <title>My Checkout</title>
       </head>
       <body>
-        <!-- Your HTML  --->
         <script src="https://js.mollie.com/v1/mollie.js"></script>
       </body>
     </html>
@@ -87,6 +86,25 @@ After initializing the Mollie object, you should create the four card holder dat
 :ref:`components-mollie-create-component` function and mount them in your checkout using the
 :ref:`components-mollie-component-mount` function:
 
+.. code-block:: html
+   :linenos:
+
+   <form>
+     <div id="card-holder"></div>
+     <div id="card-holder-error"></div>
+
+     <div id="card-number"></div>
+     <div id="card-number-error"></div>
+
+     <div id="expiry-date"></div>
+     <div id="expiry-date-error"></div>
+
+     <div id="verification-code"></div>
+     <div id="verification-code-error"></div>
+
+     <button type="button">Pay</button>
+   </form>
+
 .. code-block:: js
    :linenos:
 
@@ -104,6 +122,27 @@ After initializing the Mollie object, you should create the four card holder dat
 
 This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
 see :doc:`styling`. 
+
+Handling errors
+---------------
+
+Add a change event listener to each component to listen for errors. Displaying the error is up to you. The example below
+assumes an empty element in which the error can be rendered.
+
+Errors will be localized according to the locale defined when initializing Mollie Components.
+
+.. code-block:: js
+   :linenos:
+
+   var cardNumberError = document.querySelector('#card-number-error');
+
+   cardNumber.addEventListener('change', event => {
+     if (event.error && event.touched) {
+       cardNumberError.textContent = event.error;
+     } else {
+       cardNumberError.textContent = '';
+     }
+   });
 
 Add a submit event listener to your form
 ----------------------------------------
