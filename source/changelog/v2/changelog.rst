@@ -10,7 +10,7 @@ TBD
 ---
 
 - Added ``allowedShopperCountry`` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
-- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Payments API</reference/v2/orders-api/create-order>`.
+- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API</reference/v2/orders-api/create-order>`.
 
 November 2019
 =============
