@@ -6,6 +6,30 @@ changes are documented here.
 November 2019
 =============
 
+Thursday, 28th
+--------------
+
+- We made the ``cardFingerprint`` field for Bancontact deprecated. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
+  for more information.
+
+Wednesday, 27th
+---------------
+
+- Added ``authentication_failed`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v2/payments-api/get-payment>` for Credit Card payments.
+
+Tuesday, 19th
+-------------
+
+- Added the ``sellerProtection`` field to the PayPal payment details.
+- The :doc:`Apple Pay direct integration </guides/applepay-direct-integration>` can now also be used with the :doc:`Create Order API </reference/v2/orders-api/create-order>`.
+
+Friday, 15th
+--------------
+
+- Added the ``digitalGoods`` field as PayPal parameter. See :doc:`Create Payment </reference/v2/payments-api/create-payment>`
+  for more information.
+
 Monday, 4th
 -----------
 

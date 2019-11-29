@@ -45,11 +45,10 @@ periodically through *subscriptions*.
           -H "Content-Type: application/json" \
           -d "{\"name\":\"Customer A\",\"email\":\"customer@example.org\"}"
 
-#. Save the customer's ``id`` in your database. You need it when performing
-   :doc:`Payments API </reference/v2/payments-api/create-payment>` calls.
+#. Save the customer's ``id`` in your database. You need it for the next step.
 
-#. Create a payment for the customer by specifying the ``customerId`` and setting the ``sequenceType`` parameter to
-   ``first``.
+#. Create a payment (or order) for the customer by specifying the ``customerId`` and setting the ``sequenceType``
+   parameter to ``first``.
 
    .. note:: For credit card and PayPal payments, you can create a payment with a zero amount which
              means, no money will be debited from the card or account when doing the first payment.

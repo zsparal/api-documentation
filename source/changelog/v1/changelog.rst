@@ -11,6 +11,18 @@ changes are documented here.
 November 2019
 =============
 
+Thursday, 28th
+--------------
+
+- The ``cardFingerprint`` field for Bancontact is not longer useful for identifying returning customers.
+  See :doc:`Get Payment </reference/v1/payments-api/get-payment>` for more information.
+
+Wednesday, 27th
+---------------
+
+- Added ``authentication_failed`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v1/payments-api/get-payment>` for Credit Card payments.
+
 Monday, 4th
 -----------
 

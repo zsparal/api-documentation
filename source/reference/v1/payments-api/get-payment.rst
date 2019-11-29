@@ -253,8 +253,9 @@ Response
 
      - Only available for failed Bancontact and credit card payments. Contains a failure reason code.
 
-       Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
-       ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card``
+       Possible values: ``authentication_failed``  ``card_expired`` ``inactive_card`` ``insufficient_funds``
+       ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type`` ``invalid_cvv``
+       ``possible_fraud`` ``refused_by_issuer`` ``unknown_reason``
 
    * - ``applicationFee``
 
@@ -368,6 +369,9 @@ Bancontact
 
             - Only available if the payment is completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
+
+              .. warning:: The fingerprint is now (as of November 28th, 2019) unique per transaction what makes it
+                           not usefull anymore for identifying returning customers. Use the ``consumerAccount`` field instead.
 
           * - ``qrCode``
 

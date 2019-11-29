@@ -84,30 +84,30 @@ Response
                    "resource": "chargeback",
                    "id": "chb_n9z0tp",
                    "amount": {
-                       "currency": "USD",
-                       "value": "43.38"
+                       "value": "43.38",
+                       "currency": "USD"
                    },
                    "settlementAmount": {
-                       "currency": "EUR",
-                       "value": "-37.14"
+                       "value": "-37.14",
+                       "currency": "EUR"
                    },
                    "createdAt": "2018-03-14T17:00:52.0Z",
                    "reversedAt": null
                    "paymentId": "tr_WDqYK6vllg",
                    "settlementId": "stl_jDk30akdN",
                    "_links": {
-                       "self": {
+                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/chargebacks/chb_n9z0tp",
                            "type": "application/hal+json"
-                       },
-                       "payment": {
+                        },
+                        "payment": {
                            "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
                            "type": "application/hal+json"
-                       },
-                       "documentation": {
-                           "href": "https://docs.mollie.com/reference/v2/chargebacks-api/get-chargeback",
-                           "type": "text/html"
-                       }
+                        },
+                        "settlement": {
+                            "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN",
+                            "type": "application/hal+json"
+                        }
                    }
                }
                { },
@@ -115,13 +115,15 @@ Response
            ]
        },
        "_links": {
-           "self": {
+            "documentation": {
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/list-settlement-chargebacks",
+               "type": "text/html"
+            },
+            "self": {
                "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN/chargebacks",
                "type": "application/hal+json"
-           },
-           "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/list-chargebacks",
-               "type": "text/html"
-           }
+            },
+            "previous": null,
+            "next": null
        }
    }

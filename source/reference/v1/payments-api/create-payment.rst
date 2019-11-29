@@ -37,6 +37,9 @@ Parameters
 
      - The amount in EUR that you want to charge, e.g. 100.00 if you would want to charge €100.00.
 
+       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365-What-are-the-minimum-and-maximum-amounts-per-payment-method->`_
+       per payment method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v1/methods-api/get-method`.
+
        .. note:: If you want to charge other currencies, upgrade to the
                  :doc:`Create Payments v2 API</reference/v2/payments-api/create-payment>`. The v2 API fully supports
                  :doc:`multicurrency </payments/multicurrency>`.
@@ -469,7 +472,7 @@ specify which profile the payment belongs to. Organizations can have multiple pr
           :required: false
 
      - Adding an Application Fee allows you to charge the merchant for the payment and transfer
-       this to your own account. Set the ``applicationFee`` parameter as a small object with it’s own amount and
+       this to your own account. Set the ``applicationFee`` parameter as a small object with its own amount and
        description. The application fee amount must be at least about €1.00 less than the payment's ``amount``
        parameter.
 
