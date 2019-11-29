@@ -297,7 +297,6 @@ Response
        "status": "open",
        "isCancelable": false,
        "expiresAt": "2018-03-20T09:28:37+00:00",
-       "details": null,
        "profileId": "pfl_3RkSN1zuPE",
        "sequenceType": "oneoff",
        "details": {
@@ -311,7 +310,7 @@ Response
                "type": "application/json"
            },
            "checkout": {
-               "href": "https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c",
+               "href": "https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c",
                "type": "text/html"
            },
            "documentation": {
@@ -323,22 +322,26 @@ Response
 
 Make sure you use the API key that belongs to the same profile you used when initializing the ``Mollie`` object.
 
+It is possible an error occurs when creating the payment. See :doc:`handling-errors` on what to do in such cases.
 
 Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
 
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
 customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
-:doc:`Create Order API </reference/v2/orders-api/create-order>`.
+:doc:`/reference/v2/payments-api/create-payment` or :doc:`Create Order API </reference/v2/orders-api/create-order>`.
+Your customer can then authenticate him / herself with the card issuer. 
 
 .. code-block:: http
    :linenos:
 
    HTTP/1.1 303 See Other
    Date: Mon, 27 Jul 2019 12:28:53 GMT
-   Location: https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c
+   Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
+
+If is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle
+these cases.
 
 Browser support
 ---------------

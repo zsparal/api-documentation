@@ -5,7 +5,7 @@ flow from their desktop or laptop computer to their mobile device. This is the s
 
 QR codes also allow your customers to pay without requiring manual input leading to lower error rates.
 
-In most cases, this works by scanning a QR code during the payment using a dedicated app on a phone. For example,
+In most cases, this works by scanning a QR code during the payment process using a dedicated app on a phone. For example,
 iDEAL payments support a QR code that can be scanned using the iDEAL app or directly from within the banking app.
 The customer then completes the transaction from his or her mobile device.
 
