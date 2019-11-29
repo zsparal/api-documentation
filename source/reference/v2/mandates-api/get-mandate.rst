@@ -15,6 +15,9 @@ Get mandate
 Retrieve a mandate by its ID and its customer's ID. The mandate will either contain IBAN or credit card details,
 depending on the type of mandate.
 
+.. note::
+   Trying to retrieve a revoked mandate will result in a 410 exception.
+
 Parameters
 ----------
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the mandate's ID. For example
