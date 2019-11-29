@@ -308,7 +308,7 @@ Response
                "type": "application/json"
            },
            "checkout": {
-               "href": "https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c",
+               "href": "https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c",
                "type": "text/html"
            },
            "documentation": {
@@ -335,7 +335,7 @@ Your customer can then authenticate him / herself with the card issuer.
 
    HTTP/1.1 303 See Other
    Date: Mon, 27 Jul 2019 12:28:53 GMT
-   Location: https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c
+   Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
 
 If is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle

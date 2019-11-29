@@ -1,26 +1,23 @@
 Handling errors with Mollie Components
 ======================================
 
-With credit cards, several errors can happen during payment that are outside of your or Mollie's control, e.g. your
-customer has entered an incorrect CVV, has insufficient balance on his / her card or the issuing bank could decline the
-transaction.
+When paying with a credit card, several errors can occur during the payment process that are outside of your or
+Mollie's control, e.g. the shopper has entered an incorrect CVV, has insufficient balance on his / her card or the
+issuing bank could decline the transaction.
 
-In order to provide a good experience to your shopper when using Mollie Components, *handling errors* is of course
+In order to provide a good experience to the shopper when using Mollie Components, *handling errors* is of course
 essential.
 
-Should such an error occur, you should make your customer aware of the error so he / she can correct the problem and
-continue the checkout.
+Should an error occur, you should make the shopper aware of the error so he / she can correct the problem and continue
+the checkout.
 
-There are *two flows* to consider, depending on whether or not 3-D Secure authentication is necessary.
-3-D Secure (also known as `MasterCard SecureCore`, `Verified by VISA` or `American Express SafeKey`) is an additional
-step during payment aimed at reducing credit card fraud. It requires the card holder to authenticate him / herself
-with the card issuer during the payment.
+There are *two flows* to consider, depending on whether or not 3-D Secure [#f1]_ authentication is necessary.
 
-#. If **no 3-D Secure authentication is necessary**, an error will be returned when when calling the
-   :doc:`/reference/v2/payments-api/create-payment`.
+#. If **no 3-D Secure authentication is necessary** and an error occurs, an error response will immediately be returned
+   when when calling the :doc:`/reference/v2/payments-api/create-payment`.
    Should an error occur, then Mollie will not create a Payment.
 #. If **3-D Secure authentication is necessary**, Mollie will create a Payment and give you the ``_links.checkoutUrl``
-   where your customer can authenticate the payment. If any errors occur during or after authentication, they will be
+   where the shopper can authenticate the payment. If any errors occur during or after authentication, they will be
    part of the response when retrieving the payment via the :doc:`/reference/v2/payments-api/get-payment`.
 
 The need for 3-D Secure authentication is determined by various factors, such as the estimated fraud risk for the
@@ -33,7 +30,7 @@ Payments without 3-D Secure authentication
 If no 3-D Secure authentication is necessary, you will receive the error upon creating the payment.
 
 If the error is caused by the shopper, the response from the :doc:`/reference/v2/payments-api/create-payment` will
-contain and ``extra`` property with two additional keys:
+contain the ``extra`` property with two additional keys:
 
 .. list-table::
    :widths: auto
@@ -53,15 +50,15 @@ contain and ``extra`` property with two additional keys:
 
             - Only available for failed payments. Contains a failure reason code.
 
-              Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
-              ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card`` ``unknown_reason``
-              ``possible_fraud``
+              Possible values: ``authentication_failed`` ``invalid_card_number`` ``invalid_cvv``
+              ``invalid_card_holder_name`` ``card_expired`` ``invalid_card_type`` ``refused_by_issuer``
+              ``insufficient_funds`` ``inactive_card`` ``unknown_reason`` ``possible_fraud``
 
           * - ``failureMessage``
 
               .. type:: string
 
-            - A localized message that can be shown to your customer, depending on the ``failureReason``.
+            - A localized message that can be shown to the shopper, depending on the ``failureReason``.
 
               Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
@@ -95,7 +92,7 @@ Example Create Payment API error response
 Payments with 3-D Secure authentication
 ---------------------------------------
 
-If 3-D Secure authentication is necessary for the payment, your customer will first have to authenticate him / herself
+If 3-D Secure authentication is necessary for the payment, the shopper will first have to authenticate him / herself
 with his / her card issuer. Any errors that occur will be available to you in the response of the
 :doc:`/reference/v2/payments-api/get-payment` which you should call from your webhook.
 
@@ -123,15 +120,15 @@ The reason of the error will be available via the ``details`` object:
 
             - Only available for failed payments. Contains a failure reason code.
 
-              Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
-              ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card`` ``unknown_reason``
-              ``possible_fraud``
+              Possible values: ``authentication_failed`` ``invalid_card_number`` ``invalid_cvv``
+              ``invalid_card_holder_name`` ``card_expired`` ``invalid_card_type`` ``refused_by_issuer``
+              ``insufficient_funds`` ``inactive_card`` ``unknown_reason`` ``possible_fraud``
 
           * - ``failureMessage``
 
               .. type:: string
 
-            - A localized message that can be shown to your customer, depending on the ``failureReason``.
+            - A localized message that can be shown to the shopper, depending on the ``failureReason``.
 
               Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
@@ -182,3 +179,9 @@ Note that some fields have been omitted for the sake of brevity.
            }
        }
    }
+
+.. rubric:: Footnotes
+
+.. [#f1] 3-D Secure (also known as `MasterCard SecureCode`, `Verified by VISA` or `American Express SafeKey`) is an additional
+         step during payment aimed at reducing credit card fraud. It requires the card holder to authenticate him / herself
+         with the card issuer during the payment process.
