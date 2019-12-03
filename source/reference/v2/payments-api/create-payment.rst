@@ -56,7 +56,7 @@ Parameters
                  :required: true
 
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
-              amount of decimals and omit the thousands separator. Non-string values are not accepted. 
+              amount of decimals and omit the thousands separator. Non-string values are not accepted.
 
    * - ``description``
 
@@ -437,6 +437,24 @@ KBC/CBC Payment Button
        :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 
        Possible values: ``kbc`` ``cbc``
+
+Klarna Pay later./Slice it.
+"""""""""""""""""""""""""""
+.. note::
+    Klarna payments can only be created via the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+
+.. list-table::
+   :widths: auto
+
+   * - ``extraMerchantData``
+
+       .. type:: string
+          :required: false
+
+     - There is additional purchase information required for some industries. You can submit your
+       extra data in this field if you have this agreed with Klarna. This field should be a string
+       containing any of the allowed keys and sub objects described at the
+       `Klarna Developer Documentation <https://developers.klarna.com/api/#checkout-api-create-a-new-order>`_.
 
 .. _paypal-method-details:
 
