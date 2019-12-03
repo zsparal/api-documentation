@@ -3,13 +3,35 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+December 2019
+=============
+
+Tuesday, 3th
+------------
+
+- Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+
+Monday, 2nd
+-----------
+
+- The webhooks will now be called from different IP addresses. This should not cause any problems if you don't
+  check our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we
+  use to send webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+
 November 2019
 =============
 
-TBA
----
+Thursday, 28th
+--------------
 
-- Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+- We made the ``cardFingerprint`` field for Bancontact deprecated. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
+  for more information.
+
+Wednesday, 27th
+---------------
+
+- Added ``authentication_failed`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v2/payments-api/get-payment>` for Credit Card payments.
 
 Tuesday, 19th
 -------------

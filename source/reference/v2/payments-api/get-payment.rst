@@ -1,5 +1,5 @@
-Get payment
-===========
+Get Payment API
+===============
 .. api-name:: Payments API
    :version: 2
 
@@ -540,6 +540,10 @@ Bancontact
             - Only available if the payment is completed - Unique alphanumeric representation of card, usable for
               identifying returning customers.
 
+              .. warning:: This field is **deprecated** as of November 28th, 2019. The fingerprint is now unique per
+                           transaction what makes it not usefull anymore for identifying returning customers. Use
+                           the ``consumerAccount`` field instead.
+
           * - ``qrCode``
 
               .. type:: QR code object
@@ -771,9 +775,17 @@ Credit card
 
             - Only available for failed payments. Contains a failure reason code.
 
-              Possible values: ``invalid_card_number`` ``invalid_cvv`` ``invalid_card_holder_name`` ``card_expired``
-              ``invalid_card_type`` ``refused_by_issuer`` ``insufficient_funds`` ``inactive_card`` ``unknown_reason``
-              ``possible_fraud``
+              Possible values: ``authentication_failed``  ``card_expired`` ``inactive_card`` ``insufficient_funds``
+              ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type`` ``invalid_cvv``
+              ``possible_fraud`` ``refused_by_issuer`` ``unknown_reason``
+
+          * - ``failureMessage``
+
+              .. type:: string
+
+            - A localized message that can be shown to your customer, depending on the ``failureReason``.
+
+              Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
           * - ``wallet``
 

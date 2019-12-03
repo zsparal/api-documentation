@@ -60,9 +60,7 @@ Response
    {
        "resource": "settlement",
        "id": "next",
-       "reference": null,
        "createdAt": "2018-04-06T06:00:01.0Z",
-       "settledAt": null,
        "status": "open",
        "amount": {
            "currency": "EUR",
@@ -70,20 +68,20 @@ Response
        },
        "periods": {
            "2018": {
-               "4": {
+               "04": {
                    "revenue": [
                        {
                            "description": "iDEAL",
                            "method": "ideal",
                            "count": 6,
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "86.1000"
+                               "value": "86.1000",
+                               "currency": "EUR"
                            },
                            "amountVat": null,
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "86.1000"
+                               "value": "86.1000",
+                               "currency": "EUR"
                            }
                        },
                        {
@@ -91,13 +89,13 @@ Response
                            "method": "refund",
                            "count": 2,
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "-43.2000"
+                               "value": "-43.2000",
+                               "currency": "EUR"
                            },
                            "amountVat": null,
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "43.2000"
+                               "value": "43.2000",
+                               "currency": "EUR"
                            }
                        }
                    ],
@@ -108,22 +106,22 @@ Response
                            "count": 6,
                            "rate": {
                                "fixed": {
-                                   "currency": "EUR",
-                                   "value": "0.3500"
+                                   "value": "0.3500",
+                                   "currency": "EUR"
                                },
                                "percentage": null
                            },
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "2.1000"
+                               "value": "2.1000",
+                               "currency": "EUR"
                            },
                            "amountVat": {
-                               "currency": "EUR",
-                               "value": "0.4410"
+                               "value": "0.4410",
+                               "currency": "EUR"
                            },
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "2.5410"
+                               "value": "2.5410",
+                               "currency": "EUR"
                            }
                        },
                        {
@@ -132,22 +130,22 @@ Response
                            "count": 2,
                            "rate": {
                                "fixed": {
-                                   "currency": "EUR",
-                                   "value": "0.2500"
+                                   "value": "0.2500",
+                                   "currency": "EUR"
                                },
                                "percentage": null
                            },
                            "amountNet": {
-                               "currency": "EUR",
-                               "value": "0.5000"
+                               "value": "0.5000",
+                               "currency": "EUR"
                            },
                            "amountVat": {
-                               "currency": "EUR",
-                               "value": "0.1050"
+                               "value": "0.1050",
+                               "currency": "EUR"
                            },
                            "amountGross": {
-                               "currency": "EUR",
-                               "value": "0.6050"
+                               "value": "0.6050",
+                               "currency": "EUR"
                            }
                        }
                    ]

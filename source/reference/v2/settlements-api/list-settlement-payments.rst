@@ -97,16 +97,16 @@ Response
                    "settlementId": "stl_jDk30akdN",
                    "redirectUrl": "https://webshop.example.org/order/12345/",
                    "_links": {
-                       "checkout": {
-                           "href": "https://www.mollie.com/paymentscreen/issuer/select/ideal/7UhSN1zuXS",
-                           "type": "text/html"
-                       },
-                       "self": {
-                           "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
-                           "type": "application/hal+json"
-                       }
-                   }
-               },
+                        "self": {
+                            "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
+                            "type": "application/hal+json"
+                        },
+                        "settlement": {
+                            "href": "https://api.mollie.com/v2/settlements/stl_jDk30akdN",
+                            "type": "application/hal+json"
+                        }
+                    }
+                },
                { },
                { },
                { },
@@ -124,7 +124,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/payments-api/list-payments",
+               "href": "https://docs.mollie.com/reference/v2/settlements-api/list-settlement-payments",
                "type": "text/html"
            }
        }

@@ -62,7 +62,7 @@ Response
 
      - The date on which the settlement was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - ``settlementDatetime``
+   * - ``settledDatetime``
 
        .. type:: string
 
@@ -117,12 +117,11 @@ Response
 
                    - A description of the revenue subtotal.
 
-                 * - ``amount``
+                 * - ``method``
 
-                     .. type:: object
+                     .. type:: string
 
-                   - The received subtotal for this payment method, further divided in ``net`` (excludes VAT), ``vat``,
-                     and ``gross`` (includes VAT).
+                   - The payment method ID, if applicable.
 
                  * - ``count``
 
@@ -130,11 +129,12 @@ Response
 
                    - The number of payments received for this payment method.
 
-                 * - ``method``
+                 * - ``amount``
 
-                     .. type:: string
+                     .. type:: object
 
-                   - The payment method ID, if applicable.
+                   - The received subtotal for this payment method, further divided in ``net`` (excludes VAT), ``vat``,
+                     and ``gross`` (includes VAT).
 
           * - ``costs``
 
@@ -151,13 +151,11 @@ Response
                      .. type:: string
 
                    - A description of the subtotal.
+                 * - ``method``
 
-                 * - ``amount``
+                     .. type:: string
 
-                     .. type:: object
-
-                   - The paid costs for this payment method, further divided in ``net`` (excludes VAT), ``vat``, and
-                     ``gross`` (includes VAT).
+                   - The payment method ID, if applicable.
 
                  * - ``count``
 
@@ -171,11 +169,12 @@ Response
 
                    - The service rates, further divided into ``fixed`` and ``variable`` costs.
 
-                 * - ``method``
+                 * - ``amount``
 
-                     .. type:: string
+                     .. type:: object
 
-                   - The payment method ID, if applicable.
+                   - The paid costs for this payment method, further divided in ``net`` (excludes VAT), ``vat``, and
+                     ``gross`` (includes VAT).
 
    * - ``paymentIds``
 
@@ -310,6 +309,11 @@ Response
                }
            }
        },
+       "links": {
+           "payments": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/payments",
+           "refunds": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/refunds",
+           "chargebacks": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/chargebacks"
+       },
        "paymentIds": [
            "tr_PBHPvA2ViG",
            "tr_GAHivPBVP2",
@@ -321,10 +325,5 @@ Response
        "refundIds": [
            "re_PvGHiV2BPA",
            "re_APBiGPH2vV"
-       ],
-       "links": {
-           "payments": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/payments",
-           "refunds": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/refunds",
-           "chargebacks": "https://api.mollie.com/v1/settlements/stl_jDk30akdN/chargebacks"
-       }
+       ]
    }
