@@ -7,9 +7,10 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
+PYTHON         = python3
 SPHINXOPTS     = -W
 SPHINXPRODOPTS = -n -D html_file_suffix=''
-SPHINXBUILD    = python3 -msphinx
+SPHINXBUILD    = ${PYTHON} -msphinx
 SPHINXPROJ     = api-documentation
 SOURCEDIR      = source
 BUILDDIR       = build
@@ -42,7 +43,7 @@ start:
 	make html-reload & make css-reload & make js-reload
 
 install:
-	pip install --user -r requirements.txt --no-warn-script-location
+	${PYTHON} -mpip install --user -r requirements.txt --no-warn-script-location
 
 lint-js:
 	npm run lint:js
