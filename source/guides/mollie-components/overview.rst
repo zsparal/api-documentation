@@ -38,6 +38,8 @@ Follow these steps to implement Mollie Components in your checkout:
    :doc:`Create Order API </reference/v2/orders-api/create-order>` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
+Mollie has created `example implementations <https://github.com/mollie/components-examples>`_ you can use to get started.
+
 Add the Mollie Components Javascript library to your checkout
 -------------------------------------------------------------
 
