@@ -3,6 +3,10 @@ Styling Mollie Components
 
 :doc:`Mollie Components <overview>` can be fully styled to ensure a smooth blend-in with your checkout.
 
+Most of the styling should be applied to the ``.mollie-component`` container instead of passing styling to the 
+actual Component. See the `Components Examples repository <https://github.com/mollie/components-examples>`_ for 
+more info.
+
 Styling can be applied to Components in the three states ``base``, ``valid`` and ``invalid``:
 
 ``base``
@@ -14,7 +18,7 @@ Styling can be applied to Components in the three states ``base``, ``valid`` and
 ``invalid``
   The state of the Component when your customer entered invalid data, such as an expiry date in the past.
 
-For each of these there is an set of properties you can use.
+For each of these there is an set of properties you can use:
 
 * ``backgroundColor`` of type ``color``
 * ``color`` of type ``color``
@@ -22,17 +26,11 @@ For each of these there is an set of properties you can use.
 * ``fontWeight`` of type ``string|number``
 * ``letterSpacing`` of type ``number``
 * ``lineHeight`` of type ``number``
-* ``padding`` of type ``number number number number``
-* ``paddingBottom`` of type ``number``
-* ``paddingLeft`` of type ``number``
-* ``paddingRight`` of type ``number``
-* ``paddingTop`` of type ``number``
 * ``textAlign`` of type ``string``
 * ``textDecoration`` of type ``string``
 * ``textTransform`` of type ``string``
 
-Every property has one or more types. Multiple types are indicated by a ``|`` character. A property can also accept
-space separated input such as ``padding``. We don't allow ``URL`` , ``http``, ``https`` and ``www``.
+Every property has one or more types. Multiple types are indicated by a ``|`` character. We don’t allow ``URL`` , ``http``, ``https`` and ``www``.
 
 * ``string`` A valid string, spaces aren't allowed,
 * ``number`` A valid CSS number with an optional unit ``px``, ``em`` or ``rem``.
@@ -57,7 +55,6 @@ Javascript
         base: {
           color: '#eee',
           fontSize: '10px;',
-          padding: '10px 15px',
           '::placeholder' : {
             color: 'rgba(68, 68, 68, 0.2)',
           }
