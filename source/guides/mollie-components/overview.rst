@@ -1,9 +1,6 @@
 Mollie Components
 =================
 
-.. warning:: *Mollie Components* is currently in a closed beta. If you are interested in participating, reach out to
-             your account manager.
-
 *Mollie Components* is a set of Javascript APIs that allow you to add the fields needed for credit card holder data to
 your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
 Self-Assessment Questionnaire A)` compliant.
