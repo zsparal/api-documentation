@@ -172,6 +172,14 @@ Parameters
        .. note:: It is not posible to use Klarna Slice it or Klarna Pay later as method when your expiry date is more
                  than 28 days in the future, unless another maximum is agreed between the merchant and Klarna.
 
+   * - ``shopperCountryMustMatchBillingCountry``
+
+       .. type:: boolean
+          :required: false
+
+     - For digital goods, you must make sure to apply the VAT rate from your customer’s country in most jurisdictions.
+       Use this parameter to restrict the payment methods available to your customer to methods from the billing country only.
+
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
    Mollie and will contain the order number, your profile's name and your profile's website.

@@ -56,7 +56,7 @@ Parameters
                  :required: true
 
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
-              amount of decimals and omit the thousands separator. Non-string values are not accepted. 
+              amount of decimals and omit the thousands separator. Non-string values are not accepted.
 
    * - ``description``
 
@@ -180,6 +180,15 @@ Parameters
 
      - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
        may be supplied to indicate which of the consumer's accounts should be credited.
+
+   * - ``restrictPaymentMethodsToCountry``
+
+       .. type:: string
+          :required: false
+
+     - For digital goods in most jurisdictions, you must apply the VAT rate from your customer’s country.
+       Choose the VAT rates you have used for the order to ensure your customer’s country matches the VAT country.
+       Use this parameter to restrict the payment methods available to your customer to those from a single country.
 
 .. _payment-method-specific-parameters:
 

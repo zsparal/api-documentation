@@ -131,6 +131,13 @@ Response
 
      - The person and the address the order is billed to. See below.
 
+   * - ``shopperCountryMustMatchBillingCountry``
+
+       .. type:: boolean
+
+     - If set to true during order creation, we restrict the payment methods available to your customer
+       to methods from the billing country only.
+
    * - ``consumerDateOfBirth``
 
        .. type:: date
@@ -635,6 +642,8 @@ Response
             "familyName": "Skywalker",
             "email": "luke@skywalker.com"
         },
+        "shopperCountryMustMatchBillingCountry": false,
+        "consumerDateOfBirth": "1993-10-21",
         "orderNumber": "18475",
         "shippingAddress": {
             "organizationName": "Mollie B.V.",

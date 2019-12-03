@@ -289,6 +289,14 @@ Response
      - The customer's locale, either forced on creation by specifying the ``locale`` parameter, or detected
        by us during checkout. Will be a full locale, for example ``nl_NL``.
 
+   * - ``restrictPaymentMethodsToCountry``
+
+       .. type:: string
+          :required: false
+
+     - The country code you provided upon payment creation, to restrict the payment methods available to
+       your customer to methods from a single country only.
+
    * - ``countryCode``
 
        .. type:: string
@@ -1311,6 +1319,8 @@ Response
        },
        "status": "open",
        "isCancelable": false,
+       "locale": "nl_NL",
+       "restrictPaymentMethodsToCountry": "NL",
        "expiresAt": "2018-03-20T13:28:37+00:00",
        "details": null,
        "profileId": "pfl_QkEhN94Ba",
