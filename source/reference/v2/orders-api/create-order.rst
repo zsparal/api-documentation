@@ -394,8 +394,8 @@ parameters and we will apply them when your customer selects the relevant paymen
 All payment specific parameters must be passed in the ``payment`` object. The following payment specific parameters can
 be passed during order creation:
 
-* ``payment.cardToken``
 * ``payment.applePayPaymentToken``
+* ``payment.cardToken``
 * ``payment.consumerAccount``
 * ``payment.customerId``
 * ``payment.customerReference``
