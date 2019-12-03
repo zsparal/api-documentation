@@ -457,14 +457,13 @@ Klarna Pay later./Slice it.
 
    * - ``extraMerchantData``
 
-       .. type:: string
+       .. type:: object
           :required: false
 
      - There is additional purchase information required for some industries. You can submit your
-       extra data in this field if you have this agreed with Klarna. This field should be a string
+       extra data in this field if you have this agreed with Klarna. This field should be an object
        containing any of the allowed keys and sub objects described at the
-       `Klarna Developer Documentation <https://developers.klarna.com/api/#checkout-api-create-a-new-order>`_
-       serialised to JSON.
+       `Klarna Developer Documentation <https://developers.klarna.com/api/#checkout-api-create-a-new-order>`_.
 
 .. _paypal-method-details:
 
