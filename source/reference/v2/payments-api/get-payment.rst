@@ -289,7 +289,7 @@ Response
      - The customer's locale, either forced on creation by specifying the ``locale`` parameter, or detected
        by us during checkout. Will be a full locale, for example ``nl_NL``.
 
-   * - ``allowedShopperCountry``
+   * - ``restrictPaymentMethodsToCountry``
 
        .. type:: string
           :required: false
@@ -1312,7 +1312,7 @@ Response
        "status": "open",
        "isCancelable": false,
        "locale": "nl_NL",
-       "allowedShopperCountry": "NL",
+       "restrictPaymentMethodsToCountry": "NL",
        "expiresAt": "2018-03-20T13:28:37+00:00",
        "details": null,
        "profileId": "pfl_QkEhN94Ba",

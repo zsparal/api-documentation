@@ -181,7 +181,7 @@ Parameters
      - When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>`
        may be supplied to indicate which of the consumer's accounts should be credited.
 
-   * - ``allowedShopperCountry``
+   * - ``restrictPaymentMethodsToCountry``
 
        .. type:: string
           :required: false
