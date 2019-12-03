@@ -160,8 +160,12 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
      const { token, error } = await mollie.createToken();
 
      // Add token to the form
-     const tokenInput = document.getElementById("cardToken");
-     tokenInput.value = token;
+     const tokenInput = document.createElement('input');
+     tokenInput.setAttribute('type', 'hidden');
+     tokenInput.setAttribute('name', 'cardToken');
+     tokenInput.setAttribute('value', token);
+
+     form.appendChild(tokenInput);
 
      // Re-submit form to the server
      form.submit();
