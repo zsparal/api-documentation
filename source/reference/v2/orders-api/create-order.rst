@@ -399,6 +399,7 @@ be passed during order creation:
 * ``payment.consumerAccount``
 * ``payment.customerId``
 * ``payment.customerReference``
+* ``payment.extraMerchantData``
 * ``payment.issuer``
 * ``payment.mandateId``
 * ``payment.sequenceType``
