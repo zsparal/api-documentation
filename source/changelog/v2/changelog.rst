@@ -11,13 +11,6 @@ Tuesday, 3rd
 
 - Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
 - Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API</reference/v2/orders-api/create-order>`.
-
-December 2019
-=============
-
-Tuesday, 3th
-------------
-
 - Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
 
 Monday, 2nd
