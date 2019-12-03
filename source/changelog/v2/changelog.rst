@@ -12,6 +12,21 @@ Tuesday, 3rd
 - Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
 - Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API</reference/v2/orders-api/create-order>`.
 
+December 2019
+=============
+
+Tuesday, 3th
+------------
+
+- Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+
+Monday, 2nd
+-----------
+
+- The webhooks will now be called from different IP addresses. This should not cause any problems if you don't
+  check our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we
+  use to send webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+
 November 2019
 =============
 

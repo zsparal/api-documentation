@@ -1,5 +1,5 @@
-Create payment
-==============
+Create Payment API
+==================
 .. api-name:: Payments API
    :version: 2
 

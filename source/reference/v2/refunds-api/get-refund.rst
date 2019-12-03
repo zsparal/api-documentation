@@ -18,6 +18,10 @@ Retrieve a single :doc:`refund </payments/refunds>` by its ID. Note the original
 If you do not know the original payment's ID, you can use the
 :doc:`/reference/v2/refunds-api/list-refunds`.
 
+.. note::
+    Trying to retrieve a canceled refund will result in a 404 exception.
+
+
 Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the refund's ID. For example:

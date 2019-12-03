@@ -8,6 +8,8 @@ Mollie Components
 your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
 Self-Assessment Questionnaire A)` compliant.
 
+.. figure:: ../images/mollie-components-preview@2x.jpg
+
 At a high level, it works by using a Javascript API to add fields to your checkout that your customer will use to enter
 their credit card details, such as their card number.
 
@@ -25,7 +27,7 @@ Implementation steps
 
 Follow these steps to implement Mollie Components in your checkout:
 
-.. figure:: ../images/mollie-components@2x.png
+.. figure:: ../images/mollie-components-flow@2x.png
 
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
@@ -54,7 +56,6 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
         <title>My Checkout</title>
       </head>
       <body>
-        <!-- Your HTML  --->
         <script src="https://js.mollie.com/v1/mollie.js"></script>
       </body>
     </html>
@@ -87,6 +88,25 @@ After initializing the Mollie object, you should create the four card holder dat
 :ref:`components-mollie-create-component` function and mount them in your checkout using the
 :ref:`components-mollie-component-mount` function:
 
+.. code-block:: html
+   :linenos:
+
+   <form>
+     <div id="card-holder"></div>
+     <div id="card-holder-error"></div>
+
+     <div id="card-number"></div>
+     <div id="card-number-error"></div>
+
+     <div id="expiry-date"></div>
+     <div id="expiry-date-error"></div>
+
+     <div id="verification-code"></div>
+     <div id="verification-code-error"></div>
+
+     <button type="button">Pay</button>
+   </form>
+
 .. code-block:: js
    :linenos:
 
@@ -104,6 +124,27 @@ After initializing the Mollie object, you should create the four card holder dat
 
 This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
 see :doc:`styling`. 
+
+Handling errors
+---------------
+
+Add a change event listener to each component to listen for errors. Displaying the error is up to you. The example below
+assumes an empty element in which the error can be rendered.
+
+Errors will be localized according to the locale defined when initializing Mollie Components.
+
+.. code-block:: js
+   :linenos:
+
+   var cardNumberError = document.querySelector('#card-number-error');
+
+   cardNumber.addEventListener('change', event => {
+     if (event.error && event.touched) {
+       cardNumberError.textContent = event.error;
+     } else {
+       cardNumberError.textContent = '';
+     }
+   });
 
 Add a submit event listener to your form
 ----------------------------------------
@@ -256,7 +297,6 @@ Response
        "status": "open",
        "isCancelable": false,
        "expiresAt": "2018-03-20T09:28:37+00:00",
-       "details": null,
        "profileId": "pfl_3RkSN1zuPE",
        "sequenceType": "oneoff",
        "details": {
@@ -270,7 +310,7 @@ Response
                "type": "application/json"
            },
            "checkout": {
-               "href": "https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c",
+               "href": "https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c",
                "type": "text/html"
            },
            "documentation": {
@@ -282,22 +322,26 @@ Response
 
 Make sure you use the API key that belongs to the same profile you used when initializing the ``Mollie`` object.
 
+It is possible an error occurs when creating the payment. See :doc:`handling-errors` on what to do in such cases.
 
 Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
 
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
 customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
-:doc:`Create Order API </reference/v2/orders-api/create-order>`.
+:doc:`/reference/v2/payments-api/create-payment` or :doc:`Create Order API </reference/v2/orders-api/create-order>`.
+Your customer can then authenticate him / herself with the card issuer. 
 
 .. code-block:: http
    :linenos:
 
    HTTP/1.1 303 See Other
    Date: Mon, 27 Jul 2019 12:28:53 GMT
-   Location: https://pay.mollie.com/processing/b47ef2ce1d3bea2ddadf3895080d1d4c
+   Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
+
+If is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle
+these cases.
 
 Browser support
 ---------------
