@@ -34,7 +34,7 @@ Every property has one or more types. Multiple types are indicated by a ``|`` ch
 
 * ``string`` A valid string, spaces aren't allowed,
 * ``number`` A valid CSS number with an optional unit ``px``, ``em`` or ``rem``.
-* ``color`` We accept colors as ``#nnn``, ``#nnnnnn``, ``rgb(a)``, ``hsl(a)`` and ``transparent``,
+* ``color`` We accept colors as ``#f00``, ``#ff0000``, ``rgb(a)``, ``hsl(a)`` and ``transparent``,
 
 We allow the following pseudo-classes. These will be autoprefixed and can be nested with the above listed properties.
 
