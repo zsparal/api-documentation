@@ -75,7 +75,7 @@ an object that you can use for creating the four Components your customer will u
 .. code-block:: js
    :linenos:
 
-   var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL' });
+   var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL', testmode: false });
 
 .. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
           context. The Profile Id starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
