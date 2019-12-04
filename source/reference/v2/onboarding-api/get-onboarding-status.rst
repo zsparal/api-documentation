@@ -148,7 +148,7 @@ Response
                "href": "https://api.mollie.com/v2/onboarding/me",
                "type": "application/hal+json"
            },
-           "onboarding": {
+           "dashboard": {
                "href": "https://www.mollie.com/dashboard/onboarding",
                "type": "text/html"
            },
