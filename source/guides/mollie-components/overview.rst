@@ -75,7 +75,7 @@ an object that you can use for creating the four Components your customer will u
 .. code-block:: js
    :linenos:
 
-   var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL' });
+   var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL', testmode: false });
 
 .. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
           context. The Profile Id starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
@@ -122,7 +122,7 @@ After initializing the Mollie object, you should create the four card holder dat
    verificationCode.mount('#verification-code');
 
 This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
-see :doc:`styling`. 
+see :doc:`styling`.
 
 Handling errors
 ---------------
@@ -333,7 +333,7 @@ Redirect the shopper to the 3-D Secure authentication page
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
 customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
 :doc:`/reference/v2/payments-api/create-payment` or :doc:`Create Order API </reference/v2/orders-api/create-order>`.
-Your customer can then authenticate him / herself with the card issuer. 
+Your customer can then authenticate him / herself with the card issuer.
 
 .. code-block:: http
    :linenos:
