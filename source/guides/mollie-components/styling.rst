@@ -58,7 +58,7 @@ Javascript
           '::placeholder' : {
             color: 'rgba(68, 68, 68, 0.2)',
           }
-        }
+        },
         valid: {
           color: '#090',
         }
