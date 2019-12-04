@@ -46,7 +46,7 @@ Mollie(profileId[, options])
               .. type:: boolean
                  :required: false
 
-            - Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix e.g. `tkn_123abctest`. 
+            - Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix e.g. `tkn_123abctest`.
 
 
 .. _components-mollie-create-token:

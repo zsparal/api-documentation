@@ -3,8 +3,8 @@ Styling Mollie Components
 
 :doc:`Mollie Components <overview>` can be fully styled to ensure a smooth blend-in with your checkout.
 
-Most of the styling should be applied to the ``.mollie-component`` container instead of passing styling to the 
-actual Component. See the `Components Examples repository <https://github.com/mollie/components-examples>`_ for 
+Most of the styling should be applied to the ``.mollie-component`` container instead of passing styling to the
+actual Component. See the `Components Examples repository <https://github.com/mollie/components-examples>`_ for
 more info.
 
 Styling can be applied to Components in the three states ``base``, ``valid`` and ``invalid``:
@@ -34,7 +34,7 @@ Every property has one or more types. Multiple types are indicated by a ``|`` ch
 
 * ``string`` A valid string, spaces aren't allowed,
 * ``number`` A valid CSS number with an optional unit ``px``, ``em`` or ``rem``.
-* ``color`` We accept colors as ``#nnn``, ``#nnnnnn``, ``rgb(a)``, ``hsl(a)`` and ``transparent``,
+* ``color`` We accept colors as ``#f00``, ``#ff0000``, ``rgb(a)``, ``hsl(a)`` and ``transparent``,
 
 We allow the following pseudo-classes. These will be autoprefixed and can be nested with the above listed properties.
 
@@ -58,7 +58,7 @@ Javascript
           '::placeholder' : {
             color: 'rgba(68, 68, 68, 0.2)',
           }
-        }
+        },
         valid: {
           color: '#090',
         }
