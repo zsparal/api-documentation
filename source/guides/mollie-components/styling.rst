@@ -3,8 +3,8 @@ Styling Mollie Components
 
 :doc:`Mollie Components <overview>` can be fully styled to ensure a smooth blend-in with your checkout.
 
-Most of the styling should be applied to the ``.mollie-component`` container instead of passing styling to the 
-actual Component. See the `Components Examples repository <https://github.com/mollie/components-examples>`_ for 
+Most of the styling should be applied to the ``.mollie-component`` container instead of passing styling to the
+actual Component. See the `Components Examples repository <https://github.com/mollie/components-examples>`_ for
 more info.
 
 Styling can be applied to Components in the three states ``base``, ``valid`` and ``invalid``:
