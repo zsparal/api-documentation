@@ -61,6 +61,14 @@
   text-align: right;
 }
 
+.rst-content .section table > tbody > tr > td.right-align {
+  text-align: right !important;
+}
+
+.rst-content .section table > tbody > tr > td.left-align {
+  text-align: left !important;
+}
+
 .rst-content .section table > tbody > tr > td:first-child p {
   margin-bottom: 0;
 }

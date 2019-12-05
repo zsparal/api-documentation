@@ -21,7 +21,7 @@ clean:
 node_modules/.bin/parcel: package-lock.json
 	npm install --no-optional --no-audit
 
-source/_static/style.css: source/theme/styles/main.scss node_modules/.bin/parcel
+source/_static/style.css: $(wildcard source/theme/styles/**/*) node_modules/.bin/parcel
 	node_modules/.bin/parcel build source/theme/styles/main.scss --out-dir source/_static --out-file style --no-source-maps --detailed-report
 
 source/_static/index.js: source/theme/js/index.js node_modules/.bin/parcel
