@@ -159,6 +159,11 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
 
      const { token, error } = await mollie.createToken();
 
+     if (error) {
+       // Something wrong happened while creating the token. Handle this situation gracefully.
+       return;
+     }
+
      // Add token to the form
      const tokenInput = document.createElement('input');
      tokenInput.setAttribute('type', 'hidden');
@@ -167,7 +172,7 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
 
      form.appendChild(tokenInput);
 
-     // Re-submit form to the server
+     // Submit form to the server
      form.submit();
    });
 
