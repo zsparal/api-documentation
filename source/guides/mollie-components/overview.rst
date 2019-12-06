@@ -186,6 +186,8 @@ On your back end, you will receive the ``cardToken``. You need to pass this when
 Alternatively, you can use the :doc:`Create Order API </reference/v2/orders-api/create-order>`. and pass the card token
 via the ``payment.cardToken`` parameter.
 
+The ``cardToken`` is valid for 1 hour.
+
 Example
 ^^^^^^^
 .. code-block-selector::
