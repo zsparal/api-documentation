@@ -20,6 +20,7 @@ Card numbers for testing
 You can use these cards for testing, with any CVV and expiry date.
 
 .. table::
+   :header-alignment: left right right
    :column-alignment: left right right
 
    +------------------+------------------------------------+--------------------------------------------+
@@ -41,6 +42,7 @@ This can be done by passing `magic amounts` when creating the payment. Pass one 
 condition in test mode:
 
 .. table::
+   :header-alignment: left right
    :column-alignment: left right
 
    +------------------------------+--------------+
