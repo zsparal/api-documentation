@@ -22,7 +22,7 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
-Please note that even though both parameters are optional, at least one of them needs to be provided
+Please note that even though all parameters are optional, at least one of them needs to be provided
 in the request.
 
 .. list-table::
