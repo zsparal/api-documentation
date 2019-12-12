@@ -1,5 +1,5 @@
 .DEFAULT_GOAL := html
-.PHONY: help start install clean css-reload js-reload html-reload lint-js verify Makefile
+.PHONY: help start install clean css-reload html html-only html-production html-reload js-reload lint-js verify Makefile
 
 # Minimal makefile for Sphinx documentation
 #
@@ -37,7 +37,7 @@ js-reload:
 	@./node_modules/.bin/parcel source/theme/js/index.js --out-dir build/_static --out-file index --no-hmr --port 8002
 
 html-reload:
-	sphinx-autobuild -b html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
+	${PYTHON} -msphinx-autobuild -b html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 start:
 	make html-reload & make css-reload & make js-reload
@@ -57,14 +57,14 @@ verify:
 # Catch-all target: route all unknown targets to Sphinx using the new
 # "make mode" option. ${O} is meant as a shortcut for ${SPHINXOPTS}.
 html: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
-	@${SPHINXBUILD} -M $@ "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} -j auto ${O}
+	$(MAKE) html-only
 
 .PHONY: html-only
 html-only: verify
-	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
+	${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${O}
 
 html-production: Makefile source/_static/style.css source/_static/index.js source/_static/gtm.js verify
-	@${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}
+	${SPHINXBUILD} -M html "${SOURCEDIR}" "${BUILDDIR}" ${SPHINXOPTS} ${SPHINXPRODOPTS} ${O}
 	# Go thru all the files, and replace the snippet with the google tag manager code
 	@LC_CTYPE=C LANG=C find build/ -type f -name '*' -exec sed -i.bak 's/<!-- GOOGLE_TAG_MANAGER -->/<script type=\"text\/javascript\" src=\"\/_static\/gtm.js\" async><\/script>/g' {} \;
 	# Go thru all the files, and replace the paths from relative to an absolute CDN path

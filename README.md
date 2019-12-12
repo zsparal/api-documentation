@@ -13,8 +13,10 @@ format) may be found at https://docs.mollie.com.
 
 We take pull requests on our documentation as well, if you think that something can be improved please open a PR.
 
-The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). All
-documentation should be written in US English.
+The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). 
+Additionally we use a [Sphinx extension](https://cloud-sptheme.readthedocs.io/en/latest/lib/cloud_sptheme.ext.table_styling.html#module-cloud_sptheme.ext.table_styling) to help format tables.
+
+All documentation should be written in US English.
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
 some syntax highlighting.
