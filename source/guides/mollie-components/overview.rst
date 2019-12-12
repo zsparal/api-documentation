@@ -343,7 +343,7 @@ Your customer can then authenticate him / herself with the card issuer.
    Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
 
-If is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle
+It is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle
 these cases.
 
 Browser support

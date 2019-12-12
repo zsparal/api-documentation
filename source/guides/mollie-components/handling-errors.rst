@@ -24,7 +24,7 @@ The need for 3-D Secure authentication is determined by various factors, such as
 payment and any agreements between you and Mollie. In the general case, 3-D Secure authentication will be necessary.
 However, you should always implement both flows.
 
-In test mode, error conditions can be triggered :doc:`using magic amounts <testing>`.
+When creating a test mode payment, failure conditions can be triggered :doc:`using magic amounts <testing>`.
 
 Payments without 3-D Secure authentication
 ------------------------------------------
