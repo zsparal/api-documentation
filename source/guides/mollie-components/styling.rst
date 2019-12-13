@@ -54,7 +54,7 @@ Javascript
       styles : {
         base: {
           color: '#eee',
-          fontSize: '10px;',
+          fontSize: '10px',
           '::placeholder' : {
             color: 'rgba(68, 68, 68, 0.2)',
           }
