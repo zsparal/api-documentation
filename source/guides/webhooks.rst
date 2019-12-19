@@ -94,9 +94,9 @@ get a ``200 OK`` response (which is after 26 hours), we will stop trying.
 We use the following intervals between attempts while trying to call your webhook:
 
 +--------------+-----------------------------------+---------------------------------------------------------------------------+
-|**Attempt**   |**Interval**                       |**Time after original call (HH:mm)**                                       |
+|**Attempt**   |**Interval**                       |**Time after status change (HH:mm)**                                       |
 +--------------+-----------------------------------+---------------------------------------------------------------------------+
-|1\ :sup:`st`  |Immediatly after original call     |00:00                                                                      |
+|1\ :sup:`st`  |Immediately after status change    |00:00                                                                      |
 +--------------+-----------------------------------+---------------------------------------------------------------------------+
 |2\ :sup:`nd`  |1 minute                           |00:01                                                                      |
 +--------------+-----------------------------------+---------------------------------------------------------------------------+
