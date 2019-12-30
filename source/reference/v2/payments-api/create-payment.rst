@@ -579,7 +579,17 @@ paysafecard
        .. type:: string
           :required: false
 
-     - Used for consumer identification. For example, you could use the consumer's IP address.
+     - Used for consumer identification. Use the following guidelines to create your ``customerReference``:
+          * Has to be unique per shopper
+          * Has to remain the same for one shopper
+          * Should be as disconnected from personal data as possible
+          * Must not contain customer sensitive data
+          * Must not contain the timestamp
+          * Must not contain the IP address
+
+        Due to data privacy regulations, make sure not to use any personal identifiable information in this parameter.
+
+        If not provided, Mollie will send a hashed version of the shopper IP address.
 
 Przelewy24
 """"""""""
