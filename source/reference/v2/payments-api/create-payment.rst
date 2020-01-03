@@ -463,7 +463,7 @@ Klarna Pay later. / Slice it.
      - For some industries, additional purchase information can be sent to Klarna to increase the authorization rate.
        You can submit your extra data in this field if you have agreed upon this with Klarna. This field should be an
        object containing any of the allowed keys and sub objects described at the
-       `Klarna Developer Documentation <https://developers.klarna.com/api/#checkout-api__create-a-new-orderattachment__body>`_
+       `Klarna Developer Documentation <https://developers.klarna.com/api/#payments-api__create-a-new-credit-sessionattachment__body>`_
        under ``attachment.body``.
 
        Note that Klarna needs to do some work to make sure this information is incorporated in their risk decisions, so
