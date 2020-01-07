@@ -190,6 +190,8 @@ Parameters
        Choose the VAT rates you have used for the order to ensure your customer’s country matches the VAT country.
        Use this parameter to restrict the payment methods available to your customer to those from a single country.
 
+       If available the credit card method will still be offered, but only card from the allowed country are accepted. 
+
 .. _payment-method-specific-parameters:
 
 Payment method specific parameters
