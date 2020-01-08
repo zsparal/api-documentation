@@ -294,8 +294,9 @@ Response
        .. type:: string
           :required: false
 
-     - The country code you provided upon payment creation, to restrict the payment methods available to
-       your customer to methods from a single country only.
+     - |
+       | The country code you provided upon payment creation, to restrict the payment methods available to
+         your customer to methods from a single country only.
 
    * - ``countryCode``
 
