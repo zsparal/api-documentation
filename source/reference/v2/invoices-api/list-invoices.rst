@@ -1,5 +1,5 @@
-List invoices
-=============
+List invoices API
+=================
 .. api-name:: Invoices API
    :version: 2
 
