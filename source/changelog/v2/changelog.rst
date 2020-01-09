@@ -3,6 +3,18 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+January 2020
+============
+
+Thursday, 9th
+-------------
+
+- The ``self.href``, ``next.href`` and ``previous.href`` links now correctly contain all query parameters used when
+  performing the request. For example, the ``year`` query parameter will now be included in the ``next`` and ``previous``
+  links for the response of the :doc:`/reference/v2/invoices-api/list-invoices` if it was in the initial request.
+- Values for ``_links.nnnn.href`` elements now correctly include the ``?testmode=true`` query parameter if this is
+  necessary to be able to follow the link. This affects OAuth and Application Token authenticated requests only.
+
 December 2019
 =============
 
