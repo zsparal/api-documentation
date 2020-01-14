@@ -51,16 +51,40 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals. Non-string values are not accepted.
 
-   * - ``times``
+   * - ``description``
 
-       .. type:: integer
+       .. type:: string
           :required: false
 
-     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription
-       has been charged.
+     - A description unique per subscription. This will be included in the payment description.
+
+   * - ``interval``
+
+       .. type:: string
+          :required: false
+
+     - Interval to wait between charges, for example ``1 month`` or ``14 days``.
+
+       Possible values: ``... months`` ``... weeks`` ``... days``
 
        .. note::
-          Subscriptions in test mode will be canceled automatically after 10 charges.
+          The new interval will be calculated from the last charge date.
+
+   * - ``mandateId``
+
+       .. type:: string
+          :required: false
+
+     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, it
+       will be changed to ``null`` when setting this parameter.
+
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, and we will save the data alongside the subscription. Whenever you fetch the
+       subscription with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
    * - ``startDate``
 
@@ -73,20 +97,16 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
        .. note::
           A subscription's start date cannot be changed if it has already been charged.
 
-   * - ``description``
+   * - ``times``
 
-       .. type:: string
+       .. type:: integer
           :required: false
 
-     - A description unique per subscription. This will be included in the payment description.
+     - Total number of charges for the subscription to complete. Can not be less than number of times that subscription
+       has been charged.
 
-   * - ``mandateId``
-
-       .. type:: string
-          :required: false
-
-     - Use this parameter to set a specific mandate for all subscription payments. If you set a ``method`` before, it
-       will be changed to ``null`` when setting this parameter.
+       .. note::
+          Subscriptions in test mode will be canceled automatically after 10 charges.
 
    * - ``webhookUrl``
 
@@ -94,14 +114,6 @@ example: ``/v2/customers/cst_5a2pPrwaWy/subscriptions/sub_8EjeBVgtEn``.
           :required: false
 
      - Use this parameter to set a webhook URL for all subscription payments.
-
-   * - ``metadata``
-
-       .. type:: mixed
-          :required: false
-
-     - Provide any data you like, and we will save the data alongside the subscription. Whenever you fetch the
-       subscription with our API, we'll also include the metadata. You can use up to 1kB of JSON.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
