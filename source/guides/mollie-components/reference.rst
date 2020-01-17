@@ -174,7 +174,7 @@ Adds the component to the DOM, meaning it will become visible for the user from 
 .. code-block:: HTML
    :linenos:
 
-    <label for="card" >Card label</div>
+    <label for="card" >Card label</label>
     <div id="card"></div>
 
 .. list-table::
