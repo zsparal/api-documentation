@@ -6,8 +6,8 @@ changes are documented here.
 January 2020
 ============
 
-Wednesday, 15th
----------------
+Friday, 17th
+------------
 
 - Added the possibility to also update the ``interval`` of a subscription via the
   :doc:`Update Subscription API </reference/v2/subscriptions-api/update-subscription>`
