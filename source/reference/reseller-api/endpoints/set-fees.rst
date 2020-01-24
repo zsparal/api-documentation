@@ -83,8 +83,10 @@ parameters:
 
        **Only applicable to credit card:**
 
-       * ``region_1`` for adjusting rates for Region 1 (Intra EU consumer cards to merchants within the EU)
-       * ``region_2`` for adjusting rates for Region 2 (Other cards)
+       * ``region_1`` for adjusting rates for Mastercard / VISA Intra EEA consumer cards for merchants within the EEA.
+       * ``region_2`` for adjusting rates for other Mastercard / VISA cards.
+
+       Fees for other cards such as American Express cannot be set via this API.
 
        **Only applicable to SOFORT Banking:**
 
