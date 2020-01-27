@@ -6,6 +6,12 @@ changes are documented here.
 January 2020
 ============
 
+TBD
+---
+
+- Added ``restrictPaymentMethodsToCountry`` to the :doc:`Update Payment endpoint </reference/v2/payments-api/update-payment>`
+  in the Payments API.
+
 Friday, 17th
 ------------
 
