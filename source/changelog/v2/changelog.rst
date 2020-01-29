@@ -11,6 +11,8 @@ Monday, 27th
 
 - Added ``restrictPaymentMethodsToCountry`` to the :doc:`Update Payment endpoint </reference/v2/payments-api/update-payment>`
   in the Payments API.
+  
+- Added support for IDNs (internationalized domain names) for webhook and redirect URLs in :doc:`Payments API</reference/v2/payments-api/create-payment>`.
 
 Friday, 17th
 ------------
