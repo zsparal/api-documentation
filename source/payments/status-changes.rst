@@ -53,7 +53,7 @@ Please look at the below diagram. It tells you exactly when to expect what statu
 
 .. image:: images/payment-status-flow@2x.png
 
-.. note:: The payment status for SEPA Direct Debit payments could also be lead from ``pending`` to ``failed``.
+.. note:: The payment status for SEPA Direct Debit payments could also change from ``pending`` to ``failed``.
 
 When does a payment expire?
 ---------------------------
