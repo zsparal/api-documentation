@@ -142,6 +142,25 @@ Example
         'metadata': {'order_id': '98765'}
       })
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      payment = Mollie::Payment.update(
+        'tr_7UhSN1zuXS',
+        description: 'Order #98765',
+        redirect_url: 'https://example.org/webshop/order/98765/',
+        webhook_url: 'https://example.org/webshop/payments/webhook/',
+        metadata: {
+          order_id: '98765'
+        }
+      )
+
 Response
 ^^^^^^^^
 .. code-block:: http

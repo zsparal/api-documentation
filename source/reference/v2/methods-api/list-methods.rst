@@ -243,6 +243,9 @@ Example
       # Methods for the Orders API
       methods = Mollie::Method.all(resource: 'orders')
 
+      # Methods including pricing
+      methods = Mollie::Method.all(include: 'pricing')
+
    .. code-block:: javascript
       :linenos:
 
