@@ -96,6 +96,12 @@ For the full list of fields, see the
             - The API resource URL where the organization's
               :doc:`settlements </reference/v2/settlements-api/list-settlements>` can be retrieved.
 
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - The URL to the organization dashboard
+
           * - ``documentation``
 
               .. type:: URL object
@@ -184,6 +190,10 @@ Response
             "settlements": {
                 "href": "https://api.mollie.com/v2/settlements",
                 "type": "application/hal+json"
+            },
+            "dashboard": {
+                "href": "https://mollie.com/dashboard/org_12345678",
+                "type": "text/html"
             },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/organizations-api/current-organization",

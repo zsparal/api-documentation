@@ -6,6 +6,11 @@ changes are documented here.
 February 2020
 =============
 
+Friday, 7th
+------------
+
+- Added dashboard URL on :doc:`Get organization endpoint </reference/v2/organizations-api/current-organization>`
+
 Tuesday, 4th
 ------------
 
