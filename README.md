@@ -23,7 +23,7 @@ some syntax highlighting.
 
 ### Prerequisites
 
-- `python3` (must be in your `$PATH`)
+- `python3` (must be in your `$PATH`, use `brew install python3`)
 - [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/).
 - Node > 12.x. Installation using the [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended. 
 

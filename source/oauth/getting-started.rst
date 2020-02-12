@@ -5,7 +5,7 @@ Dashboard <https://www.mollie.com/dashboard/developers/applications>`_. You will
 *Client Secret*, both of which should be kept secret. These credentials can be used to:
 
 * Redirect users to your app's authorization form (*Client ID*)
-* Exchange authorization codes for access tokens (*Client ID* & *Client Secret*)
+* Exchange auth codes for access tokens (*Client ID* & *Client Secret*)
 * Renew your access tokens
 * Deauthorize users from your app (*Client ID* & *Client Secret*)
 
