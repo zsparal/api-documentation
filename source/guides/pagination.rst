@@ -7,6 +7,8 @@ website to process. The maximum number of objects returned is 250.
 For this reason the Mollie API only returns a subset of the requested set of objects. In other words, the Mollie API
 chops the result of a certain API method call into pages you're able to programmatically scroll through.
 
+.. _pagination-in-v2:
+
 Pagination in v2 API endpoints
 ------------------------------
 The ``v2`` API endpoints use the so-called cursor pagination method. In short, this ensures the objects in a page do not

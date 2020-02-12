@@ -29,7 +29,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbj
        .. type:: string
           :required: false
 
-     - Offset the result set to the refund with this ID. The refund with this ID is included in the result
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the refund with this ID. The refund with this ID is included in the result
        set as well.
 
    * - ``limit``

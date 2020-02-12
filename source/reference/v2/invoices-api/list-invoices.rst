@@ -41,7 +41,7 @@ Parameters
        .. type:: integer
           :required: false
 
-     - Offset the result set to the invoice with this ID. The invoice with this ID is included in the result
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the invoice with this ID. The invoice with this ID is included in the result
        set as well.
 
    * - ``limit``

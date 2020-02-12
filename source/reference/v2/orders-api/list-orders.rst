@@ -26,7 +26,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - Offset the result set to the order with this ID. The order with this ID is included in the
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the order with this ID. The order with this ID is included in the
        result set as well.
 
    * - ``limit``

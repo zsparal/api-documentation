@@ -26,7 +26,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
        .. type:: string
           :required: false
 
-     - Offset the result set to the subscription with this ID. The subscription with this ID is included
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the subscription with this ID. The subscription with this ID is included
        in the result set as well.
 
    * - ``limit``

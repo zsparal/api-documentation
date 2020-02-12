@@ -27,7 +27,7 @@ and by the subscription's ID, for example ``sub_8JfGzs6v3K``.
        .. type:: string
           :required: false
 
-     - Offset the result set to the payment with this ID. The payment with this ID is included
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the payment with this ID. The payment with this ID is included
        in the result set as well.
 
    * - ``limit``
