@@ -6,6 +6,11 @@ changes are documented here.
 February 2020
 =============
 
+Thursday, 20th
+--------------
+
+- Added ``shippingAddress`` to the PayPal payment details. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
+
 Friday, 7th
 ------------
 

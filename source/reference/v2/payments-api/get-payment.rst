@@ -1045,6 +1045,52 @@ PayPal
 
               This parameter is omitted if we did not received the information from PayPal.
 
+          * - ``shippingAddress``
+
+              .. type:: address object
+                 :required: false
+
+            - The shipping address details.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - ``streetAndNumber``
+
+                     .. type:: string
+                        :required: false
+
+                   - The street and street number of the shipping address.
+
+                 * - ``postalCode``
+
+                     .. type:: string
+                        :required: false
+
+                   - The postal code of the shipping address.
+
+                 * - ``city``
+
+                     .. type:: string
+                        :required: false
+
+                   - The city of the shipping address.
+
+                 * - ``region``
+
+                     .. type:: string
+                        :required: false
+
+                   - The region of the shipping address.
+
+                 * - ``country``
+
+                     .. type:: string
+                        :required: false
+
+                   - The country of the shipping address in
+                     `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+
           * - ``paypalFee``
 
               .. type:: amount object
