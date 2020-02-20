@@ -1060,30 +1060,28 @@ PayPal
                      .. type:: string
                         :required: false
 
-                   - The street and street number of the shipping address. The maximum character length is 128.
+                   - The street and street number of the shipping address.
 
                  * - ``postalCode``
 
                      .. type:: string
                         :required: false
 
-                   - The postal code of the shipping address. The maximum character length is 20.
+                   - The postal code of the shipping address.
 
                  * - ``city``
 
                      .. type:: string
                         :required: false
 
-                   - The city of the shipping address. The maximum character length is 100.
+                   - The city of the shipping address.
 
                  * - ``region``
 
                      .. type:: string
                         :required: false
 
-                   - The region of the shipping address. The maximum character length is 100.
-                     **Please note**: this field is required if ``country`` is one of the following countries:
-                     ``AR`` ``BR`` ``CA`` ``CN`` ``ID`` ``IN`` ``JP`` ``MX`` ``TH`` ``US``
+                   - The region of the shipping address.
 
                  * - ``country``
 
