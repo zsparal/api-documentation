@@ -30,8 +30,7 @@ without the ``method`` parameter, the Apple Pay button will be shown in the chec
 Adding Apple Pay to the method selection
 ----------------------------------------
 
-At the moment, only limited support for integrating Apple Pay in your own checkout is available. You can not yet add the
-"Checkout with Pay" button to your own checkout, but you can add Apple Pay to the method selection. The "Checkout
+An easy way to integrate Apple Pay is by adding Apple Pay to the payment method selection. The "Checkout
 with Pay" button will then be shown in the Mollie Checkout.
 
 First, you must indicate to the :doc:`List Methods API </reference/v2/methods-api/list-methods>` which wallets you
@@ -92,8 +91,8 @@ If you need a more control or have complex HTML, see :ref:`Adding Apple Pay serv
      </select>
    </form>
 
-   <!-- 
-   Only load this script if Apple Pay is enabled on your Mollie profile. 
+   <!--
+   Only load this script if Apple Pay is enabled on your Mollie profile.
    For example with PHP:
 
    <?php if ($applePayEnabled) : ?>
@@ -148,15 +147,15 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
          <!-- Other checkout fields like billing address etc. -->
 
          <ul class="payment-methods">
-           <!-- 
-           Only show this method if Apple Pay is enabled on your Mollie profile. 
+           <!--
+           Only show this method if Apple Pay is enabled on your Mollie profile.
            For example with PHP:
 
            <?php if ($applePayEnabled) : ?>
            -->
            <li class="js-apple-pay" aria-hidden="true">
              <label>
-               <input name="method" value="applepay" type="radio"> 
+               <input name="method" value="applepay" type="radio">
                Apple Pay
              </label>
            </li>
@@ -165,7 +164,7 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
            -->
            <li>
              <label>
-               <input name="method" value="creditcard" type="radio"> 
+               <input name="method" value="creditcard" type="radio">
                Credit card
              </label>
            </li>
@@ -173,8 +172,8 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
          </ul>
        </form>
 
-       <!-- 
-       Only load this script if Apple Pay is enabled on your Mollie profile. 
+       <!--
+       Only load this script if Apple Pay is enabled on your Mollie profile.
        For example with PHP:
 
        <?php if ($applePayEnabled) : ?>
