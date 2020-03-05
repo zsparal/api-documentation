@@ -11,6 +11,11 @@ changes are documented here.
 March 2020
 ==========
 
+Friday, 6th
+-----------
+
+- Added "Sustainable Fashion Gift Card" as giftcard issuer.
+
 Thursday, 5th
 -------------
 
