@@ -6,6 +6,11 @@ changes are documented here.
 March 2020
 ==========
 
+Thursday, 5th
+-------------
+
+- Added "FestivalCadeau Giftcard" as giftcard issuer.
+
 Wednesday, 4th
 --------------
 

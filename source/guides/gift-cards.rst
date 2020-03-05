@@ -7,6 +7,7 @@ Mollie supports processing gift cards handled by the Dutch giftcard broker Inter
 brands are supported:
 
 * `fashioncheque <https://www.fashioncheque.com/>`_
+* FestivalCadeau Giftcard
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
 * `Nationale Golfbon <https://www.golfbon.nl/>`_
@@ -23,7 +24,7 @@ brands are supported:
 * `YourGift <https://www.yourgift.nl/>`_
 
 If you need a different brand, please reach out to your account manager or our support department. We can also support
-closed-loop gift cards. 
+closed-loop gift cards.
 
 Using the :doc:`checkout </guides/checkout>`, your customer can pay part of the payment using gift cards and pay any
 remaining amount due using the other payment methods enabled on your website profile.
