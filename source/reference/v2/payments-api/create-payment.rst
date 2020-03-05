@@ -395,10 +395,10 @@ Gift cards
 
        If only one issuer is activated on your account, you can omit this parameter.
 
-       Possible values: ``fashioncheque`` ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon``
-       ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart``
-       ``reiscadeau`` ``sportenfitcadeau`` ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque``
-       ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+       Possible values: ``fashioncheque`` ``festivalcadeau`` ``kunstencultuurcadeaukaart``
+       ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
+       ``podiumcadeaukaart`` ``reiscadeau`` ``sportenfitcadeau`` ``travelcheq`` ``vvvgiftcard``
+       ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
 
    * - ``voucherNumber``
 
