@@ -6,6 +6,11 @@ changes are documented here.
 March 2020
 ==========
 
+TBD
+---
+
+- Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
+
 Wednesday, 4th
 --------------
 

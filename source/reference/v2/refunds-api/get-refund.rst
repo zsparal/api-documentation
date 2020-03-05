@@ -1,5 +1,5 @@
-Get payment refund
-==================
+Get Payment Refund API
+======================
 
 .. api-name:: Refunds API
    :version: 2
@@ -13,7 +13,7 @@ Get payment refund
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single :doc:`refund </payments/refunds>` by its ID. Note the original payment's ID is needed as well.
+Retrieve a single :doc:`Refund </payments/refunds>` by its ID. Note the Payment's ID is needed as well.
 
 If you do not know the original payment's ID, you can use the
 :doc:`/reference/v2/refunds-api/list-refunds`.

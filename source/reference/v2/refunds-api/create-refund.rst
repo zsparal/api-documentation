@@ -13,7 +13,7 @@ Create Payment Refund API
    :organization_access_tokens: true
    :oauth: true
 
-Creates a :doc:`refund </payments/refunds>` on the Payment. The refunded amount is credited to your customer.
+Creates a :doc:`Refund </payments/refunds>` on the Payment. The refunded amount is credited to your customer.
 
 Parameters
 ----------
@@ -198,3 +198,24 @@ Response
            }
        }
    }
+
+Response (duplicate refund detected)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+
+.. code-block:: http
+   :linenos:
+
+   HTTP/1.1 429 Too Many Requests
+   Content-Type: application/hal+json
+
+    {
+        "status": 429,
+        "title": "Too Many Requests",
+        "detail": "A duplicate refund has been detected",
+        "_links": {
+            "documentation": {
+                "href": "https://docs.mollie.com/guides/handling-errors",
+                "type": "text/html"
+            }
+        }
+    }

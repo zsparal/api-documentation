@@ -17,13 +17,13 @@ List Payment Refunds API
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve refunds.
+Retrieve Refunds.
 
-* If the payment-specific endpoint is used, only refunds for that specific payment are returned.
+* If the payment-specific endpoint is used, only Refunds for that specific Payment are returned.
 * When using the top level endpoint ``v2/refunds`` with an API key, only refunds for the corresponding website profile
   and mode are returned.
 * When using the top level endpoint with OAuth, you can specify the profile and mode with the ``profileId`` and
-  ``testmode`` parameters respectively. If you omit ``profileId``, you will get all refunds for the organization.
+  ``testmode`` parameters respectively. If you omit ``profileId``, you will get all Refunds for the Organization.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
@@ -72,7 +72,7 @@ parameter, you will get all refunds on the organization.
        .. type:: boolean
           :required: false
 
-     - Set this to true to only retrieve refunds made in test mode. By default, only live payments are
+     - Set this to true to only retrieve Refunds made in test mode. By default, only Refunds on live mode Payments are
        returned.
 
 Embedding of related resources
@@ -80,7 +80,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the refunds were created for.
+* ``payment`` Include the :doc:`Payments </reference/v2/payments-api/get-payment>` the Refunds were created for.
 
 Response
 --------
