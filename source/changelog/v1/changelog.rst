@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+March 2020
+==========
+
+Wednesday, 4th
+--------------
+
+- The expiry time of SOFORT Banking was changed to 2 hours.
+
 December 2019
 =============
 
