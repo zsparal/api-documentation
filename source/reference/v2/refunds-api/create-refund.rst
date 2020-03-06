@@ -205,12 +205,12 @@ Response (duplicate refund detected)
 .. code-block:: http
    :linenos:
 
-   HTTP/1.1 429 Too Many Requests
+   HTTP/1.1 409 Conflict
    Content-Type: application/hal+json
 
     {
-        "status": 429,
-        "title": "Too Many Requests",
+        "status": 409,
+        "title": "Conflict",
         "detail": "A duplicate refund has been detected",
         "_links": {
             "documentation": {
