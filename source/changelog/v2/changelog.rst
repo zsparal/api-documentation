@@ -11,6 +11,16 @@ TBD
 
 - Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
 
+Friday, 6th
+-----------
+
+- Added "Sustainable Fashion Gift Card" as giftcard issuer.
+
+Thursday, 5th
+-------------
+
+- Added "FestivalCadeau Giftcard" as giftcard issuer.
+
 Wednesday, 4th
 --------------
 
