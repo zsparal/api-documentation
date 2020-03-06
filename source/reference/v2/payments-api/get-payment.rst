@@ -1203,7 +1203,7 @@ SEPA Direct Debit
 
               .. type:: string
 
-            - Only available if the payment has failed – A textual desciption of the failure reason.
+            - Only available if the payment has failed – A textual description of the failure reason.
 
           * - ``endToEndIdentifier``
 
