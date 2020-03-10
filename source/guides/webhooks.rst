@@ -133,5 +133,5 @@ The webhook location is invalid
 
 Redirecting webhook calls
 -------------------------
-When our call to the webhook URL gets redirected with a  ```301 Moved Permanently``` or ```302 Found``` response the request changes from POST to get. This causes the POST  payload to drop of the webhook call.
-The solution is to redirect using a ```307 Temporary Redirect``` or ```308 Permanent Redirect``` response.
+When our call to the webhook URL gets redirected with a ``301 Moved Permanently`` or ``302 Found`` response the request changes from POST to get. This causes the POST payload to drop of the webhook call.
+The solution is to redirect using a ``307 Temporary Redirect`` or ``308 Permanent Redirect`` response.
