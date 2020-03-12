@@ -10,6 +10,8 @@ Thursday, 12th
 --------------
 
 - Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
+- Added the possibility to get the details of the remainder payment in the ``details`` object of a stacked payment.
+  See the :doc:`Get payment endpoint </reference/v2/payments-api/get-payment>` for more info.
 
 Friday, 6th
 -----------
