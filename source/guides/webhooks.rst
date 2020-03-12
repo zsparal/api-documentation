@@ -130,3 +130,8 @@ The webhook location is invalid
 -------------------------------
 `In this support article <https://help.mollie.com/hc/en-us/articles/213470409>`_ we explain when we return the error
 ``The webhook location is invalid`` and how you can solve this.
+
+Redirecting webhook calls
+-------------------------
+When our call to the webhook URL gets redirected with a ``301 Moved Permanently`` or ``302 Found`` response the request changes from POST to get. This causes the POST payload to drop of the webhook call.
+The solution is to redirect using a ``307 Temporary Redirect`` or ``308 Permanent Redirect`` response.

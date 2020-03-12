@@ -7,7 +7,7 @@ Mollie supports processing gift cards handled by the Dutch giftcard broker Inter
 brands are supported:
 
 * `fashioncheque <https://www.fashioncheque.com/>`_
-* FestivalCadeau Giftcard
+* `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
 * `Nationale Golfbon <https://www.golfbon.nl/>`_
