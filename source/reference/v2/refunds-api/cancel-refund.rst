@@ -1,5 +1,5 @@
-Cancel payment refund
-=====================
+Cancel Payment Refund API
+=========================
 
 .. api-name:: Refunds API
    :version: 2
@@ -14,10 +14,10 @@ Cancel payment refund
    :oauth: true
 
 For certain payment methods, like iDEAL, the underlying banking system will delay refunds until the next day. Until that
-time, refunds may be canceled manually in your Mollie account, or automatically by using this endpoint.
+time, refunds may be canceled manually in your Mollie Dashboard, or automatically by using this endpoint.
 
-The refund can only be canceled while the refund's ``status`` field is either ``queued`` or ``pending``. See
-:doc:`Get payment refund </reference/v2/refunds-api/get-refund>` for more information.
+A Refund can only be canceled while its ``status`` field is either ``queued`` or ``pending``. See the
+:doc:`/reference/v2/refunds-api/get-refund` for more information.
 
 Parameters
 ----------

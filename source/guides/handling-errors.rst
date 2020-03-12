@@ -203,6 +203,8 @@ The Mollie API will only ever return a subset of all legal HTTP status codes. He
 |405|Method Not Allowed – You're trying to use an HTTP method that is not applicable on this URL or resource. Refer to |
 |   |the ``Allow`` header to see which methods the endpoint supports.                                                  |
 +---+------------------------------------------------------------------------------------------------------------------+
+|409|Conflict – You are making a duplicate API call that was probably a mistake (only in v2).                          |
++---+------------------------------------------------------------------------------------------------------------------+
 |410|Gone – You are trying to access an object, which has previously been deleted (only in v2).                        |
 +---+------------------------------------------------------------------------------------------------------------------+
 |415|Unsupported Media Type – Your request's encoding is not supported or is incorrectly understood. Please always use |

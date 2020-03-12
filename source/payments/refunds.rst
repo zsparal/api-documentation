@@ -34,17 +34,21 @@ Refunds have their own status, independent of the Payment or Order they were cre
   The refund has been settled to your customer.
 
 *failed*
-  The refund has failed after processing. For example, the customer has closed his / her bank account.
+  The refund has failed after processing. For example, the customer has closed his / her bank account. The funds will
+  be returned to your account.
 
 Insufficient balance
 --------------------
-If you have insufficient balance with Mollie to perform the refund, the refund status will be ``queued``. We will
-automatically process the refund once your balance increases. Additionally, you can also manually top up your balance
-via the `Administration page <https://www.mollie.com/dashboard/administration>`_ in the Mollie Dashboard.
+If you have insufficient balance with Mollie to perform the refund, the refund will be queued until sufficient balance
+is available again. We will automatically process the refund once your balance increases.
+
+Additionally, you can also manually top up your balance via the `Administration page
+<https://www.mollie.com/dashboard/administration>`_ in the Mollie Dashboard.
 
 Partial refunds and over refunding
 ----------------------------------
-Partial refunds are fully supported. You can create multiple partial refunds if needed.
+Partial refunds are fully supported. You can create multiple partial refunds if needed. Note that we will prevent
+duplicate refunds in a short time frame.
 
 Additionally, most payment methods (notable exceptions being credit card and PayPal) support over refunding, where you
 can refund an additional €25.00 more than the original payment's amount. You can use this for crediting shipping costs
@@ -56,6 +60,7 @@ Sometimes a situation can occur in which it is not possible to perform the refun
 will be returned. Some of these situations are illustrated here:
 
 * There might not be enough balance on your account with the payment provider (e.g. PayPal).
+* Your Refund is a duplicate (of the same amount in the last hour) of another Refund on the Payment.
 * You may have forgotten to grant the appropriate rights to Mollie for the payment provider (PayPal only).
 * It is possible that the payment has already been (partially) refunded.
 

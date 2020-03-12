@@ -6,6 +6,11 @@ changes are documented here.
 March 2020
 ==========
 
+Thursday, 12th
+--------------
+
+- Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
+
 Friday, 6th
 -----------
 
