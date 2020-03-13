@@ -18,8 +18,8 @@ Parameters
 ----------
 Replace ``settlementId`` in the endpoint URL by the settlement's ID, for example ``stl_jDk30akdN``.
 
-This endpoint is an alias of the :doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint. All parameters
-for that endpoint can be used here as well.
+This API is an comparable to the :doc:`/reference/v2/refunds-api/list-refunds`. All parameters
+for that API can be used here as well.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -32,8 +32,7 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-This endpoint is an alias of the :doc:`List refunds </reference/v2/refunds-api/list-refunds>` endpoint. The response is
-therefore the exact same.
+The response of this endpoint is the same as :doc:`/reference/v2/refunds-api/list-refunds` endpoint.
 
 Example
 -------
@@ -53,7 +52,7 @@ Request
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-      
+
       $settlement = $mollie->settlements->get("stl_jDk30akdN");
       $refunds = $settlement->refunds();
 
@@ -94,6 +93,7 @@ Response
                        "value": "-10.00",
                        "currency": "EUR"
                    },
+                   "settlementId": "stl_jDk30akdN",
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_maJaG2j8OM/refunds/re_3aKhkUNigy",
