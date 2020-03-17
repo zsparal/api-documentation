@@ -53,6 +53,28 @@ in the request.
 
        We recommend that each order should have a unique order number.
 
+   * - ``redirectUrl``
+
+       .. type:: string
+          :required: false
+
+     - The URL your customer will be redirected to after the payment process.
+
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
+
+   * - ``webhookUrl``
+
+       .. type:: string
+          :required: false
+
+     - Set the webhook URL, where we will send :doc:`order status changes </orders/status-changes>` to.
+
+       .. note:: The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
+          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+          delivered to your local machine.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an

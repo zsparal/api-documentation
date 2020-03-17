@@ -41,7 +41,8 @@ Parameters
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
 
-       **Updating this field is only possible when the payment is not yet finalized.**
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
 
    * - ``webhookUrl``
 
