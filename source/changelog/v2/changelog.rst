@@ -6,6 +6,12 @@ changes are documented here.
 March 2020
 ==========
 
+Tuesday, 17th
+-------------
+
+- It is now possible to update the ``webhookUrl`` and ``redirectUrl`` of an order via the
+  :doc:`Update order endpoint </reference/v2/orders-api/update-order>`.
+
 Thursday, 12th
 --------------
 
