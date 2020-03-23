@@ -252,7 +252,8 @@ Response
                                             "currency": "EUR"
                                         }
                                     }
-                                ]
+                                ],
+                                "invoiceId": "inv_M8Sa6n5mf3"
                             }
                         }
                     },

@@ -6,6 +6,17 @@ changes are documented here.
 March 2020
 ==========
 
+Monday, 23rd
+------------
+
+- It is now possible to link all costs in a settlement to all invoices associated with it.
+
+  Settlements that span multiple monthly periods can have their costs invoiced over multiple
+  invoices. This has been reflected in the API by including an ``invoiceID`` for each of these
+  monthly periods (see the
+  :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`). In such cases,
+  the top-level ``invoiceId`` field will simply refer to the oldest invoice.
+
 Tuesday, 17th
 -------------
 
