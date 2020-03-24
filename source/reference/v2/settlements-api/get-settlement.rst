@@ -243,11 +243,11 @@ Response
                     monthly period in the ``periods`` object.
 
                     This was done because some newer settlements have each monthly period invoiced
-                    separately, in which case this ID will reference only the oldest invoice, which
+                    separately, in which case this ID will reference only the oldest invoice. This
                     can result in incorrect bookkeeping.
 
-                    This field should therefore no longer be used and instead the aforementioned
-                    ``invoiceId`` field in the individual monthly period objects should be used.
+                    For this reason the field should no longer be used. Use the aforementioned
+                    ``invoiceId`` field of the individual monthly period objects instead.
 
    * - ``_links``
 
