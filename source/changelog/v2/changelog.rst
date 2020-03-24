@@ -22,7 +22,6 @@ Tuesday, 24th
 - We made it easier to ship a whole order at once by making the ``lines`` parameter in the
   :doc:`Create shipment endpoint </reference/v2/shipments-api/create-shipment>` optional.
 
-
 Tuesday, 17th
 -------------
 
