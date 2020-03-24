@@ -6,8 +6,8 @@ changes are documented here.
 March 2020
 ==========
 
-Monday, 23rd
-------------
+Tuesday, 24th
+-------------
 
 - Mollie is moving to a monthly invoicing system. As some settlements span multiple months, these
   settlements will have their associated costs put on multiple invoices (one for each month). To
@@ -17,6 +17,9 @@ Monday, 23rd
 
   For such settlements that span multiple months, the top-level ``invoiceId`` field will simply
   refer to the oldest invoice.
+- We made it easier to ship a whole order at once by making the ``lines`` parameter in the
+  :doc:`Create shipment endpoint </reference/v2/shipments-api/create-shipment>` optional.
+
 
 Tuesday, 17th
 -------------
