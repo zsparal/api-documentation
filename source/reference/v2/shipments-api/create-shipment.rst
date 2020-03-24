@@ -29,11 +29,11 @@ Parameters
    * - ``lines``
 
        .. type:: array
-          :required: true
+          :required: false
 
-     - An array of objects containing the order line details you want to create a shipment for.  If you send an empty
-       array, the entire order will be shipped. If the order is already partially shipped, any remaining lines will be
-       shipped.
+     - An array of objects containing the order line details you want to create a shipment for.  If you leave out
+       this parameter, the entire order will be shipped. If the order is already partially shipped, any remaining
+       lines will be shipped.
 
        .. list-table::
           :widths: auto
