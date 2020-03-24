@@ -9,13 +9,14 @@ March 2020
 Monday, 23rd
 ------------
 
-- It is now possible to link all costs in a settlement to all invoices associated with it.
+- Mollie is moving to a monthly invoicing system. As some settlements span multiple months, these
+  settlements will have their associated costs put on multiple invoices (one for each month). To
+  accommodate the linking of specific costs to the specific invoice of that month, an ``invoiceId``
+  field is included for each monthly period (see the
+  :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`).
 
-  Settlements that span multiple monthly periods can have their costs invoiced over multiple
-  invoices. This has been reflected in the API by including an ``invoiceId`` for each of these
-  monthly periods (see the
-  :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`). In such cases,
-  the top-level ``invoiceId`` field will simply refer to the oldest invoice.
+  For such settlements that span multiple months, the top-level ``invoiceId`` field will simply
+  refer to the oldest invoice.
 
 Tuesday, 17th
 -------------
