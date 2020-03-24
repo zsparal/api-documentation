@@ -225,7 +225,7 @@ Response
 
           * - ``invoiceId``
 
-              .. type:: object
+              .. type:: string
 
             - The ID of the invoice that was created to invoice specifically the costs in this
               month/period.
