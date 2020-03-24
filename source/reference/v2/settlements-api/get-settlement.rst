@@ -239,9 +239,15 @@ Response
 
      - The ID of the invoice on which this settlement is invoiced, if it has been invoiced.
 
-       Some newer settlements have each monthly period invoiced separately, in which case this ID
-       will reference the oldest invoice. In such cases an ``invoiceId`` field will be present on
-       each monthly period in the ``periods`` field.
+       .. warning:: This field has been deprecated in favor of the ``invoiceId`` field inside each
+                    monthly period in the ``periods`` object.
+
+                    This was done because some newer settlements have each monthly period invoiced
+                    separately, in which case this ID will reference only the oldest invoice, which
+                    can result in incorrect bookkeeping.
+
+                    This field should therefore no longer be used and instead the aforementioned
+                    ``invoiceId`` field in the individual monthly period objects should be used.
 
    * - ``_links``
 

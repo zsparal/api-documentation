@@ -15,8 +15,10 @@ Tuesday, 24th
   field is included for each monthly period (see the
   :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`).
 
-  For such settlements that span multiple months, the top-level ``invoiceId`` field will simply
-  refer to the oldest invoice.
+  For such settlements that span multiple months, the top-level ``invoiceId`` field now refers only
+  to the oldest invoice. This could cause your bookkeeping integration to break as the invoice
+  referenced by this ID will no longer cover all costs. The new ``invoiceId`` field of each period
+  should be used instead.
 - We made it easier to ship a whole order at once by making the ``lines`` parameter in the
   :doc:`Create shipment endpoint </reference/v2/shipments-api/create-shipment>` optional.
 
