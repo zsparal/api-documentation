@@ -9,6 +9,16 @@ March 2020
 Tuesday, 24th
 -------------
 
+- Mollie is moving to a monthly invoicing system. As some settlements span multiple months, these
+  settlements will have their associated costs put on multiple invoices (one for each month). To
+  accommodate the linking of specific costs to the specific invoice of that month, an ``invoiceId``
+  field is included for each monthly period (see the
+  :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`).
+
+  For such settlements that span multiple months, the top-level ``invoiceId`` field now refers only
+  to the oldest invoice. This could cause your bookkeeping integration to break as the invoice
+  referenced by this ID will no longer cover all costs. The new ``invoiceId`` field of each period
+  should be used instead.
 - We made it easier to ship a whole order at once by making the ``lines`` parameter in the
   :doc:`Create shipment endpoint </reference/v2/shipments-api/create-shipment>` optional.
 
