@@ -6,6 +6,7 @@ Supported brands
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
+* `Diner Cadeau <https://www.horecasamensterk.nl/>`_
 * `fashioncheque <https://www.fashioncheque.com/>`_
 * `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
