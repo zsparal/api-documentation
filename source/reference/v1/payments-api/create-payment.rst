@@ -289,8 +289,8 @@ Gift cards
 
        Possible values: ``fashioncheque`` ``festivalcadeau`` ``kunstencultuurcadeaukaart``
        ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
-       ``podiumcadeaukaart`` ``reiscadeau`` ``sportenfitcadeau`` ``sustainablefashion`` ``travelcheq``
-       ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+       ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion``
+       ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
 
    * - ``voucherNumber``
 
