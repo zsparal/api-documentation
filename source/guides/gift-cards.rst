@@ -15,6 +15,7 @@ brands are supported:
 * `OhMyGood <https://www.ohmygood.nl/>`_
 * `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
 * Reiscadeau
+* `RestaurantCadeau <https://www.horecasamensterk.nl/>`_
 * `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
 * `Sustainable Fashion Gift Card <https://sustainablefashiongiftcard.nl/>`_
 * `Travelcheq <https://www.travelcheq.com/>`_

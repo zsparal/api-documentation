@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+April 2020
+==========
+
+Friday, 3rd
+-----------
+
+- Added ``restaurantcadeau`` as gift card issuer.
+
 March 2020
 ==========
 
