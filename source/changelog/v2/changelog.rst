@@ -6,7 +6,7 @@ changes are documented here.
 April 2020
 ==========
 
-Friday, 3th
+Friday, 3rd
 -----------
 
 - Added ``restaurantcadeau`` as gift card issuer.
