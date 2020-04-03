@@ -10,6 +10,7 @@ Friday, 3rd
 -----------
 
 - Added ``restaurantcadeau`` as gift card issuer.
+- Added ``dinercadeau`` as gift card issuer.
 
 March 2020
 ==========

@@ -395,7 +395,7 @@ Gift cards
 
        If only one issuer is activated on your account, you can omit this parameter.
 
-       Possible values: ``fashioncheque`` ``festivalcadeau`` ``kunstencultuurcadeaukaart``
+       Possible values: ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``kunstencultuurcadeaukaart``
        ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
        ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion``
        ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
