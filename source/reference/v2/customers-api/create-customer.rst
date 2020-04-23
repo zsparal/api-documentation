@@ -91,6 +91,17 @@ Example
          -d "name=Customer A" \
          -d "email=customer@example.org"
 
+   .. code-block:: php
+      :linenos:
+
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient();
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
+      $customer = $mollie->customers->create([
+            "name" => "Customer A",
+            "email" => "customer@example.org",
+      ]);
+
    .. code-block:: python
       :linenos:
 
@@ -103,17 +114,6 @@ Example
         'name': 'Customer A',
         'email': 'customer@example.org'
       })
-
-   .. code-block:: php
-      :linenos:
-
-      <?php
-      $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $customer = $mollie->customers->create([
-            "name" => "Customer A",
-            "email" => "customer@example.org",
-      ]);
 
    .. code-block:: ruby
       :linenos:
