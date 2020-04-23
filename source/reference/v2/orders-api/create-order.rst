@@ -141,8 +141,8 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank`` ``paypal``
-       ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mealvoucher``
+       ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``payment``
 
@@ -215,6 +215,20 @@ The order lines contain the actual things that your customer bought.
 
        .. note:: For selling digitally delivered goods through PayPal, you will need to request PayPal to `enable this on
                  your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
+
+   * - ``category``
+
+       .. type:: string
+          :required: false
+
+     - The category of product bought. Must be one of the following values:
+
+       * ``food_and_rink``
+       * ``home_and_garden``
+       * ``gift_and_flowers``
+
+       .. note:: This parameter is optional. However, *one* of your orderlines should contain it if
+                 you want to accept ``mealvoucher`` payments.
 
    * - ``name``
 
