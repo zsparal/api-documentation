@@ -235,6 +235,16 @@ Example
       $customer = $mollie->customers->get("cst_4qqhO89gsT");
       $mandate = $customer->getMandate("mdt_h3gAaD5zP");
 
+   .. code-block:: python
+      :linenos:
+      
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
+
+      mandate = mollie_client.customer_mandates.with_parent_id('cst_4qqhO89gsT').get('mdt_h3gAaD5zP')
+
    .. code-block:: ruby
       :linenos:
 
