@@ -99,7 +99,7 @@ Example
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-      mollie_client.customers.create({
+      customer = mollie_client.customers.create({
         'name': 'Customer A',
         'email': 'customer@example.org'
       })
