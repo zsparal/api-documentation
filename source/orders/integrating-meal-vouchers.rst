@@ -22,8 +22,8 @@ At the moment, the following brands are supported by Mollie:
 Contracting and settlement
 --------------------------
 In order to use meal vouchers as a payment method, you should have a contract with the issuer of the
-brand you want to provide. For example, with Sodexo Belgium for Lunch Pass. Once you have a contract,
-you can activated the brand via your Mollie dashboard. Fill in your contract ID and enable the brand(s)
+brand you want to accept. For example, with Sodexo Belgium for Lunch Pass. Once you have a contract,
+you can activate the brand via your Mollie dashboard. Fill in your contract ID and enable the brand(s)
 of the issuer you want to provide.
 
 In contrast to other payment methods such as iDEAL or credit card, Mollie does not handle settlement

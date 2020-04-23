@@ -223,7 +223,7 @@ The order lines contain the actual things that your customer bought.
 
      - The category of product bought. Must be one of the following values:
 
-       * ``food_and_drink``
+       * ``food_and_drinks``
        * ``home_and_garden``
        * ``gifts_and_flowers``
 
