@@ -41,7 +41,7 @@ Canceled and abandoned payments
 -------------------------------
 If the customer cancels or abandons the payment after partially paying with one or more meal vouchers,
 the amount paid with the vouchers will **not** be refunded due to the limitation set by the brand
-issuers. You still will receive the money and should handle a refund by yourself.
+issuers. You will still receive the money and should handle a refund by yourself.
 
 Refunds
 -------
