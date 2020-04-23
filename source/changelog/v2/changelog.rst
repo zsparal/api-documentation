@@ -3,6 +3,12 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+TBA
+===
+
+- Added ``mealvoucher`` as new payment method. See our :doc:`guide </orders/integrating-meal-vouchers>`
+  for how you can integrate this into your checkout.
+
 April 2020
 ==========
 
