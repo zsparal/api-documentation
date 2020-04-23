@@ -78,7 +78,7 @@ Once the shopper has authorized the payment, you will receive the `Apple Pay Pay
 <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_. You must then encode the object's
 ``token`` property to JSON and add the JSON as the ``applePayPaymentToken`` parameter when invoking the
 :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or the
-:doc:`Create Order API </reference/v2/orders-api/create-order>`.
+:doc:`/reference/v2/orders-api/create-order`.
 
 Example request
 ^^^^^^^^^^^^^^^
