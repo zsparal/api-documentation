@@ -223,12 +223,13 @@ The order lines contain the actual things that your customer bought.
 
      - The category of product bought. Must be one of the following values:
 
-       * ``food_and_rink``
+       * ``food_and_drink``
        * ``home_and_garden``
-       * ``gift_and_flowers``
+       * ``gifts_and_flowers``
 
-       .. note:: This parameter is optional. However, *one* of your orderlines should contain it if
-                 you want to accept ``mealvoucher`` payments.
+       .. note:: This parameter is optional. However, *one* of your order lines should contain it if
+                 you want to accept ``mealvoucher`` payments. We advise to set this parameter for all
+                 your order lines.
 
    * - ``name``
 

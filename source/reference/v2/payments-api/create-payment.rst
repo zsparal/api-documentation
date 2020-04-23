@@ -476,8 +476,8 @@ Klarna Pay later. / Slice it.
 
 .. _mealvoucher_method_details:
 
-Meal voucher
-""""""""""""
+Meal vouchers
+"""""""""""""
 .. list-table::
    :widths: auto
 
@@ -486,7 +486,7 @@ Meal voucher
        .. type:: string
           :required: false
 
-     - An Meal voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep-link into the
+     - An meal voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep-link into the
        specific card website. The full list of issuers can be retrieved via the
        :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 

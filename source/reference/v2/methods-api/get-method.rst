@@ -82,7 +82,7 @@ Includes
 This endpoint allows you to include additional information by appending the following values via the ``include``
 querystring parameter.
 
-* ``issuers`` Include issuers available for the payment method (e.g. for iDEAL, KBC/CBC payment button, gift cards, or meal vouchers).
+* ``issuers`` Include issuers available for the payment method (for iDEAL, KBC/CBC payment button, gift cards, or meal vouchers).
 * ``pricing`` Include pricing for each payment method.
 
 Response
