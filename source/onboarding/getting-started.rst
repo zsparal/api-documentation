@@ -11,7 +11,7 @@ to sending data about your customer, all steps will be covered.
 Prerequisites
 -------------
 In order to onboard your customers at Mollie using our hosted onboarding you will need to `turn on hosted onboarding
-<https://www.mollie.com/dashboard/settings/hosted-onboarding>`_ in your Mollie account.
+<https://www.mollie.com/dashboard/settings/hosted-onboarding>`_ in the Mollie Dashboard.
 
 You will have to provide a logo, name and redirect URL for the OAuth app that will be automatically created.
 
