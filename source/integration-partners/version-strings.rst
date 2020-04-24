@@ -85,7 +85,3 @@ Option B: Using the native REST API
 We always recommend using one of our `API clients <https://docs.mollie.com/#clients-modules-and-plugins>`_ for a solid foundation and faster development.
 
 If, however, you're integrating our native REST API, use your HTTP client of choice to append integration data to the user-agent header. Refer to the syntax and cURL example above and be sure to separate multiple version strings with spaces.
-
-Option C: Using Mollie Connect (OAuth)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're using OAuth - great! There's no need to supply version strings. By using OAuth, all API calls are automatically tied to your OAuth app.
