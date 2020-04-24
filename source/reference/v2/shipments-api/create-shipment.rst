@@ -13,7 +13,7 @@ Create shipment
    :oauth: true
 
 The **Create Shipment API** is used to ship order lines created by the
-:doc:`Create Order API </reference/v2/orders-api/create-order>`.
+:doc:`/reference/v2/orders-api/create-order`.
 
 When using *Klarna Pay later* and *Klarna Slice it* this is mandatory for the order amount to be captured. A capture
 will automatically be created for the shipment.

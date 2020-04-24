@@ -92,7 +92,7 @@ If you need a more control or have complex HTML, see :ref:`Adding Apple Pay serv
    </form>
 
    <!--
-   Only load this script if Apple Pay is enabled on your Mollie profile.
+   Only load this script if Apple Pay is enabled on your website profile.
    For example with PHP:
 
    <?php if ($applePayEnabled) : ?>
@@ -148,7 +148,7 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
 
          <ul class="payment-methods">
            <!--
-           Only show this method if Apple Pay is enabled on your Mollie profile.
+           Only show this method if Apple Pay is enabled on your website profile.
            For example with PHP:
 
            <?php if ($applePayEnabled) : ?>
@@ -173,7 +173,7 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
        </form>
 
        <!--
-       Only load this script if Apple Pay is enabled on your Mollie profile.
+       Only load this script if Apple Pay is enabled on your website profile.
        For example with PHP:
 
        <?php if ($applePayEnabled) : ?>

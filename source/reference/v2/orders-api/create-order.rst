@@ -1,5 +1,5 @@
-Create order
-============
+Create Order API
+================
 .. api-name:: Orders API
    :version: 2
 
@@ -12,17 +12,18 @@ Create order
    :organization_access_tokens: true
    :oauth: true
 
-Using the Orders API is the preferred approach when integrating the Mollie API into e-commerce applications such as
-webshops. If you want to use *pay after delivery* methods such as *Klarna Pay later*, using the Orders API is mandatory.
+Using the :doc:`Orders API </orders/overview>` is the preferred approach when integrating the Mollie
+API into e-commerce applications such as webshops. If you want to use *pay after delivery* methods
+such as *Klarna Pay later*, using the Orders API is mandatory.
 
-Creating an order will automatically create the required payment to allow your customer to pay for the order.
+Creating an Order will automatically create the required Payment to allow your customer to pay for the order.
 
-Once you have created an order, you should redirect your customer to the URL in the ``_links.checkout`` property from
+Once you have created an Order, you should redirect your customer to the URL in the ``_links.checkout`` property from
 the response.
 
-Note that when the payment fails, expires or is canceled, you can create a new payment using the
-:doc:`Create order payment </reference/v2/orders-api/create-order-payment>` API. This is only
-possible for orders that have a ``created`` status.
+Note that when the payment fails, expires or is canceled, you can create a new Payment for the Order
+using the :doc:`/reference/v2/orders-api/create-order-payment`. This is only possible for orders
+that have a ``created`` status.
 
 Parameters
 ----------
@@ -149,8 +150,11 @@ Parameters
        .. type:: object
           :required: false
 
-     - Any payment specific properties can be passed here. See :ref:`payment-parameters` for the
-       possible fields.
+     - Any payment specific properties (for example, the ``dueDate`` for bank transfer payments) can
+       be passed here. See :ref:`payment-parameters` for the possible fields.
+
+       The ``payment`` property should be an *object* where the keys are the payment method specific
+       parameters you want to pass.
 
    * - ``metadata``
 
@@ -397,31 +401,31 @@ least a valid address must be passed as well as fields identifying the person.
 
 Payment specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Creating an order will automatically create a payment that your customer can use to pay for the order. Creation of the
-payment can be controlled using the ``method`` and ``payment`` parameters.
+Creating an Order will automatically create a Payment that your customer can use to pay for the Order. Creation of the
+Payment can be controlled using the ``method`` and ``payment`` parameters.
 
-The optional ``method`` parameter ensures that order can be paid for using a specific payment method. If the parameter
+The optional ``method`` parameter ensures that Order can be paid for using a specific payment method. If the parameter
 is omitted, your customer will be presented with a method selection screen and can check out using any of the available
 payment methods on your website profile.
 
 Optional parameters may be available for that payment method. If no method is specified, you can still send the optional
 parameters and we will apply them when your customer selects the relevant payment method.
 
-All payment specific parameters must be passed in the ``payment`` object. The following payment specific parameters can
-be passed during order creation:
+All payment specific parameters must be passed in the ``payment`` top level object. The following
+payment specific parameters can be passed when creating the Order:
 
-* ``payment.applePayPaymentToken``
-* ``payment.cardToken``
-* ``payment.consumerAccount``
-* ``payment.customerId``
-* ``payment.customerReference``
-* ``payment.extraMerchantData``
-* ``payment.issuer``
-* ``payment.mandateId``
-* ``payment.sequenceType``
-* ``payment.voucherNumber``
-* ``payment.voucherPin``
-* ``payment.webhookUrl``
+* ``applePayPaymentToken``
+* ``cardToken``
+* ``consumerAccount``
+* ``customerId``
+* ``customerReference``
+* ``extraMerchantData``
+* ``issuer``
+* ``mandateId``
+* ``sequenceType``
+* ``voucherNumber``
+* ``voucherPin``
+* ``webhookUrl``
 
 See the :ref:`payment-method-specific-parameters` for more information on these parameters.
 
