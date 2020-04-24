@@ -108,7 +108,7 @@ Parameters
        ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
-                 please use the :doc:`Create Order API </reference/v2/orders-api/create-order>` instead.
+                 please use the :doc:`/reference/v2/orders-api/create-order` instead.
 
    * - ``metadata``
 

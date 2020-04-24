@@ -222,6 +222,13 @@ Response
 
             - The API resource URL of the customer the subscription is for.
 
+          * - ``profile``
+
+              .. type:: URL object
+                 :required: false
+
+            - The API resource URL of the website profile on which this subscription was created.
+
           * - ``payments``
 
               .. type:: URL object
