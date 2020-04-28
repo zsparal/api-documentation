@@ -199,7 +199,7 @@ Response
 
               .. type:: string
 
-            - The payment method has been rejected by Mollie.
+            - Your request for this payment method was rejected. Whenever Mollie rejects such a request, you will always be informed via email.
 
    * - ``pricing``
 
