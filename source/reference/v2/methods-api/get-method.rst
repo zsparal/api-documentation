@@ -193,7 +193,7 @@ Response
 
               .. type:: string
 
-            - The payment method has been enabled but needs the an external process to be active.
+            - Activation of this payment method relies on you taking action with an external party, for example signing up with PayPal or a giftcard issuer.
 
           * - ``rejected``
 
