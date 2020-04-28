@@ -156,6 +156,12 @@ Response
             - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
               to any desired size.
 
+   * - ``status``
+
+       .. type:: string
+
+     - The status that the method is in. Possible values: ``activated`` ``disabled`` ``pending-boarding`` ``pending-review`` ``pending-external`` ``rejected``
+
    * - ``pricing``
 
        .. type:: array
@@ -325,6 +331,7 @@ Response
             { },
             { }
         ],
+        "status": "activated",
         "pricing": [
             {
                 "description": "The Netherlands",

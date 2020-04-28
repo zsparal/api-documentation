@@ -23,8 +23,8 @@ Enable payment method
 
 Enable a payment method on a specific or authenticated profile to use it with payments.
 
-.. note:: Not all payment methods can be enabled via this API call. The API will return an error when this is the case
-          with a link to the Mollie Dashboard where the method can be enabled manually.
+.. note:: Some payment methods might need extra steps to be enabled (like PayPal and its authentication).
+          In those cases, the status will be set to pending and the response will contain a link to continue the enablement.
 
 Parameters
 ----------
@@ -39,8 +39,8 @@ An objects of ``method`` will be returned as described in :doc:`Get method </ref
 Example
 -------
 
-Request (method that can be enabled)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request (method that can be immediately enabled)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block-selector::
   .. code-block:: bash
@@ -86,6 +86,7 @@ Response
            "size2x": "https://www.mollie.com/external/icons/payment-methods/bancontact%402x.png",
            "svg": "https://www.mollie.com/external/icons/payment-methods/bancontact.svg"
        },
+       "status": "activated",
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/methods/bancontact",
@@ -101,14 +102,14 @@ Response
 Example
 -------
 
-Request (method that can't be enabled)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request (method that can't be immediately enabled)
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 .. code-block-selector::
   .. code-block:: bash
     :linenos:
 
-    curl -X GET https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/creditcard \
+    curl -X GET https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/paypal \
          -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
   .. code-block:: php
@@ -120,7 +121,7 @@ Request (method that can't be enabled)
       $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
       try {
-          $profile->enableMethod('creditcard');
+          $profile->enableMethod('paypal');
       } catch (ApiException $e) {
           $dashboardUrl = $e->getDashboardUrl();
 
@@ -136,13 +137,12 @@ Response
 .. code-block:: http
    :linenos:
 
-   HTTP/1.1 422 Unprocessable Entity
+   HTTP/1.1 200 OK
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "status": 422,
-       "title": "Unprocessable Entity",
-       "detail": "Can not enable Credit card via the API. Please go to the dashboard to enable this payment method.",
+       "status": 200,
+       "title": "OK",
        "_links": {
             "dashboard": {
                    "href": "https://www.mollie.com/dashboard/settings/profiles/pfl_v9hTwCvYqw/payment-methods",
