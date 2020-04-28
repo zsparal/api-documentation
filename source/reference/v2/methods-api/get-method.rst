@@ -187,7 +187,7 @@ Response
 
               .. type:: string
 
-            - The payment method has been enabled but needs a review from Mollie to be active.
+            - Mollie needs to review your request for this payment method before it can be activated.
 
           * - ``pending-external``
 
