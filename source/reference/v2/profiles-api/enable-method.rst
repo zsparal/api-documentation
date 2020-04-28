@@ -110,17 +110,7 @@ Request (method that can't be immediately enabled)
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
-      try {
-          $profile->enableMethod('paypal');
-      } catch (ApiException $e) {
-          $dashboardUrl = $e->getDashboardUrl();
-
-          if(! is_null($dashboardUrl)) {
-              // ... redirect to dashboard url
-          } else {
-              throw $e;
-          }
-      }
+      $profile->enableMethod('paypal');
 
 Response
 ^^^^^^^^
