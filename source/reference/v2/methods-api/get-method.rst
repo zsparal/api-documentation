@@ -169,7 +169,7 @@ Response
 
               .. type:: string
 
-            - The payment method is enabled.
+            - The payment method is activated and ready for use.
 
           * - ``disabled``
 
