@@ -162,6 +162,45 @@ Response
 
      - The status that the method is in. Possible values: ``activated`` ``disabled`` ``pending-boarding`` ``pending-review`` ``pending-external`` ``rejected``
 
+       .. list-table::
+          :widths: auto
+
+          * - ``activated``
+
+              .. type:: string
+
+            - The payment method is enabled.
+
+          * - ``disabled``
+
+              .. type:: string
+
+            - The payment method is disabled.
+
+          * - ``pending-boarding``
+
+              .. type:: string
+
+            - The payment method has been enabled but needs the merchant to finish the boarding process to be active.
+
+          * - ``pending-review``
+
+              .. type:: string
+
+            - The payment method has been enabled but needs a review from Mollie to be active.
+
+          * - ``pending-external``
+
+              .. type:: string
+
+            - The payment method has been enabled but needs the an external process to be active.
+
+          * - ``rejected``
+
+              .. type:: string
+
+            - The payment method has been rejected by Mollie.
+
    * - ``pricing``
 
        .. type:: array

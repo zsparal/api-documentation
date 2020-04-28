@@ -24,7 +24,7 @@ Enable payment method
 Enable a payment method on a specific or authenticated profile to use it with payments.
 
 .. note:: Some payment methods might need extra steps to be enabled (like PayPal and its authentication).
-          In those cases, the status will be set to pending and the response will contain a link to continue the enablement.
+          In those cases, the status will be set to ``pending-external`` and the response will contain a link to continue the enablement.
 
 Parameters
 ----------
@@ -57,17 +57,7 @@ Request (method that can be immediately enabled)
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
-      try {
-          $profile->enableMethod('bancontact');
-      } catch (ApiException $e) {
-          $dashboardUrl = $e->getDashboardUrl();
-
-          if(! is_null($dashboardUrl)) {
-              // ... redirect to dashboard url
-          } else {
-              throw $e;
-          }
-      }
+      $profile->enableMethod('bancontact');
 
 Response
 ^^^^^^^^
