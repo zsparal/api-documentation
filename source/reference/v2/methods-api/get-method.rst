@@ -181,7 +181,7 @@ Response
 
               .. type:: string
 
-            - The payment method has been enabled but needs the merchant to finish the boarding process to be active.
+            - Mollie is waiting for you to finish onboarding in the Merchant Dashboard before the payment method can be activated.
 
           * - ``pending-review``
 
