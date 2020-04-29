@@ -156,6 +156,49 @@ Response
             - The URL for a payment method icon in vector format. Usage of this format is preferred since it can scale
               to any desired size.
 
+   * - ``status``
+
+       .. type:: string
+
+     - The status that the method is in. Possible values: ``activated`` ``pending-boarding`` ``pending-review`` ``pending-external`` ``rejected`` or ``null``
+
+       .. list-table::
+          :widths: auto
+
+          * - ``activated``
+
+              .. type:: string
+
+            - The payment method is activated and ready for use.
+
+          * - ``pending-boarding``
+
+              .. type:: string
+
+            - Mollie is waiting for you to finish onboarding in the Merchant Dashboard before the payment method can be activated.
+
+          * - ``pending-review``
+
+              .. type:: string
+
+            - Mollie needs to review your request for this payment method before it can be activated.
+
+          * - ``pending-external``
+
+              .. type:: string
+
+            - Activation of this payment method relies on you taking action with an external party, for example signing up with PayPal or a giftcard issuer.
+
+          * - ``rejected``
+
+              .. type:: string
+
+            - Your request for this payment method was rejected. Whenever Mollie rejects such a request, you will always be informed via email.
+
+          * - ``null``
+
+            - This payment method was not requested.
+
    * - ``pricing``
 
        .. type:: array
@@ -325,6 +368,7 @@ Response
             { },
             { }
         ],
+        "status": "activated",
         "pricing": [
             {
                 "description": "The Netherlands",
