@@ -160,7 +160,7 @@ Response
 
        .. type:: string
 
-     - The status that the method is in. Possible values: ``activated`` ``disabled`` ``pending-boarding`` ``pending-review`` ``pending-external`` ``rejected``
+     - The status that the method is in. Possible values: ``activated`` ``pending-boarding`` ``pending-review`` ``pending-external`` ``rejected`` or ``null``
 
        .. list-table::
           :widths: auto
@@ -170,12 +170,6 @@ Response
               .. type:: string
 
             - The payment method is activated and ready for use.
-
-          * - ``disabled``
-
-              .. type:: string
-
-            - The payment method is disabled.
 
           * - ``pending-boarding``
 
@@ -200,6 +194,10 @@ Response
               .. type:: string
 
             - Your request for this payment method was rejected. Whenever Mollie rejects such a request, you will always be informed via email.
+
+          * - ``null``
+
+            - This payment method was not requested.
 
    * - ``pricing``
 
