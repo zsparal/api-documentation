@@ -4,8 +4,9 @@ Create profile
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             use the :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for this action.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             As an alternative, we recommend to use the :doc:`Profiles API </reference/v2/profiles-api/create-profile>`
+             for this action.
 
 .. endpoint::
    :method: POST
@@ -90,7 +91,7 @@ parameters:
        * ``5732`` Electronics, computers and software
        * ``5734`` Hosting/VPN services
        * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards       
+       * ``5815`` Credits/vouchers/giftcards
        * ``5921`` Alcohol
        * ``5944`` Jewelry & Accessories
        * ``5977`` Health & Beauty products

@@ -1,7 +1,9 @@
 Reseller API
 ============
 
-.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality. As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API </reference/v2/payments-api/create-payment>`.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API
+             </reference/v2/payments-api/create-payment>`.
 
 The **Reseller API** can be used to register new merchants with Mollie, link existing merchants to your reseller account,
 or change settings of merchants that you have referred to Mollie.

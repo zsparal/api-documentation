@@ -4,8 +4,8 @@ Create account
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             use the :doc:`Onboarding API </oauth/onboarding>` for this action.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             We recommend to use the :doc:`Onboarding API </oauth/onboarding>` for this action.
 
 .. endpoint::
    :method: POST

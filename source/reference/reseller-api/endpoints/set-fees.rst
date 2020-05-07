@@ -4,8 +4,7 @@ Set fees
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             use the :doc:`Payments API </reference/v2/payments-api/create-payment>` for this action.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
 
 .. endpoint::
    :method: POST
