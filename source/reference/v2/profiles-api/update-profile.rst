@@ -19,37 +19,34 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw``.
 
-Please note that even though all parameters are optional, at least one of them needs to be provided
-in the request.
-
 .. list-table::
    :widths: auto
 
    * - ``name``
 
        .. type:: string
-          :required: false
+          :required: true
 
      - The profile's new name.
 
    * - ``website``
 
        .. type:: string
-          :required: false
+          :required: true
 
      - The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
    * - ``email``
 
        .. type:: string
-          :required: false
+          :required: true
 
      - The new email address associated with the profile's trade name or brand.
 
    * - ``phone``
 
        .. type:: phone number
-          :required: false
+          :required: true
 
      - The new phone number associated with the profile's trade name or brand. Must be in the
        `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
