@@ -34,7 +34,7 @@ Mollie(profileId[, options])
                  :required: false
 
             - Allows you to preset the language to be used. When this
-              parameter is not provided, the browser language will be used instead. We recommend you
+              parameter is not provided, the browser language will be used instead. If we also not support the browser language then it will be shown in English. We recommend you
               provide the language tag because this is usually more accurate.
 
               Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
