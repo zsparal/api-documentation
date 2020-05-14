@@ -478,6 +478,9 @@ Klarna Pay later. / Slice it.
 
 Meal vouchers
 """""""""""""
+.. note:: Meal vouchers are currently in a closed beta. When you are interesting in using this payment
+          method, please reach out to us.
+
 .. list-table::
    :widths: auto
 

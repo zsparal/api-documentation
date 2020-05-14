@@ -1,5 +1,9 @@
 Integrating meal vouchers
 =========================
+
+.. note:: Meal vouchers are currently in a closed beta. When you are interesting in using this payment
+          method, please reach out to us.
+
 A meal voucher is a voucher for a meal given to employees as an employee benefit, allowing them to
 eat at outside restaurants, typically for lunch. In many countries, meal vouchers had favorable tax
 treatment. Vouchers are typically in the form of paper tickets but are gradually being replaced
