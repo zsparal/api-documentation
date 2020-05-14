@@ -23,13 +23,13 @@ Enable payment method
 
 Enable a payment method on a specific or authenticated profile to use it with payments.
 
-.. note:: Not all payment methods can be enabled via this API call. The API will return an error when this is the case
-          with a link to the Mollie Dashboard where the method can be enabled manually.
+.. note:: Some payment methods might need extra steps to be activated, for example an OAuth connection with the supplier.
+          In those cases, the status will be set to ``pending-external`` and the response will contain a link to continue the activation.
 
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``method`` with the name of
-the method's ID you want to activate, for example ``bancontact``. There is no need to set body parameters in this ``POST``
+the method's ID you want to activate, for example ``ideal``. There is no need to set body parameters in this ``POST``
 request.
 
 Response
@@ -39,14 +39,14 @@ An objects of ``method`` will be returned as described in :doc:`Get method </ref
 Example
 -------
 
-Request (method that can be enabled)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Request
+^^^^^^^
 
 .. code-block-selector::
   .. code-block:: bash
       :linenos:
 
-      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/bancontact \
+      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/ideal \
            -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
   .. code-block:: php
@@ -57,17 +57,7 @@ Request (method that can be enabled)
       $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
       $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
 
-      try {
-          $profile->enableMethod('bancontact');
-      } catch (ApiException $e) {
-          $dashboardUrl = $e->getDashboardUrl();
-
-          if(! is_null($dashboardUrl)) {
-              // ... redirect to dashboard url
-          } else {
-              throw $e;
-          }
-      }
+      $profile->enableMethod('ideal');
 
 Response
 ^^^^^^^^
@@ -78,79 +68,31 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
    {
-       "resource": "method",
-       "id": "bancontact",
-       "description": "Bancontact",
-       "image": {
-           "size1x": "https://www.mollie.com/external/icons/payment-methods/bancontact.png",
-           "size2x": "https://www.mollie.com/external/icons/payment-methods/bancontact%402x.png",
-           "svg": "https://www.mollie.com/external/icons/payment-methods/bancontact.svg"
-       },
-       "_links": {
-           "self": {
-               "href": "https://api.mollie.com/v2/methods/bancontact",
-               "type": "application/hal+json"
-           },
-           "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/profiles-api/activate-method",
-               "type": "text/html"
-           }
-       }
-   }
-
-Example
--------
-
-Request (method that can't be enabled)
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. code-block-selector::
-  .. code-block:: bash
-    :linenos:
-
-    curl -X GET https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/creditcard \
-         -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
-
-  .. code-block:: php
-      :linenos:
-
-      <?php
-      $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setAccessToken("access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ");
-      $profile = $mollie->profiles->get('pfl_v9hTwCvYqw');
-
-      try {
-          $profile->enableMethod('creditcard');
-      } catch (ApiException $e) {
-          $dashboardUrl = $e->getDashboardUrl();
-
-          if(! is_null($dashboardUrl)) {
-              // ... redirect to dashboard url
-          } else {
-              throw $e;
-          }
-      }
-
-Response
-^^^^^^^^
-.. code-block:: http
-   :linenos:
-
-   HTTP/1.1 422 Unprocessable Entity
-   Content-Type: application/hal+json; charset=utf-8
-
-   {
-       "status": 422,
-       "title": "Unprocessable Entity",
-       "detail": "Can not enable Credit card via the API. Please go to the dashboard to enable this payment method.",
-       "_links": {
-            "dashboard": {
-                   "href": "https://www.mollie.com/dashboard/settings/profiles/pfl_v9hTwCvYqw/payment-methods",
-                   "type": "text/html"
+        "resource": "method",
+        "id": "ideal",
+        "description": "iDEAL",
+        "minimumAmount": {
+            "value": "0.01",
+            "currency": "EUR"
+        },
+        "maximumAmount": {
+            "value": "50000.00",
+            "currency": "EUR"
+        },
+        "image": {
+            "size1x": "https://www.mollie.com/external/icons/payment-methods/ideal.png",
+            "size2x": "https://www.mollie.com/external/icons/payment-methods/ideal%402x.png",
+            "svg": "https://www.mollie.com/external/icons/payment-methods/ideal.svg"
+        },
+        "status": "activated",
+        "_links": {
+            "self": {
+                "href": "https://api.mollie.com/v2/methods/ideal",
+                "type": "application/hal+json"
             },
             "documentation": {
-                   "href": "https://docs.mollie.com/guides/handling-errors",
-                   "type": "text/html"
+                "href": "https://docs.mollie.com/reference/v2/profiles-api/enable-method",
+                "type": "text/html"
             }
-       }
-   }
+        }
+    }

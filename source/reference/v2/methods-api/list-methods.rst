@@ -289,6 +289,7 @@ Response
                         "size2x": "https://mollie.com/external/icons/payment-methods/ideal%402x.png",
                         "svg": "https://mollie.com/external/icons/payment-methods/ideal.svg"
                     },
+                    "status": "activated",
                     "pricing": [
                         {
                             "description": "Netherlands",
@@ -323,6 +324,7 @@ Response
                         "size2x": "https://mollie.com/external/icons/payment-methods/creditcard%402x.png",
                         "svg": "https://mollie.com/external/icons/payment-methods/creditcard.svg"
                     },
+                    "status": "activated",
                     "pricing": [
                         {
                             "description": "Commercial & non-European cards",

@@ -4,8 +4,9 @@ Update bankaccount
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             change to the Mollie v2 API.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             At this moment, it's no longer possible to update bank account information through the API. This information
+             can still be updated via our Dashboard.
 
 .. endpoint::
    :method: POST

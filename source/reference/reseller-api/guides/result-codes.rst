@@ -1,8 +1,9 @@
 Result codes
 ============
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             change to the Mollie v2 API.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API
+             </reference/v2/payments-api/create-payment>`.
 
 Every API request will be answered with a **result code**. Results will look like:
 
@@ -63,7 +64,7 @@ The following elements are present in every API result:
    * - ``31``
 
      - The parameter ``partner_id`` is missing.
-   
+
    * - ``32``
 
      - Access denied. The account is already claimed by another partner.

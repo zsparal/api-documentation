@@ -4,8 +4,8 @@ Disconnect account
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated and can still be used for the foreseeable future. We recommend to
-             change to the Mollie v2 API.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+             This functionality is no longer available.
 
 .. endpoint::
    :method: POST
