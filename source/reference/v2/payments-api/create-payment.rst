@@ -474,6 +474,25 @@ Klarna Pay later. / Slice it.
 
        Please reach out to your account manager at Mollie to enable this feature with Klarna.
 
+.. _mealvoucher_method_details:
+
+Meal vouchers
+"""""""""""""
+.. note:: Meal vouchers are currently in a closed beta. When you are interested in using this payment
+          method, please reach out to your account manager.
+
+.. list-table::
+   :widths: auto
+
+   * - ``issuer``
+
+       .. type:: string
+          :required: false
+
+     - A meal voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep link
+       to the specific card website. The full list of issuers can be retrieved via the
+       :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
+
 .. _paypal-method-details:
 
 PayPal

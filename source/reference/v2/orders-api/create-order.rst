@@ -142,8 +142,8 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank`` ``paypal``
-       ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mealvoucher``
+       ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``payment``
 
@@ -219,6 +219,21 @@ The order lines contain the actual things that your customer bought.
 
        .. note:: For selling digitally delivered goods through PayPal, you will need to request PayPal to `enable this on
                  your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
+
+   * - ``category``
+
+       .. type:: string
+          :required: false
+
+     - The category of product bought. Must be one of the following values:
+
+       * ``food_and_drinks``
+       * ``home_and_garden``
+       * ``gifts_and_flowers``
+
+       .. note:: This parameter is optional. However, *one* of your order lines should contain it if
+                 you want to accept ``mealvoucher`` payments. We advise to set this parameter for all
+                 your order lines.
 
    * - ``name``
 
@@ -521,6 +536,7 @@ Example
                   "lines": [
                      {
                            "type": "physical",
+                           "category": "gifts_and_flowers",
                            "sku": "5702016116977",
                            "name": "LEGO 42083 Bugatti Chiron",
                            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
@@ -550,6 +566,7 @@ Example
                      },
                      {
                            "type": "physical",
+                           "category": "gifts_and_flowers",
                            "sku": "5702015594028",
                            "name": "LEGO 42056 Porsche 911 GT3 RS",
                            "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
@@ -1037,6 +1054,7 @@ Response
                "name": "LEGO 42083 Bugatti Chiron",
                "sku": "5702016116977",
                "type": "physical",
+               "category": "gifts_and_flowers",
                "status": "created",
                "metadata": {
                   "order_id": "1337",
@@ -1098,6 +1116,7 @@ Response
                "name": "LEGO 42056 Porsche 911 GT3 RS",
                "sku": "5702015594028",
                "type": "physical",
+               "category": "gifts_and_flowers",
                "status": "created",
                "metadata": null,
                "isCancelable": false,

@@ -77,8 +77,8 @@ Parameters
        Payment </reference/v2/payments-api/create-payment>` API.
 
        For example: when passing ``orders`` the result will include payment methods that can only be used in conjunction
-       with orders, such as *Klarna Pay later*. Default behaviour is returning all available payment methods for
-       ``payments``.
+       with orders, such as *Klarna Pay later* and meal vouchers. Default behaviour is returning all
+       available payment methods for ``payments``.
 
        Possible values: ``orders`` ``payments``.
 

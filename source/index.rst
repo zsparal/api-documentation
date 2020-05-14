@@ -1,7 +1,7 @@
 Mollie API: simple & powerful
 =============================
 
-Use the Mollie API to integrate online payments by Mollie directly into your website or app. Mollie and your website 
+Use the Mollie API to integrate online payments by Mollie directly into your website or app. Mollie and your website
 or app back-end will communicate by sending HTTP requests back and forth.
 
 This page provides an overview of the Mollie API. The topics in the chapter deal with a number of specific aspects of
@@ -49,6 +49,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `KBC/CBC Payment Button <https://www.mollie.com/en/payments/kbc-cbc>`_
 * `Klarna Pay later  <https://www.mollie.com/en/payments/klarna-pay-later>`_
 * `Klarna Slice it <https://www.mollie.com/en/payments/klarna-slice-it>`_
+* `Meal and Eco-vouchers <https://www.mollie.com/en/payments/meal-and-eco-vouchers>`_ (Appetiz, Cadeau Pass, Chèque Déjeuner, Eco Pass, Lunch Pass, Monizze, PassRestaurant, Swile)
 * MyBank
 * `PayPal <https://www.mollie.com/en/payments/paypal>`_
 * `paysafecard <https://www.mollie.com/en/payments/paysafecard>`_
