@@ -49,8 +49,7 @@ Mollie is always adding new payment methods. The Mollie API currently supports t
 * `KBC/CBC Payment Button <https://www.mollie.com/en/payments/kbc-cbc>`_
 * `Klarna Pay later  <https://www.mollie.com/en/payments/klarna-pay-later>`_
 * `Klarna Slice it <https://www.mollie.com/en/payments/klarna-slice-it>`_
-* Meal vouchers (Appetiz, Cadeau Pass, Chèque Déjeuner, Eco Pass, Lunch Pass, Monizze, PassRestaurant,
-  Swile)
+* `Meal and Eco-vouchers <https://www.mollie.com/en/payments/meal-and-eco-vouchers>`_ (Appetiz, Cadeau Pass, Chèque Déjeuner, Eco Pass, Lunch Pass, Monizze, PassRestaurant, Swile)
 * MyBank
 * `PayPal <https://www.mollie.com/en/payments/paypal>`_
 * `paysafecard <https://www.mollie.com/en/payments/paysafecard>`_

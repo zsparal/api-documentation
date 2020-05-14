@@ -11,7 +11,8 @@ Thursday, 14th
 
 - Added ``mealvoucher`` as new payment method. See our :doc:`guide </orders/integrating-meal-vouchers>`
   for how you can integrate this into your checkout. Please note that this payment method is currently
-  in a closed beta state.
+  in a private beta state. If you are interested in participating, reach out to your account manager
+  or our support department.
 
 April 2020
 ==========
