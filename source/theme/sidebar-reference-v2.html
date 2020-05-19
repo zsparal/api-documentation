@@ -414,6 +414,16 @@
 			'Disable payment method',
 			'DELETE /v2/profiles/*/methods/*'
 		) }}
+    {{ sidebar_item(
+    'reference/v2/profiles-api/enable-gift-card-issuer',
+    'Enable gift card issuer',
+    'POST /v2/profiles/*/methods/giftcard/issuers/*'
+    ) }}
+    {{ sidebar_item(
+    'reference/v2/profiles-api/disable-gift-card-issuer',
+    'Disable gift card issuer',
+    'POST /v2/profiles/*/methods/giftcard/issuers/*'
+    ) }}
 		{{ sidebar_item(
 			'reference/v2/profiles-api/list-profiles',
 			'List profiles',
