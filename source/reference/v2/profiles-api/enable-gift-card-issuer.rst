@@ -40,7 +40,7 @@ Response
 
         .. type:: string
 
-      - Indicates the response contains an issuer object. Will always contain ``issuers`` for this endpoint.
+      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
     * - ``id``
 
@@ -115,7 +115,7 @@ Response
    Content-Type: application/hal+json; charset=utf-8
 
     {
-        "resource": "issuers",
+        "resource": "issuer",
         "id": "festivalcadeau",
         "description": "FestivalCadeau Giftcard",
         "status": "pending-issuer",
