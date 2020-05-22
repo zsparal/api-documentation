@@ -74,7 +74,7 @@ Parameters
 
        Possible values: ``auto`` ``force``
 
-   * - ``lang``
+   * - ``locale``
 
        .. type:: string
           :required: false
