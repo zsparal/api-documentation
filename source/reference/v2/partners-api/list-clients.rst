@@ -71,7 +71,7 @@ Response
               .. type:: array
 
             - An array of client objects as described in
-              :doc:`Get client </reference/v2/partners-api/get-partner>`.
+              :doc:`Get client </reference/v2/partners-api/get-client>`.
 
    * - ``_links``
 
