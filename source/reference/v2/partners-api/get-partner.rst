@@ -64,14 +64,16 @@ Response
 
               .. type:: date
 
-            - The date and time from which the token is active, in ISO 8601 format.
+            - The date and time from which the token is active, in
+              `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
           * - ``endsAt``
 
               .. type:: date
 
-            - | The date and time after which the token is no longer active, in ISO 8601 format.
-                Will be ``null`` if no end date has been set.
+            - | The date and time after which the token is no longer active, in
+                `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be ``null`` if no
+                end date has been set.
 
    * - ``partnerContractSignedAt``
 
@@ -79,7 +81,8 @@ Response
           :required: false
 
      - |
-       | The date and time the contract was signed, in ISO 8601 format. Will be omitted if the
+       | The date and time the contract was signed, in
+         `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be omitted if the
          contract has not yet been signed, or if ``partnerType`` is ``null``.
 
    * - ``_links``
@@ -96,21 +99,21 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of this endpoint itself.
+            - The API resource URL of the partner itself.
 
           * - ``documentation``
 
               .. type:: URL object
 
-            - The URL for the documentation of this endpoint.
+            - The URL to the documentation of this endpoint.
 
           * - ``signuplink``
 
               .. type:: URL object
                  :required: false
 
-            - URL that can be used to have new organizations sign up and be automatically linked to
-              this partner. Will be omitted if the partner is not of type ``signuplink``.
+            - The URL that can be used to have new organizations sign up and be automatically linked
+              to this partner. Will be omitted if the partner is not of type ``signuplink``.
 
 Example
 -------

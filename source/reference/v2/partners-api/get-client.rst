@@ -43,7 +43,7 @@ Response
 
        .. type:: string
 
-     - The unique identifier of the client, which corresponds to the id of the organization.
+     - The unique identifier of the client, which corresponds to the ID of the organization.
 
    * - ``organizationCreatedAt``
 
@@ -51,7 +51,8 @@ Response
           :required: false
 
      - |
-       | The date and time the organization was created, in ISO 8601 format.
+       | The date and time the organization was created, in
+         `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        | Only returned when one of the embeds is available.
 
    * - ``commission``
@@ -90,7 +91,7 @@ Response
 
               .. type:: URL object
 
-            - The API resource URL of this endpoint itself.
+            - The API resource URL of the client itself.
 
           * - ``organization``
 
@@ -112,7 +113,7 @@ Response
 
               .. type:: URL object
 
-            - The URL for the documentation of this endpoint.
+            - The URL to the documentation of this endpoint.
 
 Example
 -------

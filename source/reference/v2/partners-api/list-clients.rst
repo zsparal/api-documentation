@@ -12,7 +12,7 @@ List clients
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a list of clients of the authenticated partner organization.
+Retrieve all clients.
 
 The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
 
@@ -105,7 +105,7 @@ Response
 
               .. type:: URL object
 
-            - The URL for the documentation of this endpoint.
+            - The URL to the documentation of this endpoint.
 
 Example
 -------
@@ -177,5 +177,4 @@ Response
                "type": "text/html"
            }
        }
-
    }
