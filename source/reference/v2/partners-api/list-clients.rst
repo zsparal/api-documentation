@@ -5,7 +5,7 @@ List clients
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/organizations/me/clients
+   :url: https://api.mollie.com/v2/clients
 
 .. authentication::
    :api_keys: false
@@ -113,7 +113,7 @@ Example
 .. code-block:: bash
   :linenos:
 
-  curl -X GET https://api.mollie.com/v2/organizations/me/clients?limit=3 \
+  curl -X GET https://api.mollie.com/v2/clients?limit=3 \
      -H "Authorization: Bearer access_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
 Response
@@ -141,7 +141,7 @@ Response
                    },
                    "_links": {
                        "self": {
-                           "href": "https://api.mollie.com/v2/organizations/me/clients/org_1337",
+                           "href": "https://api.mollie.com/v2/clients/org_1337",
                            "type": "application/hal+json"
                        },
                        "organization": {
@@ -164,12 +164,12 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/organizations/me/clients?limit=3",
+               "href": "https://api.mollie.com/v2/clients?limit=3",
                "type": "application/hal+json"
            },
            "previous": null,
            "next": {
-               "href": "https://api.mollie.com/v2/organizations/me/clients?from=org_1379&limit=3",
+               "href": "https://api.mollie.com/v2/clients?from=org_1379&limit=3",
                "type": "application/hal+json"
            },
            "documentation": {
