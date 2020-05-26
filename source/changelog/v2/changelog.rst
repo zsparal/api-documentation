@@ -6,6 +6,12 @@ changes are documented here.
 May 2020
 ========
 
+Tuesday, 26th
+-------------
+
+- It is now possible to update the ``metadata`` of an order line via the
+  :doc:`Update order line endpoint </reference/v2/orders-api/update-orderline>`.
+
 Thursday, 14th
 --------------
 
