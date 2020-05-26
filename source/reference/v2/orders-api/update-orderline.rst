@@ -15,9 +15,9 @@ Update order line
 This endpoint can be used to update an order line. Only the lines that belong to an order with status ``created``,
 ``pending`` or ``authorized`` can be updated.
 
-Use cases for this endpoint could be updating the ``name``, ``productUrl`` and ``imageUrl`` for a certain order line
-because your customer wants to swap the item for a different variant, for example exchanging a blue skirt for the same
-skirt in red.
+Use cases for this endpoint could be updating the ``name``, ``productUrl``, ``imageUrl``, and ``metadata`` for a
+certain order line because your customer wants to swap the item for a different variant, for example exchanging
+a blue skirt for the same skirt in red.
 
 Or update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` and ``vatRate`` if you
 want to substitute a product for an entirely different one.
@@ -60,6 +60,15 @@ in the request.
           :required: false
 
      - A link pointing to the product page in your web shop of the product sold.
+
+   * - ``metadata``
+
+       .. type:: mixed
+          :required: false
+
+     - Provide any data you like, for example a string or a JSON object. We will save the data
+       alongside the order line. Whenever you fetch the order with our API, we’ll also include
+       the metadata. You can use up to approximately 1kB.
 
    * - ``quantity``
 
