@@ -1,5 +1,5 @@
-Get partner
-===========
+Get Partner API
+===============
 .. api-name::Partners API
    :version: 2
 

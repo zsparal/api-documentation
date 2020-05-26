@@ -1,5 +1,5 @@
-Get client
-===========
+Get Client API
+==============
 .. api-name::Partners API
    :version: 2
 
@@ -16,14 +16,19 @@ Retrieve a single client by its ID.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the client’s ID.
+Replace ``id`` in the endpoint URL by the client’s ID, for example ``org_1337``.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This endpoint also allows for embedding additional information by appending the following values via the ``embed`` query string parameter.
+This endpoint also allows for embedding additional information by appending the following values via
+the ``embed`` query string parameter.
 
-* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>` of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app that causes the link on the organization) include ``organizations.read``.
-* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app that causes the link on the organization) include ``onboarding.read``.
+* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>`
+  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
+  the scopes (of the app that causes the link on the organization) include ``organizations.read``.
+* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>`
+  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
+  the scopes (of the app that causes the link on the organization) include ``onboarding.read``.
 
 Response
 --------
@@ -43,7 +48,8 @@ Response
 
        .. type:: string
 
-     - The unique identifier of the client, which corresponds to the ID of the organization.
+     - The unique identifier of the client, which corresponds to the ID of the organization, for
+       example ``org_1337``.
 
    * - ``organizationCreatedAt``
 
@@ -99,7 +105,7 @@ Response
                  :required: false
 
             - The API resource URL of the client's organization. Only available when the include
-              could’ve been used.
+              could have been used.
 
           * - ``onboarding``
 
@@ -107,7 +113,7 @@ Response
                  :required: false
 
             - The API resource URL of the client's onboarding status. Only available when the
-              include could’ve been used.
+              include could have been used.
 
           * - ``documentation``
 
