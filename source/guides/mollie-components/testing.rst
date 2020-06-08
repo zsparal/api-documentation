@@ -71,3 +71,5 @@ Pass one of the following amounts to trigger a failure condition in test mode:
    +------------------------------+--------------+
    | ``authentication_failed``    |   € 1,010.00 |
    +------------------------------+--------------+
+   | ``card_declined``            |   € 1,011.00 |
+   +------------------------------+--------------+

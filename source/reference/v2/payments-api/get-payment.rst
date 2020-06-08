@@ -788,7 +788,7 @@ Credit card
 
               Possible values: ``authentication_failed``  ``card_expired`` ``inactive_card`` ``insufficient_funds``
               ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type`` ``invalid_cvv``
-              ``possible_fraud`` ``refused_by_issuer`` ``unknown_reason``
+              ``possible_fraud`` ``refused_by_issuer`` ``card_declined`` ``unknown_reason``
 
           * - ``failureMessage``
 
