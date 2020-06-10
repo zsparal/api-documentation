@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+June 2020
+=========
+
+Tuesday, 23rd
+-------------
+
+- `Pay later <https://www.mollie.com/en/payments/klarna-pay-later>`_ is now available for Belgian shoppers.
+
 May 2020
 ========
 
