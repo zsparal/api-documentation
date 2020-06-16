@@ -726,7 +726,7 @@ specify which profile the payment belongs to. Organizations can have multiple pr
 
 QR codes
 ^^^^^^^^
-To create a payment with a QR code embedded in the API response, call the API endpoint with an
+To create a payment with a QR code embedded in the API response, explicitly set the payment method and call the API endpoint with an
 include request for ``details.qrCode`` in the query string:
 
 .. endpoint::
