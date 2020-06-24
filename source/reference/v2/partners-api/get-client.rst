@@ -61,28 +61,6 @@ Response
          `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
        | Only returned when one of the embeds is available.
 
-   * - ``commission``
-
-       .. type:: object
-
-     - The commission received by the currently authenticated partner over the client.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``count``
-
-              .. type:: integer
-
-            - The total number of payments performed by the client for which the currently
-              authenticated partner received commission.
-
-          * - ``totalAmount``
-
-              .. type:: amount object
-
-            - The total amount of commission received.
-
    * - ``_links``
 
        .. type:: object
