@@ -14,7 +14,7 @@ June 2020
 Friday, 26th
 ------------
 
-- We limit the amount that can be spend with a gift card to 50 euros per payment due to new regulations.
+- We limit the amount that can be spent with a gift card to 50 euros per payment due to new regulations.
 
 April 2020
 ==========
