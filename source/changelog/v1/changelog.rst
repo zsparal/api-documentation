@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+June 2020
+=========
+
+Friday, 26th
+------------
+
+- We limit the amount that can be spend with a gift card to 50 euros per payment due to new regulations.
+
 April 2020
 ==========
 

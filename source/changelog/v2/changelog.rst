@@ -6,6 +6,11 @@ changes are documented here.
 June 2020
 =========
 
+Friday, 26th
+------------
+
+- We limit the amount that can be spend with a gift card to 50 euros per payment due to new regulations.
+
 Tuesday, 23rd
 -------------
 
