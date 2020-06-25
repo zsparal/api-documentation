@@ -12,8 +12,8 @@ Create mandate
    :organization_access_tokens: true
    :oauth: true
 
-Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card or bank account
-recurrently.
+Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card,
+PayPal account or bank account recurrently.
 
 It is only possible to create mandates for IBANs with this endpoint. To create mandates for credit cards, have your
 customers perform a :ref:`'first payment' <payments/recurring/first-payment>` with their credit card.
@@ -34,7 +34,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
      - Payment method of the mandate.
 
-       Possible values: ``directdebit``
+       Possible values: ``directdebit`` ``paypal``
 
    * - ``consumerName``
 
@@ -46,9 +46,11 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
    * - ``consumerAccount``
 
        .. type:: string
-          :required: true
+          :required: false
 
      - The consumer's IBAN.
+
+       .. note:: Required for ``directdebit`` mandates
 
    * - ``consumerBic``
 
@@ -71,6 +73,24 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
      - A custom mandate reference. Use an unique ``mandateReference`` as some banks decline a
        Direct Debit payment if the ``mandateReference`` is not unique.
+
+   * - ``paypalBillingAgreementId``
+
+       .. type:: string
+          :required: false
+
+     - The billing agreement ID given by PayPal.
+
+       .. note:: Required for ``paypal`` mandates
+
+   * - ``paypalEmail``
+
+       .. type:: string
+          :required: false
+
+     - The consumer's PayPal account's email address.
+
+       .. note:: Required for ``paypal`` mandates
 
 
 Access token parameters
@@ -127,7 +147,7 @@ Example
 
    .. code-block:: python
       :linenos:
-      
+
       from mollie.api.client import Client
 
       mollie_client = Client()
