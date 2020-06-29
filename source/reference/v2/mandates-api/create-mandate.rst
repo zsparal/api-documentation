@@ -59,6 +59,15 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
 
      - The consumer's bank's BIC.
 
+   * - ``consumerEmail``
+
+       .. type:: string
+          :required: false
+
+     - The consumer's email address.
+
+       .. note:: Required for ``paypal`` mandates
+
    * - ``signatureDate``
 
        .. type:: date
@@ -80,15 +89,6 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``/
           :required: false
 
      - The billing agreement ID given by PayPal.
-
-       .. note:: Required for ``paypal`` mandates
-
-   * - ``paypalEmail``
-
-       .. type:: string
-          :required: false
-
-     - The consumer's PayPal account's email address.
 
        .. note:: Required for ``paypal`` mandates
 
