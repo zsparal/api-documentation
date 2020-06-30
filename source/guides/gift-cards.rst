@@ -78,8 +78,8 @@ your account. Use the include ``issuers`` to include the gift card brands availa
 
 If only a single brand is available, the issuer is optional and we will use the available issuer.
 
-.. note:: Each method has a minimum and a maximum amount that can be processed. For gift cards, you should ignore the
-          maximum amount. The maximum amount visible for gift cards is per gift card transaction.
+.. note:: Each method has a minimum and a maximum amount that can be processed. For gift cards, this
+          is 50 euros per payment spread over multiple cards.
 
 The ID for the gift cards method is ``giftcard``.
 
