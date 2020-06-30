@@ -6,6 +6,12 @@ changes are documented here.
 June 2020
 =========
 
+Tuesday, 30th
+-------------
+
+- It is now possible to import your PayPal billing agreements by creating mandates via the
+  :doc:`Create mandates API </reference/v2/mandates-api/create-mandate>`.
+
 Friday, 26th
 ------------
 
