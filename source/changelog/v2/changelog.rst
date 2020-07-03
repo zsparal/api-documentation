@@ -3,6 +3,16 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+July 2020
+=========
+
+TBA
+---
+
+- We add a ``mobileAppCheckout`` to the :doc:`Payment API response </reference/v2/payments-api/get-payment>`
+  if the payment method is supporting payments via a companion app. At the moment, this only involves
+  ``bancontact``.
+
 June 2020
 =========
 
