@@ -97,8 +97,8 @@ To initiate a payment from your app you need to call the file you have created i
 the browser with the Checkout URL you will receive. **Do this in the native browser of the device
 and not in an in-app browser view** since the operating systems will reject opening the bank apps
 from these views. If the ``method`` supports a ``mobileAppCheckout`` URL, use that URL as redirect
-instead of the regular ``checkout`` URL to open the banking app directly from your app without
-opening the browser. This will improve the flow for your consumer.
+instead of the regular ``checkout`` URL. This will open the banking app directly from your app
+without opening the browser. This will improve the flow for your consumer.
 
 .. warning:: Never send an amount to your server for creating a payment to prevent price changes
              between the payment and the actual price the customer needs to pay.

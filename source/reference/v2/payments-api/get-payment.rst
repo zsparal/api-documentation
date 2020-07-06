@@ -450,9 +450,9 @@ Response
 
             - The deeplink URL to the app of the payment method. Currently only available for ``bancontact``.
 
-              .. warning:: You should check if your consumer is having the required app on their mobile
-                           phone before redirecting to this URL. Mobile operating systems will ignore
-                           this URL if they do not have the correct app in place.
+              .. warning:: You should check if your consumer has the required app on their mobile
+                           device before redirecting to this URL. Mobile operating systems will ignore
+                           the redirect to this URL if they do not have the correct app is not installed.
 
           * - ``changePaymentState``
 
