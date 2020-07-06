@@ -9,7 +9,7 @@ July 2020
 TBA
 ---
 
-- We add a ``mobileAppCheckout`` to the :doc:`Payment API response </reference/v2/payments-api/get-payment>`
+- We have added a ``mobileAppCheckout`` URL to the :doc:`Payment API response </reference/v2/payments-api/get-payment>`
   if the payment method supports payments via a companion (mobile) app. At the moment, this only involves
   ``bancontact``.
 
