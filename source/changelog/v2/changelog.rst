@@ -6,8 +6,8 @@ changes are documented here.
 July 2020
 =========
 
-TBA
----
+Thursday, 9th
+-------------
 
 - We have added a ``mobileAppCheckout`` URL to the :doc:`Payment API response </reference/v2/payments-api/get-payment>`
   if the payment method supports payments via a companion (mobile) app. At the moment, this only involves
