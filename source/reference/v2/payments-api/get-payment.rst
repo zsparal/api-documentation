@@ -437,11 +437,22 @@ Response
             - The URL your customer should visit to make the payment. This is where you should redirect the
               consumer to.
 
-              .. note :: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
-                         redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
-                         ``303 See Other`` to force an HTTP ``GET`` redirect.
+              .. note:: You should use HTTP ``GET`` for the redirect to the checkout URL. Using HTTP ``POST`` for
+                        redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
+                        ``303 See Other`` to force an HTTP ``GET`` redirect.
 
               Recurring payments don't have a checkout URL.
+
+          * - ``mobileAppCheckout``
+
+              .. type:: URL object
+                 :required: false
+
+            - The deeplink URL to the app of the payment method. Currently only available for ``bancontact``.
+
+              .. warning:: You should check if your customer has the required app on their mobile
+                           device before redirecting to this URL. Mobile operating systems will ignore
+                           the redirect to this URL if the correct app is not installed.
 
           * - ``changePaymentState``
 
