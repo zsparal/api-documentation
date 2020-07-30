@@ -48,7 +48,7 @@ Response
 --------
 ``200`` ``application/json``
 
-A payment object is returned, as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
+A payment object is returned, as described in :doc:`/reference/v1/payments-api/get-payment`.
 
 Example
 -------

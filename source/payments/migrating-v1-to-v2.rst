@@ -8,7 +8,7 @@ The **Mollie API v2** offers some compelling new features compared to the older 
 * Fully supports :doc:`multicurrency </payments/multicurrency>`. You can create payments, subscriptions, and refunds in
   non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
   reflect the settlement amount for various resources.
-* Possible to update details of payments via the new :doc:`Update Payment </reference/v2/payments-api/update-payment>` endpoint.
+* Possible to update details of payments via the new :doc:`/reference/v2/payments-api/update-payment`.
 * Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
@@ -235,7 +235,7 @@ The following fields have been changed, renamed or removed:
 * ``phone`` is now formatted in `E.164 <https://en.wikipedia.org/wiki/E.164>`_ formatting.
 * The API keys subresource has been removed.
 
-New APIs have been added, such as het :doc:`/reference/v2/profiles-api/get-profile-me`. 
+New APIs have been added, such as het :doc:`/reference/v2/profiles-api/get-profile-me`.
 
 Changes in the Settlements API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

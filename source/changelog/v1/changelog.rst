@@ -110,7 +110,7 @@ Thursday, 12th
 Wednesday, 4th
 --------------
 
-- Added property ``vatRegulation`` to :doc:`Get organization </reference/v1/organizations-api/get-organization>`.
+- Added property ``vatRegulation`` to :doc:`/reference/v1/organizations-api/get-organization`.
 
 August 2019
 ===========

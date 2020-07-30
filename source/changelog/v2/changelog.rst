@@ -116,7 +116,7 @@ Thursday, 20th
 Friday, 7th
 ------------
 
-- Added dashboard URL on :doc:`Get organization endpoint </reference/v2/organizations-api/current-organization>`
+- Added dashboard URL to the :doc:`/reference/v2/organizations-api/current-organization`.
 
 Tuesday, 4th
 ------------
@@ -130,8 +130,7 @@ January 2020
 Monday, 27th
 ------------
 
-- Added ``restrictPaymentMethodsToCountry`` to the :doc:`Update Payment endpoint </reference/v2/payments-api/update-payment>`
-  in the Payments API.
+- Added ``restrictPaymentMethodsToCountry`` to the :doc:`/reference/v2/payments-api/update-payment`.
 
 - Added support for IDNs (internationalized domain names) for webhook and redirect URLs in :doc:`Payments API</reference/v2/payments-api/create-payment>`.
 
@@ -251,7 +250,7 @@ Monday, 9th
 Wednesday, 4th
 --------------
 
-- Added property ``vatRegulation`` to :doc:`Get organization </reference/v2/organizations-api/get-organization>` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
+- Added property ``vatRegulation`` to :doc:`/reference/v2/organizations-api/get-organization` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
 
 August 2019
 ===========

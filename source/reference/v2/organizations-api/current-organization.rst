@@ -1,5 +1,5 @@
-Get current organization
-========================
+Get Current Organization API
+============================
 .. api-name:: Organizations API
    :version: 2
 
@@ -25,8 +25,8 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-For the full list of fields, see the
-:doc:`Get organization endpoint </reference/v2/organizations-api/get-organization>`. Only ``_links`` is listed here.
+For the full list of fields, see :doc:`/reference/v2/organizations-api/get-organization`. Only
+``_links`` is listed here.
 
 .. list-table::
    :widths: auto
