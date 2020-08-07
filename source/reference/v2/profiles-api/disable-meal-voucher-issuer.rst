@@ -1,5 +1,5 @@
 Disable meal voucher issuer
-========================
+===========================
 .. api-name:: Profiles API
    :version: 2
 

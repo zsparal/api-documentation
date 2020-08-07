@@ -1,5 +1,5 @@
 Enable meal voucher issuer
-=======================
+==========================
 .. api-name:: Profiles API
    :version: 2
 
@@ -63,7 +63,7 @@ Response
 
         .. type:: string
 
-      - The full name of the gift card issuer.
+      - The full name of the meal voucher issuer.
 
     * - ``status``
 
@@ -86,11 +86,38 @@ Response
 
              - Activation of this issuer relies on you taking action with the issuer itself.
 
+    * - ``contractor``
+
+        .. type:: object
+
+      - An object with contractor information
+
+        .. list-table::
+           :widths: auto
+
+           * - ``id``
+
+               .. type:: string
+
+             - The id of the contractor
+
+           * - ``name``
+
+               .. type:: string
+
+             - The name of the contractor
+
+           * - ``contractId``
+
+               .. type:: string
+
+             - The contract id of the contractor.
+
     * - ``_links``
 
         .. type:: object
 
-      - An object with several URL objects relevant to the gift card issuer. Every URL object will contain an ``href`` and
+      - An object with several URL objects relevant to the meal voucher issuer. Every URL object will contain an ``href`` and
         a ``type`` field.
 
         .. list-table::
@@ -100,13 +127,13 @@ Response
 
                .. type:: URL object
 
-             - The API resource URL of the gift card issuer itself.
+             - The API resource URL of the meal voucher issuer itself.
 
            * - ``documentation``
 
                .. type:: URL object
 
-             - The URL to the gift card issuer retrieval endpoint documentation.
+             - The URL to the meal voucher issuer retrieval endpoint documentation.
 
 Request
 ^^^^^^^
@@ -114,8 +141,10 @@ Request
   .. code-block:: bash
       :linenos:
 
-      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/giftcard/issuers/festivalcadeau \
-           -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
+      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/mealvoucher/issuers/cadeaupass \
+           -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
+           -H "Content-Type: application/json" \
+           --data-raw '{ "contractId": "foo" }'
 
 Response
 ^^^^^^^^
@@ -127,16 +156,26 @@ Response
 
     {
         "resource": "issuer",
-        "id": "festivalcadeau",
-        "description": "FestivalCadeau Giftcard",
+        "id": "cadeaupass",
+        "description": "Sodexo Cadeau Pass",
         "status": "pending-issuer",
+        "contractor": {
+            "id": "SodexoBelgique",
+            "name": "Sodexo Belgium",
+            "contractId": "foo"
+        },
+        "image": {
+            "size1x": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass.png",
+            "size2x": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass%402x.png",
+            "svg": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass.svg"
+        },
         "_links": {
             "self": {
-                "href": "https://api.mollie.com/v2/issuers/festivalcadeau",
+                "href": "https://api.mollie.com/v2/issuers/cadeaupass",
                 "type": "application/hal+json"
             },
             "documentation": {
-                "href": "https://docs.mollie.com/reference/v2/profiles-api/enable-giftcard-issuer",
+                "href": "https://docs.mollie.com/reference/v2/profiles-api/enable-meal-voucher-issuer",
                 "type": "text/html"
             }
         }
