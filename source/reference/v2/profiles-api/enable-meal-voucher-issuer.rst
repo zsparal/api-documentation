@@ -144,7 +144,7 @@ Request
       curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/mealvoucher/issuers/cadeaupass \
            -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
            -H "Content-Type: application/json" \
-           --data-raw '{ "contractId": "foo" }'
+           --data-raw '{ "contractId": "abc123" }'
 
 Response
 ^^^^^^^^
@@ -162,7 +162,7 @@ Response
         "contractor": {
             "id": "SodexoBelgique",
             "name": "Sodexo Belgium",
-            "contractId": "foo"
+            "contractId": "abc123"
         },
         "image": {
             "size1x": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass.png",
