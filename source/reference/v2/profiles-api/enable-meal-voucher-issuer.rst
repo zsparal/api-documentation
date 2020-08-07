@@ -25,8 +25,8 @@ Enable a meal voucher issuer on a specific or authenticated profile to use it wi
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``issuer`` with the name of
-the issuer's ID you want to activate, for example ``appetiz``.
+Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``issuer`` with the identifier of
+the issuer you want to activate, for example ``appetiz``.
 
 .. list-table::
    :widths: auto

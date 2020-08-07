@@ -25,8 +25,8 @@ Disable a meal voucher issuer on a specific or authenticated profile.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``issuer`` with the name of
-the issuer's ID you want to disable, for example ``appetiz``.
+Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``issuer`` with the identifier of
+the issuer you want to disable, for example ``appetiz``.
 
 Response
 --------
