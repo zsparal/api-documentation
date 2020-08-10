@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+August 2020
+===========
+
+Monday, 10th
+------------
+
+- Added ``decadeaukaart`` as gift card issuer.
+
 July 2020
 =========
 
