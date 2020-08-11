@@ -650,7 +650,7 @@ Vouchers
        .. type:: string
           :required: false
 
-     - A meal voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep link
+     - A voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep link
        to the specific card website. The full list of issuers can be retrieved via the
        :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 
