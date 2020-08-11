@@ -142,8 +142,8 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mealvoucher``
-       ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank``
+       ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort`` ``voucher``
 
    * - ``payment``
 
@@ -227,12 +227,12 @@ The order lines contain the actual things that your customer bought.
 
      - The category of product bought. Must be one of the following values:
 
-       * ``food_and_drinks``
-       * ``home_and_garden``
-       * ``gifts_and_flowers``
+       * ``meal``
+       * ``eco``
+       * ``gift``
 
        .. note:: This parameter is optional. However, *one* of your order lines should contain it if
-                 you want to accept ``mealvoucher`` payments. We advise to set this parameter for all
+                 you want to accept ``voucher`` payments. We advise to set this parameter for all
                  your order lines.
 
    * - ``name``

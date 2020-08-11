@@ -52,7 +52,7 @@ Tuesday, 26th
 Thursday, 14th
 --------------
 
-- Added ``mealvoucher`` as new payment method. See our :doc:`guide </orders/integrating-meal-vouchers>`
+- Added ``voucher`` as new payment method. See our :doc:`guide </orders/integrating-vouchers>`
   for how you can integrate this into your checkout. Please note that this payment method is currently
   in a private beta state. If you are interested in participating, reach out to your account manager
   or our support department.
