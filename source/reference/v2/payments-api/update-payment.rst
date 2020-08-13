@@ -106,16 +106,7 @@ Gift cards
        .. type:: string
           :required: false
 
-     - The gift card brand to use for the payment. These issuers can be retrieved by using
-       the ``issuers`` :ref:`include in the Methods API <method-includes>`. If you need a brand not in the list, contact
-       our support department. We can also support closed-loop cards.
-
-       If only one issuer is activated on your account, you can omit this parameter.
-
-       Possible values: ``decadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``kunstencultuurcadeaukaart``
-       ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
-       ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion``
-       ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+     - See :ref:`Payments API <payment-method-specific-parameters>`
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -130,9 +121,7 @@ iDEAL
        .. type:: string
           :required: false
 
-     - An iDEAL issuer ID, for example ``ideal_INGBNL2A``. The returned payment URL will deep-link into the
-       specific banking website (ING Bank, in this example). The full list of issuers can be retrieved via the
-       :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
+     - See :ref:`Payments API <payment-method-specific-parameters>`
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -147,10 +136,7 @@ KBC/CBC Payment Button
        .. type:: string
           :required: false
 
-     - The issuer to use for the KBC/CBC payment.The full list of issuers can be retrieved via the
-       :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
-
-       Possible values: ``kbc`` ``cbc``
+     - See :ref:`Payments API <payment-method-specific-parameters>`
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
