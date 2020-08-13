@@ -6,6 +6,11 @@ changes are documented here.
 August 2020
 ===========
 
+Thursday, 13th
+--------------
+
+- Added ``issuer`` field for ``Gift cards``, ``iDEAL``, ``KBC/CBC`` payment types. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`
+
 Monday, 10th
 ------------
 

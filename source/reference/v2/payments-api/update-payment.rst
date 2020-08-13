@@ -93,7 +93,53 @@ Bank transfer
      - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
        **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
-       **Updating this field is only possible when the payment is not yet finalized.**
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
+
+Gift cards
+""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``issuer``
+
+       .. type:: string
+          :required: false
+
+     - See :ref:`Payments API <payment-method-specific-parameters>`
+
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
+
+iDEAL
+"""""
+.. list-table::
+   :widths: auto
+
+   * - ``issuer``
+
+       .. type:: string
+          :required: false
+
+     - See :ref:`Payments API <payment-method-specific-parameters>`
+
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
+
+KBC/CBC Payment Button
+""""""""""""""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``issuer``
+
+       .. type:: string
+          :required: false
+
+     - See :ref:`Payments API <payment-method-specific-parameters>`
+
+       .. note::
+          Updating this field is only possible when the payment is not yet finalized.
 
 Response
 --------
