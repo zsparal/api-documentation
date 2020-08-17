@@ -105,6 +105,16 @@ Parameters
 
        Example: ``https://api.mollie.com/v2/methods?includeWallets=applepay``
 
+   * - ``orderLineCategories``
+
+       .. type:: string
+          :required: false
+
+     - A comma-separated list of the order line categories you support in your checkout. The available
+       categories can be found on the :doc:`Create Order API </reference/v2/orders-api/create-order>` page.
+
+       Example: ``https://api.mollie.com/v2/methods?resource=orders&orderLineCategories=eco,meal``
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
