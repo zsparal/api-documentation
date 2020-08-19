@@ -1,11 +1,11 @@
-Disable meal voucher issuer
-===========================
+Disable voucher issuer
+======================
 .. api-name:: Profiles API
    :version: 2
 
 .. endpoint::
    :method: DELETE
-   :url: https://api.mollie.com/v2/profiles/*id*/methods/mealvoucher/issuers/*issuer*
+   :url: https://api.mollie.com/v2/profiles/*id*/methods/voucher/issuers/*issuer*
 
 .. authentication::
    :api_keys: false
@@ -14,14 +14,14 @@ Disable meal voucher issuer
 
 .. endpoint::
    :method: DELETE
-   :url: https://api.mollie.com/v2/profiles/me/methods/mealvoucher/issuers/*issuer*
+   :url: https://api.mollie.com/v2/profiles/me/methods/voucher/issuers/*issuer*
 
 .. authentication::
    :api_keys: true
    :oauth: false
    :organization_access_tokens: false
 
-Disable a meal voucher issuer on a specific or authenticated profile.
+Disable a voucher issuer on a specific or authenticated profile.
 
 Parameters
 ----------
@@ -41,7 +41,7 @@ Request
   .. code-block:: bash
      :linenos:
 
-     curl -X DELETE https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/mealvoucher/issuers/appetiz \
+     curl -X DELETE https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/voucher/issuers/appetiz \
          -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
 Response

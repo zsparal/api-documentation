@@ -1,11 +1,11 @@
-Enable meal voucher issuer
-==========================
+Enable voucher issuer
+=====================
 .. api-name:: Profiles API
    :version: 2
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v2/profiles/*id*/methods/mealvoucher/issuers/*issuer*
+   :url: https://api.mollie.com/v2/profiles/*id*/methods/voucher/issuers/*issuer*
 
 .. authentication::
    :api_keys: false
@@ -14,14 +14,14 @@ Enable meal voucher issuer
 
 .. endpoint::
    :method: POST
-   :url: https://api.mollie.com/v2/profiles/me/methods/mealvoucher/issuers/*issuer*
+   :url: https://api.mollie.com/v2/profiles/me/methods/voucher/issuers/*issuer*
 
 .. authentication::
    :api_keys: true
    :oauth: false
    :organization_access_tokens: false
 
-Enable a meal voucher issuer on a specific or authenticated profile to use it with payments.
+Enable a voucher issuer on a specific or authenticated profile to use it with payments.
 
 Parameters
 ----------
@@ -57,13 +57,13 @@ Response
 
         .. type:: string
 
-      - The unique identifier of the meal voucher issuer.
+      - The unique identifier of the voucher issuer.
 
     * - ``description``
 
         .. type:: string
 
-      - The full name of the meal voucher issuer.
+      - The full name of the voucher issuer.
 
     * - ``status``
 
@@ -117,7 +117,7 @@ Response
 
         .. type:: object
 
-      - An object with several URL objects relevant to the meal voucher issuer. Every URL object will contain an ``href`` and
+      - An object with several URL objects relevant to the voucher issuer. Every URL object will contain an ``href`` and
         a ``type`` field.
 
         .. list-table::
@@ -127,13 +127,16 @@ Response
 
                .. type:: URL object
 
-             - The API resource URL of the meal voucher issuer itself.
+             - The API resource URL of the voucher issuer itself.
 
            * - ``documentation``
 
                .. type:: URL object
 
-             - The URL to the meal voucher issuer retrieval endpoint documentation.
+             - The URL to the voucher issuer retrieval endpoint documentation.
+
+Example
+-------
 
 Request
 ^^^^^^^
@@ -141,7 +144,7 @@ Request
   .. code-block:: bash
       :linenos:
 
-      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/mealvoucher/issuers/cadeaupass \
+      curl -X POST https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw/methods/voucher/issuers/appetiz \
            -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ" \
            -H "Content-Type: application/json" \
            --data-raw '{ "contractId": "abc123" }'
@@ -156,18 +159,18 @@ Response
 
     {
         "resource": "issuer",
-        "id": "cadeaupass",
-        "description": "Sodexo Cadeau Pass",
+        "id": "appetiz",
+        "description": "Appetiz",
         "status": "pending-issuer",
         "contractor": {
-            "id": "SodexoBelgique",
-            "name": "Sodexo Belgium",
+            "id": "Conecs",
+            "name": "Conecs",
             "contractId": "abc123"
         },
         "image": {
-            "size1x": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass.png",
-            "size2x": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass%402x.png",
-            "svg": "https://www.mollie.com/external/icons/meal-voucher-issuers/cadeaupass.svg"
+            "size1x": "https://www.mollie.com/external/icons/voucher-issuers/apetiz.png",
+            "size2x": "https://www.mollie.com/external/icons/voucher-issuers/apetiz%402x.png",
+            "svg": "https://www.mollie.com/external/icons/voucher-issuers/apetiz.svg"
         },
         "_links": {
             "self": {
@@ -175,7 +178,7 @@ Response
                 "type": "application/hal+json"
             },
             "documentation": {
-                "href": "https://docs.mollie.com/reference/v2/profiles-api/enable-meal-voucher-issuer",
+                "href": "https://docs.mollie.com/reference/v2/profiles-api/enable-voucher-issuer",
                 "type": "text/html"
             }
         }
