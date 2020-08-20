@@ -10,6 +10,7 @@ brands are supported:
 * `Diner Cadeau <https://www.horecasamensterk.nl/>`_
 * `fashioncheque <https://www.fashioncheque.com/>`_
 * `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
+* `Good4fun <https://www.good4fun.nl/>`_
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
 * `Nationale Golfbon <https://www.golfbon.nl/>`_
