@@ -11,6 +11,11 @@ changes are documented here.
 August 2020
 ===========
 
+Thursday, 20th
+--------------
+
+- Added ``good4fun`` as gift card issuer.
+
 Monday, 10th
 ------------
 
