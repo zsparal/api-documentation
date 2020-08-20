@@ -174,7 +174,7 @@ Response
         },
         "_links": {
             "self": {
-                "href": "https://api.mollie.com/v2/issuers/cadeaupass",
+                "href": "https://api.mollie.com/v2/issuers/appetiz",
                 "type": "application/hal+json"
             },
             "documentation": {
