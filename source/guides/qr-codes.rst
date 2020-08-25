@@ -18,6 +18,8 @@ How do QR codes work?
 #. Mollie informs you of the payment status change using the :doc:`webhook </guides/webhooks>`.
 #. The customer is redirected back to the webshop on their computer.
 
+.. note:: Only iDeal QR works in testmode. 
+
 Supported payment methods
 -------------------------
 +-------------+--------------------------------------------------------------------------------------------------------+
