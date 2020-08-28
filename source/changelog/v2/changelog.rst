@@ -6,8 +6,8 @@ changes are documented here.
 August 2020
 ===========
 
-TBA
----
+Friday, 28th
+------------
 
 - We have added a ``dashboard`` URL to the :doc:`Payment </reference/v2/payments-api/get-payment>`,
   :doc:`Order </reference/v2/orders-api/get-order>`, :doc:`Customer </reference/v2/customers-api/get-customer>`,
