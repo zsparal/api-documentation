@@ -152,6 +152,10 @@ Response
                "href": "https://api.mollie.com/v2/customers/cst_8wmqcHMN4U",
                "type": "application/hal+json"
            },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/customers/cst_8wmqcHMN4U",
+               "type": "text/html"
+           },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/customers-api/get-customer",
                "type": "text/html"

@@ -128,6 +128,10 @@ Response
                            "href": "https://www.mollie.com/paymentscreen/issuer/select/ideal/7UhSN1zuXS",
                            "type": "text/html"
                        },
+                       "dashboard": {
+                           "href": "https://www.mollie.com/dashboard/org_123456789/payments/tr_7UhSN1zuXS",
+                           "type": "text/html"
+                       },
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
                            "type": "application/hal+json"

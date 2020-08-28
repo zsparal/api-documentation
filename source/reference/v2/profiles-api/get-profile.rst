@@ -90,7 +90,7 @@ Response
        * ``5732`` Electronics, computers and software
        * ``5734`` Hosting/VPN services
        * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards       
+       * ``5815`` Credits/vouchers/giftcards
        * ``5921`` Alcohol
        * ``5944`` Jewelry & Accessories
        * ``5977`` Health & Beauty products
@@ -157,6 +157,12 @@ Response
               .. type:: URL object
 
             - The API resource URL of the profile itself.
+
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - Direct link to the profile in the Mollie Dashboard.
 
           * - ``chargebacks``
 
@@ -249,6 +255,10 @@ Response
            "self": {
                "href": "https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw",
                "type": "application/hal+json"
+           },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/settings/profiles/pfl_v9hTwCvYqw",
+               "type": "text/html"
            },
            "chargebacks": {
                "href": "https://api.mollie.com/v2/chargebacks?profileId=pfl_v9hTwCvYqw",

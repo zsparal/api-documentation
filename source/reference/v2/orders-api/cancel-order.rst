@@ -270,6 +270,10 @@ Response
                 "href": "https://www.mollie.com/payscreen/order/checkout/pbjz8x",
                 "type": "text/html"
             },
+            "dashboard": {
+                "href": "https://www.mollie.com/dashboard/org_123456789/orders/ord_pbjz8x",
+                "type": "text/html"
+            },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/orders-api/get-order",
                 "type": "text/html"

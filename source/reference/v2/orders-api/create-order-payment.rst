@@ -182,6 +182,10 @@ Response
                "href": "https://www.mollie.com/paymentscreen/testmode/?method=banktransfer&token=fgnwdh",
                "type": "text/html"
            },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/payments/tr_WDqYK6vllg",
+               "type": "text/html"
+           },
            "status": {
                "href": "https://www.mollie.com/paymentscreen/banktransfer/status/fgnwdh",
                "type": "text/html"

@@ -247,6 +247,10 @@ Response
                "href": "https://www.mollie.com/payscreen/select-method/7UhSN1zuXS",
                "type": "text/html"
            },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_12345678/payments/tr_7UhSN1zuXS",
+               "type": "application/json"
+           },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/payments-api/update-payment",
                "type": "text/html"

@@ -127,6 +127,10 @@ Response
                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
                "type": "application/hal+json"
            },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_12345678/payments/tr_WDqYK6vllg",
+               "type": "application/json"
+           },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/payments-api/cancel-payment",
                "type": "text/html"

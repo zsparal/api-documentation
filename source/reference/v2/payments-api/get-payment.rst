@@ -454,6 +454,12 @@ Response
                            device before redirecting to this URL. Mobile operating systems will ignore
                            the redirect to this URL if the correct app is not installed.
 
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - Direct link to the payment in the Mollie Dashboard.
+
           * - ``changePaymentState``
 
               .. type:: URL object
@@ -1395,6 +1401,10 @@ Response
            "checkout": {
                "href": "https://www.mollie.com/payscreen/select-method/WDqYK6vllg",
                "type": "text/html"
+           },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_12345678/payments/tr_WDqYK6vllg",
+               "type": "application/json"
            },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/payments-api/get-payment",

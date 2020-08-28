@@ -112,6 +112,12 @@ Response
 
             - The API resource URL of the customer itself.
 
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - Direct link to the Customer in the Mollie Dashboard.
+
           * - ``mandates``
 
               .. type:: URL object
@@ -209,6 +215,10 @@ Response
            "self": {
                "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa",
                "type": "application/hal+json"
+           },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/customers/cst_kEn1PlbGa",
+               "type": "text/html"
            },
            "mandates": {
                "href": "https://api.mollie.com/v2/customers/cst_kEn1PlbGa/mandates",

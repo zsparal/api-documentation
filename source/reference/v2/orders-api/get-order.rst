@@ -308,6 +308,12 @@ Response
 
               Recurring, authorized, paid and finalized orders do not have a checkout URL.
 
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - Direct link to the order in the Mollie Dashboard.
+
           * - ``documentation``
 
               .. type:: URL object
@@ -802,6 +808,10 @@ Response
                             "href": "https://www.mollie.com/payscreen/select-method/ncaPcAhuUV",
                             "type": "text/html"
                         },
+                        "dashboard": {
+                            "href": "https://www.mollie.com/dashboard/org_123456789/payments/tr_ncaPcAhuUV",
+                            "type": "text/html"
+                        },
                         "order": {
                             "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
                             "type": "application/hal+json"
@@ -889,6 +899,10 @@ Response
                 "href": "https://www.mollie.com/payscreen/order/checkout/pbjz8x",
                 "type": "text/html"
             },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/orders/ord_pbjz8x",
+               "type": "text/html"
+           },
             "documentation": {
                 "href": "https://docs.mollie.com/reference/v2/orders-api/get-order",
                 "type": "text/html"
