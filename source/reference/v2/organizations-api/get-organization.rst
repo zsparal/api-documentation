@@ -97,6 +97,12 @@ Response
 
             - The API resource URL of the organization itself.
 
+          * - ``dashboard``
+
+              .. type:: URL object
+
+            - Direct link to the organization's Mollie Dashboard.
+
           * - ``documentation``
 
               .. type:: URL object
@@ -157,6 +163,10 @@ Response
            "self": {
                "href": "https://api.mollie.com/v2/organizations/org_12345678",
                "type": "application/hal+json"
+           },
+           "dashboard": {
+               "href": "https://mollie.com/dashboard/org_12345678",
+               "type": "text/html"
            },
            "documentation": {
                "href": "https://docs.mollie.com/reference/v2/organizations-api/get-organization",

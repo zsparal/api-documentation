@@ -240,7 +240,11 @@ Response
                        "self": {
                            "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS",
                            "type": "application/hal+json"
-                       }
+                       },
+                       "dashboard": {
+                           "href": "https://www.mollie.com/dashboard/org_12345678/payments/tr_7UhSN1zuXS",
+                           "type": "application/json"
+                       },
                    }
                },
                { },

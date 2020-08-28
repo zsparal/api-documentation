@@ -6,6 +6,15 @@ changes are documented here.
 August 2020
 ===========
 
+TBA
+---
+
+- We have added a ``dashboard`` URL to the :doc:`Payment </reference/v2/payments-api/get-payment>`,
+  :doc:`Order </reference/v2/orders-api/get-order>`, :doc:`Customer </reference/v2/customers-api/get-customer>`,
+  :doc:`Organization </reference/v2/organizations-api/get-organization>`, and :doc:`Profiles </reference/v2/profiles-api/get-profile>`
+  endpoints. This URL points directly to the correct object in the Mollie Dashboard.
+
+
 Thursday, 20th
 --------------
 

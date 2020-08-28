@@ -74,6 +74,10 @@ Response
                "href": "https://api.mollie.com/v2/profiles/pfl_v9hTwCvYqw",
                "type": "application/hal+json"
            },
+           "dashboard": {
+               "href": "https://www.mollie.com/dashboard/org_123456789/settings/profiles/pfl_v9hTwCvYqw",
+               "type": "text/html"
+           },
            "chargebacks": {
                "href": "https://api.mollie.com/v2/chargebacks",
                "type": "application/hal+json"
