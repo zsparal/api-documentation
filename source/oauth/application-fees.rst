@@ -51,9 +51,7 @@ They are created by passing additional parameters to the
               .. type:: amount object
                  :required: true
 
-            - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would want to
-              charge €10.00. The maximum value is (the amount of the payment - (1.21 × (0.29 + (0.05 × the amount of
-              the payment))). The minimum is €0.01.
+            - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would want to charge €10.00. Read more about :ref:`maximum application fees <max-application-fees>`.
 
 
               .. list-table::
@@ -84,12 +82,23 @@ They are created by passing additional parameters to the
 
               The maximum length is 255 characters.
 
+.. _max-application-fees:
+
+Maximum application fees
+------------------------
+|
+| *Payments API*
+|
+| The maximum application fee per payment is the amount of the payment - (1.21 × (0.29 + (0.05 × the amount of the payment))). The minimum is €0.01.
+| 
+| *Orders API*
+|
+| The maximum application fee per payment is 10% of the total amount, or €2 (whichever is higher). If a higher maximum is required for your business, you can request this via Mollie’s `customer service <https://www.mollie.com/en/contact/>`_ or your account manager at Mollie.
+
 Recurring
 -------------
 Application fees are both supported on recurring payment and on subscriptions.
 
 Multicurrency
 -------------
-Application fees are supported on all payments regardless of :doc:`currency </payments/multicurrency>`. However, the
-application fee itself must always be created in ``EUR``. For example, you can charge a €1.00 application fee on a
-US$10.00 payment.
+Application fees are supported on all payments regardless of :doc:`currency </payments/multicurrency>`. However, the application fee itself must always be created in ``EUR``. For example, you can charge a €1.00 application fee on a US$10.00 payment.
