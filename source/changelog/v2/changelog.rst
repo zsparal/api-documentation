@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+September 2020
+==============
+
+Tuesday, 8th
+------------
+
+- Added ``locale`` field, it can be updated via update payment. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`
+
 August 2020
 ===========
 
@@ -13,7 +21,6 @@ Friday, 28th
   :doc:`Order </reference/v2/orders-api/get-order>`, :doc:`Customer </reference/v2/customers-api/get-customer>`,
   :doc:`Organization </reference/v2/organizations-api/get-organization>`, and :doc:`Profiles </reference/v2/profiles-api/get-profile>`
   endpoints. This URL points directly to the correct resource in the Mollie Dashboard.
-
 
 Thursday, 20th
 --------------

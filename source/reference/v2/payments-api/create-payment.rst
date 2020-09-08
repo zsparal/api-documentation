@@ -101,6 +101,8 @@ Parameters
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
+.. _parameters_locale:
+
    * - .. param-name:: locale
 
        .. type:: string

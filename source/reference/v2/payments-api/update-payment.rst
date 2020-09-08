@@ -60,6 +60,13 @@ Parameters
        payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
+   * - ``locale``
+
+       .. type:: string
+          :required: false
+
+     - See :ref:`Payments API <parameters_locale>`
+
    * - ``restrictPaymentMethodsToCountry``
 
        .. type:: string
