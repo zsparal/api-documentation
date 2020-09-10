@@ -65,7 +65,9 @@ Parameters
        .. type:: string
           :required: false
 
-     - See :ref:`Payments API <parameters_locale>`
+     - Allows you to update the language to be used in the hosted payment pages shown to the consumer.
+
+       See the :ref:`Create Payment API <parameters_locale>`.
 
    * - ``restrictPaymentMethodsToCountry``
 
