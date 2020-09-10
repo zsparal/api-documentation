@@ -101,12 +101,13 @@ Parameters
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
-.. _parameters_locale:
 
    * - .. param-name:: locale
 
        .. type:: string
           :required: false
+
+       .. _parameters_locale:
 
      - Allows you to preset the language to be used in the hosted payment pages shown to the consumer. Setting a
        locale is highly recommended and will greatly improve your conversion rate. When this parameter is omitted, the
