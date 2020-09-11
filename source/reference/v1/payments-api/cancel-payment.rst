@@ -1,5 +1,5 @@
-Cancel payment
-==============
+Cancel Payment API
+==================
 .. api-name:: Payments API
    :version: 1
 

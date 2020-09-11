@@ -1,5 +1,5 @@
-Cancel payment
-==============
+Cancel Payment API
+==================
 .. api-name:: Payments API
    :version: 2
 
@@ -12,8 +12,9 @@ Cancel payment
    :organization_access_tokens: true
    :oauth: true
 
-Some payment methods are cancellable for an amount of time, usually until the next day. Or as long as the payment status
-is open. Payments may be canceled manually from the Dashboard, or automatically by using this endpoint.
+Some payment methods can be canceled by the merchant for a certain amount of time, usually until the
+next business day. Or as long as the payment status  is ``open``. Payments may be canceled manually
+from the Mollie Dashboard, or programmatically by using this endpoint.
 
 The ``isCancelable`` property on the :doc:`Payment object </reference/v2/payments-api/get-payment>` will indicate if the
 payment can be canceled.
@@ -41,7 +42,7 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-A payment object is returned, as described in :doc:`/reference/v2/payments-api/get-payment`.
+A Payment object is returned, as described in :doc:`/reference/v2/payments-api/get-payment`.
 
 Example
 -------
