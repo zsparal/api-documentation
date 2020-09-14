@@ -35,7 +35,7 @@ complete the payment with the account or card that will be used for recurring ch
 payment is completed successfully, the customer's account or card will immediately be chargeable *on-demand*, or
 periodically through *subscriptions*.
 
-#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`.
+#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`. If you are using Mollie Connect make sure you have the permission "customers.write" in order to create a customer.
 
    .. code-block:: bash
       :linenos:
