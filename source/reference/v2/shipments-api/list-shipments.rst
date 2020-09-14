@@ -137,7 +137,7 @@ Example
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK

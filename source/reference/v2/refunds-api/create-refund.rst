@@ -163,7 +163,7 @@ Example
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 201 Created
@@ -202,7 +202,7 @@ Response
 Response (duplicate refund detected)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 409 Conflict

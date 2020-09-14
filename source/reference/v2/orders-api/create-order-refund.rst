@@ -223,7 +223,7 @@ Example
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 201 Created
@@ -308,7 +308,7 @@ Response
 Response (amount required)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity

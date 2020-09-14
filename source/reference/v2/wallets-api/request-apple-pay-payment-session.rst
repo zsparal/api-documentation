@@ -84,7 +84,7 @@ Example
 Request
 ^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    POST /v2/wallets/applepay/sessions HTTP/1.1
@@ -98,7 +98,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 201 Created

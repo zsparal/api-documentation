@@ -284,7 +284,7 @@ Example
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 201 Created
@@ -342,7 +342,7 @@ customer. You should redirect your customer to the ``_links.checkout`` URL retur
 :doc:`/reference/v2/payments-api/create-payment` or :doc:`/reference/v2/orders-api/create-order`.
 Your customer can then authenticate him / herself with the card issuer.
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 303 See Other
