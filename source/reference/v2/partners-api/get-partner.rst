@@ -36,7 +36,7 @@ Response
 
        .. type:: string
 
-     - Indicates the type of partner. Will return ``null`` if the currently authenticated
+     - Indicates the type of partner. Will be ``null`` if the currently authenticated
        organization is not enrolled as a partner.
 
        Possible values: ``oauth``, ``signuplink``, ``useragent``.
@@ -84,6 +84,15 @@ Response
        | The date and time the contract was signed, in
          `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be omitted if the
          contract has not yet been signed, or if ``partnerType`` is ``null``.
+
+   * - ``partnerContractUpdateAvailable``
+
+       .. type:: boolean
+          :required: false
+
+     - |
+       | Will be ``true`` if an updated contract is available, requiring the partner’s agreement. 
+         Will be omitted otherwise.
 
    * - ``_links``
 
