@@ -598,6 +598,12 @@ Bancontact
 
             - Only available if the payment is completed – The consumer's bank's BIC / SWIFT code.
 
+          * - ``failureReason``
+
+              .. type:: string
+
+            - Only available if the payment is failed – The (translated) reason why the payment did not succeed.
+
 Bank transfer
 """""""""""""
 .. list-table::
