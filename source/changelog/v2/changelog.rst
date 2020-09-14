@@ -6,6 +6,11 @@ changes are documented here.
 September 2020
 ==============
 
+Monday, 14th
+------------
+
+- Added the ``failureReason`` to the Bancontact details object if the payment did not succeed.
+
 Tuesday, 8th
 ------------
 
