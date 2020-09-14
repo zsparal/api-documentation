@@ -602,7 +602,7 @@ Bancontact
 
               .. type:: string
 
-            - Only available if the payment is failed – The (translated) reason why the payment did not succeed.
+            - The reason why the payment did not succeed. Only available when there's a reason known.
 
 Bank transfer
 """""""""""""
