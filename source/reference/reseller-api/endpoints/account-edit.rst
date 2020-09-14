@@ -34,7 +34,7 @@ additional required parameter just for this endpoint:
 
 Response
 --------
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK

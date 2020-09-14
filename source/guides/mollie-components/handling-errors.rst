@@ -69,7 +69,7 @@ contain the ``extra`` property with two additional keys:
 Example Create Payment API error response
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity
@@ -142,7 +142,7 @@ Example Get Payment API response for ``failed`` Payment
 
 Note that some fields have been omitted for the sake of brevity.
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK

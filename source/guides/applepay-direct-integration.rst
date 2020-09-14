@@ -83,7 +83,7 @@ Once the shopper has authorized the payment, you will receive the `Apple Pay Pay
 Example request
 ^^^^^^^^^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
     :caption: Create Payment API
     :linenos:
 
@@ -103,7 +103,7 @@ Example request
 
 
 
-.. code-block:: http
+.. code-block:: none
     :caption: Create Order API
     :linenos:
 
@@ -152,7 +152,7 @@ After your customer authorized the payment, you will still need authorization fr
 authorization may fail, for example if your customer has insufficient balance remaining on the card. You will then
 receive an error when creating the payment:
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity
