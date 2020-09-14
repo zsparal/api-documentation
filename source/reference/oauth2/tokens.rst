@@ -109,7 +109,7 @@ Initial request
 
 Initial response
 ^^^^^^^^^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK
@@ -135,7 +135,7 @@ Refresh request
 
 Refresh response
 ^^^^^^^^^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK

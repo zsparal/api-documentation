@@ -86,7 +86,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 201 Created

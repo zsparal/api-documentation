@@ -25,7 +25,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK
@@ -89,7 +89,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 401 Unauthorized
@@ -123,7 +123,7 @@ Request
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 404 Not Found
@@ -162,7 +162,7 @@ Request
 
 Response
 ~~~~~~~~
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity

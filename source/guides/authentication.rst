@@ -44,7 +44,7 @@ the fictional payment ID ``tr_WDqYK6vllg``.
 
 The response will be JSON.
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 200 OK

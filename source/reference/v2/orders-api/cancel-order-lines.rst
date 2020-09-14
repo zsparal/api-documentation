@@ -195,7 +195,7 @@ Example
 
 Response
 ^^^^^^^^
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 204 No Content
@@ -203,7 +203,7 @@ Response
 Response (amount required)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
    HTTP/1.1 422 Unprocessable Entity
@@ -235,7 +235,7 @@ Response (amount required)
 Response (cancellation rejected)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-.. code-block:: http
+.. code-block:: none
    :linenos:
 
 
