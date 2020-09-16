@@ -8,9 +8,8 @@ In the event that a merchant wishes to switch to a different payment service pro
 can export a list of his / her credit card mandates from the Mollie Dashboard. This way, existing
 mandates can be transferred to the new payment service provider.
 
-You must provide the merchant with the export format you would like to receive (e.g. the columns,
-headers and separators for a CSV file) and a public `PGP key <https://www.openpgp.org/>`_
-the export should be encrypted to.
+You must provide the merchant with your public `PGP key <https://www.openpgp.org/>`_, to which the
+export should be encrypted.
 
 The merchant must contact Mollie to enable the functionality to export the mandates.
 
@@ -89,4 +88,12 @@ version of the key.
         Subkey fingerprint: E67B 54E3 8423 B30E 77FD  F82F 0905 5A07 8D6B 55BA
 
 You can find the decrypted credit card mandate export in ``verified.csv``.
+
+It will be formatted as follows:
+
+.. code-block:: none
+   :linenos:
+
+   IDENTIFIER|CARDNO|EXPIRY|CARDNAME
+   mdt_pWUnw6pkBN|4111111111111111|0618|Chuck Norris
 
