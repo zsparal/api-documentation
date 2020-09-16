@@ -1,5 +1,5 @@
-List customer payments
-======================
+List Customer Payments API
+==========================
 .. api-name:: Customers API
    :version: 2
 
@@ -12,20 +12,19 @@ List customer payments
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all payments linked to the customer.
+Retrieve all Payments linked to the Customer.
 
 Parameters
 ----------
-Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``cst_8wmqcHMN4U``.
+Replace ``customerId`` in the endpoint URL by the Customer's ID, for example ``cst_8wmqcHMN4U``.
 
-This endpoint accepts the same parameters as the :doc:`List payments </reference/v2/payments-api/list-payments>`
-endpoint.
+This API accepts the same parameters as the :doc:`/reference/v2/payments-api/list-payments`.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
-specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`OAuth app </oauth/overview>`, the only optional extra parameter is the ``profileId`` parameter. With it, you can
+specify for which profile you want to list the Payments. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
@@ -34,9 +33,10 @@ specify which profile the payment belongs to. Organizations can have multiple pr
    * - ``profileId``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE`` if you want to limit the
+       Payment's to a specific Profile.
 
    * - ``testmode``
 
@@ -50,8 +50,7 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-This endpoint returns results in the same format as the :doc:`List payments </reference/v2/payments-api/list-payments>`
-endpoint.
+This API returns results in the same format as the :doc:`/reference/v2/payments-api/list-payments`.
 
 Example
 -------

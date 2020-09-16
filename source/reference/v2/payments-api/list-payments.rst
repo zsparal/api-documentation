@@ -1,5 +1,5 @@
-List payments
-=============
+List Payments API
+=================
 .. api-name:: Payments API
    :version: 2
 
