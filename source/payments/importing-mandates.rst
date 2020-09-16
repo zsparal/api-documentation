@@ -89,7 +89,10 @@ version of the key.
 
 You can find the decrypted credit card mandate export in ``verified.csv``.
 
-It will be formatted as follows:
+Export file format
+------------------
+
+The exported mandates file will be formatted as a pipe separated file with the following columns:
 
 .. code-block:: none
    :linenos:
@@ -97,3 +100,4 @@ It will be formatted as follows:
    IDENTIFIER|CARDNO|EXPIRY|CARDNAME
    mdt_pWUnw6pkBN|4111111111111111|0618|Chuck Norris
 
+.. note:: ``EXPIRY`` is in the ``MMYY`` format.
