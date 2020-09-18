@@ -46,7 +46,7 @@ querystring parameter.
 * ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bancontact
   and bank transfer payments.
 * ``details.remainderDetails`` Include `Payment method specific details`_ of the remainder payment if the payment is stacked.
-  Only available for gift card payments.
+  Only available for gift card and voucher payments.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
