@@ -41,6 +41,12 @@ Response
 
        Possible values: ``oauth``, ``signuplink``, ``useragent``.
 
+   * - ``isCommissionPartner``
+
+       .. type:: boolean
+
+     - Whether or not the partner receives commissions.
+
    * - ``userAgentTokens``
 
        .. type:: array
@@ -144,6 +150,7 @@ Response
    {
        "resource": "partner",
        "partnerType": "signuplink",
+       "isCommissionPartner": false,
        "partnerContractSignedAt": "2018-03-20T13:13:37+00:00",
        "_links": {
            "self": {
