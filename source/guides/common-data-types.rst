@@ -55,9 +55,78 @@ In the v2 endpoints, an address object is always represented as follows.
    * - ``postalCode``
 
        .. type:: string
-          :required: true
+          :required: false
 
-     - The postal code of the address.
+     - The postal code of the address. Required for countries that use postal codes. May only be
+       omitted for these country codes:
+
+       ``AO``
+       ``AW``
+       ``BS``
+       ``BZ``
+       ``BJ``
+       ``BO``
+       ``BW``
+       ``BV``
+       ``BF``
+       ``BI``
+       ``CM``
+       ``CF``
+       ``KM``
+       ``CG``
+       ``CD``
+       ``CK``
+       ``CI``
+       ``DJ``
+       ``DM``
+       ``GQ``
+       ``ER``
+       ``FJ``
+       ``TF``
+       ``GA``
+       ``GM``
+       ``GH``
+       ``GD``
+       ``GN``
+       ``GY``
+       ``HK``
+       ``JM``
+       ``KE``
+       ``KI``
+       ``MO``
+       ``MW``
+       ``ML``
+       ``MR``
+       ``MU``
+       ``MS``
+       ``NA``
+       ``NR``
+       ``AN``
+       ``NU``
+       ``KP``
+       ``PA``
+       ``QA``
+       ``RW``
+       ``KN``
+       ``LC``
+       ``ST``
+       ``SC``
+       ``SL``
+       ``SB``
+       ``SO``
+       ``SR``
+       ``SY``
+       ``TL``
+       ``TK``
+       ``TO``
+       ``TT``
+       ``TV``
+       ``UG``
+       ``AE``
+       ``VU``
+       ``YE``
+       ``ZM``
+       ``ZW``
 
    * - ``city``
 
