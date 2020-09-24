@@ -44,8 +44,9 @@ Response
    * - ``isCommissionPartner``
 
        .. type:: boolean
+          :required: false
 
-     - Whether or not the partner receives commissions.
+     - Will be true if partner is receiving commissions. Will be omitted otherwise.
 
    * - ``userAgentTokens``
 
@@ -150,7 +151,6 @@ Response
    {
        "resource": "partner",
        "partnerType": "signuplink",
-       "isCommissionPartner": false,
        "partnerContractSignedAt": "2018-03-20T13:13:37+00:00",
        "_links": {
            "self": {
