@@ -41,6 +41,13 @@ Response
 
        Possible values: ``oauth``, ``signuplink``, ``useragent``.
 
+   * - ``isCommissionPartner``
+
+       .. type:: boolean
+          :required: false
+
+     - Will be true if partner is receiving commissions. Will be omitted otherwise.
+
    * - ``userAgentTokens``
 
        .. type:: array
