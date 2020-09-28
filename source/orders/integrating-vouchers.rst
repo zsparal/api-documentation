@@ -58,4 +58,19 @@ Refunds
 -------
 You cannot perform any voucher refunds due to the limitation set by the brand issuers. However,
 if another payment method was used during the checkout, you can refund the part paid with the
-payment method used for the remainer amount.
+payment method used for the remainder amount.
+
+Getting the details of the remainder payment
+--------------------------------------------
+In some cases it is desirable to receive the details of a payment. This is mostly the case from the
+remainder payment when the consumer partially paid with a voucher. Receiving these details is possible
+in both the :doc:`Payments API </reference/v2/payments-api/get-payment>` and
+:doc:`Orders API </reference/v2/orders-api/get-order>`.
+
+To receive the remainder details in the Payments API, use the ``details.remainderDetails`` include.
+For example: ``GET https://api.mollie.com/v2/payments/tr_xxx?include=details.remainderDetails``. For
+the Orders API you should the ``payments.details.remainderDetails`` embed;
+``GET https://api.mollie.com/v2/orders/ord_xxx?embed=payments.details.remainderDetails``.
+
+Be aware that the ``remainderDetails`` is only available when the payment was not fully paid with a
+voucher.

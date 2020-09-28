@@ -42,6 +42,9 @@ query string parameter.
 * ``refunds`` Include all :doc:`refunds </reference/v2/orders-api/list-order-refunds>` created for the order.
 * ``shipments`` Include all :doc:`shipments </reference/v2/shipments-api/get-shipment>` created for the order.
 
+You can combine multiple embeds and add the includes of the embeds as well, for example:
+``embed=payments.details.remainderDetails``
+
 Response
 --------
 ``200`` ``application/hal+json``
