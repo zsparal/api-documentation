@@ -16,6 +16,10 @@ This endpoint can be used to update some details of a created payment.
 
 Parameters
 ----------
+
+For a more in-depth explanation of each parameter, see the :doc:`create-payment`. There are also
+payment method specific parameters available, see :ref:`below <payment-method-specific-parameters-update>`.
+
 .. list-table::
    :widths: auto
 
@@ -24,12 +28,7 @@ Parameters
        .. type:: string
           :required: false
 
-     - The description of the payment. This will be shown to your customer on their card or bank
-       statement when possible. We truncate the description automatically according to the limits of the used payment
-       method. The description is also visible in any exports you generate.
-
-       We recommend you use a unique identifier so that you can always link the payment to the order in your back
-       office. This is particularly useful for bookkeeping.
+     - The description of the payment.
 
    * - ``redirectUrl``
 
@@ -37,9 +36,6 @@ Parameters
           :required: false
 
      - The URL your customer will be redirected to after the payment process.
-
-       It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
-       the right page referencing the order when your customer returns.
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -60,14 +56,23 @@ Parameters
        payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
        approximately 1kB.
 
+   * - ``method``
+
+       .. type:: string
+          :required: false
+
+     - Change the payment to a different payment method.
+
+       .. note::
+          Updating this field is only possible when the payment was created *without* a payment
+          method and is not yet finalized.
+
    * - ``locale``
 
        .. type:: string
           :required: false
 
      - Allows you to update the language to be used in the hosted payment pages shown to the consumer.
-
-       See the :ref:`Create Payment API <parameters_locale>`.
 
    * - ``restrictPaymentMethodsToCountry``
 
@@ -94,13 +99,19 @@ Bank transfer
 .. list-table::
    :widths: auto
 
+   * - ``billingEmail``
+
+       .. type:: string
+          :required: false
+
+     - Consumer's email address.
+
    * - ``dueDate``
 
        .. type:: string
           :required: false
 
      - The date the payment should :doc:`expire </payments/status-changes>`, in ``YYYY-MM-DD`` format.
-       **Please note:** the minimum date is tomorrow and the maximum date is 100 days after tomorrow.
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -115,7 +126,7 @@ Gift cards
        .. type:: string
           :required: false
 
-     - See :ref:`Payments API <payment-method-specific-parameters>`
+     - See :ref:`Payments API <payment-method-specific-parameters>`.
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -130,7 +141,7 @@ iDEAL
        .. type:: string
           :required: false
 
-     - See :ref:`Payments API <payment-method-specific-parameters>`
+     - See :ref:`Payments API <payment-method-specific-parameters>`.
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
@@ -145,16 +156,28 @@ KBC/CBC Payment Button
        .. type:: string
           :required: false
 
-     - See :ref:`Payments API <payment-method-specific-parameters>`
+     - See :ref:`Payments API <payment-method-specific-parameters>`.
 
        .. note::
           Updating this field is only possible when the payment is not yet finalized.
+
+Przelewy24
+""""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``billingEmail``
+
+       .. type:: string
+          :required: false
+
+     - Consumer's email address.
 
 Response
 --------
 ``200`` ``application/hal+json``
 
-A payment object is returned, as described in :doc:`/reference/v2/payments-api/get-payment`.
+A payment object is returned, as described in :doc:`get-payment`.
 
 Example
 -------

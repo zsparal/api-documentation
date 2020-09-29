@@ -410,7 +410,7 @@ Wednesday, 27th
   endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
 - Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
   endpoint.
-- Added the ``currency`` query paramter to the :doc:`Get payment method </reference/v2/methods-api/get-method>` endpoint.
+- Added the ``currency`` query parameter to the :doc:`/reference/v2/methods-api/get-method`.
 - The ``.dev`` TLD is now supported for webhooks.
 
 Thursday, 21th
