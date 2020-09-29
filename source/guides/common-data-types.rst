@@ -60,69 +60,69 @@ In the v2 endpoints, an address object is always represented as follows.
      - The postal code of the address. Required for countries that use postal codes. May only be
        omitted for these country codes:
 
+       ``AE``
+       ``AN``
        ``AO``
        ``AW``
-       ``BS``
-       ``BZ``
-       ``BJ``
-       ``BO``
-       ``BW``
-       ``BV``
        ``BF``
        ``BI``
-       ``CM``
-       ``CF``
-       ``KM``
-       ``CG``
+       ``BJ``
+       ``BO``
+       ``BS``
+       ``BV``
+       ``BW``
+       ``BZ``
        ``CD``
-       ``CK``
+       ``CF``
+       ``CG``
        ``CI``
+       ``CK``
+       ``CM``
        ``DJ``
        ``DM``
-       ``GQ``
        ``ER``
        ``FJ``
-       ``TF``
        ``GA``
-       ``GM``
-       ``GH``
        ``GD``
+       ``GH``
+       ``GM``
        ``GN``
+       ``GQ``
        ``GY``
        ``HK``
        ``JM``
        ``KE``
        ``KI``
-       ``MO``
-       ``MW``
+       ``KM``
+       ``KN``
+       ``KP``
+       ``LC``
        ``ML``
+       ``MO``
        ``MR``
-       ``MU``
        ``MS``
+       ``MU``
+       ``MW``
        ``NA``
        ``NR``
-       ``AN``
        ``NU``
-       ``KP``
        ``PA``
        ``QA``
        ``RW``
-       ``KN``
-       ``LC``
-       ``ST``
+       ``SB``
        ``SC``
        ``SL``
-       ``SB``
        ``SO``
        ``SR``
+       ``ST``
        ``SY``
-       ``TL``
+       ``TF``
        ``TK``
+       ``TL``
        ``TO``
        ``TT``
        ``TV``
        ``UG``
-       ``AE``
        ``VU``
        ``YE``
        ``ZM``
