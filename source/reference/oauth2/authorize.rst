@@ -70,7 +70,8 @@ Parameters
           :required: true
 
      - This parameter can be set to ``force`` to force showing the :doc:`consent screen </oauth/getting-started>` to the
-       merchant, even when it is not necessary.
+       merchant, even when it is not necessary. Note that already active authorizations will be revoked
+       when the user creates the new authorization.
 
        Possible values: ``auto`` ``force``
 
