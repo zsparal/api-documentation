@@ -122,8 +122,8 @@ For example: ``GET https://api.mollie.com/v2/payments/tr_xxx?include=details.rem
 the Orders API you should the ``payments.details.remainderDetails`` embed;
 ``GET https://api.mollie.com/v2/orders/ord_xxx?embed=payments.details.remainderDetails``.
 
-Be aware that the ``remainderDetails`` is only available when the payment was not fully paid with a
-gift card.
+Be aware that the ``remainderDetails`` is only available when the payment ws partially paid with
+a gift card and then the remainder was paid with a different payment method.
 
 Tips
 ----
