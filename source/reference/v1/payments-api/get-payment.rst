@@ -994,6 +994,63 @@ SOFORT Banking
 
             - Only available if the payment has been completed – The consumer's bank's BIC.
 
+Vouchers
+""""""""
+.. list-table::
+   :widths: auto
+
+   * - ``details``
+
+       .. type:: object
+
+     - An object with payment details.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``issuer``
+
+              .. type:: string
+
+            - The ID of the voucher brand that was used during the payment. When multiple vouchers
+              are used, this is the issuer of the first voucher.
+
+          * - ``vouchers``
+
+              .. type:: array
+
+            - A list of details of all vouchers that are used for this payment. Each object will
+              contain the following properties.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - ``issuer``
+
+                     .. type:: string
+
+                   - The ID of the voucher brand that was used during the payment.
+
+                 * - ``amount``
+
+                     .. type:: decimal
+
+                   - The amount in EUR that was paid with this voucher.
+
+          * - ``remainderAmount``
+
+              .. type:: decimal
+
+            - Only available if another payment method was used to pay the remainder amount – The
+              amount in EUR that was paid with another payment method for the remainder amount.
+
+          * - ``remainderMethod``
+
+              .. type:: string
+
+            - Only available if another payment method was used to pay the remainder amount – The
+              payment method that was used to pay the remainder amount.
+
 QR codes (optional)
 ^^^^^^^^^^^^^^^^^^^
 A QR code object with payment method specific values is available for certain payment methods if you pass the include
