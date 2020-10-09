@@ -69,7 +69,7 @@ periodically through *subscriptions*.
               \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
-#. Redirect the customer to the ``_links.checkout.url`` to complete the first payment. Make sure to use an HTTP ``GET``
+#. Redirect the customer to the ``_links.checkout.href`` to complete the first payment. Make sure to use an HTTP ``GET``
    redirect.
 
 #. Once completed there will be a customer mandate that you can access via the
