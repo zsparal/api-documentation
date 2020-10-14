@@ -3,6 +3,14 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+October 2020
+============
+
+Mondag, 12th
+------------
+
+- Some ``feeRegion`` values for credit card were missing in the documentation. We have added them now.
+
 September 2020
 ==============
 
