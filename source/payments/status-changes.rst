@@ -40,6 +40,10 @@ them. Then we will show you how the statuses are connected.
     The payment has failed and cannot be completed with a different payment method. We will call your webhook when a
     payment transitions to the ``failed`` status.
 
+    Please note that when you use :doc:`/guides/checkout` and you offer multiple payment methods you will be
+    redirected to the method selection screen after a payment failure. So, the consumer can choose
+    another method to finish the payment.
+
 ``paid``
     This status occurs whenever a payment is successfully paid. When this status occurs we will call your webhook.
 
