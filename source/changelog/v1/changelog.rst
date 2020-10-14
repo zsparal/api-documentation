@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+October 2020
+============
+
+Mondag, 12th
+------------
+
+- Some ``feeRegion`` values for credit card were missing in the documentation. We have added them now.
+
 August 2020
 ===========
 
