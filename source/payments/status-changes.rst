@@ -39,6 +39,7 @@ them. Then we will show you how the statuses are connected.
 ``failed``
     The payment has failed and cannot be completed with a different payment method. We will call your webhook when a
     payment transitions to the ``failed`` status.
+Please note that when you use Mollie Checkout and you offer multiple payment methods you will be redirected to the payment selection screen. So the consumer can choose another payment method to finish the payment.
 
 ``paid``
     This status occurs whenever a payment is successfully paid. When this status occurs we will call your webhook.
