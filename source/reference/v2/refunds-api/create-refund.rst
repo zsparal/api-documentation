@@ -141,7 +141,7 @@ Example
 
       refund = Mollie::Payment::Refund.create(
         payment_id: 'tr_WDqYK6vllg',
-        amount:      { value: '5.00', currency: 'EUR' }
+        amount:      { value: '5.00', currency: 'EUR' },
         description: 'Example refund description'
       )
 
