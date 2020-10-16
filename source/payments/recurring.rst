@@ -52,6 +52,7 @@ periodically through *subscriptions*.
 
    .. note:: For credit card and PayPal payments, you can create a payment with a zero amount which
              means, no money will be debited from the card or account when doing the first payment.
+             If you intend to start a subscription, the amount for the first payment can be the amount you will periodically charge. Next, you can set up a subscription which starts after the first period. (see subscription API, startDate)
 
    .. code-block:: bash
       :linenos:
