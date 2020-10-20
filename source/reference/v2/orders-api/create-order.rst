@@ -430,6 +430,26 @@ payment specific parameters can be passed when creating the Order:
 
 See the :ref:`payment-method-specific-parameters` for more information on these parameters.
 
+Example of specifying some payment parameters:
+
+.. code-block:: json
+   :linenos:
+
+   {
+       "...",
+       "method": "ideal",
+       "payment": {
+           "issuer": "ideal_ASNBNL21",
+           "applicationFee": {
+               "description": "Service fee",
+               "amount": {
+                   "value": "1.50",
+                   "currency": "EUR"
+               }
+           }
+       }
+   }
+
 .. note:: You can set the ``payment.webhookUrl`` if you want to receive notifications about failed, canceled, or expired
           order payments. Since we do not call your order webhook for these payment events, it can be useful for e.g.
           sending your own payment reminders to your customers. Note that the ``payment.webhookUrl`` is copied when a
