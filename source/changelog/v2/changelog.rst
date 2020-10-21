@@ -3,6 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+TBA
+===
+
+Curious? ;-)
+------------
+
+- We brought the method ``vouchers`` out of beta, you can enable this method in the dashboard. Please
+  see the :doc:`voucher guide </orders/integrating-vouchers>` for more info and the requirements.
+
 October 2020
 ============
 

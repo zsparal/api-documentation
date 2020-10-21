@@ -134,7 +134,7 @@ Parameters
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
        ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
-       .. note:: If you are looking to create payments with the Klarna Pay later or Klarna Slice it payment methods,
+       .. note:: If you are looking to create payments with the Klarna Pay later, Klarna Slice it, or Voucher payment methods,
                  please use the :doc:`/reference/v2/orders-api/create-order` instead.
 
    * - ``metadata``
@@ -642,8 +642,6 @@ SEPA Direct Debit
 
 Vouchers
 """"""""
-.. note:: Vouchers are currently in a closed beta. When you are interested in using this payment
-          method, please reach out to your account manager.
 
 .. list-table::
    :widths: auto
@@ -653,7 +651,7 @@ Vouchers
        .. type:: string
           :required: false
 
-     - A voucher issuer ID, for example ``passrestaurant``. The returned payment URL will deep link
+     - A voucher issuer ID, for example ``sodexo-lunchpass``. The returned payment URL will deep link
        to the specific card website. The full list of issuers can be retrieved via the
        :ref:`Methods API <method-includes>` by using the optional ``issuers`` include.
 
