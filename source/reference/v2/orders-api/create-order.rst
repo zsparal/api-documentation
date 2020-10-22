@@ -233,8 +233,7 @@ The order lines contain the actual things that your customer bought.
 
        .. note:: This parameter is optional. However, *one* of your order lines should contain it if
                  you want to accept ``voucher`` payments. We advise to set this parameter for all
-                 your order lines. **Be aware vouchers are in closed beta and should only be used if
-                 you are part of the test group.**
+                 your order lines.
 
    * - ``name``
 

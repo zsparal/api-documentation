@@ -6,6 +6,12 @@ changes are documented here.
 October 2020
 ============
 
+Thursday, 22th
+--------------
+
+- We brought the method ``vouchers`` out of beta, you can enable this method in the dashboard. Please
+  see the :doc:`voucher guide </orders/integrating-vouchers>` for more info and the requirements.
+
 Mondag, 12th
 ------------
 

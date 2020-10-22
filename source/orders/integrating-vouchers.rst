@@ -1,9 +1,6 @@
 Integrating meal-, eco-, and gift-vouchers
 ==========================================
 
-.. note:: Vouchers are currently in a closed beta. When you are interesting in using this payment
-          method, please reach out your account manager.
-
 A voucher is for certain products given to employees as an employee benefit, allowing them to
 eat at outside restaurants, typically for lunch, buying eco product or gifts. In many countries,
 vouchers had favorable tax treatment. Vouchers are typically in the form of paper tickets but are
@@ -14,17 +11,12 @@ Supported brands
 ----------------
 At the moment, the following brands are supported by Mollie:
 
-* Appetiz
-* Cadeau Pass
-* Chèque Déjeuner
 * Monizze Eco
 * Monizze Gift
 * Monizze Meal
-* PassRestaurant
 * Sodexo Cadeau Pass
 * Sodexo Eco Pass
 * Sodexo Lunch Pass
-* Swile
 
 Contracting and settlement
 --------------------------
