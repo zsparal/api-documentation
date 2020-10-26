@@ -73,18 +73,16 @@ Parameters
    * - ``redirectUrl``
 
        .. type:: string
-          :required: false
+          :required: true
 
      - The URL your customer will be redirected to after the payment process.
 
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
 
-       Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
-       Additionally, for payments that are created with the ``applePayPaymentToken`` parameter, the redirect URL can
-       also be omitted.
-
-       *For all other payments, this parameter is mandatory.*
+       .. note:: Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
+          Additionally, for payments that are created with the ``applePayPaymentToken`` parameter, the redirect URL can
+          also be omitted.
 
    * - ``webhookUrl``
 
