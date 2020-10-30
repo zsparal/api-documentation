@@ -8,10 +8,18 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+November 2020
+=============
+
+Monday, 9th
+--------------
+- We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
+  The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+
 October 2020
 ============
 
-Mondag, 12th
+Monday, 12th
 ------------
 
 - Some ``feeRegion`` values for credit card were missing in the documentation. We have added them now.
