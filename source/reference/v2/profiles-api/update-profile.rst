@@ -70,19 +70,26 @@ in the request.
        * ``5533`` Automotive Products
        * ``5641`` Children Products
        * ``5651`` Clothing & Shoes
+       * ``5712`` Home furnishing
        * ``5732`` Electronics, computers and software
        * ``5734`` Hosting/VPN services
        * ``5735`` Entertainment
        * ``5815`` Credits/vouchers/giftcards
        * ``5921`` Alcohol
        * ``5944`` Jewelry & Accessories
+       * ``5945`` Hobby, Toy, and Game Shops
        * ``5977`` Health & Beauty products
        * ``6012`` Financial services
+       * ``6051`` Crypto currency
        * ``7299`` Consultancy
+       * ``7922`` Events, conferences, concerts, tickets
+       * ``7997`` Gyms, membership fee based sports
        * ``7999`` Travel, rental and transportation
+       * ``8111`` Lawyers and legal advice
        * ``8299`` Advising/coaching/training
        * ``8398`` Charity and donations
        * ``8699`` Political parties
+       * ``9399`` Government services
        * ``0`` Other
 
    * - ``mode``
