@@ -10,6 +10,14 @@ Monday, 9th
 --------------
 - We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
   The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+- We've added 7 new Merchant Category Codes for profiles:
+  5712 Home furnishing
+  5945 Hobby, Toy, and Game Shops
+  6051 Crypto currency
+  7922 Events, conferences, concerts, tickets
+  7997 Gyms, membership fee based sports
+  8111 Lawyers and legal advice
+  9399 Government services
 
 October 2020
 ============
