@@ -21,6 +21,12 @@ be done from the `Dashboard <https://www.mollie.com/dashboard/developers/applica
 `contact <https://www.mollie.com/en/contact/>`_ our support department to have charging application fees on your account
 enabled.
 
+
+Enabling application fees
+-------------------------
+You cannot test Application fees with the same account on which you created the oAuth application. In order to test Application fees, you need another Mollie account. 
+
+
 How to create an application fee
 --------------------------------
 
