@@ -28,9 +28,9 @@ One-off application fees can be created on Payments or Orders. Application fees 
 which case the application fee will be added to *each Payment* created for the Subscription.
 
 They are created by passing additional parameters to the
-:doc:`Create payment </reference/v2/payments-api/create-payment>`,
-:doc:`Create order </reference/v2/orders-api/create-order>` or the
-:doc:`Create subscription </reference/v2/subscriptions-api/create-subscription>` API:
+:doc:`/reference/v2/payments-api/create-payment`,
+:doc:`/reference/v2/orders-api/create-order` or the
+:doc:`/reference/v2/subscriptions-api/create-subscription`:
 
 .. list-table::
    :widths: auto
@@ -82,6 +82,13 @@ They are created by passing additional parameters to the
 
               The maximum length is 255 characters.
 
+Testing application fees
+------------------------
+Application fees work in test mode as well.
+
+You cannot use application fees with the same organization on which you created the oAuth application.
+In order to test or use application fees, you need another organization.
+
 .. _max-application-fees:
 
 Maximum application fees
@@ -90,7 +97,7 @@ Maximum application fees
 | *Payments API*
 |
 | The maximum application fee per payment is the amount of the payment - (1.21 × (0.29 + (0.05 × the amount of the payment))). The minimum is €0.01.
-| 
+|
 | *Orders API*
 |
 | The maximum application fee per payment is 10% of the total amount, or €2 (whichever is higher). If a higher maximum is required for your business, you can request this via Mollie’s `customer service <https://www.mollie.com/contact/>`_ or your account manager at Mollie.
