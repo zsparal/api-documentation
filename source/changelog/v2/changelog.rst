@@ -8,7 +8,7 @@ November 2020
 
 Monday, 13th
 --------------
-- We added the ``amountChargedBack`` field to the payment response in the payment has some chargebacks.
+- Added the ``amountChargedBack`` field to the payment response if the payment has some chargebacks.
 
 Monday, 9th
 --------------
