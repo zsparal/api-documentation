@@ -242,6 +242,30 @@ Response
 
             - A string containing the exact captured amount of the payment in the given currency.
 
+   * - ``amountChargedBack``
+
+       .. type:: amount object
+          :required: false
+
+     - The total amount that was charged back for this payment. Only available when the total charged back amount is not zero.
+       This value is expected to be negative.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``currency``
+
+              .. type:: string
+
+            - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+
+          * - ``value``
+
+              .. type:: string
+
+            - A string containing the exact charged back amount of the payment in the given currency.
+
+
    * - ``description``
 
        .. type:: string
