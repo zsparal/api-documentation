@@ -6,6 +6,10 @@ changes are documented here.
 November 2020
 =============
 
+Monday, 13th
+--------------
+- We added the ``amountChargedBack`` field to the payment response in the payment has some chargebacks.
+
 Monday, 9th
 --------------
 - We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.

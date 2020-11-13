@@ -263,7 +263,7 @@ Response
 
               .. type:: string
 
-            - A string containing the exact captured amount of the payment in the given currency.
+            - A string containing the exact charged back amount of the payment in the given currency.
 
 
    * - ``description``
