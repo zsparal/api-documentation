@@ -6,7 +6,7 @@ changes are documented here.
 November 2020
 =============
 
-Monday, 13th
+Friday, 13th
 --------------
 - Added the ``amountChargedBack`` field to the payment response if the payment has some chargebacks.
 
