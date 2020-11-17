@@ -153,8 +153,10 @@ Example
       $order = $mollie->orders->get("ord_stTC2WHAuS");
       $order->refund([
             'lines' => [
-               'id' => 'odl_dgtxyl',
-               'quantity' => 1,
+               [
+                  'id' => 'odl_dgtxyl',
+                  'quantity' => 1,
+               ],
             ],
             "description" => "Required quantity not in stock, refunding one photo book.",
       ]);
