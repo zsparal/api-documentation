@@ -6,6 +6,10 @@ changes are documented here.
 November 2020
 =============
 
+Thursday, 19th
+--------------
+- Added the optional ``givenName`` and ``familyName`` fields to the Paypal ``shippingAddress`` :ref:`object <payment-method-specific-parameters>` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
+
 Friday, 13th
 --------------
 - Added the ``amountChargedBack`` field to the payment response if the payment has some chargebacks.
@@ -48,7 +52,7 @@ Monday, 14th
 Tuesday, 8th
 ------------
 
-- Added ``locale`` field, it can be updated via update payment. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`
+- Added ``locale`` field, it can be updated via update payment. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`.
 
 August 2020
 ===========
@@ -69,7 +73,7 @@ Thursday, 20th
 Thursday, 13th
 --------------
 
-- Added ``issuer`` field for ``Gift cards``, ``iDEAL``, ``KBC/CBC`` payment types. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`
+- Added ``issuer`` field for ``Gift cards``, ``iDEAL``, ``KBC/CBC`` payment types. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`.
 
 Monday, 10th
 ------------
