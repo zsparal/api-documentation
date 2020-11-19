@@ -509,6 +509,20 @@ PayPal
        .. list-table::
           :widths: auto
 
+          * - ``givenName``
+
+              .. type:: string
+                 :required: false
+
+            - The given name (first name) of the person. The maximum character length of ``givenName`` and ``familyName`` combined is 128.
+
+          * - ``familyName``
+
+              .. type:: string
+                 :required: false
+
+            - The family name (surname) of the person. The maximum character length of ``givenName`` and ``familyName`` combined is 128.
+
           * - ``streetAndNumber``
 
               .. type:: string
