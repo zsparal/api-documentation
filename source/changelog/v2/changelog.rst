@@ -6,6 +6,11 @@ changes are documented here.
 November 2020
 =============
 
+Monday, 23th
+--------------
+- We've added a new Merchant Category Code for profiles:
+  5262 Marketplaces, crowdfunding, donation platforms
+
 Thursday, 19th
 --------------
 - Added the optional ``givenName`` and ``familyName`` fields to the Paypal ``shippingAddress`` :ref:`object <payment-method-specific-parameters>` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.

@@ -11,6 +11,11 @@ changes are documented here.
 November 2020
 =============
 
+Monday, 23th
+--------------
+- We've added a new Merchant Category Code for profiles:
+  5262 Marketplaces, crowdfunding, donation platforms
+
 Monday, 9th
 --------------
 - We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.

@@ -83,6 +83,7 @@ parameters:
        values:
 
        * ``5192`` Books, magazines and newspapers
+       * ``5262`` Marketplaces, crowdfunding, donation platforms
        * ``5399`` General merchandise
        * ``5499`` Food and drinks
        * ``5533`` Automotive Products
