@@ -209,7 +209,7 @@ Response
                    },
                    "settlementAmount": {
                        "currency": "EUR",
-                       "value": "35.07"
+                       "value": "-35.07"
                    },
                    "createdAt": "2018-03-14T17:00:52.0Z",
                    "reversedAt": null,
