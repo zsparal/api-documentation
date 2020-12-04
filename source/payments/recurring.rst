@@ -57,7 +57,7 @@ using Mollie Connect, make sure you have the permission `customers.write` in ord
              If you intend to start a subscription, you can use this payment as the first instalment, e.g. by charging
              the amount you will periodically charge. Next, you can set up a subscription which starts after the first
              period. See also the `startDate` field in the
-             :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription`.
+             :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
 
    .. code-block:: bash
       :linenos:
