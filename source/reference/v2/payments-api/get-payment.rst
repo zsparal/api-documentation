@@ -786,9 +786,9 @@ Credit card
 
             - Only available for failed payments. Contains a failure reason code.
 
-              Possible values: ``authentication_failed``  ``card_expired`` ``inactive_card`` ``insufficient_funds``
-              ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type`` ``invalid_cvv``
-              ``possible_fraud`` ``refused_by_issuer`` ``card_declined`` ``unknown_reason``
+              Possible values: ``authentication_failed`` ``card_declined`` ``card_expired`` ``inactive_card``
+              ``insufficient_funds`` ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type``
+              ``invalid_cvv`` ``possible_fraud`` ``refused_by_issuer`` ``unknown_reason``
 
           * - ``failureMessage``
 
