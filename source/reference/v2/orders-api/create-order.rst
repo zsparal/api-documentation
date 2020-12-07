@@ -556,7 +556,7 @@ Example
                   "lines": [
                      {
                            "type": "physical",
-                           "category": "gifts_and_flowers",
+                           "category": "gift",
                            "sku": "5702016116977",
                            "name": "LEGO 42083 Bugatti Chiron",
                            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
@@ -586,7 +586,7 @@ Example
                      },
                      {
                            "type": "physical",
-                           "category": "gifts_and_flowers",
+                           "category": "gift",
                            "sku": "5702015594028",
                            "name": "LEGO 42056 Porsche 911 GT3 RS",
                            "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
@@ -1074,7 +1074,7 @@ Response
                "name": "LEGO 42083 Bugatti Chiron",
                "sku": "5702016116977",
                "type": "physical",
-               "category": "gifts_and_flowers",
+               "category": "gift",
                "status": "created",
                "metadata": {
                   "order_id": "1337",
@@ -1136,7 +1136,7 @@ Response
                "name": "LEGO 42056 Porsche 911 GT3 RS",
                "sku": "5702015594028",
                "type": "physical",
-               "category": "gifts_and_flowers",
+               "category": "gift",
                "status": "created",
                "metadata": null,
                "isCancelable": false,
