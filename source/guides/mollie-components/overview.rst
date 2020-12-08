@@ -90,12 +90,12 @@ After initializing the Mollie object, you should create the four card holder dat
 .. code-block:: html
    :linenos:
 
-   <form>
-     <div id="card-holder"></div>
-     <div id="card-holder-error"></div>
-     
+   <form>    
      <div id="card-number"></div>
      <div id="card-number-error"></div>
+
+     <div id="card-holder"></div>
+     <div id="card-holder-error"></div>
 
      <div id="expiry-date"></div>
      <div id="expiry-date-error"></div>
