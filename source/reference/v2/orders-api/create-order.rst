@@ -71,6 +71,9 @@ Parameters
      - The billing person and address for the order. See :ref:`order-address-details` for the exact
        fields needed.
 
+       .. note:: Even when this field is required, you can leave this out if you are using the PayPal
+                 Express Checkout button. Make sure you set the ``method`` to ``paypal``.
+
    * - ``shippingAddress``
 
        .. type:: address object
