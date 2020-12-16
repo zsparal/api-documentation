@@ -3,6 +3,15 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+December 2020
+=============
+
+Wednesday, 16th
+---------------
+- We've added Revolut as new iDEAL issuer. It will appear automatically in your checkout if you use
+  the Mollie Hosted Payment Page or the Methods API to get the issuers. If you use a custom integration
+  you should add the issuer ID ``ideal_REVOLT21`` to your list of available iDEAL banks.
+
 November 2020
 =============
 
