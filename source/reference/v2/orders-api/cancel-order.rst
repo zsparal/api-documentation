@@ -1,5 +1,5 @@
 Cancel order
-==============
+============
 .. api-name:: Orders API
    :version: 2
 

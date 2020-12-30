@@ -1,6 +1,5 @@
-Get bankaccount
-===============
-
+Get bank account
+================
 .. api-name:: Reseller API
    :version: 1
 

@@ -1,5 +1,5 @@
-Requesting Apple Pay Payment Session
-====================================
+Request Apple Pay Payment Session
+=================================
 .. api-name:: Miscellaneous
    :version: 2
 

@@ -1,5 +1,5 @@
-Create Order Refund API
-=======================
+Create order refund
+===================
 .. api-name:: Orders API
    :version: 2
 
@@ -11,7 +11,6 @@ Create Order Refund API
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
-
 
 When using the Orders API, :doc:`refunds </payments/refunds>` should be made against the Order. When using *pay after
 delivery* payment methods such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive
@@ -28,7 +27,6 @@ For more details on how refunds work, see :doc:`/payments/refunds`.
 
 Parameters
 ----------
-
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
 .. list-table::

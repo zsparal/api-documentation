@@ -1,6 +1,5 @@
 Validate account
 ================
-
 .. api-name:: Reseller API
    :version: 1
 

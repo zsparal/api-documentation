@@ -1,13 +1,11 @@
 Mollie Components reference
 ===========================
-
 The ``Mollie`` object is used to initialize :doc:`Mollie Components <overview>`.
 
 .. _components-mollie-constructor:
 
 Mollie(profileId[, options])
 ----------------------------
-
 .. list-table::
    :widths: auto
 
@@ -48,7 +46,6 @@ Mollie(profileId[, options])
 
             - Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix e.g. `tkn_123abctest`.
 
-
 .. _components-mollie-create-token:
 
 mollie.createToken()
@@ -83,12 +80,10 @@ ES6
      const { token, error } = await mollie.createToken();
    });
 
-
 .. _components-mollie-create-component:
 
 mollie.createComponent(type[, options])
 ---------------------------------------
-
 This will create the Components which the shopper uses to enter the card holder data. After creating, the components should
 be mounted in your checkout.
 
@@ -163,12 +158,10 @@ ES6
 
 Component methods
 =================
-
 .. _components-mollie-component-mount:
 
 component.mount(targetElement)
 ------------------------------
-
 Adds the component to the DOM, meaning it will become visible for the user from this point onwards.
 
 .. code-block:: HTML
@@ -203,7 +196,6 @@ ES6
 
 component.addEventListener(event, callback)
 -------------------------------------------
-
 Components can listen to several ``events``. The callback receives an object with all the related information.
 
 .. list-table::
@@ -224,7 +216,6 @@ Components can listen to several ``events``. The callback receives an object wit
           :required: true
 
      - A function that will be called whenever the event is been emitted.
-
 
 Javascript
 ^^^^^^^^^^

@@ -102,7 +102,6 @@ Response
 
 Example
 -------
-
 .. code-block:: bash
   :linenos:
 

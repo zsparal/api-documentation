@@ -1,6 +1,5 @@
 Importing credit card mandates from Mollie
 ==========================================
-
 .. note:: This document is aimed at competing payment service providers who wish to import existing
           credit card mandates from Mollie for a merchant.
 
@@ -24,7 +23,6 @@ The merchant will thus provide you with:
 
 Steps to extract the mandate export
 -----------------------------------
-
 .. warning:: Note that the decrypted export contains Card Holder Data as defined under
              :abbr:`PCI-DSS (Payment Card Industry Data Security Standard)`. Make sure the
              decryption is only performed in compliant environments.
@@ -91,7 +89,6 @@ You can find the decrypted credit card mandate export in ``verified.csv``.
 
 Export file format
 ------------------
-
 The exported mandates file will be formatted as a pipe separated file with the following columns:
 
 .. code-block:: none

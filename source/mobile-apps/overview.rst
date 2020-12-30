@@ -1,6 +1,5 @@
 Integrating Mollie in your mobile app
 =====================================
-
 This guide will help you to integrate Mollie in a mobile app for devices such as mobile phones and tablets. Several
 factors should be considered, such as store rules and regulations, and security and technical considerations.
 
@@ -8,7 +7,6 @@ factors should be considered, such as store rules and regulations, and security 
 
 App store rules and regulations
 -------------------------------
-
 Some app stores place limitations on any payment mechanism that does not use the app store's billing APIs.
 
 iOS
@@ -38,14 +36,12 @@ Consult your app store's terms and conditions to find out what exact limitations
 
 Payment method rules and regulations
 ------------------------------------
-
 Additionally, some payment methods place limitations on how they can be embedded in a WebView. For example, the iDEAL
 R&R disallows hiding the URL of the issuer's hosted payment pages and forbids placing the payment in a WebView, since that
 allows your app to inject code into the banking pages.
 
 Security considerations
 -----------------------
-
 Note that your app is distributed to and executed on mobile devices after being installed from the app store. Since
 you do not control the mobile device, you should not put Mollie API keys inside the app. If the app is installed on a
 rooted device, any keys in the app can easily be extracted by an attacker. Even on a non-rooted device, the keys could be
@@ -66,7 +62,6 @@ rules.
 
 Integrating with other mobile apps
 ----------------------------------
-
 Your customers will expect your app to play nice with the apps they use for making payments from their mobile device,
 such as the banking apps of iDEAL issuers or the Bancontact app.
 
@@ -83,7 +78,6 @@ of an embedded WebView inside your app.
 
 Webhooks
 --------
-
 Webhooks cannot be sent to mobile devices and since the payment status is not always known when your customer returns
 to the app, you cannot rely on checking on your customer's return to your app.
 

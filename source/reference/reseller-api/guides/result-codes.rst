@@ -1,6 +1,5 @@
 Result codes
 ============
-
 .. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
              As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API
              </reference/v2/payments-api/create-payment>`.
@@ -22,7 +21,6 @@ The following elements are present in every API result:
 * ``<success>`` Indicates whether a request was successfully executed.
 * ``<resultcode>`` Indicates which error occurred during the request.
 * ``<resultmessage>`` Provides additional information about the result.
-
 
 **The following result codes are possible for all API requests:**
 

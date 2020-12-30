@@ -87,7 +87,6 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
               if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
               ``extra.maximumAmount`` properties that allow you pick the right amount.
 
-
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
@@ -237,7 +236,6 @@ Response (cancellation rejected)
 
 .. code-block:: none
    :linenos:
-
 
    HTTP/1.1 422 Unprocessable Entity
    Content-Type: application/hal+json

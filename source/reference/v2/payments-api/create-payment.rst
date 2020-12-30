@@ -1,5 +1,5 @@
-Create Payment API
-==================
+Create payment
+==============
 .. api-name:: Payments API
    :version: 2
 
@@ -98,7 +98,6 @@ Parameters
           you want to use webhook during development on ``localhost``, you must use a tool like
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
-
 
    * - .. param-name:: locale
 

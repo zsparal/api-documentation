@@ -1,5 +1,5 @@
-Create Subscription API
-=======================
+Create subscription
+===================
 .. api-name:: Subscriptions API
    :version: 2
 

@@ -1,6 +1,5 @@
 Handling errors with Mollie Components
 ======================================
-
 When paying with a credit card, several errors can occur during the payment process that are outside of your or
 Mollie's control, e.g. the shopper has entered an incorrect CVV, has insufficient balance on his / her card or the
 issuing bank could decline the transaction.
@@ -28,7 +27,6 @@ When creating a test mode payment, failure conditions can be triggered :doc:`usi
 
 Payments without 3-D Secure authentication
 ------------------------------------------
-
 If no 3-D Secure authentication is necessary, you will receive the error upon creating the payment.
 
 If the error is caused by the shopper, the response from the :doc:`/reference/v2/payments-api/create-payment` will
@@ -93,7 +91,6 @@ Example Create Payment API error response
 
 Payments with 3-D Secure authentication
 ---------------------------------------
-
 If 3-D Secure authentication is necessary for the payment, the shopper will first have to authenticate him / herself
 with his / her card issuer. Any errors that occur will be available to you in the response of the
 :doc:`/reference/v2/payments-api/get-payment` which you should call from your webhook.
@@ -135,7 +132,6 @@ The reason of the error will be available via the ``details`` object:
               Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
               This is provided as a convenience, you can of course also use your own messages.
-
 
 Example Get Payment API response for ``failed`` Payment
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~

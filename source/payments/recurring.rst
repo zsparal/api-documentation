@@ -178,7 +178,6 @@ automatically at the specified frequency, and will show up in your Dashboard.
               \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
           }"
 
-
 #. In the above example the customer is charged €25.00 for 4 times every 3 months, starting today.
 
 #. The webhook URL will be triggered for every payment to communicate any status updates.
@@ -238,7 +237,6 @@ The configuration should contain JSON with the following attributes:
      - A unique session ID for the current payment. It should be different on every page load and can be
        32 characters long. This ID should be posted to us when you create the actual payment via the
        ``sessionId`` parameter.
-
 
 .. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
              it will not work.

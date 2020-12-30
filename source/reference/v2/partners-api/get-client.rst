@@ -1,5 +1,5 @@
-Get Client API
-==============
+Get client
+==========
 .. api-name::Partners API
    :version: 2
 

@@ -1,6 +1,5 @@
-Integrating meal-, eco-, and gift-vouchers
-==========================================
-
+Integrating meal, eco, and gift vouchers
+========================================
 A voucher is for certain products given to employees as an employee benefit, allowing them to
 eat at outside restaurants, typically for lunch, buying eco product or gifts. In many countries,
 vouchers had favorable tax treatment. Vouchers are typically in the form of paper tickets but are

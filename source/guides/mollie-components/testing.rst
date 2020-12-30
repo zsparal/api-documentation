@@ -1,6 +1,5 @@
 Testing Mollie Components
 =========================
-
 **Mollie Components** can be tested during implementation with the regular :doc:`test mode <../testing>`.
 
 First, you will have to initialize the :ref:`components-mollie-constructor` constructor with your profile ID and
@@ -15,7 +14,6 @@ Then, you can implement the remainder of Mollie Components as specified in :doc:
 
 Card numbers for testing
 ------------------------
-
 You can use these cards for testing, with any CVV and expiry date.
 
 .. table::
@@ -34,7 +32,6 @@ You can use these cards for testing, with any CVV and expiry date.
 
 Testing failures
 ----------------
-
 Of course testing only the happy path is not sufficient and you should :doc:`handle errors <handling-errors>` as well.
 
 This can be done by passing `magic amounts` when creating the payment. Depending on whether you want to trigger 3-D Secure authentication or not, this works in a different manner:

@@ -1,6 +1,5 @@
-Get Payment Refund API
-======================
-
+Get payment refund
+==================
 .. api-name:: Refunds API
    :version: 2
 
@@ -20,7 +19,6 @@ If you do not know the original payment's ID, you can use the
 
 .. note::
     Trying to retrieve a canceled refund will result in a 404 exception.
-
 
 Parameters
 ----------
@@ -183,7 +181,6 @@ Response
        the refund was not created for an order.
 
        The full order object can be retrieved via the ``order`` URL in the ``_links`` object.
-
 
    * - ``createdAt``
 

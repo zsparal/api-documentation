@@ -1,5 +1,5 @@
-Get Partner API
-===============
+Get partner
+===========
 .. api-name::Partners API
    :version: 2
 
@@ -98,7 +98,7 @@ Response
           :required: false
 
      - |
-       | Will be ``true`` if an updated contract is available, requiring the partner’s agreement. 
+       | Will be ``true`` if an updated contract is available, requiring the partner’s agreement.
          Will be omitted otherwise.
 
    * - ``_links``

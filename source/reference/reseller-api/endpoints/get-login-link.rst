@@ -1,6 +1,5 @@
 Get login link
 ==============
-
 .. api-name:: Reseller API
    :version: 1
 

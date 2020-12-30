@@ -23,7 +23,6 @@ enabled.
 
 How to create an application fee
 --------------------------------
-
 One-off application fees can be created on Payments or Orders. Application fees can also be set on Subscriptions, in
 which case the application fee will be added to *each Payment* created for the Subscription.
 
@@ -52,7 +51,6 @@ They are created by passing additional parameters to the
                  :required: true
 
             - The amount the app wants to charge, e.g. ``{"currency":"EUR", "value":"10.00"}`` if the app would want to charge €10.00. Read more about :ref:`maximum application fees <max-application-fees>`.
-
 
               .. list-table::
                  :widths: auto

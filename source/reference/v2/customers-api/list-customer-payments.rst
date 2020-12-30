@@ -1,5 +1,5 @@
-List Customer Payments API
-==========================
+List customer payments
+======================
 .. api-name:: Customers API
    :version: 2
 

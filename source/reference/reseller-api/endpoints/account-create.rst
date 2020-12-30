@@ -1,6 +1,5 @@
 Create account
 ==============
-
 .. api-name:: Reseller API
    :version: 1
 

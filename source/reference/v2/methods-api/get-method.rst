@@ -1,5 +1,5 @@
-Get Payment Method API
-======================
+Get payment method
+==================
 .. api-name:: Methods API
    :version: 2
 

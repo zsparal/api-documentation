@@ -1,6 +1,5 @@
-Cancel Payment Refund API
-=========================
-
+Cancel payment refund
+=====================
 .. api-name:: Refunds API
    :version: 2
 

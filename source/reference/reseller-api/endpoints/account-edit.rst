@@ -1,6 +1,5 @@
 Update account
 ==============
-
 .. api-name:: Reseller API
    :version: 1
 
@@ -30,7 +29,6 @@ additional required parameter just for this endpoint:
           :required: true
 
      - The username of the account you would like to change.
-
 
 Response
 --------

@@ -60,7 +60,6 @@ Response
        }
    }
 
-
 The response types
 ------------------
 The first digit of the status code indicates the type or class of the status. Using this first digit you can determine

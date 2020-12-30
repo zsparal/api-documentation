@@ -1,9 +1,7 @@
 Onboard your customers at Mollie
 ================================
-
 .. warning:: *Mollie Onboarding* is currently in a closed beta. If you are interested in participating, reach out to
              your account manager.
-
 
 This guide section will help you in the process of getting your customers onboarded at Mollie. From the first OAuth permission
 to sending data about your customer, all steps will be covered.
@@ -18,8 +16,7 @@ You will have to provide a logo, name and redirect URL for the OAuth app that wi
 That page will display the Client ID and secret needed for the steps below.
 
 Step 1: Setting up the authorization
----------------------------------------------------
-
+------------------------------------
 You will need to acquire authorization for the
 Mollie account your customer creates or logs into. This :doc:`page </oauth/overview>` gives you an overview of the flow. If you just want to follow the implementation steps, follow this guide: :doc:`Mollie Connect getting started </oauth/getting-started>`.
 
@@ -46,8 +43,6 @@ Require the following scopes to board merchants and create payments on their beh
        | Onboarding API
      - Submit onboarding data for the merchant.
 
-
-
 Step 2: Customer signs up and gives authorization
 -------------------------------------------------
 Once you send your customer to the authorize URL they will see a welcome screen.
@@ -67,8 +62,7 @@ After the authorization, the customer will be sent to the redirect URL provided 
 You can now generate the OAuth access tokens for this customer using the :doc:`Generate tokens endpoint </reference/oauth2/tokens>` and store them. You will use this token for all the requests regarding that customer.
 
 Step 4: Customer starts onboarding
--------------------------------------------
-
+----------------------------------
 You can now check the Onboarding Status of your
 customer using the :doc:`Get onboarding status endpoint </reference/v2/onboarding-api/get-onboarding-status>`
 
@@ -84,9 +78,8 @@ On the other hand, if they need to start the onboarding in Mollie but didn't jus
 
   .. note::  To make your customer experience easier, you can help them onboard at Mollie by prefilling some fields using the :doc:`Submit onboarding data endpoint </reference/v2/onboarding-api/submit-onboarding-data>`
 
-
 Step 5: Customer needs to complete the onboarding
-----------------------------------------------------------------
+-------------------------------------------------
 The :doc:`Onboarding status </reference/v2/onboarding-api/get-onboarding-status>` response is used to display a proper message and action to your customer.
 
 There's two milestones that the customer reaches during the Mollie onboarding, ``canReceivePayments`` (basic information has been provided) and ``canReceiveSettlements`` (all information has been provided and verified).
@@ -128,7 +121,6 @@ As a basic implementation, we recommend handling the following cases:
 
   .. note::  If you are only interested in your merchants accepting payments, you should redirect them to your default landing page.
 
-
   .. list-table::
     :widths: auto
 
@@ -168,7 +160,6 @@ As a basic implementation, we recommend handling the following cases:
         canReceiveSettlements: false,
         status: "in-review"
       }
-
 
   .. list-table::
     :widths: auto

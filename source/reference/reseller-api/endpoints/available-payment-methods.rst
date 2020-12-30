@@ -1,6 +1,5 @@
 Available payment methods
 =========================
-
 .. api-name:: Reseller API
    :version: 1
 

@@ -1,5 +1,5 @@
-Update Payment API
-==================
+Update payment
+==============
 .. api-name:: Payments API
    :version: 2
 

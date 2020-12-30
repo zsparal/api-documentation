@@ -199,7 +199,6 @@ Response
 
             - The description of the application fee as specified during subscription creation.
 
-
    * - ``_links``
 
        .. type:: object

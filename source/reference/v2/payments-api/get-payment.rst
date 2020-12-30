@@ -1,5 +1,5 @@
-Get Payment API
-===============
+Get payment
+===========
 .. api-name:: Payments API
    :version: 2
 
@@ -263,7 +263,6 @@ Response
               .. type:: string
 
             - A string containing the exact charged back amount of the payment in the given currency.
-
 
    * - ``description``
 

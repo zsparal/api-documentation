@@ -1,6 +1,5 @@
-Update bankaccount
-==================
-
+Update bank account
+===================
 .. api-name:: Reseller API
    :version: 1
 

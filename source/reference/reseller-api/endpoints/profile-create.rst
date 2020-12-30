@@ -1,6 +1,5 @@
 Create profile
-==================
-
+==============
 .. api-name:: Reseller API
    :version: 1
 

@@ -110,7 +110,6 @@ Example
       curl -X GET https://api.mollie.com/v2/settlements?limit=5 \
          -H "Authorization: Bearer access_Wwvu7egPcJLLJ9Kb7J632x8wJ2zMeJ"
 
-
    .. code-block:: php
       :linenos:
 

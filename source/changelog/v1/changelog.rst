@@ -21,12 +21,12 @@ November 2020
 =============
 
 Monday, 23th
---------------
+------------
 - We've added a new Merchant Category Code for profiles:
   5262 Marketplaces, crowdfunding, donation platforms
 
 Monday, 9th
---------------
+-----------
 - We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
   The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
 - We've added 7 new Merchant Category Codes for profiles:
@@ -43,7 +43,6 @@ October 2020
 
 Monday, 12th
 ------------
-
 - Some ``feeRegion`` values for credit card were missing in the documentation. We have added them now.
 
 August 2020
@@ -51,12 +50,10 @@ August 2020
 
 Thursday, 20th
 --------------
-
 - Added ``good4fun`` as gift card issuer.
 
 Monday, 10th
 ------------
-
 - Added ``decadeaukaart`` as gift card issuer.
 
 June 2020
@@ -64,7 +61,6 @@ June 2020
 
 Friday, 26th
 ------------
-
 - We limit the amount that can be spent with a gift card to 50 euros per payment due to new regulations.
 
 April 2020
@@ -72,7 +68,6 @@ April 2020
 
 Friday, 3rd
 -----------
-
 - Added ``restaurantcadeau`` as gift card issuer.
 - Added ``dinercadeau`` as gift card issuer.
 
@@ -81,30 +76,25 @@ March 2020
 
 Thursday, 12th
 --------------
-
 - Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
 
 Friday, 6th
 -----------
-
 - Added "Sustainable Fashion Gift Card" as giftcard issuer.
 
 Thursday, 5th
 -------------
-
 - Added "FestivalCadeau Giftcard" as giftcard issuer.
 
 Wednesday, 4th
 --------------
-
 - The expiry time of SOFORT Banking was changed to 2 hours.
 
 December 2019
 =============
 
 Monday, 2nd
---------------
-
+-----------
 - The webhooks will now be called from different IP addresses. This should not cause any problems if you don't
   check our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we
   use to send webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
@@ -114,19 +104,16 @@ November 2019
 
 Thursday, 28th
 --------------
-
 - The ``cardFingerprint`` field for Bancontact is not longer useful for identifying returning customers.
   See :doc:`Get Payment </reference/v1/payments-api/get-payment>` for more information.
 
 Wednesday, 27th
 ---------------
-
 - Added ``authentication_failed`` as possible ``failureReason`` in the
   :doc:`Payments API</reference/v1/payments-api/get-payment>` for Credit Card payments.
 
 Monday, 4th
 -----------
-
 - Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
   `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
   are set and your merchant-account has been approved by PayPal before using this.
@@ -138,7 +125,6 @@ October 2019
 
 Monday, 7th
 -----------
-
 - Added the ``paypalPayerId`` field to the PayPal payment details.
 
 September 2019
@@ -155,12 +141,10 @@ Tuesday, 17th
 
 Thursday, 12th
 --------------
-
 - Added "Reiscadeau" as giftcard issuer.
 
 Wednesday, 4th
 --------------
-
 - Added property ``vatRegulation`` to :doc:`/reference/v1/organizations-api/get-organization`.
 
 August 2019
@@ -168,12 +152,10 @@ August 2019
 
 Thursday, 29th
 --------------
-
 - Removed the charge date from the description of payments created by a subscription.
 
 Wednesday, 21st
 ---------------
-
 - Lowered the minimum amount for credit card payments with `recurringType=first` to zero. See
   :doc:`Recurring payments </payments/recurring>` for more info.
 
@@ -182,7 +164,6 @@ July 2019
 
 Thursday, 4th
 -------------
-
 - Added MyBank (``mybank``) as new payment method. Currently, it's not possible to activate MyBank via the Dashboard.
   Please contact your account manager to enable this new method.
 
@@ -191,24 +172,20 @@ May 2019
 
 Tuesday, 21st
 -------------
-
 - Added ``american-express``, ``carte-bancaire`` and ``maestro`` as possible values for the
   ``feeRegion`` in the credit card payment details. See the
   :ref:`Get Payment endpoint <Credit card v1>` for details.
 
 Monday, 20th
 ------------
-
 - :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout.
 
 Thursday, 2nd
 -------------
-
 - Added "VVV Dinercheque" and "VVV Lekkerweg" as giftcard issuers.
 
 Wednesday, 1st
 --------------
-
 - Removed ``bitcoin`` as payment method.
 
 April 2019
@@ -216,7 +193,6 @@ April 2019
 
 Friday, 19th
 ------------
-
 - Added a new endpoint for Mollie Connect to revoke access and refresh tokens. See the
   :doc:`Revoke Token endpoint </reference/oauth2/revoke-token>` for details.
 
@@ -225,12 +201,10 @@ March 2019
 
 Thursday, 21th
 --------------
-
 - Added the "Nationale Golfbon" and "Sport & Fit Cadeau" as giftcard issuers.
 
 Tuesday, 12th
 -------------
-
 - Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
 
 February 2019
@@ -238,18 +212,15 @@ February 2019
 
 Thursday, 28th
 --------------
-
 - Added profile website URL validation to the :doc:`Create profile </reference/v1/profiles-api/create-profile>`
   endpoint.
 
 Monday, 25th
 ------------
-
 - Updated the list of available profile :doc:`merchant category codes </reference/v1/profiles-api/create-profile>`
 
 Wednesday, 6th
 --------------
-
 - We will now also call the webhook when a refund got canceled
 
 December 2018
@@ -257,7 +228,6 @@ December 2018
 
 Friday, 7th
 -----------
-
 - Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
   </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
 
@@ -266,23 +236,19 @@ November 2018
 
 Monday, 12th
 ------------
-
 - Subscriptions in test mode will now be canceled automatically after 10 charges.
 
 Thursday, 8th
 -------------
-
 - It's now possible to refund SEPA Direct Debit payments
 
 Monday, 5th
 -----------
-
 - Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
   for more info.
 
 Thursday, 1st
 -------------
-
 - The maximum amount for SOFORT Banking payments has been increased from €5,000 to €50,000.
 
 October 2018
@@ -290,12 +256,10 @@ October 2018
 
 Wednesday, 24th
 ---------------
-
 - Consumer IBANs of Bancontact payments will now always be shared via the API.
 
 Friday, 19th
 --------------
-
 - PayPal refund period has been increased from 60 to 180 days.
 
 Monday, 15th
@@ -320,7 +284,6 @@ July 2018
 
 Tuesday, 31st
 -------------
-
 - Test payments are no longer cleaned up after 2 weeks. Just like live payments they will never be removed.
 
 June 2018
@@ -328,7 +291,6 @@ June 2018
 
 Monday, 25th
 ------------
-
 - Added the new payment methods Giropay (``giropay``) and EPS (``eps``). Note that this method may not be available on
   your account straight away. If it is not, contact our support department to get it activated for your account.
 

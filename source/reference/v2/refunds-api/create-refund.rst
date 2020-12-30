@@ -1,6 +1,5 @@
-Create Payment Refund API
-=========================
-
+Create payment refund
+=====================
 .. api-name:: Refunds API
    :version: 2
 

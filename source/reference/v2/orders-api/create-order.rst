@@ -1,5 +1,5 @@
-Create Order API
-================
+Create order
+============
 .. api-name:: Orders API
    :version: 2
 

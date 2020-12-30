@@ -4,7 +4,6 @@ Using the :doc:`Orders API </orders/overview>` you can pass the full details of 
 Of course, in some cases you might want to give the customer a discount. This document describes how you can pass
 various types of discounts and promotions.
 
-
 2-for-1 type promotions
 -----------------------
 You may want to offer 2-for-1 type promotions, or other promotions where the customer gets a certain percentage off if
@@ -165,7 +164,6 @@ Partial discounts
 In most cases, canceling, shipping or refunding orders is quite straightforward. You specify which
 order lines you want to act on and the quantity of each line you want to act on. Amounts are determined automatically by
 Mollie.
-
 
 However, when partially canceling, shipping or refunding an order line that has a non-zero ``discountAmount``, you will
 have to pass the ``amount`` parameter as well, as Mollie cannot automatically determine the amount you intended to

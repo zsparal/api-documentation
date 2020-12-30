@@ -1,6 +1,5 @@
 Integration partners
 ====================
-
 .. note:: Heads up! This section is intended for developers who are integrating the Mollie API into an eCommerce or SaaS platform.
 
           If you're looking to integrate payments for a single customer or webshop, head back over to the `overview <https://docs.mollie.com>`_ to get started.
@@ -12,5 +11,5 @@ Be sure to reach out to our `technical partner team <https://www.mollie.com/part
 Partnered developers are also invited to join our Slack community, where other members and Mollie developers will be happy to answer your questions.
 
 Questions?
-^^^^^^^^^^
+----------
 Please reach out to us at support@mollie.com. We're happy to help!

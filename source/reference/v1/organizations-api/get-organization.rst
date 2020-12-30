@@ -1,5 +1,5 @@
-Get Organization API
-====================
+Get organization
+================
 .. api-name:: Organizations API
    :version: 1
 

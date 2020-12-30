@@ -1,6 +1,5 @@
 Set fees
 ========
-
 .. api-name:: Reseller API
    :version: 1
 
@@ -71,7 +70,6 @@ parameters:
         * ``przelewy24``
         * ``refund``
         * ``sofort``
-
 
    * - ``payment_subtype``
 

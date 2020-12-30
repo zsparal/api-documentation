@@ -1,6 +1,5 @@
 Getting started with Payments in your App
 =========================================
-
 Accepting payments in your app can improve conversion of orders from mobile devices. In this guide we will show you a
 basic example of integrating Mollie Payments in your iOS or Android App.
 
@@ -105,7 +104,6 @@ without opening the browser. This will improve the flow for your consumer.
 
 iOS
 ^^^
-
 .. code-block:: swift
       :linenos:
 

@@ -1,5 +1,5 @@
-Get Payment API
-===============
+Get payment
+===========
 .. api-name:: Payments API
    :version: 1
 

@@ -1,6 +1,6 @@
-List Payments API
-=================
-.. api-name:: Payments API
+List payments
+=============
+.. api-name:: Payents API
    :version: 2
 
 .. endpoint::

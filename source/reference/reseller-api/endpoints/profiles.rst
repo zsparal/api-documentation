@@ -1,6 +1,5 @@
 Get profiles
 ============
-
 .. api-name:: Reseller API
    :version: 1
 

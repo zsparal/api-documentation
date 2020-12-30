@@ -1,5 +1,5 @@
-Get Organization API
-====================
+Get organization
+================
 .. api-name:: Organizations API
    :version: 2
 
@@ -21,9 +21,7 @@ are accessible.
 
 Parameters
 ----------
-
 No parameters applicable for this endpoint.
-
 
 Response
 --------
