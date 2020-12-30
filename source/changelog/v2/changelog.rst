@@ -8,21 +8,23 @@ December 2020
 
 Wednesday, 16th
 ---------------
-- We've added Revolut as new iDEAL issuer. It will appear automatically in your checkout if you use
-  the Mollie Hosted Payment Page or the Methods API to get the issuers. If you use a custom integration
-  you should add the issuer ID ``ideal_REVOLT21`` to your list of available iDEAL banks.
+- We have added Revolut as new iDEAL issuer. It will appear automatically in your checkout if you use the Mollie Hosted
+  Payment Page or the Methods API to get the issuers. If you use a custom integration you should add the issuer ID
+  ``ideal_REVOLT21`` to your list of available iDEAL banks.
 
 November 2020
 =============
 
 Monday, 23th
 ------------
-- We've added a new Merchant Category Code for profiles:
+- We have added a new Merchant Category Code for profiles:
   5262 Marketplaces, crowdfunding, donation platforms
 
 Thursday, 19th
 --------------
-- Added the optional ``givenName`` and ``familyName`` fields to the Paypal ``shippingAddress`` :ref:`object <payment-method-specific-parameters>` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
+- Added the optional ``givenName`` and ``familyName`` fields to the Paypal ``shippingAddress``
+  :ref:`object <payment-method-specific-parameters>` in the
+  :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 
 Friday, 13th
 ------------
@@ -30,9 +32,9 @@ Friday, 13th
 
 Monday, 9th
 -----------
-- We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
-  The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
-- We've added 7 new Merchant Category Codes for profiles:
+- We have added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
+  The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829>`_.
+- We have added 7 new Merchant Category Codes for profiles:
   5712 Home furnishing
   5945 Hobby, Toy, and Game Shops
   6051 Crypto currency
@@ -46,8 +48,8 @@ October 2020
 
 Thursday, 22th
 --------------
-- We brought the method ``vouchers`` out of beta, you can enable this method in the dashboard. Please
-  see the :doc:`voucher guide </orders/integrating-vouchers>` for more info and the requirements.
+- We brought the method ``vouchers`` out of beta, you can enable this method in the dashboard. Please see the
+  :doc:`voucher guide </orders/integrating-vouchers>` for more info and the requirements.
 
 Monday, 12th
 ------------
@@ -62,7 +64,8 @@ Monday, 14th
 
 Tuesday, 8th
 ------------
-- Added ``locale`` field, it can be updated via update payment. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`.
+- The ``locale`` field of a payment object can now be updated via the
+  :doc:`Update payment endpoint </reference/v2/payments-api/update-payment>`.
 
 August 2020
 ===========
@@ -71,8 +74,9 @@ Friday, 28th
 ------------
 - We have added a ``dashboard`` URL to the :doc:`Payment </reference/v2/payments-api/get-payment>`,
   :doc:`Order </reference/v2/orders-api/get-order>`, :doc:`Customer </reference/v2/customers-api/get-customer>`,
-  :doc:`Organization </reference/v2/organizations-api/get-organization>`, and :doc:`Profiles </reference/v2/profiles-api/get-profile>`
-  endpoints. This URL points directly to the correct resource in the Mollie Dashboard.
+  :doc:`Organization </reference/v2/organizations-api/get-organization>`, and
+  :doc:`Profiles </reference/v2/profiles-api/get-profile>` endpoints. This URL points directly to the correct resource
+  in the Mollie Dashboard.
 
 Thursday, 20th
 --------------
@@ -80,7 +84,8 @@ Thursday, 20th
 
 Thursday, 13th
 --------------
-- Added ``issuer`` field for ``Gift cards``, ``iDEAL``, ``KBC/CBC`` payment types. URL to the :doc:`Update Payment API </reference/v2/payments-api/update-payment>`.
+- You can now update the ``issuer`` field for gift card, iDEAL, and KBC/CBC payments via the
+  :doc:`Update payment endpoint </reference/v2/payments-api/update-payment>`.
 
 Monday, 10th
 ------------
@@ -121,10 +126,9 @@ Tuesday, 26th
 
 Thursday, 14th
 --------------
-- Added ``voucher`` as new payment method. See our :doc:`guide </orders/integrating-vouchers>`
-  for how you can integrate this into your checkout. Please note that this payment method is currently
-  in a private beta state. If you are interested in participating, reach out to your account manager
-  or our support department.
+- Added ``voucher`` as new payment method. See our :doc:`guide </orders/integrating-vouchers>` for how you can integrate
+  this into your checkout. Please note that this payment method is currently in a private beta state. If you are
+  interested in participating, reach out to your account manager or our support department.
 
 April 2020
 ==========
@@ -139,16 +143,15 @@ March 2020
 
 Tuesday, 24th
 -------------
-- Mollie is moving to a monthly invoicing system. As some settlements span multiple months, these
-  settlements will have their associated costs put on multiple invoices (one for each month). To
-  accommodate the linking of specific costs to the specific invoice of that month, an ``invoiceId``
-  field is included for each monthly period (see the
+- Mollie is moving to a monthly invoicing system. As some settlements span multiple months, these settlements will have
+  their associated costs put on multiple invoices (one for each month). To accommodate the linking of specific costs to
+  the specific invoice of that month, an ``invoiceId`` field is included for each monthly period (see the
   :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>`).
 
-  For such settlements that span multiple months, the top-level ``invoiceId`` field now refers only
-  to the oldest invoice. This could cause your bookkeeping integration to break as the invoice
-  referenced by this ID will no longer cover all costs. The new ``invoiceId`` field of each period
-  should be used instead.
+  For such settlements that span multiple months, the top-level ``invoiceId`` field now refers only to the oldest
+  invoice. This could cause your bookkeeping integration to break as the invoice referenced by this ID will no longer
+  cover all costs. The new ``invoiceId`` field of each period should be used instead.
+
 - We made it easier to ship a whole order at once by making the ``lines`` parameter in the
   :doc:`Create shipment endpoint </reference/v2/shipments-api/create-shipment>` optional.
 
@@ -160,8 +163,9 @@ Tuesday, 17th
 Thursday, 12th
 --------------
 - Duplicate Refunds (same amount as another Refund on the same Payment within the hour) are now blocked by the API.
-- Added the possibility to get the details of the remainder payment in the ``details`` object of a stacked payment.
-  See the :doc:`Get payment endpoint </reference/v2/payments-api/get-payment>` for more info.
+
+- Added the possibility to get the details of the remainder payment in the ``details`` object of a stacked payment. See
+  the :doc:`Get payment endpoint </reference/v2/payments-api/get-payment>` for more info.
 
 Friday, 6th
 -----------
@@ -180,7 +184,7 @@ February 2020
 
 Thursday, 20th
 --------------
-- Added ``shippingAddress`` to the PayPal payment details. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
+- Added ``shippingAddress`` to the PayPal payment details. See :doc:`/reference/v2/payments-api/get-payment`.
 
 Friday, 7th
 ------------
@@ -198,18 +202,20 @@ Monday, 27th
 ------------
 - Added ``restrictPaymentMethodsToCountry`` to the :doc:`/reference/v2/payments-api/update-payment`.
 
-- Added support for IDNs (internationalized domain names) for webhook and redirect URLs in :doc:`Payments API</reference/v2/payments-api/create-payment>`.
+- Added support for IDNs (internationalized domain names) for webhook and redirect URLs in the
+  :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 
 Friday, 17th
 ------------
 - Added the possibility to also update the ``interval`` of a subscription via the
-  :doc:`Update Subscription API </reference/v2/subscriptions-api/update-subscription>`
+  :doc:`Update subscription endpoint </reference/v2/subscriptions-api/update-subscription>`
 
 Thursday, 9th
 -------------
 - The ``self.href``, ``next.href`` and ``previous.href`` links now correctly contain all query parameters used when
-  performing the request. For example, the ``year`` query parameter will now be included in the ``next`` and ``previous``
-  links for the response of the :doc:`/reference/v2/invoices-api/list-invoices` if it was in the initial request.
+  performing the request. For example, the ``year`` query parameter will now be included in the ``next`` and
+  ``previous`` links for the response of the :doc:`/reference/v2/invoices-api/list-invoices` if it was in the initial
+  request.
 - Values for ``_links.nnnn.href`` elements now correctly include the ``?testmode=true`` query parameter if this is
   necessary to be able to follow the link. This affects OAuth and Application Token authenticated requests only.
 
@@ -218,25 +224,26 @@ December 2019
 
 Tuesday, 3rd
 ------------
-- Added the possibility to submit ``extraMerchantData`` for Klarna in the :doc:`Orders API</reference/v2/orders-api/create-order>`
-  for merchants who have agreed this with Klarna.
-- Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API</reference/v2/payments-api/create-payment>`.
-- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API</reference/v2/orders-api/create-order>`.
-- Enabled :doc:`Application fees </oauth/application-fees>` for the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+- Added the possibility to submit ``extraMerchantData`` for Klarna in the
+  :doc:`Orders API </reference/v2/orders-api/create-order>` for merchants who have agreed this with Klarna.
+- Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
+- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+- Enabled :doc:`Application fees </oauth/application-fees>` for the
+  :doc:`Orders API </reference/v2/orders-api/create-order>`.
 
 Monday, 2nd
 -----------
-- The webhooks will now be called from different IP addresses. This should not cause any problems if you don't
-  check our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we
-  use to send webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+- The webhooks will now be called from different IP addresses. This should not cause any problems if you do not check
+  our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we use to send
+  webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829>`_.
 
 November 2019
 =============
 
 Thursday, 28th
 --------------
-- We made the ``cardFingerprint`` field for Bancontact deprecated. See :doc:`Get Payment </reference/v2/payments-api/get-payment>`
-  for more information.
+- We made the ``cardFingerprint`` field for Bancontact deprecated. See
+  :doc:`Get payment </reference/v2/payments-api/get-payment>` for more information.
 
 Wednesday, 27th
 ---------------
@@ -246,20 +253,21 @@ Wednesday, 27th
 Tuesday, 19th
 -------------
 - Added the ``sellerProtection`` field to the PayPal payment details.
-- The :doc:`Apple Pay direct integration </guides/applepay-direct-integration>` can now also be used with the :doc:`/reference/v2/orders-api/create-order`.
+- The :doc:`Apple Pay direct integration </guides/applepay-direct-integration>` can now also be used with
+  :doc:`/reference/v2/orders-api/create-order`.
 
 Friday, 15th
 --------------
-- Added the ``digitalGoods`` field as PayPal parameter. See :doc:`Create Payment </reference/v2/payments-api/create-payment>`
-  for more information.
+- Added the ``digitalGoods`` field as PayPal parameter. See :doc:`/reference/v2/payments-api/create-payment` for more
+  information.
 
 Monday, 4th
 -----------
 - Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
-  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
-  are set and your merchant-account has been approved by PayPal before using this.
-- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is
-  charging for that transaction.
+  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625>`_ are set and your merchant account has
+  been approved by PayPal before using this.
+- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is charging for that
+  transaction.
 
 October 2019
 ============
@@ -285,8 +293,8 @@ Tuesday, 24th
 
 Friday, 20th
 ------------
-- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
-  total now. See the :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in total now. See the
+  :doc:`webhooks guide </guides/webhooks>` for the new schedule.
 
 Tuesday, 17th
 -------------
@@ -303,7 +311,8 @@ Monday, 9th
 
 Wednesday, 4th
 --------------
-- Added property ``vatRegulation`` to :doc:`/reference/v2/organizations-api/get-organization` and :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
+- Added property ``vatRegulation`` to :doc:`/reference/v2/organizations-api/get-organization` and
+  :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>`.
 
 August 2019
 ===========
@@ -338,22 +347,22 @@ Thursday, 4th
 
 Tuesday, 2nd
 ------------
-- Settlements can now be retrieved using either their ID or their bank reference. See :doc:`Get settlement </reference/v2/settlements-api/get-settlement>`
-  for more info.
+- Settlements can now be retrieved using either their ID or their bank reference. See
+  :doc:`/reference/v2/settlements-api/get-settlement` for more info.
 
 June 2019
 =========
 
 Thursday, 20th
 --------------
-- Added the ``settlementId`` field to the refund response. See :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`
-  for more info.
+- Added the ``settlementId`` field to the refund response. See :doc:`/reference/v2/refunds-api/get-refund` for more
+  info.
 
 Thursday, 13th
 ---------------
 - Changed the conditions for when an order is cancelable. Canceling an order is not longer possible when there are any
-  open payments for the order, unless for four specific methods. See :doc:`Cancel Order </reference/v2/orders-api/cancel-order>`
-  for more info.
+  open payments for the order, unless for four specific methods. See :doc:`/reference/v2/orders-api/cancel-order` for
+  more info.
 
 Wednesday, 12th
 ---------------
@@ -370,13 +379,14 @@ Tuesday, 21st
 
 Monday, 20th
 ------------
-- :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout and can be integrated in your webshop's method selection.
+- :doc:`Apple Pay </wallets/applepay>` is now supported in Mollie Checkout and can be integrated in your webshop's
+  method selection.
 
 Wednesday, 8th
 --------------
 - Refunds can now contain ``metadata``. We will save the data alongside the refund. Whenever you fetch the refund with
-  our API, we'll also include the metadata. See the :doc:`Create Payment Refund </reference/v2/refunds-api/create-refund>`
-  and :doc:`Create Order Refund </reference/v2/orders-api/create-order-refund>` documentation for more info.
+  our API, we'll also include the metadata. See the :doc:`/reference/v2/refunds-api/create-refund` and
+  :doc:`/reference/v2/orders-api/create-order-refund` documentation for more info.
 
 Thursday, 2nd
 -------------
@@ -403,11 +413,11 @@ Wednesday, 27th
   :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
 - Subscriptions can now be created with :doc:`application fees </oauth/application-fees>`. The application fees will be
   applied on each created Payment for the Subscription.
-- Added the ``minimumAmount`` and ``maximumAmount`` properties to the :doc:`Methods API </reference/v2/methods-api/list-methods>`
-  endpoints. It represents the minimum and maximum amount allowed for creating a payment with the specific methods.
-- Added the ``amount`` query parameter to the :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>`
-  endpoint.
-- Added the ``currency`` query parameter to the :doc:`/reference/v2/methods-api/get-method`.
+- Added the ``minimumAmount`` and ``maximumAmount`` properties to the
+  :doc:`Methods API </reference/v2/methods-api/list-methods>` endpoints. It represents the minimum and maximum amount
+  allowed for creating a payment with the specific methods.
+- Added the ``amount`` query parameter to the :doc:`/reference/v2/methods-api/list-all-methods` endpoint.
+- Added the ``currency`` query parameter to the :doc:`/reference/v2/methods-api/get-method` endpoint.
 - The ``.dev`` TLD is now supported for webhooks.
 
 Thursday, 21th
@@ -449,11 +459,12 @@ Tuesday, 29th
 -------------
 - Added a new API for submitting onboarding data of a merchant. This data will be prefilled in the onboarding forms of
   the merchant. You will need the new OAuth scope ``onboarding.write`` to submit data. For details, see the
-  :doc:`Submit onboarding data API </reference/v2/onboarding-api/submit-onboarding-data>`.
+  :doc:`Submit onboarding data endpoint </reference/v2/onboarding-api/submit-onboarding-data>`.
 
 Tuesday, 22th
 -------------
-- It is now possible to also update the ``orderNumber`` of an order, see :doc:`Update order </reference/v2/orders-api/update-order>`.
+- It is now possible to also update the ``orderNumber`` of an order, see
+  :doc:`Update order </reference/v2/orders-api/update-order>`.
 
 Thursday, 17th
 --------------
@@ -462,7 +473,7 @@ Thursday, 17th
 
 Monday, 14th
 -------------
-- We've added the ``metadata`` field to the order line entity. You can now store up to 1Kb of information with your
+- We have added the ``metadata`` field to the order line entity. You can now store up to 1Kb of information with your
   order line, see :doc:`Create order </reference/v2/orders-api/create-order>`.
 
 - Added a new endpoint to retrieve all payment methods Mollie is offering to an organization.
@@ -483,18 +494,20 @@ Thursday, 20th
 
 Tuesday, 18th
 -------------
-- Added a new endpoint to update order lines. For details, see: :doc:`Update order line </reference/v2/orders-api/update-orderline>`
+- Added a new endpoint to update order lines. For details, see :doc:`/reference/v2/orders-api/update-orderline`.
 
 Friday, 14th
 ------------
-- The expiry period for `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_ has been decreased from 1 day to 1 hour.
+- The expiry period for `Belfius Pay Button <https://www.mollie.com/en/payments/belfius>`_ has been decreased from 1 day
+  to 1 hour.
 
 Thursday, 13th
 --------------
 - It is now possible to create (another) payment for an order via the
   :doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>` on the Orders API.
 - We are now offering webhooks for order payments. Please note that when the status of the payment becomes ``paid`` we
-  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/create-order>` for more info.
+  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/create-order>` for more
+  info.
 
 Monday, 10th
 ------------

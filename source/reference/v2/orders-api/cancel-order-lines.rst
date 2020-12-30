@@ -77,8 +77,8 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
               The amount is required only if you are *partially* canceling an order line which has a non-zero
               ``discountAmount``.
 
-              The amount you can cancel depends on various properties of the order line and the cancel order lines request.
-              The maximum that can be canceled is ``unit price x quantity to cancel``.
+              The amount you can cancel depends on various properties of the order line and the cancel order lines
+              request. The maximum that can be canceled is ``unit price x quantity to cancel``.
 
               The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled,
               the amounts already shipped or canceled and the quantity you want to cancel.

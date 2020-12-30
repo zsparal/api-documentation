@@ -3,7 +3,8 @@ Getting started with Payments in your App
 Accepting payments in your app can improve conversion of orders from mobile devices. In this guide we will show you a
 basic example of integrating Mollie Payments in your iOS or Android App.
 
-.. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on them.
+.. note:: The code examples provided here are for illustrative purposes only and Mollie does not yet offer support on
+          them.
 
 Keep the guidelines of the platform you are developing on in mind
 -----------------------------------------------------------------
@@ -74,9 +75,9 @@ Type in the value-field the scheme you want to handle, in our case ``mollie-app`
 
 Android
 ^^^^^^^
-Open your ``AndroidManifest.xml`` file. Decide for what activity you want to support the URL scheme and add the following
-code inside your ``<activity>`` object. Replace ``android:scheme`` with your URL scheme and ``android:host`` with the
-commando, in our example ``payment-return``.
+Open your ``AndroidManifest.xml`` file. Decide for what activity you want to support the URL scheme and add the
+following code inside your ``<activity>`` object. Replace ``android:scheme`` with your URL scheme and ``android:host``
+with the command, in our example ``payment-return``.
 
 .. code-block:: xml
       :linenos:
@@ -92,15 +93,14 @@ commando, in our example ``payment-return``.
 
 Step 3: Call your server and open the Checkout URL
 --------------------------------------------------
-To initiate a payment from your app you need to call the file you have created in step 1 and open
-the browser with the Checkout URL you will receive. **Do this in the native browser of the device
-and not in an in-app browser view** since the operating systems will reject opening the bank apps
-from these views. If the ``method`` supports a ``mobileAppCheckout`` URL, use that URL as redirect
-instead of the regular ``checkout`` URL. This will open the banking app directly from your app
-without opening the browser. This will improve the flow for your consumer.
+To initiate a payment from your app you need to call the file you have created in step 1 and open the browser with the
+Checkout URL you will receive. **Do this in the native browser of the device and not in an in-app browser view** since
+the operating systems will reject opening the bank apps from these views. If the ``method`` supports a
+``mobileAppCheckout`` URL, use that URL as redirect instead of the regular ``checkout`` URL. This will open the banking
+app directly from your app without opening the browser. This will improve the flow for your consumer.
 
-.. warning:: Never send an amount to your server for creating a payment to prevent price changes
-             between the payment and the actual price the customer needs to pay.
+.. warning:: Never send an amount to your server for creating a payment to prevent price changes between the payment and
+             the actual price the customer needs to pay.
 
 iOS
 ^^^
@@ -222,9 +222,9 @@ this request.
 
 iOS
 ^^^
-Open your ``AppDelegate.swift`` file and add the ``application(_:open:options)`` method. Split out the host into an array
-so you can access the data that we return. Your method should return ``true`` to let the device know that you can handle
-the request.
+Open your ``AppDelegate.swift`` file and add the ``application(_:open:options)`` method. Split out the host into an
+array so you can access the data that we return. Your method should return ``true`` to let the device know that you can
+handle the request.
 
 .. code-block:: swift
       :linenos:

@@ -37,15 +37,15 @@ Consult your app store's terms and conditions to find out what exact limitations
 Payment method rules and regulations
 ------------------------------------
 Additionally, some payment methods place limitations on how they can be embedded in a WebView. For example, the iDEAL
-R&R disallows hiding the URL of the issuer's hosted payment pages and forbids placing the payment in a WebView, since that
-allows your app to inject code into the banking pages.
+R&R disallows hiding the URL of the issuer's hosted payment pages and forbids placing the payment in a WebView, since
+that allows your app to inject code into the banking pages.
 
 Security considerations
 -----------------------
 Note that your app is distributed to and executed on mobile devices after being installed from the app store. Since
 you do not control the mobile device, you should not put Mollie API keys inside the app. If the app is installed on a
-rooted device, any keys in the app can easily be extracted by an attacker. Even on a non-rooted device, the keys could be
-stolen by a MITM proxy server.
+rooted device, any keys in the app can easily be extracted by an attacker. Even on a non-rooted device, the keys could
+be stolen by a MITM proxy server.
 
 In principle, you should consider the device your app is installed on untrusted.
 

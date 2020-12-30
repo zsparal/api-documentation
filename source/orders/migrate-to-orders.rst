@@ -102,9 +102,9 @@ when the status of an order has changed. You can then use the Mollie API to
 Note that orders cannot be canceled by shoppers. The order will remain ``created`` so that you can add
 further payments to the order to give your customer a second chance to pay for the order.
 
-If you want to know if your customer canceled the first payment, you will need to retrieve the payment together with
-the order instead of just the order by adding ``?embed=payments`` to the Get Order API request. You can then find the
-status of the first payment under ``_embedded.payments.0.status``.
+If you want to know if your customer canceled the first payment, you will need to retrieve the payment together with the
+order instead of just the order by adding ``?embed=payments`` to the Get Order API request. You can then find the status
+of the first payment under ``_embedded.payments.0.status``.
 
 Canceling an order should be done from your backend. You can use the :doc:`Cancel Order API
 </reference/v2/orders-api/cancel-order>`.

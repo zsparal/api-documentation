@@ -1,8 +1,7 @@
 Order status changes
 ====================
-Orders and order lines can go through a number of different statuses. First we will discuss the difference between
-two possible flows for orders. After that we will list all the possible statuses for both **orders** and
-**order lines**.
+Orders and order lines can go through a number of different statuses. First we will discuss the difference between two
+possible flows for orders. After that we will list all the possible statuses for both **orders** and **order lines**.
 
 Two flows: authorized and paid
 ------------------------------
@@ -63,7 +62,7 @@ The following diagram shows how one order status leads to another:
 
     * This is not a status Mollie will call your webhook for.
     * All order lines will be ``created``.
-    * Can transition to: ``authorized`` and ``created``. 
+    * Can transition to: ``authorized`` and ``created``.
 
 .. _order-status-authorized:
 
@@ -112,7 +111,7 @@ The following diagram shows how one order status leads to another:
     * This is a final state, the order can't transition to another state.
 
     .. note:: Orders can only be canceled by the merchant, not by the shopper. Use the :doc:`Cancel Order API
-              </reference/v2/orders-api/cancel-order>` or cancel the order from the the Mollie Dashboard. 
+              </reference/v2/orders-api/cancel-order>` or cancel the order from the the Mollie Dashboard.
 
 .. _order-status-expired:
 

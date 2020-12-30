@@ -60,8 +60,8 @@ The download includes a Sketch file and retina PNGs.
 
 What are the lifetimes of the OAuth tokens?
 -------------------------------------------
-Some tokens will expire after a certain time. You should ask for a new :doc:`authorization </reference/oauth2/authorize>`
-or :doc:`access token </reference/oauth2/tokens>` if needed.
+Some tokens will expire after a certain time. You should ask for a new
+:doc:`authorization </reference/oauth2/authorize>` or :doc:`access token </reference/oauth2/tokens>` if needed.
 
 +-------------------------------+-----------------------------------+
 | **Auth code**                 | 30 seconds                        |

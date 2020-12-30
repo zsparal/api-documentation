@@ -13,23 +13,23 @@ December 2020
 
 Wednesday, 16th
 ---------------
-- We've added Revolut as new iDEAL issuer. It will appear automatically in your checkout if you use
-  the Mollie Hosted Payment Page or the Methods API to get the issuers. If you use a custom integration
-  you should add the issuer ID ``ideal_REVOLT21`` to your list of available iDEAL banks.
+- We have added Revolut as new iDEAL issuer. It will appear automatically in your checkout if you use the Mollie Hosted
+  Payment Page or the Methods API to get the issuers. If you use a custom integration you should add the issuer ID
+  ``ideal_REVOLT21`` to your list of available iDEAL banks.
 
 November 2020
 =============
 
 Monday, 23th
 ------------
-- We've added a new Merchant Category Code for profiles:
+- We have added a new Merchant Category Code for profiles:
   5262 Marketplaces, crowdfunding, donation platforms
 
 Monday, 9th
 -----------
-- We've added the following range to the list of IP addresses used to call webhooks: 87.233.217.240/28.
-  The full list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
-- We've added 7 new Merchant Category Codes for profiles:
+- We have added the following range to the list of IP addresses used to call webhooks: ``87.233.217.240/28``. The full
+  list of IP addresses can be found `here <https://help.mollie.com/hc/en-us/articles/213470829>`_.
+- We have added 7 new Merchant Category Codes for profiles:
   5712 Home furnishing
   5945 Hobby, Toy, and Game Shops
   6051 Crypto currency
@@ -95,30 +95,30 @@ December 2019
 
 Monday, 2nd
 -----------
-- The webhooks will now be called from different IP addresses. This should not cause any problems if you don't
-  check our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we
-  use to send webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829-Which-IP-addresses-does-Mollie-use-From-which-IP-range-can-I-expect-requests->`_.
+- The webhooks will now be called from different IP addresses. This should not cause any problems if you do not check
+  our IP address. We advise you not to check our IP address. A full list of all the IP addresses that we use to send
+  webhooks can be found `in our help center <https://help.mollie.com/hc/en-us/articles/213470829>`_.
 
 November 2019
 =============
 
 Thursday, 28th
 --------------
-- The ``cardFingerprint`` field for Bancontact is not longer useful for identifying returning customers.
-  See :doc:`Get Payment </reference/v1/payments-api/get-payment>` for more information.
+- The ``cardFingerprint`` field for Bancontact is not longer useful for identifying returning customers. See
+  :doc:`Get Payment </reference/v1/payments-api/get-payment>` for more information.
 
 Wednesday, 27th
 ---------------
 - Added ``authentication_failed`` as possible ``failureReason`` in the
-  :doc:`Payments API</reference/v1/payments-api/get-payment>` for Credit Card payments.
+  :doc:`Payments API</reference/v1/payments-api/get-payment>` for credit card payments.
 
 Monday, 4th
 -----------
 - Added support for PayPal Reference Transactions (recurring) payments. Make sure that the
-  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625-How-do-I-activate-PayPal-and-link-it-to-my-Mollie-account->`_
-  are set and your merchant-account has been approved by PayPal before using this.
-- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is
-  charging for that transaction.
+  `correct permissions <https://help.mollie.com/hc/en-us/articles/213856625>`_ are set and your merchant account has
+  been approved by PayPal before using this.
+- Added the ``paypalFee`` field to the PayPal payment details which shows the amount of fee PayPal is charging for that
+  transaction.
 
 October 2019
 ============
@@ -132,8 +132,8 @@ September 2019
 
 Friday, 20th
 ------------
-- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in
-  total now. See the :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in total now. See the
+  :doc:`webhooks guide </guides/webhooks>` for the new schedule.
 
 Tuesday, 17th
 -------------
@@ -172,9 +172,8 @@ May 2019
 
 Tuesday, 21st
 -------------
-- Added ``american-express``, ``carte-bancaire`` and ``maestro`` as possible values for the
-  ``feeRegion`` in the credit card payment details. See the
-  :ref:`Get Payment endpoint <Credit card v1>` for details.
+- Added ``american-express``, ``carte-bancaire`` and ``maestro`` as possible values for the ``feeRegion`` in the credit
+  card payment details. See the :ref:`Get Payment endpoint <Credit card v1>` for details.
 
 Monday, 20th
 ------------
@@ -228,8 +227,8 @@ December 2018
 
 Friday, 7th
 -----------
-- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
-  </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+- Refunds for Pay Later and Slice it can now be created via the
+  :doc:`Payments Refunds API </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
 
 November 2018
 =============
@@ -276,8 +275,8 @@ Friday, 12th
 
 Tuesday, 2nd
 ------------
-- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch
-  bank account to finish the payment.
+- We have removed the dedicated French bank account for bank transfer payments. Your customers can use our Dutch bank
+  account to finish the payment.
 
 July 2018
 =========
@@ -335,13 +334,13 @@ Tuesday, 27th
 Friday, 2nd
 -----------
 - SOFORT Banking payments have always had the issue that for a minor percentage of payments, the money would not
-  acutally come through even though the payment was paid successfully according to SOFORT.
+  actually come through even though the payment was paid successfully according to SOFORT.
 
-For these payments, Mollie would not settle the amount and inform you via an email.
+  For these payments, Mollie would not settle the amount and inform you via an email.
 
-This process has now been changed to use the chargebacks that are also used for credit card and direct debit. If Mollie
-does not actually receive the money for a SOFORT payment, Mollie will trigger a chargeback and call your payment's
-webhook. The chargeback details are visible in the API and the Dashboard.
+  This process has now been changed to use the chargebacks that are also used for credit card and direct debit. If
+  Mollie does not actually receive the money for a SOFORT payment, Mollie will trigger a chargeback and call your
+  payment's webhook. The chargeback details are visible in the API and the Dashboard.
 
 January 2018
 ============
@@ -420,7 +419,7 @@ Monday, 25th
 
 Tuesday, 19th
 -------------
-- We have added a dedicated French bank account for the banktransfer payment method. Your customers can use this bank
+- We have added a dedicated French bank account for the bank transfer payment method. Your customers can use this bank
   account if you specify the French locale fr_FR.
 
 Setting the correct locale is very important for having high conversion and error free bank transfer payments. At the
@@ -436,8 +435,8 @@ Wednesday, 13th
 
 Tuesday, 12th
 -------------
-- We've added a new integration guide for QR codes. At the moment, we support the desktop-to-mobile flow with QR codes
-  for the payment methods iDEAL and bank transfer. We've also fully integrated iDEAL QR into Mollie Checkout.
+- We have added a new integration guide for QR codes. At the moment, we support the desktop-to-mobile flow with QR codes
+  for the payment methods iDEAL and bank transfer. We have also fully integrated iDEAL QR into Mollie Checkout.
 
 Thursday, 7th
 -------------
@@ -454,13 +453,13 @@ Tuesday, 29th
 
 Tuesday, 22nd
 -------------
-- We've launched the giftcard payment method today. Check out the Gift card integration guide to get started.
+- We have launched the giftcard payment method today. Check out the Gift card integration guide to get started.
 
 Thursday, 3rd
 -------------
-- Added the image map to the issuers endpoint and includes in the Methods API. Just like methods, this map contains
-  two keys normal and bigger which contain links to images that represent the issuer. Available for the iDEAL, KBC and
-  gift card issuers.
+- Added the image map to the issuers endpoint and includes in the Methods API. Just like methods, this map contains two
+  keys normal and bigger which contain links to images that represent the issuer. Available for the iDEAL, KBC and gift
+  card issuers.
 
 July 2017
 =========
@@ -484,8 +483,8 @@ Wednesday, 26th
 Thursday, 20th
 --------------
 - The refresh_token that is returned from the /oauth2/tokens endpoint when requesting an access token will not expire
-  anymore. We previously generated a new access_token and refresh_token pair when a new access token was requested.
-  We've changed this to only generate a new access_token - the refresh_token will stay the same indefinitely.
+  anymore. We previously generated a new access_token and refresh_token pair when a new access token was requested. We
+  have changed this to only generate a new access_token - the refresh_token will stay the same indefinitely.
 
 Monday, 17th
 ------------
@@ -584,9 +583,9 @@ Tuesday, 1st
   is ignored.
 
 - Creating a first Recurring payment now returns the mandateId when available. When providing any of the following
-  values for the method parameter, you will now directly receive a mandateId in the response: kbc, creditcard,
-  mistercash, sofort and belfius. When using ideal as the payment method value, you will only receive a mandateId in the
-  response when the issuer is also set.
+  values for the method parameter, you will now directly receive a mandateId in the response: ``kbc``, ``creditcard``,
+  ``mistercash``, ``sofort`` and ``belfius``. When using ``ideal`` as the payment method value, you will only receive a
+  ``mandateId`` in the response when the issuer is also set.
 
 - Added the settlementId property to the Payment resource. It is also possible to include the complete settlement
   resource by providing the include parameter, e.g. ``/v1/payments/tr_7UhSN1zuXS?include=settlement``.

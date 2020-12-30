@@ -233,7 +233,8 @@ Response
               .. type:: URL object
                  :required: false
 
-            - The API resource URL of the payments that are created by this subscription. Not present if no payments yet created.
+            - The API resource URL of the payments that are created by this subscription. Not present if no payments yet
+              created.
 
           * - ``documentation``
 

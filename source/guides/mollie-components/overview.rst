@@ -36,7 +36,8 @@ Follow these steps to implement Mollie Components in your checkout:
    :doc:`/reference/v2/orders-api/create-order` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
-Mollie has created `example implementations <https://github.com/mollie/components-examples>`_ you can use to get started.
+Mollie has created `example implementations <https://github.com/mollie/components-examples>`_ you can use to get
+started.
 
 Add the Mollie Components Javascript library to your checkout
 -------------------------------------------------------------
@@ -116,8 +117,8 @@ After initializing the Mollie object, you should create the four card holder dat
    var verificationCode = mollie.createComponent('verificationCode');
    verificationCode.mount('#verification-code');
 
-This will add the input fields to your checkout and make them visible for your customer. To add styling to the Components,
-see :doc:`styling`.
+This will add the input fields to your checkout and make them visible for your customer. To add styling to the
+Components, see :doc:`styling`.
 
 Handling errors
 ---------------

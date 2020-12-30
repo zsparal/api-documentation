@@ -37,8 +37,9 @@ Parameters
 
      - The amount in EUR that you want to charge, e.g. 100.00 if you would want to charge €100.00.
 
-       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365-What-are-the-minimum-and-maximum-amounts-per-payment-method->`_
-       per payment method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v1/methods-api/get-method`.
+       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365>`_
+       per payment method in our help center. Additionally, they can be retrieved using the
+       :doc:`/reference/v1/methods-api/get-method`.
 
        .. note:: If you want to charge other currencies, upgrade to the
                  :doc:`Create Payments v2 API</reference/v2/payments-api/create-payment>`. The v2 API fully supports
@@ -65,7 +66,8 @@ Parameters
        It could make sense for the ``redirectUrl`` to contain a unique identifier – like your order ID – so you can show
        the right page referencing the order when your customer returns.
 
-       .. note:: Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this parameter.
+       .. note:: Only for payments with the ``sequenceType`` parameter set to ``recurring``, you can omit this
+                 parameter.
 
    * - ``webhookUrl``
 
@@ -103,8 +105,8 @@ Parameters
        enables you to fully integrate the payment method selection into your website, however note Mollie's country
        based conversion optimization is lost.
 
-       Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard`` ``giropay``
+       ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later, Klarna Slice it or Voucher
                  payment methods, please use the :doc:`/reference/v2/orders-api/create-order` instead.
@@ -288,8 +290,9 @@ Gift cards
 
        Possible values: ``decadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun``
        ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon``
-       ``ohmygood`` ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion``
-       ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+       ``ohmygood`` ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau``
+       ``sustainablefashion`` ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard``
+       ``yourgift``
 
    * - ``voucherNumber``
 

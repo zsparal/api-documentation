@@ -1,8 +1,8 @@
 Secret keys and authentication
 ==============================
-.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
-             As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API
-             </reference/v2/payments-api/create-payment>`.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy
+             functionality. As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the
+             :doc:`Mollie v2 API </reference/v2/payments-api/create-payment>`.
 
 **Secret keys** facilitate encrypted communication with Mollie's Reseller APIs. These APIs provide even better security
 than the previous ones because:

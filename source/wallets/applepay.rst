@@ -1,8 +1,8 @@
 Apple Pay
 =========
 
-**Apple Pay** is a digital wallet service by Apple Inc. that allows shoppers to make purchases with credit or debit cards
-stored on their Apple devices.
+**Apple Pay** is a digital wallet service by Apple Inc. that allows shoppers to make purchases with credit or debit
+cards stored on their Apple devices.
 
 .. note:: Apple Pay is only available in a `limited number of countries
           <https://www.apple.com/ios/feature-availability/#apple-pay>`_. This limitation applies to the shopper's
@@ -194,4 +194,5 @@ For more details on detecting the support of Apple Pay on a device, see `Appleâ€
 
 Direct integration of Apple Pay
 -------------------------------
-Integrating Apple Pay in your own checkout is available. See our :doc:`full guide </guides/applepay-direct-integration>`.
+Integrating Apple Pay in your own checkout is available. See our
+:doc:`full guide </guides/applepay-direct-integration>`.

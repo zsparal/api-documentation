@@ -60,7 +60,8 @@ contain the ``extra`` property with two additional keys:
 
             - A localized message that can be shown to the shopper, depending on the ``failureReason``.
 
-              Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
+              Example value:
+              ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
               This is provided as a convenience, you can of course also use your own messages.
 
@@ -129,7 +130,8 @@ The reason of the error will be available via the ``details`` object:
 
             - A localized message that can be shown to the shopper, depending on the ``failureReason``.
 
-              Example value: ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
+              Example value:
+              ``Der Kontostand Ihrer Kreditkarte ist unzureichend. Bitte verwenden Sie eine andere Karte.``.
 
               This is provided as a convenience, you can of course also use your own messages.
 
@@ -180,6 +182,6 @@ Note that some fields have been omitted for the sake of brevity.
 
 .. rubric:: Footnotes
 
-.. [#f1] 3-D Secure (also known as `MasterCard SecureCode`, `Verified by VISA` or `American Express SafeKey`) is an additional
-         step during payment aimed at reducing credit card fraud. It requires the card holder to authenticate him / herself
-         with the card issuer during the payment process.
+.. [#f1] 3-D Secure (also known as `MasterCard SecureCode`, `Verified by VISA` or `American Express SafeKey`) is an
+         additional step during payment aimed at reducing credit card fraud. It requires the card holder to authenticate
+         themselves with the card issuer during the payment process.

@@ -1,8 +1,8 @@
 Result codes
 ============
-.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
-             As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the :doc:`Mollie v2 API
-             </reference/v2/payments-api/create-payment>`.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy
+             functionality. As an alternative, we recommend using :doc:`Mollie Connect </oauth/overview>` and the
+             :doc:`Mollie v2 API </reference/v2/payments-api/create-payment>`.
 
 Every API request will be answered with a **result code**. Results will look like:
 

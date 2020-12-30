@@ -1,14 +1,13 @@
 Handling discounts
 ==================
-Using the :doc:`Orders API </orders/overview>` you can pass the full details of your customers' orders to Mollie.
-Of course, in some cases you might want to give the customer a discount. This document describes how you can pass
-various types of discounts and promotions.
+Using the :doc:`Orders API </orders/overview>` you can pass the full details of your customers' orders to Mollie. Of
+course, in some cases you might want to give the customer a discount. This document describes how you can pass various
+types of discounts and promotions.
 
 2-for-1 type promotions
 -----------------------
 You may want to offer 2-for-1 type promotions, or other promotions where the customer gets a certain percentage off if
-they buy multiple units of the same product. In such cases, your customer gets some part of the order
-line for free.
+they buy multiple units of the same product. In such cases, your customer gets some part of the order line for free.
 
 You can do this using the ``discountAmount`` property on the ``lines`` array.
 
@@ -45,8 +44,8 @@ Here's an example of an order line that has a 2-for-1 type promotion:
 Note how the VAT is only calculated over the amount actually charged to your customer.
 
 .. note:: If you want to partially cancel, ship or refund an order line with a non-zero ``discountAmount``, you will
-          have to pass the ``amount`` parameter too. See the :ref:`Partial discounts<partial-discounts>` section for
-          an explanation and an example.
+          have to pass the ``amount`` parameter too. See the :ref:`Partial discounts<partial-discounts>` section for an
+          explanation and an example.
 
 Gift cards
 ----------
@@ -105,7 +104,7 @@ Discounts and vouchers
 If your customer exchanges a voucher that gives a certain discount in your store, you may want to apply a negative
 value-added tax to the discount.
 
-Here's an example where a shopper uses a discount code for 10% off:
+Here is an example where a shopper uses a discount code for 10% off:
 
 .. code-block:: json
    :linenos:

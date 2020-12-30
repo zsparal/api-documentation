@@ -10,7 +10,10 @@ the ``testmode`` option:
 
    var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL', testmode: true });
 
-Then, you can implement the remainder of Mollie Components as specified in :doc:`our guide <overview>`. When testmode is enabled for Mollie Components, the card tokens you receive should be used in combination with your **Test API key** instead of your Live API key. Therefore, make sure you use the correct API key when :doc:`creating the Payment </reference/v2/payments-api/create-payment>`.
+Then, you can implement the remainder of Mollie Components as specified in :doc:`our guide <overview>`. When test mode
+is enabled for Mollie Components, the card tokens you receive should be used in combination with your **Test API key**
+instead of your Live API key. Therefore, make sure you use the correct API key when
+:doc:`creating the Payment </reference/v2/payments-api/create-payment>`.
 
 Card numbers for testing
 ------------------------
@@ -34,10 +37,16 @@ Testing failures
 ----------------
 Of course testing only the happy path is not sufficient and you should :doc:`handle errors <handling-errors>` as well.
 
-This can be done by passing `magic amounts` when creating the payment. Depending on whether you want to trigger 3-D Secure authentication or not, this works in a different manner:
+This can be done by passing `magic amounts` when creating the payment. Depending on whether you want to trigger 3-D
+Secure authentication or not, this works in a different manner:
 
-- When you trigger 3-D Secure authentication for the test mode payment, you will have to redirect to the URL in the ``_links.checkout`` property that is returned in the :doc:`Create Payment API</reference/v2/payments-api/create-payment>` response. You should then choose ``Failed`` as the final payment status. As a result, the requested failure reason will be present in the response of the :doc:`Get Payment API</reference/v2/payments-api/get-payment>`.
-- When you do not trigger 3-D Secure authentication, passing the magic amount will immediately result in an API error that indicates the failure reason that was requested.
+- When you trigger 3-D Secure authentication for the test mode payment, you will have to redirect to the URL in the
+  ``_links.checkout`` property that is returned in the
+  :doc:`Create Payment API</reference/v2/payments-api/create-payment>` response. You should then choose ``Failed`` as
+  the final payment status. As a result, the requested failure reason will be present in the response of the
+  :doc:`Get Payment API</reference/v2/payments-api/get-payment>`.
+- When you do not trigger 3-D Secure authentication, passing the magic amount will immediately result in an API error
+  that indicates the failure reason that was requested.
 
 Pass one of the following amounts to trigger a failure condition in test mode:
 

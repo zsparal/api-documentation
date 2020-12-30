@@ -77,7 +77,8 @@ Response
 
        .. type:: string
 
-     - The organization's VAT regulation, if based in the European Union. Either ``shifted`` (VAT is shifted) or ``dutch`` (Dutch VAT rate).
+     - The organization's VAT regulation, if based in the European Union. Either ``shifted`` (VAT is shifted) or
+       ``dutch`` (Dutch VAT rate).
 
    * - ``_links``
 
