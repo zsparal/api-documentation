@@ -21,7 +21,7 @@ Which extra features can I use with the Orders API?
 
 When is it better to use the Payments API?
 ------------------------------------------
-* When you don’t collect customer details like the address, it is not possible to use the Orders API.
+* When you do not collect customer details like the address, it is not possible to use the Orders API.
   Then you can choose for the Payments API to create a simple payment instead.
 
 * When you only want to receive donations and you do not sell any digital or physical products.

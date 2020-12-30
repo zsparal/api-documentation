@@ -5,7 +5,7 @@ unpractical from a performance perspective. Doing so might be too much work for 
 website to process. The maximum number of objects returned is 250.
 
 For this reason the Mollie API only returns a subset of the requested set of objects. In other words, the Mollie API
-chops the result of a certain API method call into pages you're able to programmatically scroll through.
+chops the result of a certain API method call into pages you are able to programmatically scroll through.
 
 .. _pagination-in-v2:
 
@@ -33,7 +33,7 @@ Response object
 
        .. type:: object
 
-     - The actual data you're looking for.
+     - The actual data you are looking for.
 
    * - ``_links``
 
@@ -208,7 +208,7 @@ Response object
 
        .. type:: array
 
-     - The actual data you're looking for.
+     - The actual data you are looking for.
 
    * - ``links``
 

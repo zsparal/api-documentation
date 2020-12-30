@@ -32,7 +32,7 @@ For each of these there is an set of properties you can use:
 * ``textDecoration`` of type ``string``
 * ``textTransform`` of type ``string``
 
-Every property has one or more types. Multiple types are indicated by a ``|`` character. We don’t allow ``URL``,
+Every property has one or more types. Multiple types are indicated by a ``|`` character. We do not allow ``URL``,
 ``http``, ``https`` and ``www``.
 
 * ``string`` A valid string, spaces aren't allowed,

@@ -132,7 +132,7 @@ September 2019
 
 Friday, 20th
 ------------
-- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in total now. See the
+- Changed the retry schedule of our webhook system. We will try to call your webhook for 26 hours in total now. See the
   :doc:`webhooks guide </guides/webhooks>` for the new schedule.
 
 Tuesday, 17th
@@ -394,7 +394,7 @@ Monday, 9th
 
 Wednesday, 4th
 --------------
-- We've updated all payment methods to allow the absolute minimums that the method allows. For most payment methods,
+- We have updated all payment methods to allow the absolute minimums that the method allows. For most payment methods,
   you can now create payments with amounts as low as €0.01. In our help center you can find the exact list of minimum
   and maximum amounts.
 
@@ -488,8 +488,8 @@ Thursday, 20th
 
 Monday, 17th
 ------------
-- Application fees can now be created in test mode. This won't actually move any money, but you can now test integrating
-  application fees in your platform.
+- Application fees can now be created in test mode. This will not move any actual money, but you can now test
+  integrating application fees in your platform.
 
 Saturday, 1st
 -------------
@@ -598,7 +598,7 @@ October 2016
 
 Saturday, 1st
 -------------
-- Added the recurringType parameter to the list methods endpoint. Using this parameter you're able to retrieve payment
+- Added the recurringType parameter to the list methods endpoint. Using this parameter you are able to retrieve payment
   methods supporting first payments and recurring payments.
 
 - Added the issuer parameter for KBC/CBC payments. These work the same as for iDEAL, however they are not dynamically
@@ -621,7 +621,7 @@ September 2016
 Thursday, 1st
 -------------
 - The locale parameters on our API endpoints accept non-standard values like en and nl (shorthands for en_US and nl_NL,
-  respectively). We still support those non-standard values, but we're discouraging using those notations in our API
+  respectively). We still support those non-standard values, but we are discouraging using those notations in our API
   documentation in favor of ISO-15897 locales.
 
 - You can now use locales such as de_AT and we will try to provide translated and localized payments.

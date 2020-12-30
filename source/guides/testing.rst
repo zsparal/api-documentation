@@ -2,7 +2,7 @@ Testing the Mollie API
 ======================
 During the process of building your integration, it is important to properly test it. As briefly explained in our
 :doc:`authentication guide </guides/authentication>`, you can access the test mode of the Mollie API in two ways: by
-using the *Test API key*, or, if you're using organization access tokens or app tokens, by providing the ``testmode``
+using the *Test API key*, or, if you are using organization access tokens or app tokens, by providing the ``testmode``
 parameter in your API request.
 
 Any payments or other resources you create in test mode are completely isolated from your live mode data. Going back and

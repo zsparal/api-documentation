@@ -16,7 +16,7 @@ Retrieve a single client by its ID.
 
 Parameters
 ----------
-Replace ``id`` in the endpoint URL by the client’s ID, for example ``org_1337``.
+Replace ``id`` in the endpoint URL by the client's ID, for example ``org_1337``.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

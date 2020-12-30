@@ -50,7 +50,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The description of the payment you're creating. This will be shown to the consumer on their card or bank
+     - The description of the payment you are creating. This will be shown to the consumer on their card or bank
        statement when possible, and in any exports you generate.
 
        We recommend you use the order number so that you can always link the payment to the order. This is particularly
@@ -117,7 +117,7 @@ Parameters
           :required: false
 
      - Provide any data you like, and we will save the data alongside the payment. Whenever
-       you fetch the payment with our API, we'll also include the metadata. You can use up to approximately 1kB.
+       you fetch the payment with our API, we will also include the metadata. You can use up to approximately 1kB.
 
    * - ``recurringType``
 
@@ -169,7 +169,7 @@ Bank transfer
           :required: false
 
      - Consumer's email address, to automatically send the bank transfer details to. **Please note:** the
-       payment instructions will be sent immediately when creating the payment. If you don't specify the ``locale``
+       payment instructions will be sent immediately when creating the payment. If you do not specify the ``locale``
        parameter, the email will be sent in English, as we haven't yet been able to detect the consumer's browser
        language.
 

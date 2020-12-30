@@ -293,7 +293,7 @@ Tuesday, 24th
 
 Friday, 20th
 ------------
-- Changed the retry schedule of our webhook system. We'll try to call your webhook for 26 hours in total now. See the
+- Changed the retry schedule of our webhook system. We will try to call your webhook for 26 hours in total now. See the
   :doc:`webhooks guide </guides/webhooks>` for the new schedule.
 
 Tuesday, 17th
@@ -385,7 +385,7 @@ Monday, 20th
 Wednesday, 8th
 --------------
 - Refunds can now contain ``metadata``. We will save the data alongside the refund. Whenever you fetch the refund with
-  our API, we'll also include the metadata. See the :doc:`/reference/v2/refunds-api/create-refund` and
+  our API, we will also include the metadata. See the :doc:`/reference/v2/refunds-api/create-refund` and
   :doc:`/reference/v2/orders-api/create-order-refund` documentation for more info.
 
 Thursday, 2nd

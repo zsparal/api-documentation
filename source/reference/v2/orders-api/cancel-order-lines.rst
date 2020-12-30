@@ -20,7 +20,7 @@ Canceling or partially canceling an order line will immediately release the auth
 customer will be able to see the updated order in his portal / app. Any canceled lines will be removed from the
 customer's point of view, but will remain visible in the Mollie Dashboard.
 
-You should cancel an order line if you don't intend to (fully) ship it.
+You should cancel an order line if you do not intend to (fully) ship it.
 
 An order line can only be canceled while its ``status`` field is either ``authorized`` or ``shipping``. If you cancel
 an ``authorized`` order line, the new order line status will be ``canceled``. Canceling a ``shipping`` order line will
@@ -89,7 +89,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+If you are creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
 available.
 
 .. list-table::

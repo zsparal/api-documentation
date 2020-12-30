@@ -19,7 +19,7 @@ The `Create payment` and `Create order` APIs are very similar. Both support the 
 parameter.
 
 For orders, there is no ``description`` field. The Payment description will be automatically created by Mollie and will
-contain the order number, your profile’s name and your profile’s website.
+contain the order number, your profile's name and your profile's website.
 
 If you specify a payment method using the ``method`` API parameter the ``payment`` parameter can be used to supply
 additional :ref:`payment parameters <payment-parameters>`. For example the iDEAL issuer can be specified using the

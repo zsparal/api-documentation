@@ -94,12 +94,12 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       refund. Whenever you fetch the refund with our API, we'll also include the metadata. You can use up to
+       refund. Whenever you fetch the refund with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
 Mollie Connect/OAuth parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you're creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
+If you are creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
 available.
 
 .. list-table::

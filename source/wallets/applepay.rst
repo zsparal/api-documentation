@@ -113,7 +113,7 @@ If you need a more control or have complex HTML, see :ref:`Adding Apple Pay serv
    <?php endif; ?>
    -->
 
-For more details on detecting the support of Apple Pay on a device, see `Apple’s documentation
+For more details on detecting the support of Apple Pay on a device, see `Apple's documentation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_.
 
 .. _adding-apple-pay-server-side:
@@ -189,7 +189,7 @@ best option is to add Apple Pay to the DOM and hide it both visually as well as 
      </body>
    </html>
 
-For more details on detecting the support of Apple Pay on a device, see `Apple’s documentation
+For more details on detecting the support of Apple Pay on a device, see `Apple's documentation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/checking_for_apple_pay_availability>`_.
 
 Direct integration of Apple Pay

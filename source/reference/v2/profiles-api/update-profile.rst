@@ -59,7 +59,7 @@ in the request.
        .. type:: integer
           :required: false
 
-     - The new industry identifier associated with the profile's tradename or brand.
+     - The new industry identifier associated with the profile's trade name or brand.
 
        Possible values:
 

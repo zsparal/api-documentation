@@ -299,7 +299,7 @@ Response
                          redirection will cause issues with some payment methods or iDEAL issuers. Use HTTP status code
                          ``303 See Other`` to force an HTTP ``GET`` redirect.
 
-              Recurring payments don't have a ``paymentUrl``.
+              Recurring payments do not have a ``paymentUrl``.
 
           * - ``webhookUrl``
 

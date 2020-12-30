@@ -12,8 +12,8 @@ Get login link
 
 This method allows you to obtain a special link, with which a merchant can be directly logged in.
 
-You are to redirect the merchant to the log-in link. It will log the merchant in, if he wasn't already. In all other
-cases, the merchant who was already logged in will remain logged in.
+You are to redirect the merchant to the log-in link. It will log the merchant in, if he was not already logged in. In
+all other cases, the merchant who was already logged in will remain logged in.
 
 When the customer has not yet accepted Mollie's conditions they must first do so before being redirected.
 

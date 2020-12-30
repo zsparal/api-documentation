@@ -53,7 +53,7 @@ payment method specific parameters available, see :ref:`below <payment-method-sp
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
+       payment. Whenever you fetch the payment with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
    * - ``method``
@@ -79,8 +79,8 @@ payment method specific parameters available, see :ref:`below <payment-method-sp
        .. type:: string
           :required: false
 
-     - For digital goods in most jurisdictions, you must apply the VAT rate from your customer’s country. Choose the VAT
-       rates you have used for the order to ensure your customer’s country matches the VAT country.
+     - For digital goods in most jurisdictions, you must apply the VAT rate from your customer's country. Choose the VAT
+       rates you have used for the order to ensure your customer's country matches the VAT country.
 
        Use this parameter to restrict the payment methods available to your customer to those from a single country.
 

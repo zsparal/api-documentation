@@ -64,7 +64,7 @@ Go to your ``Info.plist`` file. Right click any blank area and select ``Add Row`
 
 .. image:: images/ios-scheme_plist-1@2x.png
 
-You’ll be prompted to select a key from a drop-down menu. Scroll to the bottom and select ``URL types``. This creates
+You will be prompted to select a key from a drop-down menu. Scroll to the bottom and select ``URL types``. This creates
 an array item. You can further click the disclosure icon to expand it and you need to select ``Item 0``. Expand that
 row as well and you should see ``URL identifier``. Double-click the value field and fill in your identifier. Most of the
 time will this be the same as your bundle ID, e.g. ``com.mollie.MollieApp``. Click on the plus-button next to ``Item 0``

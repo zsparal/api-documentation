@@ -8,7 +8,7 @@ Secret keys and authentication
 than the previous ones because:
 
 **Authentication is performed by means of a** ``profile_key`` **:**
-  This means you don't have to include a username or password. You can retrieve your profile key from the Reseller
+  This means you do not have to include a username or password. You can retrieve your profile key from the Reseller
   portal in the Mollie Dashboard.
 **Each API request contains a timestamp:**
   This means that the request cannot be resubmitted later.

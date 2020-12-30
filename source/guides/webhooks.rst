@@ -27,7 +27,7 @@ is ``paid`` you can start shipping the order.
 
       id=tr_d0b0E3EA3v
 
-It might seem a little cumbersome that we don't post the new status immediately, but
+It might seem a little cumbersome that we do not post the new status immediately, but
 :doc:`proper security </guides/security>` dictates this flow. Since the status is not transmitted in the webhook, fake
 calls to your webhook will never result in orders being processed without being actually paid.
 
@@ -83,7 +83,7 @@ Retry schema
 ------------
 In response to Mollie calling your webhook, you only have to return the HTTP status ``200 OK``. Mollie then knows your
 system correctly processed the request. In case you return a different status – let's say because there's a temporary
-problem with your hosting service – we'll keep trying for a few hours, allowing you to process the request later on
+problem with your hosting service – we will keep trying for a few hours, allowing you to process the request later on
 after your hosting service has been restored.
 
 Our webhook calls time out after 15 seconds. Even if you return a ``200 OK`` HTTP status after 16 seconds, we will mark

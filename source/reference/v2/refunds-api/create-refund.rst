@@ -61,7 +61,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       refund. Whenever you fetch the refund with our API, we'll also include the metadata. You can use up to
+       refund. Whenever you fetch the refund with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
 Access token parameters

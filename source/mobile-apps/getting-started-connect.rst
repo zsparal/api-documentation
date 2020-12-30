@@ -23,7 +23,7 @@ See :ref:`apps-configure-redirect-url` on how to configure your app.
 
 Step 3: Create a server-side script for storing OAuth Access tokens
 -------------------------------------------------------------------
-For security reasons you don't want the Client Secret inside your app. Anyone who retrieves this secret can masquerade
+For security reasons you do not want the Client Secret inside your app. Anyone who retrieves this secret can masquerade
 as your app. The same applies to OAuth Access tokens.
 
 Therefor you should create a script on your server where you can send the authentication code (what you get from the
@@ -76,8 +76,8 @@ Android (Kotlin)
 
 Step 5: Handle the redirect
 ---------------------------
-Either when the merchant accepts or denies the authorization, we'll return him/her to your app via the Redirect URL. You
-should tell the App what to do with the data in the response.
+Either when the merchant accepts or denies the authorization, we will return him/her to your app via the Redirect URL.
+You should tell the App what to do with the data in the response.
 
 iOS
 ^^^

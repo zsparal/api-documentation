@@ -163,7 +163,7 @@ Parameters
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
+       order. Whenever you fetch the order with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
    * - ``expiresAt``
@@ -182,7 +182,7 @@ Parameters
        .. type:: boolean
           :required: false
 
-     - For digital goods, you must make sure to apply the VAT rate from your customer’s country in most jurisdictions.
+     - For digital goods, you must make sure to apply the VAT rate from your customer's country in most jurisdictions.
        Use this parameter to restrict the payment methods available to your customer to methods from the billing country
        only.
 
@@ -332,7 +332,7 @@ The order lines contain the actual things that your customer bought.
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       order line. Whenever you fetch the order line with our API, we'll also include the metadata. You can use up to
+       order line. Whenever you fetch the order line with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
 .. note::

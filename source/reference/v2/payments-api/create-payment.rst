@@ -64,7 +64,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The description of the payment you're creating. This will be shown to your customer on their card or bank
+     - The description of the payment you are creating. This will be shown to your customer on their card or bank
        statement when possible. We truncate the description automatically according to the limits of the used payment
        method. The description is also visible in any exports you generate.
 
@@ -142,7 +142,7 @@ Parameters
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       payment. Whenever you fetch the payment with our API, we'll also include the metadata. You can use up to
+       payment. Whenever you fetch the payment with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
    * - ``sequenceType``
@@ -188,8 +188,8 @@ Parameters
        .. type:: string
           :required: false
 
-     - For digital goods in most jurisdictions, you must apply the VAT rate from your customer’s country. Choose the VAT
-       rates you have used for the order to ensure your customer’s country matches the VAT country.
+     - For digital goods in most jurisdictions, you must apply the VAT rate from your customer's country. Choose the VAT
+       rates you have used for the order to ensure your customer's country matches the VAT country.
 
        Use this parameter to restrict the payment methods available to your customer to those from a single country.
 
@@ -236,7 +236,7 @@ Bank transfer
           :required: false
 
      - Consumer's email address, to automatically send the bank transfer details to. **Please note:** the
-       payment instructions will be sent immediately when creating the payment. If you don't specify the ``locale``
+       payment instructions will be sent immediately when creating the payment. If you do not specify the ``locale``
        parameter, the email will be sent in English, as we haven't yet been able to detect the consumer's browser
        language.
 
@@ -584,7 +584,7 @@ PayPal
        .. type:: boolean
           :required: false
 
-     - Indicate if you're about to deliver digital goods, like for example a license. Setting this
+     - Indicate if you are about to deliver digital goods, like for example a license. Setting this
        parameter can have consequences for your Seller Protection by PayPal. Please see
        `PayPal's help article <https://www.paypal.com/us/brc/article/seller-protection>`_ about
        Seller Protection for more information.

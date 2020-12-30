@@ -23,7 +23,7 @@ Use the details below to configure your app to work with our platform.
 * **Resource owner URL**: ``https://api.mollie.com/v2/organizations/me``, see
   :doc:`Get organization </reference/v2/organizations-api/get-organization>`
 
-Getting a merchant’s consent
+Getting a merchant's consent
 ----------------------------
 After having registered and configured your app, you can send the merchant to Mollie through the default authorization
 URL as configured in your OAuth app. Good practice is to show a *Connect with Mollie* button which redirects the

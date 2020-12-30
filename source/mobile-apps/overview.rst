@@ -69,7 +69,7 @@ These apps will often use custom URL schemes which you will need to take extra p
 redirects to these custom URL schemes cause the app to open. To make it even more complicated, some apps are not
 registered to a custom scheme but to the prefix of a regular (HTTPS) URL.
 
-When your customer finishes the payment using the app, the banking app won't know how to return to your app. You will
+When your customer finishes the payment using the app, the banking app will not know how to return to your app. You will
 need to use your custom scheme to return to your app after the payment. Mollie's API accepts custom URL schemes for the
 ``redirectUrl`` parameters.
 

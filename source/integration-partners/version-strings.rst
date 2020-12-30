@@ -18,7 +18,7 @@ This syntax follows common user agent components you may be familiar with such a
 Depending on your integration, you may want to supply two or more version strings, e.g. one for your plugin and one for
 the platform it runs on.
 
-Make sure that the name you choose clearly describes your integration and that you don't change the name over time.
+Make sure that the name you choose clearly describes your integration and that you do not change the name over time.
 
 *Examples:*
 
@@ -91,6 +91,6 @@ Option B: Using the native REST API
 We always recommend using one of our `API clients <https://docs.mollie.com/#clients-modules-and-plugins>`_ for a solid
 foundation and faster development.
 
-If, however, you're integrating our native REST API, use your HTTP client of choice to append integration data to the
+If, however, you are integrating our native REST API, use your HTTP client of choice to append integration data to the
 user-agent header. Refer to the syntax and cURL example above and be sure to separate multiple version strings with
 spaces.
