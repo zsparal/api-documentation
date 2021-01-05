@@ -123,10 +123,9 @@ Example
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const customer = await mollieClient.customers.update({
-          customerId: 'cst_8wmqcHMN4U',
+        const customer = await mollieClient.customers.update('cst_8wmqcHMN4U' , {
           name: 'Updated Customer A',
-          email: 'updated-customer@example.org',
+          email: 'updated-customer@example.org'
         });
       })();
 
