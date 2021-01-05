@@ -125,10 +125,7 @@ Example
       (async () => {
         const customer = await mollieClient.customers.update('cst_8wmqcHMN4U' , {
           name: 'Updated Customer A',
-          email: 'updated-customer@example.org',
-          metadata: {
-            data: 'updated-metadata'
-          }
+          email: 'updated-customer@example.org'
         });
       })();
 
