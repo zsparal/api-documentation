@@ -3,6 +3,13 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+Upcoming Changes
+================
+- *Wednesday, 13th of January*: ``amountChargedBack.value`` in the :doc:`Payments API</reference/v2/payments-api/get-payment>` will be changed from a negative to a positive value to make it consistent with the other equivalent fields in the API.
+  If you use this value, please make sure to adjust your systems accordingly.
+
+
+
 December 2020
 =============
 
