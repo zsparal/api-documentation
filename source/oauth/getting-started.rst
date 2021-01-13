@@ -39,8 +39,7 @@ Working with access & refresh tokens
 The merchant will be redirected back to your app, along with an *auth code*. With the auth code, you
 can :doc:`retrieve </reference/oauth2/tokens>` an *access token* and a *refresh token* using default OAuth library functionality.
 
-Once you have the access token, use the :doc:`/reference/v2/organizations-api/current-
-organization` to
+Once you have the access token, use the :doc:`/reference/v2/organizations-api/current-organization` to
 see which organization authenticated to your app. This endpoint also allows you to retrieve the
 merchant's preferred locale. It is recommended to switch your app's locale to the merchant's locale after the OAuth
 flow.
