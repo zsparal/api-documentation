@@ -34,18 +34,18 @@ access to, and request the merchant to confirm the authorization. An example aut
 
 .. image:: images/oauth-consent-screen@2x.png
 
-Working with access & refresh tokens
---------------------------
+Working with access tokens and refresh tokens
+---------------------------------------------
 The merchant will be redirected back to your app, along with an *auth code*. With the auth code, you
-can :doc:`retrieve </reference/oauth2/tokens>` an *access token* and a *refresh token* using default OAuth library functionality.
+can :doc:`retrieve </reference/oauth2/tokens>` an *access token* and a *refresh token* using default OAuth library
+functionality.
 
 Once you have the access token, use the :doc:`/reference/v2/organizations-api/current-organization` to
-see which organization authenticated to your app. This endpoint also allows you to retrieve the
-merchant's preferred locale. It is recommended to switch your app's locale to the merchant's locale after the OAuth
-flow.
+see which organization authenticated to your app. This endpoint also allows you to retrieve the merchant's preferred
+locale. It is recommended to switch your app's locale to the merchant's locale after the OAuth flow.
 
-Using the *access token* to authenticate at the Mollie API, your app may now access the merchant's account data and 
+Using the access token to authenticate at the Mollie API, your app may now access the merchant's account data and 
 :doc:`create payments </reference/v2/payments-api/create-payment>` for the merchant.
 
-Note access tokens are time limited you need to :doc:`refresh them </reference/oauth2/tokens>` 
-periodically using the *refresh token*. An access token expires after 1 hour. A refresh token does not expire.
+Note access tokens are time limited — you need to :doc:`refresh them </reference/oauth2/tokens>` 
+periodically using the refresh token. An access token expires after 1 hour. A refresh token does not expire.
