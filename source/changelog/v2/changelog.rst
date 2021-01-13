@@ -5,10 +5,13 @@ changes are documented here.
 
 Upcoming Changes
 ================
-- *Wednesday, 13th of January*: ``amountChargedBack.value`` in the :doc:`Payments API</reference/v2/payments-api/get-payment>` will be changed from a negative to a positive value to make it consistent with the other equivalent fields in the API.
-  If you use this value, please make sure to adjust your systems accordingly.
+No changes scheduled.
 
-
+January 2021
+=============
+Wednesday, 13th
+---------------
+- ``amountChargedBack.value`` in the :doc:`Payments API</reference/v2/payments-api/get-payment>` has been changed from a negative to a positive value to make it consistent with the other equivalent fields in the API.
 
 December 2020
 =============
