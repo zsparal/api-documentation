@@ -1033,6 +1033,12 @@ Vouchers
 
                    - The ID of the voucher brand that was used during the payment.
 
+                 * - ``issuerName``
+
+                     .. type:: string
+
+                   - The name of the voucher brand that was used during the payment.
+
                  * - ``amount``
 
                      .. type:: decimal
