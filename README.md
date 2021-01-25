@@ -2,7 +2,6 @@
 
 [![Greenkeeper badge](https://badges.greenkeeper.io/mollie/api-documentation.svg)](https://greenkeeper.io/)
 
-
 This project contains the source of all of Mollie's public API documentation. The full documentation (in an easy to use
 format) may be found at https://docs.mollie.com.
 
@@ -13,8 +12,9 @@ format) may be found at https://docs.mollie.com.
 
 We take pull requests on our documentation as well, if you think that something can be improved please open a PR.
 
-The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). 
-Additionally we use a [Sphinx extension](https://cloud-sptheme.readthedocs.io/en/latest/lib/cloud_sptheme.ext.table_styling.html#module-cloud_sptheme.ext.table_styling) to help format tables.
+The documentation is formatted using [reStructuredText](http://www.sphinx-doc.org/en/master/rest.html). Additionally, we
+use a [Sphinx extension](https://cloud-sptheme.readthedocs.io/en/latest/lib/cloud_sptheme.ext.table_styling.html) to
+help format tables.
 
 All documentation should be written in US English.
 
@@ -24,8 +24,9 @@ some syntax highlighting.
 ### Prerequisites
 
 - `python3` (must be in your `$PATH`, use `brew install python3`)
-- [pip](https://pypi.org/project/pip/), Python's package manager. [Installation instructions](https://pip.pypa.io/en/stable/installing/).
-- Node > 12.x. Installation using the [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended. 
+- [pip](https://pypi.org/project/pip/), Python's package manager.
+  [Installation instructions](https://pip.pypa.io/en/stable/installing/).
+- Node > 12.x. Installation using the [Node Version Manager](https://github.com/nvm-sh/nvm) is recommended.
 
 ### Running locally
 
@@ -99,7 +100,7 @@ You can get support via info@mollie.com.
 
 ## Working at Mollie
 
-Mollie is always looking for new talent to join our teams. We’re looking for inquisitive minds with good ideas and
+Mollie is always looking for new talent to join our teams. We are looking for inquisitive minds with good ideas and
 strong opinions, and, most importantly, who know how to ship great products. Want to join the future of payments?
 [Check out our vacancies](https://jobs.mollie.com).
 

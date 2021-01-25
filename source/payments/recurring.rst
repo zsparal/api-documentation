@@ -178,7 +178,6 @@ automatically at the specified frequency, and will show up in your Dashboard.
               \"webhookUrl\": \"https://webshop.example.org/subscriptions/webhook/\"
           }"
 
-
 #. In the above example the customer is charged €25.00 for 4 times every 3 months, starting today.
 
 #. The webhook URL will be triggered for every payment to communicate any status updates.
@@ -194,8 +193,8 @@ customer is charged. We will call your webhook as usual for these payments. The 
 not be known by your system yet when we call the webhook to report the payment's status.
 
 With normal payments you know the payment ID, because you've received this when creating the payment. With
-subscriptions you don't know the payment ID in advance. So you'll receive a webhook call with a payment ID that you've
-never seen before.
+subscriptions you do not know the payment ID in advance.  You will receive a webhook call with a payment ID that you
+have likely never seen before.
 
 The payment object will, however, contain a ``subscriptionId`` field that contains the subscription ID you received when
 the subscription was created. This allows you to recognize where the payment belongs to.
@@ -204,7 +203,7 @@ We do not provide webhooks specifically for status changes of a Subscription its
 
 How to implement the PayPal fraud library?
 ------------------------------------------
-.. note:: You don't have to implement the library for recurring payments.
+.. note:: You do not have to implement the library for recurring payments.
 
 Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud
 library of PayPal by adding the Javascript library to your checkout page with the necessary configuration
@@ -238,7 +237,6 @@ The configuration should contain JSON with the following attributes:
      - A unique session ID for the current payment. It should be different on every page load and can be
        32 characters long. This ID should be posted to us when you create the actual payment via the
        ``sessionId`` parameter.
-
 
 .. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
              it will not work.
