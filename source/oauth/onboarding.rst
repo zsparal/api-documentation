@@ -87,7 +87,7 @@ Step 5: Customer needs to complete the onboarding
 -------------------------------------------------
 The :doc:`Onboarding status </reference/v2/onboarding-api/get-onboarding-status>` response is used to display a proper message and action to your customer.
 
-There's two milestones that the customer reaches during the Mollie onboarding, ``canReceivePayments`` (basic information has been provided) and ``canReceiveSettlements`` (all information has been provided and verified).
+There's two milestones that the customer reaches during the Mollie onboarding, ``canReceivePayments`` and ``canReceiveSettlements``.
 
 There's also the `status`: ``needs-data``, ``in-review`` and ``completed``
 
