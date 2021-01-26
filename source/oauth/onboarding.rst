@@ -16,7 +16,7 @@ If you have access to our Hosted Onboarding-feature and want to use this, you ne
 
 You will have to provide a logo, name and redirect URL for the OAuth app that will be automatically created.
 
-That page will display the Client ID and secret needed for the steps below.
+After submitting, you will receive the Client ID and secret needed for the steps below.
 
 Step 1: Setting up the authorization
 ------------------------------------
