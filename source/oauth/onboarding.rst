@@ -49,7 +49,7 @@ Require the following scopes to board merchants and create payments on their beh
 
 
 
-Step 2: Customer signs up / logs in and gives authorization
+Step 2: Merchant signs up or logs in, and authorizes access to their organization
 -----------------------------------------------------------
 Once you send your customer to the authorize URL they will see a welcome screen.
 This page informs the customer that the application is using Mollie to create payments.
