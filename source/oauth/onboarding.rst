@@ -24,7 +24,7 @@ Step 1: Setting up the authorization
 You will need to acquire authorization for the
 Mollie organization your customer creates or logs in to. This :doc:`page </oauth/overview>` gives you an overview of the flow. If you just want to follow the implementation steps, follow this guide: :doc:`Mollie Connect getting started </oauth/getting-started>`.
 
-  .. note::  Make sure to use the Client Id and secret provided of the Hosted Onboarding APP if you want to use this feature. These can be found in the `hosted onboarding settings <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_.
+  .. note::  Make sure to use the Client ID and secret displayed in the `hosted onboarding settings <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_ if you want to make use of this feature.
 
 Require the following scopes to board merchants and create payments on their behalf:
 
