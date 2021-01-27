@@ -174,8 +174,8 @@ Response
        If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
        Possible values: ``null`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``, ``giftcard``
-       ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``mybank``
-       ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
+       ``giropay`` ``ideal`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mistercash`` ``mybank`` ``paypal``
+       ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``metadata``
 
@@ -737,38 +737,6 @@ iDEAL
               .. type:: string
 
             - Only available if the payment has been completed – The consumer's bank's BIC.
-
-ING Home'Pay
-""""""""""""
-.. list-table::
-   :widths: auto
-
-   * - ``details``
-
-       .. type:: object
-
-     - An object with payment details.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``consumerName``
-
-              .. type:: string
-
-            - Only available one banking day after the payment has been completed – The consumer's name.
-
-          * - ``consumerAccount``
-
-              .. type:: string
-
-            - Only available one banking day after the payment has been completed – The consumer's bank account's IBAN.
-
-          * - ``consumerBic``
-
-              .. type:: string
-
-            - Only available one banking day after the payment has been completed – ``BBRUBEBB``.
 
 KBC/CBC Payment Button
 """"""""""""""""""""""
