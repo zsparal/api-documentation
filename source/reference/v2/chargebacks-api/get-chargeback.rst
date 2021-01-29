@@ -119,6 +119,29 @@ Response
 
      - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
+   * - ``reason``
+
+       .. type:: object|null
+
+     - Reason for the chargeback.
+
+       This field will only be returned in the API if the original payment method supports chargeback reasons.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``code``
+
+              .. type:: string
+
+            - Bank code of the chargeback reason.
+
+          * - ``description``
+
+              .. type:: string
+
+            - Detailed description of the reason.
+
    * - ``reversedAt``
 
        .. type:: datetime
@@ -247,6 +270,10 @@ Response
            "value": "-35.07"
        },
        "createdAt": "2018-03-14T17:00:52.0Z",
+        "reason": {
+          "code": "MS03",
+          "description": "Reason not specified"
+        },
        "reversedAt": null,
        "paymentId": "tr_WDqYK6vllg",
        "_links": {
