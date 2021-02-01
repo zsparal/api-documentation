@@ -130,8 +130,7 @@ Parameters
        show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24``
-       ``sofort``
+       ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
        .. note:: If you are looking to create payments with the Klarna Pay later, Klarna Slice it, or voucher payment
                  methods, please use the :doc:`/reference/v2/orders-api/create-order` instead.
