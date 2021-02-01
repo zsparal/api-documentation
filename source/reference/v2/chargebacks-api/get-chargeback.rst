@@ -123,9 +123,9 @@ Response
 
        .. type:: object|null
 
-     - Reason for the chargeback.
+     - Reason for the chargeback as given by the bank.
 
-       This field will only be returned in the API if the original payment method supports chargeback reasons.
+       This field will only be returned for chargebacks where *direct debit* was used as the original payment method.
 
        .. list-table::
           :widths: auto
@@ -271,8 +271,8 @@ Response
        },
        "createdAt": "2018-03-14T17:00:52.0Z",
         "reason": {
-          "code": "MS03",
-          "description": "Reason not specified"
+          "code": "AC01",
+          "description": "Account identifier incorrect (i.e. invalid IBAN)"
         },
        "reversedAt": null,
        "paymentId": "tr_WDqYK6vllg",
