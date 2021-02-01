@@ -125,7 +125,7 @@ Response
 
      - Reason for the chargeback as given by the bank.
 
-       This field will only be returned for chargebacks where *direct debit* was used as the original payment method.
+       .. note:: This field will only be returned for chargebacks where *direct debit* was used as the original payment method.
 
        .. list-table::
           :widths: auto
