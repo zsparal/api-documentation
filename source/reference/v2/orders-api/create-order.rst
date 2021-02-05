@@ -140,10 +140,10 @@ Parameters
 
        You can also specify the methods in an array. By doing so we will still show the payment method selection
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
-       show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
+       show payment methods from a specific country to your customer ``['bancontact', 'belfius']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank``
+       ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank``
        ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort`` ``voucher``
 
    * - ``payment``
