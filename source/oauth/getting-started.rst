@@ -2,7 +2,12 @@ Mollie Connect: Getting started
 ===============================
 Assuming you have already built an OAuth-compatible app, the first step is to `register your app in your
 Dashboard <https://www.mollie.com/dashboard/developers/applications>`_. You will receive a *Client ID* and
-*Client Secret*, both of which should be kept secret. These credentials can be used to:
+*Client Secret*, both of which should be kept secret.
+
+.. note:: If you use our :doc:`Hosted Onboarding</oauth/onboarding>` feature, we automatically create an app.
+          Hosted onboarding is a private feature, please contact support or your partner manager to have this feature enabled.
+
+These credentials can be used to:
 
 * Redirect users to your app's authorization form (*Client ID*)
 * Exchange auth codes for access tokens (*Client ID* & *Client Secret*)
@@ -44,8 +49,8 @@ Once you have the access token, use the :doc:`/reference/v2/organizations-api/cu
 see which organization authenticated to your app. This endpoint also allows you to retrieve the merchant's preferred
 locale. It is recommended to switch your app's locale to the merchant's locale after the OAuth flow.
 
-Using the access token to authenticate at the Mollie API, your app may now access the merchant's account data and 
+Using the access token to authenticate at the Mollie API, your app may now access the merchant's account data and
 :doc:`create payments </reference/v2/payments-api/create-payment>` for the merchant.
 
-Note access tokens are time limited — you need to :doc:`refresh them </reference/oauth2/tokens>` 
+Note access tokens are time limited — you need to :doc:`refresh them </reference/oauth2/tokens>`
 periodically using the refresh token. An access token expires after 1 hour. A refresh token does not expire.

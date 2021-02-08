@@ -53,6 +53,9 @@ exports.handler = (event, context, callback) => {
     case '/guides/payment-status-changes':
       redirectTo('/payments/status-changes');
       break;
+    case '/onboarding/getting-started':
+      redirectTo('/oauth/getting-started');
+      break;
     case '/payments/webhooks':
       redirectTo('/guides/webhooks');
       break;
