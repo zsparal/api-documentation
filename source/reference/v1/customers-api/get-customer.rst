@@ -104,7 +104,7 @@ Response
      - Payment methods that the customer recently used for payments.
 
        Possible array values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard``
+       ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``mistercash`` ``paypal`` ``paysafecard``
        ``przelewy24`` ``sofort``
 
    * - ``createdDatetime``

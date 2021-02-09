@@ -1,5 +1,5 @@
-Create Order API
-================
+Create order
+============
 .. api-name:: Orders API
    :version: 2
 
@@ -38,8 +38,9 @@ Parameters
      - The total amount of the order, including VAT and discounts. This is the amount that will be charged to your
        customer.
 
-       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365-What-are-the-minimum-and-maximum-amounts-per-payment-method->`_
-       per payment method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v2/methods-api/get-method`.
+       You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365>`_ per
+       payment method in our help center. Additionally, they can be retrieved using the
+       :doc:`/reference/v2/methods-api/get-method`.
 
        For example: ``{"currency":"EUR", "value":"100.00"}`` if the total order amount is €100.00.
 
@@ -142,10 +143,10 @@ Parameters
 
        You can also specify the methods in an array. By doing so we will still show the payment method selection
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
-       show payment methods from a specific country to your customer ``['bancontact', 'belfius', 'inghomepay']``.
+       show payment methods from a specific country to your customer ``['bancontact', 'belfius']``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank``
+       ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``mybank``
        ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort`` ``voucher``
 
    * - ``payment``
@@ -165,7 +166,7 @@ Parameters
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       order. Whenever you fetch the order with our API, we'll also include the metadata. You can use up to
+       order. Whenever you fetch the order with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
    * - ``expiresAt``
@@ -184,9 +185,9 @@ Parameters
        .. type:: boolean
           :required: false
 
-     - |
-       | For digital goods, you must make sure to apply the VAT rate from your customer’s country in most jurisdictions.
-         Use this parameter to restrict the payment methods available to your customer to methods from the billing country only.
+     - For digital goods, you must make sure to apply the VAT rate from your customer's country in most jurisdictions.
+       Use this parameter to restrict the payment methods available to your customer to methods from the billing country
+       only.
 
 .. note::
    For orders, there is no ``description`` field. The description for any payments will be automatically created by
@@ -220,8 +221,8 @@ The order lines contain the actual things that your customer bought.
        For information on the ``discount``, ``store_credit`` and ``gift_card`` types, see our guide on
        :doc:`handling discounts </orders/handling-discounts>`.
 
-       .. note:: For selling digitally delivered goods through PayPal, you will need to request PayPal to `enable this on
-                 your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
+       .. note:: For selling digitally delivered goods through PayPal, you will need to request PayPal to `enable this
+                 on your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
 
    * - ``category``
 
@@ -334,7 +335,7 @@ The order lines contain the actual things that your customer bought.
           :required: false
 
      - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       order line. Whenever you fetch the order line with our API, we'll also include the metadata. You can use up to
+       order line. Whenever you fetch the order line with our API, we will also include the metadata. You can use up to
        approximately 1kB.
 
 .. note::
@@ -559,7 +560,7 @@ Example
                   "lines": [
                      {
                            "type": "physical",
-                           "category": "gifts_and_flowers",
+                           "category": "gift",
                            "sku": "5702016116977",
                            "name": "LEGO 42083 Bugatti Chiron",
                            "productUrl": "https://shop.lego.com/nl-NL/Bugatti-Chiron-42083",
@@ -589,7 +590,7 @@ Example
                      },
                      {
                            "type": "physical",
-                           "category": "gifts_and_flowers",
+                           "category": "gift",
                            "sku": "5702015594028",
                            "name": "LEGO 42056 Porsche 911 GT3 RS",
                            "productUrl": "https://shop.lego.com/nl-NL/Porsche-911-GT3-RS-42056",
@@ -1077,7 +1078,7 @@ Response
                "name": "LEGO 42083 Bugatti Chiron",
                "sku": "5702016116977",
                "type": "physical",
-               "category": "gifts_and_flowers",
+               "category": "gift",
                "status": "created",
                "metadata": {
                   "order_id": "1337",
@@ -1139,7 +1140,7 @@ Response
                "name": "LEGO 42056 Porsche 911 GT3 RS",
                "sku": "5702015594028",
                "type": "physical",
-               "category": "gifts_and_flowers",
+               "category": "gift",
                "status": "created",
                "metadata": null,
                "isCancelable": false,

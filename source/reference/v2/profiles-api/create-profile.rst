@@ -25,7 +25,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The profile's name should reflect the tradename or brand name of the profile's website or application.
+     - The profile's name should reflect the trade name or brand name of the profile's website or application.
 
    * - ``website``
 
@@ -41,7 +41,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The email address associated with the profile's tradename or brand.
+     - The email address associated with the profile's trade name or brand.
 
    * - ``phone``
 
@@ -56,11 +56,12 @@ Parameters
        .. type:: integer
           :required: false
 
-     - The industry associated with the profile's tradename or brand.
+     - The industry associated with the profile's trade name or brand.
 
        Possible values:
 
        * ``5192`` Books, magazines and newspapers
+       * ``5262`` Marketplaces, crowdfunding, donation platforms
        * ``5399`` General merchandise
        * ``5499`` Food and drinks
        * ``5533`` Automotive Products

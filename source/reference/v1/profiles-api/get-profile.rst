@@ -56,7 +56,7 @@ Response
 
        .. type:: string
 
-     - The payment profile's name, this will usually reflect the tradename or brand name of the profile's website or
+     - The payment profile's name, this will usually reflect the trade name or brand name of the profile's website or
        application.
 
    * - ``website``
@@ -69,23 +69,24 @@ Response
 
        .. type:: string
 
-     - The email address associated with the profile's tradename or brand.
+     - The email address associated with the profile's trade name or brand.
 
    * - ``phone``
 
        .. type:: string
 
-     - The phone number associated with the profile's tradename or brand.
+     - The phone number associated with the profile's trade name or brand.
 
    * - ``categoryCode``
 
        .. type:: integer
 
-     - The industry associated with the profile's tradename or brand.
+     - The industry associated with the profile's trade name or brand.
 
        Possible values:
 
        * ``5192`` Books, magazines and newspapers
+       * ``5262`` Marketplaces, crowdfunding, donation platforms
        * ``5399`` General merchandise
        * ``5499`` Food and drinks
        * ``5533`` Automotive Products
@@ -145,7 +146,7 @@ Response
               Possible values:
 
               * ``pending`` The changes are pending review. We will review your changes soon.
-              * ``rejected`` We've reviewed and rejected your changes.
+              * ``rejected`` We have reviewed and rejected your changes.
 
    * - ``createdDatetime``
 

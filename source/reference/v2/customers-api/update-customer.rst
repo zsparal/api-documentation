@@ -54,7 +54,7 @@ Replace ``id`` in the endpoint URL by the customer's ID, for example ``cst_8wmqc
           :required: false
 
      - Provide any data you like, and we will save the data alongside the customer. Whenever
-       you fetch the customer with our API, we'll also include the metadata. You can use up to 1kB of JSON.
+       you fetch the customer with our API, we will also include the metadata. You can use up to 1kB of JSON.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -123,10 +123,9 @@ Example
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const customer = await mollieClient.customers.update({
-          customerId: 'cst_8wmqcHMN4U',
+        const customer = await mollieClient.customers.update('cst_8wmqcHMN4U' , {
           name: 'Updated Customer A',
-          email: 'updated-customer@example.org',
+          email: 'updated-customer@example.org'
         });
       })();
 

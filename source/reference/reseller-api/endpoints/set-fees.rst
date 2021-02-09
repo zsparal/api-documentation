@@ -1,10 +1,10 @@
 Set fees
 ========
-
 .. api-name:: Reseller API
    :version: 1
 
-.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy functionality.
+.. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy
+             functionality.
 
 .. endpoint::
    :method: POST
@@ -60,7 +60,6 @@ parameters:
         * ``giftcard``
         * ``giropay``
         * ``ideal``
-        * ``inghomepay``
         * ``kbc``
         * ``klarnapaylater``
         * ``klarnasliceit``
@@ -71,7 +70,6 @@ parameters:
         * ``przelewy24``
         * ``refund``
         * ``sofort``
-
 
    * - ``payment_subtype``
 
@@ -84,8 +82,10 @@ parameters:
        **Only applicable to credit card:**
 
        * ``amex`` for adjusting rates for American Express cards.
-       * ``eu-cards`` or ``region_1`` for adjusting rates for Mastercard / VISA Intra EEA consumer cards for merchants within the EEA.
-       * ``region_2`` for adjusting rates for other Mastercard / VISA cards. (default value when this parameter is omitted)
+       * ``eu-cards`` or ``region_1`` for adjusting rates for Mastercard / VISA Intra EEA consumer cards for merchants
+         within the EEA.
+       * ``region_2`` for adjusting rates for other Mastercard / VISA cards. (default value when this parameter is
+         omitted)
 
        **Only applicable to SOFORT Banking:**
 

@@ -1,5 +1,5 @@
-Create Order Payment API
-========================
+Create order payment
+====================
 .. api-name:: Orders API
    :version: 2
 
@@ -22,7 +22,6 @@ Note that order details (for example ``amount`` or ``webhookUrl``) can not be ch
 
 Parameters
 ----------
-
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
 .. list-table::
@@ -39,10 +38,10 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
        You can also specify the methods in an array. By doing so we will still show the payment method selection
        screen but will only show the methods specified in the array. For example, you can use this functionality to only
-       show payment methods from a specific country to your customer ``["bancontact", "belfius", "inghomepay"]``.
+       show payment methods from a specific country to your customer ``["bancontact", "belfius"]``.
 
        Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-       ``giftcard`` ``giropay`` ``ideal`` ``inghomepay`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
+       ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal``
        ``paysafecard`` ``przelewy24`` ``sofort``
 
    * - ``customerId``
