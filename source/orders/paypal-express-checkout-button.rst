@@ -1,22 +1,21 @@
 Integrating PayPal Express Checkout button
 ==========================================
 
-The PayPal Express Checkout button gives your customers another way to pay, and it complements your
-existing PayPal payment flow. It will provide an one-click solution without the need for asking the
-billing and shipping address. This allows you to place the button on any page in your webshop, like
-the product page.
+The PayPal Express Checkout button offers your customers another way to pay, and it complements your existing PayPal
+payment flow. It will provide a one-click checkout solution without the need of asking the billing and shipping addresses.
+This allows you to place the button on any page in your webshop, like the product page.
 
 The button
 ----------
-We recommend you to use the button we provide in the `Mollie Resources <https://www.mollie.com/en/resources>`_
-pack. This button is familiar for the consumer and improves the conversion. Of course it's also possible
-to design and use your own button.
+We recommend you to use the button that we provide in the `Mollie Resources <https://www.mollie.com/en/resources>`_
+pack. This button is recognizable to customers and improves checkout conversion. Of course it's also possible to design
+and use your own button, according to the PayPal brand guidelines.
 
 Account requirements
 --------------------
 The button can be used when your account is fully setup at PayPal and Mollie. Make sure that your
 account is a `PayPal Business account <https://www.paypal.com/us/webapps/mpp/referral/paypal-business-account2>`_
-and that you linked your PayPal-account to Mollie as described in our
+and that you linked your PayPal account to Mollie as described in our
 `help center article <https://help.mollie.com/hc/en-us/articles/213856625>`_.
 
 Integration steps
