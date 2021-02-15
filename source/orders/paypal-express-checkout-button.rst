@@ -5,6 +5,8 @@ The PayPal Express Checkout button offers your customers another way to pay, and
 payment flow. It will provide a one-click checkout solution without the need of asking the billing and shipping addresses.
 This allows you to place the button on any page in your webshop, like the product page.
 
+.. image:: images/paypal-express-button@2x.png
+
 The button
 ----------
 We recommend you to use the button that we provide in the `Mollie Resources <https://www.mollie.com/en/resources>`_
