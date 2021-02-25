@@ -37,7 +37,7 @@ payment is completed successfully, the customer's account or card will immediate
 periodically through *subscriptions*.
 
 #. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`. If you are
-using Mollie Connect, make sure you have the permission `customers.write` in order to create a customer.
+   using Mollie Connect, make sure you have the permission `customers.write` in order to create a customer.
 
    .. code-block:: bash
       :linenos:
