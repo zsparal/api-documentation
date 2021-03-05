@@ -110,7 +110,7 @@ Example
          -d '{
                "billingAddress": {
                   "organizationName": "Mollie B.V.",
-                  "streetAndNumber": "Keizersgracht 313",
+                  "streetAndNumber": "Keizersgracht 126",
                   "city": "Amsterdam",
                   "region": "Noord-Holland",
                   "postalCode": "1234AB",
@@ -132,7 +132,7 @@ Example
 
       $order = $mollie->orders->get("ord_kEn1PlbGa");
       $order->billingAddress->organizationName = "Mollie B.V.";
-      $order->billingAddress->streetAndNumber = "Keizersgracht 313";
+      $order->billingAddress->streetAndNumber = "Keizersgracht 126";
       $order->billingAddress->city = "Amsterdam";
       $order->billingAddress->region = "Noord-Holland";
       $order->billingAddress->postalCode = "1234AB";
@@ -152,7 +152,7 @@ Example
       mollie_client.order.update('ord_kEn1PlbGa', {
         'billingAddress': {
             'organizationName': 'Mollie B.V.',
-            'streetAndNumber': 'Keizersgracht 313',
+            'streetAndNumber': 'Keizersgracht 126',
             'city': 'Amsterdam',
             'region': 'Noord-Holland',
             'postalCode': '1234AB',
@@ -178,7 +178,7 @@ Example
         'ord_kEn1PlbGa',
         billing_address: {
           organizationName: 'Mollie B.V.',
-          streetAndNumber: 'Keizersgracht 313',
+          streetAndNumber: 'Keizersgracht 126',
           city: 'Amsterdam',
           region: 'Noord-Holland',
           postalCode: '1234AB',
@@ -201,7 +201,7 @@ Example
         const order = await mollieClient.orders.update('ord_kEn1PlbGa', {
            billingAddress: {
              organizationName: 'Mollie B.V.',
-             streetAndNumber: 'Keizersgracht 313',
+             streetAndNumber: 'Keizersgracht 126',
              city: 'Amsterdam',
              region: 'Noord-Holland',
              postalCode: '1234AB',
@@ -241,7 +241,7 @@ Response
         "locale": "nl_NL",
         "billingAddress": {
             "organizationName": "Mollie B.V.",
-            "streetAndNumber": "Keizersgracht 313",
+            "streetAndNumber": "Keizersgracht 126",
             "city": "Amsterdam",
             "region": "Noord-Holland",
             "postalCode": "1234AB",
@@ -255,8 +255,8 @@ Response
         "orderNumber": "18475",
         "shippingAddress": {
             "organizationName": "Mollie B.V.",
-            "streetAndNumber": "Keizersgracht 313",
-            "postalCode": "1016 EE",
+            "streetAndNumber": "Keizersgracht 126",
+            "postalCode": "1015 CW",
             "city": "Amsterdam",
             "country": "nl",
             "givenName": "Luke",

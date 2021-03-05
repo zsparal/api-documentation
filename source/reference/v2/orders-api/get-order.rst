@@ -643,8 +643,8 @@ Response
         "locale": "nl_NL",
         "billingAddress": {
             "organizationName": "Mollie B.V.",
-            "streetAndNumber": "Keizersgracht 313",
-            "postalCode": "1016 EE",
+            "streetAndNumber": "Keizersgracht 126",
+            "postalCode": "1015 CW",
             "city": "Amsterdam",
             "country": "nl",
             "givenName": "Luke",
@@ -656,8 +656,8 @@ Response
         "orderNumber": "18475",
         "shippingAddress": {
             "organizationName": "Mollie B.V.",
-            "streetAndNumber": "Keizersgracht 313",
-            "postalCode": "1016 EE",
+            "streetAndNumber": "Keizersgracht 126",
+            "postalCode": "1015 CW",
             "city": "Amsterdam",
             "country": "nl",
             "givenName": "Luke",

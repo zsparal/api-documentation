@@ -203,8 +203,8 @@ Example
                    "organization": {
                       "name": "Mollie B.V.",
                       "address": {
-                         "streetAndNumber": "Keizersgracht 313",
-                         "postalCode": "1018 EE",
+                         "streetAndNumber": "Keizersgracht 126",
+                         "postalCode": "1015 CW",
                          "city": "Amsterdam",
                          "country": "NL"
                       },
@@ -231,8 +231,8 @@ Example
           "organization" => [
               "name" => "Mollie B.V.",
               "address" => [
-                 "streetAndNumber" => "Keizersgracht 313",
-                 "postalCode" => "1018 EE",
+                 "streetAndNumber" => "Keizersgracht 126",
+                 "postalCode" => "1015 CW",
                  "city" => "Amsterdam",
                  "country" => "NL",
               ],
@@ -259,8 +259,8 @@ Example
         organization: {
           name: "Mollie B.V.",
           address: {
-             streetAndNumber: "Keizersgracht 313",
-             postalCode: "1016 EE",
+             streetAndNumber: "Keizersgracht 126",
+             postalCode: "1015 CW",
              city: "Amsterdam",
              country: "NL"
           },

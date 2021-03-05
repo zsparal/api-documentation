@@ -523,7 +523,7 @@ Example
                   },
                   "billingAddress": {
                      "organizationName": "Mollie B.V.",
-                     "streetAndNumber": "Keizersgracht 313",
+                     "streetAndNumber": "Keizersgracht 126",
                      "city": "Amsterdam",
                      "region": "Noord-Holland",
                      "postalCode": "1234AB",
@@ -536,7 +536,7 @@ Example
                   },
                   "shippingAddress": {
                      "organizationName": "Mollie B.V.",
-                     "streetAndNumber": "Prinsengracht 313",
+                     "streetAndNumber": "Prinsengracht 126",
                      "streetAdditional": "4th floor",
                      "city": "Haarlem",
                      "region": "Noord-Holland",
@@ -627,7 +627,7 @@ Example
             ],
             "billingAddress" => [
                   "organizationName" => "Mollie B.V.",
-                  "streetAndNumber" => "Keizersgracht 313",
+                  "streetAndNumber" => "Keizersgracht 126",
                   "city" => "Amsterdam",
                   "region" => "Noord-Holland",
                   "postalCode" => "1234AB",
@@ -640,7 +640,7 @@ Example
             ],
             "shippingAddress" => [
                   "organizationName" => "Mollie B.V.",
-                  "streetAndNumber" => "Keizersgracht 313",
+                  "streetAndNumber" => "Keizersgracht 126",
                   "streetAdditional" => "4th floor",
                   "city" => "Haarlem",
                   "region" => "Noord-Holland",
@@ -727,7 +727,7 @@ Example
           },
           'billingAddress': {
               'organizationName': 'Mollie B.V.',
-              'streetAndNumber': 'Keizersgracht 313',
+              'streetAndNumber': 'Keizersgracht 126',
               'city': 'Amsterdam',
               'region': 'Noord-Holland',
               'postalCode': '1234AB',
@@ -740,7 +740,7 @@ Example
           },
           'shippingAddress': {
               'organizationName': 'Mollie B.V.',
-              'streetAndNumber': 'Prinsengracht 313',
+              'streetAndNumber': 'Prinsengracht 126',
               'streetAdditional': '4th floor',
               'city': 'Haarlem',
               'region': 'Noord-Holland',
@@ -829,7 +829,7 @@ Example
           currency: 'EUR'
         },
         billingAddress: {
-          streetAndNumber: 'Keizersgracht 313',
+          streetAndNumber: 'Keizersgracht 126',
           city: 'Amsterdam',
           region: 'Noord-Holland',
           postalCode: '1234AB',
@@ -841,7 +841,7 @@ Example
           phone: '+31208202070'
         },
         shippingAddress: {
-          streetAndNumber: 'Prinsengracht 313',
+          streetAndNumber: 'Prinsengracht 126',
           streetAdditional: '4th floor',
           city: 'Haarlem',
           region: 'Noord-Holland',
@@ -926,7 +926,7 @@ Example
           },
           billingAddress: {
             organizationName: 'Mollie B.V.',
-            streetAndNumber: 'Keizersgracht 313',
+            streetAndNumber: 'Keizersgracht 126',
             city: 'Amsterdam',
             region: 'Noord-Holland',
             postalCode: '1234AB',
@@ -939,7 +939,7 @@ Example
           },
           shippingAddress: {
             organizationName: 'Mollie B.V.',
-            streetAndNumber: 'Prinsengracht 313',
+            streetAndNumber: 'Prinsengracht 126',
             streetAdditional: '4th floor',
             city: 'Haarlem',
             region: 'Noord-Holland',
@@ -1042,7 +1042,7 @@ Response
        "locale": "nl_NL",
        "billingAddress": {
            "organizationName": "Mollie B.V.",
-           "streetAndNumber": "Keizersgracht 313",
+           "streetAndNumber": "Keizersgracht 126",
            "city": "Amsterdam",
            "region": "Noord-Holland",
            "postalCode": "1234AB",
@@ -1057,7 +1057,7 @@ Response
        "orderNumber": "1337",
        "shippingAddress": {
            "organizationName": "Mollie B.V.",
-           "streetAndNumber": "Keizersgracht 313",
+           "streetAndNumber": "Keizersgracht 126",
            "streetAdditional": "4th floor",
            "city": "Haarlem",
            "region": "Noord-Holland",
