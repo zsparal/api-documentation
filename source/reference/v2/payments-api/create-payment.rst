@@ -196,7 +196,7 @@ Parameters
 
 .. _payment-method-specific-parameters:
 
-Payment method specific parameters
+Payment method-specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you specify the ``method`` parameter, optional parameters may be available for the payment method. If no method is
 specified, you can still send the optional parameters and we will apply them when the consumer selects the relevant
@@ -673,9 +673,11 @@ Vouchers
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
-specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`OAuth app </oauth/overview>`, you have to specify which profile you are creating the payment for using the
+``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
 .. list-table::
    :widths: auto

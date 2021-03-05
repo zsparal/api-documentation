@@ -107,7 +107,6 @@ For the full list of fields, see :doc:`/reference/v2/organizations-api/get-organ
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

@@ -23,9 +23,11 @@ This API accepts the same parameters as the :doc:`/reference/v2/payments-api/lis
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only optional extra parameter is the ``profileId`` parameter. With it, you can
-specify for which profile you want to list the Payments. Organizations can have multiple profiles for each of their
-websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+:doc:`OAuth app </oauth/overview>`, you have to specify which profile you are retrieving payments for using the
+``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
 .. list-table::
    :widths: auto
@@ -35,8 +37,8 @@ websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for m
        .. type:: string
           :required: false
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE`` if you want to limit the
-       Payment's to a specific Profile.
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all
+       the customer's payments across all profiles.
 
    * - ``testmode``
 

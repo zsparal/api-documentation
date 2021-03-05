@@ -67,7 +67,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto

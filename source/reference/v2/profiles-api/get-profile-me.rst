@@ -31,7 +31,6 @@ Example
 
 Request
 ^^^^^^^
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

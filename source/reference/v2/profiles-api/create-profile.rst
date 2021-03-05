@@ -107,7 +107,6 @@ A profile object is returned, as described in :doc:`Get profile </reference/v2/p
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

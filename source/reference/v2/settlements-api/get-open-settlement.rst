@@ -23,7 +23,6 @@ The open balance settlement is returned in the same fashion as the :doc:`Get set
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

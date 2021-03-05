@@ -72,7 +72,8 @@ Parameters
      - The billing person and address for the order. See :ref:`order-address-details` for the exact
        fields needed.
 
-       .. note:: This field is not required if you make use of the :doc:`PayPal Express Checkout button </orders/paypal-express-checkout-button>`
+       .. note:: This field is not required if you make use of the
+                 :doc:`PayPal Express Checkout button </orders/paypal-express-checkout-button>`
 
    * - ``shippingAddress``
 
@@ -196,7 +197,6 @@ Parameters
 
 Order line details
 ^^^^^^^^^^^^^^^^^^
-
 The order lines contain the actual things that your customer bought.
 
 .. list-table::
@@ -344,7 +344,6 @@ The order lines contain the actual things that your customer bought.
 
 Order address details
 ^^^^^^^^^^^^^^^^^^^^^
-
 In the Orders API, the address objects identify both the address and the person the order is billed or shipped to. At
 least a valid address must be passed as well as fields identifying the person.
 
@@ -402,7 +401,7 @@ least a valid address must be passed as well as fields identifying the person.
 
 .. _payment-parameters:
 
-Payment specific parameters
+Payment-specific parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Creating an Order will automatically create a Payment that your customer can use to pay for the Order. Creation of the
 Payment can be controlled using the ``method`` and ``payment`` parameters.
@@ -463,9 +462,11 @@ Example of specifying some payment parameters:
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
-specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`OAuth app </oauth/overview>`, you have to specify which profile you are creating an order for using the
+``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
 .. list-table::
    :widths: auto

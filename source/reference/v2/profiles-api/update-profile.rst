@@ -110,7 +110,6 @@ The updated profile object is returned, as described in :doc:`Get profile </refe
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

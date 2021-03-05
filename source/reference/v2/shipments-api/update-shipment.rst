@@ -57,7 +57,7 @@ the shipment's ID, for example ``shp_3wmsgCJN4U``.
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the ``testmode`` parameter is also available.
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto

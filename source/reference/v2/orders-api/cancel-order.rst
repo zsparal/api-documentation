@@ -35,10 +35,10 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you are creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
-available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto

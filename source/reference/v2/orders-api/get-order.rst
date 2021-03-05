@@ -325,7 +325,6 @@ Response
 
 Order line details
 ^^^^^^^^^^^^^^^^^^
-
 The order lines contain the actual things the your customer bought.
 
 .. list-table::
@@ -519,7 +518,6 @@ The order lines contain the actual things the your customer bought.
 
 Addresses
 ^^^^^^^^^
-
 In the Orders API, the address objects identify both the address and the person the order is billed or shipped to.
 
 These properties can be found in the ``billingAddress`` and ``shippingAddress`` address objects.

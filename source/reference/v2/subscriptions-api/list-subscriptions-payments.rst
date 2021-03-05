@@ -40,8 +40,7 @@ and by the subscription's ID, for example ``sub_8JfGzs6v3K``.
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, it is possible to get test payments by setting the ``testmode`` query string
-parameter to ``true``.
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
 .. list-table::
    :widths: auto

@@ -80,8 +80,7 @@ For example:
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``testmode`` parameter.
-This is only the case for test orders. For live orders the ``testmode`` parameter can be omitted.
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto

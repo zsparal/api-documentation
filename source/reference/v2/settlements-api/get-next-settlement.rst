@@ -22,7 +22,6 @@ The next settlement is returned in the same fashion as the :doc:`Get settlement 
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

@@ -27,8 +27,8 @@ Parameters
 Replace ``customerId`` in the endpoint URL by the customer's ID, and replace ``id`` by the mandate's ID. For example:
 ``/v1/customers/cst_stTC2WHAuS/mandates/mdt_pWUnw6pkBN``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
 If you are creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` parameter is also
 available.
 

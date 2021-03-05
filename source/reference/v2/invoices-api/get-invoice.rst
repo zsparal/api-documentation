@@ -230,7 +230,6 @@ Response
 
 Example
 -------
-
 .. code-block-selector::
 
    .. code-block:: bash

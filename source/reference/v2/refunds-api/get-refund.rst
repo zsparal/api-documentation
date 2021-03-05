@@ -25,10 +25,10 @@ Parameters
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the refund's ID. For example:
 ``/v2/payments/tr_7UhSN1zuXS/refunds/re_4qqhO89gsT``.
 
-Mollie Connect/OAuth parameters
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you are creating an app with :doc:`Mollie Connect/OAuth </oauth/overview>`, the ``testmode`` query string parameter
-is also available.
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
 .. list-table::
    :widths: auto
