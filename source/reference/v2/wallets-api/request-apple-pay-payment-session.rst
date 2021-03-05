@@ -1,6 +1,6 @@
 Request Apple Pay Payment Session
 =================================
-.. api-name:: Miscellaneous
+.. api-name:: Wallets API
    :version: 2
 
 .. endpoint::
