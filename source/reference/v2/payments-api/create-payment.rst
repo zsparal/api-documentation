@@ -696,6 +696,15 @@ For these authentication methods the optional ``testmode`` parameter is availabl
 
      - Set this to ``true`` to make this payment a test payment.
 
+Mollie Connect parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^
+With Mollie Connect you can charge fees on payments that are processed through your app, either by defining an
+*application fee* or by *splitting the payment*. To learn more about the difference, please refer to the
+:doc:`Mollie Connect overview </oauth/overview>`.
+
+.. list-table::
+   :widths: auto
+
    * - ``applicationFee``
 
        .. type:: object
@@ -741,6 +750,90 @@ For these authentication methods the optional ``testmode`` parameter is availabl
             - The description of the application fee. This will appear on settlement reports to the merchant and to you.
 
               The maximum length is 255 characters.
+
+   * - ``routing``
+
+       .. type:: array
+          :required: false
+
+     - An optional routing configuration which enables you to route a successful payment, or part of the payment, to one
+       or more connected accounts. Additionally, you can schedule (parts of) the payment to become available on the
+       connected account on a future date.
+
+       See the :doc:`Split payments </oauth/splitting-payments>` guide for more information on payment routing.
+
+       If a routing array is supplied, it must contain one or more routing objects with the following parameters:
+
+       .. list-table::
+          :widths: auto
+
+          * - ``amount``
+
+              .. type:: amount object
+                 :required: false
+
+            - If more than one routing object is given, the routing objects must indicate what portion of the total
+              payment amount is being routed.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - ``currency``
+
+                     .. type:: string
+                        :required: true
+
+                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. Currently only ``EUR``
+                     payments can be routed.
+
+                 * - ``value``
+
+                     .. type:: string
+                        :required: true
+
+                   - A string containing the exact amount of this portion of the payment in the given currency. Make
+                     sure to send the right amount of decimals. Non-string values are not accepted.
+
+          * - ``destination``
+
+              .. type:: object
+                 :required: true
+
+            - The destination of this portion of the payment.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - ``type``
+
+                     .. type:: string
+                        :required: true
+
+                   - The type of destination. Currently only the destination type ``organization`` is supported.
+
+                     Possible values: ``organization``
+
+                 * - ``organizationId``
+
+                     .. type:: string
+                        :required: false
+
+                   - Required for destination type ``organization``. The ID of the connected organization the funds
+                     should be routed to, for example ``org_12345``.
+
+                     **Please note:** ``me`` or the ID of the current organization are not accepted as an
+                     ``organizationId``. After all portions of the total payment amount have been routed, the amount
+                     left will be routed to the current organization automatically.
+
+          * - ``releaseDate``
+
+              .. type:: date
+                 :required: false
+
+            - Optionally, schedule this portion of the payment to be transferred to its destination on a later date. The
+              date must be given in ``YYYY-MM-DD`` format.
+
+              If no date is given, the funds become available to the balance as soon as the payment succeeds.
 
 QR codes
 ^^^^^^^^

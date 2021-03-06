@@ -79,6 +79,76 @@ If you are using :doc:`organization access tokens </guides/authentication>` or a
 
      - Set this to ``true`` to refund a test mode payment.
 
+Mollie Connect parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^
+With Mollie Connect you can split payments that are processed through your app across multiple connected accounts. When
+creating refunds for those split payments, you can use the ``routingReversal`` parameter to pull the split payment back
+to the platform balance. To learn more about creating refunds for split payments, please refer to the
+:doc:`Splitting payments guide </oauth/splitting-payments>`.
+
+.. list-table::
+   :widths: auto
+
+   * - ``reverseRouting``
+
+       .. type:: boolean
+          :required: false
+
+     - A shortcut for setting the ``routingReversal`` property to match the routing of the original payment. For
+       example, if a €10,00 payment got split by sending €2,50 to the platform and €7,50 to the connected account, then
+       setting this parameter to ``true`` will pull back the €7,50 from the connected account.
+
+   * - ``routingReversal``
+
+       .. type:: array
+          :required: false
+
+     - An optional routing configuration which enables you to 'reverse the routing' that was performed for the original
+       payment.
+
+       See the :doc:`Splitting payments guide </oauth/splitting-payments>` guide and the ``routing`` parameter on the
+       :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` for more information on payment
+       routing.
+
+       If a routing reversal array is supplied, it must contain objects with the following parameters:
+
+       .. list-table::
+          :widths: auto
+
+          * - ``amount``
+
+              .. type:: amount object
+                 :required: false
+
+            - The amount to pull back from the connected account to the platform account. If omitted, the full amount
+              that was sent to the connected account will be pulled back.
+
+              .. list-table::
+                 :widths: auto
+
+                 * - ``currency``
+
+                     .. type:: string
+                        :required: true
+
+                   - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. Currently only ``EUR``
+                     payments can be routed.
+
+                 * - ``value``
+
+                     .. type:: string
+                        :required: true
+
+                   - A string containing the exact amount to be pulled back in the given currency. Make sure to send the
+                     right amount of decimals. Non-string values are not accepted.
+
+          * - ``fromOrganizationId``
+
+              .. type:: string
+                 :required: true
+
+            - The ID of the organization that the money needs to be pulled back from.
+
 Response
 --------
 ``201`` ``application/hal+json``
