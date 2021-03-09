@@ -36,7 +36,7 @@ Response
        .. type:: string
 
      - The identifier uniquely referring to this payment link. Mollie assigns this identifier at creation time. For
-       example ``pl_4Y0eZitmBnQ6IDoMqZQKh``. Its ID will always be used by Mollie to refer to a certain payment.
+       example ``pl_4Y0eZitmBnQ6IDoMqZQKh``. Its ID will always be used by Mollie to refer to a certain payment link.
 
    * - ``description``
 
@@ -58,7 +58,7 @@ Response
 
        .. type:: amount object
 
-     - The amount of the payment link, e.g. ``{"currency":"EUR", "value":"100.00"}`` for a €100.00 payment.
+     - The amount of the payment link, e.g. ``{"currency":"EUR", "value":"100.00"}`` for a €100.00 payment link.
 
        .. list-table::
           :widths: auto
