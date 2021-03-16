@@ -24,8 +24,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The description of the payment link you are creating. This will be shown to your customer on their card or bank
-       statement when possible. This description will eventual been used as payment description.
+     - This description will also be used as the payment description and will be shown to your customer on their card or bank statement when possible.
 
    * - .. param-name:: amount
 
