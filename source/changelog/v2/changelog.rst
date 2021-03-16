@@ -7,6 +7,13 @@ Upcoming Changes
 ================
 No remarkable changes to mention at the moment.
 
+March 2021
+==========
+
+Tuesday, 16th
+-------------
+- Added ``bloemencadeaukaart`` and ``kluscadeau`` as gift card issuers.
+
 
 February 2021
 =============
