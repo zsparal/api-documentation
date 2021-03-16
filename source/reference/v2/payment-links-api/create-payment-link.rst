@@ -12,8 +12,9 @@ Create payment link
    :organization_access_tokens: true
    :oauth: true
 
-Once you have created a payment link, you should share your customer the URL in the ``_links.paymentLink`` property from
-the response.
+With the Payment links API you can generate payment links that can be shared with your customer, the payment link will redirect your customer to the payment page where they can complete there payment. Payment links can be useful to send on the invoice too your customer.
+
+Once a payment link has been created, you can share the URL in the ``_links.paymentLink`` property from the response.
 
 Parameters
 ----------
