@@ -43,7 +43,7 @@ Response
        .. type:: string
 
      - A short description of the payment link. The description is visible in the Dashboard and will be shown on the
-       customer's bank or card statement when possible.
+       customer's bank or card statement when possible. This description will eventual been used as payment description.
 
    * - ``mode``
 
