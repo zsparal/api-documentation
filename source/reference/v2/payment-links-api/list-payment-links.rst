@@ -36,6 +36,32 @@ Parameters
 
      - The number of payment links to return (with a maximum of 250).
 
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+parameter, you can specify which profile you want to look at when listing payment links. If you omit the ``profileId``
+parameter, you will get all payment links on the organization. Organizations can have multiple profiles for each of their
+websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: false
+
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve payment links made in test mode. By default, only live payment links are
+       returned.
+
 Response
 --------
 ``200`` ``application/hal+json``
