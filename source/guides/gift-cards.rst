@@ -7,6 +7,7 @@ Mollie supports processing gift cards handled by the Dutch giftcard broker Inter
 brands are supported:
 
 * `Bloemen Cadeaukaart <https://www.bloemen-cadeaukaart.nl/>`_
+* `Boekenbon <https://boekenbon.nl/>`_
 * DE Cadeaukaart
 * `Diner Cadeau <https://www.horecasamensterk.nl/>`_
 * `fashioncheque <https://www.fashioncheque.com/>`_
