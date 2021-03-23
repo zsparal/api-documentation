@@ -2,6 +2,7 @@ List payment links
 ==================
 .. api-name:: Payment links API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: GET

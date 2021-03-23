@@ -2,6 +2,7 @@ Create payment link
 ===================
 .. api-name:: Payment links API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: POST
@@ -61,6 +62,31 @@ Parameters
      - Set the webhook URL, where we will send payment link status updates to.
 
        .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes about your payment link.
+
+Access token parameters
+^^^^^^^^^^^^^^^^^^^^^^^
+If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+:doc:`OAuth app </oauth/overview>`, the only mandatory extra parameter is the ``profileId`` parameter. With it, you can
+specify which profile the payment belongs to. Organizations can have multiple profiles for each of their websites. See
+:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+
+.. list-table::
+   :widths: auto
+
+   * - ``profileId``
+
+       .. type:: string
+          :required: true
+
+     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+
+   * - ``testmode``
+
+       .. type:: boolean
+          :required: false
+
+     - Set this to true to only retrieve payment links made in test mode. By default, only live payment links are
+       returned.
 
 Response
 --------
