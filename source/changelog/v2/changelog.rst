@@ -10,6 +10,11 @@ No remarkable changes to mention at the moment.
 March 2021
 ==========
 
+Tuesday, 23rd
+-------------
+- Added ``authentication_abandoned`` and ``authentication_unavailable_acs`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v2/payments-api/get-payment>` for credit card payments.
+
 Tuesday, 16th
 -------------
 - Added ``bloemencadeaukaart`` and ``kluscadeau`` as gift card issuers.
