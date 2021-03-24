@@ -15,6 +15,11 @@ Wednesday, 24th
 ---------------
 - Added ``boekenbon`` as gift card issuer.
 
+Tuesday, 23rd
+-------------
+- Added ``authentication_abandoned``, ``authentication_unavailable_acs`` and ``card_declined`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v1/payments-api/get-payment>` for credit card payments.
+
 Tuesday, 16th
 -------------
 - Added ``bloemencadeaukaart`` and ``kluscadeau`` as gift card issuers.
