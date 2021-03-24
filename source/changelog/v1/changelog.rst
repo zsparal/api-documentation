@@ -11,6 +11,10 @@ changes are documented here.
 March 2021
 ==========
 
+Wednesday, 24th
+---------------
+- Added ``boekenbon`` as gift card issuer.
+
 Tuesday, 23rd
 -------------
 - Added ``authentication_abandoned``, ``authentication_unavailable_acs`` and ``card_declined`` as possible ``failureReason`` in the
