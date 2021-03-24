@@ -11,6 +11,10 @@ changes are documented here.
 March 2021
 ==========
 
+Wednesday, 24th
+---------------
+- Added ``boekenbon`` as gift card issuer.
+
 Tuesday, 16th
 -------------
 - Added ``bloemencadeaukaart`` and ``kluscadeau`` as gift card issuers.
