@@ -10,8 +10,8 @@ No remarkable changes to mention at the moment.
 March 2021
 ==========
 
-Monday, 22nd
-------------
+Wednesday, 24th
+---------------
 - Added ``boekenbon`` as gift card issuer.
 
 Tuesday, 16th
