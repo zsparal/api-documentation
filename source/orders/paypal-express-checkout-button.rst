@@ -31,6 +31,9 @@ some small tweaks. You can use the following steps as a guideline for the basic 
    clicks the button. Make sure you set method to ``paypal`` so that the ``billingAddress`` field will not be required
    anymore.
 
+   .. note:: Once the order is created, the amount can not be changed. When calculating shipping costs and/or taxes, be
+             sure to include them when creating the order.
+
    .. warning:: The ``billingAddress`` stays required for every other method. If you set another
                 method, or no method at all, your request will result in an HTTP status code
                 ``422 Unprocessable Entity``.
