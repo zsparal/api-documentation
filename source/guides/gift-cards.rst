@@ -9,6 +9,7 @@ brands are supported:
 * `Bloemen Cadeaukaart <https://www.bloemen-cadeaukaart.nl/>`_
 * `Boekenbon <https://boekenbon.nl/>`_
 * DE Cadeaukaart
+* De LOKALE Cadeaukaart
 * `Diner Cadeau <https://www.horecasamensterk.nl/>`_
 * `fashioncheque <https://www.fashioncheque.com/>`_
 * `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
