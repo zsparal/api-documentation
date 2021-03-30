@@ -69,6 +69,7 @@ Response
    * - ``vatNumber``
 
        .. type:: string
+          :required: false
 
      - The VAT number of the organization, if based in the European Union. The VAT number has been checked with the
        `VIES <http://ec.europa.eu/taxation_customs/vies/>`_ service by Mollie.
@@ -76,6 +77,7 @@ Response
    * - ``vatRegulation``
 
        .. type:: string
+          :required: false
 
      - The organization's VAT regulation, if based in the European Union. Either ``shifted`` (VAT is shifted) or
        ``dutch`` (Dutch VAT rate).
