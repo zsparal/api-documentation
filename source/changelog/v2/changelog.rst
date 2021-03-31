@@ -9,6 +9,9 @@ No remarkable changes to mention at the moment.
 
 March 2021
 ==========
+Tuesday, 30th
+--------------
+- Added ``delokalecadeaukaart`` as gift card issuer.
 
 Wednesday, 24th
 ---------------

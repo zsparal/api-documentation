@@ -288,7 +288,7 @@ Gift cards
        the list, contact our support department. If only one issuer is activated on your account, you can omit this
        parameter.
 
-       Possible values: ``bloemencadeaukaart`` ``boekenbon`` ``decadeaukaart`` ``dinercadeau`` ``fashioncheque``
+       Possible values: ``bloemencadeaukaart`` ``boekenbon`` ``decadeaukaart`` ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque``
        ``festivalcadeau`` ``good4fun`` ``kluscadeau`` ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon``
        ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart`` ``reiscadeau``
        ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion`` ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque``
