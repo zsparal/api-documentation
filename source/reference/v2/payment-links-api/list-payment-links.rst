@@ -155,6 +155,7 @@ Response
                      "createdAt": "2021-03-20T09:13:37+00:00",
                      "paidAt": "2021-03-21T09:13:37+00:00",
                      "updatedAt": "2021-03-21T09:13:37+00:00",
+                     "expiresAt": null,
                      "amount": {
                          "value": "24.95",
                          "currency": "EUR"

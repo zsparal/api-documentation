@@ -63,6 +63,14 @@ Parameters
 
        .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes about your payment link.
 
+   * - ``expiresAt``
+
+       .. type:: string
+          :required: false
+
+     - The expire date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00.
+       It will be stored as UTC timezone and customers are able to use the payment link until midnight.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
@@ -105,7 +113,8 @@ Example
          -d "amount[currency]=EUR" \
          -d "amount[value]=24.95" \
          -d "description=Bicycle tires" \
-         -d "webhookUrl=https://webshop.example.org/payment-links/webhook/"
+         -d "webhookUrl=https://webshop.example.org/payment-links/webhook/" \
+         -d "expiresAt=2021-06-06T11:00:00+00:00"
 
 Response
 ^^^^^^^^
@@ -122,6 +131,7 @@ Response
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": null,
        "updatedAt": null,
+       "expiresAt": "2021-06-06T23:59:59+00:00",
        "amount": {
            "value": "24.95",
            "currency": "EUR"

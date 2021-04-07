@@ -105,6 +105,14 @@ Response
      - The date and time the payment link last status change, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format.
 
+   * - ``expiresAt``
+
+       .. type:: datetime
+          :required: false
+
+     - The expire date and time the payment link, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+       format.
+
    * - ``_links``
 
        .. type:: object
@@ -157,6 +165,7 @@ Response
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": "2021-03-21T09:13:37+00:00",
        "updatedAt": "2021-03-21T09:13:37+00:00",
+       "expiresAt": null,
        "amount": {
            "value": "24.95",
            "currency": "EUR"
