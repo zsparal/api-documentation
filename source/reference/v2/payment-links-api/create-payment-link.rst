@@ -65,7 +65,7 @@ Parameters
 
    * - ``expiresAt``
 
-       .. type:: string
+       .. type:: datetime
           :required: false
 
      - The expire date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00.
