@@ -54,6 +54,13 @@ Parameters
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals and omit the thousands separator. Non-string values are not accepted.
 
+   * - ``redirectUrl``
+
+       .. type:: string
+          :required: false
+
+     - The URL your customer will be redirected to after the payment process.
+
    * - ``webhookUrl``
 
        .. type:: string
@@ -62,6 +69,11 @@ Parameters
      - Set the webhook URL, where we will send payment link status updates to.
 
        .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes about your payment link.
+
+          The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
+          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+          delivered to your local machine.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -105,6 +117,7 @@ Example
          -d "amount[currency]=EUR" \
          -d "amount[value]=24.95" \
          -d "description=Bicycle tires" \
+         -d "redirectUrl=https://webshop.example.org/thanks" \
          -d "webhookUrl=https://webshop.example.org/payment-links/webhook/"
 
 Response
@@ -127,6 +140,7 @@ Response
            "currency": "EUR"
        },
        "description": "Bicycle tires",
+       "redirectUrl": "https://webshop.example.org/thanks",
        "webhookUrl": "https://webshop.example.org/payment-links/webhook/",
        "_links": {
            "self": {

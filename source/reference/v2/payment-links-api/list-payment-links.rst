@@ -160,6 +160,7 @@ Response
                          "currency": "EUR"
                      },
                      "description": "Bicycle tires",
+                     "redirectUrl": "https://webshop.example.org/thanks",
                      "webhookUrl": "https://webshop.example.org/payment-links/webhook/",
                      "_links": {
                          "self": {

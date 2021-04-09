@@ -76,6 +76,12 @@ Response
 
             - A string containing the exact amount of the payment link in the given currency.
 
+   * - ``redirectUrl``
+
+       .. type:: string|null
+
+     - The URL your customer will be redirected to after completing the payment process.
+
    * - ``webhookUrl``
 
        .. type:: string
@@ -162,6 +168,7 @@ Response
            "currency": "EUR"
        },
        "description": "Bicycle tires",
+       "redirectUrl": "https://webshop.example.org/thanks",
        "webhookUrl": "https://webshop.example.org/payment-links/webhook/",
        "_links": {
            "self": {
