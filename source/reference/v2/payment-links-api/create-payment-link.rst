@@ -68,8 +68,7 @@ Parameters
        .. type:: datetime
           :required: false
 
-     - The expiry date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00.
-       It will be stored as UTC timezone and customers are able to use the payment link until midnight.
+     - The expiry date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00. It will always stored as UTC timezone.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -131,7 +130,7 @@ Response
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": null,
        "updatedAt": null,
-       "expiresAt": "2021-06-06T23:59:59+00:00",
+       "expiresAt": "2021-06-06T11:00:00+00:00",
        "amount": {
            "value": "24.95",
            "currency": "EUR"
