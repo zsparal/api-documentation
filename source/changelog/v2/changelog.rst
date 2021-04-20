@@ -7,6 +7,12 @@ Upcoming Changes
 ================
 No remarkable changes to mention at the moment.
 
+April 2021
+==========
+Friday, 16th
+--------------
+- Added ``sku`` optional parameter to :doc:`Payments API</reference/v2/orders-api/update-orderline>`.
+
 March 2021
 ==========
 Tuesday, 30th
