@@ -110,7 +110,7 @@ Response
        .. type:: datetime
           :required: false
 
-     - The expiry date and time the payment link, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+     - The expiry date and time of the payment link, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
        format.
 
    * - ``_links``
