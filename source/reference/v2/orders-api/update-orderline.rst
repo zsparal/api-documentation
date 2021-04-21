@@ -61,6 +61,13 @@ in the request.
 
      - A link pointing to the product page in your web shop of the product sold.
 
+   * - ``sku``
+
+       .. type:: string
+          :required: false
+
+     - The SKU, EAN, ISBN or UPC of the product sold. The maximum character length is 64.
+
    * - ``metadata``
 
        .. type:: mixed

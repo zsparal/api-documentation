@@ -75,6 +75,13 @@ Parameters
           `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
           delivered to your local machine.
 
+   * - ``expiresAt``
+
+       .. type:: datetime
+          :required: false
+
+     - The expiry date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00. It will always be stored in UTC timezone.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
@@ -117,6 +124,7 @@ Example
          -d "amount[currency]=EUR" \
          -d "amount[value]=24.95" \
          -d "description=Bicycle tires" \
+         -d "expiresAt=2021-06-06T11:00:00+00:00" \
          -d "redirectUrl=https://webshop.example.org/thanks" \
          -d "webhookUrl=https://webshop.example.org/payment-links/webhook/"
 
@@ -135,6 +143,7 @@ Response
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": null,
        "updatedAt": null,
+       "expiresAt": "2021-06-06T11:00:00+00:00",
        "amount": {
            "value": "24.95",
            "currency": "EUR"
