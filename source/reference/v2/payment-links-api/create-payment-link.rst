@@ -54,6 +54,13 @@ Parameters
             - A string containing the exact amount you want to charge in the given currency. Make sure to send the right
               amount of decimals and omit the thousands separator. Non-string values are not accepted.
 
+   * - ``redirectUrl``
+
+       .. type:: string
+          :required: false
+
+     - The URL your customer will be redirected to after completing the payment process.
+
    * - ``webhookUrl``
 
        .. type:: string
@@ -63,12 +70,17 @@ Parameters
 
        .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes about your payment link.
 
+          The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+          you want to use webhook during development on ``localhost``, you must use a tool like
+          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+          delivered to your local machine.
+
    * - ``expiresAt``
 
        .. type:: datetime
           :required: false
 
-     - The expiry date of the payment link in ISO 8601 format. For example: 2021-12-24T12:00:16+01:00. It will always be stored in UTC timezone.
+     - The expiry date of the payment link in ISO 8601 format. For example: ``2021-12-24T12:00:16+01:00``. It will always be stored in UTC timezone.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -112,8 +124,9 @@ Example
          -d "amount[currency]=EUR" \
          -d "amount[value]=24.95" \
          -d "description=Bicycle tires" \
-         -d "webhookUrl=https://webshop.example.org/payment-links/webhook/" \
-         -d "expiresAt=2021-06-06T11:00:00+00:00"
+         -d "expiresAt=2021-06-06T11:00:00+00:00" \
+         -d "redirectUrl=https://webshop.example.org/thanks" \
+         -d "webhookUrl=https://webshop.example.org/payment-links/webhook/"
 
 Response
 ^^^^^^^^
@@ -136,6 +149,7 @@ Response
            "currency": "EUR"
        },
        "description": "Bicycle tires",
+       "redirectUrl": "https://webshop.example.org/thanks",
        "webhookUrl": "https://webshop.example.org/payment-links/webhook/",
        "_links": {
            "self": {
