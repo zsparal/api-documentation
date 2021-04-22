@@ -11,7 +11,7 @@ April 2021
 ==========
 Friday, 16th
 --------------
-- Added ``sku`` optional parameter to :doc:`Payments API</reference/v2/orders-api/update-orderline>`.
+- Added ``sku`` optional parameter to :doc:`Orders API</reference/v2/orders-api/update-orderline>`.
 
 March 2021
 ==========
