@@ -30,7 +30,7 @@ Response
 
        .. type:: string
 
-     - Indicates the response contains a payment link object. Will always contain ``paymentLink`` for this endpoint.
+     - Indicates the response contains a payment link object. Will always contain ``payment-link`` for this endpoint.
 
    * - ``id``
 
