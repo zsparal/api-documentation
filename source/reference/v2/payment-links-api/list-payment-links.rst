@@ -147,11 +147,12 @@ Response
    {
        "count": 5,
        "_embedded": {
-           "paymentLinks": [
+           "payment_links": [
                  {
-                     "resource": "paymentLink",
+                     "resource": "payment-link",
                      "id": "pl_4Y0eZitmBnQ6IDoMqZQKh",
                      "mode": "test",
+                     "profileId": "pfl_QkEhN94Ba",
                      "createdAt": "2021-03-20T09:13:37+00:00",
                      "paidAt": "2021-03-21T09:13:37+00:00",
                      "updatedAt": "2021-03-21T09:13:37+00:00",

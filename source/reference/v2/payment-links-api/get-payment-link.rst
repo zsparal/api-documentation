@@ -30,7 +30,7 @@ Response
 
        .. type:: string
 
-     - Indicates the response contains a payment link object. Will always contain ``paymentLink`` for this endpoint.
+     - Indicates the response contains a payment link object. Will always contain ``payment-link`` for this endpoint.
 
    * - ``id``
 
@@ -54,6 +54,12 @@ Response
        payment link.
 
        Possible values: ``live`` ``test``
+
+   * - ``profileId``
+
+       .. type:: string
+
+     - The identifier referring to the profile this payment link was created on. For example, ``pfl_QkEhN94Ba``.
 
    * - ``amount``
 
@@ -165,9 +171,10 @@ Response
    Content-Type: application/hal+json
 
    {
-       "resource": "paymentLink",
+       "resource": "payment-link",
        "id": "pl_4Y0eZitmBnQ6IDoMqZQKh",
        "mode": "test",
+       "profileId": "pfl_QkEhN94Ba",
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": "2021-03-21T09:13:37+00:00",
        "updatedAt": "2021-03-21T09:13:37+00:00",

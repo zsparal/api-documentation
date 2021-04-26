@@ -137,9 +137,10 @@ Response
    Content-Type: application/hal+json
 
    {
-       "resource": "paymentLink",
+       "resource": "payment-link",
        "id": "pl_4Y0eZitmBnQ6IDoMqZQKh",
        "mode": "test",
+       "profileId": "pfl_QkEhN94Ba",
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": null,
        "updatedAt": null,
