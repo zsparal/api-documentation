@@ -6,11 +6,8 @@ Mollie Connect: Splitting payments
 With Mollie you can distribute and split payments between connected accounts using 'payment routing'. This guide will
 explain how it works.
 
-Splitting payments can be useful if:
-
-* You want to charge your users a fee for payments processed through your app, and cover the Mollie payment fee yourself
-  so your users do not receive a Mollie invoice.
-* You offer a marketplace solution where a single payment needs to be split among multiple connected accounts.
+Splitting payments can be useful if you want to charge your users a fee for payments processed through your app, 
+and cover the Mollie payment fee yourself so your users do not receive a Mollie invoice.
 
 For simpler use cases, we also offer :doc:`Application fees </oauth/application-fees>`.
 
