@@ -7,6 +7,14 @@ Upcoming Changes
 ================
 No remarkable changes to mention at the moment.
 
+May 2021
+========
+Tue, 18th
+---------
+- The :doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>` on the Orders API now has a
+  limit on how many payments can be created for an order. After reaching the limit of 25 payments a call to this endpoint
+  will result in an error.
+
 April 2021
 ==========
 Friday, 16th
