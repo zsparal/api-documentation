@@ -50,8 +50,8 @@ Response
 
        .. type:: string
 
-     - The mode used to create this payment link. Mode determines whether a payment link is *real* (live mode) or a *test*
-       payment link.
+     - The mode used to create this payment link. Mode determines whether a payment link is *real* (live mode) or a
+       *test* payment link.
 
        Possible values: ``live`` ``test``
 

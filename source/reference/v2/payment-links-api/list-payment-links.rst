@@ -27,8 +27,8 @@ Parameters
        .. type:: string
           :required: false
 
-     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the payment link with this ID. The payment link
-       with this ID is included in the result set as well.
+     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the payment link with this ID. The
+       payment link with this ID is included in the result set as well.
 
    * - ``limit``
 
@@ -42,8 +42,8 @@ Access token parameters
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
 :doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payment links. If you omit the ``profileId``
-parameter, you will get all payment links on the organization. Organizations can have multiple profiles for each of their
-websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+parameter, you will get all payment links on the organization. Organizations can have multiple profiles for each of
+their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
 .. list-table::
    :widths: auto
@@ -74,8 +74,8 @@ Response
 
        .. type:: integer
 
-     - The number of payment links found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+     - The number of payment links found in ``_embedded``, which is either the requested number (with a maximum of 250)
+       or the default number.
 
    * - ``_embedded``
 
@@ -90,14 +90,15 @@ Response
 
               .. type:: array
 
-            - An array of payment link objects as described in :doc:`Get payment link </reference/v2/payment-links-api/get-payment-link>`.
+            - An array of payment link objects as described in
+              :doc:`Get payment link </reference/v2/payment-links-api/get-payment-link>`.
 
    * - ``_links``
 
        .. type:: object
 
-     - Links to help navigate through the lists of payment links. Every URL object will contain an ``href`` and a ``type``
-       field.
+     - Links to help navigate through the lists of payment links. Every URL object will contain an ``href`` and a
+       ``type`` field.
 
        .. list-table::
           :widths: auto

@@ -13,7 +13,10 @@ Create payment link
    :organization_access_tokens: true
    :oauth: true
 
-With the Payment Links API you can generate payment links that by default, unlike regular payments, do not expire. The Payment Link can be shared with your customers and will redirect them to them the payment page where they can complete the payment. A :doc:`/reference/v2/payments-api/get-payment` will only be created once the customer initiates the payment.
+With the Payment Links API you can generate payment links that by default, unlike regular payments, do not expire. The
+payment link can be shared with your customers and will redirect them to them the payment page where they can complete
+the payment. A :doc:`/reference/v2/payments-api/get-payment` will only be created once the customer initiates the
+payment.
 
 Parameters
 ----------
@@ -25,7 +28,8 @@ Parameters
        .. type:: string
           :required: true
 
-     - This description will also be used as the payment description and will be shown to your customer on their card or bank statement when possible.
+     - This description will also be used as the payment description and will be shown to your customer on their card or
+       bank statement when possible.
 
    * - .. param-name:: amount
 
@@ -68,19 +72,21 @@ Parameters
 
      - Set the webhook URL, where we will send payment link status updates to.
 
-       .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes about your payment link.
+       .. note:: The ``webhookUrl`` is optional, but without a webhook you will miss out on important status changes
+                 about your payment link.
 
-          The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
-          you want to use webhook during development on ``localhost``, you must use a tool like
-          `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
-          delivered to your local machine.
+       The ``webhookUrl`` must be reachable from Mollie's point of view, so you cannot use ``localhost``. If
+       you want to use webhook during development on ``localhost``, you must use a tool like
+       `ngrok <https://lornajane.net/posts/2015/test-incoming-webhooks-locally-with-ngrok>`_ to have the webhooks
+       delivered to your local machine.
 
    * - ``expiresAt``
 
        .. type:: datetime
           :required: false
 
-     - The expiry date of the payment link in ISO 8601 format. For example: ``2021-12-24T12:00:16+01:00``. It will always be stored in UTC timezone.
+     - The expiry date of the payment link in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. For example:
+       ``2021-12-24T12:00:16+01:00``.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
