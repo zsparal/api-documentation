@@ -756,7 +756,10 @@ With Mollie Connect you can charge fees on payments that are processed through y
        .. type:: array
           :required: false
 
-     - An optional routing configuration which enables you to route a successful payment, or part of the payment, to one
+     - .. note:: This functionality is currently in closed beta. Please contact our partner management team if you are
+                 interested in testing this functionality with us.
+
+       An optional routing configuration which enables you to route a successful payment, or part of the payment, to one
        or more connected accounts. Additionally, you can schedule (parts of) the payment to become available on the
        connected account on a future date.
 
