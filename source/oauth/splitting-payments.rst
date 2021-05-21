@@ -203,9 +203,6 @@ If you wish to pull back the money that was sent to a connected account, you can
 For a full reversal of the split that was specified during payment creation, simply set ``reverseRouting=true`` when
 creating the refund.
 
-For more fine-grained control, for example if you only want to pull back a part of the funds, you can provide specific
-reversals using the ``routingReversal`` parameter.
-
 In the example below we will refund the €10,00 payment from earlier, and pull back the €7,50 that was sent to connected
 account ``org_23456``.
 
