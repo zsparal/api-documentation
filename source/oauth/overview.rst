@@ -54,7 +54,7 @@ gets sent to your own balance. The user in this case will still have their own d
 For this case we offer :doc:`Application fees </oauth/application-fees>`.
 
 For more advanced use cases, for example if you want to cover the Mollie payment fees yourself, or for example if you
-want to split a payment between more than two parties, we offer :doc:`Split payments </oauth/splitting-payments>`.
+want to split a payment with another party, we offer :doc:`Split payments </oauth/splitting-payments>`.
 
 Referral commissions
 --------------------
