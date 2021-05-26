@@ -187,6 +187,28 @@ Response
        .. type:: datetime
 
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+  
+   * - ``routingReversal``
+
+       .. type:: object
+          :required: false
+
+     - An object containing information relevant to a refund issued for a *split payment*. To learn more about split payments, please refer to the :doc:`Mollie Connect overview </oauth/overview>`.
+
+       .. list-table::
+          :widths: auto
+
+          * - ``amount``
+
+              .. type:: amount object
+
+            - The amount to be refunded from the split payment.
+
+          * - ``source``
+
+              .. type:: object
+
+            - And object indicating the source of the refund. A field ``organizationId`` will indicate from which organization the amount was refunded.
 
    * - ``_links``
 
