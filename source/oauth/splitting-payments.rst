@@ -233,10 +233,13 @@ account ``org_23456``.
        "routingReversal": [
            {
                "amount": {
-                   "value": "7.50",
-                   "currency": "EUR"
+                    "value": "7.50",
+                    "currency": "EUR"
                },
-               "fromOrganizationId": "org_23456"
+               "source": {
+                    "organizationId": "org_23456"
+               }
+               
            }
        ]
        "...": { }
