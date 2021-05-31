@@ -52,7 +52,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
      - The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
        This is used for :doc:`recurring payments </payments/recurring>` and
-       :doc:`single click payments </guides/checkout>`.
+       :doc:`single-click payments </payments/hosted-checkout>`.
 
    * - ``mandateId``
 

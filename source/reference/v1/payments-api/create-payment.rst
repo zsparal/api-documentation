@@ -23,7 +23,7 @@ Payment creation is elemental to the Mollie API: this is where most payment impl
 parameters are accepted for certain payment methods.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:doc:`Overview </payments/overview>`.
+:doc:`Accepting payments guide </payments/accepting-payments>`.
 
 Parameters
 ----------
@@ -142,7 +142,7 @@ Parameters
           :required: false
 
      - The ID of the :doc:`Customer </reference/v1/customers-api/get-customer>` for whom the payment is being
-       created. This is used for recurring payments and :doc:`single click payments </guides/checkout>`.
+       created. This is used for recurring payments and :doc:`single-click payments </payments/hosted-checkout>`.
 
    * - ``mandateId``
 

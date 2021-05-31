@@ -18,7 +18,7 @@ Once you have created a payment, you should redirect your customer to the URL in
 the response.
 
 To wrap your head around the payment process, an explanation and flow charts can be found in the
-:doc:`Payments API Overview </payments/overview>`.
+:doc:`Accepting payments guide </payments/accepting-payments>`.
 
 .. note::
    :ref:`Optional parameters<payment-method-specific-parameters>` are accepted for certain payment methods.
@@ -172,7 +172,7 @@ Parameters
 
      - The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
        This is used for :doc:`recurring payments </payments/recurring>` and
-       :doc:`single click payments </guides/checkout>`.
+       :doc:`single-click payments </payments/hosted-checkout>`.
 
    * - ``mandateId``
 

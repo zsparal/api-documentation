@@ -17,7 +17,11 @@ sys.path.insert(0, os.path.abspath("extensions"))
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = ["mollie.setup", "cloud_sptheme.ext.table_styling"]
+extensions = [
+    'mollie.setup',
+    'cloud_sptheme.ext.table_styling',
+    'sphinx_reredirects'
+]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = []
@@ -63,10 +67,19 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+# -- SEO stuff ------------------------------------------------------------
+redirects = {
+    'guides/checkout': 'payments/hosted-checkout.html',
+    'payments/overview': 'payments/accepting-payments.html'
+}
+
+do_not_index = [
+    'reference/reseller-api/endpoints/set-fees'
+]
+
 # -- Options for HTML output ----------------------------------------------
 
 # Add the pathname of pages you want to prevent from being indexed by search engines here.
-do_not_index = ['reference/reseller-api/endpoints/set-fees']
 
 # The theme to use for HTML and HTML Help pages. See the documentation for
 # a list of builtin themes.

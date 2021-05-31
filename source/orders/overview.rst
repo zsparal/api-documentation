@@ -15,7 +15,7 @@ This can be done using a dedicated link available through the Dashboard which yo
 can create an additional :doc:`Payment on the Order via the API </reference/v2/orders-api/create-order-payment>`.
 
 *Pay after delivery* payment methods, such as *Klarna Pay later*, *Klarna Slice it*, and *Vouchers* require the Orders
-API and cannot be used with the :doc:`Payments API </payments/overview>`.
+API and cannot be used with the :doc:`Payments API </payments/accepting-payments>`.
 
 Once you ship the goods to your customer, you should inform Mollie of the shipments via the API or via the Dashboard.
 This is mandatory for pay after delivery methods. Only shipped amounts will be settled to your account.
