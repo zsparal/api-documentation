@@ -69,8 +69,8 @@ todo_include_todos = False
 
 # -- SEO stuff ------------------------------------------------------------
 redirects = {
-    'guides/checkout': 'payments/hosted-checkout.html',
-    'payments/overview': 'payments/accepting-payments.html'
+    'guides/checkout': 'https://docs.mollie.com/payments/hosted-checkout',
+    'payments/overview': 'https://docs.mollie.com/payments/accepting-payments'
 }
 
 do_not_index = [
