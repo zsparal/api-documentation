@@ -16,4 +16,5 @@ The following steps install `python3` and `pip3` and add the package location to
 4. `pip3` installs its package executables on `${HOME}/Library/Python/<version>/bin`. Add this path to your `$PATH` variable. Add `export PATH=/Users/<your-username>/Library/Python/<version>/bin:${PATH}"` to your `.zshrc` or `.bash_profile`.
 5. It might be convenient to alias `pip3` to `pip`. You can do so by adding the following line to your `.zshrc` or `.bash_profile`: `alias pip=pip3`
 6. If you did step 5, `make install` should now work. If you didn't: copy the `make install` command and replace `pip` with `pip3`.
+7. If both of the previous steps don't work, you can change the html reload start from `${PYTHON} -msphinx-autobuild` to `sphinx-autobuild`
 7. The command `make start` should now run smooth again.

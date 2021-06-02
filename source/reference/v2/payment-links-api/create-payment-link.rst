@@ -2,7 +2,6 @@ Create payment link
 ===================
 .. api-name:: Payment links API
    :version: 2
-   :beta: true
 
 .. endpoint::
    :method: POST
