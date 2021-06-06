@@ -1,0 +1,14 @@
+{% from 'macros/sidebar-item.html' import sidebar_item with context -%}
+
+<div class="sidebar__group">
+	<p>Mollie Connect</p>
+
+	<ul>
+		{{ sidebar_item('oauth/overview', 'Overview') }}
+		{{ sidebar_item('oauth/getting-started', 'Getting started') }}
+		{{ sidebar_item('oauth/permissions', 'Permissions') }}
+		{{ sidebar_item('oauth/onboarding', 'Onboard your customers') }}
+		{{ sidebar_item('oauth/application-fees', 'Application fees') }}
+		{{ sidebar_item('oauth/splitting-payments', 'Splitting payments') }}
+	</ul>
+</div>

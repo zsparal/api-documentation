@@ -1,21 +1,6 @@
 {% from 'macros/sidebar-item.html' import sidebar_item with context -%}
 
 <div class="sidebar__group">
-	<p>Mollie API</p>
-
-	<ul>
-		{{ sidebar_item('index', 'Overview') }}
-		{{ sidebar_item('guides/security', 'Security') }}
-		{{ sidebar_item('guides/authentication', 'Authentication') }}
-		{{ sidebar_item('guides/testing', 'Testing') }}
-		{{ sidebar_item('guides/common-data-types', 'Common data types') }}
-		{{ sidebar_item('guides/handling-errors', 'Handling errors') }}
-		{{ sidebar_item('guides/webhooks', 'Webhooks') }}
-		{{ sidebar_item('guides/pagination', 'Pagination') }}
-	</ul>
-</div>
-
-<div class="sidebar__group">
 	<p>Payments</p>
 
 	<ul>
@@ -64,37 +49,5 @@
 		{{ sidebar_item('guides/mollie-components/reference', 'API reference') }}
 		{{ sidebar_item('guides/mollie-components/handling-errors', 'Handling errors') }}
 		{{ sidebar_item('guides/mollie-components/styling', 'Styling') }}
-	</ul>
-</div>
-
-<div class="sidebar__group">
-	<p>Mollie Connect</p>
-
-	<ul>
-		{{ sidebar_item('oauth/overview', 'Overview') }}
-		{{ sidebar_item('oauth/getting-started', 'Getting started') }}
-		{{ sidebar_item('oauth/permissions', 'Permissions') }}
-		{{ sidebar_item('oauth/onboarding', 'Onboard your customers') }}
-		{{ sidebar_item('oauth/application-fees', 'Application fees') }}
-		{{ sidebar_item('oauth/splitting-payments', 'Splitting payments') }}
-	</ul>
-</div>
-
-<div class="sidebar__group">
-	<p>Mobile apps</p>
-
-	<ul>
-		{{ sidebar_item('mobile-apps/overview', 'Overview') }}
-		{{ sidebar_item('mobile-apps/getting-started-payments', 'Getting Started with Payments') }}
-		{{ sidebar_item('mobile-apps/getting-started-connect', 'Getting Started with Mollie Connect') }}
-	</ul>
-</div>
-
-<div class="sidebar__group">
-	<p>Integration partners</p>
-
-	<ul>
-    {{ sidebar_item('integration-partners/getting-started', 'Getting started') }}
-    {{ sidebar_item('integration-partners/user-agent-strings', 'User agent strings') }}
 	</ul>
 </div>
