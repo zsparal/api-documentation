@@ -61,7 +61,8 @@ an overview of the typical flow for each of our payment methods, and how they ca
      - #. Customer selects Apple Pay at checkout using the dedicated Apple Pay button.
        #. Customer verifies their payment with their Apple device's native authentication.
        #. Customer returns to the webshop.
-     - The Apple Pay button (step 1) can be integrated using the Wallets API.
+     - The Apple Pay button (step 1) can be integrated using the
+       :doc:`Wallets API </reference/v2/wallets-api/request-apple-pay-payment-session>`.
 
    * - **Bancontact**
      - #. Customer selects Bancontact at checkout.
@@ -75,14 +76,17 @@ an overview of the typical flow for each of our payment methods, and how they ca
        #. Customer gets redirected to Mollie, where the bank transfer details are shown.
        #. Customer returns to the webshop.
        #. Customer completes the payment manually via their bank.
-     - The bank transfer details (step 2) can be retrieved via the Payments API.
+     - The bank transfer details (step 2) are returned by the
+       :doc:`Payments API </reference/v2/payments-api/get-payment>` when setting up the
+       payment. They can be integrated directly, skipping the need for a redirect.
 
    * - **Credit card**
      - #. Customer selects credit card at checkout.
        #. Customer enters their credit card details.
        #. Customer may get redirected to their card issuer to verify their payment with 3-D Secure.
        #. Customer returns to the webshop.
-     - The credit card detail screen (step 2) can be integrated using Mollie Components.
+     - The credit card detail screen (step 2) can be integrated using Mollie Components. See
+       :ref:`embedding-credit-card-fields` below.
 
    * - **EPS**
      - #. Customer selects EPS at checkout.
@@ -102,15 +106,17 @@ an overview of the typical flow for each of our payment methods, and how they ca
        #. Customer gets redirected to Mollie to select their bank or to complete via QR.
        #. Customer gets redirected to their bank to verify their payment with their bank credentials.
        #. Customer returns to the webshop.
-     - The issuer selection screen (step 2) can be integrated using the Methods API. The QR flow (step 2) can be
-       integrated using the QR embed in the Payments API.
+     - The issuer selection screen (step 2) can be integrated using the Methods API. See
+       :ref:`embedding-issuer-selection` below. The QR flow (step 2) can also be
+       integrated using the QR embed in the Payments API. See the :doc:`QR codes guide </guides/qr-codes>` for details.
 
    * - **KBC/CBC**
      - #. Customer selects KBC/CBC at checkout.
        #. Customer gets redirected to Mollie to select their bank.
        #. Customer gets redirected to their bank to verify their payment with their bank credentials.
        #. Customer returns to the webshop.
-     - The issuer selection screen (step 2) can be integrated using the Methods API.
+     - The issuer selection screen (step 2) can be integrated using the Methods API. See
+       :ref:`embedding-issuer-selection` below.
 
    * - **Klarna: Pay later**
      - #. Customer selects Pay later at checkout.
@@ -132,7 +138,7 @@ an overview of the typical flow for each of our payment methods, and how they ca
           account.
        #. Customer returns to the webshop.
      - When using the Orders API, you can integrate the PayPal Express Checkout button directly in your checkout for an
-       even faster checkout process.
+       even faster checkout process. See the :doc:`Orders guide </orders/overview>` for details.
 
    * - **paysafecard**
      - #. Customer selects paysafecard at checkout.
@@ -154,6 +160,8 @@ an overview of the typical flow for each of our payment methods, and how they ca
        #. Customer returns to the webshop.
      - No deeper integration possible.
 
+.. _embedding-credit-card-fields:
+
 Embedding credit card fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: images/checkout-flow-embedded-credit-card-fields@2x.png
@@ -161,6 +169,8 @@ Embedding credit card fields
 For the credit card payment method, you can fully embed the credit card input fields while staying PCI-DSS-compliant
 using Mollie Components. Please refer to the guide on :doc:`Mollie Components </guides/mollie-components/overview>` for
 more information on how to integrate.
+
+.. _embedding-issuer-selection:
 
 Embedding issuer selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
