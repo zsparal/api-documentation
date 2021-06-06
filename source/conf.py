@@ -20,7 +20,7 @@ sys.path.insert(0, os.path.abspath("extensions"))
 extensions = [
     'mollie.setup',
     'cloud_sptheme.ext.table_styling',
-    'sphinx_reredirects'
+    'sphinx_reredirects_fork'
 ]
 
 # Add any paths that contain templates here, relative to this directory.
