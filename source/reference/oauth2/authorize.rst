@@ -79,10 +79,9 @@ Parameters
        .. type:: string
           :required: false
 
-     - Allows you to preset the language to be used in the login / sign up / authorize flow if the
-       merchant is not known by Mollie. When this parameter is omitted, the browser language will be
-       used instead. You can provide any ISO 15897 locale, but the authorize flow currently only
-       supports the following languages:
+     - Allows you to preset the language to be used in the login / sign up / authorize flow if the merchant is not known
+       by Mollie. When this parameter is omitted, the browser language will be used instead. You can provide any
+       ``xx_XX`` format ISO 15897 locale, but the authorize flow currently only supports the following languages:
 
        Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``es_ES``
        ``it_IT``

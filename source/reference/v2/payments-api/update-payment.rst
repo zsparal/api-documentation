@@ -71,7 +71,8 @@ payment method specific parameters available, see :ref:`below <payment-method-sp
        .. type:: string
           :required: false
 
-     - Allows you to update the language to be used in the hosted payment pages shown to the consumer.
+     - Allows you to update the language to be used in the hosted payment pages shown to the consumer. Can be any
+       ``xx_XX`` format ISO 15897 locale.
 
    * - ``restrictPaymentMethodsToCountry``
 

@@ -92,8 +92,8 @@ parameters:
        .. type:: string
           :required: false
 
-     - 	Preferred locale for the merchant. Should be in locale format. This determines the language of any follow up
-        communications from Mollie
+     - 	Preferred locale for the merchant. You can provide any ``xx_XX`` format ISO 15897 locale. This determines the
+        language of any follow-up communications from Mollie.
 
         Example: ``nl_NL`` ``en_US``
 

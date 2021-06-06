@@ -1096,7 +1096,7 @@ Response
            "consumerAccount": "NL53INGB0618365937",
            "consumerBic": "INGBNL2A"
        },
-       "locale": "nl",
+       "locale": "nl_NL",
        "profileId": "pfl_QkEhN94Ba",
        "links": {
            "webhookUrl": "https://webshop.example.org/payments/webhook",
