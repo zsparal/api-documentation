@@ -1,3 +1,12 @@
+{%- if pagename.startswith('payments/') or pagename.startswith('orders/') or pagename.startswith('wallets/') or 'mollie-components/' in pagename -%}
+  {%- set selected = "payments" -%}
+{%- elif pagename.startswith('oauth/') -%}
+  {%- set selected = "connect" -%}
+{%- elif pagename.startswith('reference/') -%}
+  {%- set selected = "api" -%}
+{%- else -%}
+  {%- set selected = "overview" -%}
+{%- endif -%}
 <nav class="main-navigation">
   <ul class="title-bar" data-enhancer="nav-logged-in">
     <li class="title-bar__item title-bar__logo">
@@ -20,24 +29,24 @@
   </ul>
 
   <ul class="product-navigation">
-    <li class="product-navigation__item {%- if pagename.startswith('guides/') %} product-navigation__item--active {%- endif %}">
+    <li class="product-navigation__item {%- if selected == 'overview' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('index') }}">Overview</a>
     </li>
-    <li class="product-navigation__item {%- if pagename.startswith('payments/') %} product-navigation__item--active {%- endif %}">
+    <li class="product-navigation__item {%- if selected == 'payments' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('payments/accepting-payments') }}">Payments</a>
     </li>
-    <li class="product-navigation__item {%- if pagename.startswith('oauth/') %} product-navigation__item--active {%- endif %}">
+    <li class="product-navigation__item {%- if selected == 'connect' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('oauth/overview') }}">Connect</a>
     </li>
-    <li class="product-navigation__item {%- if pagename.startswith('reference/') %} product-navigation__item--active {%- endif %}">
+    <li class="product-navigation__item {%- if selected == 'api' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('reference/v2/payments-api/create-payment') }}">API reference</a>
     </li>
   </ul>
 
   <select class="mobile-product-navigation" data-enhancer="link-dropdown">
-    <option value="{{ pathto('index') }}" {%- if pagename.startswith('guides/') %} selected {%- endif %}>Overview</option>
-    <option value="{{ pathto('payments/accepting-payments') }}" {%- if pagename.startswith('payments/') %} selected {%- endif %}>Payments</option>
-    <option value="{{ pathto('oauth/overview') }}" {%- if pagename.startswith('oauth/') %} selected {%- endif %}>Connect</option>
-    <option value="{{ pathto('reference/v2/payments-api/create-payment') }}" {%- if pagename.startswith('reference/') %} selected {%- endif %}>API reference</option>
+    <option value="{{ pathto('index') }}" {%- if selected == 'overview' %} selected {%- endif %}>Overview</option>
+    <option value="{{ pathto('payments/accepting-payments') }}" {%- if selected == 'payments' %} selected {%- endif %}>Payments</option>
+    <option value="{{ pathto('oauth/overview') }}" {%- if selected == 'connect' %} selected {%- endif %}>Connect</option>
+    <option value="{{ pathto('reference/v2/payments-api/create-payment') }}" {%- if selected == 'api' %} selected {%- endif %}>API reference</option>
   </select>
 </nav>
