@@ -3,10 +3,13 @@ Mollie Connect: Splitting payments
 .. note:: This feature is currently in closed beta. Please contact our partner management team if you are interested in
           testing this functionality with us.
 
+.. warning:: The split payments feature is not available for third-party payments methods (e.g.: gift cards, Paypal, etc.)
+             or captures (e.g.: Klarna slice it, Klarna pay later, etc.)
+
 With Mollie you can distribute and split payments between connected accounts using 'payment routing'. This guide will
 explain how it works.
 
-Splitting payments can be useful if you want to charge your users a fee for payments processed through your app, 
+Splitting payments can be useful if you want to charge your users a fee for payments processed through your app,
 and cover the Mollie payment fee yourself so your users do not receive a Mollie invoice.
 
 For simpler use cases, we also offer :doc:`Application fees </oauth/application-fees>`.
@@ -239,7 +242,7 @@ account ``org_23456``.
                "source": {
                     "organizationId": "org_23456"
                }
-               
+
            }
        ]
        "...": { }
