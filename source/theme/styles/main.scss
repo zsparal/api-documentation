@@ -1,7 +1,6 @@
 /**
  * Global
  */
-@import 'fonts';
 @import 'normalize';
 @import 'variables';
 
@@ -53,7 +52,7 @@ select,
 textarea {
   color: #111;
   font-family: $font-family-default;
-  font-weight: 300;
+  font-weight: 400;
   font-size: 21px;
 }
 
