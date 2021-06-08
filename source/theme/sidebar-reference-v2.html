@@ -123,6 +123,28 @@
 	</ul>
 </div>
 
+<div class="sidebar__group {{ sidebar_collapse_group('reference/v2/payment-links-api/') }}">
+	<p><a href="javascript:void(0)">Payment Links API</a></p>
+
+	<ul>
+		{{ sidebar_item(
+			'reference/v2/payment-links-api/create-payment-link',
+			'Create payment link',
+			'POST /v2/payment-links'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/payment-links-api/get-payment-link',
+			'Get payment link',
+			'GET /v2/payment-links/*'
+		) }}
+		{{ sidebar_item(
+			'reference/v2/payment-links-api/list-payment-links',
+			'List payment links',
+			'GET /v2/payment-links'
+		) }}
+	</ul>
+</div>
+
 <div class="sidebar__spacing"></div>
 
 <div class="sidebar__group {{ sidebar_collapse_group('reference/v2/orders-api/') }}">
