@@ -4,6 +4,8 @@
   {%- set selected = "connect" -%}
 {%- elif pagename.startswith('reference/') -%}
   {%- set selected = "api" -%}
+{%- elif pagename.startswith('changelog/') -%}
+  {%- set selected = "changelog" -%}
 {%- else -%}
   {%- set selected = "overview" -%}
 {%- endif -%}
@@ -41,6 +43,9 @@
     <li class="product-navigation__item {%- if selected == 'api' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('reference/v2/payments-api/create-payment') }}">API reference</a>
     </li>
+    <li class="product-navigation__item {%- if selected == 'changelog' %} product-navigation__item--active {%- endif %}">
+      <a href="{{ pathto('changelog/v2/changelog') }}">Changelog</a>
+    </li>
   </ul>
 
   <select class="mobile-product-navigation" data-enhancer="link-dropdown">
@@ -48,5 +53,6 @@
     <option value="{{ pathto('payments/accepting-payments') }}" {%- if selected == 'payments' %} selected {%- endif %}>Payments</option>
     <option value="{{ pathto('connect/overview') }}" {%- if selected == 'connect' %} selected {%- endif %}>Connect</option>
     <option value="{{ pathto('reference/v2/payments-api/create-payment') }}" {%- if selected == 'api' %} selected {%- endif %}>API reference</option>
+    <option value="{{ pathto('changelog/v2/changelog') }}" {%- if selected == 'changelog' %} selected {%- endif %}>Changelog</option>
   </select>
 </nav>

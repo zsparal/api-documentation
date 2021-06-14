@@ -7,10 +7,17 @@ Upcoming Changes
 ================
 No remarkable changes to mention at the moment.
 
+June 2021
+=========
+Friday, 2nd
+-----------
+- We released the new :doc:`Payment Links API </reference/v2/payment-links-api/create-payment-link>`. This API makes it
+  possible to generate payment links which can be used for, for example, invoices.
+
 May 2021
 ========
-Tue, 18th
----------
+Tuesday, 18th
+-------------
 - The :doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>` on the Orders API now has a
   limit on how many payments can be created for an order. After reaching the limit of 25 payments a call to this endpoint
   will result in an error.
