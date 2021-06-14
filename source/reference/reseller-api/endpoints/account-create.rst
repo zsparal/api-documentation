@@ -4,7 +4,7 @@ Create account
    :version: 1
 
 .. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy
-             functionality. We recommend using the :doc:`Onboarding API </oauth/onboarding>` for this action.
+             functionality. We recommend using the :doc:`Onboarding API </connect/onboarding>` for this action.
 
 .. endpoint::
    :method: POST

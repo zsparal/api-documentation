@@ -10,8 +10,8 @@ Authorize
           redirect the resource owner to the Authorize endpoint.
 
 The Authorize endpoint is the endpoint on Mollie web site where the merchant logs in, and grants authorization to your
-client application. E.g. when the merchant clicks on the :doc:`Connect with Mollie button </oauth/getting-started>`, you
-should redirect the merchant to the Authorize endpoint.
+client application. E.g. when the merchant clicks on the :doc:`Connect with Mollie button </connect/getting-started>`,
+you should redirect the merchant to the Authorize endpoint.
 
 The resource owner can then grant the authorization to your client application for the scopes you have requested.
 
@@ -29,7 +29,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - The client ID you receive when :doc:`registering your app </oauth/getting-started>`.
+     - The client ID you receive when :doc:`registering your app </connect/getting-started>`.
 
    * - ``redirect_uri``
 
@@ -51,7 +51,7 @@ Parameters
        .. type:: string
           :required: true
 
-     - A space separated list of permissions your app requires. Refer to :doc:`Permissions </oauth/permissions>` for
+     - A space separated list of permissions your app requires. Refer to :doc:`Permissions </connect/permissions>` for
        more information about the available scopes.
 
    * - ``response_type``
@@ -68,9 +68,9 @@ Parameters
        .. type:: string
           :required: true
 
-     - This parameter can be set to ``force`` to force showing the :doc:`consent screen </oauth/getting-started>` to the
-       merchant, even when it is not necessary. Note that already active authorizations will be revoked
-       when the user creates the new authorization.
+     - This parameter can be set to ``force`` to force showing the :doc:`consent screen </connect/getting-started>` to
+       the merchant, even when it is not necessary. Note that already active authorizations will be revoked when the
+       user creates the new authorization.
 
        Possible values: ``auto`` ``force``
 

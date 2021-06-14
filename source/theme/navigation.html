@@ -1,6 +1,6 @@
 {%- if pagename.startswith('payments/') or pagename.startswith('orders/') or pagename.startswith('wallets/') or 'mollie-components/' in pagename -%}
   {%- set selected = "payments" -%}
-{%- elif pagename.startswith('oauth/') -%}
+{%- elif pagename.startswith('connect/') -%}
   {%- set selected = "connect" -%}
 {%- elif pagename.startswith('reference/') -%}
   {%- set selected = "api" -%}
@@ -36,7 +36,7 @@
       <a href="{{ pathto('payments/accepting-payments') }}">Payments</a>
     </li>
     <li class="product-navigation__item {%- if selected == 'connect' %} product-navigation__item--active {%- endif %}">
-      <a href="{{ pathto('oauth/overview') }}">Connect</a>
+      <a href="{{ pathto('connect/overview') }}">Connect</a>
     </li>
     <li class="product-navigation__item {%- if selected == 'api' %} product-navigation__item--active {%- endif %}">
       <a href="{{ pathto('reference/v2/payments-api/create-payment') }}">API reference</a>
@@ -46,7 +46,7 @@
   <select class="mobile-product-navigation" data-enhancer="link-dropdown">
     <option value="{{ pathto('index') }}" {%- if selected == 'overview' %} selected {%- endif %}>Overview</option>
     <option value="{{ pathto('payments/accepting-payments') }}" {%- if selected == 'payments' %} selected {%- endif %}>Payments</option>
-    <option value="{{ pathto('oauth/overview') }}" {%- if selected == 'connect' %} selected {%- endif %}>Connect</option>
+    <option value="{{ pathto('connect/overview') }}" {%- if selected == 'connect' %} selected {%- endif %}>Connect</option>
     <option value="{{ pathto('reference/v2/payments-api/create-payment') }}" {%- if selected == 'api' %} selected {%- endif %}>API reference</option>
   </select>
 </nav>

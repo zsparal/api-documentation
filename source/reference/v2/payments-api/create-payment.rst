@@ -673,7 +673,7 @@ Vouchers
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you have to specify which profile you are creating the payment for using the
+:doc:`OAuth app </connect/overview>`, you have to specify which profile you are creating the payment for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
@@ -700,7 +700,7 @@ Mollie Connect parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^
 With Mollie Connect you can charge fees on payments that are processed through your app, either by defining an
 *application fee* or by *splitting the payment*. To learn more about the difference, please refer to the
-:doc:`Mollie Connect overview </oauth/overview>`.
+:doc:`Mollie Connect overview </connect/overview>`.
 
 .. list-table::
    :widths: auto
@@ -710,8 +710,8 @@ With Mollie Connect you can charge fees on payments that are processed through y
        .. type:: object
           :required: false
 
-     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant a small sum for the
-       payment and transfer this to your own account.
+     - Adding an :doc:`application fee </connect/application-fees>` allows you to charge the merchant a small sum for
+       the payment and transfer this to your own account.
 
        .. list-table::
           :widths: auto
@@ -763,7 +763,7 @@ With Mollie Connect you can charge fees on payments that are processed through y
        or more connected accounts. Additionally, you can schedule (parts of) the payment to become available on the
        connected account on a future date.
 
-       See the :doc:`Split payments </oauth/splitting-payments>` guide for more information on payment routing.
+       See the :doc:`Split payments </connect/splitting-payments>` guide for more information on payment routing.
 
        If a routing array is supplied, it must contain one or more routing objects with the following parameters:
 

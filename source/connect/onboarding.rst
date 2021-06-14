@@ -1,5 +1,5 @@
-Mollie Connect: Onboard your customers at Mollie
-================================================
+Onboard your customers at Mollie
+================================
 As part of the Mollie Connect toolkit we offer white-label onboarding, along with a set of onboarding APIs and tools.
 This allows you to provide a simplified Mollie onboarding experience for your customers, integrating the Mollie
 onboarding deeper into your own onboarding flow.
@@ -8,8 +8,8 @@ This guide provides an overview of how to set up our white-label onboarding for 
 
 Step 1: Enable hosted onboarding
 --------------------------------
-If you are new to OAuth, please have a look at the :doc:`Mollie Connect overview </oauth/overview>` and the
-:doc:`Getting started guide for OAuth </oauth/getting-started>` before proceeding.
+If you are new to OAuth, please have a look at the :doc:`Mollie Connect overview </connect/overview>` and the
+:doc:`Getting started guide for OAuth </connect/getting-started>` before proceeding.
 
 Once you have an OAuth app up and running, you can
 `turn on hosted onboarding <https://www.mollie.com/dashboard/settings/hosted-onboarding>`_ in the Mollie Dashboard.
@@ -21,8 +21,8 @@ Step 2: Implement the OAuth authorization flow
 Now that you have registered your OAuth app, you can implement the basic OAuth authorization flow. This is necessary
 because you will have to ask your user permission to control their Mollie onboarding.
 
-Again, if you are unfamiliar with OAuth, please refer to the
-:doc:`Getting started guide for OAuth </oauth/getting-started>` for more details on the authorization flow.
+Again, if you are unfamiliar with OAuth, please refer to the :doc:`Getting started guide </connect/getting-started>` for
+more details on the authorization flow.
 
 To onboard customers, you commonly need these three permissions:
 

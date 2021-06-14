@@ -39,7 +39,7 @@ Parameters
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the following query string parameters are also available. With the ``profileId``
+:doc:`OAuth app </connect/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payment links. If you omit the ``profileId``
 parameter, you will get all payment links on the organization. Organizations can have multiple profiles for each of
 their websites. See :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.

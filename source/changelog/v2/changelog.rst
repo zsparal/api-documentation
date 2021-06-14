@@ -283,7 +283,7 @@ Tuesday, 3rd
   :doc:`Orders API </reference/v2/orders-api/create-order>` for merchants who have agreed this with Klarna.
 - Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
 - Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API </reference/v2/orders-api/create-order>`.
-- Enabled :doc:`Application fees </oauth/application-fees>` for the
+- Enabled :doc:`Application fees </connect/application-fees>` for the
   :doc:`Orders API </reference/v2/orders-api/create-order>`.
 
 Monday, 2nd
@@ -466,8 +466,8 @@ Wednesday, 27th
 ---------------
 - Added the ``profile`` key to the ``_links`` object in the
   :doc:`Subscription </reference/v2/subscriptions-api/get-subscription>` object.
-- Subscriptions can now be created with :doc:`application fees </oauth/application-fees>`. The application fees will be
-  applied on each created Payment for the Subscription.
+- Subscriptions can now be created with :doc:`application fees </connect/application-fees>`. The application fees will
+  be applied on each created Payment for the Subscription.
 - Added the ``minimumAmount`` and ``maximumAmount`` properties to the
   :doc:`Methods API </reference/v2/methods-api/list-methods>` endpoints. It represents the minimum and maximum amount
   allowed for creating a payment with the specific methods.
@@ -604,7 +604,7 @@ Wednesday, 7th
 
 Monday, 5th
 -----------
-- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </connect/overview>`
   for more info.
 
 Thursday, 1st

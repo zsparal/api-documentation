@@ -272,7 +272,7 @@ Thursday, 8th
 
 Monday, 5th
 -----------
-- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </oauth/overview>`
+- Added referral-functionality for Mollie Partners to the Connect API. See the :doc:`documentation </connect/overview>`
   for more info.
 
 Thursday, 1st

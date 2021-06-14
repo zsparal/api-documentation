@@ -28,7 +28,7 @@ Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` query string parameter.
+:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
 .. list-table::
    :widths: auto
@@ -187,13 +187,14 @@ Response
        .. type:: datetime
 
      - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-  
+
    * - ``routingReversal``
 
        .. type:: object
           :required: false
 
-     - An object containing information relevant to a refund issued for a *split payment*. To learn more about split payments, please refer to the :doc:`Mollie Connect overview </oauth/overview>`.
+     - An object containing information relevant to a refund issued for a *split payment*. To learn more about split
+       payments, please refer to the :doc:`Mollie Connect overview </connect/overview>`.
 
        .. list-table::
           :widths: auto

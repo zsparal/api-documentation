@@ -39,7 +39,7 @@ Parameters
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you can specify which profile you are retrieving payments for using the
+:doc:`OAuth app </connect/overview>`, you can specify which profile you are retrieving payments for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. If you omit the
 ``profileId`` parameter, the API will return all payments across all profiles. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.

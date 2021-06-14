@@ -19,7 +19,7 @@ resource allows the app to check whether an API action is (still) allowed by the
 Parameters
 ----------
 Replace ``id`` in the endpoint URL by the permission's ID, for example ``payments.read``. See
-:doc:`Permissions </oauth/permissions>` for details about the available permissions.
+:doc:`Permissions </connect/permissions>` for details about the available permissions.
 
 Response
 --------

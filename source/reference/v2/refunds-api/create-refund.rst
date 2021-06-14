@@ -67,7 +67,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
+:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto
@@ -84,7 +84,7 @@ Mollie Connect parameters
 With Mollie Connect you can split payments that are processed through your app across multiple connected accounts. When
 creating refunds for those split payments, you can use the ``reverseRouting`` parameter to pull the split payment back
 to the platform balance. To learn more about creating refunds for split payments, please refer to the
-:doc:`Splitting payments guide </oauth/splitting-payments>`.
+:doc:`Splitting payments guide </connect/splitting-payments>`.
 
 .. list-table::
    :widths: auto

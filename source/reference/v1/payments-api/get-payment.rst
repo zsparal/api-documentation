@@ -31,7 +31,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, the ``testmode`` query string parameter is available. You must pass this as a
+:doc:`OAuth app </connect/overview>`, the ``testmode`` query string parameter is available. You must pass this as a
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
 .. list-table::

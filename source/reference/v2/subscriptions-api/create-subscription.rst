@@ -139,7 +139,7 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you have to specify which profile you are creating a subscription for using the
+:doc:`OAuth app </connect/overview>`, you have to specify which profile you are creating a subscription for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
@@ -167,7 +167,7 @@ For these authentication methods the optional ``testmode`` parameter is availabl
        .. type:: object
           :required: false
 
-     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant for each payment
+     - Adding an :doc:`application fee </connect/application-fees>` allows you to charge the merchant for each payment
        in the subscription and transfer these amounts to your own account.
 
        .. list-table::

@@ -1,5 +1,5 @@
-Mollie Connect: Overview
-========================
+Mollie Connect
+==============
 **Mollie Connect** is a set of APIs and tools that allows you to connect multiple Mollie accounts together. This toolkit
 can be used for varying purposes, including:
 
@@ -22,7 +22,7 @@ Getting started
 In virtually all use cases you should start by learning a bit about how OAuth works at Mollie, and then registering an
 OAuth app. The following guide offers detailed instructions.
 
-:doc:`/oauth/getting-started`
+:doc:`/connect/getting-started`
 
 Onboarding your customers
 -------------------------
@@ -34,15 +34,15 @@ If your users do not yet have a Mollie account, you can either:
 
 The following guide will dive into these last two use cases.
 
-:doc:`/oauth/onboarding`
+:doc:`/connect/onboarding`
 
 Accessing your customer's Mollie account
 ----------------------------------------
 To access or manage the account of your customer, you need an OAuth app. Please follow the
-:doc:`Getting started guide </oauth/getting-started>` for instructions.
+:doc:`Getting started guide </connect/getting-started>` for instructions.
 
 Once you have set up the app, you can access virtually any Mollie API endpoint with the OAuth access token, as long as
-your user gave permission for your app to access their data. Please refer to :doc:`/oauth/permissions` for a full list
+your user gave permission for your app to access their data. Please refer to :doc:`/connect/permissions` for a full list
 of available permissions.
 
 Charging fees on payments processed through your app
@@ -51,10 +51,10 @@ Mollie Connect enables you to route and split payments between two or more conne
 
 The simplest use case is when your app processes payments for other Mollie accounts, and you want to deduct a fee that
 gets sent to your own balance. The user in this case will still have their own dashboard and receive a Mollie invoice.
-For this case we offer :doc:`Application fees </oauth/application-fees>`.
+For this case we offer :doc:`Application fees </connect/application-fees>`.
 
 For more advanced use cases, for example if you want to cover the Mollie payment fees yourself, or for example if you
-want to split a payment with another party, we offer :doc:`Split payments </oauth/splitting-payments>`.
+want to split a payment with another party, we offer :doc:`Split payments </connect/splitting-payments>`.
 
 Referral commissions
 --------------------

@@ -70,6 +70,12 @@ todo_include_todos = False
 # -- SEO stuff ------------------------------------------------------------
 redirects = {
     'guides/checkout': 'https://docs.mollie.com/payments/hosted-checkout',
+    'oauth/application-fees': 'https://docs.mollie.com/connect/application-fees',
+    'oauth/getting-started': 'https://docs.mollie.com/connect/getting-started',
+    'oauth/onboarding': 'https://docs.mollie.com/connect/onboarding',
+    'oauth/overview': 'https://docs.mollie.com/connect/overview',
+    'oauth/permissions': 'https://docs.mollie.com/connect/permissions',
+    'oauth/splitting-payments': 'https://docs.mollie.com/connect/splitting-payments',
     'payments/overview': 'https://docs.mollie.com/payments/accepting-payments',
     'reference/v2/organizations-api/list-organizations': 'https://docs.mollie.com/reference/reseller-api/v2/list-organizations'
 }

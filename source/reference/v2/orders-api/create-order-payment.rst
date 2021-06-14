@@ -81,7 +81,7 @@ For example:
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` parameter.
+:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
    :widths: auto
@@ -98,7 +98,7 @@ If you are using :doc:`organization access tokens </guides/authentication>` or a
        .. type:: object
           :required: false
 
-     - Adding an :doc:`application fee </oauth/application-fees>` allows you to charge the merchant for the
+     - Adding an :doc:`application fee </connect/application-fees>` allows you to charge the merchant for the
        payment and transfer this to your own account.
 
 Response

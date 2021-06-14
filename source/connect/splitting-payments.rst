@@ -1,5 +1,5 @@
-Mollie Connect: Splitting payments
-==================================
+Splitting payments with Mollie Connect
+======================================
 .. note:: This feature is currently in closed beta. Please contact our partner management team if you are interested in
           testing this functionality with us.
 
@@ -12,14 +12,14 @@ explain how it works.
 Splitting payments can be useful if you want to charge your users a fee for payments processed through your app,
 and cover the Mollie payment fee yourself so your users do not receive a Mollie invoice.
 
-For simpler use cases, we also offer :doc:`Application fees </oauth/application-fees>`.
+For simpler use cases, we also offer :doc:`Application fees </connect/application-fees>`.
 
 Getting started: Connecting an account
 --------------------------------------
 To start connecting accounts to process payments for, please contact your Mollie partner manager. They can enable Split
 payments on your account.
 
-Once your account is setup properly, any new merchants you :doc:`onboard via your app </oauth/onboarding>` will
+Once your account is setup properly, any new merchants you :doc:`onboard via your app </connect/onboarding>` will
 automatically get linked to your account.
 
 Routing part of a payment to a connected account

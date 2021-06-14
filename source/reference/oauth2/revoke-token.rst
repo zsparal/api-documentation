@@ -6,7 +6,7 @@ Revoke token
    :method: DELETE
    :url: https://api.mollie.com/oauth2/tokens
 
-Authentication: :doc:`OAuth client credentials </oauth/overview>`
+Authentication: :doc:`OAuth client credentials </connect/overview>`
 
 Revoke an access- or a refresh token. Once revoked the token can not be used anymore.
 

@@ -24,7 +24,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
-:doc:`OAuth app </oauth/overview>`, you can enable test mode through the ``testmode`` query string parameter.
+:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
 .. list-table::
    :widths: auto
@@ -404,7 +404,7 @@ Response
        .. type:: object
           :required: false
 
-     - The :doc:`application fee </oauth/application-fees>`, if the payment was created with one.
+     - The :doc:`application fee </connect/application-fees>`, if the payment was created with one.
 
        .. list-table::
           :widths: auto
