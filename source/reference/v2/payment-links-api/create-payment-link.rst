@@ -163,7 +163,7 @@ Response
                "type": "application/json"
            },
            "paymentLink": {
-               "href": "https://useplink.com/payment/4Y0eZitmBnQ6IDoMqZQKh/",
+               "href": "https://paymentlink.mollie.com/payment/4Y0eZitmBnQ6IDoMqZQKh/",
                "type": "text/html"
            },
            "documentation": {
