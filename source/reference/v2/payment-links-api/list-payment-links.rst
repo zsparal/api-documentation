@@ -85,7 +85,7 @@ Response
        .. list-table::
           :widths: auto
 
-          * - ``paymentLinks``
+          * - ``payment_links``
 
               .. type:: array
 
