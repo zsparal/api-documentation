@@ -10,7 +10,11 @@ With Mollie you can distribute and split payments between connected accounts usi
 explain how it works.
 
 Splitting payments can be useful if you want to charge your users a fee for payments processed through your app,
-and cover the Mollie payment fee yourself so your users do not receive a Mollie invoice.
+and cover the Mollie payment fee yourself. This way, the fees you negotiated with Mollie will not be visible to your
+users, since the fees are deducted and invoiced on your platform's Mollie account.
+
+Splitting payments can also be useful if you want to control the timing and frequency of your users' settlements from
+Mollie.
 
 For simpler use cases, we also offer :doc:`Application fees </connect/application-fees>`.
 
@@ -92,7 +96,8 @@ On our own account, we will receive the remainder of €2,50 minus any payment f
        "...": { }
    }
 
-As soon as the payment is completed, the €7,50 will become available on the balance of the connected account.
+As soon as the payment is completed, the €7,50 will become available on the balance of the connected account, and the
+€2,50 will become available on the balance of your platform account.
 
 Delaying settlement of a split payment
 --------------------------------------
@@ -197,8 +202,9 @@ object:
 
 Refunding a split payment
 -------------------------
-When issuing a refund for a split payment, by default the full refund is deducted from the platform balance. In other
-words, by default the parts of the payment that were sent to connected accounts will remain untouched.
+Since your platform is liable for refunds and chargebacks, when issuing a refund for a split payment, by default the
+full refund is deducted from the platform balance. In other words, by default the parts of the payment that were sent to
+connected accounts will remain untouched.
 
 If you wish to pull back the money that was sent to a connected account, you can do so by 'reversing the routes' when
 :doc:`creating a refund </reference/v2/refunds-api/create-refund>`.

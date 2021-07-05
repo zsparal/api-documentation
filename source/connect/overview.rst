@@ -50,8 +50,8 @@ Charging fees on payments processed through your app
 Mollie Connect enables you to route and split payments between two or more connected accounts.
 
 The simplest use case is when your app processes payments for other Mollie accounts, and you want to deduct a fee that
-gets sent to your own balance. The user in this case will still have their own dashboard and receive a Mollie invoice.
-For this case we offer :doc:`Application fees </connect/application-fees>`.
+gets sent to your own balance. The user in this case will still have their own dashboard, pay their own Mollie payment
+fees, and receive a Mollie invoice. For this case we offer :doc:`Application fees </connect/application-fees>`.
 
 For more advanced use cases, for example if you want to cover the Mollie payment fees yourself, or for example if you
 want to split a payment with another party, we offer :doc:`Split payments </connect/splitting-payments>`.
