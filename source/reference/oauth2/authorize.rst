@@ -1,6 +1,6 @@
 Authorize
 =========
-.. api-name:: Connect API
+.. api-name:: OAuth API
 
 .. endpoint::
    :method: GET

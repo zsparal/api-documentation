@@ -1,6 +1,6 @@
 Revoke token
 ============
-.. api-name:: Connect API
+.. api-name:: OAuth API
 
 .. endpoint::
    :method: DELETE

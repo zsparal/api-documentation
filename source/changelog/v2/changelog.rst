@@ -3,10 +3,6 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
-Upcoming Changes
-================
-No remarkable changes to mention at the moment.
-
 June 2021
 =========
 Friday, 2nd
