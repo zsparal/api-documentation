@@ -121,11 +121,11 @@
   font-weight: bold;
 }
 
-.mobile-product-navigation {
+.mobile-product-navigation.link-dropdown {
   display: none;
   height: 44px;
   padding: 0 15px;
-  position: absolute !important;
+  position: absolute;
   left: 50%;
   top: 50%;
   transform: translate(-50%, -50%);
@@ -177,7 +177,7 @@
     display: none;
   }
 
-  .mobile-product-navigation {
+  .mobile-product-navigation.dk-select {
     display: block;
   }
 }
