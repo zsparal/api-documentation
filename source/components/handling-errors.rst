@@ -13,24 +13,26 @@ the checkout.
 There are *two flows* to consider, depending on whether or not 3-D Secure [#f1]_ authentication is necessary.
 
 #. If **no 3-D Secure authentication is necessary** and an error occurs, an error response will immediately be returned
-   when when calling the :doc:`/reference/v2/payments-api/create-payment`.
+   when when calling the :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`.
    Should an error occur, then Mollie will not create a Payment.
 #. If **3-D Secure authentication is necessary**, Mollie will create a Payment and give you the ``_links.checkoutUrl``
    where the shopper can authenticate the payment. If any errors occur during or after authentication, they will be
-   part of the response when retrieving the payment via the :doc:`/reference/v2/payments-api/get-payment`.
+   part of the response when retrieving the payment via the
+   :doc:`Get payment endpoint </reference/v2/payments-api/get-payment>`.
 
 The need for 3-D Secure authentication is determined by various factors, such as the estimated fraud risk for the
 payment and any agreements between you and Mollie. In the general case, 3-D Secure authentication will be necessary.
 However, you should always implement both flows.
 
-When creating a test mode payment, failure conditions can be triggered :doc:`using magic amounts <testing>`.
+When creating a test mode payment, failure conditions can be triggered :doc:`using magic amounts </components/testing>`.
 
 Payments without 3-D Secure authentication
 ------------------------------------------
 If no 3-D Secure authentication is necessary, you will receive the error upon creating the payment.
 
-If the error is caused by the shopper, the response from the :doc:`/reference/v2/payments-api/create-payment` will
-contain the ``extra`` property with two additional keys:
+If the error is caused by the shopper, the response from the
+:doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` will contain the ``extra`` property with two
+additional keys:
 
 .. list-table::
    :widths: auto
@@ -95,7 +97,7 @@ Payments with 3-D Secure authentication
 ---------------------------------------
 If 3-D Secure authentication is necessary for the payment, the shopper will first have to authenticate him / herself
 with his / her card issuer. Any errors that occur will be available to you in the response of the
-:doc:`/reference/v2/payments-api/get-payment` which you should call from your webhook.
+:doc:`Get payment endpoint </reference/v2/payments-api/get-payment>` which you should call from your webhook.
 
 In this case, the payment status will be ``failed`` and final. For new payment attempts, you should collect a new card
 token and create a new payment using our API.

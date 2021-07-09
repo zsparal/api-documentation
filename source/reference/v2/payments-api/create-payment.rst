@@ -325,8 +325,8 @@ Credit card
        .. type:: string
           :required: false
 
-     - The card token you got from :doc:`Mollie Components </guides/mollie-components/overview>`.  The token contains
-       the card information (such as card holder, card number and expiry date) needed to complete the payment.
+     - The card token you got from :doc:`Mollie Components </components/overview>`.  The token contains the card
+       information (such as card holder, card number and expiry date) needed to complete the payment.
 
    * - ``shippingAddress``
 

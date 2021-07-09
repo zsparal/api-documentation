@@ -12,9 +12,8 @@ The **Mollie API v2** offers some compelling new features compared to the older 
 * Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
-* New features such as :doc:`Mollie Components </guides/mollie-components/overview>`, using
-  :doc:`/orders/overview` for Pay later and Slice it, and wallets such as :doc:`/wallets/applepay` are
-  only available in the Mollie API v2.
+* New features such as :doc:`Mollie Components </components/overview>`, using :doc:`/orders/overview` for Pay later and
+  Slice it, and wallets such as :doc:`/wallets/applepay` are only available in the Mollie API v2.
 * Improved error messages. Error message will contain more details to help you quickly resolve any implementation
   problems.
 

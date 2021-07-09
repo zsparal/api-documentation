@@ -4,7 +4,7 @@ Mollie Components
 your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
 Self-Assessment Questionnaire A)` compliant.
 
-.. figure:: ../images/mollie-components-preview@2x.jpg
+.. figure:: images/components-preview@2x.jpg
 
 At a high level, it works by using a Javascript API to add fields to your checkout that your customer will use to enter
 their credit card details, such as their card number.
@@ -22,7 +22,7 @@ Implementation steps
 --------------------
 Follow these steps to implement Mollie Components in your checkout:
 
-.. figure:: ../images/mollie-components-flow@2x.png
+.. figure:: images/components-flow@2x.png
 
 #. Add the Mollie Components Javascript library to your checkout.
 #. Initialize the ``Mollie`` object.
@@ -118,7 +118,7 @@ After initializing the Mollie object, you should create the four card holder dat
    verificationCode.mount('#verification-code');
 
 This will add the input fields to your checkout and make them visible for your customer. To add styling to the
-Components, see :doc:`styling`.
+Components, see :doc:`Styling </components/styling>`.
 
 Handling errors
 ---------------
@@ -173,10 +173,10 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
 Create a Payment or Order with the card token
 ---------------------------------------------
 On your back end, you will receive the ``cardToken``. You need to pass this when
-:doc:`creating a Payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
+:doc:`creating a payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
 ``creditcard``.
 
-Alternatively, you can use the :doc:`/reference/v2/orders-api/create-order`. and pass the card token
+Alternatively, when using the :doc:`Orders API </reference/v2/orders-api/create-order>`, you can pass the card token
 via the ``payment.cardToken`` parameter.
 
 The ``cardToken`` is valid for 1 hour.
@@ -325,14 +325,16 @@ Response
 
 Make sure you use the API key that belongs to the same profile you used when initializing the ``Mollie`` object.
 
-It is possible an error occurs when creating the payment. See :doc:`handling-errors` on what to do in such cases.
+It is possible an error occurs when creating the payment. See :doc:`Handling errors </components/handling-errors>` for
+what to do in such cases.
 
 Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
 In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
 customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
-:doc:`/reference/v2/payments-api/create-payment` or :doc:`/reference/v2/orders-api/create-order`.
-Your customer can then authenticate him / herself with the card issuer.
+:doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` or the
+:doc:`Create order endpoint </reference/v2/orders-api/create-order>`. Your customer can then authenticate themselves
+with the card issuer.
 
 .. code-block:: none
    :linenos:
@@ -342,8 +344,8 @@ Your customer can then authenticate him / herself with the card issuer.
    Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
    Connection: Closed
 
-It is possible an error occurs during or after 3-D Secure authentication. See :doc:`handling-errors` on how to handle
-these cases.
+It is possible an error occurs during or after 3-D Secure authentication. See
+:doc:`Handling errors </components/handling-errors>` for more information on how to handle these cases.
 
 Browser support
 ---------------

@@ -167,8 +167,8 @@ Embedding credit card fields
 .. image:: images/checkout-flow-embedded-credit-card-fields@2x.png
 
 For the credit card payment method, you can fully embed the credit card input fields while staying PCI-DSS-compliant
-using Mollie Components. Please refer to the guide on :doc:`Mollie Components </guides/mollie-components/overview>` for
-more information on how to integrate.
+using Mollie Components. Please refer to the guide on :doc:`Mollie Components </components/overview>` for more
+information on how to integrate.
 
 .. _embedding-issuer-selection:
 

@@ -1,6 +1,12 @@
-Mollie Components reference
-===========================
-The ``Mollie`` object is used to initialize :doc:`Mollie Components <overview>`.
+Mollie.js reference
+===================
+.. api-name:: Mollie.js
+   :version: 1
+
+.. endpoint::
+   :url: https://js.mollie.com/v1/mollie.js
+
+The ``Mollie`` object is used to initialize :doc:`Mollie Components </components/overview>`.
 
 .. _components-mollie-constructor:
 
@@ -14,7 +20,7 @@ Mollie(profileId[, options])
        .. type:: string
           :required: true
 
-     - Your Profile Id, for example ``pfl_3RkSN1zuPE``.
+     - Your profile ID, for example ``pfl_3RkSN1zuPE``.
 
    * - ``options``
 
@@ -117,7 +123,7 @@ You need to create four components, one for each card holder data field.
               .. type:: styles object
                   :required: false
 
-            - See :doc:`styling`.
+            - See :doc:`Styling Mollie Components </components/styling>`.
 
 Javascript
 ^^^^^^^^^^
