@@ -6,17 +6,17 @@ Self-Assessment Questionnaire A)` compliant.
 
 .. figure:: images/components-preview@2x.jpg
 
-At a high level, it works by using a Javascript API to add fields to your checkout that your customer will use to enter
-their credit card details, such as their card number.
+At a high level, it works by using a Javascript API, dubbed :doc:`Mollie.js </reference/mollie-js>`, to add fields to
+your checkout that your customer will use to enter their credit card details, such as their card number.
 
 Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
 Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
 :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
 :doc:`/reference/v2/orders-api/create-order`.
 
-Once you have created a payment or order, you should redirect your customer to the URL in the ``_links.checkout`` property from
-the response. This link is where your customer can perform the 3-D Secure authentication. If the customer authenticates successfully, the
-payment is completed.
+Once you have created a payment or order, you should redirect your customer to the URL in the ``_links.checkout``
+property from the response. This link is where your customer can perform the 3-D Secure authentication. If the customer
+authenticates successfully, the payment is completed.
 
 Implementation steps
 --------------------
@@ -24,7 +24,7 @@ Follow these steps to implement Mollie Components in your checkout:
 
 .. figure:: images/components-flow@2x.png
 
-#. Add the Mollie Components Javascript library to your checkout.
+#. Add :doc:`Mollie.js </reference/mollie-js>` to your checkout.
 #. Initialize the ``Mollie`` object.
 #. Create and mount the four Components for the four credit card fields (card holder, card number, expiry date and
    :abbr:`CVC (Card Verification Code)`). This will add the fields to your checkout.
@@ -32,16 +32,17 @@ Follow these steps to implement Mollie Components in your checkout:
    checkout form.
 #. Send the ``cardToken`` to your back end, by adding it to your form.
 #. From your back end, create a credit card Payment or Order with the ``cardToken`` using the
-   :doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
-   :doc:`/reference/v2/orders-api/create-order` respectively.
+   :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` or
+   :doc:`Create order endpoint </reference/v2/orders-api/create-order>` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
 Mollie has created `example implementations <https://github.com/mollie/components-examples>`_ you can use to get
 started.
 
-Add the Mollie Components Javascript library to your checkout
--------------------------------------------------------------
-Start by including ``mollie.js`` in to your project. It should be added just before the ``</body>`` tag.
+Add Mollie.js to your checkout
+------------------------------
+Start by including :doc:`Mollie.js </reference/mollie-js>` in to your project. It should be added just before the
+``</body>`` tag.
 
 The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
 
@@ -62,9 +63,9 @@ The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
 
 Initialize the Mollie object
 ----------------------------
-First, you need the Profile Id of the profile that you want to use. This can be found on the
-`Developers - API-keys <https://www.mollie.com/dashboard/developers/api-keys>`_ page in the Dashboard or retrieved
-programmatically using the :doc:`Get Current Profile API </reference/v2/profiles-api/get-profile-me>`.
+First, you need the ID of the profile that you want to use This can be found on the
+`Developers - API-keys <https://www.mollie.com/dashboard/developers/api-keys>`_ page in the Dashboard or retrieved
+programmatically using the :doc:`Get current profile endpoint </reference/v2/profiles-api/get-profile-me>`.
 
 After the script has loaded you can use the :ref:`components-mollie-constructor` function. This will return
 an object that you can use for creating the four Components your customer will use to enter their card holder data.
@@ -74,8 +75,8 @@ an object that you can use for creating the four Components your customer will u
 
    var mollie = Mollie('pfl_3RkSN1zuPE', { locale: 'nl_NL', testmode: false });
 
-.. note:: Be aware the Profile Id is *not* your API key. Your API key is private and should never be used in a browser
-          context. The Profile Id starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
+.. note:: Be aware the profile ID is *not* your API key. Your API key is private and should never be used in a browser
+          context. The profile ID starts with ``pfl_``, where as API keys start with ``live_`` or ``test_``.
 
 Create and mount the card holder data Components
 ------------------------------------------------
