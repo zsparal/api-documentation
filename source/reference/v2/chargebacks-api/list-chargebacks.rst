@@ -19,7 +19,7 @@ List chargebacks
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -46,7 +46,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you have to specify which profile you are retrieving chargebacks for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.

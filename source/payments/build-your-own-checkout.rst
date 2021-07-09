@@ -29,8 +29,8 @@ The steps are roughly as follows:
 #. Depending on the payment method, the customer may need to authenticate the transaction with their bank or card
    issuer.
 
-#. The customer completes the payment, you receive a :doc:`webhook </guides/webhooks>`, and the customer is sent back to
-   your website.
+#. The customer completes the payment, you receive a :doc:`webhook </overview/webhooks>`, and the customer is sent back
+   to your website.
 
 Embedding method selection
 --------------------------
@@ -108,7 +108,8 @@ an overview of the typical flow for each of our payment methods, and how they ca
        #. Customer returns to the webshop.
      - The issuer selection screen (step 2) can be integrated using the Methods API. See
        :ref:`embedding-issuer-selection` below. The QR flow (step 2) can also be
-       integrated using the QR embed in the Payments API. See the :doc:`QR codes guide </guides/qr-codes>` for details.
+       integrated using the QR embed in the Payments API. See the :doc:`QR codes guide </payments/qr-codes>` for
+       details.
 
    * - **KBC/CBC**
      - #. Customer selects KBC/CBC at checkout.

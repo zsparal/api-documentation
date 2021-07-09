@@ -14,7 +14,7 @@ List order refunds
 
 Retrieve all order refunds.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -40,7 +40,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbj
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::

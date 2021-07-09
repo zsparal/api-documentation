@@ -60,7 +60,7 @@ a payment with the ``method`` parameter set to ``applepay`` and redirect the sho
 returned.
 
 When the shopper authorizes the payment, Mollie will create a payment with the method ``creditcard``. We will then call
-your :doc:`webhook </guides/webhooks>` and redirect the shopper back to your website as normal.
+your :doc:`webhook </overview/webhooks>` and redirect the shopper back to your website as normal.
 
 Examples
 ^^^^^^^^
@@ -196,4 +196,4 @@ For more details on detecting the support of Apple Pay on a device, see `Apple's
 Direct integration of Apple Pay
 -------------------------------
 Integrating Apple Pay in your own checkout is available. See our
-:doc:`full guide </guides/applepay-direct-integration>`.
+:doc:`full guide </wallets/applepay-direct-integration>`.

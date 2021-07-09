@@ -26,7 +26,7 @@ List refunds
 Retrieve all :doc:`refunds </payments/refunds>`. If the payment-specific endpoint is used, only refunds for that
 specific payment are returned.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------

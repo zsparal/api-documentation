@@ -14,7 +14,7 @@ List invoices
 
 Retrieve all invoices on the account. Optionally filter on year or invoice number.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------

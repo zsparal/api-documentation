@@ -9,7 +9,7 @@ required.
 
 Secure connection required
 --------------------------
-Mollie uses the API-key as :doc:`means of authentication </guides/authentication>` and requires HTTPS connections to
+Mollie uses the API-key as :doc:`means of authentication </overview/authentication>` and requires HTTPS connections to
 guarantee security. This means the Mollie API can only be accessed through the secure ``https`` protocol. All of the API
 clients we publish use HTTPS.
 
@@ -32,7 +32,7 @@ you covered.
 
 What about the webhooks?
 ------------------------
-The :doc:`webhooks </guides/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
+The :doc:`webhooks </overview/webhooks>` are secured by HTTPS too, even if the merchant's hosting service is not using
 HTTPS. This is because the webhook requests – which Mollie sends out to communicate
 :doc:`status changes </payments/status-changes>` – simply do not contain sensitive information. Your webhook
 script will always have to :doc:`fetch the object </reference/v2/payments-api/get-payment>` in order to know its status,

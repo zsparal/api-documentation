@@ -30,7 +30,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1z
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, the ``testmode`` query string parameter is available. You must pass this as a
 parameter in the query string if you want to retrieve a payment that was created in test mode.
 
@@ -51,7 +51,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``settlement`` Include the settlement this payment belongs to, when available.
-* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object. Only available for iDEAL, Bancontact
+* ``details.qrCode`` Include a :doc:`QR code </payments/qr-codes>` object. Only available for iDEAL, Bancontact
   and bank transfer payments.
 
 Response
@@ -1057,7 +1057,7 @@ The ``qrCode`` key in the ``details`` object will then become available. The key
      - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
        images. You should support both.
 
-For an implemention guide, see our :doc:`QR codes guide </guides/qr-codes>`.
+For an implemention guide, see our :doc:`QR codes guide </payments/qr-codes>`.
 
 Example
 -------

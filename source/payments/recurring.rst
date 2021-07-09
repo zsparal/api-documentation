@@ -23,7 +23,7 @@ In the following sections we explain the following topics.
 * :ref:`Charging periodically with subscriptions <payments/recurring/charging-periodically>`
 * :ref:`How do webhooks for subscriptions work? <payments/recurring/subscription-webhooks>`
 
-For more information on how to test recurring payments, please refer to our :doc:`guide </guides/testing>` for testing
+For more information on how to test recurring payments, please refer to our :doc:`guide </overview/testing>` for testing
 the Mollie API.
 
 .. _payments/recurring/first-payment:
@@ -138,7 +138,7 @@ your profile.
               \"webhookUrl\": \"https://webshop.example.org/payments/webhook/\"
           }"
 
-#. Like regular payments your :doc:`webhook </guides/webhooks>` is called for retrieving status updates.
+#. Like regular payments your :doc:`webhook </overview/webhooks>` is called for retrieving status updates.
 
 .. note:: You should include the PayPal fraud library when you use PayPal for on-demand payments.
 

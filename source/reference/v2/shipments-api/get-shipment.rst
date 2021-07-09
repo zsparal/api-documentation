@@ -21,7 +21,7 @@ the shipment's ID, for example ``shp_3wmsgCJN4U``
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
 .. list-table::

@@ -24,7 +24,7 @@ Retrieve Refunds.
 * When using the top level endpoint with OAuth, you can specify the profile and mode with the ``profileId`` and
   ``testmode`` parameters respectively. If you omit ``profileId``, you will get all Refunds for the Organization.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -51,7 +51,7 @@ When using the payment-specific endpoint, replace ``paymentId`` in the endpoint 
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can specify which profile you are retrieving refunds for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. If you omit the
 ``profileId`` parameter, the API will return all refunds across all profiles. See

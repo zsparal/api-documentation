@@ -1,6 +1,6 @@
 Testing Mollie Components
 =========================
-**Mollie Components** can be tested during implementation with the regular :doc:`test mode </guides/testing>`.
+**Mollie Components** can be tested during implementation with the regular :doc:`test mode </overview/testing>`.
 
 First, you will have to initialize the :ref:`components-mollie-constructor` constructor with your profile ID and
 the ``testmode`` option:

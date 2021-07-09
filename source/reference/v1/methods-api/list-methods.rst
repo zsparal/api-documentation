@@ -21,7 +21,7 @@ List payment methods
 
 Retrieve all payment methods activated on the payment profile.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -73,7 +73,7 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, the only mandatory extra query string parameter is the ``profileId`` parameter.
 With it, you can specify which profile you want to list the methods of. Organizations can have multiple profiles for
 each of their websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.

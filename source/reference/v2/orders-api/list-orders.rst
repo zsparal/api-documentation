@@ -14,7 +14,7 @@ List orders
 
 Retrieve all orders.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -38,7 +38,7 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can specify which profile you are retrieving orders for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. If you omit the
 ``profileId`` parameter, the API will return all orders across all profiles. See

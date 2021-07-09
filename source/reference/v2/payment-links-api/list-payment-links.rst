@@ -14,7 +14,7 @@ List payment links
 
 Retrieve all payments links created with the current website profile, ordered from newest to oldest.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -38,7 +38,7 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payment links. If you omit the ``profileId``
 parameter, you will get all payment links on the organization. Organizations can have multiple profiles for each of

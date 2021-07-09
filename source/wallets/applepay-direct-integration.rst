@@ -155,7 +155,7 @@ receive an error when creating the payment:
         "detail": "The transaction was declined by the issuer",
         "_links": {
             "documentation": {
-                "href": "https://docs.mollie.com/guides/handling-errors",
+                "href": "https://docs.mollie.com/overview/handling-errors",
                 "type": "text/html"
             }
         }

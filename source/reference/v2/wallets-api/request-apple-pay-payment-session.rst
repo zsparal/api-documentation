@@ -40,7 +40,7 @@ For the full documentation, see the official `Apple Pay JS API
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you have to specify which profile you are creating the payment session for using
 the ``profileId`` parameter. Data from the profile will be used for Apple Pay. For example, the name of the profile will
 be displayed on the touch bar, if the payment is used on a MacBook with touch bar.

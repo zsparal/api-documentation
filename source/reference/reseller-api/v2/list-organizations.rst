@@ -14,7 +14,7 @@ List organizations
 
 Retrieve all organizations that are connected to your partner-account.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------

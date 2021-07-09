@@ -20,7 +20,7 @@ Replace ``id`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, the ``testmode`` query string parameter is also available.
 
 .. list-table::

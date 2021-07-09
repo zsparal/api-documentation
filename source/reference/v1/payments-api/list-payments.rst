@@ -21,7 +21,7 @@ List payments
 
 Retrieve all payments created with the current payment profile, ordered from newest to oldest.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
@@ -44,7 +44,7 @@ Parameters
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payments. If you omit the ``profileId``
 parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
@@ -74,7 +74,7 @@ This endpoint allows you to include additional information by appending the foll
 querystring parameter.
 
 * ``settlement`` Include the settlement a payment belongs to, when available.
-* ``details.qrCode`` Include a :doc:`QR code </guides/qr-codes>` object for each payment that supports it. Only
+* ``details.qrCode`` Include a :doc:`QR code </payments/qr-codes>` object for each payment that supports it. Only
   available for iDEAL, Bancontact and bank transfer payments.
 
 Response

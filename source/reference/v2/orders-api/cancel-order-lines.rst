@@ -89,7 +89,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
@@ -246,7 +246,7 @@ Response (cancellation rejected)
        "detail": "Update authorization not allowed. Decision is based on order state and outcome of risk assessment.",
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/guides/handling-errors",
+               "href": "https://docs.mollie.com/overview/handling-errors",
                "type": "text/html"
            }
        }

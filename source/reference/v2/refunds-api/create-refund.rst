@@ -66,7 +66,7 @@ Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payment
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </guides/authentication>` or are creating an
+If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. list-table::
@@ -233,7 +233,7 @@ Response (duplicate refund detected)
         "detail": "A duplicate refund has been detected",
         "_links": {
             "documentation": {
-                "href": "https://docs.mollie.com/guides/handling-errors",
+                "href": "https://docs.mollie.com/overview/handling-errors",
                 "type": "text/html"
             }
         }

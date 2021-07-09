@@ -25,7 +25,7 @@ Benefits of Mollie Checkout
   their card, it is very easy for the customer to make another payment attempt with the same or even a different payment
   method. No need to implement any extra APIs.
 
-* Full support for :doc:`QR codes </guides/qr-codes>`.
+* Full support for :doc:`QR codes </payments/qr-codes>`.
 
 * Full support for wallet-style payments such as :doc:`Apple Pay </wallets/applepay>`.
 

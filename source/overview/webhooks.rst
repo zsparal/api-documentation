@@ -28,7 +28,7 @@ is ``paid`` you can start shipping the order.
       id=tr_d0b0E3EA3v
 
 It might seem a little cumbersome that we do not post the new status immediately, but
-:doc:`proper security </guides/security>` dictates this flow. Since the status is not transmitted in the webhook, fake
+:doc:`proper security </overview/security>` dictates this flow. Since the status is not transmitted in the webhook, fake
 calls to your webhook will never result in orders being processed without being actually paid.
 
 More examples are available in the documentation of the `Mollie API client <https://www.mollie.com/en/modules>`_ you are

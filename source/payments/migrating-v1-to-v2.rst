@@ -9,7 +9,7 @@ The **Mollie API v2** offers some compelling new features compared to the older 
   non-``EUR`` currencies. Your account will still be settled in ``EUR``, so new fields have been added in the API to
   reflect the settlement amount for various resources.
 * Possible to update details of payments via the new :doc:`/reference/v2/payments-api/update-payment`.
-* Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </guides/pagination>`
+* Improved support for accessing large sets of objects, now uses :doc:`cursor-based pagination </overview/pagination>`
   instead of pagination based on counts and offsets.
 * Settlement details are now available for refunds and chargebacks as well.
 * New features such as :doc:`Mollie Components </components/overview>`, using :doc:`/orders/overview` for Pay later and
@@ -296,7 +296,7 @@ The new error reporting format in ``v2`` is the following:
        "detail": "Missing authentication, or failed to authenticate",
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/guides/authentication",
+               "href": "https://docs.mollie.com/overview/authentication",
                "type": "text/html"
            }
        }

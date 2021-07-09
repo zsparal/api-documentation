@@ -87,7 +87,7 @@ Example Create Payment API error response
        },
        "_links": {
            "documentation": {
-               "href": "https://docs.mollie.com/guides/handling-errors",
+               "href": "https://docs.mollie.com/overview/handling-errors",
                "type": "text/html"
            }
        }

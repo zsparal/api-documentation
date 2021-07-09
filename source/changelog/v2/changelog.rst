@@ -311,7 +311,7 @@ Wednesday, 27th
 Tuesday, 19th
 -------------
 - Added the ``sellerProtection`` field to the PayPal payment details.
-- The :doc:`Apple Pay direct integration </guides/applepay-direct-integration>` can now also be used with
+- The :doc:`Apple Pay direct integration </wallets/applepay-direct-integration>` can now also be used with
   :doc:`/reference/v2/orders-api/create-order`.
 
 Friday, 15th
@@ -352,7 +352,7 @@ Tuesday, 24th
 Friday, 20th
 ------------
 - Changed the retry schedule of our webhook system. We will try to call your webhook for 26 hours in total now. See the
-  :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+  :doc:`webhooks guide </overview/webhooks>` for the new schedule.
 
 Tuesday, 17th
 -------------
@@ -424,7 +424,7 @@ Thursday, 13th
 
 Wednesday, 12th
 ---------------
-- :doc:`/guides/applepay-direct-integration` is now available.
+- :doc:`/wallets/applepay-direct-integration` is now available.
 
 May 2019
 ========
@@ -625,7 +625,7 @@ Monday, 29th
 Thursday, 25th
 --------------
 - We now accept the use of an underscore ``_`` in Redirect- and Webhook-URLs.
-- A :doc:`guide </guides/testing>` has been added explaining how to test your integration of the Mollie API.
+- A :doc:`guide </overview/testing>` has been added explaining how to test your integration of the Mollie API.
 - Added the ``changePaymentState`` link to the :doc:`Payments API </reference/v2/payments-api/get-payment>`.
   It allows you to set the final payment state for test mode recurring payments.
 
@@ -634,7 +634,7 @@ Wednesday, 24th
 - Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`
   to see how many charges are left for completing the subscription.
 - Consumer IBANs of Bancontact payments will now always be shared via the API.
-- Added :doc:`Organization access tokens </guides/authentication>` as an authentication method.
+- Added :doc:`Organization access tokens </overview/authentication>` as an authentication method.
 
 Friday, 19th
 --------------

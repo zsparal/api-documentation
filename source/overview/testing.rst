@@ -1,7 +1,7 @@
 Testing the Mollie API
 ======================
 During the process of building your integration, it is important to properly test it. As briefly explained in our
-:doc:`authentication guide </guides/authentication>`, you can access the test mode of the Mollie API in two ways: by
+:doc:`authentication guide </overview/authentication>`, you can access the test mode of the Mollie API in two ways: by
 using the *Test API key*, or, if you are using organization access tokens or app tokens, by providing the ``testmode``
 parameter in your API request.
 
@@ -28,6 +28,6 @@ For paid test mode payments the resource will also include the ``changePaymentSt
 can be used to test refund and chargeback functionality.
 
 Apart from the hosted payment pages and the fact that test mode payments are created instead of real ones, the Mollie
-API behaves identical in both environments. This includes calling your :doc:`webhook </guides/webhooks>`.
+API behaves identical in both environments. This includes calling your :doc:`webhook </overview/webhooks>`.
 
 Just make sure to start using live mode when your site goes public, or your customers will get a free ride.

@@ -26,7 +26,7 @@ List chargebacks
 Retrieve all received chargebacks. If the payment-specific endpoint is used, only chargebacks for that specific payment
 are returned.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------

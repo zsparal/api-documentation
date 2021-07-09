@@ -11,7 +11,7 @@ The basic payment flow
 ----------------------
 In its simplest form, setting up a payment requires only three steps: setting up the payment with our
 :doc:`Payments API </reference/v2/payments-api/create-payment>`, sending the customer to our
-:doc:`hosted checkout </payments/hosted-checkout>`, and processing the :doc:`webhook </guides/webhooks>` we send once
+:doc:`hosted checkout </payments/hosted-checkout>`, and processing the :doc:`webhook </overview/webhooks>` we send once
 the payment is completed.
 
 You can also opt for a deeper integration, from offering your own payment method selection all the way to embedding
@@ -49,7 +49,7 @@ programmer's perspective.
 #. The customer reaches the :doc:`checkout </payments/hosted-checkout>`, chooses a payment method and makes the payment.
    This process is entirely taken care of by Mollie. You do not have to do anything here.
 
-#. When the payment is made, Mollie will send you a :doc:`webhook </guides/webhooks>` informing your website about the
+#. When the payment is made, Mollie will send you a :doc:`webhook </overview/webhooks>` informing your website about the
    :doc:`payment's status change </payments/status-changes>`. You can configure the webhook URL per profile in your
    Mollie account, or per payment in the API request.
 

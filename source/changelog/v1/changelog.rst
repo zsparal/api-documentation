@@ -162,7 +162,7 @@ September 2019
 Friday, 20th
 ------------
 - Changed the retry schedule of our webhook system. We will try to call your webhook for 26 hours in total now. See the
-  :doc:`webhooks guide </guides/webhooks>` for the new schedule.
+  :doc:`webhooks guide </overview/webhooks>` for the new schedule.
 
 Tuesday, 17th
 -------------

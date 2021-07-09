@@ -14,7 +14,7 @@ List settlements
 
 Retrieve all settlements, ordered from new to old.
 
-The results are paginated. See :doc:`pagination </guides/pagination>` for more information.
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
