@@ -1,12 +1,17 @@
-Mollie.js reference
-===================
-.. api-name:: Mollie.js
+Mollie.js
+=========
+.. api-name:: Mollie JavaScript SDK
    :version: 1
 
 .. endpoint::
    :url: https://js.mollie.com/v1/mollie.js
 
-The ``Mollie`` object is used to initialize :doc:`Mollie Components </components/overview>`.
+Mollie's browser-side JavaScript library is called ``Mollie.js``. You can use it to offer a more deeply embedded
+checkout experience. See the guides on :doc:`Mollie Components </components/overview>` and on
+:doc:`building your own checkout </payments/build-your-own-checkout>` for more information.
+
+The ``Mollie`` object is used to initialize Mollie Components. ``Component`` objects each reference an embeddable
+checkout component, such as a credit card number field or a credit card expiry date field.
 
 .. _components-mollie-constructor:
 
