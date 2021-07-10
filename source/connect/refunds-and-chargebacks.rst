@@ -4,7 +4,7 @@ Refund and chargeback processing works differently based on whether you work wit
 :doc:`Application fees </connect/application-fees>` or with :doc:`Split payments </connect/splitting-payments>`.
 
 Refunding a payment with application fees
---------------------------------------
+-----------------------------------------
 When using :doc:`Application fees </connect/application-fees>`, the connected merchant account is in full control of the
 payment, and any refunds and chargebacks are also processed on their account.
 
