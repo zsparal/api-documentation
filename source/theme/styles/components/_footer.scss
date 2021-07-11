@@ -30,7 +30,6 @@
   outline: none;
 }
 
-.footer a:focus,
 .footer a:hover {
   color: #fff;
   text-decoration: none;
@@ -484,8 +483,7 @@
   background-color: $grey-lightest;
 }
 
-.footer__language-list .footer__language-item a:hover,
-.footer__language-list .footer__language-item a:focus {
+.footer__language-list .footer__language-item a:hover {
   background-color: $brand-primary;
   color: #fff;
   text-decoration: none;

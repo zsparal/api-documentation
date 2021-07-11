@@ -4,6 +4,7 @@ from .authentication_directive import AuthenticationDirective
 from .code_block_selector_directive import CodeBlockSelectorDirective
 from .data_type_directive import DataTypeDirective
 from .param_name_directive import ParamNameDirective
+from .parameter_directive import ParameterDirective
 
 
 def setup(app):
@@ -18,6 +19,7 @@ def setup(app):
     app.add_directive('code-block-selector', CodeBlockSelectorDirective)
     app.add_directive('type', DataTypeDirective)
     app.add_directive('param-name', ParamNameDirective)
+    app.add_directive('parameter', ParameterDirective)
 
     # When debugging, it is best to disable parallel reading and writing.
     return {

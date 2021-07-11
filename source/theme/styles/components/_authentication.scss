@@ -16,8 +16,7 @@
   transform: translateY(-3px);
 }
 
-.authentication a.reference:hover,
-.authentication a.reference:focus {
+.authentication a.reference:hover {
   color: $brand-primary-hover;
   text-decoration: none;
 }

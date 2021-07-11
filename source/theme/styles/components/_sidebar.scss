@@ -49,10 +49,6 @@
   @include bare-list;
 }
 
-.sidebar__inner a:focus {
-  text-decoration: none;
-}
-
 .sidebar__topic-header {
   font-size: 14px;
   font-weight: 600;

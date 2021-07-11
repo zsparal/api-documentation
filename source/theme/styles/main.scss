@@ -76,8 +76,7 @@ a {
   text-decoration: none;
 }
 
-a:not([class]):hover,
-a:not([class]):focus {
+a:not([class]):hover {
   text-decoration: underline;
 }
 
@@ -114,8 +113,7 @@ a.headerlink::before {
   max-width: 100%;
 }
 
-.rst-content a:hover,
-.rst-content a:focus {
+.rst-content a:hover {
   text-decoration: underline;
 }
 
