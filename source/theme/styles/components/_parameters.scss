@@ -138,6 +138,10 @@
 
 .parameter__collapse-button:hover {
   color: #333;
+}
+
+/** override .rst-content a:hover */
+.rst-content .parameter__collapse-button:hover {
   text-decoration: none;
 }
 
