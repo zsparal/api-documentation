@@ -35,7 +35,7 @@ Parameters
    You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365>`_ per payment
    method in our help center. Additionally, they can be retrieved using :doc:`/reference/v2/methods-api/get-method`.
 
-   .. parameter:: amount.currency
+   .. parameter:: currency
       :type: string
       :condition: required
 
@@ -43,7 +43,7 @@ Parameters
       :doc:`currencies supported </payments/multicurrency>` depend on the payment methods that are enabled on your
       account.
 
-   .. parameter:: amount.value
+   .. parameter:: value
       :type: string
       :condition: required
 
