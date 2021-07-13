@@ -25,54 +25,41 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a permission object. Will always contain ``permission`` for this endpoint.
+   The permission's unique identifier, for example ``payments.read``
 
-   * - ``id``
+.. parameter:: description
+   :type: string
 
-       .. type:: string
+   A short description of what the permission allows.
 
-     - The permission's unique identifier, for example ``payments.read``
+.. parameter:: granted
+   :type: boolean
 
-   * - ``description``
+   Whether this permission is granted to the app by the organization or not.
 
-       .. type:: string
+.. parameter:: _links
+   :type: object
 
-     - A short description of what the permission allows.
+   An object with several URL objects relevant to the permission. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-   * - ``granted``
+   .. parameter:: self
+      :type: URL object
 
-       .. type:: boolean
+      The API resource URL of the permission itself.
 
-     - Whether this permission is granted to the app by the organization or not.
+   .. parameter:: documentation
+      :type: URL object
 
-   * - ``_links``
-
-       .. type:: object
-
-     - An object with several URL objects relevant to the permission. Every URL object will contain an ``href`` and a
-       ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the permission itself.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the permission retrieval endpoint documentation.
+      The URL to the permission retrieval endpoint documentation.
 
 Example
 -------

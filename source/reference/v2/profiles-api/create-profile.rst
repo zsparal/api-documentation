@@ -17,87 +17,78 @@ Dashboard manually. However, the Mollie API also allows automatic profile creati
 
 Parameters
 ----------
-.. list-table::
-   :widths: auto
+.. parameter:: name
+   :type: string
+   :condition: required
 
-   * - ``name``
+   The profile's name should reflect the trade name or brand name of the profile's website or application.
 
-       .. type:: string
-          :required: true
+.. parameter:: website
+   :type: string
+   :condition: required
 
-     - The profile's name should reflect the trade name or brand name of the profile's website or application.
+   The URL to the profile's website or application. The URL must be compliant to
+   `RFC3986 <https://tools.ietf.org/html/rfc3986>`_ with the exception that we only accept URLs with ``http://`` or
+   ``https://`` schemes and domains that contain a TLD. URLs containing an ``@`` are not allowed.
 
-   * - ``website``
+.. parameter:: email
+   :type: string
+   :condition: required
 
-       .. type:: string
-          :required: true
+   The email address associated with the profile's trade name or brand.
 
-     - The URL to the profile's website or application. The URL must be compliant to
-       `RFC3986 <https://tools.ietf.org/html/rfc3986>`_ with the exception that we only accept URLs with ``http://`` or
-       ``https://`` schemes and domains that contain a TLD. URLs containing an ``@`` are not allowed.
+.. parameter:: phone
+   :type: phone number
+   :condition: required
 
-   * - ``email``
+   The phone number associated with the profile's trade name or brand. Must be in the
+   `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
-       .. type:: string
-          :required: true
+.. parameter:: categoryCode
+   :type: integer
+   :condition: optional
 
-     - The email address associated with the profile's trade name or brand.
+   The industry associated with the profile's trade name or brand.
 
-   * - ``phone``
+   Possible values:
 
-       .. type:: phone number
-          :required: true
+   * ``5192`` Books, magazines and newspapers
+   * ``5262`` Marketplaces, crowdfunding, donation platforms
+   * ``5399`` General merchandise
+   * ``5499`` Food and drinks
+   * ``5533`` Automotive Products
+   * ``5641`` Children Products
+   * ``5651`` Clothing & Shoes
+   * ``5712`` Home furnishing
+   * ``5732`` Electronics, computers and software
+   * ``5734`` Hosting/VPN services
+   * ``5735`` Entertainment
+   * ``5815`` Credits/vouchers/giftcards
+   * ``5921`` Alcohol
+   * ``5944`` Jewelry & Accessories
+   * ``5945`` Hobby, Toy, and Game Shops
+   * ``5977`` Health & Beauty products
+   * ``6012`` Financial services
+   * ``6051`` Crypto currency
+   * ``7299`` Consultancy
+   * ``7922`` Events, conferences, concerts, tickets
+   * ``7997`` Gyms, membership fee based sports
+   * ``7999`` Travel, rental and transportation
+   * ``8111`` Lawyers and legal advice
+   * ``8299`` Advising/coaching/training
+   * ``8398`` Charity and donations
+   * ``8699`` Political parties
+   * ``9399`` Government services
+   * ``0`` Other
 
-     - The phone number associated with the profile's trade name or brand. Must be in the
-       `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
+.. parameter:: mode
+   :type: string
+   :condition: optional
 
-   * - ``categoryCode``
+   Creating a test profile by setting this parameter to ``test``, enables you to start using the API without having to
+   provide all your business info just yet. Defaults to ``live``.
 
-       .. type:: integer
-          :required: false
-
-     - The industry associated with the profile's trade name or brand.
-
-       Possible values:
-
-       * ``5192`` Books, magazines and newspapers
-       * ``5262`` Marketplaces, crowdfunding, donation platforms
-       * ``5399`` General merchandise
-       * ``5499`` Food and drinks
-       * ``5533`` Automotive Products
-       * ``5641`` Children Products
-       * ``5651`` Clothing & Shoes
-       * ``5712`` Home furnishing
-       * ``5732`` Electronics, computers and software
-       * ``5734`` Hosting/VPN services
-       * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards
-       * ``5921`` Alcohol
-       * ``5944`` Jewelry & Accessories
-       * ``5945`` Hobby, Toy, and Game Shops
-       * ``5977`` Health & Beauty products
-       * ``6012`` Financial services
-       * ``6051`` Crypto currency
-       * ``7299`` Consultancy
-       * ``7922`` Events, conferences, concerts, tickets
-       * ``7997`` Gyms, membership fee based sports
-       * ``7999`` Travel, rental and transportation
-       * ``8111`` Lawyers and legal advice
-       * ``8299`` Advising/coaching/training
-       * ``8398`` Charity and donations
-       * ``8699`` Political parties
-       * ``9399`` Government services
-       * ``0`` Other
-
-   * - ``mode``
-
-       .. type:: string
-          :required: false
-
-     - Creating a test profile by setting this parameter to ``test``, enables you to start using the API
-       without having to provide all your business info just yet. Defaults to ``live``.
-
-       Possible values: ``live`` ``test``
+   Possible values: ``live`` ``test``
 
 Response
 --------
@@ -145,7 +136,7 @@ Example
 
       profile = mollie_client.profiles.create(
           data={
-              'name': 'My website name',
+      'name': 'My website name',
               'website': 'https://www.mywebsite.com',
               'email': 'info@mywebsite.com',
               'phone': '+31208202070',

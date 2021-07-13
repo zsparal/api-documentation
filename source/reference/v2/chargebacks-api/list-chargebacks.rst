@@ -26,23 +26,18 @@ Parameters
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: from
+   :type: string
+   :condition: optional
 
-   * - ``from``
+   Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the chargeback with this ID. The chargeback
+   with this ID is included in the result set as well.
 
-       .. type:: string
-          :required: false
+.. parameter:: limit
+   :type: integer
+   :condition: optional
 
-     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the chargeback with this ID. The
-       chargeback with this ID is included in the result set as well.
-
-   * - ``limit``
-
-       .. type:: integer
-          :required: false
-
-     - The number of chargebacks to return (with a maximum of 250).
+   The number of chargebacks to return (with a maximum of 250).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -51,15 +46,12 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: required for access tokens
+   :collapse: true
 
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -72,52 +64,37 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: count
+   :type: integer
 
-   * - ``count``
+   The number of chargebacks found in ``_embedded``.
 
-       .. type:: integer
+.. parameter:: _embedded
+   :type: object
+   :collapse-children: false
 
-     - The number of chargebacks found in ``_embedded``.
+   The object containing the queried data.
 
-   * - ``_embedded``
+   .. parameter:: chargebacks
+      :type: array
 
-       .. type:: object
+      An array of chargeback objects as described in
+      :doc:`Get chargeback </reference/v2/chargebacks-api/get-chargeback>`.
 
-     - The object containing the queried data.
+.. parameter:: _links
+   :type: object
 
-       .. list-table::
-          :widths: auto
+   Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type`` field.
 
-          * - ``chargebacks``
+   .. parameter:: self
+      :type: object
 
-              .. type:: array
+      The URL to the current set of chargebacks.
 
-            - An array of chargeback objects as described in
-              :doc:`Get chargeback </reference/v2/chargebacks-api/get-chargeback>`.
+   .. parameter:: documentation
+      :type: object
 
-   * - ``_links``
-
-       .. type:: object
-
-     - Links related to the lists of chargebacks. Every URL object will contain an ``href`` and a ``type``
-       field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: object
-
-            - The URL to the current set of chargebacks.
-
-          * - ``documentation``
-
-              .. type:: object
-
-            - The URL to the chargebacks list endpoint documentation.
+      The URL to the chargebacks list endpoint documentation.
 
 Example
 -------

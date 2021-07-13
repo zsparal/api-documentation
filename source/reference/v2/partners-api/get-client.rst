@@ -23,81 +23,61 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via
 the ``embed`` query string parameter.
 
-* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>`
-  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
-  the scopes (of the app that causes the link on the organization) include ``organizations.read``.
-* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>`
-  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
-  the scopes (of the app that causes the link on the organization) include ``onboarding.read``.
+* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>` of the client.
+  Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app that causes
+  the link on the organization) include ``organizations.read``.
+* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` of the
+  client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app
+  that causes the link on the organization) include ``onboarding.read``.
 
 Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a client object. Will always contain ``client`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a client object. Will always contain ``client`` for this
-       endpoint.
+   The unique identifier of the client, which corresponds to the ID of the organization, for example ``org_1337``.
 
-   * - ``id``
+.. parameter:: organizationCreatedAt
+   :type: date
+   :condition: optional
 
-       .. type:: string
+   The date and time the organization was created, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Only
+   returned when one of the embeds is available.
 
-     - The unique identifier of the client, which corresponds to the ID of the organization, for
-       example ``org_1337``.
+.. parameter:: _links
+   :type: object
 
-   * - ``organizationCreatedAt``
+   An object with several URL objects relevant to the client resource. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-       .. type:: date
-          :required: false
+   .. parameter:: self
+      :type: URL object
 
-     - |
-       | The date and time the organization was created, in
-         `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-       | Only returned when one of the embeds is available.
+      The API resource URL of the client itself.
 
-   * - ``_links``
+   .. parameter:: organization
+      :type: URL object
+      :condition: optional
 
-       .. type:: object
+      The API resource URL of the client's organization. Only available when the include could have been used.
 
-     - An object with several URL objects relevant to the client resource. Every URL object will
-       contain an ``href`` and a ``type`` field.
+   .. parameter:: onboarding
+      :type: URL object
+      :condition: optional
 
-       .. list-table::
-          :widths: auto
+      The API resource URL of the client's onboarding status. Only available when the include could have been used.
 
-          * - ``self``
+   .. parameter:: documentation
+      :type: URL object
 
-              .. type:: URL object
-
-            - The API resource URL of the client itself.
-
-          * - ``organization``
-
-              .. type:: URL object
-                 :required: false
-
-            - The API resource URL of the client's organization. Only available when the include
-              could have been used.
-
-          * - ``onboarding``
-
-              .. type:: URL object
-                 :required: false
-
-            - The API resource URL of the client's onboarding status. Only available when the
-              include could have been used.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the documentation of this endpoint.
+      The URL to the documentation of this endpoint.
 
 Example
 -------

@@ -22,191 +22,160 @@ Response
 --------
 ``200`` ``application/json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a profile object. Will always contain ``profile`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a profile object. Will always contain ``profile`` for this endpoint.
+   The identifier uniquely referring to this profile, for example ``pfl_v9hTwCvYqw``.
 
-   * - ``id``
+.. parameter:: mode
+   :type: string
 
-       .. type:: string
+   Indicates whether the profile is in test or production mode.
 
-     - The identifier uniquely referring to this profile, for example ``pfl_v9hTwCvYqw``.
+   Possible values:
 
-   * - ``mode``
+   * ``live``: The profile is verified.
+   * ``test``: The profile has not been verified yet and can only be used to create test payments.
 
-       .. type:: string
+.. parameter:: name
+   :type: string
 
-     - Indicates whether the profile is in test or production mode.
+   The profile's name, this will usually reflect the trade name or brand name of the profile's website or application.
 
-       Possible values:
+.. parameter:: website
+   :type: string
 
-       * ``live`` The profile is verified.
-       * ``test`` The profile has not been verified yet and can only be used to create test payments.
+   The URL to the profile's website or application.
 
-   * - ``name``
+.. parameter:: email
+   :type: string
 
-       .. type:: string
+   The email address associated with the profile's trade name or brand.
 
-     - The profile's name, this will usually reflect the trade name or brand name of the profile's website or
-       application.
+.. parameter:: phone
+   :type: phone number
 
-   * - ``website``
+   The phone number associated with the profile's trade name or brand.
 
-       .. type:: string
+.. parameter:: categoryCode
+   :type: integer
 
-     - The URL to the profile's website or application.
+   The industry associated with the profile's trade name or brand.
 
-   * - ``email``
+   Possible values:
 
-       .. type:: string
+   * ``5192`` Books, magazines and newspapers
+   * ``5262`` Marketplaces, crowdfunding, donation platforms
+   * ``5399`` General merchandise
+   * ``5499`` Food and drinks
+   * ``5533`` Automotive Products
+   * ``5641`` Children Products
+   * ``5651`` Clothing & Shoes
+   * ``5712`` Home furnishing
+   * ``5732`` Electronics, computers and software
+   * ``5734`` Hosting/VPN services
+   * ``5735`` Entertainment
+   * ``5815`` Credits/vouchers/giftcards
+   * ``5921`` Alcohol
+   * ``5944`` Jewelry & Accessories
+   * ``5945`` Hobby, Toy, and Game Shops
+   * ``5977`` Health & Beauty products
+   * ``6012`` Financial services
+   * ``6051`` Crypto currency
+   * ``7299`` Consultancy
+   * ``7922`` Events, conferences, concerts, tickets
+   * ``7997`` Gyms, membership fee based sports
+   * ``7999`` Travel, rental and transportation
+   * ``8111`` Lawyers and legal advice
+   * ``8299`` Advising/coaching/training
+   * ``8398`` Charity and donations
+   * ``8699`` Political parties
+   * ``9399`` Government services
+   * ``0`` Other
 
-     - The email address associated with the profile's trade name or brand.
+.. parameter:: status
+   :type: string
 
-   * - ``phone``
+   The profile status determines whether the profile is able to receive live payments.
 
-       .. type:: phone number
+   Possible values:
 
-     - The phone number associated with the profile's trade name or brand.
+   * ``unverified``: The profile has not been verified yet and can only be used to create test payments.
+   * ``verified``: The profile has been verified and can be used to create live payments and test payments.
+   * ``blocked``: The profile is blocked and can thus no longer be used or changed.
 
-   * - ``categoryCode``
+.. parameter:: review
+   :type: object
 
-       .. type:: integer
+   The presence of a review object indicates changes have been made that have not yet been approved by Mollie. Changes
+   to test profiles are approved automatically, unless a switch to a live profile has been requested. The review object
+   will therefore usually be ``null`` in test mode.
 
-     - The industry associated with the profile's trade name or brand.
+   .. parameter:: status
+      :type: string
 
-       Possible values:
+      The status of the requested profile changes.
 
-       * ``5192`` Books, magazines and newspapers
-       * ``5262`` Marketplaces, crowdfunding, donation platforms
-       * ``5399`` General merchandise
-       * ``5499`` Food and drinks
-       * ``5533`` Automotive Products
-       * ``5641`` Children Products
-       * ``5651`` Clothing & Shoes
-       * ``5712`` Home furnishing
-       * ``5732`` Electronics, computers and software
-       * ``5734`` Hosting/VPN services
-       * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards
-       * ``5921`` Alcohol
-       * ``5944`` Jewelry & Accessories
-       * ``5945`` Hobby, Toy, and Game Shops
-       * ``5977`` Health & Beauty products
-       * ``6012`` Financial services
-       * ``6051`` Crypto currency
-       * ``7299`` Consultancy
-       * ``7922`` Events, conferences, concerts, tickets
-       * ``7997`` Gyms, membership fee based sports
-       * ``7999`` Travel, rental and transportation
-       * ``8111`` Lawyers and legal advice
-       * ``8299`` Advising/coaching/training
-       * ``8398`` Charity and donations
-       * ``8699`` Political parties
-       * ``9399`` Government services
-       * ``0`` Other
+      Possible values:
 
-   * - ``status``
+      * ``pending``: The changes are pending review. We will review your changes soon.
+      * ``rejected``: We have reviewed and rejected your changes.
 
-       .. type:: string
+.. parameter:: createdAt
+   :type: datetime
 
-     - The profile status determines whether the profile is able to receive live payments.
+   The profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-       Possible values:
+.. parameter:: _links
+   :type: object
 
-       * ``unverified`` The profile has not been verified yet and can only be used to create test payments.
-       * ``verified`` The profile has been verified and can be used to create live payments and test payments.
-       * ``blocked`` The profile is blocked and can thus no longer be used or changed.
+   An object with several URL objects relevant to the profile. Every URL object will contain an ``href`` and a ``type``
+   field.
 
-   * - ``review``
+   .. parameter:: self
+      :type: URL object
 
-       .. type:: object
+      The API resource URL of the profile itself.
 
-     - The presence of a review object indicates changes have been made that have not yet been approved by Mollie.
-       Changes to test profiles are approved automatically, unless a switch to a live profile has been requested. The
-       review object will therefore usually be ``null`` in test mode.
+   .. parameter:: dashboard
+      :type: URL object
 
-       .. list-table::
-          :widths: auto
+      Direct link to the profile in the Mollie Dashboard.
 
-          * - ``status``
+   .. parameter:: chargebacks
+      :type: URL object
 
-              .. type:: string
+      The API resource URL of the chargebacks that belong to this profile.
 
-            - The status of the requested profile changes.
+   .. parameter:: methods
+      :type: URL object
 
-              Possible values:
+      The API resource URL of the methods that are enabled for this profile.
 
-              * ``pending`` The changes are pending review. We will review your changes soon.
-              * ``rejected`` We have reviewed and rejected your changes.
+   .. parameter:: payments
+      :type: URL object
 
-   * - ``createdAt``
+      The API resource URL of the payments that belong to this profile.
 
-       .. type:: datetime
+   .. parameter:: refunds
+      :type: URL object
 
-     - The profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+      The API resource URL of the refunds that belong to this profile.
 
-   * - ``_links``
+   .. parameter:: checkoutPreviewUrl
+      :type: URL object
 
-       .. type:: object
+      The Checkout preview URL. You need to be logged in to access this page.
 
-     - An object with several URL objects relevant to the profile. Every URL object will contain an ``href`` and a
-       ``type`` field.
+   .. parameter:: documentation
+      :type: URL object
 
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the profile itself.
-
-          * - ``dashboard``
-
-              .. type:: URL object
-
-            - Direct link to the profile in the Mollie Dashboard.
-
-          * - ``chargebacks``
-
-              .. type:: URL object
-
-            - The API resource URL of the chargebacks that belong to this profile.
-
-          * - ``methods``
-
-              .. type:: URL object
-
-            - The API resource URL of the methods that are enabled for this profile.
-
-          * - ``payments``
-
-              .. type:: URL object
-
-            - The API resource URL of the payments that belong to this profile.
-
-          * - ``refunds``
-
-              .. type:: URL object
-
-            - The API resource URL of the refunds that belong to this profile.
-
-          * - ``checkoutPreviewUrl``
-
-              .. type:: URL object
-
-            - The Checkout preview URL. You need to be logged in to access this page.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the profile retrieval endpoint documentation.
+      The URL to the profile retrieval endpoint documentation.
 
 Example
 -------

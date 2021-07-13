@@ -38,6 +38,26 @@ The guidelines for working with a payment session are:
 For the full documentation, see the official `Apple Pay JS API
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api>`_ documentation.
 
+Parameters
+----------
+.. parameter:: validationUrl
+   :type: string
+   :condition: required
+
+   The ``validationUrl`` you got from the `ApplePayValidateMerchant event
+   <https://developer.apple.com/documentation/apple_pay_on_the_web/applepayvalidatemerchantevent>`_.
+
+   A `list of all valid host names
+   <https://developer.apple.com/documentation/apple_pay_on_the_web/setting_up_your_server#3172427>`_ for merchant
+   validation is available. You should white list these in your application and reject any ``validationUrl`` that have a
+   host name not in the list.
+
+.. parameter:: domain
+   :type: string
+   :condition: required
+
+   The domain of your web shop, that is visible in the browser's location bar. For example ``pay.myshop.com``.
+
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
@@ -45,40 +65,12 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 the ``profileId`` parameter. Data from the profile will be used for Apple Pay. For example, the name of the profile will
 be displayed on the touch bar, if the payment is used on a MacBook with touch bar.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: required for access tokens
+   :collapse: true
 
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
-
-Parameters
-----------
-.. list-table::
-   :widths: auto
-
-   * - ``validationUrl``
-
-       .. type:: string
-          :required: true
-
-     - The ``validationUrl`` you got from the `ApplePayValidateMerchant event
-       <https://developer.apple.com/documentation/apple_pay_on_the_web/applepayvalidatemerchantevent>`_.
-
-       A `list of all valid host names
-       <https://developer.apple.com/documentation/apple_pay_on_the_web/setting_up_your_server#3172427>`_ for merchant
-       validation is available. You should white list these in your application and reject any ``validationUrl`` that
-       have a host name not in the list.
-
-   * - ``domain``
-
-       .. type:: string
-          :required: true
-
-     - The domain of your web shop, that is visible in the browser's location bar. For example ``pay.myshop.com``.
+   The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
 Example
 -------

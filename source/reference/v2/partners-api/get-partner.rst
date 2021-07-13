@@ -22,110 +22,83 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a partner object. Will always contain ``partner`` for this endpoint.
 
-       .. type:: string
+.. parameter:: partnerType
+   :type: string
 
-     - Indicates the response contains a partner object. Will always contain ``partner`` for this
-       endpoint.
+   Indicates the type of partner. Will be ``null`` if the currently authenticated organization is not enrolled as a
+   partner.
 
-   * - ``partnerType``
+   Possible values: ``oauth`` ``signuplink`` ``useragent``
 
-       .. type:: string
+.. parameter:: isCommissionPartner
+   :type: boolean
+   :condition: optional
 
-     - Indicates the type of partner. Will be ``null`` if the currently authenticated
-       organization is not enrolled as a partner.
+   Will be true if partner is receiving commissions. Will be omitted otherwise.
 
-       Possible values: ``oauth``, ``signuplink``, ``useragent``.
+.. parameter:: userAgentTokens
+   :type: array
+   :condition: optional
 
-   * - ``isCommissionPartner``
+   Array of user agent token objects. Present if the partner is of type ``useragent`` or if the partner has had user
+   agent tokens in the past. Will be omitted otherwise.
 
-       .. type:: boolean
-          :required: false
+   .. parameter:: token
+      :type: string
 
-     - Will be true if partner is receiving commissions. Will be omitted otherwise.
+      The unique user agent token.
 
-   * - ``userAgentTokens``
+   .. parameter:: startsAt
+      :type: date
 
-       .. type:: array
-          :required: false
+      The date and time from which the token is active, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-     - Array of user agent token objects. Present if the partner is of type ``useragent`` or if the
-       partner has had user agent tokens in the past. Will be omitted otherwise.
+   .. parameter:: endsAt
+      :type: date
 
-       User agent token object:
+      The date and time after which the token is no longer active, in
+      `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be ``null`` if no end date has been set.
 
-       .. list-table::
-          :widths: auto
+.. parameter:: partnerContractSignedAt
+   :type: date
+   :condition: optional
 
-          * - ``token``
+   The date and time the contract was signed, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be
+   omitted if the contract has not yet been signed, or if ``partnerType`` is ``null``.
 
-              .. type:: string
+.. parameter:: partnerContractUpdateAvailable
+   :type: boolean
+   :condition: optional
 
-            - The unique user agent token.
+   Will be ``true`` if an updated contract is available, requiring the partner's agreement. Will be omitted otherwise.
 
-          * - ``startsAt``
+.. parameter:: _links
+   :type: object
 
-              .. type:: date
+   An object with several URL objects relevant to the partner resource. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-            - The date and time from which the token is active, in
-              `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+   .. parameter:: self
+      :type: URL object
 
-          * - ``endsAt``
+      The API resource URL of the partner itself.
 
-              .. type:: date
+   .. parameter:: documentation
+      :type: URL object
 
-            - The date and time after which the token is no longer active, in
-              `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will be ``null`` if no end date has been set.
+      The URL to the documentation of this endpoint.
 
-   * - ``partnerContractSignedAt``
+   .. parameter:: signuplink
+      :type: URL object
+      :condition: optional
 
-       .. type:: date
-          :required: false
-
-     - The date and time the contract was signed, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. Will
-       be omitted if the contract has not yet been signed, or if ``partnerType`` is ``null``.
-
-   * - ``partnerContractUpdateAvailable``
-
-       .. type:: boolean
-          :required: false
-
-     - Will be ``true`` if an updated contract is available, requiring the partner's agreement. Will be omitted
-       otherwise.
-
-   * - ``_links``
-
-       .. type:: object
-
-     - An object with several URL objects relevant to the partner resource. Every URL object will
-       contain an ``href`` and a ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the partner itself.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the documentation of this endpoint.
-
-          * - ``signuplink``
-
-              .. type:: URL object
-                 :required: false
-
-            - The URL that can be used to have new organizations sign up and be automatically linked
-              to this partner. Will be omitted if the partner is not of type ``signuplink``.
+      The URL that can be used to have new organizations sign up and be automatically linked to this partner. Will be
+      omitted if the partner is not of type ``signuplink``.
 
 Example
 -------

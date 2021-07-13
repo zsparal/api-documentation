@@ -32,25 +32,20 @@ Replace ``customerId`` in the endpoint URL by the customer's ID, for example ``c
 This endpoint accepts the same parameters as the :doc:`Create payment </reference/v2/payments-api/create-payment>`
 endpoint. For recurring payments, the following parameters have notable differences in comparison to regular payments:
 
-.. list-table::
-   :widths: auto
+.. parameter:: sequenceType
+   :type: string
+   :condition: optional
 
-   * - ``sequenceType``
+   Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing the customer
+   to agree to automatic recurring charges taking place on their account in the future. If set to ``recurring``, the
+   customer is charged automatically.
 
-       .. type:: string
-          :required: false
+.. parameter:: redirectUrl
+   :type: string
+   :condition: optional
 
-     - Enables recurring payments. If set to ``first``, a first payment for the customer is created, allowing
-       the customer to agree to automatic recurring charges taking place on their account in the future. If set to
-       ``recurring``, the customer is charged automatically.
-
-   * - ``redirectUrl``
-
-       .. type:: string
-          :required: false
-
-     - If the ``recurringType`` parameter is set to ``recurring``, this parameter can be omitted. Since the payment will
-       take place without customer interaction, a redirect is not needed.
+   If the ``recurringType`` parameter is set to ``recurring``, this parameter can be omitted. Since the payment will
+   take place without customer interaction, a redirect is not needed.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -61,22 +56,19 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 
 For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: required for access tokens
+   :collapse: true
 
-   * - ``profileId``
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
-       .. type:: string
-          :required: true
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to create a payment made in test mode.
+   Set this to ``true`` to create a payment made in test mode.
 
 Response
 --------
@@ -129,7 +121,7 @@ Example
 
       payment = mollie_client.customer_payments.with_parent_id('cst_8wmqcHMN4U').create(
           data={
-              'amount': {'value': '10.00', 'currency': 'EUR'},
+      'amount': {'value': '10.00', 'currency': 'EUR'},
               'description': 'Order #12345',
               'sequenceType': 'first',
               'redirectUrl': 'https://webshop.example.org/order/12345/',

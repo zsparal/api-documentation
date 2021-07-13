@@ -18,113 +18,89 @@ The results are paginated. See :doc:`pagination </overview/pagination>` for more
 
 Parameters
 ----------
-.. list-table::
-   :widths: auto
+.. parameter:: from
+   :type: string
+   :condition: optional
 
-   * - ``from``
+   Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the client with this
+   ID. The client with this ID is included in the result set as well.
 
-       .. type:: string
-          :required: false
+.. parameter:: limit
+   :type: integer
+   :condition: optional
 
-     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the client with this
-       ID. The client with this ID is included in the result set as well.
+   The number of clients to return (with a maximum of 250).
 
-   * - ``limit``
+.. parameter:: year
+   :type: integer
+   :condition: optional
 
-       .. type:: integer
-          :required: false
+   Show the statistics for the given year.
 
-     - The number of clients to return (with a maximum of 250).
+.. parameter:: month
+   :type: integer
+   :condition: optional
 
-   * - ``year``
-
-       .. type:: integer
-          :required: false
-
-     - Show the statistics for the given year.
-
-   * - ``month``
-
-       .. type:: integer
-          :required: false
-
-     - Show the statistics for the given month.
+   Show the statistics for the given month.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This endpoint also allows for embedding additional information by appending the following values via
 the ``embed`` query string parameter.
 
-* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>`
-  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
-  the scopes (of the app that causes the link on the organization) include ``organizations.read``.
-* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>`
-  of the client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and
-  the scopes (of the app that causes the link on the organization) include ``onboarding.read``.
+* ``organization`` Include the :doc:`organization </reference/v2/organizations-api/get-organization>` of the client.
+  Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app that causes
+  the link on the organization) include ``organizations.read``.
+* ``onboarding`` Include the :doc:`onboarding status </reference/v2/onboarding-api/get-onboarding-status>` of the
+  client. Available when partner type is ``signuplink`` or when partner type is ``oauth`` and the scopes (of the app
+  that causes the link on the organization) include ``onboarding.read``.
 
 Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: count
+   :type: integer
 
-   * - ``count``
+   The number of clients found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
+   default number.
 
-       .. type:: integer
+.. parameter:: _embedded
+   :type: object
+   :collapse-children: false
 
-     - The number of clients found in ``_embedded``, which is either the requested number (with a
-       maximum of 250) or the default number.
+   The object containing the queried data.
 
-   * - ``_embedded``
+   .. parameter:: clients
+      :type: array
 
-       .. type:: object
+      An array of client objects as described in :doc:`Get client </reference/v2/partners-api/get-client>`.
 
-     - The object containing the queried data.
+.. parameter:: _links
+   :type: object
 
-       .. list-table::
-          :widths: auto
+   An object with several URL objects relevant to the client resource. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-          * - ``clients``
+   .. parameter:: self
+      :type: URL object
 
-              .. type:: array
+      The URL to the current set of clients.
 
-            - An array of client objects as described in
-              :doc:`Get client </reference/v2/partners-api/get-client>`.
+   .. parameter:: previous
+      :type: URL object
 
-   * - ``_links``
+      The previous set of clients, if available.
 
-       .. type:: object
+   .. parameter:: next
+      :type: URL object
 
-     - An object with several URL objects relevant to the client resource. Every URL object will
-       contain an ``href`` and a ``type`` field.
+      The next set of clients, if available.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: documentation
+      :type: URL object
 
-          * - ``self``
-
-              .. type:: URL object
-
-            - The URL to the current set of clients.
-
-          * - ``previous``
-
-              .. type:: URL object
-
-            - The previous set of clients, if available.
-
-          * - ``next``
-
-              .. type:: URL object
-
-            - The next set of clients, if available.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the documentation of this endpoint.
+      The URL to the documentation of this endpoint.
 
 Example
 -------

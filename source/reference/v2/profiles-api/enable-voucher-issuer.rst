@@ -28,18 +28,14 @@ Parameters
 Replace ``id`` in the endpoint URL by the profile's ID, for example ``pfl_v9hTwCvYqw`` and ``issuer`` with the
 identifier of the issuer you want to activate, for example ``appetiz``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: contractId
+   :type: string
+   :condition: optional
 
-   * - ``contractId``
-
-       .. type:: string
-          :required: false
-
-     - The contract id of the related contractor. Please note, for the first call that will be made to an issuer of the
-       contractor, this field is required. You do not have to provide the same contract id for other issuers of the same
-       contractor. Update of the contract id will be possible through making the same call again with different contract
-       ID value until the contract id is approved by the contractor.
+   The contract id of the related contractor. Please note, for the first call that will be made to an issuer of the
+   contractor, this field is required. You do not have to provide the same contract id for other issuers of the same
+   contractor. Update of the contract id will be possible through making the same call again with different contract ID
+   value until the contract id is approved by the contractor.
 
 Response
 --------
@@ -72,9 +68,6 @@ Response
 
       - The status that the issuer is in. Possible values: ``pending-issuer`` or ``activated``.
 
-        .. list-table::
-           :widths: auto
-
            * - ``activated``
 
                .. type:: string
@@ -92,9 +85,6 @@ Response
         .. type:: object
 
       - An object with contractor information
-
-        .. list-table::
-           :widths: auto
 
            * - ``id``
 
@@ -120,9 +110,6 @@ Response
 
       - An object with several URL objects relevant to the voucher issuer. Every URL object will contain an ``href`` and
         a ``type`` field.
-
-        .. list-table::
-           :widths: auto
 
            * - ``self``
 

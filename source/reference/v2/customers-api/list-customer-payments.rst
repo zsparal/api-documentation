@@ -29,24 +29,21 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 
 For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: optional
+   :collapse: true
 
-   * - ``profileId``
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all the
+   customer's payments across all profiles.
 
-       .. type:: string
-          :required: false
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all
-       the customer's payments across all profiles.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to get payments made in test mode. If you omit this parameter, you can only retrieve live
-       mode payments.
+   Set this to ``true`` to get payments made in test mode. If you omit this parameter, you can only retrieve live mode
+   payments.
 
 Response
 --------

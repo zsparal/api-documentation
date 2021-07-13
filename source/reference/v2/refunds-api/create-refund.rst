@@ -18,66 +18,51 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the payment's ID, for example ``v2/payments/tr_7UhSN1zuXS/refunds``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: amount
+   :type: amount object
+   :condition: required
 
-   * - ``amount``
+   The amount to refund. For some payments, it can be up to €25.00 more than the original transaction amount.
 
-       .. type:: amount object
-          :required: true
+   .. parameter:: currency
+      :type: string
+      :condition: required
 
-     - The amount to refund. For some payments, it can be up to €25.00 more than the original transaction amount.
+      An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currency must be the same as the
+      corresponding payment.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: value
+      :type: string
+      :condition: required
 
-          * - ``currency``
+      A string containing the exact amount you want to refund in the given currency. Make sure to send the right amount
+      of decimals. Non-string values are not accepted.
 
-              .. type:: string
-                 :required: true
+.. parameter:: description
+   :type: string
+   :condition: optional
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currency must be the same as
-              the corresponding payment.
+   The description of the refund you are creating. This will be shown to the consumer on their card or bank statement
+   when possible. Max. 140 characters.
 
-          * - ``value``
+.. parameter:: metadata
+   :type: mixed
+   :condition: optional
 
-              .. type:: string
-                 :required: true
-
-            - A string containing the exact amount you want to refund in the given currency. Make sure to send the right
-              amount of decimals. Non-string values are not accepted.
-
-   * - ``description``
-
-       .. type:: string
-          :required: false
-
-     - The description of the refund you are creating. This will be shown to the consumer on their card or
-       bank statement when possible. Max. 140 characters.
-
-   * - ``metadata``
-
-       .. type:: mixed
-          :required: false
-
-     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       refund. Whenever you fetch the refund with our API, we will also include the metadata. You can use up to
-       approximately 1kB.
+   Provide any data you like, for example a string or a JSON object. We will save the data alongside the refund.
+   Whenever you fetch the refund with our API, we will also include the metadata. You can use up to approximately 1kB.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
-.. list-table::
-   :widths: auto
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to refund a test mode payment.
+   Set this to ``true`` to refund a test mode payment.
 
 Mollie Connect parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,18 +71,14 @@ creating refunds for those split payments, you can use the ``reverseRouting`` pa
 to the platform balance. To learn more about creating refunds for split payments, please refer to the
 :doc:`Splitting payments guide </connect/splitting-payments>`.
 
-.. list-table::
-   :widths: auto
+.. parameter:: reverseRouting
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``reverseRouting``
-
-       .. type:: boolean
-          :required: false
-
-     - For a full reversal of the split that was specified during payment creation, simply set this parameter to ``true``. For
-       example, if a €10,00 payment got split by sending €2,50 to the platform and €7,50 to the connected account, then
-       setting this parameter to ``true`` will pull back the €7,50 from the connected account.
-
+   For a full reversal of the split that was specified during payment creation, simply set this parameter to ``true``.
+   For example, if a €10,00 payment got split by sending €2,50 to the platform and €7,50 to the connected account, then
+   setting this parameter to ``true`` will pull back the €7,50 from the connected account.
 
 Response
 --------

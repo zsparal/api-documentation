@@ -31,23 +31,18 @@ Parameters
 When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
 ``tr_7UhSN1zuXS``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: from
+   :type: string
+   :condition: optional
 
-   * - ``from``
+   Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the refund with this ID. The refund with this
+   ID is included in the result set as well.
 
-       .. type:: string
-          :required: false
+.. parameter:: limit
+   :type: integer
+   :condition: optional
 
-     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the refund with this ID. The refund with
-       this ID is included in the result set as well.
-
-   * - ``limit``
-
-       .. type:: integer
-          :required: false
-
-     - The number of refunds to return (with a maximum of 250).
+   The number of refunds to return (with a maximum of 250).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -59,24 +54,21 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 
 For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: optional
+   :collapse: true
 
-   * - ``profileId``
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all refunds
+   across all profiles.
 
-       .. type:: string
-          :required: false
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all
-       refunds across all profiles.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to true to only retrieve Refunds made in test mode. By default, only Refunds on live mode Payments are
-       returned.
+   Set this to true to only retrieve Refunds made in test mode. By default, only Refunds on live mode Payments are
+   returned.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -89,65 +81,47 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: count
+   :type: integer
 
-   * - ``count``
+   The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
+   default number.
 
-       .. type:: integer
+.. parameter:: _embedded
+   :type: object
+   :collapse-children: false
 
-     - The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
-       default number.
+   The object containing the queried data.
 
-   * - ``_embedded``
+   .. parameter:: refunds
+      :type: array
 
-       .. type:: object
+      An array of refund objects as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
 
-     - The object containing the queried data.
+.. parameter:: _links
+   :type: object
 
-       .. list-table::
-          :widths: auto
+   Links to help navigate through the lists of refunds. Every URL object will contain an ``href`` and a ``type`` field.
 
-          * - ``refunds``
+   .. parameter:: self
+      :type: object
 
-              .. type:: array
+      The URL to the current set of refunds.
 
-            - An array of refund objects as described in
-              :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
+   .. parameter:: previous
+      :type: object
 
-   * - ``_links``
+      The previous set of refunds, if available.
 
-       .. type:: object
+   .. parameter:: next
+      :type: object
 
-     - Links to help navigate through the lists of refunds. Every URL object will contain an ``href`` and a ``type``
-       field.
+      The next set of refunds, if available.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: documentation
+      :type: object
 
-          * - ``self``
-
-              .. type:: object
-
-            - The URL to the current set of refunds.
-
-          * - ``previous``
-
-              .. type:: object
-
-            - The previous set of refunds, if available.
-
-          * - ``next``
-
-              .. type:: object
-
-            - The next set of refunds, if available.
-
-          * - ``documentation``
-
-              .. type:: object
-
-            - The URL to the List payment refunds endpoint documentation.
+      The URL to the List payment refunds endpoint documentation.
 
 Example
 -------

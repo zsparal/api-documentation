@@ -29,15 +29,12 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
 :doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: required for access tokens
+   :collapse: true
 
-   * - ``profileId``
-
-       .. type:: string
-          :required: true
-
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,146 +47,113 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a chargeback object. Will always contain ``chargeback`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a chargeback object. Will always contain ``chargeback`` for this endpoint.
+   The chargeback's unique identifier, for example ``chb_n9z0tp``.
 
-   * - ``id``
+.. parameter:: amount
+   :type: amount object
 
-       .. type:: string
+   The amount charged back by the consumer.
 
-     - The chargeback's unique identifier, for example ``chb_n9z0tp``.
+   .. parameter:: currency
+      :type: string
 
-   * - ``amount``
+      An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-       .. type:: amount object
+   .. parameter:: value
+      :type: string
 
-     - The amount charged back by the consumer.
+      A string containing the exact amount that was charged back in the given currency.
 
-       .. list-table::
-          :widths: auto
+.. parameter:: settlementAmount
+   :type: amount object|null
 
-          * - ``currency``
+   This optional field will contain the amount that will be deducted from your account, converted to the currency your
+   account is settled in. It follows the same syntax as the ``amount`` property.
 
-              .. type:: string
+   Note that for chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+   Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal chargebacks.
 
-          * - ``value``
+   .. parameter:: currency
+      :type: string
 
-              .. type:: string
+      The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-            - A string containing the exact amount that was charged back in the given currency.
+   .. parameter:: value
+      :type: string
 
-   * - ``settlementAmount``
+      A string containing the exact amount that was deducted for the chargeback from your account balance in the
+      settlement currency. Note that this will be negative.
 
-       .. type:: amount object|null
+.. parameter:: createdAt
+   :type: datetime
 
-     -   This optional field will contain the amount that will be deducted from your account, converted to the currency
-         your account is settled in. It follows the same syntax as the ``amount`` property.
+   The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-         Note that for chargebacks, the ``value`` key of ``settlementAmount`` will be negative.
+.. parameter:: reason
+   :type: object|null
 
-         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal chargebacks.
+   Reason for the chargeback as given by the bank.
 
-         .. list-table::
-            :widths: auto
+   .. note:: This field will only be returned for chargebacks where *direct debit* was used as the original payment
+      method.
 
-            * - ``currency``
+   .. parameter:: code
+      :type: string
 
-                .. type:: string
+      Bank code of the chargeback reason.
 
-              - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+   .. parameter:: description
+      :type: string
 
-            * - ``value``
+      Detailed description of the reason.
 
-                .. type:: string
+.. parameter:: reversedAt
+   :type: datetime
 
-              - A string containing the exact amount that was deducted for the chargeback from your account balance in
-                the settlement currency. Note that this will be negative.
+   The date and time the chargeback was reversed if applicable, in
+   `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - ``createdAt``
+.. parameter:: paymentId
+   :type: string
 
-       .. type:: datetime
+   The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full payment
+   object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
-     - The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+.. parameter:: _links
+   :type: object
 
-   * - ``reason``
+   An object with several URL objects relevant to the chargeback. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-       .. type:: object|null
+   .. parameter:: self
+      :type: URL object
 
-     - Reason for the chargeback as given by the bank.
+      The API resource URL of the chargeback itself.
 
-       .. note:: This field will only be returned for chargebacks where *direct debit* was used as the original payment method.
+   .. parameter:: payment
+      :type: URL object
 
-       .. list-table::
-          :widths: auto
+      The API resource URL of the payment this chargeback belongs to.
 
-          * - ``code``
+   .. parameter:: settlement
+      :type: URL object
+      :condition: optional
 
-              .. type:: string
+      The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
-            - Bank code of the chargeback reason.
+   .. parameter:: documentation
+      :type: URL object
 
-          * - ``description``
-
-              .. type:: string
-
-            - Detailed description of the reason.
-
-   * - ``reversedAt``
-
-       .. type:: datetime
-
-     - The date and time the chargeback was reversed if applicable, in
-       `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-
-   * - ``paymentId``
-
-       .. type:: string
-
-     - The unique identifier of the payment this chargeback was issued for. For example: ``tr_7UhSN1zuXS``. The full
-       payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
-
-   * - ``_links``
-
-       .. type:: object
-
-     - An object with several URL objects relevant to the chargeback. Every URL object will contain an ``href`` and a
-       ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the chargeback itself.
-
-          * - ``payment``
-
-              .. type:: URL object
-
-            - The API resource URL of the payment this chargeback belongs to.
-
-          * - ``settlement``
-
-              .. type:: URL object
-                 :required: false
-
-            - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the chargeback retrieval endpoint documentation.
+      The URL to the chargeback retrieval endpoint documentation.
 
 Example
 -------

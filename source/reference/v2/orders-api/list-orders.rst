@@ -18,23 +18,18 @@ The results are paginated. See :doc:`pagination </overview/pagination>` for more
 
 Parameters
 ----------
-.. list-table::
-   :widths: auto
+.. parameter:: from
+   :type: string
+   :condition: optional
 
-   * - ``from``
+   Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the order with this ID. The order with this
+   ID is included in the result set as well.
 
-       .. type:: string
-          :required: false
+.. parameter:: limit
+   :type: integer
+   :condition: optional
 
-     - Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the order with this ID. The order with
-       this ID is included in the result set as well.
-
-   * - ``limit``
-
-       .. type:: integer
-          :required: false
-
-     - The number of orders to return (with a maximum of 250).
+   The number of orders to return (with a maximum of 250).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -46,87 +41,66 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 
 For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: optional
+   :collapse: true
 
-   * - ``profileId``
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all orders
+   across all profiles.
 
-       .. type:: string
-          :required: false
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-     - The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all
-       orders across all profiles.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to list test mode orders.
+   Set this to ``true`` to list test mode orders.
 
 Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: count
+   :type: integer
 
-   * - ``count``
+   The number of orders found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
+   default number.
 
-       .. type:: integer
+.. parameter:: _embedded
+   :type: object
+   :collapse-children: false
 
-     - The number of orders found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+   The object containing the queried data.
 
-   * - ``_embedded``
+   .. parameter:: orders
+      :type: array
 
-       .. type:: object
+      An array of order objects as described in :doc:`Get order </reference/v2/orders-api/get-order>`.
 
-     - The object containing the queried data.
+.. parameter:: _links
+   :type: object
 
-       .. list-table::
-          :widths: auto
+   Links to help navigate through the lists of orders. Every URL object will contain an ``href`` and a ``type`` field.
 
-          * - ``orders``
+   .. parameter:: self
+      :type: URL object
 
-              .. type:: array
+      The URL to the current set of orders.
 
-            - An array of order objects as described in
-              :doc:`Get order </reference/v2/orders-api/get-order>`.
+   .. parameter:: previous
+      :type: URL object
 
-   * - ``_links``
+      The previous set of orders, if available.
 
-       .. type:: object
+   .. parameter:: next
+      :type: URL object
 
-     - Links to help navigate through the lists of orders. Every URL object will contain an ``href`` and a ``type``
-       field.
+      The next set of orders, if available.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: documentation
+      :type: URL object
 
-          * - ``self``
-
-              .. type:: URL object
-
-            - The URL to the current set of orders.
-
-          * - ``previous``
-
-              .. type:: URL object
-
-            - The previous set of orders, if available.
-
-          * - ``next``
-
-              .. type:: URL object
-
-            - The next set of orders, if available.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the orders list endpoint documentation.
+      The URL to the orders list endpoint documentation.
 
 Example
 -------

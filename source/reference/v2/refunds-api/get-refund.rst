@@ -30,16 +30,13 @@ Access token parameters
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` query string parameter.
 
-.. list-table::
-   :widths: auto
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to get a refund made in test mode. If you omit this parameter, you can only retrieve live
-       mode refunds.
+   Set this to ``true`` to get a refund made in test mode. If you omit this parameter, you can only retrieve live
+   mode refunds.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -52,211 +49,173 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a refund object. Will always contain ``refund`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a refund object. Will always contain ``refund`` for this endpoint.
+   The refund's unique identifier, for example ``re_4qqhO89gsT``.
 
-   * - ``id``
+.. parameter:: amount
+   :type: amount object
 
-       .. type:: string
+   The amount refunded to your customer with this refund.
 
-     - The refund's unique identifier, for example ``re_4qqhO89gsT``.
+   .. parameter:: currency
+      :type: string
 
-   * - ``amount``
+      An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on the
+      payment methods that are enabled on your account.
 
-       .. type:: amount object
+   .. parameter:: value
+      :type: string
 
-     - The amount refunded to your customer with this refund.
+      A string containing the exact amount that was refunded in the given currency.
 
-       .. list-table::
-          :widths: auto
+.. parameter:: settlementId
+   :type: string
+   :condition: optional
 
-          * - ``currency``
+   The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``. This field
+   is omitted if the refund is not settled (yet).
 
-              .. type:: string
+.. parameter:: settlementAmount
+   :type: amount object
+   :condition: optional
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. The currencies supported depend on
-              the payment methods that are enabled on your account.
+   This optional field will contain the amount that will be deducted from your account balance, converted to the
+   currency your account is settled in. It follows the same syntax as the ``amount`` property.
 
-          * - ``value``
+   For refunds, the ``value`` key of ``settlementAmount`` will be negative.
 
-              .. type:: string
+   Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal refunds.
 
-            - A string containing the exact amount that was refunded in the given currency.
+   Queued refunds in non-EUR currencies will not have a settlement amount until they become ``pending``.
 
-   * - ``settlementId``
+   .. parameter:: currency
+      :type: string
 
-       .. type:: string
-          :required: false
+      The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-     - The identifier referring to the settlement this payment was settled with. For example, ``stl_BkEjN2eBb``. This
-       field is omitted if the refund is not settled (yet).
+   .. parameter:: value
+      :type: string
 
-   * - ``settlementAmount``
+      A string containing the exact amount that was deducted for the refund from your account balance in the settlement
+      currency. Note that this will be negative.
 
-       .. type:: amount object
-          :required: false
+      If the refund is queued and in a different currency than the settlement currency, the settlement amount will be
+      ``null`` as the exchange rates may change until the refund is finally executed.
 
-     -   This optional field will contain the amount that will be deducted from your account balance, converted to the
-         currency your account is settled in. It follows the same syntax as the ``amount`` property.
+.. parameter:: description
+   :type: string
 
-         Note that for refunds, the ``value`` key of ``settlementAmount`` will be negative.
+   The description of the refund that may be shown to your customer, depending on the payment method used.
 
-         Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal refunds.
+.. parameter:: metadata
+   :type: mixed
 
-         Queued refunds in non EUR currencies will not have a settlement amount until they become ``pending``.
+   The optional metadata you provided upon refund creation. Metadata can for example be used to link an bookkeeping ID
+   to a refund.
 
-         .. list-table::
-            :widths: auto
+.. parameter:: status
+   :type: string
 
-            * - ``currency``
+   Since refunds may not be instant for certain payment methods, the refund carries a status field.
 
-                .. type:: string
+   For a full overview, see :ref:`refund-statuses`.
 
-              - The settlement currency, an `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+.. parameter:: lines
+   :type: array
+   :condition: optional
 
-            * - ``value``
+   An array of :ref:`order line objects<order-lines-details>` as described in
+   :doc:`Get order </reference/v2/orders-api/get-order>`.
 
-                .. type:: string
+   The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` refunded. If the line was
+   partially refunded, these values will be different from the values in response from the Get order API.
 
-              - A string containing the exact amount that was deducted for the refund from your account balance in the
-                settlement currency. Note that this will be negative.
+   Only available if the refund was created via the
+   :doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>`.
 
-                If the refund is queued and in a different currency than the settlement currency, the settlement amount
-                will be ``null`` as the exchange rates may change until the refund is finally executed.
+.. parameter:: paymentId
+   :type: string
 
-   * - ``description``
+   The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full payment
+   object can be retrieved via the ``payment`` URL in the ``_links`` object.
 
-       .. type:: string
+.. parameter:: orderId
+   :type: string
+   :condition: optional
 
-     - The description of the refund that may be shown to your customer, depending on the payment method used.
+   The unique identifier of the order this refund was created for. For example: ``ord_8wmqcHMN4U``. Not present if the
+   refund was not created for an order.
 
-   * - ``metadata``
+   The full order object can be retrieved via the ``order`` URL in the ``_links`` object.
 
-       .. type:: mixed
+.. parameter:: createdAt
+   :type: datetime
 
-     - The optional metadata you provided upon refund creation. Metadata can for example be used to link an bookkeeping
-       ID to a refund.
+   The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-   * - ``status``
+.. parameter:: _links
+   :type: object
 
-       .. type:: string
+   An object with several URL objects relevant to the refund. Every URL object will contain an ``href`` and a ``type``
+   field.
 
-     - Since refunds may not be instant for certain payment methods, the refund carries a status field.
+   .. parameter:: self
+      :type: URL object
 
-       For a full overview, see :ref:`refund-statuses`.
+      The API resource URL of the refund itself.
 
-   * - ``lines``
+   .. parameter:: payment
+      :type: URL object
 
-       .. type:: array
-          :required: false
+      The API resource URL of the payment the refund belongs to.
 
-     - An array of :ref:`order line objects<order-lines-details>` as described in
-       :doc:`Get order </reference/v2/orders-api/get-order>`.
+   .. parameter:: settlement
+      :type: URL object
+      :condition: optional
 
-       The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` refunded. If the line
-       was partially refunded, these values will be different from the values in response from the Get order API.
+      The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
 
-       Only available if the refund was created via the
-       :doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>`.
+   .. parameter:: order
+      :type: URL object
+      :condition: optional
 
-   * - ``paymentId``
+      The API resource URL of the order the refund belongs to. Not present if the refund does not belong to an order.
 
-       .. type:: string
+   .. parameter:: documentation
+      :type: URL object
 
-     - The unique identifier of the payment this refund was created for. For example: ``tr_7UhSN1zuXS``. The full
-       payment object can be retrieved via the ``payment`` URL in the ``_links`` object.
+      The URL to the refund retrieval endpoint documentation.
 
-   * - ``orderId``
+Mollie Connect response parameters
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. parameter:: routingReversal
+   :type: object
+   :condition: optional
+   :collapse: true
 
-       .. type:: string
-          :required: false
+   An object containing information relevant to a refund issued for a *split payment*. To learn more about split
+   payments, please refer to the :doc:`Mollie Connect overview </connect/overview>`.
 
-     - The unique identifier of the order this refund was created for. For example: ``ord_8wmqcHMN4U``. Not present if
-       the refund was not created for an order.
+   .. parameter:: amount
+      :type: amount object
 
-       The full order object can be retrieved via the ``order`` URL in the ``_links`` object.
+      The amount to be refunded from the split payment.
 
-   * - ``createdAt``
+   .. parameter:: source
+      :type: object
 
-       .. type:: datetime
-
-     - The date and time the refund was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-
-   * - ``routingReversal``
-
-       .. type:: object
-          :required: false
-
-     - An object containing information relevant to a refund issued for a *split payment*. To learn more about split
-       payments, please refer to the :doc:`Mollie Connect overview </connect/overview>`.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``amount``
-
-              .. type:: amount object
-
-            - The amount to be refunded from the split payment.
-
-          * - ``source``
-
-              .. type:: object
-
-            - And object indicating the source of the refund. A field ``organizationId`` will indicate from which organization the amount was refunded.
-
-   * - ``_links``
-
-       .. type:: object
-
-     - An object with several URL objects relevant to the refund. Every URL object will contain an ``href`` and a
-       ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the refund itself.
-
-          * - ``payment``
-
-              .. type:: URL object
-
-            - The API resource URL of the payment the refund belongs to.
-
-          * - ``settlement``
-
-              .. type:: URL object
-                 :required: false
-
-            - The API resource URL of the settlement this payment has been settled with. Not present if not yet settled.
-
-          * - ``order``
-
-              .. type:: URL object
-                 :required: false
-
-            - The API resource URL of the order the refund belongs to. Not present if the refund does not belong to an
-              order.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the refund retrieval endpoint documentation.
+      And object indicating the source of the refund. A field ``organizationId`` will indicate from which organization
+      the amount was refunded.
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

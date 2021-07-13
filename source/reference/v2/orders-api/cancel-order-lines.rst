@@ -36,71 +36,59 @@ Parameters
 ----------
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: lines
+   :type: array
+   :condition: required
+   :collapse-children: false
 
-   * - ``lines``
+   An array of objects containing the order line details you want to cancel.
 
-       .. type:: array
-          :required: true
+   .. parameter:: id
+      :type: string
+      :condition: required
 
-     - An array of objects containing the order line details you want to cancel.
+      The API resource token of the order line, for example: ``odl_jp31jz``.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: quantity
+      :type: int
+      :condition: optional
 
-          * - ``id``
+      The number of items that should be canceled for this order line. When this parameter is omitted, the whole order
+      line will be canceled. When part of the line has been shipped, it will cancel the remainder and the order line
+      will be completed.
 
-              .. type:: string
-                 :required: true
+      Must be less than the number of items already shipped or canceled for this order line.
 
-            - The API resource token of the order line, for example: ``odl_jp31jz``.
+   .. parameter:: amount
+      :type: amount object
+      :condition: optional
 
-          * - ``quantity``
+      The amount that you want to cancel. In almost all cases, Mollie can determine the amount automatically.
 
-              .. type:: int
-                 :required: false
+      The amount is required only if you are *partially* canceling an order line which has a non-zero
+      ``discountAmount``.
 
-            - The number of items that should be canceled for this order line. When this parameter is omitted, the
-              whole order line will be canceled. When part of the line has been shipped, it will cancel the remainder
-              and the order line will be completed.
+      The amount you can cancel depends on various properties of the order line and the cancel order lines request. The
+      maximum that can be canceled is ``unit price x quantity to cancel``.
 
-              Must be less than the number of items already shipped or canceled for this order line.
+      The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled, the
+      amounts already shipped or canceled and the quantity you want to cancel.
 
-          * - ``amount``
-
-              .. type:: amount object
-                 :required: false
-
-            - The amount that you want to cancel. In almost all cases, Mollie can determine the amount automatically.
-
-              The amount is required only if you are *partially* canceling an order line which has a non-zero
-              ``discountAmount``.
-
-              The amount you can cancel depends on various properties of the order line and the cancel order lines
-              request. The maximum that can be canceled is ``unit price x quantity to cancel``.
-
-              The minimum amount depends on the discount applied to the line, the quantity already shipped or canceled,
-              the amounts already shipped or canceled and the quantity you want to cancel.
-
-              If you do not send an amount, Mollie will determine the amount automatically or respond with an error
-              if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
-              ``extra.maximumAmount`` properties that allow you pick the right amount.
+      If you do not send an amount, Mollie will determine the amount automatically or respond with an error if the
+      amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
+      ``extra.maximumAmount`` properties that allow you pick the right amount.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
-.. list-table::
-   :widths: auto
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to cancel test mode order lines.
+   Set this to ``true`` to cancel test mode order lines.
 
 Response
 --------

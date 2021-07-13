@@ -37,142 +37,119 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbj
 Please note that even though all parameters are optional, at least one of them needs to be provided
 in the request.
 
-.. list-table::
-   :widths: auto
+.. parameter:: name
+   :type: string
+   :condition: optional
 
-   * - ``name``
+   A description of the order line, for example *LEGO 4440 Forest Police Station*.
 
-       .. type:: string
-          :required: false
+.. parameter:: imageUrl
+   :type: string
+   :condition: optional
 
-     - A description of the order line, for example *LEGO 4440 Forest Police Station*.
+   A link pointing to an image of the product sold.
 
-   * - ``imageUrl``
+.. parameter:: productUrl
+   :type: string
+   :condition: optional
 
-       .. type:: string
-          :required: false
+   A link pointing to the product page in your web shop of the product sold.
 
-     - A link pointing to an image of the product sold.
+.. parameter:: sku
+   :type: string
+   :condition: optional
 
-   * - ``productUrl``
+   The SKU, EAN, ISBN or UPC of the product sold. The maximum character length is 64.
 
-       .. type:: string
-          :required: false
+.. parameter:: metadata
+   :type: mixed
+   :condition: optional
 
-     - A link pointing to the product page in your web shop of the product sold.
+   Provide any data you like, for example a string or a JSON object. We will save the data alongside the order line.
+   Whenever you fetch the order with our API, we will also include the metadata. You can use up to approximately 1kB.
 
-   * - ``sku``
+.. parameter:: quantity
+   :type: int
+   :condition: conditional
 
-       .. type:: string
-          :required: false
+   The number of items in the order line.
 
-     - The SKU, EAN, ISBN or UPC of the product sold. The maximum character length is 64.
+   This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate`` is also
+   provided in the request.
 
-   * - ``metadata``
+.. parameter:: unitPrice
+   :type: amount object
+   :condition: conditional
 
-       .. type:: mixed
-          :required: false
+   The price of a single item including VAT in the order line.
 
-     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the order line.
-       Whenever you fetch the order with our API, we will also include the metadata. You can use up to approximately
-       1kB.
+   For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
 
-   * - ``quantity``
+   Can be negative in case of discounts, or zero in case of a free item.
 
-       .. type:: int
-          :required: false
+   This field is required when ``quantity``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate`` is also
+   provided in the request.
 
-     - The number of items in the order line.
+.. parameter:: discountAmount
+   :type: amount object
+   :condition: optional
 
-       .. note::
-          This field is required when ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
-          is also provided in the request.
+   Any :doc:`discounts applied </orders/handling-discounts>` to the order line. For example, if you have a two-for-one
+   sale, you should pass the amount discounted as a positive amount.
 
-   * - ``unitPrice``
+   For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give a €10.00 discount on this order line.
 
-       .. type:: amount object
-          :required: false
+.. parameter:: totalAmount
+   :type: amount object
+   :condition: conditional
 
-     - The price of a single item including VAT in the order line.
+   The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
+   result in the same amount as the ``amount`` top level property.
 
-       For example: ``{"currency":"EUR", "value":"89.00"}`` if the box of LEGO costs €89.00 each.
+   For example: ``{"currency":"EUR", "value":"168.00"}`` if the total amount of this order line is €168.00.
 
-       Can be negative in case of discounts, or zero in case of a free item.
+   The total amount should match the following formula: ``(unitPrice × quantity) - discountAmount``
 
-       .. note::
-          This field is required when ``quantity``, ``discountAmount``, ``totalAmount``, ``vatAmount`` or ``vatRate``
-          is also provided in the request.
+   This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``vatAmount`` or ``vatRate`` is also
+   provided in the request.
 
-   * - ``discountAmount``
+.. parameter:: vatAmount
+   :type: amount object
+   :condition: conditional
 
-       .. type:: amount object
-          :required: false
+   The amount of value-added tax on the line. The ``totalAmount`` field includes VAT, so the ``vatAmount`` can be
+   calculated with the formula ``totalAmount × (vatRate / (100 + vatRate))``.
 
-     - Any :doc:`discounts applied </orders/handling-discounts>` to the order line. For example, if you have a
-       two-for-one sale, you should pass the amount discounted as a positive amount.
+   Any deviations from this will result in an error.
 
-       For example: ``{"currency":"EUR", "value":"10.00"}`` if you want to give a €10.00 discount on this order line.
+   For example, for a ``totalAmount`` of SEK100.00 with a 25.00% VAT rate you would get a VAT amount of
+   ``100.00 × (25 / 125)`` = SEK20.00. The amount should be passed as an amount object, so:
+   ``{"currency":"SEK", "value":"20.00"}``.
 
-   * - ``totalAmount``
+   This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount`` or ``vatRate`` is also
+   provided in the request.
 
-       .. type:: amount object
-          :required: false
+.. parameter:: vatRate
+   :type: string
+   :condition: conditional
 
-     - The total amount of the line, including VAT and discounts. Adding all ``totalAmount`` values together should
-       result in the same amount as the ``amount`` top level property.
+   The VAT rate applied to the order line, for example ``"21.00"`` for 21%. The ``vatRate`` should be passed as a string
+   and not as a float to ensure the correct number of decimals are passed.
 
-       For example: ``{"currency":"EUR", "value":"168.00"}`` if the total amount of this order line is €168.00.
-
-       The total amount should match the following formula: ``(unitPrice × quantity) - discountAmount``
-
-       .. note::
-          This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``vatAmount`` or ``vatRate``
-          is also provided in the request.
-
-   * - ``vatAmount``
-
-       .. type:: amount object
-          :required: false
-
-     - The amount of value-added tax on the line. The ``totalAmount`` field includes VAT, so the ``vatAmount`` can be
-       calculated with the formula ``totalAmount × (vatRate / (100 + vatRate))``.
-
-       Any deviations from this will result in an error.
-
-       For example, for a ``totalAmount`` of SEK100.00 with a 25.00% VAT rate you would get a VAT amount of ``100.00 ×
-       (25 / 125)`` = SEK20.00. The amount should be passed as an amount object, so:
-       ``{"currency":"SEK", "value":"20.00"}``.
-
-       .. note::
-          This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount`` or ``vatRate``
-          is also provided in the request.
-
-   * - ``vatRate``
-
-       .. type:: string
-          :required: false
-
-     - The VAT rate applied to the order line, for example ``"21.00"`` for 21%. The ``vatRate`` should be passed as a
-       string and not as a float to ensure the correct number of decimals are passed.
-
-       .. note::
-          This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount`` or ``vatAmount``
-          is also provided in the request.
+   This field is required when ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount`` or ``vatAmount`` is also
+   provided in the request.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
-.. list-table::
-   :widths: auto
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to update a test mode order line.
+   Set this to ``true`` to update a test mode order line.
 
 Response
 --------
@@ -227,7 +204,7 @@ Example
       order = order.update_line(
           'odl_dgtxyl',
           data={
-              'name': 'LEGO 71043 Hogwarts™ Castle',
+      'name': 'LEGO 71043 Hogwarts™ Castle',
               'productUrl': 'https://shop.lego.com/en-GB/product/Hogwarts-Castle-71043',
               'imageUrl': 'https://sh-s7-live-s.legocdn.com/is/image//LEGO/71043_alt1?$main$',
               'quantity': 2,

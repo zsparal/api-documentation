@@ -29,88 +29,73 @@ Parameters
 ----------
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: lines
+   :type: array
+   :condition: required
+   :collapse-children: false
 
-   * - ``lines``
+   An array of objects containing the order line details you want to create a refund for. If you send an empty array,
+   the entire order will be refunded.
 
-       .. type:: array
-          :required: true
+   .. parameter:: id
+      :type: string
+      :condition: required
 
-     - An array of objects containing the order line details you want to create a refund for. If you send an empty
-       array, the entire order will be refunded.
+      The API resource token of the order line, for example: ``odl_jp31jz``.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: quantity
+      :type: int
+      :condition: optional
 
-          * - ``id``
+      The number of items that should be refunded for this order line. When this parameter is omitted, the whole order
+      line will be refunded.
 
-              .. type:: string
-                 :required: true
+      Must be less than the number of items already refunded for this order line.
 
-            - The API resource token of the order line, for example: ``odl_jp31jz``.
+   .. parameter:: amount
+      :type: amount object
+      :condition: optional
 
-          * - ``quantity``
+      The amount that you want to refund. In almost all cases, Mollie can determine the amount automatically.
 
-              .. type:: int
-                 :required: false
+      The amount is required only if you are *partially* refunding an order line which has a non-zero
+      ``discountAmount``.
 
-            - The number of items that should be refunded for this order line. When this parameter is omitted, the
-              whole order line will be refunded.
+      The amount you can refund depends on various properties of the order line and the create order refund request. The
+      maximum that can be refunded is ``unit price x quantity to ship``.
 
-              Must be less than the number of items already refunded for this order line.
+      The minimum amount depends on the discount applied to the line, the quantity already refunded or shipped, the
+      amounts already refunded or shipped and the quantity you want to refund.
 
-          * - ``amount``
+      If you do not send an amount, Mollie will determine the amount automatically or respond with an error if the
+      amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
+      ``extra.maximumAmount`` properties that allow you pick the right amount.
 
-              .. type:: amount object
-                 :required: false
+.. parameter:: description
+   :type: string
+   :condition: optional
 
-            - The amount that you want to refund. In almost all cases, Mollie can determine the amount automatically.
+   The description of the refund you are creating. This will be shown to the consumer on their card or bank statement
+   when possible. Max. 140 characters.
 
-              The amount is required only if you are *partially* refunding an order line which has a non-zero
-              ``discountAmount``.
+.. parameter:: metadata
+   :type: mixed
+   :condition: optional
 
-              The amount you can refund depends on various properties of the order line and the create order refund
-              request. The maximum that can be refunded is ``unit price x quantity to ship``.
-
-              The minimum amount depends on the discount applied to the line, the quantity already refunded or shipped,
-              the amounts already refunded or shipped and the quantity you want to refund.
-
-              If you do not send an amount, Mollie will determine the amount automatically or respond with an error
-              if the amount cannot be determined automatically. The error will contain the ``extra.minimumAmount`` and
-              ``extra.maximumAmount`` properties that allow you pick the right amount.
-
-   * - ``description``
-
-       .. type:: string
-          :required: false
-
-     - The description of the refund you are creating. This will be shown to the consumer on their card or
-       bank statement when possible. Max. 140 characters.
-
-   * - ``metadata``
-
-       .. type:: mixed
-          :required: false
-
-     - Provide any data you like, for example a string or a JSON object. We will save the data alongside the
-       refund. Whenever you fetch the refund with our API, we will also include the metadata. You can use up to
-       approximately 1kB.
+   Provide any data you like, for example a string or a JSON object. We will save the data alongside the refund.
+   Whenever you fetch the refund with our API, we will also include the metadata. You can use up to approximately 1kB.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
-.. list-table::
-   :widths: auto
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to ``true`` to create a test mode order refund.
+   Set this to ``true`` to create a test mode order refund.
 
 Response
 --------

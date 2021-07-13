@@ -34,64 +34,48 @@ Response
 --------
 ``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: count
+   :type: integer
 
-   * - ``count``
+   The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or
+   the default number.
 
-       .. type:: integer
+.. parameter:: _embedded
+   :type: object
+   :collapse-children: false
 
-     - The number of captures found in ``_embedded``, which is either the requested number (with a maximum of 250) or
-       the default number.
+   The object containing the queried data.
 
-   * - ``_embedded``
+   .. parameter:: captures
+      :type: array
 
-       .. type:: object
+      An array of capture objects as described in :doc:`Get capture </reference/v2/captures-api/get-capture>`.
 
-     - The object containing the queried data.
+.. parameter:: _links
+   :type: object
 
-       .. list-table::
-          :widths: auto
+   Links to help navigate through the lists of captures. Every URL object will contain an ``href`` and a ``type``
+   field.
 
-          * - ``captures``
+   .. parameter:: self
+      :type: object
 
-              .. type:: array
+      The URL to the current set of captures.
 
-            - An array of capture objects as described in :doc:`Get capture </reference/v2/captures-api/get-capture>`.
+   .. parameter:: previous
+      :type: object
 
-   * - ``_links``
+      The previous set of captures, if available.
 
-       .. type:: object
+   .. parameter:: next
+      :type: object
 
-     - Links to help navigate through the lists of captures. Every URL object will contain an ``href`` and a ``type``
-       field.
+      The next set of captures, if available.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: documentation
+      :type: object
 
-          * - ``self``
-
-              .. type:: object
-
-            - The URL to the current set of captures.
-
-          * - ``previous``
-
-              .. type:: object
-
-            - The previous set of captures, if available.
-
-          * - ``next``
-
-              .. type:: object
-
-            - The next set of captures, if available.
-
-          * - ``documentation``
-
-              .. type:: object
-
-            - The URL to the List settlement captures endpoint documentation.
+      The URL to the List settlement captures endpoint documentation.
 
 Example
 -------

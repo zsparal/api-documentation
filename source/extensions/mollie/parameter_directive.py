@@ -11,7 +11,8 @@ class ParameterDirective(Directive):
     option_spec = {
         "type": directives.unchanged_required,
         "condition": directives.unchanged,
-        "collapse": utilities.validate_bool
+        "collapse": utilities.validate_bool,
+        "collapse-children": utilities.validate_bool
     }
 
     def run(self):
@@ -28,10 +29,15 @@ class ParameterDirective(Directive):
 
         collapse = "collapse" in self.options and self.options["collapse"] is True
 
+        if "collapse-children" in self.options:
+            collapse_children = self.options["collapse-children"]
+        else:
+            collapse_children = True
+
         if collapse:
             self.add_collapse_toggle_node(name_container)
 
-        self.add_description_node(container, self.content, collapse)
+        self.add_description_node(container, self.content, collapse, collapse_children)
 
         return [container]
 
@@ -75,7 +81,7 @@ class ParameterDirective(Directive):
 
         container += [collapse_button_node]
 
-    def add_description_node(self, container, description, collapse):
+    def add_description_node(self, container, description, collapse, collapse_children):
         description_node = nodes.line_block()
         description_node["classes"] = ["parameter__description"]
 
@@ -91,6 +97,9 @@ class ParameterDirective(Directive):
             sub_parameter_container = nodes.container()
             sub_parameter_container["classes"] = ["parameter__children"]
 
+            if not collapse_children:
+                sub_parameter_container["classes"] += ["active"]
+
             # Move all sub-parameters into the new container.
             for sub_parameter in sub_parameters:
                 # Skip sub-sub-parameters.
@@ -101,11 +110,20 @@ class ParameterDirective(Directive):
                 sub_parameter_container.append(sub_parameter)
 
             # Add the 'Show child parameters' button.
+            if collapse_children:
+                button_label = "Show child parameters"
+                button_classes = "parameter__children-button"
+            else:
+                button_label = "Hide child parameters"
+                button_classes = "parameter__children-button active"
+
             sub_parameter_button = nodes.raw(
-                "Show child parameters",
-                '<p class="parameter__children-button">' +
-                '<a href="javascript:void(0)" data-handler="child-parameters" data-hide-label="Hide child parameters"' +
-                ' data-show-label="Show child parameters">Show child parameters</a>' +
+                button_label,
+                '<p class="' + button_classes + '">' +
+                '<a href="javascript:void(0)" data-handler="child-parameters"' +
+                ' data-hide-label="Hide child parameters" data-show-label="Show child parameters">' +
+                button_label +
+                '</a>' +
                 '</p>',
                 format="html"
             )
