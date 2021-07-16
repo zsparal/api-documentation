@@ -118,6 +118,11 @@ Example
 
 Response
 ^^^^^^^^
+.. warning:: Be aware the ``categoryCode`` field will soon be deprecated and replaced by a new business
+             category field. This new field will be introduced around **__ETA__**. We will still provide
+             support for the ``categoryCode`` field until **__ETA__**, after that date the new field
+             should be used in order to be able to create a verified profile.
+
 .. code-block:: none
    :linenos:
 

@@ -65,6 +65,11 @@ Response
 .. parameter:: categoryCode
    :type: integer
 
+   .. warning:: Be aware the ``categoryCode`` parameter will soon be deprecated and replaced by a new business
+                category parameter. This new parameter will be introduced around **__ETA__**. We will still provide
+                support for the ``categoryCode`` parameter until **__ETA__**, after that date the new parameter
+                should be used in order to be able to create a verified profile.
+
    The industry associated with the profile's trade name or brand.
 
    Possible values:
