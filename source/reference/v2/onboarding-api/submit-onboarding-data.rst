@@ -126,6 +126,10 @@ Please note that even though all parameters are optional, at least one of them n
       :type: integer
       :condition: optional
 
+      .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
+                   business category parameter. We will continue to provide support for the ``categoryCode`` parameter
+                   until 2022, but please revisit our documentation in September to learn how to update your API calls.
+
       The industry associated with the profile's trade name or brand.
 
       Possible values:
