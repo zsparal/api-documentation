@@ -73,7 +73,7 @@ Response
       A string containing the exact amount that was charged back in the given currency.
 
 .. parameter:: settlementAmount
-   :type: amount object|null
+   :type: amount object
 
    This optional field will contain the amount that will be deducted from your account, converted to the currency your
    account is settled in. It follows the same syntax as the ``amount`` property.
@@ -99,7 +99,7 @@ Response
    The date and time the chargeback was issued, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
 .. parameter:: reason
-   :type: object|null
+   :type: object
 
    Reason for the chargeback as given by the bank.
 

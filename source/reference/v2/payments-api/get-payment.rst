@@ -234,7 +234,7 @@ Response
    bank or card statement when possible.
 
 .. parameter:: redirectUrl
-   :type: string|null
+   :type: string
 
    The URL your customer will be redirected to after completing or canceling the payment process.
 

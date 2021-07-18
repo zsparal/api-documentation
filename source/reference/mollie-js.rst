@@ -17,46 +17,36 @@ checkout component, such as a credit card number field or a credit card expiry d
 
 Mollie(profileId[, options])
 ----------------------------
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: required
 
-   * - ``profileId``
+   Your profile ID, for example ``pfl_3RkSN1zuPE``.
 
-       .. type:: string
-          :required: true
+.. parameter:: options
+   :type: options object
+   :condition: optional
 
-     - Your profile ID, for example ``pfl_3RkSN1zuPE``.
+   Any options you want to set. E.g. ``{ locale: "nl_NL"}``
 
-   * - ``options``
+   .. parameter:: locale
+      :type: string
+      :condition: optional
 
-       .. type:: options object
-          :required: false
+      Allows you to preset the language to be used. When this parameter is not provided, the browser language will be
+      used instead. If we also not support the browser language then it will be shown in English. We recommend you
+      provide the language tag, since this is usually more accurate.
 
-     - Any options you want to set. E.g. ``{ locale: "nl_NL"}``
+      Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
+      ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV``
+      ``lt_LT``
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: testmode
+      :type: boolean
+      :condition: optional
 
-          * - ``locale``
-
-              .. type:: string
-                 :required: false
-
-            - Allows you to preset the language to be used. When this parameter is not provided, the browser language
-              will be used instead. If we also not support the browser language then it will be shown in English. We
-              recommend you provide the language tag, since this is usually more accurate.
-
-              Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES``
-              ``ca_ES`` ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL``
-              ``lv_LV`` ``lt_LT``
-
-          * - ``testmode``
-
-              .. type:: boolean
-                 :required: false
-
-            - Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix, e.g.
-              `tkn_123abctest`.
+      Set to ``true`` to enable test mode. Test tokens will be recognizable by the ``test`` suffix, e.g.
+      `tkn_123abctest`.
 
 .. _components-mollie-create-token:
 
@@ -101,34 +91,25 @@ should be mounted in your checkout.
 
 You need to create four components, one for each card holder data field.
 
-.. list-table::
-   :widths: auto
+.. parameter:: type
+   :type: string
+   :condition: required
 
-   * - ``type``
+   The ``createComponent`` method will create an component ready to be mounted.
 
-       .. type:: string
-          :required: true
+   Possible values: ``"cardHolder"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
 
-     - The ``createComponent`` method will create an component ready to be mounted.
+.. parameter:: options
+   :type: options object
+   :condition: optional
 
-       Possible values: ``"cardHolder"`` ``"cardNumber"`` ``"verificationCode"`` ``"expiryDate"``
+   The options you want to give to Mollie Components. E.g. ``{ styles: fontSize: "10px"}``
 
-   * - ``options``
+   .. parameter:: styles
+      :type: styles object
+      :condition: optional
 
-       .. type:: options object
-          :required: false
-
-     - The options you want to give to Mollie Components. E.g. ``{ styles: fontSize: "10px"}``
-
-       .. list-table::
-          :widths: auto
-
-          * - ``styles``
-
-              .. type:: styles object
-                  :required: false
-
-            - See :doc:`Styling Mollie Components </components/styling>`.
+      See :doc:`Styling Mollie Components </components/styling>`.
 
 Javascript
 ^^^^^^^^^^
@@ -182,16 +163,12 @@ Adds the component to the DOM, meaning it will become visible for the user from 
     <label for="card" >Card label</label>
     <div id="card"></div>
 
-.. list-table::
-   :widths: auto
+.. parameter:: targetElement
+   :type: HTMLElement|string
+   :condition: required
 
-   * - ``targetElement``
-
-       .. type:: HTMLelement|string
-          :required: true
-
-     - An `HTMLElement <https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement>`_ or a valid CSS Selector such as
-       ``#id`` and ``.class``.
+   An `HTMLElement <https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement>`_ or a valid CSS Selector such as
+   ``#id`` and ``.class``.
 
 Javascript
 ^^^^^^^^^^
@@ -211,24 +188,19 @@ component.addEventListener(event, callback)
 -------------------------------------------
 Components can listen to several ``events``. The callback receives an object with all the related information.
 
-.. list-table::
-   :widths: auto
+.. parameter:: event
+   :type: string
+   :condition: required
 
-   * - ``event``
+   Subscribe to the event that are emitted by Mollie js.
 
-       .. type:: string
-          :required: true
+   Possible values: ``"blur"`` ``"focus"`` ``"change"``
 
-     - Subscribe to the event that are emitted by Mollie js.
+.. parameter:: callback
+   :type: function
+   :condition: required
 
-       Possible values: ``"blur"`` ``"focus"`` ``"change"``
-
-   * - ``callback``
-
-       .. type:: function
-          :required: true
-
-     - A function that will be called whenever the event is been emitted.
+   A function that will be called whenever the event is been emitted.
 
 Javascript
 ^^^^^^^^^^
