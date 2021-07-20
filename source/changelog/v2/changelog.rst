@@ -3,6 +3,19 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+July 2021
+=========
+Tuesday, 20th
+-------------
+- Added the possibility to create :doc:`Split payments </connect/splitting-payments>`, with which you can distribute
+  and split payments between your platform and your connected merchant accounts. Added ``routing`` optional parameter to
+  the :doc:`Create payment API </reference/v2/payments-api/create-payment>` and ``routing`` optional object to the
+  :doc:`Create payment API </reference/v2/payments-api/create-payment>` and
+  :doc:`Get payment API </reference/v2/payments-api/get-payment>` responses.
+- Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>`. Added ``reverseRouting``
+  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-refund>` and ``routingReversal``
+  optional object to the :doc:`Refund API </reference/v2/refunds-api/get-refund>` response.
+
 June 2021
 =========
 Friday, 2nd
