@@ -62,8 +62,8 @@ Parameters
    We recommend you use a unique identifier so that you can always link the payment to the order in your back office.
    This is particularly useful for bookkeeping.
 
-   Descriptions do not have a maximum length in the API, but will be truncated down to 255 characters. The maximum description
-   length per payment method also differs which may lead to further shortening of the already truncated description.
+   The maximum length of the description field differs per payment method, with the absolute maximum being 255 characters.
+   The API will not reject strings longer than the maximum length but it will truncate them to fit.
 
 .. parameter:: redirectUrl
    :type: string
