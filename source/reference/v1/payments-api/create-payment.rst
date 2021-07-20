@@ -50,6 +50,9 @@ Parameters
    We recommend you use the order number so that you can always link the payment to the order. This is particularly
    useful for bookkeeping.
 
+   Descriptions do not have a maximum length in the API, but will be truncated down to 255 characters. The maximum description
+   length per payment method also differs which may lead to further shortening of the already truncated description.
+
 .. parameter:: redirectUrl
    :type: string
    :condition: required

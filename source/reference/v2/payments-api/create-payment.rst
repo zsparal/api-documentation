@@ -53,6 +53,7 @@ Parameters
 .. parameter:: description
    :type: string
    :condition: required
+   :collapse-children: true
 
    The description of the payment you are creating. This will be shown to your customer on their card or bank statement
    when possible. We truncate the description automatically according to the limits of the used payment method. The
@@ -60,6 +61,9 @@ Parameters
 
    We recommend you use a unique identifier so that you can always link the payment to the order in your back office.
    This is particularly useful for bookkeeping.
+
+   Descriptions do not have a maximum length in the API, but will be truncated down to 255 characters. The maximum description
+   length per payment method also differs which may lead to further shortening of the already truncated description.
 
 .. parameter:: redirectUrl
    :type: string
