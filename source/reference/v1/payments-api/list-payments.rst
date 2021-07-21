@@ -25,22 +25,17 @@ The results are paginated. See :doc:`pagination </overview/pagination>` for more
 
 Parameters
 ----------
-.. list-table::
-   :widths: auto
+.. parameter:: offset
+   :type: integer
+   :condition: optional
 
-   * - ``offset``
+   The number of payments to skip.
 
-       .. type:: integer
-          :required: false
+.. parameter:: count
+   :type: integer
+   :condition: optional
 
-     - The number of payments to skip.
-
-   * - ``count``
-
-       .. type:: integer
-          :required: false
-
-     - The number of payments to return (with a maximum of 250).
+   The number of payments to return (with a maximum of 250).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -50,23 +45,19 @@ parameter, you can specify which profile you want to look at when listing paymen
 parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
 websites. See :doc:`Profiles API </reference/v1/profiles-api/get-profile>` for more information.
 
-.. list-table::
-   :widths: auto
+.. parameter:: profileId
+   :type: string
+   :condition: optional
+   :collapse: true
 
-   * - ``profileId``
+   The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
 
-       .. type:: string
-          :required: false
+.. parameter:: testmode
+   :type: boolean
+   :condition: optional
+   :collapse: true
 
-     - The payment profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
-
-   * - ``testmode``
-
-       .. type:: boolean
-          :required: false
-
-     - Set this to true to only retrieve payments made in test mode. By default, only live payments are
-       returned.
+   Set this to true to only retrieve payments made in test mode. By default, only live payments are returned.
 
 Includes
 ^^^^^^^^
@@ -81,66 +72,51 @@ Response
 --------
 ``200`` ``application/json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: totalCount
+   :type: integer
 
-   * - ``totalCount``
+   The total number of payments available.
 
-       .. type:: integer
+.. parameter:: offset
+   :type: integer
 
-     - The total number of payments available.
+   The number of skipped payments as requested.
 
-   * - ``offset``
+.. parameter:: count
+   :type: integer
 
-       .. type:: integer
+   The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
+   default number.
 
-     - The number of skipped payments as requested.
+.. parameter:: data
+   :type: array
 
-   * - ``count``
+   An array of payment objects as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
 
-       .. type:: integer
+.. parameter:: links
+   :type: object
 
-     - The number of payments found in ``data``, which is either the requested number (with a maximum of 250) or the
-       default number.
+   Links to help navigate through the lists of payments, based on the given offset.
 
-   * - ``data``
+   .. parameter:: previous
+      :type: string
 
-       .. type:: array
+      The previous set of payments, if available.
 
-     - An array of payment objects as described in :doc:`Get payment </reference/v1/payments-api/get-payment>`.
+   .. parameter:: next
+      :type: string
 
-   * - ``links``
+      The next set of payments, if available.
 
-       .. type:: object
+   .. parameter:: first
+      :type: string
 
-     - Links to help navigate through the lists of payments, based on the given offset.
+      The first set of payments, if available.
 
-       .. list-table::
-          :widths: auto
+   .. parameter:: last
+      :type: string
 
-          * - ``previous``
-
-              .. type:: string
-
-            - The previous set of payments, if available.
-
-          * - ``next``
-
-              .. type:: string
-
-            - The next set of payments, if available.
-
-          * - ``first``
-
-              .. type:: string
-
-            - The first set of payments, if available.
-
-          * - ``last``
-
-              .. type:: string
-
-            - The last set of payments, if available.
+      The last set of payments, if available.
 
 Example
 -------

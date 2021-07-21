@@ -213,7 +213,7 @@ Response
          A link pointing to an image of the product sold.
 
 .. parameter:: method
-   :type: string|null
+   :type: string
 
    The payment method last used when paying for the order.
 
@@ -378,7 +378,7 @@ Response
    Data provided during the order creation.
 
 .. parameter:: redirectUrl
-   :type: string|null
+   :type: string
 
    The URL your customer will be redirected to after completing or canceling the payment process.
 

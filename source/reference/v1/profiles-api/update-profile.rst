@@ -28,88 +28,79 @@ Parameters
 ----------
 Replace ``id`` in the endpoint URL by the payment profile's ID, for example ``pfl_v9hTwCvYqw``.
 
-.. list-table::
-   :widths: auto
+.. parameter:: name
+   :type: string
+   :condition: required
 
-   * - ``name``
+   The profile's new name.
 
-       .. type:: string
-          :required: true
+.. parameter:: website
+   :type: string
+   :condition: required
 
-     - The profile's new name.
+   The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
 
-   * - ``website``
+.. parameter:: email
+   :type: string
+   :condition: required
 
-       .. type:: string
-          :required: true
+   The new email address associated with the profile's trade name or brand.
 
-     - The new URL to the profile's website or application. The URL should start with ``https://`` or ``http://``.
+.. parameter:: phone
+   :type: string
+   :condition: required
 
-   * - ``email``
+   The new phone number associated with the profile's trade name or brand.
 
-       .. type:: string
-          :required: true
+.. parameter:: categoryCode
+   :type: integer
+   :condition: optional
 
-     - The new email address associated with the profile's trade name or brand.
+   The new industry identifier associated with the profile's trade name or brand.
 
-   * - ``phone``
+   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
+                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
+                until 2022, but please revisit our documentation in September to learn how to update your API calls.
 
-       .. type:: string
-          :required: true
+   Possible values:
 
-     - The new phone number associated with the profile's trade name or brand.
+   * ``5192`` Books, magazines and newspapers
+   * ``5262`` Marketplaces, crowdfunding, donation platforms
+   * ``5399`` General merchandise
+   * ``5499`` Food and drinks
+   * ``5533`` Automotive Products
+   * ``5641`` Children Products
+   * ``5651`` Clothing & Shoes
+   * ``5712`` Home furnishing
+   * ``5732`` Electronics, computers and software
+   * ``5734`` Hosting/VPN services
+   * ``5735`` Entertainment
+   * ``5815`` Credits/vouchers/giftcards
+   * ``5921`` Alcohol
+   * ``5944`` Jewelry & Accessories
+   * ``5945`` Hobby, Toy, and Game Shops
+   * ``5977`` Health & Beauty products
+   * ``6012`` Financial services
+   * ``6051`` Crypto currency
+   * ``7299`` Consultancy
+   * ``7922`` Events, conferences, concerts, tickets
+   * ``7997`` Gyms, membership fee based sports
+   * ``7999`` Travel, rental and transportation
+   * ``8111`` Lawyers and legal advice
+   * ``8299`` Advising/coaching/training
+   * ``8398`` Charity and donations
+   * ``8699`` Political parties
+   * ``9399`` Government services
+   * ``0`` Other
 
-   * - ``categoryCode``
+.. parameter:: mode
+   :type: string
+   :condition: optional
 
-       .. type:: integer
-          :required: false
+   The new profile mode. Note switching from test to production mode will trigger a verification process where we review
+   the payment profile.
 
-     - The new industry identifier associated with the profile's trade name or brand.
-
-       .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                    business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                    until 2022, but please revisit our documentation in September to learn how to update your API calls.
-
-       Possible values:
-
-       * ``5192`` Books, magazines and newspapers
-       * ``5262`` Marketplaces, crowdfunding, donation platforms
-       * ``5399`` General merchandise
-       * ``5499`` Food and drinks
-       * ``5533`` Automotive Products
-       * ``5641`` Children Products
-       * ``5651`` Clothing & Shoes
-       * ``5712`` Home furnishing
-       * ``5732`` Electronics, computers and software
-       * ``5734`` Hosting/VPN services
-       * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards
-       * ``5921`` Alcohol
-       * ``5944`` Jewelry & Accessories
-       * ``5945`` Hobby, Toy, and Game Shops
-       * ``5977`` Health & Beauty products
-       * ``6012`` Financial services
-       * ``6051`` Crypto currency
-       * ``7299`` Consultancy
-       * ``7922`` Events, conferences, concerts, tickets
-       * ``7997`` Gyms, membership fee based sports
-       * ``7999`` Travel, rental and transportation
-       * ``8111`` Lawyers and legal advice
-       * ``8299`` Advising/coaching/training
-       * ``8398`` Charity and donations
-       * ``8699`` Political parties
-       * ``9399`` Government services
-       * ``0`` Other
-
-   * - ``mode``
-
-       .. type:: string
-          :required: false
-
-     - The new profile mode. Note switching from test to production mode will trigger a verification process
-       where we review the payment profile.
-
-       Possible values: ``live`` ``test``
+   Possible values: ``live`` ``test``
 
 Response
 --------

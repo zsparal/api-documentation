@@ -41,87 +41,58 @@ Response
 --------
 ``201`` ``application/hal+json``
 
-..  list-table::
-    :widths: auto
+.. parameter:: resource
+   :type: string
 
-    * - ``resource``
+   Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
 
-        .. type:: string
+.. parameter:: id
+   :type: string
 
-      - Indicates the response contains an issuer object. Will always contain ``issuer`` for this endpoint.
+   The unique identifier of the voucher issuer.
 
-    * - ``id``
+.. parameter:: description
+   :type: string
 
-        .. type:: string
+   The full name of the voucher issuer.
 
-      - The unique identifier of the voucher issuer.
+.. parameter:: status
+   :type: string
 
-    * - ``description``
+   The status that the issuer is in. Possible values: ``pending-issuer`` or ``activated``.
 
-        .. type:: string
+   * ``activated`` The issuer is activated and ready for use.
+   * ``pending-issuer`` Activation of this issuer relies on you taking action with the issuer itself.
 
-      - The full name of the voucher issuer.
+.. parameter:: contractor
+   :type: object
 
-    * - ``status``
+   An object with contractor information.
 
-        .. type:: string
+   .. parameter:: id
+      :type: string
 
-      - The status that the issuer is in. Possible values: ``pending-issuer`` or ``activated``.
+   .. parameter:: name
+      :type: string
 
-           * - ``activated``
+   .. parameter:: contractId
+      :type: string
 
-               .. type:: string
+.. parameter:: _links
+   :type: object
 
-             - The issuer is activated and ready for use.
+   An object with several URL objects relevant to the voucher issuer. Every URL object will contain an ``href`` and a
+   ``type`` field.
 
-           * - ``pending-issuer``
+   .. parameter:: self
+      :type: URL object
 
-               .. type:: string
+      The API resource URL of the voucher issuer itself.
 
-             - Activation of this issuer relies on you taking action with the issuer itself.
+   .. parameter:: documentation
+      :type: URL object
 
-    * - ``contractor``
-
-        .. type:: object
-
-      - An object with contractor information
-
-           * - ``id``
-
-               .. type:: string
-
-             - The id of the contractor
-
-           * - ``name``
-
-               .. type:: string
-
-             - The name of the contractor
-
-           * - ``contractId``
-
-               .. type:: string
-
-             - The contract id of the contractor.
-
-    * - ``_links``
-
-        .. type:: object
-
-      - An object with several URL objects relevant to the voucher issuer. Every URL object will contain an ``href`` and
-        a ``type`` field.
-
-           * - ``self``
-
-               .. type:: URL object
-
-             - The API resource URL of the voucher issuer itself.
-
-           * - ``documentation``
-
-               .. type:: URL object
-
-             - The URL to the voucher issuer retrieval endpoint documentation.
+      The URL to the voucher issuer retrieval endpoint documentation.
 
 Example
 -------

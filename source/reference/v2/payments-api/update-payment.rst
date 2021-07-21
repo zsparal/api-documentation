@@ -23,7 +23,9 @@ payment method specific parameters available, see :ref:`below <payment-method-sp
    :type: string
    :condition: optional
 
-   The description of the payment.
+   The description of the payment. The maximum length of the description field differs per payment method, with the
+   absolute maximum being 255 characters. The API will not reject strings longer than the maximum length but it will
+   truncate them to fit.
 
 .. parameter:: redirectUrl
    :type: string

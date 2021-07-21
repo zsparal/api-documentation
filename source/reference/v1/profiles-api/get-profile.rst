@@ -29,162 +29,137 @@ Response
 --------
 ``200`` ``application/json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+   :type: string
 
-   * - ``resource``
+   Indicates the response contains a payment profile object. Will always contain ``profile`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+   :type: string
 
-     - Indicates the response contains a payment profile object. Will always contain ``profile`` for this endpoint.
+   The identifier uniquely referring to this payment profile, for example ``pfl_3RkSN1zuPE``.
 
-   * - ``id``
+.. parameter:: mode
+   :type: string
 
-       .. type:: string
+   Indicates whether the payment profile is in test or production mode.
 
-     - The identifier uniquely referring to this payment profile, for example ``pfl_3RkSN1zuPE``.
+   Possible values: ``live`` ``test``
 
-   * - ``mode``
+.. parameter:: name
+   :type: string
 
-       .. type:: string
+   The payment profile's name, this will usually reflect the trade name or brand name of the profile's website or
+   application.
 
-     - Indicates whether the payment profile is in test or production mode.
+.. parameter:: website
+   :type: string
 
-       Possible values: ``live`` ``test``
+   The URL to the profile's website or application.
 
-   * - ``name``
+.. parameter:: email
+   :type: string
 
-       .. type:: string
+   The email address associated with the profile's trade name or brand.
 
-     - The payment profile's name, this will usually reflect the trade name or brand name of the profile's website or
-       application.
+.. parameter:: phone
+   :type: string
 
-   * - ``website``
+   The phone number associated with the profile's trade name or brand.
 
-       .. type:: string
+.. parameter:: categoryCode
+   :type: integer
 
-     - The URL to the profile's website or application.
+   The industry associated with the profile's trade name or brand.
 
-   * - ``email``
+   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
+                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
+                until 2022, but please revisit our documentation in September to learn how to update your API calls.
 
-       .. type:: string
+   Possible values:
 
-     - The email address associated with the profile's trade name or brand.
+   * ``5192`` Books, magazines and newspapers
+   * ``5262`` Marketplaces, crowdfunding, donation platforms
+   * ``5399`` General merchandise
+   * ``5499`` Food and drinks
+   * ``5533`` Automotive Products
+   * ``5641`` Children Products
+   * ``5651`` Clothing & Shoes
+   * ``5712`` Home furnishing
+   * ``5732`` Electronics, computers and software
+   * ``5734`` Hosting/VPN services
+   * ``5735`` Entertainment
+   * ``5815`` Credits/vouchers/giftcards
+   * ``5921`` Alcohol
+   * ``5944`` Jewelry & Accessories
+   * ``5945`` Hobby, Toy, and Game Shops
+   * ``5977`` Health & Beauty products
+   * ``6012`` Financial services
+   * ``6051`` Crypto currency
+   * ``7299`` Consultancy
+   * ``7922`` Events, conferences, concerts, tickets
+   * ``7997`` Gyms, membership fee based sports
+   * ``7999`` Travel, rental and transportation
+   * ``8111`` Lawyers and legal advice
+   * ``8299`` Advising/coaching/training
+   * ``8398`` Charity and donations
+   * ``8699`` Political parties
+   * ``9399`` Government services
+   * ``0`` Other
 
-   * - ``phone``
+.. parameter:: status
+   :type: string
 
-       .. type:: string
+   The profile status determines whether the payment profile is able to receive live payments.
 
-     - The phone number associated with the profile's trade name or brand.
+   Possible values:
 
-   * - ``categoryCode``
+   * ``unverified`` The profile has not been verified yet and can only be used to create test payments.
+   * ``verified`` The profile has been verified and can be used to create live payments and test payments.
+   * ``blocked`` The profile is blocked and can thus no longer be used or changed.
 
-       .. type:: integer
+.. parameter:: review
+   :type: object
 
-     - The industry associated with the profile's trade name or brand.
+   The presence of a review object indicates changes have been made that have not yet been approved by Mollie. Changes
+   to test profiles are approved automatically, unless a switch to a live profile has been requested. The review object
+   will therefore usually be ``null`` in test mode.
 
-       .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                    business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                    until 2022, but please revisit our documentation in September to learn how to update your API calls.
+   .. parameter:: status
+      :type: string
 
-       Possible values:
+      The status of the requested profile changes.
 
-       * ``5192`` Books, magazines and newspapers
-       * ``5262`` Marketplaces, crowdfunding, donation platforms
-       * ``5399`` General merchandise
-       * ``5499`` Food and drinks
-       * ``5533`` Automotive Products
-       * ``5641`` Children Products
-       * ``5651`` Clothing & Shoes
-       * ``5712`` Home furnishing
-       * ``5732`` Electronics, computers and software
-       * ``5734`` Hosting/VPN services
-       * ``5735`` Entertainment
-       * ``5815`` Credits/vouchers/giftcards
-       * ``5921`` Alcohol
-       * ``5944`` Jewelry & Accessories
-       * ``5945`` Hobby, Toy, and Game Shops
-       * ``5977`` Health & Beauty products
-       * ``6012`` Financial services
-       * ``6051`` Crypto currency
-       * ``7299`` Consultancy
-       * ``7922`` Events, conferences, concerts, tickets
-       * ``7997`` Gyms, membership fee based sports
-       * ``7999`` Travel, rental and transportation
-       * ``8111`` Lawyers and legal advice
-       * ``8299`` Advising/coaching/training
-       * ``8398`` Charity and donations
-       * ``8699`` Political parties
-       * ``9399`` Government services
-       * ``0`` Other
+      Possible values:
 
-   * - ``status``
+      * ``pending`` The changes are pending review. We will review your changes soon.
+      * ``rejected`` We have reviewed and rejected your changes.
 
-       .. type:: string
+.. parameter:: createdDatetime
+   :type: datetime
 
-     - The profile status determines whether the payment profile is able to receive live payments.
+   The payment profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-       Possible values:
+.. parameter:: updatedDatetime
+   :type: datetime
 
-       * ``unverified`` The profile has not been verified yet and can only be used to create test payments.
-       * ``verified`` The profile has been verified and can be used to create live payments and test payments.
-       * ``blocked`` The profile is blocked and can thus no longer be used or changed.
+   The date and time of the payment profile's last edit, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
+   format.
 
-   * - ``review``
+.. parameter:: links
+   :type: object
 
-       .. type:: object
+   Useful URLs to related resources.
 
-     - The presence of a review object indicates changes have been made that have not yet been approved by Mollie.
-       Changes to test profiles are approved automatically, unless a switch to a live profile has been requested. The
-       review object will therefore usually be ``null`` in test mode.
+   .. parameter:: apikeys
+      :type: string
 
-       .. list-table::
-          :widths: auto
+      The URL to the nested :doc:`API keys resource </reference/v1/profiles-api/list-keys>`.
 
-          * - ``status``
+   .. parameter:: checkoutPreviewUrl
+      :type: string
 
-              .. type:: string
-
-            - The status of the requested profile changes.
-
-              Possible values:
-
-              * ``pending`` The changes are pending review. We will review your changes soon.
-              * ``rejected`` We have reviewed and rejected your changes.
-
-   * - ``createdDatetime``
-
-       .. type:: datetime
-
-     - The payment profile's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-
-   * - ``updatedDatetime``
-
-       .. type:: datetime
-
-     - The date and time of the payment profile's last edit, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_
-       format.
-
-   * - ``links``
-
-       .. type:: object
-
-     - Useful URLs to related resources.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``apikeys``
-
-              .. type:: string
-
-            - The URL to the nested :doc:`API keys resource </reference/v1/profiles-api/list-keys>`.
-
-          * - ``checkoutPreviewUrl``
-
-              .. type:: string
-
-            - The Checkout preview URL. You need to be logged in to access this page.
+      The Checkout preview URL. You need to be logged in to access this page.
 
 Example
 -------
