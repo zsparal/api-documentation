@@ -67,6 +67,10 @@ parameters:
    :type: string
    :condition: optional
 
+   .. warning:: Be aware that from September the ``category`` parameter will be deprecated and replaced by a new
+                business category parameter. We will continue to provide support for the ``category`` parameter
+                until 2022, but please revisit our documentation in September to learn how to update your API calls.
+
    The category in which the merchant is active. The value is a merchant category code. Must be one of the following
    values:
 
