@@ -68,7 +68,7 @@ Response
       A string containing the exact amount of the payment link in the given currency.
 
 .. parameter:: redirectUrl
-   :type: string|null
+   :type: string
 
    The URL your customer will be redirected to after completing the payment process.
 

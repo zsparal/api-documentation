@@ -153,7 +153,7 @@ Response
       desired size.
 
 .. parameter:: status
-   :type: string|null
+   :type: string
 
    The status that the method is in.
 
