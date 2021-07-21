@@ -51,10 +51,9 @@ in the request.
    :type: integer
    :condition: optional
 
-   .. warning:: Be aware the ``categoryCode`` parameter will soon be deprecated and replaced by a new business
-                category parameter. This new parameter will be introduced around **__ETA__**. We will still provide
-                support for the ``categoryCode`` parameter until **__ETA__**, after that date the new parameter
-                should be used in order to be able to create a verified profile.
+   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
+                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
+                until 2022, but please revisit our documentation in September to learn how to update your API calls.
 
    The new industry identifier associated with the profile's trade name or brand.
 

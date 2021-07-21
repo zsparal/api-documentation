@@ -100,10 +100,9 @@ Request
 
 Response
 ^^^^^^^^
-.. warning:: Be aware the ``categoryCode`` field will soon be deprecated and replaced by a new business
-             category field. This new field will be introduced around **__ETA__**. We will still provide
-             support for the ``categoryCode`` field until **__ETA__**, after that date the new field
-             should be used in order to be able to create a verified profile.
+.. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
+             business category parameter. We will continue to provide support for the ``categoryCode`` parameter
+             until 2022, but please revisit our documentation in September to learn how to update your API calls.
 
 .. code-block:: none
    :linenos:
