@@ -199,3 +199,5 @@ object:
        },
        "releaseDate": "2026-01-01"
    }
+
+The release date can be up to two years from the day of the payment's creation. For test payments, this limit is 10 days.  
