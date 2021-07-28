@@ -7,6 +7,8 @@ Using Mollie Checkout is optional. We do recommend using it, since it is battle-
 conversion. If, however, you would like to provide a custom checkout experience, please refer to our guide on
 :doc:`building your own checkout </payments/build-your-own-checkout>`.
 
+Our full hosted checkout experience can be viewed on `our Hosted Checkout demo <https://demo.mollie.com/>`_.
+
 Please also refer to the `Mollie Checkout product page <https://www.mollie.com/en/checkout>`_ on our website.
 
 .. figure:: images/mollie-checkout-example-a@2x.jpg
@@ -41,6 +43,8 @@ image at the top of the page is a good example of a fully branded checkout page.
 #. Go to your `Profiles <https://www.mollie.com/dashboard/settings/profiles>`_.
 #. Click on a **Personalize Checkout** button.
 #. Upload images within the specified restrictions.
+
+The personalization of a background can also be viewed on `our Hosted Checkout demo <https://demo.mollie.com/>`_.
 
 Single-click payments for returning customers
 ---------------------------------------------
