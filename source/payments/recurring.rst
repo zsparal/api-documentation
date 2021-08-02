@@ -76,7 +76,7 @@ periodically through *subscriptions*.
           }"
 
 #. Redirect the customer to the ``_links.checkout.href`` to complete the first payment. Make sure to use an HTTP ``GET``
-   redirect. This hosted checkout can be viewed in `this demo <https://demo.mollie.com>`
+   redirect. You can find an example of the hosted checkout in `our demo environment <https://demo.mollie.com>`_.
 
 #. Once completed there will be a customer mandate that you can access via the
    :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``,
