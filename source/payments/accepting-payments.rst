@@ -12,7 +12,7 @@ The basic payment flow
 In its simplest form, setting up a payment requires only three steps: setting up the payment with our
 :doc:`Payments API </reference/v2/payments-api/create-payment>`, sending the customer to our
 :doc:`hosted checkout </payments/hosted-checkout>`, and processing the :doc:`webhook </overview/webhooks>` we send once
-the payment is completed.
+the payment is completed. This hosted checkout can be view in `this demo <https://demo.mollie.com>`
 
 You can also opt for a deeper integration, from offering your own payment method selection all the way to embedding
 credit card fields in your own checkout experience. Please refer to our guide on
