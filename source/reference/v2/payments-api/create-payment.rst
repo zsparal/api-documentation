@@ -349,8 +349,8 @@ Gift cards
    Possible values: ``bloemencadeaukaart`` ``boekenbon`` ``decadeaukaart`` ``delokalecadeaukaart`` ``dinercadeau``
    ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``kluscadeau`` ``kunstencultuurcadeaukaart``
    ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart``
-   ``reiscadeau`` ``restaurantcadeau`` ``sportenfitcadeau`` ``sustainablefashion`` ``travelcheq`` ``vvvgiftcard``
-   ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+   ``reiscadeau`` ``restaurantcadeau`` ``sodexosportculturepass`` ``sportenfitcadeau`` ``sustainablefashion`` ``travelcheq``
+   ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
 
 .. parameter:: voucherNumber
    :type: string
