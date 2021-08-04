@@ -3,6 +3,12 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+August 2021
+===========
+Wednesday, 4th
+--------------
+- Added ``sodexosportculturepass`` as gift card issuer.
+
 July 2021
 =========
 Tuesday, 20th

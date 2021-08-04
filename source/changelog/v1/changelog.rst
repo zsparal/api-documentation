@@ -8,6 +8,12 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+August 2021
+===========
+Wednesday, 4th
+--------------
+- Added ``sodexosportculturepass`` as gift card issuer.
+
 March 2021
 ==========
 Tuesday, 30th
