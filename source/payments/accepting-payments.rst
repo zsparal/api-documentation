@@ -50,8 +50,7 @@ programmer's perspective.
    This process is entirely taken care of by Mollie. You do not have to do anything here.
 
 #. When the payment is made, Mollie will send you a :doc:`webhook </overview/webhooks>` informing your website about the
-   :doc:`payment's status change </payments/status-changes>`. You can configure the webhook URL per profile in your
-   Mollie account, or per payment in the API request.
+   :doc:`payment's status change </payments/status-changes>`. You can configure the webhook URL per payment in the API request.
 
    In response to your webhook being called your application just needs to issue a ``200 OK`` status. From that response
    Mollie can tell that your processing of the new status was successful – for any other response we keep trying.
