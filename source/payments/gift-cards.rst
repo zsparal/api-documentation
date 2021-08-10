@@ -6,6 +6,7 @@ Supported brands
 Mollie supports processing gift cards handled by the Dutch giftcard broker Intersolve. At the moment, the following
 brands are supported:
 
+* `Bloem&Plant giftcard <https://bloemenplant.nu/product/cadeaubon/>`_
 * `Bloemen Cadeaukaart <https://www.bloemen-cadeaukaart.nl/>`_
 * `Boekenbon <https://boekenbon.nl/>`_
 * DE Cadeaukaart
