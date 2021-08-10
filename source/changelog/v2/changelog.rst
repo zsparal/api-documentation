@@ -5,6 +5,10 @@ changes are documented here.
 
 August 2021
 ===========
+Tuesday, 10th
+-------------
+- Added ``bloemplantgiftcard`` as gift card issuer.
+
 Wednesday, 4th
 --------------
 - Added ``sodexosportculturepass`` as gift card issuer.
