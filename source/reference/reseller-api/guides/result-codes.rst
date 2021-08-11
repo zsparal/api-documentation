@@ -64,6 +64,10 @@ The following elements are present in every API result:
 
    Access denied. The account is already claimed by another partner.
 
+   * - ``93``
+
+   Too many requests. Rate limit was hit.
+
    * - ``95``
 
    The API is temporarily unavailable.
