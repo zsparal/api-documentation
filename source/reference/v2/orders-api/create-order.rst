@@ -32,7 +32,7 @@ Parameters
    :condition: required
 
    The total amount of the order, including VAT and discounts. This is the amount that will be charged to your
-   customer. It has to match the sum of the ``linestotalAmount`` amounts.
+   customer. It has to match the sum of the lines ``totalAmount`` amounts.
 
    You can find the `minimum and maximum amounts <https://help.mollie.com/hc/en-us/articles/115000667365>`_ per payment
    method in our help center. Additionally, they can be retrieved using the :doc:`/reference/v2/methods-api/get-method`.
