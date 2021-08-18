@@ -9,12 +9,12 @@ required.
 
 Secure connection required
 --------------------------
-Mollie uses the API-key as :doc:`means of authentication </overview/authentication>` and requires HTTPS connections to
+Mollie uses the API-key as :doc:`means of authentication </overview/authentication>` and requires HTTPS connections encrypted via TLS1.2 (or higher) to
 guarantee security. This means the Mollie API can only be accessed through the secure ``https`` protocol. All of the API
 clients we publish use HTTPS.
 
-End-to-end safety on the transport level is guaranteed by the HTTPS-requirement. No need to encrypt the data itself
-again.
+End-to-end safety on the transport level is guaranteed by the HTTPS-requirement, no need to encrypt the data itself
+again.  We only support TLS 1.2 (or higher). Connection is not possible when using a lower version.
 
 HTTPS mitigates *packet sniffing* and *timing & replay attacks*. Thanks to HTTPS, data exchanged between Mollie and the
 merchant is protected and guaranteed to be authentic. HTTPS implements *hashed signatures*, *nonces* and other tried and
