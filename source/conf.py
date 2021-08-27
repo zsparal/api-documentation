@@ -91,7 +91,8 @@ redirects = {
     'oauth/permissions': 'https://docs.mollie.com/connect/permissions',
     'oauth/splitting-payments': 'https://docs.mollie.com/connect/splitting-payments',
     'payments/overview': 'https://docs.mollie.com/payments/accepting-payments',
-    'reference/v2/organizations-api/list-organizations': 'https://docs.mollie.com/reference/reseller-api/v2/list-organizations'
+    'reference/v2/organizations-api/list-organizations': 'https://docs.mollie.com/reference/reseller-api/v2/list-organizations',
+    'reference/v2/organizations-api/me': 'https://docs.mollie.com/reference/v2/organizations-api/current-organization'
 }
 
 do_not_index = [
