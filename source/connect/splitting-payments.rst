@@ -170,8 +170,8 @@ January 2025:
        "...": { }
    }
 
-It is possible to update the release date of a transaction before it reaches the connected account's available balance, as long
-as the payment has already been paid by the consumer, by simply updating the payment route object:
+It is possible to update the release date of a transaction before it reaches the connected account's available balance, **as long
+as the payment has already been paid by the consumer**, by simply updating the payment route object:
 
 .. code-block:: bash
    :linenos:
