@@ -270,8 +270,8 @@ Response
    If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
    Possible values: ``null`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-   ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``klarnapaylater`` ``klarnasliceit`` ``mybank`` ``paypal`` ``paysafecard``
-   ``przelewy24`` ``sofort``
+   ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``mybank``
+   ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
 .. parameter:: restrictPaymentMethodsToCountry
    :type: string

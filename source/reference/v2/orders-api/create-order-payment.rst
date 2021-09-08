@@ -38,7 +38,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
    methods from a specific country to your customer ``["bancontact", "belfius"]``.
 
    Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-   ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnasliceit`` ``paypal`` ``paysafecard``
+   ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``paypal`` ``paysafecard``
    ``przelewy24`` ``sofort``
 
 .. parameter:: customerId
