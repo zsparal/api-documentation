@@ -23,7 +23,7 @@ Tuesday, 20th
   :doc:`Create payment API </reference/v2/payments-api/create-payment>` and
   :doc:`Get payment API </reference/v2/payments-api/get-payment>` responses.
 - Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>`. Added ``reverseRouting``
-  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-refund>` and ``routingReversal``
+  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-refund>` and ``routingReversals``
   optional object to the :doc:`Refund API </reference/v2/refunds-api/get-refund>` response.
 
 June 2021

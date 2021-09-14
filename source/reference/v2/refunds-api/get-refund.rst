@@ -195,7 +195,7 @@ Response
 
 Mollie Connect response parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-.. parameter:: routingReversal
+.. parameter:: routingReversals
    :type: object
    :condition: optional
    :collapse: true

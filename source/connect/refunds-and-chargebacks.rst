@@ -56,7 +56,7 @@ account ``org_23456``.
        },
        "status": "pending",
        "paymentId": "tr_7UhSN1zuXS",
-       "routingReversal": [
+       "routingReversals": [
            {
                "amount": {
                     "value": "7.50",
