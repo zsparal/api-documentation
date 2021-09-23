@@ -436,10 +436,29 @@ PayPal
 
    Alternatively, we will recognize the following keywords:
 
+   * #
+   * Bestelling
+   * Bestelling ID
+   * Bestellung
+   * Bestelnummer
+   * Betaling
+   * Booking
    * Cart
-   * Order
+   * factnr
+   * Factuur
    * Invoice
+   * Order
+   * Order ref
+   * Order id
+   * Orderid
+   * Order number
+   * Ordernummer
+   * Ordine
    * Payment
+   * Payment id
+   * Pedido
+   * Sipariş
+   * Zahlung
 
 .. parameter:: shippingAddress
    :type: address object
