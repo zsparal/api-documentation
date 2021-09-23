@@ -667,10 +667,10 @@ Credit card
 
       Only available for failed payments. Contains a failure reason code.
 
-      Possible values: ``authentication_abandoned`` ``authentication_failed`` ``authentication_unavailable_acs``
-      ``card_declined`` ``card_expired`` ``inactive_card`` ``insufficient_funds`` ``invalid_cvv``
-      ``invalid_card_holder_name`` ``invalid_card_number`` ``invalid_card_type`` ``possible_fraud``
-      ``refused_by_issuer`` ``unknown_reason``
+      Possible values: ``authentication_abandoned`` ``authentication_failed`` ``authentication_required``
+      ``authentication_unavailable_acs`` ``card_declined`` ``card_expired`` ``inactive_card``
+      ``insufficient_funds`` ``invalid_cvv`` ``invalid_card_holder_name`` ``invalid_card_number``
+      ``invalid_card_type`` ``possible_fraud`` ``refused_by_issuer`` ``unknown_reason``
 
    .. parameter:: failureMessage
       :type: string
