@@ -118,9 +118,6 @@ Example
 
 Response
 ^^^^^^^^
-.. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-             business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-             until 2022, but please revisit our documentation in September to learn how to update your API calls.
 
 .. code-block:: none
    :linenos:
@@ -139,7 +136,7 @@ Response
                    "website": "https://www.mywebsite.com",
                    "email": "info@mywebsite.com",
                    "phone": "+31208202070",
-                   "categoryCode": 5399,
+                   "businessCategory": "OTHER_MERCHANDISE",
                    "status": "verified",
                    "review": {
                        "status": "pending"
