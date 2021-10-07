@@ -121,6 +121,7 @@ Response
                "email": "info@mywebsite.com",
                "phone": "31123456789",
                "businessCategory": "OTHER_MERCHANDISE",
+               "categoryCode": 5399,
                "status": "unverified",
                "review": {
                    "status": "pending"
@@ -140,6 +141,7 @@ Response
                "email": "info@mywebsite.com",
                "phone": "31123456789",
                "businessCategory": "OTHER_MERCHANDISE",
+               "categoryCode": 5399,
                "status": "unverified",
                "createdDatetime": "2018-03-17T01:47:45.0Z",
                "updatedDatetime": "2018-03-17T01:47:45.0Z",

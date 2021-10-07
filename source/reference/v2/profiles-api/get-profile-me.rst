@@ -74,6 +74,7 @@ Response
        "email": "info@mywebsite.com",
        "phone": "+31208202070",
        "businessCategory": "OTHER_MERCHANDISE",
+       "categoryCode": 5399,
        "status": "verified",
        "review": {
            "status": "pending"

@@ -150,6 +150,7 @@ Response
        "email": "info@mywebsite.com",
        "phone": "31123456789",
        "businessCategory": "OTHER_MERCHANDISE",
+       "categoryCode": 5399,
        "status": "unverified",
        "review": {
            "status": "pending"
