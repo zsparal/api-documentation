@@ -162,73 +162,6 @@ In JSON structures, booleans should be passed as the JSON boolean type.
 
 In query string parameters (e.g. ``GET`` requests) only the strings ``true`` and ``false`` are accepted.
 
-Date
-----
-A string representing a date in ``YYYY-MM-DD`` format.
-
-Datetime
---------
-A string representing a date and time in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-
-Locale
-------
-A string representing the country and language in the ``xx_XX`` format specified by
-`ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897>`_.
-
-Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
-``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` ``lt_LT``.
-
-Phone number
-------------
-All phone numbers must passed as strings in the `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example,
-``+31208202070``.
-
-QR code object
---------------
-The QR code object represents an image of a QR code.
-
-.. list-table::
-   :widths: auto
-
-   * - ``height``
-
-       .. type:: integer
-
-     - Height of the image in pixels.
-
-   * - ``width``
-
-       .. type:: integer
-
-     - Width of the image in pixels.
-
-   * - ``src``
-
-       .. type:: string
-
-     - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
-       images. You should support both.
-
-URL object
-----------
-In v2 endpoints, URLs are commonly represented as objects with an ``href`` and ``type`` field.
-
-.. list-table::
-   :widths: auto
-
-   * - ``href``
-
-       .. type:: string
-
-     - The actual URL string.
-
-   * - ``type``
-
-       .. type:: string
-          :required: true
-
-     - The content type of the page or endpoint the URL points to.
-
 .. _business-category:
 
 Business Category
@@ -432,3 +365,70 @@ Possible values:
   * ``CAR_BOAT_CAMPER_MOBILE_HOME_DEALER`` Car, boat, camper, mobile Home dealer
   * ``CAR_RENTALS`` Car rentals
   * ``MOTORCYCLE_PARTS_SHOPS_AND_DEALERS`` Motorcycle (parts) shops and dealers
+
+Date
+----
+A string representing a date in ``YYYY-MM-DD`` format.
+
+Datetime
+--------
+A string representing a date and time in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+Locale
+------
+A string representing the country and language in the ``xx_XX`` format specified by
+`ISO 15897 <https://en.wikipedia.org/wiki/ISO/IEC_15897>`_.
+
+Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
+``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` ``lt_LT``.
+
+Phone number
+------------
+All phone numbers must passed as strings in the `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example,
+``+31208202070``.
+
+QR code object
+--------------
+The QR code object represents an image of a QR code.
+
+.. list-table::
+   :widths: auto
+
+   * - ``height``
+
+       .. type:: integer
+
+     - Height of the image in pixels.
+
+   * - ``width``
+
+       .. type:: integer
+
+     - Width of the image in pixels.
+
+   * - ``src``
+
+       .. type:: string
+
+     - The URI you can use to display the QR code. Note that we can send both data URIs as well as links to HTTPS
+       images. You should support both.
+
+URL object
+----------
+In v2 endpoints, URLs are commonly represented as objects with an ``href`` and ``type`` field.
+
+.. list-table::
+   :widths: auto
+
+   * - ``href``
+
+       .. type:: string
+
+     - The actual URL string.
+
+   * - ``type``
+
+       .. type:: string
+          :required: true
+
+     - The content type of the page or endpoint the URL points to.
