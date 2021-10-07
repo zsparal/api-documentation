@@ -118,7 +118,7 @@ Response
       A string containing the exact total amount of the invoice including VAT in the given currency.
 
 .. parameter:: lines
-   :type: object
+   :type: array
 
    The collection of products which make up the invoice.
 
