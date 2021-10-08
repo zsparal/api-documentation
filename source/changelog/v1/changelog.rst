@@ -8,6 +8,12 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+October 2021
+============
+Friday, 8th
+-----------
+- Added ``huistuincadeaukaart`` as gift card issuer.
+
 August 2021
 ===========
 Tuesday, 10th
