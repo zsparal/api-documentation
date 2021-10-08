@@ -62,12 +62,19 @@ Response
 
    The phone number associated with the profile's trade name or brand.
 
+.. parameter:: businessCategory
+   :type: string
+
+   The industry associated with the profile's trade name or brand.
+
+   Please refer to the documentation of the :ref:`business category <business-category>` for more information on which
+   values are accepted.
+
 .. parameter:: categoryCode
    :type: integer
 
-   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                until 2022, but please revisit our documentation in September to learn how to update your API calls.
+   .. warning:: This parameter is deprecated and will be removed in 2022. Please use the ``businessCategory`` parameter
+                instead.
 
    The industry associated with the profile's trade name or brand.
 
@@ -235,6 +242,7 @@ Response
        "website": "https://www.mywebsite.com",
        "email": "info@mywebsite.com",
        "phone": "+31208202070",
+       "businessCategory": "OTHER_MERCHANDISE",
        "categoryCode": 5399,
        "status": "verified",
        "review": {

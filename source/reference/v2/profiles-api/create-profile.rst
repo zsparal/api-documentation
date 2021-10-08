@@ -44,13 +44,21 @@ Parameters
    The phone number associated with the profile's trade name or brand. Must be in the
    `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
+.. parameter:: businessCategory
+   :type: string
+   :condition: optional
+
+   The industry associated with the profile's trade name or brand.
+
+   Please refer to the documentation of the :ref:`business category <business-category>` for more information on which
+   values are accepted.
+
 .. parameter:: categoryCode
    :type: integer
    :condition: optional
 
-   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                until 2022, but please revisit our documentation in September to learn how to update your API calls.
+   .. warning:: This parameter is deprecated and will be removed in 2022. Please use the ``businessCategory`` parameter
+                instead.
 
    The industry associated with the profile's trade name or brand.
 
@@ -112,7 +120,7 @@ Example
          -d "website=https://www.mywebsite.com" \
          -d "email=info@mywebsite.com" \
          -d "phone=+31208202070" \
-         -d "categoryCode=5399" \
+         -d "businessCategory=OTHER_MERCHANDISE" \
          -d "mode=live"
 
    .. code-block:: php
@@ -126,7 +134,7 @@ Example
             "website" => "https://www.mywebsite.com",
             "email" => "info@mywebsite.com",
             "phone" => "+31208202070",
-            "categoryCode" => "5399",
+            "businessCategory": "OTHER_MERCHANDISE",
             "mode" => "live",
       ]);
 
@@ -140,11 +148,11 @@ Example
 
       profile = mollie_client.profiles.create(
           data={
-      'name': 'My website name',
+              'name': 'My website name',
               'website': 'https://www.mywebsite.com',
               'email': 'info@mywebsite.com',
               'phone': '+31208202070',
-              'categoryCode': '5399',
+              'businessCategory': 'OTHER_MERCHANDISE',
               'mode': 'live',
           }
       )
@@ -159,12 +167,12 @@ Example
       end
 
       profile = Mollie::Profile.create(
-        name:         'My website name',
-        website:      'https://www.mywebsite.com',
-        email:        'info@mywebsite.com',
-        phone:        '+31208202070',
-        categoryCode: '5399',
-        mode:         'live'
+        name:             'My website name',
+        website:          'https://www.mywebsite.com',
+        email:            'info@mywebsite.com',
+        phone:            '+31208202070',
+        businessCategory: 'OTHER_MERCHANDISE',
+        mode:             'live'
       )
 
 Response
@@ -183,6 +191,7 @@ Response
        "website": "https://www.mywebsite.com",
        "email": "info@mywebsite.com",
        "phone": "+31208202070",
+       "businessCategory": "OTHER_MERCHANDISE",
        "categoryCode": 5399,
        "status": "unverified",
        "createdAt": "2018-03-20T09:28:37+00:00",

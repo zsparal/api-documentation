@@ -122,13 +122,21 @@ Please note that even though all parameters are optional, at least one of them n
       The phone number associated with the profile's trade name or brand. Must be in the
       `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
+   .. parameter:: businessCategory
+      :type: string
+      :condition: optional
+
+      The industry associated with the profile's trade name or brand.
+
+      Please refer to the documentation of the :ref:`business category <business-category>` for more information on which
+      values are accepted.
+
    .. parameter:: categoryCode
       :type: integer
       :condition: optional
 
-      .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                   business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                   until 2022, but please revisit our documentation in September to learn how to update your API calls.
+      .. warning:: This parameter is deprecated and will be removed in 2022. Please use the ``businessCategory`` parameter
+                   instead.
 
       The industry associated with the profile's trade name or brand.
 
@@ -189,7 +197,7 @@ Example
                       "url": "https://www.mollie.com",
                       "email": "info@mollie.com",
                       "phone": "+31208202070",
-                      "categoryCode": 6012
+                      "businessCategory": "MONEY_SERVICES"
                    }
                }'
 
@@ -217,7 +225,7 @@ Example
               "url" => "https://www.mollie.com",
               "email" => "info@mollie.com",
               "phone" => "+31208202070",
-              "categoryCode" => 6012,
+              "businessCategory": "MONEY_SERVICES",
           ],
       ]);
 
@@ -232,7 +240,7 @@ Example
       onboarding = mollie_client.onboarding.create(
           'me',
           data={
-      'organization': {
+              'organization': {
                   'name': 'Mollie B.V.',
                   'address': {
                       'streetAndNumber': 'Keizersgracht 126',
@@ -248,7 +256,7 @@ Example
                   'url': 'https://www.mollie.com',
                   'email': 'info@mollie.com',
                   'phone': '+31208202070',
-                  'categoryCode': 6012,
+                  'businessCategory': 'MONEY_SERVICES',
               },
           },
       )
@@ -277,7 +285,7 @@ Example
           url: "https://www.mollie.com",
           email: "info@mollie.com",
           phone: "+31208202070",
-          categoryCode: 6012
+          businessCategory: "MONEY_SERVICES"
         }
       )
 

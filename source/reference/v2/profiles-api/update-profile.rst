@@ -47,13 +47,21 @@ in the request.
    The new phone number associated with the profile's trade name or brand. Must be in the
    `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
+.. parameter:: businessCategory
+   :type: string
+   :condition: optional
+
+   The new industry associated with the profile's trade name or brand.
+
+   Please refer to the documentation of the :ref:`business category <business-category>` for more information on which
+   values are accepted.
+
 .. parameter:: categoryCode
    :type: integer
    :condition: optional
 
-   .. warning:: Be aware that from September the ``categoryCode`` parameter will be deprecated and replaced by a new
-                business category parameter. We will continue to provide support for the ``categoryCode`` parameter
-                until 2022, but please revisit our documentation in September to learn how to update your API calls.
+   .. warning:: This parameter is deprecated and will be removed in 2022. Please use the ``businessCategory`` parameter
+                instead.
 
    The new industry identifier associated with the profile's trade name or brand.
 
@@ -115,7 +123,7 @@ Example
          -d "website=https://www.mywebsite2.com" \
          -d "email=info@mywebsite2.com" \
          -d "phone=+31208202070" \
-         -d "categoryCode=5399"
+         -d "businessCategory=OTHER_MERCHANDISE"
 
    .. code-block:: php
       :linenos:
@@ -129,7 +137,7 @@ Example
       $profile->website = "https://www.mywebsite2.com";
       $profile->email = "info@mywebsite2.com";
       $profile->phone = "+31208202070";
-      $profile->categoryCode = "5399";
+      $profile->businessCategory = "OTHER_MERCHANDISE";
       $updatedProfile = $profile->update();
 
    .. code-block:: python
@@ -143,11 +151,11 @@ Example
       profile = mollie_client.profiles.update(
           'pfl_v9hTwCvYqw',
           data={
-      'name': 'My website name - Update 1',
+              'name': 'My website name - Update 1',
               'website': 'https://www.mywebsite2.com',
               'email': 'info@mywebsite2.com',
               'phone': '+31208202070',
-              'categoryCode': '5399',
+              'businessCategory': 'OTHER_MERCHANDISE',
           },
       )
 
@@ -166,7 +174,7 @@ Example
         website: 'https://www.mywebsite2.com',
         email: 'info@mywebsite2.com',
         phone: '+31208202070',
-        categoryCode: '5399'
+        businessCategory: 'OTHER_MERCHANDISE'
       )
 
 Response
@@ -185,6 +193,7 @@ Response
        "website": "https://www.mywebsite2.com",
        "email": "info@mywebsite2.com",
        "phone": "+31208202070",
+       "businessCategory": "OTHER_MERCHANDISE",
        "categoryCode": 5399,
        "status": "verified",
        "review": {
