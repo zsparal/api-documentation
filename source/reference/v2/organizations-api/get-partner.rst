@@ -1,6 +1,6 @@
 Get partner
 ===========
-.. api-name::Partners API
+.. api-name:: Organizations API
    :version: 2
 
 .. endpoint::
