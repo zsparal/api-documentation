@@ -5,6 +5,12 @@ changes are documented here.
 
 October 2021
 ============
+Wednesday, 20th
+---------------
+- Added a new :doc:`Partners </reference/v2/partners-api/get-client>` section containing :doc:`Get client </reference/v2/partners-api/get-client>`
+  and :doc:`List client </reference/v2/partners-api/list-clients>` endpoints.
+- The :doc:`Get partner status endpoint </reference/v2/organizations-api/get-partner>` was added to the Organizations API
+
 Friday, 8th
 -----------
 - Added ``huistuincadeaukaart`` as gift card issuer.
