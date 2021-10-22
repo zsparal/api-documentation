@@ -1,6 +1,6 @@
 Get client
 ==========
-.. api-name::Partners API
+.. api-name:: Partners API
    :version: 2
 
 .. endpoint::
