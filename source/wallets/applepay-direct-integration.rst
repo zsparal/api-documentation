@@ -49,10 +49,11 @@ When the shopper taps or clicks the Apple Pay button, you should create an `Appl
 specifies all the information you want to display to the shopper and details on the payment.
 
 When constructing the `ApplePayPaymentRequest
-<https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest>`_, you should set the
-`supportedNetworks
-<https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest/1916122-supportednetworks>`_ to
-``["amex", "maestro", "masterCard", "visa", "vPay"]``.
+<https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest>`_, always set the following
+parameter values:
+
+* `merchantCapabilities <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaymerchantcapability>`_: ``["supports3DS"]``.
+* `supportedNetworks <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest/1916122-supportednetworks>`_: ``["amex", "maestro", "masterCard", "visa", "vPay"]``.
 
 Providing merchant validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
