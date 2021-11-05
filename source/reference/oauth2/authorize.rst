@@ -79,9 +79,10 @@ Parameters
    :type: string
    :condition: optional
 
-   Allows you to redirect not logged in merchants to login or signup page. Defaults to login if omitted.
+   Allows you to specify if Mollie should show the login or the signup page, when the merchant is not logged in at
+   Mollie. Defaults to the login page.
 
-   Possible values: ``login`` ``signup``
+   Possible values: ``signup``
 
 Response
 --------
