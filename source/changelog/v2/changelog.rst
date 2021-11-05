@@ -7,7 +7,7 @@ November 2021
 =============
 Friday, 5th
 -----------
-- Added ``landing_page`` optional parameter to :doc:`Authorize </reference/oauth2/authorize>`.
+- Added optional ``landing_page`` parameter to the :doc:`Authorize </reference/oauth2/authorize>` endpoint.
 
 October 2021
 ============
