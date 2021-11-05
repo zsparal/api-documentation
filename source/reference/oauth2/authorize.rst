@@ -75,6 +75,14 @@ Parameters
 
    Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``es_ES`` ``it_IT``
 
+.. parameter:: landing_page
+   :type: string
+   :condition: optional
+
+   Allows you to redirect not logged in merchants to login or signup page. Defaults to login if omitted.
+
+   Possible values: ``login`` ``signup``
+
 Response
 --------
 ``301 Redirect``
