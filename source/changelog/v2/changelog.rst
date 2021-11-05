@@ -3,6 +3,12 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+November 2021
+=============
+Friday, 5th
+-----------
+- Added optional ``landing_page`` parameter to the :doc:`Authorize </reference/oauth2/authorize>` endpoint.
+
 October 2021
 ============
 Wednesday, 20th

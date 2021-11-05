@@ -75,6 +75,15 @@ Parameters
 
    Possible values: ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``es_ES`` ``it_IT``
 
+.. parameter:: landing_page
+   :type: string
+   :condition: optional
+
+   Allows you to specify if Mollie should show the login or the signup page, when the merchant is not logged in at
+   Mollie. Defaults to the login page.
+
+   Possible values: ``signup``
+
 Response
 --------
 ``301 Redirect``
