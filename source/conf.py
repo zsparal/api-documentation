@@ -93,6 +93,7 @@ redirects = {
     'payments/overview': 'https://docs.mollie.com/payments/accepting-payments',
     'reference/v2/organizations-api/list-organizations': 'https://docs.mollie.com/reference/reseller-api/v2/list-organizations',
     'reference/v2/organizations-api/me': 'https://docs.mollie.com/reference/v2/organizations-api/current-organization',
+    'reference/v2/partners-api/get-partner': 'https://docs.mollie.com/reference/v2/organizations-api/get-partner',
     'reference/v2/partners-api/get-client': 'https://docs.mollie.com/reference/v2/clients-api/get-client',
     'reference/v2/partners-api/list-clients': 'https://docs.mollie.com/reference/v2/clients-api/list-clients'
 }

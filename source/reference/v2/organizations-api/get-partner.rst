@@ -126,7 +126,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/partners-api/get-partner",
+               "href": "https://docs.mollie.com/reference/v2/organizations-api/get-partner",
                "type": "text/html"
            },
            "signuplink": {

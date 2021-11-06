@@ -74,7 +74,7 @@ Response
    .. parameter:: clients
       :type: array
 
-      An array of client objects as described in :doc:`Get client </reference/v2/partners-api/get-client>`.
+      An array of client objects as described in :doc:`Get client </reference/v2/clients-api/get-client>`.
 
 .. parameter:: _links
    :type: object
@@ -147,7 +147,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/v2/partners-api/get-client",
+                           "href": "https://docs.mollie.com/reference/v2/clients-api/get-client",
                            "type": "text/html"
                        }
                    }
@@ -167,7 +167,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/partners-api/list-clients",
+               "href": "https://docs.mollie.com/reference/v2/clients-api/list-clients",
                "type": "text/html"
            }
        }
