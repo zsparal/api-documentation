@@ -615,7 +615,7 @@ Monday, 10th
 
 Friday, 7th
 -----------
-- Refunds for Pay Later and Slice it can now be created via the :doc:`Payments Refunds API
+- Refunds for Pay later and Slice it can now be created via the :doc:`Payments Refunds API
   </reference/v2/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
 
 Tuesday, 4th

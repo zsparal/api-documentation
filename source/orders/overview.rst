@@ -21,10 +21,8 @@ The following payment methods require the Orders API and cannot be used with the
 :doc:`Payments API </payments/accepting-payments>`:
 
 * *Pay after delivery* payment methods, such as Klarna Pay later and Klarna Slice it
-
-* Klarna Pay Now
-
-* Eco-, gift- and meal vouchers
+* Klarna Pay now
+* Eco vouchers, gift vouchers, and meal vouchers
 
 How does the Orders API work?
 -----------------------------

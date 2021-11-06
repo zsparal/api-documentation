@@ -272,7 +272,7 @@ December 2018
 
 Friday, 7th
 -----------
-- Refunds for Pay Later and Slice it can now be created via the
+- Refunds for Pay later and Slice it can now be created via the
   :doc:`Payments Refunds API </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
 
 November 2018
