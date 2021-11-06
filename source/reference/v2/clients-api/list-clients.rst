@@ -1,6 +1,6 @@
 List clients
 ============
-.. api-name:: Partners API
+.. api-name:: Clients API
    :version: 2
 
 .. endpoint::
@@ -12,7 +12,7 @@ List clients
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all clients.
+Retrieve all clients linked to your partner account.
 
 The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 

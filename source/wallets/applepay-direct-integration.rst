@@ -52,8 +52,11 @@ When constructing the `ApplePayPaymentRequest
 <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest>`_, always set the following
 parameter values:
 
-* `merchantCapabilities <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaymerchantcapability>`_: ``["supports3DS"]``.
-* `supportedNetworks <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest/1916122-supportednetworks>`_: ``["amex", "maestro", "masterCard", "visa", "vPay"]``.
+* `merchantCapabilities <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaymerchantcapability>`_:
+  ``["supports3DS"]``.
+* `supportedNetworks
+  <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypaymentrequest/1916122-supportednetworks>`_:
+  ``["amex", "maestro", "masterCard", "visa", "vPay"]``.
 
 Providing merchant validation
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

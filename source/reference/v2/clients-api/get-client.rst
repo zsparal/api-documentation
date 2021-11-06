@@ -1,6 +1,6 @@
 Get client
 ==========
-.. api-name:: Partners API
+.. api-name:: Clients API
    :version: 2
 
 .. endpoint::
@@ -12,7 +12,7 @@ Get client
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single client by its ID.
+Retrieve a single client, linked to your partner account, by its ID.
 
 Parameters
 ----------
