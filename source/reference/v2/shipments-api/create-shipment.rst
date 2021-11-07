@@ -109,7 +109,6 @@ A shipment object is returned, as described in :doc:`Get shipment </reference/v2
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

@@ -16,8 +16,8 @@ For certain payment methods, like iDEAL, the underlying banking system will dela
 time, refunds may be canceled manually in the `Mollie Dashboard <https://www.mollie.com/dashboard>`_,
 or programmatically by using this endpoint.
 
-A Refund can only be canceled while its ``status`` field is either ``queued`` or ``pending``. See the
-:doc:`/reference/v2/refunds-api/get-refund` for more information.
+A refund can only be canceled while its ``status`` field is either ``queued`` or ``pending``. See the
+:doc:`Get refund endpoint </reference/v2/refunds-api/get-payment-refund>` for more information.
 
 Parameters
 ----------
@@ -42,7 +42,6 @@ Response
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

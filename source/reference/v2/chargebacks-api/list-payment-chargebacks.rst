@@ -1,23 +1,25 @@
-List chargebacks
-================
+List payment chargebacks
+========================
 .. api-name:: Chargebacks API
    :version: 2
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/chargebacks
+   :url: https://api.mollie.com/v2/payments/*paymentId*/chargebacks
 
 .. authentication::
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all chargebacks filed for your payments.
+Retrieve the chargebacks initiated for a specific payment.
 
 The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
+Replace ``paymentId`` in the endpoint URL by the payment's ID, for example ``tr_7UhSN1zuXS``.
+
 .. parameter:: from
    :type: string
    :condition: optional
@@ -31,26 +33,12 @@ Parameters
 
    The number of chargebacks to return (with a maximum of 250).
 
-Access token parameters
-^^^^^^^^^^^^^^^^^^^^^^^
-If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
-:doc:`OAuth app </connect/overview>`, you have to specify which profile you are retrieving chargebacks for using the
-``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
-
-.. parameter:: profileId
-   :type: string
-   :condition: required for access tokens
-   :collapse: true
-
-   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``.
-
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` these chargebacks were issued for.
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` these chargebacks were issued for.
 
 Response
 --------
@@ -91,7 +79,6 @@ Response
 Example
 -------
 .. code-block-selector::
-
    .. code-block:: bash
       :linenos:
 
@@ -105,7 +92,8 @@ Example
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-      $all_chargebacks = $mollie->chargebacks->page();
+      $payment = $mollie->payments->get("tr_7UhSN1zuXS");
+      $chargebacks = $payment->chargebacks();
 
    .. code-block:: python
       :linenos:
@@ -115,7 +103,8 @@ Example
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
 
-      chargebacks = mollie_client.chargebacks.list()
+      payment = mollie_client.payments.get('tr_WDqYK6vllg')
+      chargebacks = payment.chargebacks
 
    .. code-block:: ruby
       :linenos:
@@ -126,7 +115,8 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      chargebacks = Mollie::Chargeback.all
+      payment = Mollie::Payment.get('tr_WDqYK6vllg')
+      chargebacks = payment.chargebacks
 
    .. code-block:: javascript
       :linenos:
@@ -135,7 +125,7 @@ Example
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        chargebacks = await mollieClient.chargebacks.list();
+        let chargebacks = await mollieClient.payments_chargebacks.list({ paymentId: 'tr_WDqYK6vllg' });
       })();
 
 Response
@@ -189,7 +179,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/list-chargebacks",
+               "href": "https://docs.mollie.com/reference/v2/chargebacks-api/list-payment-chargebacks",
                "type": "text/html"
            }
        }

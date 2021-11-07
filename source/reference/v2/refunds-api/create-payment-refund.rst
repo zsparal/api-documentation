@@ -12,7 +12,8 @@ Create payment refund
    :organization_access_tokens: true
    :oauth: true
 
-Creates a :doc:`Refund </payments/refunds>` on the Payment. The refunded amount is credited to your customer.
+Creates a refund for a specific payment. The refunded amount is credited to your customer usually either via a bank
+transfer or by refunding the amount to your customer's credit card.
 
 Parameters
 ----------
@@ -84,11 +85,10 @@ Response
 --------
 ``201`` ``application/hal+json``
 
-A refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
+A refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-payment-refund>`.
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:
@@ -193,7 +193,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/refunds-api/create-refund",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/create-payment-refund",
                "type": "text/html"
            }
        }

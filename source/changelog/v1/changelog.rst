@@ -49,7 +49,7 @@ February 2021
 Monday, 1st
 -----------
 - We discontinued the support for ING Home'Pay as a payment method. This means that the API now rejects all
-  :doc:`Create Payment API</reference/v2/payments-api/create-payment>`-calls with the method ``inghomepay``. Make sure
+  :doc:`Create Payment API</reference/v2/payments-api/create-payment>` calls with the method ``inghomepay``. Make sure
   to remove this payment method from your checkout if needed. Please `contact us <https://www.mollie.com/contact>`_ for
   more info.
 
@@ -269,11 +269,6 @@ Wednesday, 6th
 
 December 2018
 =============
-
-Friday, 7th
------------
-- Refunds for Pay later and Slice it can now be created via the
-  :doc:`Payments Refunds API </reference/v1/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
 
 November 2018
 =============

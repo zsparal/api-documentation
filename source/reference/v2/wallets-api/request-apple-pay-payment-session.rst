@@ -18,8 +18,8 @@ is normally done using Apple's `Requesting Apple Pay Session
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/requesting_an_apple_pay_payment_session>`_.
 The merchant validation proves (to Apple) that a validated merchant is calling the Apple Pay Javascript APIs.
 
-When integrating Apple Pay via Mollie, you cannot call Apple's API but you should call this API instead. The response of
-this API call should be passed as-is to the the completion method, `completeMerchantValidation
+To integrate Apple Pay via Mollie, you will have to call the Mollie API instead of Apple's API. The response of this API
+call can then be passed as-is to the completion method, `completeMerchantValidation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaysession/1778015-completemerchantvalidation>`_.
 
 Before requesting an Apple Pay Payment Session, you must place the  `domain validation file
@@ -30,9 +30,7 @@ possible to use Apple Pay on your domain.
 The guidelines for working with a payment session are:
 
 - Request a new payment session object for each transaction. You can only use a merchant session object a single time.
-
 - The payment session object expires five minutes after it is created.
-
 - Never request the payment session from the browser. The request must be sent from your server.
 
 For the full documentation, see the official `Apple Pay JS API

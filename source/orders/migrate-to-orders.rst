@@ -136,7 +136,7 @@ When all order lines are either shipped or canceled the order is completed.
 Refunding
 ---------
 Refunding works almost the same as in the payments API. You will have to use the
-:doc:`Create order refund </reference/v2/orders-api/create-order-refund>` API and specify which order lines are to be
+:doc:`Create order refund </reference/v2/refunds-api/create-order-refund>` API and specify which order lines are to be
 refunded. If no lines are specified the whole order will be refunded.
 
 Payments

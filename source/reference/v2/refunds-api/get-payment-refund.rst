@@ -12,13 +12,12 @@ Get payment refund
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single :doc:`Refund </payments/refunds>` by its ID. Note the Payment's ID is needed as well.
+Retrieve a single payment refund by its ID. Note the payment ID is required as well.
 
 If you do not know the original payment's ID, you can use the
 :doc:`/reference/v2/refunds-api/list-refunds`.
 
-.. note::
-    Trying to retrieve a canceled refund will result in a 404 exception.
+.. note:: Trying to retrieve a canceled refund will result in a 404 response.
 
 Parameters
 ----------
@@ -138,7 +137,7 @@ Response
    partially refunded, these values will be different from the values in response from the Get order API.
 
    Only available if the refund was created via the
-   :doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>`.
+   :doc:`Create Order Refund API </reference/v2/refunds-api/create-order-refund>`.
 
 .. parameter:: paymentId
    :type: string
@@ -298,7 +297,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/refunds-api/get-refund",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/get-payment-refund",
                "type": "text/html"
            }
        }

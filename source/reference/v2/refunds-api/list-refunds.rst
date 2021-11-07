@@ -1,5 +1,5 @@
 List refunds
-====================
+============
 .. api-name:: Refunds API
    :version: 2
 
@@ -7,30 +7,17 @@ List refunds
    :method: GET
    :url: https://api.mollie.com/v2/refunds
 
-.. endpoint::
-   :method: GET
-   :url: https://api.mollie.com/v2/payments/*paymentId*/refunds
-
 .. authentication::
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve Refunds.
-
-* If the payment-specific endpoint is used, only Refunds for that specific Payment are returned.
-* When using the top level endpoint ``v2/refunds`` with an API key, only refunds for the corresponding website profile
-  and mode are returned.
-* When using the top level endpoint with OAuth, you can specify the profile and mode with the ``profileId`` and
-  ``testmode`` parameters respectively. If you omit ``profileId``, you will get all Refunds for the Organization.
+Retrieve a list of all of your refunds.
 
 The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
-When using the payment-specific endpoint, replace ``paymentId`` in the endpoint URL by the payment's ID, for example
-``tr_7UhSN1zuXS``.
-
 .. parameter:: from
    :type: string
    :condition: optional
@@ -67,15 +54,15 @@ For these authentication methods the optional ``testmode`` parameter is availabl
    :condition: optional
    :collapse: true
 
-   Set this to true to only retrieve Refunds made in test mode. By default, only Refunds on live mode Payments are
-   returned.
+   Set this to true to only retrieve refunds made for test mode payments. By default, only refunds on live mode payments
+   are returned.
 
 Embedding of related resources
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-This endpoint allows for embedding additional information by appending the following values via the ``embed``
-query string parameter.
+This endpoint allows for embedding additional information by appending the following values via the ``embed`` query
+string parameter.
 
-* ``payment`` Include the :doc:`Payments </reference/v2/payments-api/get-payment>` the Refunds were created for.
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the refunds were created for.
 
 Response
 --------
@@ -96,7 +83,8 @@ Response
    .. parameter:: refunds
       :type: array
 
-      An array of refund objects as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
+      An array of refund objects as described in
+      :doc:`Get payment refund </reference/v2/refunds-api/get-payment-refund>`.
 
 .. parameter:: _links
    :type: object
@@ -129,7 +117,7 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
+      curl -X GET https://api.mollie.com/v2/refunds \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
@@ -138,7 +126,7 @@ Example
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
-      $refunds = $mollie->payments->get("tr_WDqYK6vllg")->refunds();
+      $refunds = $mollie->refunds();
 
    .. code-block:: python
       :linenos:
@@ -147,7 +135,7 @@ Example
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-      refunds = mollie_client.payments.get('tr_WDqYK6vllg').refunds
+      refunds = mollie_client.refunds
 
    .. code-block:: ruby
       :linenos:
@@ -158,7 +146,7 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      refunds = Mollie::Payment.get('tr_7UhSN1zuXS').refunds
+      refunds = Mollie::Refund.all
 
    .. code-block:: javascript
       :linenos:
@@ -167,7 +155,7 @@ Example
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const refunds = await mollieClient.payments_refunds.page({ paymentId: 'tr_WDqYK6vllg' });
+        const refunds = await mollieClient.refunds.list();
       })();
 
 Response
@@ -206,7 +194,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/v2/refunds-api/get-refund",
+                           "href": "https://docs.mollie.com/reference/v2/refunds-api/get-payment-refund",
                            "type": "text/html"
                        }
                    }
@@ -217,12 +205,12 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds?limit=5",
+               "href": "https://api.mollie.com/v2/refunds?limit=5",
                "type": "application/hal+json"
            },
            "previous": null,
            "next": {
-               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds?from=re_APBiGPH2vV&limit=5",
+               "href": "https://api.mollie.com/v2/refunds?from=re_APBiGPH2vV&limit=5",
                "type": "application/hal+json"
            },
            "documentation": {

@@ -43,15 +43,15 @@ Tuesday, 20th
   :doc:`Create payment API </reference/v2/payments-api/create-payment>` and
   :doc:`Get payment API </reference/v2/payments-api/get-payment>` responses.
 - Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>`. Added ``reverseRouting``
-  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-refund>` and ``routingReversals``
-  optional object to the :doc:`Refund API </reference/v2/refunds-api/get-refund>` response.
+  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-payment-refund>` and
+  ``routingReversals`` optional object to the :doc:`Refund API </reference/v2/refunds-api/get-payment-refund>` response.
 
 June 2021
 =========
 Friday, 2nd
 -----------
-- We released the new :doc:`Payment Links API </reference/v2/payment-links-api/create-payment-link>`. This API makes it
-  possible to generate payment links which can be used for, for example, invoices.
+- We released the new :doc:`Payment links API </reference/v2/payment-links-api/overview>`. This API makes it possible to
+  generate payment links. These can for example be used to attach to invoices that have yet to be completed.
 
 May 2021
 ========
@@ -376,7 +376,7 @@ October 2019
 Tuesday, 29th
 -------------
 - Added the ``feeRegion`` to the pricing object for credit card in the
-  :doc:`Methods API </reference/v2/methods-api/list-methods>`.
+  :doc:`Methods API </reference/v2/methods-api/overview>`.
 
 Monday, 7th
 -----------
@@ -456,8 +456,8 @@ June 2019
 
 Thursday, 20th
 --------------
-- Added the ``settlementId`` field to the refund response. See :doc:`/reference/v2/refunds-api/get-refund` for more
-  info.
+- Added the ``settlementId`` field to the refund response. See :doc:`/reference/v2/refunds-api/get-payment-refund` for
+  more info.
 
 Thursday, 13th
 ---------------
@@ -486,8 +486,8 @@ Monday, 20th
 Wednesday, 8th
 --------------
 - Refunds can now contain ``metadata``. We will save the data alongside the refund. Whenever you fetch the refund with
-  our API, we will also include the metadata. See the :doc:`/reference/v2/refunds-api/create-refund` and
-  :doc:`/reference/v2/orders-api/create-order-refund` documentation for more info.
+  our API, we will also include the metadata. See the :doc:`/reference/v2/refunds-api/create-payment-refund` and
+  :doc:`/reference/v2/refunds-api/create-order-refund` documentation for more info.
 
 Thursday, 2nd
 -------------
@@ -515,7 +515,7 @@ Wednesday, 27th
 - Subscriptions can now be created with :doc:`application fees </connect/application-fees>`. The application fees will
   be applied on each created Payment for the Subscription.
 - Added the ``minimumAmount`` and ``maximumAmount`` properties to the
-  :doc:`Methods API </reference/v2/methods-api/list-methods>` endpoints. It represents the minimum and maximum amount
+  :doc:`Methods API </reference/v2/methods-api/overview>` endpoints. It represents the minimum and maximum amount
   allowed for creating a payment with the specific methods.
 - Added the ``amount`` query parameter to the :doc:`/reference/v2/methods-api/list-all-methods` endpoint.
 - Added the ``currency`` query parameter to the :doc:`/reference/v2/methods-api/get-method` endpoint.
@@ -578,7 +578,7 @@ Monday, 14th
   order line, see :doc:`Create order </reference/v2/orders-api/create-order>`.
 
 - Added a new endpoint to retrieve all payment methods Mollie is offering to an organization.
-  See :doc:`List all payment methods  </reference/v2/methods-api/list-all-methods>` for details.
+  See :doc:`List all payment methods </reference/v2/methods-api/list-all-methods>` for details.
 
 Thursday, 3th
 -------------
@@ -617,14 +617,14 @@ Monday, 10th
 
 Friday, 7th
 -----------
-- Refunds for Pay later and Slice it can now be created via the :doc:`Payments Refunds API
-  </reference/v2/refunds-api/create-refund>`. This allows refunding of arbitrary amounts.
+- Refunds for Pay later and Slice it can now be created via the :doc:`Create payment refund endpoint
+  </reference/v2/refunds-api/create-payment-refund>`. This allows refunding of arbitrary amounts.
 
 Tuesday, 4th
 ------------
 - It is now possible to get the pricing of the payment methods that are active on the payment profile. Add the
-  ``include=pricing`` parameter to the :doc:`Methods API </reference/v2/methods-api/list-methods>` to get the pricing
-  object in your response.
+  ``include=pricing`` parameter to the :doc:`Methods API </reference/v2/methods-api/overview>` to get the pricing object
+  in your response.
 
 November 2018
 =============
@@ -750,14 +750,14 @@ Wednesday, 12th
   :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
   :doc:`Orders API overview </orders/overview>` for more details on how to use these APIs.
 
-- Added the :doc:`Captures API </reference/v2/captures-api/get-capture>`.
+- Added the :doc:`Captures API </reference/v2/captures-api/overview>`.
 
 - The ``amount`` field in chargebacks had the wrong sign, though it was documented correctly. The API has been changed
   to use positive values for the ``amount`` field and negative values for the ``settlementAmount`` field in the
-  :doc:`/reference/v2/chargebacks-api/get-chargeback` API.
+  :doc:`/reference/v2/chargebacks-api/get-payment-chargeback` endpoint.
 
-- You can now use cursors to scroll through all chargebacks of a Payment using the
-  :doc:`/reference/v2/chargebacks-api/list-chargebacks` API.
+- You can now use a cursor to scroll through all chargebacks of a payment using the
+  :doc:`/reference/v2/chargebacks-api/list-payment-chargebacks` endpoint.
 
 Tuesday, 11th
 -------------
@@ -774,7 +774,7 @@ August 2018
 
 Wednesday, 1st
 --------------
-- The icons returned by the :doc:`Methods API </reference/v2/methods-api/list-methods>` have been updated. Note that the
+- The icons returned by the :doc:`Methods API </reference/v2/methods-api/overview>` have been updated. Note that the
   size of the icons has changed from 40x40 to 32x24. All icons are now available in SVG as well, which we advise you to
   use where possible.
 
@@ -812,9 +812,9 @@ Friday, 1st
 -----------
 - Added new locales ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
   ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` and ``lt_LT`` to
-  the :doc:`Create Customer </reference/v2/customers-api/create-customer>`,
-  :doc:`Create Payment </reference/v2/payments-api/create-payment>`, and
-  :doc:`List Methods </reference/v2/methods-api/list-methods>` endpoints to localize translations and allow for ordering
+  the :doc:`Create customer </reference/v2/customers-api/create-customer>`,
+  :doc:`Create payment </reference/v2/payments-api/create-payment>`, and
+  :doc:`List methods </reference/v2/methods-api/list-methods>` endpoints to localize translations and allow for ordering
   the payment methods in the preferred order for the country.
 
 May 2018

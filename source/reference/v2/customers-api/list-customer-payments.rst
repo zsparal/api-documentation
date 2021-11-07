@@ -53,7 +53,6 @@ This API returns results in the same format as the :doc:`/reference/v2/payments-
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

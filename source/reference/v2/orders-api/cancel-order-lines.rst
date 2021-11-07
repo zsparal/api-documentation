@@ -27,7 +27,7 @@ an ``authorized`` order line, the new order line status will be ``canceled``. Ca
 result in a ``completed`` order line status.
 
 If the order line is ``paid`` or already ``completed``, you should create a refund using the
-:doc:`Create Order Refund API </reference/v2/orders-api/create-order-refund>` instead.
+:doc:`Create Order Refund API </reference/v2/refunds-api/create-order-refund>` instead.
 
 For more information about the status transitions please check our
 :doc:`order status changes guide </orders/status-changes>`.
@@ -96,7 +96,6 @@ Response
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

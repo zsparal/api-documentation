@@ -98,7 +98,6 @@ A mandate object is returned, as described in :doc:`Get mandate </reference/v2/m
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

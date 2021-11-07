@@ -38,8 +38,8 @@ A good first step towards a deeper checkout integration is to provide your own p
 
 .. image:: images/checkout-flow-embedded-method-selection@2x.png
 
-To accomplish this, first use the :doc:`Methods API </reference/v2/methods-api/list-methods>` to retrieve the payment
-methods currently active on your account.
+To accomplish this, first use the :doc:`List payment methods endpoint </reference/v2/methods-api/list-methods>` on the
+Methods API to retrieve the payment methods currently active on your account.
 
 Once your customer has selected a payment method, use that selection to fill out the ``method`` field in the
 :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`.
@@ -179,7 +179,7 @@ Embedding issuer selection
 
 For iDEAL, KBC/CBC, and gift cards, we offer a way to embed the issuer selection into the checkout flow. You can
 retrieve the available issuers for these payment methods using the ``issuers`` include in the
-:doc:`Methods API </reference/v2/methods-api/list-methods>`.
+:doc:`Methods API </reference/v2/methods-api/overview>`.
 
 Once your customer has selected an issuer, use that selection to fill out the ``issuer`` field in the
 :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`.

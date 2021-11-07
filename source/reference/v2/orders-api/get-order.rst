@@ -36,7 +36,7 @@ This endpoint also allows for embedding additional information by appending the 
 query string parameter.
 
 * ``payments`` Include all :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
-* ``refunds`` Include all :doc:`refunds </reference/v2/orders-api/list-order-refunds>` created for the order.
+* ``refunds`` Include all :doc:`refunds </reference/v2/refunds-api/list-order-refunds>` created for the order.
 * ``shipments`` Include all :doc:`shipments </reference/v2/shipments-api/get-shipment>` created for the order.
 
 You can combine multiple embeds and add the includes of the embeds as well, for example:

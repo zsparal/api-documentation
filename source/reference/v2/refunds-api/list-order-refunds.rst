@@ -1,34 +1,56 @@
-List shipments
-==============
-.. api-name:: Shipments API
+List order refunds
+==================
+.. api-name:: Orders API
    :version: 2
 
 .. endpoint::
    :method: GET
-   :url: https://api.mollie.com/v2/orders/*orderId*/shipments
+   :url: https://api.mollie.com/v2/order/*orderId*/refunds
 
 .. authentication::
    :api_keys: true
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all shipments for an order.
+Retrieve a list of all refunds made for a specific order.
+
+The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
 Parameters
 ----------
-Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wmqcHMN4U``.
+Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbjz8x``.
+
+.. parameter:: from
+   :type: string
+   :condition: optional
+
+   Used for :ref:`pagination <pagination-in-v2>`. Offset the result set to the refund with this ID. The refund with
+   this ID is included in the result set as well.
+
+.. parameter:: limit
+   :type: integer
+   :condition: optional
+
+   The number of refunds to return (with a maximum of 250).
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
-:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` query string parameter.
+:doc:`OAuth app </connect/overview>`, you can enable test mode through the ``testmode`` parameter.
 
 .. parameter:: testmode
    :type: boolean
    :condition: optional
    :collapse: true
 
-   Set this to ``true`` to list all shipments available in test mode.
+   Set this to ``true`` to list test mode order refunds.
+
+Embedding of related resources
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+This endpoint allows for embedding additional information by appending the following values via the ``embed``
+query string parameter.
+
+* ``payment`` Include the :doc:`payments </reference/v2/payments-api/get-payment>` the refunds were created for.
 
 Response
 --------
@@ -37,7 +59,8 @@ Response
 .. parameter:: count
    :type: integer
 
-   The number of shipments found in ``_embedded``.
+   The number of refunds found in ``_embedded``, which is either the requested number (with a maximum of 250) or the
+   default number.
 
 .. parameter:: _embedded
    :type: object
@@ -45,25 +68,36 @@ Response
 
    The object containing the queried data.
 
-   .. parameter:: shipments
+   .. parameter:: refunds
       :type: array
 
-      An array of shipment objects as described in :doc:`Get shipment </reference/v2/shipments-api/get-shipment>`.
+      An array of refund objects as described in :doc:`Get payment refund </reference/v2/refunds-api/get-payment-refund>`.
 
 .. parameter:: _links
    :type: object
 
-   Links related to the lists of shipments. Every URL object will contain an ``href`` and a ``type`` field.
+   Links to help navigate through the lists of refunds. Every URL object will contain an ``href`` and a ``type``
+   field.
 
    .. parameter:: self
       :type: object
 
-      The URL to the current set of shipments.
+      The URL to the current set of refunds.
+
+   .. parameter:: previous
+      :type: object
+
+      The previous set of refunds, if available.
+
+   .. parameter:: next
+      :type: object
+
+      The next set of refunds, if available.
 
    .. parameter:: documentation
       :type: object
 
-      The URL to the shipment list endpoint documentation.
+      The URL to the List order refunds endpoint documentation.
 
 Example
 -------
@@ -71,7 +105,7 @@ Example
    .. code-block:: bash
       :linenos:
 
-      curl -X GET https://api.mollie.com/v2/order/ord_kEn1PlbGa/shipments \
+      curl -X GET https://api.mollie.com/v2/orders/ord_pbjz8x/refunds \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
@@ -79,18 +113,18 @@ Example
 
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
-      $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+      $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
-      $order = $mollie->orders->get('ord_kEn1PlbGa');
-      $shipments = $order->shipments();
+      $order = $mollie->orders->get("ord_stTC2WHAuS");
+      $refunds = $order->refunds();
 
    .. code-block:: python
       :linenos:
 
       mollie_client = Client()
       mollie_client.set_api_key('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM')
-      order = mollie_client.orders.get('ord_kEn1PlbGa')
-      shipments = order.shipments
+      order = mollie_client.orders.get('ord_stTC2WHAuS')
+      refunds = order.refunds()
 
    .. code-block:: ruby
       :linenos:
@@ -101,7 +135,7 @@ Example
         config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
       end
 
-      shipments = Mollie::Order::Shipment.all(order_id: 'ord_kEn1PlbGa')
+      refunds = Order::Refund.all(order_id: 'ord_stTC2WHAuS')
 
    .. code-block:: javascript
       :linenos:
@@ -110,7 +144,7 @@ Example
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
       (async () => {
-        const shipments = await mollieClient.orders_shipments.all({ orderId: 'ord_kEn1PlbGa' });
+        const refunds = await mollieClient.orders_refunds.all({ orderId: 'ord_stTC2WHAuS' });
       })();
 
 Response
@@ -122,30 +156,34 @@ Response
    Content-Type: application/hal+json
 
    {
-       "count": 2,
+       "count": 1,
        "_embedded": {
-           "shipments": [
+           "refunds": [
                {
-                   "resource": "shipment",
-                   "id": "shp_3wmsgCJN4U",
-                   "orderId": "ord_kEn1PlbGa",
-                   "createdAt": "2018-08-09T14:33:54+00:00",
-                   "tracking": {
-                       "carrier": "PostNL",
-                       "code": "3SKABA000000000",
-                       "url": "http://postnl.nl/tracktrace/?B=3SKABA000000000&P=1015CW&D=NL&T=C"
+                   "resource": "refund",
+                   "id": "re_4qqhO89gsT",
+                   "amount": {
+                       "currency": "EUR",
+                       "value": "698.00"
                    },
+                   "status": "processing",
+                   "createdAt": "2018-03-14T17:09:02.0Z",
+                   "description": "Required quantity not in stock, refunding one photo book.",
+                   "metadata": {
+                        "bookkeeping_id": 12345
+                   },
+                   "paymentId": "tr_WDqYK6vllg",
+                   "orderId": "ord_stTC2WHAuS",
                    "lines": [
                        {
                            "resource": "orderline",
                            "id": "odl_dgtxyl",
-                           "orderId": "ord_pbjz8x",
+                           "orderId": "ord_stTC2WHAuS",
                            "name": "LEGO 42083 Bugatti Chiron",
                            "sku": "5702016116977",
                            "type": "physical",
-                           "status": "shipping",
+                           "status": "paid",
                            "metadata": null,
-                           "isCancelable": true,
                            "quantity": 1,
                            "unitPrice": {
                                "value": "399.00",
@@ -175,34 +213,41 @@ Response
                                    "type": "text/html"
                                }
                            }
-                       },
-                       { }
-                   ]
+                       }
+                   ],
                    "_links": {
                        "self": {
-                           "href": "https://api.mollie.com/v2/order/ord_kEn1PlbGa/shipments/shp_3wmsgCJN4U",
+                           "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/refunds/re_4qqhO89gsT",
+                           "type": "application/hal+json"
+                       },
+                       "payment": {
+                           "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg",
                            "type": "application/hal+json"
                        },
                        "order": {
-                           "href": "https://api.mollie.com/v2/orders/ord_kEn1PlbGa",
+                           "href": "https://api.mollie.com/v2/orders/ord_stTC2WHAuS",
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://docs.mollie.com/reference/v2/shipments-api/get-shipment",
+                           "href": "https://docs.mollie.com/reference/v2/refunds-api/get-order-refund",
                            "type": "text/html"
                        }
                    }
-               },
-               { }
+               }
            ]
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/order/ord_kEn1PlbGa/shipments",
+               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds?limit=5",
+               "type": "application/hal+json"
+           },
+           "previous": null,
+           "next": {
+               "href": "https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds?from=re_APBiGPH2vV&limit=5",
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/shipments-api/list-shipments",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/list-order-refunds",
                "type": "text/html"
            }
        }

@@ -67,7 +67,7 @@ Please see Apple's documentation on `providing merchant validation
 <https://developer.apple.com/documentation/apple_pay_on_the_web/apple_pay_js_api/providing_merchant_validation>`_ for
 details.
 
-Instead of using Apple's API, you must use a :doc:`dedicated endpoint in the  Mollie API
+Instead of using Apple's API, you must use a :doc:`dedicated endpoint in the Mollie API
 </reference/v2/wallets-api/request-apple-pay-payment-session>`.
 
 Send the Apple Pay Payment Token to Mollie

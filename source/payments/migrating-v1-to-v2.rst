@@ -133,8 +133,8 @@ These new fields have been added:
 
 * ``settlementAmount`` has been added to the responses of the
   :doc:`Payments API </reference/v2/payments-api/get-payment>`, the
-  :doc:`Refunds API </reference/v2/refunds-api/get-refund>` and the
-  :doc:`Chargebacks API </reference/v2/chargebacks-api/get-chargeback>`.
+  :doc:`Refunds API </reference/v2/refunds-api/get-payment-refund>` and the
+  :doc:`Chargebacks API </reference/v2/chargebacks-api/get-payment-chargeback>`.
   This optional field will contain the amount that will be settled to your account, converted to the currency your
   account is settled in. It follows the same syntax as the ``amount`` property.
 
@@ -202,7 +202,7 @@ The following parameters have been changed or added:
 Changes in the Issuers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 The issuers API has been removed. Instead, you can get the issuers via the
-:doc:`Get Method API </reference/v2/methods-api/get-method>` using the ``issuers`` include.
+:doc:`Get method endpoint </reference/v2/methods-api/get-method>` on the Methods API using the ``issuers`` include.
 
 Changes in the Customers API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^

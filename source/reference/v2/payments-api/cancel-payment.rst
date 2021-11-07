@@ -43,7 +43,6 @@ A Payment object is returned, as described in :doc:`/reference/v2/payments-api/g
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

@@ -12,12 +12,14 @@ Create order refund
    :organization_access_tokens: true
    :oauth: true
 
-When using the Orders API, :doc:`refunds </payments/refunds>` should be made against the Order. When using *pay after
-delivery* payment methods such as *Klarna Pay later* and *Klarna Slice it*, this ensures that your customer will receive
-credit invoices with the correct product information on them and generally have a great experience.
+When using the Orders API, refunds should be made for a specific order.
 
-However, if you want to refund arbitrary amounts you can use the :doc:`/reference/v2/refunds-api/create-refund` for Pay
-later and Slice it.
+When using *pay after delivery* payment methods such as *Klarna Pay later* and *Klarna Slice it*, your customer will
+receive a credit invoice with more information about the refunded products.
+
+If you want to refund arbitrary amounts, however, you can also use the
+:doc:`Create payment refund endpoint </reference/v2/refunds-api/create-payment-refund>` for Pay later and Slice it by
+creating a refund on the payment itself.
 
 If an order line is still in the ``authorized`` status, it cannot be refunded. You should
 :doc:`cancel it instead </reference/v2/orders-api/cancel-order-lines>`. Order lines that are ``paid``, ``shipping`` or
@@ -101,11 +103,10 @@ Response
 --------
 ``201`` ``application/hal+json``
 
-An refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-refund>`.
+An refund object is returned, as described in :doc:`Get payment refund </reference/v2/refunds-api/get-payment-refund>`.
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:
@@ -284,7 +285,7 @@ Response
                "type": "application/hal+json"
            },
            "documentation": {
-               "href": "https://docs.mollie.com/reference/v2/orders-api/create-order-refund",
+               "href": "https://docs.mollie.com/reference/v2/refunds-api/create-order-refund",
                "type": "text/html"
            }
        }
@@ -316,7 +317,7 @@ Response (amount required)
         },
         "_links": {
             "documentation": {
-                "href": "https://docs.mollie.com/reference/v2/orders-api/create-order-refund",
+                "href": "https://docs.mollie.com/reference/v2/refunds-api/create-order-refund",
                 "type": "text/html"
             }
         }

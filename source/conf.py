@@ -67,35 +67,48 @@ pygments_style = 'sphinx'
 # If true, `todo` and `todoList` produce output, else they produce nothing.
 todo_include_todos = False
 
+root_url = os.environ['MOLLIE_DOCS_URL']
+
+html_file_suffix = os.environ['MOLLIE_FILE_SUFFIX']
+
+def to_url(path):
+    return root_url + path + html_file_suffix
+
 # -- SEO stuff ------------------------------------------------------------
 redirects = {
-    'guides/authentication': 'https://docs.mollie.com/overview/authentication',
-    'guides/checkout': 'https://docs.mollie.com/payments/hosted-checkout',
-    'guides/common-data-types': 'https://docs.mollie.com/overview/common-data-types',
-    'guides/gift-cards': 'https://docs.mollie.com/payments/gift-cards',
-    'guides/handling-errors': 'https://docs.mollie.com/overview/handling-errors',
-    'guides/mollie-components/handling-errors': 'https://docs.mollie.com/components/handling-errors',
-    'guides/mollie-components/overview': 'https://docs.mollie.com/components/overview',
-    'guides/mollie-components/reference': 'https://docs.mollie.com/reference/mollie-js',
-    'guides/mollie-components/styling': 'https://docs.mollie.com/components/styling',
-    'guides/mollie-components/testing': 'https://docs.mollie.com/components/testing',
-    'guides/pagination': 'https://docs.mollie.com/overview/pagination',
-    'guides/qr-codes': 'https://docs.mollie.com/payments/qr-codes',
-    'guides/security': 'https://docs.mollie.com/overview/security',
-    'guides/testing': 'https://docs.mollie.com/overview/testing',
-    'guides/webhooks': 'https://docs.mollie.com/overview/webhooks',
-    'oauth/application-fees': 'https://docs.mollie.com/connect/application-fees',
-    'oauth/getting-started': 'https://docs.mollie.com/connect/getting-started',
-    'oauth/onboarding': 'https://docs.mollie.com/connect/onboarding',
-    'oauth/overview': 'https://docs.mollie.com/connect/overview',
-    'oauth/permissions': 'https://docs.mollie.com/connect/permissions',
-    'oauth/splitting-payments': 'https://docs.mollie.com/connect/splitting-payments',
-    'payments/overview': 'https://docs.mollie.com/payments/accepting-payments',
-    'reference/v2/organizations-api/list-organizations': 'https://docs.mollie.com/reference/reseller-api/v2/list-organizations',
-    'reference/v2/organizations-api/me': 'https://docs.mollie.com/reference/v2/organizations-api/current-organization',
-    'reference/v2/partners-api/get-partner': 'https://docs.mollie.com/reference/v2/organizations-api/get-partner',
-    'reference/v2/partners-api/get-client': 'https://docs.mollie.com/reference/v2/clients-api/get-client',
-    'reference/v2/partners-api/list-clients': 'https://docs.mollie.com/reference/v2/clients-api/list-clients'
+    'guides/authentication': to_url('/overview/authentication'),
+    'guides/checkout': to_url('/payments/hosted-checkout'),
+    'guides/common-data-types': to_url('/overview/common-data-types'),
+    'guides/gift-cards': to_url('/payments/gift-cards'),
+    'guides/handling-errors': to_url('/overview/handling-errors'),
+    'guides/mollie-components/handling-errors': to_url('/components/handling-errors'),
+    'guides/mollie-components/overview': to_url('/components/overview'),
+    'guides/mollie-components/reference': to_url('/reference/mollie-js'),
+    'guides/mollie-components/styling': to_url('/components/styling'),
+    'guides/mollie-components/testing': to_url('/components/testing'),
+    'guides/pagination': to_url('/overview/pagination'),
+    'guides/qr-codes': to_url('/payments/qr-codes'),
+    'guides/security': to_url('/overview/security'),
+    'guides/testing': to_url('/overview/testing'),
+    'guides/webhooks': to_url('/overview/webhooks'),
+    'oauth/application-fees': to_url('/connect/application-fees'),
+    'oauth/getting-started': to_url('/connect/getting-started'),
+    'oauth/onboarding': to_url('/connect/onboarding'),
+    'oauth/overview': to_url('/connect/overview'),
+    'oauth/permissions': to_url('/connect/permissions'),
+    'oauth/splitting-payments': to_url('/connect/splitting-payments'),
+    'payments/overview': to_url('/payments/accepting-payments'),
+    'reference/v2/chargebacks-api/get-chargeback': to_url('/reference/v2/chargebacks-api/get-payment-chargeback'),
+    'reference/v2/orders-api/create-order-refund': to_url('/reference/v2/refunds-api/create-order-refund'),
+    'reference/v2/orders-api/list-order-refunds': to_url('/reference/v2/refunds-api/list-order-refunds'),
+    'reference/v2/organizations-api/list-organizations': to_url('/reference/reseller-api/v2/list-organizations'),
+    'reference/v2/organizations-api/me': to_url('/reference/v2/organizations-api/current-organization'),
+    'reference/v2/partners-api/get-partner': to_url('/reference/v2/organizations-api/get-partner'),
+    'reference/v2/partners-api/get-client': to_url('/reference/v2/clients-api/get-client'),
+    'reference/v2/partners-api/list-clients': to_url('/reference/v2/clients-api/list-clients'),
+    'reference/v2/refunds-api/cancel-refund': to_url('/reference/v2/refunds-api/cancel-payment-refund'),
+    'reference/v2/refunds-api/create-refund': to_url('/reference/v2/refunds-api/create-payment-refund'),
+    'reference/v2/refunds-api/get-refund': to_url('/reference/v2/refunds-api/get-payment-refund')
 }
 
 do_not_index = [

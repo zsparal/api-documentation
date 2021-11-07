@@ -1,10 +1,9 @@
 .sidebar {
   color: #000;
-  height: 100%;
-  top: 0px;
-  left: 0px;
-  bottom: 0px;
-  right: 0px;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
   position: fixed;
   background-color: #fff;
   z-index: 2;
@@ -75,7 +74,7 @@
 }
 
 .sidebar__item.current > a:hover {
-  color: #0000ee;
+  color: #00e;
 }
 
 .sidebar__group.current > ul {
@@ -85,6 +84,14 @@
 
 .sidebar__group.current > a {
   color: #000;
+}
+
+.sidebar__group.current > a.current {
+  color: #0040ff;
+}
+
+.sidebar__group.current > a.current:hover {
+  color: #00e;
 }
 
 .sidebar__changelog > ul > li > a,

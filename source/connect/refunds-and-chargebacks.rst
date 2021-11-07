@@ -9,7 +9,7 @@ When using :doc:`Application fees </connect/application-fees>`, the connected me
 payment, and any refunds and chargebacks are also processed on their account.
 
 As a platform, you can create refunds on behalf of the connected account by using the
-:doc:`Refunds API </reference/v2/refunds-api/create-refund>` with the connected account's permission. Refunding
+:doc:`Refunds API </reference/v2/refunds-api/overview>` with the connected account's permission. Refunding
 previously charged application fees is not possible, however.
 
 For more fine-grained control over the refund and chargeback flows, consider using
@@ -19,9 +19,10 @@ Refunding a split payment
 -------------------------
 When using :doc:`Split payments </connect/splitting-payments>`, your platform is liable for refunds and chargebacks.
 
-You can issue a refund for a split payment by :doc:`creating a refund </reference/v2/refunds-api/create-refund>` on the
-original payment, like you would with any other payment. By default, the full refund will be deducted from the platform
-balance. In other words, by default the parts of the payment that were sent to connected accounts will remain untouched.
+You can issue a refund for a split payment by :doc:`creating a refund </reference/v2/refunds-api/create-payment-refund>`
+on the original payment, like you would with any other payment. By default, the full refund will be deducted from the
+platform balance. In other words, by default the parts of the payment that were sent to connected accounts will remain
+untouched.
 
 If you wish to pull back the money that was sent to a connected account, you can do so by 'reversing the routes' when
 issuing the refund request.

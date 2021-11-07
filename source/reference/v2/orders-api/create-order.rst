@@ -563,7 +563,6 @@ An order object is returned, as described in :doc:`Get order </reference/v2/orde
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

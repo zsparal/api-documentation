@@ -101,7 +101,6 @@ An payment object is returned, as described in :doc:`Get payment </reference/v2/
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:

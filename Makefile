@@ -7,10 +7,10 @@
 # You can set these variables from the command line. When editing extensions, it is
 # recommended to use the "-E" flag to force a rebuild every time you run 'Make', as
 # it is not guaranteed it will rebuild when no '.rst' files have changed.
-DEV_PYTHON        = MOLLIE_DOCS_URL='http://127.0.0.1:8000' python3
-PROD_PYTHON       = MOLLIE_DOCS_URL='https://docs.mollie.com' python3
+DEV_PYTHON        = MOLLIE_DOCS_URL='http://127.0.0.1:8000' MOLLIE_FILE_SUFFIX='.html' python3
+PROD_PYTHON       = MOLLIE_DOCS_URL='https://docs.mollie.com' MOLLIE_FILE_SUFFIX='' python3
 DEV_SPHINX_OPTS   = -W
-PROD_SPHINX_OPTS  = -W -n -D html_file_suffix=''
+PROD_SPHINX_OPTS  = -W -n
 DEV_SPHINX_BUILD  = ${DEV_PYTHON} -msphinx
 PROD_SPHINX_BUILD = ${PROD_PYTHON} -msphinx
 SOURCE_DIR        = source

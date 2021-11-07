@@ -1,5 +1,6 @@
 from .api_name_directive import ApiNameDirective
 from .api_endpoint_directive import ApiEndpointDirective
+from .api_endpoint_card_directive import ApiEndpointCardDirective
 from .authentication_directive import AuthenticationDirective
 from .code_block_selector_directive import CodeBlockSelectorDirective
 from .data_type_directive import DataTypeDirective
@@ -15,6 +16,7 @@ def setup(app):
     # Add the directives.
     app.add_directive('api-name', ApiNameDirective)
     app.add_directive('endpoint', ApiEndpointDirective)
+    app.add_directive('endpoint-card', ApiEndpointCardDirective)
     app.add_directive('authentication', AuthenticationDirective)
     app.add_directive('code-block-selector', CodeBlockSelectorDirective)
     app.add_directive('type', DataTypeDirective)

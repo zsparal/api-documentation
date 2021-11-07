@@ -92,11 +92,10 @@ periodically through *subscriptions*.
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 
-.. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference
-             Transactions on your merchant account. Check if your account is eligible via our
-             :doc:`Methods API </reference/v2/methods-api/list-methods>`. Make sure to set the
-             ``sequenceType`` parameter to ``first``. Your account is eligible if you get PayPal as
-             method returned.
+.. warning:: Using recurring payments with PayPal is only possible if PayPal has activated Reference Transactions on
+             your merchant account. Check if your account is eligible via our
+             :doc:`Methods API </reference/v2/methods-api/overview>`. Make sure to set the ``sequenceType`` parameter to
+             ``first``. Your account is eligible if you get PayPal as method returned.
 
 .. _payments/recurring/charging-on-demand:
 
@@ -206,17 +205,16 @@ How to implement the PayPal fraud library?
 ------------------------------------------
 .. note:: You do not have to implement the library for recurring payments.
 
-Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud
-library of PayPal by adding the Javascript library to your checkout page with the necessary configuration
-included.
+Using PayPal for on-demand payments requires an extra set of tools. You should integrate the fraud library of PayPal by
+adding the Javascript library to your checkout page with the necessary configuration included.
 
-You need to load the library from the PayPal domain through a ``<script>``-tag. Before that, you should
-provide the configuration for the library with a ``<script>``-tag of the type ``application/json``.
-Both tags should be placed inside the ``<head>`` section.
+You need to load the library from the PayPal domain through a ``<script>``-tag. Before that, you should provide the
+configuration for the library with a ``<script>``-tag of the type ``application/json``. Both tags should be placed
+inside the ``<head>`` section.
 
 In the configuration block you need to make sure that you include the ``fncls`` attribute as follows:
-``fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99"``. The library can not find your configuration
-without that attribute.
+``fncls="fnparams-dede7cc5-15fd-4c75-a9f4-36c430ee3a99"``. The library cannot find your configuration without that
+attribute.
 
 The configuration should contain JSON with the following attributes:
 
@@ -235,12 +233,10 @@ The configuration should contain JSON with the following attributes:
        .. type:: string
           :required: true
 
-     - A unique session ID for the current payment. It should be different on every page load and can be
-       32 characters long. This ID should be posted to us when you create the actual payment via the
-       ``sessionId`` parameter.
+     - A unique session ID for the current payment. It should be different on every page load and can be 32 characters
+       long. This ID should be posted to us when you create the actual payment via the ``sessionId`` parameter.
 
-.. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise
-             it will not work.
+.. warning:: Make sure that your configuration block is above the library ``<script>``-tag. Otherwise it will not work.
 
 **Example**
 

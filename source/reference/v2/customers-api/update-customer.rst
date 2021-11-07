@@ -67,7 +67,6 @@ A customer object is returned, as described in :doc:`Get customer </reference/v2
 
 Example
 -------
-
 .. code-block-selector::
    .. code-block:: bash
       :linenos:
