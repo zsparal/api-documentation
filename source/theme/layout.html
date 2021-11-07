@@ -56,7 +56,9 @@
   {% if pagename in do_not_index -%}
     <meta name="robots" content="noindex" />
   {%- endif %}
-  {% if apiName and versionName -%}
+  {% if title == apiName -%}
+    <title>{{ apiName }} {{ versionName }} documentation &mdash; Mollie</title>
+  {%- elif apiName and versionName -%}
     <title>{{ title|striptags|e }} &mdash; {{ apiName }} {{ versionName }} documentation &mdash; Mollie</title>
   {%- elif apiName -%}
     <title>{{ title|striptags|e }} &mdash; {{ apiName }} documentation &mdash; Mollie</title>
