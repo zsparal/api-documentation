@@ -391,7 +391,8 @@
 <ul>
   {%- set current = pagename.startswith('reference/oauth2/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/oauth2/authorize') }}">OAuth API</a>
+    <a href="{{ pathto('reference/oauth2/overview') }}"
+       class="{% if pagename == 'reference/oauth2/overview' %}current{% endif %}">OAuth API</a>
 
     {%- if current %}
       <ul>
@@ -413,7 +414,8 @@
 
   {%- set current = pagename.startswith('reference/v2/permissions-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/permissions-api/get-permission') }}">Permissions API</a>
+    <a href="{{ pathto('reference/v2/permissions-api/overview') }}"
+       class="{% if pagename == 'reference/v2/permissions-api/overview' %}current{% endif %}">Permissions API</a>
 
     {%- if current %}
       <ul>
@@ -431,7 +433,8 @@
 
   {%- set current = pagename.startswith('reference/v2/organizations-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/organizations-api/current-organization') }}">Organizations API</a>
+    <a href="{{ pathto('reference/v2/organizations-api/overview') }}"
+       class="{% if pagename == 'reference/v2/organizations-api/overview' %}current{% endif %}">Organizations API</a>
 
     {%- if current %}
       <ul>
@@ -453,7 +456,8 @@
 
   {%- set current = pagename.startswith('reference/v2/profiles-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/profiles-api/create-profile') }}">Profiles API</a>
+    <a href="{{ pathto('reference/v2/profiles-api/overview') }}"
+       class="{% if pagename == 'reference/v2/profiles-api/overview' %}current{% endif %}">Profiles API</a>
 
     {%- if current %}
       <ul>
@@ -476,6 +480,10 @@
         {{ sidebar_item(
           'reference/v2/profiles-api/delete-profile',
           'Delete profile'
+        ) }}
+        {{ sidebar_item(
+          'reference/v2/profiles-api/list-profiles',
+          'List profiles'
         ) }}
         {{ sidebar_item(
           'reference/v2/profiles-api/enable-method',
@@ -501,27 +509,24 @@
           'reference/v2/profiles-api/disable-voucher-issuer',
           'Disable voucher issuer'
         ) }}
-        {{ sidebar_item(
-          'reference/v2/profiles-api/list-profiles',
-          'List profiles'
-        ) }}
       </ul>
     {%- endif %}
   </li>
 
   {%- set current = pagename.startswith('reference/v2/onboarding-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/onboarding-api/get-onboarding-status') }}">Onboarding API</a>
+    <a href="{{ pathto('reference/v2/onboarding-api/overview') }}"
+       class="{% if pagename == 'reference/v2/onboarding-api/overview' %}current{% endif %}">Onboarding API</a>
 
     {%- if current %}
       <ul>
         {{ sidebar_item(
-          'reference/v2/onboarding-api/get-onboarding-status',
-          'Get onboarding status'
-        ) }}
-        {{ sidebar_item(
           'reference/v2/onboarding-api/submit-onboarding-data',
           'Submit onboarding data'
+        ) }}
+        {{ sidebar_item(
+          'reference/v2/onboarding-api/get-onboarding-status',
+          'Get onboarding status'
         ) }}
       </ul>
     {%- endif %}

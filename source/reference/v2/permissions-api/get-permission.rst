@@ -12,9 +12,7 @@ Get permission
    :organization_access_tokens: true
    :oauth: true
 
-All API actions through OAuth are by default protected for privacy and/or money related reasons and therefore require
-specific permissions. These permissions can be requested by apps during the OAuth authorization flow. The Permissions
-resource allows the app to check whether an API action is (still) allowed by the authorization.
+Retrieve the details on a specific permission, and see if the permission is granted to the current app access token.
 
 Parameters
 ----------

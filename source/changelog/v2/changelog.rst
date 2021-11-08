@@ -540,7 +540,7 @@ Thursday, 28th
 - Added profile website URL validation to the :doc:`Create profile </reference/v2/profiles-api/create-profile>`
   endpoint.
 - Added profile website URL validation to the
-  :doc:`Submit onboarding data </reference/v2/onboarding-api/submit-onboarding-data>` endpoint.
+  :doc:`Submit onboarding data endpoint </reference/v2/onboarding-api/submit-onboarding-data>`.
 
 Monday, 25th
 ------------
@@ -586,7 +586,7 @@ Monday, 14th
 Thursday, 3th
 -------------
 - Added a new API for getting the onboarding status of a merchant. You will need the new OAuth scope ``onboarding.read``
-  to access the data. For details, see the :doc:`Onboarding API </reference/v2/onboarding-api/get-onboarding-status>`.
+  to access the data. For details, see the :doc:`Onboarding API </reference/v2/onboarding-api/overview>`.
 
 December 2018
 =============
@@ -616,7 +616,7 @@ Thursday, 13th
 Monday, 10th
 ------------
 - Enabling and disabling payment methods via the API is now possible via the
-  :doc:`Profiles API </reference/v2/profiles-api/enable-method>`.
+  :doc:`Enable payment method endpoint </reference/v2/profiles-api/enable-method>` on the Profiles API.
 
 Friday, 7th
 -----------
@@ -702,8 +702,8 @@ Monday, 15th
 Friday, 12th
 ------------
 - Added new category codes ``5533`` ``5641`` ``5651`` ``5732`` ``5735`` ``5815`` ``5944`` ``5977`` ``7999``
-  to the :doc:`Create Profile </reference/v2/profiles-api/create-profile>` and
-  :doc:`Update Profile </reference/v2/profiles-api/update-profile>` endpoints.
+  to the :doc:`Create profile </reference/v2/profiles-api/create-profile>` and
+  :doc:`Update profile </reference/v2/profiles-api/update-profile>` endpoints.
 
 Friday, 5th
 ------------

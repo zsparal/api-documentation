@@ -27,7 +27,7 @@ Access token parameters
 If you are using :doc:`organization access tokens </overview/authentication>` or are creating an
 :doc:`OAuth app </connect/overview>`, you have to specify which profile you are retrieving a chargeback for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+:doc:`Profiles API </reference/v2/profiles-api/overview>` for more information.
 
 .. parameter:: profileId
    :type: string

@@ -5,7 +5,7 @@ Create profile
 
 .. warning:: The Reseller API has been deprecated. Only selected partners still have access to this legacy
              functionality. As an alternative, we recommend using the
-             :doc:`Profiles API </reference/v2/profiles-api/create-profile>` for this action.
+             :doc:`Profiles API </reference/v2/profiles-api/overview>` for this action.
 
 .. endpoint::
    :method: POST

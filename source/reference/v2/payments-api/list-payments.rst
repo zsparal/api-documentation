@@ -37,7 +37,7 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 :doc:`OAuth app </connect/overview>`, you can specify which profile you are retrieving payments for using the
 ``profileId`` parameter. Organizations can have multiple profiles for each of their websites. If you omit the
 ``profileId`` parameter, the API will return all payments across all profiles. See
-:doc:`Profiles API </reference/v2/profiles-api/get-profile>` for more information.
+:doc:`Profiles API </reference/v2/profiles-api/overview>` for more information.
 
 For these authentication methods the optional ``testmode`` parameter is available as well to enable test mode.
 

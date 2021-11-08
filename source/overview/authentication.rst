@@ -99,7 +99,7 @@ For completeness' sake, the following table compares the available authenticatio
    * - **Requirements**
      - Create a payment profile first via
        `Dashboard: Profiles overview <https://www.mollie.com/dashboard/settings/profiles>`_, or using the
-       :doc:`Profiles API </reference/v2/profiles-api/get-profile>`.
+       :doc:`Profiles API </reference/v2/profiles-api/overview>`.
      - None.
      - Create an application, then have a user authorize your app to access their account data. See
        :doc:`Mollie Connect </connect/overview>` for more information.

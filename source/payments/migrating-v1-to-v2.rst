@@ -234,7 +234,7 @@ The following fields have been changed, renamed or removed:
 * ``phone`` is now formatted in `E.164 <https://en.wikipedia.org/wiki/E.164>`_ formatting.
 * The API keys subresource has been removed.
 
-New APIs have been added, such as het :doc:`/reference/v2/profiles-api/get-profile-me`.
+New APIs have been added, such as the :doc:`Get current profile endpoint </reference/v2/profiles-api/get-profile-me>`.
 
 Changes in the Settlements API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
