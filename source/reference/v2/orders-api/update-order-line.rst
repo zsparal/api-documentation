@@ -5,7 +5,7 @@ Update order line
 
 .. endpoint::
    :method: PATCH
-   :url: https://api.mollie.com/v2/orders/*orderId*/lines/*orderlineId*
+   :url: https://api.mollie.com/v2/orders/*orderId*/lines/*orderLineId*
 
 .. authentication::
    :api_keys: true
@@ -32,7 +32,7 @@ The order remains intact, though the requested changes are not persisted.
 Parameters
 ----------
 Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_pbjz8x``. And replace the
-``orderlineId`` in the URL by the order line ID, for example ``odl_dgtxyl``
+``orderLineId`` in the URL by the order line ID, for example ``odl_dgtxyl``
 
 Please note that even though all parameters are optional, at least one of them needs to be provided
 in the request.

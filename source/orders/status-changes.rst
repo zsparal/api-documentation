@@ -111,8 +111,9 @@ The following diagram shows how one order status leads to another:
     * All order lines will also be in the ``canceled`` state.
     * This is a final state, the order cannot transition to another state.
 
-    .. note:: Orders can only be canceled by the merchant, not by the shopper. Use the :doc:`Cancel Order API
-              </reference/v2/orders-api/cancel-order>` or cancel the order from the the Mollie Dashboard.
+    .. note:: Orders can only be canceled by the merchant, not by the shopper. Use the
+              :doc:`Cancel order endpoint </reference/v2/orders-api/cancel-order>` or cancel the order from the the
+              Mollie Dashboard.
 
 .. _order-status-expired:
 

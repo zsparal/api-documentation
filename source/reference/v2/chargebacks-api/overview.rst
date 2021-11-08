@@ -1,13 +1,13 @@
 Chargebacks API
 ===============
-For credit payment methods such as credit card and SEPA Direct Debit, consumers are able to file a dispute and initiate
-a chargeback. If the card issuer or bank accepts the chargeback, the money will be reclaimed and deducted from your
-Mollie balance.
+With payment methods such as credit card and SEPA Direct Debit, consumers are able to file a dispute and initiate a
+chargeback if for example the purchased items never arrived and the seller does not respond to inquiries.
 
-The Chargebacks API allows you to retrieve details on the chargebacks that took place on your account.
+If the card issuer or bank accepts the chargeback, the money will be reclaimed and deducted from your Mollie balance.
+The Chargebacks API then allows you to retrieve details of the chargebacks that took place on your account.
 
-As soon as we receive notification of a chargeback, we will notify you both via a webhook and via email. Depending on
-the nature of the chargeback, there will be an opportunity to respond to this notification.
+As soon as we receive notification of a chargeback, we will notify you. Depending on the nature of the chargeback, there
+will be an opportunity to respond to this notification.
 
 For more information on dealing with chargebacks, please refer to our
 `knowledge base <https://help.mollie.com/hc/en-us/articles/115001470869-What-are-chargebacks->`_.

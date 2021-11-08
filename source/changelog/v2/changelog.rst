@@ -38,13 +38,15 @@ July 2021
 Tuesday, 20th
 -------------
 - Added the possibility to create :doc:`Split payments </connect/splitting-payments>`, with which you can distribute
-  and split payments between your platform and your connected merchant accounts. Added ``routing`` optional parameter to
-  the :doc:`Create payment API </reference/v2/payments-api/create-payment>` and ``routing`` optional object to the
-  :doc:`Create payment API </reference/v2/payments-api/create-payment>` and
-  :doc:`Get payment API </reference/v2/payments-api/get-payment>` responses.
+  and split payments between your platform and your connected merchant accounts.
+- Added ``routing`` optional parameter to the
+  :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`.
+- Added optional ``routing`` response parameter to the :doc:`Create payment </reference/v2/payments-api/create-payment>`
+  and :doc:`Get payment </reference/v2/payments-api/get-payment>` endpoint responses.
 - Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>`. Added ``reverseRouting``
-  optional parameter to the :doc:`Create refund API </reference/v2/refunds-api/create-payment-refund>` and
-  ``routingReversals`` optional object to the :doc:`Refund API </reference/v2/refunds-api/get-payment-refund>` response.
+  optional parameter to the :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>` and
+  ``routingReversals`` optional object to the :doc:`Get refund endpoint </reference/v2/refunds-api/get-payment-refund>`
+  response.
 
 June 2021
 =========
@@ -65,7 +67,8 @@ April 2021
 ==========
 Friday, 16th
 --------------
-- Added ``sku`` optional parameter to :doc:`Orders API</reference/v2/orders-api/update-orderline>`.
+- Added ``sku`` optional parameter to the :doc:`Update order line endpoint </reference/v2/orders-api/update-order-line>`
+  of the Orders API.
 
 March 2021
 ==========
@@ -93,9 +96,9 @@ February 2021
 Monday, 1st
 -----------
 - We discontinued the support for ING Home'Pay as a payment method. This means that the API now rejects all
-  :doc:`Create Payment API</reference/v2/payments-api/create-payment>`-calls with the method ``inghomepay``. Make sure
-  to remove this payment method from your checkout if needed. Please `contact us <https://www.mollie.com/contact>`_ for
-  more info.
+  :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` calls with the method ``inghomepay``. Be
+  sure to remove this payment method from your checkout if needed. Please `contact us <https://www.mollie.com/contact>`_
+  for more info.
 
 January 2021
 =============
@@ -173,11 +176,11 @@ August 2020
 
 Friday, 28th
 ------------
-- We have added a ``dashboard`` URL to the :doc:`Payment </reference/v2/payments-api/get-payment>`,
-  :doc:`Order </reference/v2/orders-api/get-order>`, :doc:`Customer </reference/v2/customers-api/get-customer>`,
-  :doc:`Organization </reference/v2/organizations-api/get-organization>`, and
-  :doc:`Profiles </reference/v2/profiles-api/get-profile>` endpoints. This URL points directly to the correct resource
-  in the Mollie Dashboard.
+- We have added a ``dashboard`` URL to the :doc:`Get payment </reference/v2/payments-api/get-payment>`,
+  :doc:`Get order </reference/v2/orders-api/get-order>`, :doc:`Get customer </reference/v2/customers-api/get-customer>`,
+  :doc:`Get organization </reference/v2/organizations-api/get-organization>`, and
+  :doc:`Get profiles </reference/v2/profiles-api/get-profile>` endpoints. This URL points directly to the correct
+  resource in the Mollie Dashboard.
 
 Thursday, 20th
 --------------
@@ -197,7 +200,7 @@ July 2020
 
 Thursday, 9th
 -------------
-- We have added a ``mobileAppCheckout`` URL to the :doc:`Payment API response </reference/v2/payments-api/get-payment>`
+- We have added a ``mobileAppCheckout`` URL to the :doc:`Payments API response </reference/v2/payments-api/get-payment>`
   if the payment method supports payments via a companion (mobile) app. At the moment, this only involves
   ``bancontact``.
 
@@ -207,7 +210,7 @@ June 2020
 Tuesday, 30th
 -------------
 - It is now possible to import your PayPal billing agreements by creating mandates via the
-  :doc:`Create mandates API </reference/v2/mandates-api/create-mandate>`.
+  :doc:`Create mandates endpoint </reference/v2/mandates-api/create-mandate>`.
 
 Friday, 26th
 ------------
@@ -223,7 +226,7 @@ May 2020
 Tuesday, 26th
 -------------
 - It is now possible to update the ``metadata`` of an order line via the
-  :doc:`Update order line endpoint </reference/v2/orders-api/update-orderline>`.
+  :doc:`Update order line endpoint </reference/v2/orders-api/update-order-line>`.
 
 Thursday, 14th
 --------------
@@ -293,7 +296,7 @@ Friday, 7th
 
 Tuesday, 4th
 ------------
-- Added the possibility to embed the :doc:`shipments </reference/v2/shipments-api/get-shipment>`
+- Added the possibility to embed the :doc:`shipments </reference/v2/shipments-api/overview>`
   of an order in the :doc:`Get order endpoint </reference/v2/orders-api/get-order>`.
 
 January 2020
@@ -326,11 +329,11 @@ December 2019
 Tuesday, 3rd
 ------------
 - Added the possibility to submit ``extraMerchantData`` for Klarna in the
-  :doc:`Orders API </reference/v2/orders-api/create-order>` for merchants who have agreed this with Klarna.
+  :doc:`Orders API </reference/v2/orders-api/overview>` for merchants who have agreed this with Klarna.
 - Added ``restrictPaymentMethodsToCountry`` in the :doc:`Payments API </reference/v2/payments-api/create-payment>`.
-- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+- Added ``shopperCountryMustMatchBillingCountry`` in the :doc:`Orders API </reference/v2/orders-api/overview>`.
 - Enabled :doc:`Application fees </connect/application-fees>` for the
-  :doc:`Orders API </reference/v2/orders-api/create-order>`.
+  :doc:`Orders API </reference/v2/orders-api/overview>`.
 
 Monday, 2nd
 -----------
@@ -570,7 +573,7 @@ Tuesday, 22th
 Thursday, 17th
 --------------
 - It is now possible to also update the ``quantity``, ``unitPrice``, ``discountAmount``, ``totalAmount``, ``vatAmount``
-  and ``vatRate`` of the order line, see :doc:`Update order line </reference/v2/orders-api/update-orderline>`.
+  and ``vatRate`` of the order line, see :doc:`Update order line </reference/v2/orders-api/update-order-line>`.
 
 Monday, 14th
 -------------
@@ -595,7 +598,7 @@ Thursday, 20th
 
 Tuesday, 18th
 -------------
-- Added a new endpoint to update order lines. For details, see :doc:`/reference/v2/orders-api/update-orderline`.
+- Added a new endpoint to update order lines. For details, see :doc:`/reference/v2/orders-api/update-order-line`.
 
 Friday, 14th
 ------------
@@ -607,7 +610,7 @@ Thursday, 13th
 - It is now possible to create (another) payment for an order via the
   :doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>` on the Orders API.
 - We are now offering webhooks for order payments. Please note that when the status of the payment becomes ``paid`` we
-  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/create-order>` for more
+  are calling your order webhook instead. See the :doc:`Orders API </reference/v2/orders-api/overview>` for more
   info.
 
 Monday, 10th
@@ -686,7 +689,7 @@ Friday, 19th
 Wednesday, 17th
 ---------------
 - The ``method`` field on the :doc:`Create Payment </reference/v2/payments-api/create-payment>` and
-  :doc:`Create Order </reference/v2/orders-api/create-order>` now also accepts an array of methods. By doing so you can
+  :doc:`Create order </reference/v2/orders-api/create-order>` now also accepts an array of methods. By doing so you can
   select which methods to show on the payment method selection screen. For example, you can use this functionality to
   only show payment methods from a specific country to your customer.
 
@@ -715,7 +718,7 @@ Tuesday, 2nd
 - Added the new payment status ``authorized`` for payments that still require a capture to receive the money. Currently,
   this status is only used for payment methods `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_
   and `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_. Because payments with these payment methods
-  can only be created with the :doc:`Orders API </reference/v2/orders-api/create-order>`, there is no change required in
+  can only be created with the :doc:`Orders API </reference/v2/orders-api/overview>`, there is no change required in
   existing implementations of the Payments API.
 
   The new status is especially useful to give a meaningful representation when listing all payments.
@@ -746,9 +749,9 @@ Monday, 17th
 
 Wednesday, 12th
 ---------------
-- Added the :doc:`Orders API </reference/v2/orders-api/create-order>` and the
-  :doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. See the
-  :doc:`Orders API overview </orders/overview>` for more details on how to use these APIs.
+- Added the :doc:`Orders API </reference/v2/orders-api/overview>` and the
+  :doc:`Shipments API </reference/v2/shipments-api/overview>`. See the
+  :doc:`Orders guide </orders/overview>` for more details on how to use these APIs.
 
 - Added the :doc:`Captures API </reference/v2/captures-api/overview>`.
 

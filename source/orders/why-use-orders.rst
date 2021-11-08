@@ -1,4 +1,4 @@
-Why use Orders?
+Why use orders?
 ===============
 The :doc:`Orders API <overview>` allows you to create “orders”. An order contains the personal information of a customer
 (e.g. address) and products that the customer ordered. When an order is made, a corresponding payment will be created

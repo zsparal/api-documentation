@@ -194,7 +194,8 @@
 <ul>
   {%- set current = pagename.startswith('reference/v2/orders-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/orders-api/create-order') }}">Orders API</a>
+    <a href="{{ pathto('reference/v2/orders-api/overview') }}"
+       class="{% if pagename == 'reference/v2/orders-api/overview' %}current{% endif %}">Orders API</a>
 
     {%- if current %}
       <ul>
@@ -211,16 +212,16 @@
           'Update order'
         ) }}
         {{ sidebar_item(
-          'reference/v2/orders-api/update-orderline',
-          'Update order line'
-        ) }}
-        {{ sidebar_item(
         'reference/v2/orders-api/cancel-order',
           'Cancel order'
         ) }}
         {{ sidebar_item(
           'reference/v2/orders-api/list-orders',
           'List orders'
+        ) }}
+        {{ sidebar_item(
+        'reference/v2/orders-api/update-order-line',
+        'Update order line'
         ) }}
         {{ sidebar_item(
           'reference/v2/orders-api/cancel-order-lines',
@@ -236,7 +237,8 @@
 
   {%- set current = pagename.startswith('reference/v2/shipments-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/shipments-api/create-shipment') }}">Shipments API</a>
+    <a href="{{ pathto('reference/v2/shipments-api/overview') }}"
+       class="{% if pagename == 'reference/v2/shipments-api/overview' %}current{% endif %}">Shipments API</a>
 
     {%- if current %}
       <ul>
@@ -249,12 +251,12 @@
           'Get shipment'
         ) }}
         {{ sidebar_item(
-          'reference/v2/shipments-api/list-shipments',
-          'List shipments'
+        'reference/v2/shipments-api/update-shipment',
+        'Update shipment'
         ) }}
         {{ sidebar_item(
-          'reference/v2/shipments-api/update-shipment',
-          'Update shipment'
+          'reference/v2/shipments-api/list-shipments',
+          'List shipments'
         ) }}
       </ul>
     {%- endif %}

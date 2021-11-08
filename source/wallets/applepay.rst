@@ -19,7 +19,7 @@ available.
 
 Using the Mollie Checkout
 -------------------------
-If you are using the Mollie Checkout and the :doc:`Create Payment API </reference/v2/payments-api/create-payment>`
+If you are using the Mollie Checkout and the :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`
 without the ``method`` parameter, the Apple Pay button will be shown in the checkout during method selection:
 
 .. figure:: images/checkout-with-apple-pay@2x.jpg
@@ -53,9 +53,9 @@ option when it is actually supported by the device. For more details, see the `a
      // Add ApplePay to the method selection in your checkout
    }
 
-Finally, when the shopper selects Apple Pay from your method selection, you should use the Create Payment API to create
-a payment with the ``method`` parameter set to ``applepay`` and redirect the shopper to the ``_links.checkout`` URL
-returned.
+Finally, when the shopper selects Apple Pay from your method selection, you should use the
+:doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` to create a payment with the ``method``
+parameter set to ``applepay`` and redirect the shopper to the ``_links.checkout`` URL returned.
 
 When the shopper authorizes the payment, Mollie will create a payment with the method ``creditcard``. We will then call
 your :doc:`webhook </overview/webhooks>` and redirect the shopper back to your website as normal.

@@ -68,8 +68,8 @@ additional keys:
 
               This is provided as a convenience, you can of course also use your own messages.
 
-Example Create Payment API error response
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example Payments API error response
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 .. code-block:: none
    :linenos:
@@ -139,8 +139,8 @@ The reason of the error will be available via the ``details`` object:
 
               This is provided as a convenience, you can of course also use your own messages.
 
-Example Get Payment API response for ``failed`` Payment
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Example Payments API response for ``failed`` payment
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Note that some fields have been omitted for the sake of brevity.
 

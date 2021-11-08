@@ -134,10 +134,10 @@ Response
    :doc:`Get order </reference/v2/orders-api/get-order>`.
 
    The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` refunded. If the line was
-   partially refunded, these values will be different from the values in response from the Get order API.
+   partially refunded, these values will be different from the values in response from the *Get order* endpoint.
 
    Only available if the refund was created via the
-   :doc:`Create Order Refund API </reference/v2/refunds-api/create-order-refund>`.
+   :doc:`Create order refund endpoint </reference/v2/refunds-api/create-order-refund>`.
 
 .. parameter:: paymentId
    :type: string

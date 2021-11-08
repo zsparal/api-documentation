@@ -58,8 +58,8 @@ Read more about :doc:`payment status changes </payments/status-changes>`.
 
 Orders API
 ^^^^^^^^^^
-The :doc:`Orders API </reference/v2/orders-api/create-order>` calls a webhook when an order reaches the status ``paid``
-or ``authorized``. These statuses indicate that the order is ready to be shipped.
+The :doc:`Orders API </reference/v2/orders-api/overview>` calls a webhook when an order reaches the status ``paid`` or
+``authorized``. These statuses indicate that the order is ready to be shipped.
 
 Furthermore, the webhook will be called when:
 

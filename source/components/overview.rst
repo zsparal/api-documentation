@@ -11,8 +11,8 @@ your checkout that your customer will use to enter their credit card details, su
 
 Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
 Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or
-:doc:`/reference/v2/orders-api/create-order`.
+:doc:`Create payment </reference/v2/payments-api/create-payment>` or
+:doc:`Create order </reference/v2/orders-api/create-order>` endpoints.
 
 Once you have created a payment or order, you should redirect your customer to the URL in the ``_links.checkout``
 property from the response. This link is where your customer can perform the 3-D Secure authentication. If the customer
@@ -31,7 +31,7 @@ Follow these steps to implement Mollie Components in your checkout:
 #. Add a ``submit`` event listener to your form to retrieve the ``cardToken`` when your customer has completed the
    checkout form.
 #. Send the ``cardToken`` to your back end, by adding it to your form.
-#. From your back end, create a credit card Payment or Order with the ``cardToken`` using the
+#. From your back end, create a credit card payment or order with the ``cardToken`` using the
    :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` or
    :doc:`Create order endpoint </reference/v2/orders-api/create-order>` respectively.
 #. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
@@ -171,14 +171,14 @@ You can then place the ``cardToken`` in a hidden input to submit it to your back
      form.submit();
    });
 
-Create a Payment or Order with the card token
+Create a payment or order with the card token
 ---------------------------------------------
 On your back end, you will receive the ``cardToken``. You need to pass this when
 :doc:`creating a payment </reference/v2/payments-api/create-payment>`. Additionally, you should set the ``method`` to
 ``creditcard``.
 
-Alternatively, when using the :doc:`Orders API </reference/v2/orders-api/create-order>`, you can pass the card token
-via the ``payment.cardToken`` parameter.
+Alternatively, when using the :doc:`Orders API </reference/v2/orders-api/overview>`, you can pass the card token via the
+``payment.cardToken`` parameter.
 
 The ``cardToken`` is valid for 1 hour.
 

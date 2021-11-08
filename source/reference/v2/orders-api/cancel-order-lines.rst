@@ -13,8 +13,8 @@ Cancel order lines
    :oauth: true
 
 This endpoint can be used to cancel one or more order lines that were previously authorized using a *pay after delivery*
-payment method. Use the :doc:`Cancel Order API </reference/v2/orders-api/cancel-order>` if you want to cancel the entire
-order or the remainder of the order.
+payment method. Use the :doc:`Cancel order endpoint </reference/v2/orders-api/cancel-order>` if you want to cancel the
+entire order or the remainder of the order.
 
 Canceling or partially canceling an order line will immediately release the authorization held for that amount. Your
 customer will be able to see the updated order in his portal / app. Any canceled lines will be removed from the
@@ -27,7 +27,7 @@ an ``authorized`` order line, the new order line status will be ``canceled``. Ca
 result in a ``completed`` order line status.
 
 If the order line is ``paid`` or already ``completed``, you should create a refund using the
-:doc:`Create Order Refund API </reference/v2/refunds-api/create-order-refund>` instead.
+:doc:`Create order refund endpoint </reference/v2/refunds-api/create-order-refund>` instead.
 
 For more information about the status transitions please check our
 :doc:`order status changes guide </orders/status-changes>`.

@@ -49,9 +49,9 @@ February 2021
 Monday, 1st
 -----------
 - We discontinued the support for ING Home'Pay as a payment method. This means that the API now rejects all
-  :doc:`Create Payment API</reference/v2/payments-api/create-payment>` calls with the method ``inghomepay``. Make sure
-  to remove this payment method from your checkout if needed. Please `contact us <https://www.mollie.com/contact>`_ for
-  more info.
+  :doc:`Create payment endpoint</reference/v2/payments-api/create-payment>` calls with the method ``inghomepay``. Be
+  sure to remove this payment method from your checkout if needed. Please `contact us <https://www.mollie.com/contact>`_
+  for more information.
 
 December 2020
 =============

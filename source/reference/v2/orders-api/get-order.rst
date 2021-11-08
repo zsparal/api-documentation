@@ -35,9 +35,9 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payments`` Include all :doc:`payments </reference/v2/payments-api/get-payment>` created for the order.
-* ``refunds`` Include all :doc:`refunds </reference/v2/refunds-api/list-order-refunds>` created for the order.
-* ``shipments`` Include all :doc:`shipments </reference/v2/shipments-api/get-shipment>` created for the order.
+* ``payments`` Include all :doc:`payments </reference/v2/payments-api/overview>` created for the order.
+* ``refunds`` Include all :doc:`refunds </reference/v2/refunds-api/overview>` created for the order.
+* ``shipments`` Include all :doc:`shipments </reference/v2/shipments-api/overview>` created for the order.
 
 You can combine multiple embeds and add the includes of the embeds as well, for example:
 ``embed=payments.details.remainderDetails``

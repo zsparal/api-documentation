@@ -31,8 +31,8 @@ enabled.
 
 How to create an application fee
 --------------------------------
-One-off application fees can be created on Payments or Orders. Application fees can also be set on Subscriptions, in
-which case the application fee will be added to *each Payment* created for the Subscription.
+One-off application fees can be created on payments or orders. Application fees can also be set on Subscriptions, in
+which case the application fee will be added to *each Payment* created for the subscription.
 
 They are created by passing additional parameters to the
 :doc:`/reference/v2/payments-api/create-payment`,

@@ -82,7 +82,8 @@ Response
    :doc:`Get order </reference/v2/orders-api/get-order>`.
 
    The lines will show the ``quantity``, ``discountAmount``, ``vatAmount`` and ``totalAmount`` shipped in this shipment.
-   If the line was partially shipped, these values will be different from the values in response from the Get order API.
+   If the line was partially shipped, these values will be different from the values in response from the *Get order*
+   endpoint.
 
 .. parameter:: _links
    :type: object

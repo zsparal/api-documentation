@@ -29,7 +29,7 @@ API.
 
 Some resources support embedding of related sub-resources. For instance, when retrieving a payment any refunds can be
 embedded by using the ``embed=refunds`` query string parameter. See the
-:doc:`Get Payment API</reference/v2/payments-api/get-payment>` for more information.
+:doc:`Get payment endpoint </reference/v2/payments-api/get-payment>` for more information.
 
 Amount changes
 ^^^^^^^^^^^^^^
@@ -121,7 +121,7 @@ The following fields have been removed:
 * ``expiryPeriod`` has been removed from the Payment resource. You can use ``expiresAt`` which contains the same
   information.
 * ``issuer`` has been removed from the Payment resource. You can however, still pass it to the
-  :doc:`Create Payment API </reference/v2/payments-api/create-payment>`.
+  :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`.
 * ``details.bitcoinRate`` has been removed from the Bitcoin detail object.
 * ``details.bitcoinAmount`` has been removed from the Bitcoin detail object.
 * ``details.cardCountry`` has been removed from the credit card detail object.

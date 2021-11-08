@@ -3,7 +3,7 @@ Payments API
 The Payments API is at the heart of the Mollie API. It allows you to create and manage *payment intents*. This is where
 most payment implementations start off.
 
-In its simplest form, setting up a payment requires only three steps: setting up the payment with the
+In its simplest form, processing a payment requires only three steps: setting up the payment with the
 :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`, sending the customer to our
 :doc:`hosted checkout </payments/hosted-checkout>`, and processing the :doc:`webhook </overview/webhooks>` we send once
 the payment is completed.

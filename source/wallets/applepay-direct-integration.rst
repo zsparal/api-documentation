@@ -75,13 +75,13 @@ Send the Apple Pay Payment Token to Mollie
 Once the shopper has authorized the payment, you will receive the `Apple Pay Payment object
 <https://developer.apple.com/documentation/apple_pay_on_the_web/applepaypayment>`_. You must then encode the object's
 ``token`` property to JSON and add the JSON as the ``applePayPaymentToken`` parameter when invoking the
-:doc:`Create Payment API </reference/v2/payments-api/create-payment>` or the
-:doc:`/reference/v2/orders-api/create-order`.
+:doc:`Create payment </reference/v2/payments-api/create-payment>` or the
+:doc:`Create order </reference/v2/orders-api/create-order>` endpoint.
 
 Example request
 ^^^^^^^^^^^^^^^
 .. code-block:: none
-    :caption: Create Payment API
+    :caption: Create payment endpoint
     :linenos:
 
     POST /v2/payments HTTP/1.1
@@ -99,7 +99,7 @@ Example request
     }
 
 .. code-block:: none
-    :caption: Create Order API
+    :caption: Create order endpoint
     :linenos:
 
     POST /v2/orders HTTP/1.1

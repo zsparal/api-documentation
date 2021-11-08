@@ -20,8 +20,8 @@ Creating an Order will automatically create the required Payment to allow your c
 Once you have created an Order, you should redirect your customer to the URL in the ``_links.checkout`` property from
 the response.
 
-Note that when the payment fails, expires or is canceled, you can create a new Payment for the Order
-using the :doc:`/reference/v2/orders-api/create-order-payment`. This is only possible for orders
+Note that when the payment fails, expires or is canceled, you can create a new payment for the order using the
+:doc:`Create order payment endpoint </reference/v2/orders-api/create-order-payment>`. This is only possible for orders
 that have a ``created`` status.
 
 Parameters

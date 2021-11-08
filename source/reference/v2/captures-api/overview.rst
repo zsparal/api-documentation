@@ -8,9 +8,9 @@ In some scenarios, you may also capture a different amount than initially author
 
 Mollie currently only supports captures for **Klarna Pay later** and **Klarna Slice it**, which are both only available
 via order-based payment processing. Essentially, you collect the authorization using the
-:doc:`Orders API </reference/v2/orders-api/create-order>`, and you can capture specific order lines using the
-:doc:`Shipments API </reference/v2/shipments-api/create-shipment>`. Each shipment implies a capture, which then also
-become available via the Captures API.
+:doc:`Orders API </reference/v2/orders-api/overview>`, and you can capture specific order lines using the
+:doc:`Shipments API </reference/v2/shipments-api/overview>`. Each shipment implies a capture, which then also become
+available via the Captures API.
 
 For a step-by-step guide on integrating orders and shipments, see the :doc:`Orders guide </orders/overview>`.
 

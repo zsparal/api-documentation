@@ -122,8 +122,8 @@ Getting the details of the remainder payment
 --------------------------------------------
 In some cases it is desirable to receive the details of a payment. This is mostly the case from the
 remainder payment when the consumer partially paid with a gift card. Receiving these details is possible
-in both the :doc:`Payments API </reference/v2/payments-api/get-payment>` and
-:doc:`Orders API </reference/v2/orders-api/get-order>`.
+in both the :doc:`Get payment </reference/v2/payments-api/get-payment>` and
+:doc:`Get order </reference/v2/orders-api/get-order>` endpoints.
 
 To receive the remainder details in the Payments API, use the ``details.remainderDetails`` include.
 For example: ``GET https://api.mollie.com/v2/payments/tr_xxx?include=details.remainderDetails``. For

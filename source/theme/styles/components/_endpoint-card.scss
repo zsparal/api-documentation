@@ -48,6 +48,9 @@
 }
 
 .rst-content .endpoint-card__endpoint {
+  display: grid;
+  grid-template-columns: max-content auto;
+  grid-gap: 10px;
   font-weight: 500;
   margin: 10px 0;
 }
@@ -57,11 +60,17 @@
   color: $grey-dark;
   border: 0;
   padding: 0;
-  margin: 0 10px 0 0;
+  margin: 0;
 }
 
 .rst-content .endpoint-card__endpoint code.docutils:first-child {
   font-weight: 600;
+}
+
+.rst-content .endpoint-card__endpoint code.docutils:last-child {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .rst-content .endpoint-card__description {

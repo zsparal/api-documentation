@@ -99,7 +99,7 @@ Parameters
    ``ideal`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
    .. note:: If you are looking to create payments with the Klarna Pay later, Klarna Slice it or Voucher payment
-      methods, please use the :doc:`/reference/v2/orders-api/create-order` instead.
+             methods, please use the :doc:`Orders API </reference/v2/orders-api/overview>` instead.
 
 .. parameter:: metadata
    :type: mixed

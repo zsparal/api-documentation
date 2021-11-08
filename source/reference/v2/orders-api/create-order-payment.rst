@@ -57,8 +57,8 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
    supplied to indicate which of the consumer's accounts should be credited.
 
 You can specify the same :ref:`payment parameters <payment-parameters>` as in the
-:doc:`/reference/v2/orders-api/create-order`. Note that the parameters should **not** be specified in a ``payment``
-object, but at the same level as the ``method`` parameter.
+:doc:`Create order endpoint </reference/v2/orders-api/create-order>`. Note that the parameters should **not** be
+specified in a ``payment`` object, but at the same level as the ``method`` parameter.
 
 For example:
 

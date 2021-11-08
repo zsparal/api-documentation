@@ -74,8 +74,8 @@ Parameters
    :condition: optional
 
    Use the ``resource`` parameter to indicate if you will use the result with the
-   :doc:`Create Order </reference/v2/orders-api/create-order>` or
-   :doc:`Create Payment </reference/v2/payments-api/create-payment>` API.
+   :doc:`Create order </reference/v2/orders-api/create-order>` or
+   :doc:`Create payment </reference/v2/payments-api/create-payment>` endpoints.
 
    For example: when passing ``orders`` the result will include payment methods that can only be used in conjunction
    with orders, such as *Klarna Pay later* and meal vouchers. Default behaviour is returning all available payment
@@ -109,7 +109,7 @@ Parameters
    :condition: optional
 
    A comma-separated list of the order line categories you support in your checkout. The available categories can be
-   found on the :doc:`Create Order API </reference/v2/orders-api/create-order>` page.
+   found on the :doc:`Create order endpoint </reference/v2/orders-api/create-order>`.
 
    Example: ``https://api.mollie.com/v2/methods?resource=orders&orderLineCategories=eco,meal``
 
