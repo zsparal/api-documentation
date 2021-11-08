@@ -31,7 +31,8 @@ Styling text-related properties
 -------------------------------
 Text styling properties related properties in the ``input`` field itself can't be styled from outside the iframe because
 iframes will block CSS inheritance. These properties can be applied when
-:doc:`creating components </reference/mollie-js>`. You can target different states of the component when applying them:
+:doc:`creating components </reference/mollie-js/component-object>`. You can target different states of the component
+when applying them:
 
 ``base``
   The state of the Component when your customer has not entered any data yet or is entering data. These styles will also

@@ -185,7 +185,21 @@
 <ul>
   {%- set current = pagename.startswith('reference/mollie-js') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/mollie-js') }}">Mollie.js</a>
+    <a href="{{ pathto('reference/mollie-js/overview') }}"
+       class="{% if pagename == 'reference/mollie-js/overview' %}current{% endif %}">Mollie.js</a>
+
+    {%- if current %}
+      <ul>
+        {{ sidebar_item(
+          'reference/mollie-js/mollie-object',
+          'Mollie object'
+        ) }}
+        {{ sidebar_item(
+          'reference/mollie-js/component-object',
+          'Component object'
+        ) }}
+      </ul>
+    {%- endif %}
   </li>
 </ul>
 

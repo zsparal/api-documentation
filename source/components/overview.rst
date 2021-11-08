@@ -6,8 +6,8 @@ Self-Assessment Questionnaire A)` compliant.
 
 .. figure:: images/components-preview@2x.jpg
 
-At a high level, it works by using a Javascript API, dubbed :doc:`Mollie.js </reference/mollie-js>`, to add fields to
-your checkout that your customer will use to enter their credit card details, such as their card number.
+At a high level, it works by using a Javascript API, dubbed :doc:`Mollie.js </reference/mollie-js/overview>`, to add
+fields to your checkout that your customer will use to enter their credit card details, such as their card number.
 
 Mollie Components does not give you access to the card holder data. Instead, when the checkout is submitted, you use
 Mollie Components to exchange the card holder data for a ``cardToken`` which you can use with the
@@ -24,7 +24,7 @@ Follow these steps to implement Mollie Components in your checkout:
 
 .. figure:: images/components-flow@2x.png
 
-#. Add :doc:`Mollie.js </reference/mollie-js>` to your checkout.
+#. Add :doc:`Mollie.js </reference/mollie-js/overview>` to your checkout.
 #. Initialize the ``Mollie`` object.
 #. Create and mount the four Components for the four credit card fields (card holder, card number, expiry date and
    :abbr:`CVC (Card Verification Code)`). This will add the fields to your checkout.
@@ -41,10 +41,10 @@ started.
 
 Add Mollie.js to your checkout
 ------------------------------
-Start by including :doc:`Mollie.js </reference/mollie-js>` in to your project. It should be added just before the
-``</body>`` tag.
+Start by including :doc:`Mollie.js </reference/mollie-js/overview>` into your project. It should be added just before
+the ``</body>`` tag.
 
-The Javascript file is located at ``https://js.mollie.com/v1/mollie.js``.
+The JavaScript file is located at ``https://js.mollie.com/v1/mollie.js``.
 
 .. code-block:: html
    :linenos:

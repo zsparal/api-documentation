@@ -1,4 +1,5 @@
-.rst-content .section#endpoints {
+.rst-content .section#endpoints,
+.rst-content .section#objects {
   display: grid;
   grid-template-columns: auto;
   grid-gap: 20px;
@@ -16,7 +17,8 @@
   }
 }
 
-.rst-content .section#endpoints > h2 {
+.rst-content .section#endpoints > h2,
+.rst-content .section#objects > h2 {
   grid-column-start: 1;
   grid-column-end: -1; // Stretch until the final column.
 }

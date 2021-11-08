@@ -104,8 +104,8 @@ If you want to know if your customer canceled the first payment, you will need t
 order instead of just the order by adding ``?embed=payments`` to the *Get order* endpoint request. You can then find the
 status of the first payment under ``_embedded.payments.0.status``.
 
-Canceling an order should be done from your backend. You can use the :doc:`Cancel order endpoint
-</reference/v2/orders-api/cancel-order>`.
+Canceling an order should be done from your backend. You can use the
+:doc:`Cancel order endpoint </reference/v2/orders-api/cancel-order>`.
 
 Retrieving available payment methods
 ------------------------------------
