@@ -51,9 +51,9 @@ Single-click payments for returning customers
 Our hosted checkout offers your returning `credit card <https://www.mollie.com/en/payments/credit-card>`_ customers the
 option to complete their payment with a card they previously used at your webshop.
 
-To enable the functionality, simply use the :doc:`Customers API </reference/v2/customers-api/create-customer>` to create
-a unique customer. When setting up the payment for this specific customer, use the customer ID from the Customers API
-in the ``customerId`` field of the Payments API.
+To enable the functionality, simply use the :doc:`Customers API </reference/v2/customers-api/overview>` to create a
+unique customer. When setting up the payment for this specific customer, use the customer ID from the Customers API in
+the ``customerId`` field of the Payments API.
 
 When setting up a subsequent payment for the same customer, the customer will automatically be shown any cards they
 previously used on the same device.

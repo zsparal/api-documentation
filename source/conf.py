@@ -109,7 +109,8 @@ redirects = {
     'reference/v2/partners-api/list-clients': to_url('/reference/v2/clients-api/list-clients'),
     'reference/v2/refunds-api/cancel-refund': to_url('/reference/v2/refunds-api/cancel-payment-refund'),
     'reference/v2/refunds-api/create-refund': to_url('/reference/v2/refunds-api/create-payment-refund'),
-    'reference/v2/refunds-api/get-refund': to_url('/reference/v2/refunds-api/get-payment-refund')
+    'reference/v2/refunds-api/get-refund': to_url('/reference/v2/refunds-api/get-payment-refund'),
+    'reference/v2/subscriptions-api/list-subscriptions-payments': to_url('/reference/v2/subscriptions-api/list-subscription-payments')
 }
 
 do_not_index = [

@@ -189,7 +189,7 @@ Response
         "count": 4,
         "_links": {
             "documentation": {
-                "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-subscriptions-payments",
+                "href": "https://docs.mollie.com/reference/v2/subscriptions-api/list-subscription-payments",
                 "type": "text/html"
             },
             "self": {

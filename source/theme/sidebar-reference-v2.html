@@ -282,7 +282,8 @@
 <ul>
   {%- set current = pagename.startswith('reference/v2/customers-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/customers-api/create-customer') }}">Customers API</a>
+    <a href="{{ pathto('reference/v2/customers-api/overview') }}"
+       class="{% if pagename == 'reference/v2/customers-api/overview' %}current{% endif %}">Customers API</a>
 
     {%- if current %}
     <ul>
@@ -320,7 +321,8 @@
 
   {%- set current = pagename.startswith('reference/v2/mandates-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/mandates-api/create-mandate') }}">Mandates API</a>
+    <a href="{{ pathto('reference/v2/mandates-api/overview') }}"
+       class="{% if pagename == 'reference/v2/mandates-api/overview' %}current{% endif %}">Mandates API</a>
 
     {%- if current %}
       <ul>
@@ -346,7 +348,8 @@
 
   {%- set current = pagename.startswith('reference/v2/subscriptions-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/subscriptions-api/create-subscription') }}">Subscriptions API</a>
+    <a href="{{ pathto('reference/v2/subscriptions-api/overview') }}"
+       class="{% if pagename == 'reference/v2/subscriptions-api/overview' %}current{% endif %}">Subscriptions API</a>
 
     {%- if current %}
       <ul>
@@ -357,6 +360,10 @@
         {{ sidebar_item(
           'reference/v2/subscriptions-api/get-subscription',
           'Get subscription'
+        ) }}
+        {{ sidebar_item(
+        'reference/v2/subscriptions-api/update-subscription',
+        'Update subscription'
         ) }}
         {{ sidebar_item(
           'reference/v2/subscriptions-api/cancel-subscription',
@@ -371,12 +378,8 @@
           'List all subscriptions'
         ) }}
         {{ sidebar_item(
-          'reference/v2/subscriptions-api/list-subscriptions-payments',
+          'reference/v2/subscriptions-api/list-subscription-payments',
           'List subscription payments'
-        ) }}
-        {{ sidebar_item(
-          'reference/v2/subscriptions-api/update-subscription',
-          'Update subscription'
         ) }}
       </ul>
     {%- endif %}

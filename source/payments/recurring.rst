@@ -36,8 +36,8 @@ complete the payment with the account or card that will be used for recurring ch
 payment is completed successfully, the customer's account or card will immediately be chargeable *on-demand*, or
 periodically through *subscriptions*.
 
-#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/create-customer>`. If you are
-   using Mollie Connect, make sure you have the permission `customers.write` in order to create a customer.
+#. Create a unique customer using the :doc:`Customers API </reference/v2/customers-api/overview>`. If you are using
+   Mollie Connect, make sure you have the permission `customers.write` in order to create a customer.
 
    .. code-block:: bash
       :linenos:
@@ -57,7 +57,7 @@ periodically through *subscriptions*.
              If you intend to start a subscription, you can use this payment as the first instalment, e.g. by charging
              the amount you will periodically charge. Next, you can set up a subscription which starts after the first
              period. See also the `startDate` field in the
-             :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
+             :doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`.
 
    .. code-block:: bash
       :linenos:
@@ -79,9 +79,9 @@ periodically through *subscriptions*.
    redirect. You can find an example of the hosted checkout in `our demo environment <https://demo.mollie.com>`_.
 
 #. Once completed there will be a customer mandate that you can access via the
-   :doc:`Mandates API </reference/v2/mandates-api/get-mandate>`. If the first payment was paid using a ``creditcard``,
-   the resulting mandate method will be ``creditcard`` as well. ``paypal`` will result in a
-   ``paypal`` mandate. All other first payment methods will be a ``directdebit`` mandate.
+   :doc:`Mandates API </reference/v2/mandates-api/overview>`. If the first payment was paid using a ``creditcard``, the
+   resulting mandate method will be ``creditcard`` as well. ``paypal`` will result in a ``paypal`` mandate. Virtually
+   all other first payment methods will be a ``directdebit`` mandate.
 
 .. note:: Not all payment methods support a first payment. When the ``method`` parameter is not provided in the API, we
           take care of this automatically in our :doc:`Checkout </payments/hosted-checkout>`. The following payment
@@ -110,7 +110,7 @@ Please note that in order to do recurring payments, SEPA Direct Debit, PayPal or
 your profile.
 
 #. Make sure the customer has valid mandates. Find out using the
-   :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
+   :doc:`Mandates API </reference/v2/mandates-api/overview>`.
 
    .. code-block:: bash
       :linenos:
@@ -146,11 +146,11 @@ your profile.
 Charging periodically with subscriptions
 ----------------------------------------
 For simple regular recurring payments with constant amounts, you can create *subscriptions* with the
-:doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`. Subscription payments will be spawned
-automatically at the specified frequency, and will show up in your Dashboard.
+:doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`. Subscription payments will be spawned automatically
+at the specified frequency, and will show up in your Dashboard.
 
 #. Make sure the customer has a pending or valid mandate using the
-   :doc:`Mandates API </reference/v2/mandates-api/list-mandates>`.
+   :doc:`Mandates API </reference/v2/mandates-api/overview>`.
 
    .. code-block:: bash
       :linenos:
@@ -161,7 +161,8 @@ automatically at the specified frequency, and will show up in your Dashboard.
 #. Continue if there's a mandate with its ``status`` being either ``pending`` or ``valid``, otherwise set up a *first*
    payment for the customer first.
 
-#. Create the subscription using the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
+#. Create the subscription using the
+   :doc:`Create subscription endpoint </reference/v2/subscriptions-api/create-subscription>`.
 
    .. code-block:: bash
       :linenos:

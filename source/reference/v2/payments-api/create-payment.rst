@@ -172,7 +172,7 @@ See our guide on :doc:`Recurring </payments/recurring>` for more information.
    :condition: conditional
    :collapse: true
 
-   The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created. This
+   The ID of the :doc:`customer </reference/v2/customers-api/get-customer>` for whom the payment is being created. This
    is used primarily for :doc:`recurring payments </payments/recurring>`, but can also be used on regular payments to
    enable :doc:`single-click payments </payments/hosted-checkout>`.
 
@@ -183,7 +183,7 @@ See our guide on :doc:`Recurring </payments/recurring>` for more information.
    :condition: conditional
    :collapse: true
 
-   When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>` can be
+   When creating recurring payments, the ID of a specific :doc:`mandate </reference/v2/mandates-api/get-mandate>` can be
    supplied to indicate which of the consumer's accounts should be credited.
 
    Either this field or the ``customerId`` field needs to be provided for payments with the ``recurring`` sequence type.

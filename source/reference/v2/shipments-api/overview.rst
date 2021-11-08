@@ -15,7 +15,7 @@ Endpoints
 .. endpoint-card::
    :name: Create shipment
    :method: POST
-   :url: /v2/orders/*id*/shipments
+   :url: /v2/orders/*orderId*/shipments
    :ref: /reference/v2/shipments-api/create-shipment
 
    Create a shipment for a specific order.
@@ -23,7 +23,7 @@ Endpoints
 .. endpoint-card::
    :name: Get shipment
    :method: GET
-   :url: /v2/orders/*id*/shipments/*shipmentId*
+   :url: /v2/orders/*orderId*/shipments/*id*
    :ref: /reference/v2/shipments-api/get-shipment
 
    Retrieve a specific shipment.
@@ -31,7 +31,7 @@ Endpoints
 .. endpoint-card::
    :name: Update shipment
    :method: PATCH
-   :url: /v2/orders/*id*/shipments/*shipmentId*
+   :url: /v2/orders/*orderId*/shipments/*id*
    :ref: /reference/v2/shipments-api/update-shipment
 
    Update a specific shipment.
@@ -39,7 +39,7 @@ Endpoints
 .. endpoint-card::
    :name: List shipments
    :method: GET
-   :url: /v2/orders/*id*/shipments
+   :url: /v2/orders/*orderId*/shipments
    :ref: /reference/v2/shipments-api/list-shipments
 
    Retrieve the list of shipments created for a specific order.

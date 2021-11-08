@@ -340,9 +340,9 @@ Friday, 1st
 -----------
 - Added new locales ``en_US`` ``nl_NL`` ``nl_BE`` ``fr_FR`` ``fr_BE`` ``de_DE`` ``de_AT`` ``de_CH`` ``es_ES`` ``ca_ES``
   ``pt_PT`` ``it_IT`` ``nb_NO`` ``sv_SE`` ``fi_FI`` ``da_DK`` ``is_IS`` ``hu_HU`` ``pl_PL`` ``lv_LV`` and ``lt_LT`` to
-  the :doc:`Create Customer </reference/v1/customers-api/create-customer>`,
-  :doc:`Create Payment </reference/v1/payments-api/create-payment>`, and
-  :doc:`List Methods </reference/v1/methods-api/list-methods>` endpoints to localize translations and allow for ordering
+  the :doc:`Create customer </reference/v1/customers-api/create-customer>`,
+  :doc:`Create payment </reference/v1/payments-api/create-payment>`, and
+  :doc:`List methods </reference/v1/methods-api/list-methods>` endpoints to localize translations and allow for ordering
   the payment methods in the preferred order for the country.
 
 May 2018

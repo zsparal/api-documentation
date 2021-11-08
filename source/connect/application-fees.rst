@@ -35,9 +35,9 @@ One-off application fees can be created on payments or orders. Application fees 
 which case the application fee will be added to *each Payment* created for the subscription.
 
 They are created by passing additional parameters to the
-:doc:`/reference/v2/payments-api/create-payment`,
-:doc:`/reference/v2/orders-api/create-order` or the
-:doc:`/reference/v2/subscriptions-api/create-subscription`:
+:doc:`Create payment </reference/v2/payments-api/create-payment>`,
+:doc:`Create order </reference/v2/orders-api/create-order>`, or the
+:doc:`Create subscription </reference/v2/subscriptions-api/create-subscription>` endpoint:
 
 .. list-table::
    :widths: auto

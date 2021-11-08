@@ -45,7 +45,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
    :type: string
    :condition: optional
 
-   The ID of the :doc:`Customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
+   The ID of the :doc:`customer </reference/v2/customers-api/get-customer>` for whom the payment is being created.
    This is used for :doc:`recurring payments </payments/recurring>` and
    :doc:`single-click payments </payments/hosted-checkout>`.
 
@@ -53,7 +53,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
    :type: string
    :condition: optional
 
-   When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v2/mandates-api/get-mandate>` may be
+   When creating recurring payments, the ID of a specific :doc:`mandate </reference/v2/mandates-api/get-mandate>` may be
    supplied to indicate which of the consumer's accounts should be credited.
 
 You can specify the same :ref:`payment parameters <payment-parameters>` as in the

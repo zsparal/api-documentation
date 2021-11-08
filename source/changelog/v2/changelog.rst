@@ -677,8 +677,8 @@ Thursday, 25th
 
 Wednesday, 24th
 ---------------
-- Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`
-  to see how many charges are left for completing the subscription.
+- Added the ``timesRemaining`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`. The
+  field lists how many charges are left for completing the subscription.
 - Consumer IBANs of Bancontact payments will now always be shared via the API.
 - Added :doc:`Organization access tokens </overview/authentication>` as an authentication method.
 
@@ -708,7 +708,7 @@ Friday, 12th
 Friday, 5th
 ------------
 - We have added the ``mandateId`` field in subscriptions. This makes it possible to sure a specific mandate for a
-  subscription. For details, see the :doc:`Subscriptions API </reference/v2/subscriptions-api/create-subscription>`.
+  subscription. For details, see the :doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`.
 
 Tuesday, 2nd
 ------------
@@ -729,19 +729,19 @@ September 2018
 Tuesday, 25th
 -------------
 - Added the ``nextPaymentDate`` field in subscriptions to see when the next payment should be initiated. For details,
-  see the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`.
+  see the :doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`.
 
 Thursday, 20th
 --------------
 - Added a new endpoint get all payments for a specific customer subscription. For details, see:
-  :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscriptions-payments>`
+  :doc:`List subscription payments </reference/v2/subscriptions-api/list-subscription-payments>`
 
 - Added ``amountCaptured`` and ``authorizedAt`` to the payment object.
 
 Tuesday, 18th
 -------------
-- Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/get-subscription>`. This
-  makes it possible to, for example, link a plan to a subscription.
+- Added the ``metadata`` field to the :doc:`Subscriptions API </reference/v2/subscriptions-api/overview>`. This makes it
+  possible to, for example, link a plan to a subscription.
 
 Monday, 17th
 ------------
@@ -798,7 +798,7 @@ Wednesday, 11th
 - Added a new endpoint for updating Subscriptions. Now you can update a subscription when needed --
   for example when your customer switches price plans.
 
-  For details, see: :doc:`Update Subscription </reference/v2/subscriptions-api/update-subscription>`
+  For details, see :doc:`Update subscription </reference/v2/subscriptions-api/update-subscription>`.
 
 June 2018
 =========

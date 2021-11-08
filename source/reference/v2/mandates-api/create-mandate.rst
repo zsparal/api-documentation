@@ -12,12 +12,12 @@ Create mandate
    :organization_access_tokens: true
    :oauth: true
 
-Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card,
-PayPal account or bank account recurrently.
+Create a mandate for a specific customer. Mandates allow you to charge a customer's credit card, PayPal account or bank
+account recurrently.
 
-It is only possible to create mandates for IBANs and PayPal billing agreements with this endpoint.
-To create mandates for credit cards, have your customers perform a
-:ref:`'first payment' <payments/recurring/first-payment>` with their credit card.
+It is only possible to create mandates for IBANs and PayPal billing agreements with this endpoint. To create mandates
+for credit cards, have your customers perform a :ref:`'first payment' <payments/recurring/first-payment>` with their
+credit card.
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
 

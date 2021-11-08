@@ -127,14 +127,14 @@ Parameters
    :type: string
    :condition: optional
 
-   The ID of the :doc:`Customer </reference/v1/customers-api/get-customer>` for whom the payment is being created. This
+   The ID of the :doc:`customer </reference/v1/customers-api/get-customer>` for whom the payment is being created. This
    is used for recurring payments and :doc:`single-click payments </payments/hosted-checkout>`.
 
 .. parameter:: mandateId
    :type: string
    :condition: optional
 
-   When creating recurring payments, the ID of a specific :doc:`Mandate </reference/v1/mandates-api/get-mandate>` may be
+   When creating recurring payments, the ID of a specific :doc:`mandate </reference/v1/mandates-api/get-mandate>` may be
    supplied to indicate which of the consumer's accounts should be credited.
 
 Payment method specific parameters
