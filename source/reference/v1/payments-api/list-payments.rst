@@ -43,7 +43,7 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 :doc:`OAuth app </connect/overview>`, the following query string parameters are also available. With the ``profileId``
 parameter, you can specify which profile you want to look at when listing payments. If you omit the ``profileId``
 parameter, you will get all payments on the organization. Organizations can have multiple profiles for each of their
-websites. See :doc:`Profiles API </reference/v1/profiles-api/overview>` for more information.
+websites. See :doc:`Profiles API </reference/v1/profiles-api/create-profile>` for more information.
 
 .. parameter:: profileId
    :type: string
