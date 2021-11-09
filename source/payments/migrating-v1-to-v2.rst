@@ -248,8 +248,8 @@ The following fields have been changed, renamed or moved:
 * ``amount.net``, ``amount.vat`` and ``amount.gross`` have been moved one level up as ``amountNet``, ``amountVat`` and
   ``amountGross``.
 * If the settlement has been invoiced, it will contain the ``invoice`` key in the ``_links`` property.
-* The ``reference`` parameter in the :doc:`List Settlements API </reference/v2/settlements-api/list-settlements>` has
-  been removed.
+* The ``reference`` parameter in the :doc:`List settlements endpoint </reference/v2/settlements-api/list-settlements>`
+  has been removed.
 
 Changes in the Mandates API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^

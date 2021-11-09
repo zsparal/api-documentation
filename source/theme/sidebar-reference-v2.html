@@ -538,7 +538,8 @@
 <ul>
   {%- set current = pagename.startswith('reference/v2/settlements-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/settlements-api/get-settlement') }}">Settlements API</a>
+    <a href="{{ pathto('reference/v2/settlements-api/overview') }}"
+       class="{% if pagename == 'reference/v2/settlements-api/overview' %}current{% endif %}">Settlements API</a>
 
     {%- if current %}
       <ul>
@@ -563,6 +564,10 @@
           'List settlement payments'
         ) }}
         {{ sidebar_item(
+        'reference/v2/settlements-api/list-settlement-captures',
+        'List settlement captures'
+        ) }}
+        {{ sidebar_item(
           'reference/v2/settlements-api/list-settlement-refunds',
           'List settlement refunds'
         ) }}
@@ -570,17 +575,14 @@
           'reference/v2/settlements-api/list-settlement-chargebacks',
           'List settlement chargebacks'
         ) }}
-        {{ sidebar_item(
-          'reference/v2/settlements-api/list-settlement-captures',
-          'List settlement captures'
-        ) }}
       </ul>
     {%- endif %}
   </li>
 
   {%- set current = pagename.startswith('reference/v2/invoices-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/invoices-api/get-invoice') }}">Invoices API</a>
+    <a href="{{ pathto('reference/v2/invoices-api/overview') }}"
+       class="{% if pagename == 'reference/v2/invoices-api/overview' %}current{% endif %}">Invoices API</a>
 
     {%- if current %}
       <ul>
@@ -601,19 +603,20 @@
 <ul>
   {%- set current = pagename.startswith('reference/v2/clients-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/clients-api/get-client') }}">Clients API</a>
+    <a href="{{ pathto('reference/v2/clients-api/overview') }}"
+       class="{% if pagename == 'reference/v2/clients-api/overview' %}current{% endif %}">Clients API</a>
 
     {%- if current %}
-    <ul>
-      {{ sidebar_item(
-      'reference/v2/clients-api/get-client',
-      'Get client'
-      ) }}
-      {{ sidebar_item(
-      'reference/v2/clients-api/list-clients',
-      'List clients'
-      ) }}
-    </ul>
+      <ul>
+        {{ sidebar_item(
+          'reference/v2/clients-api/get-client',
+          'Get client'
+        ) }}
+        {{ sidebar_item(
+          'reference/v2/clients-api/list-clients',
+          'List clients'
+        ) }}
+      </ul>
     {%- endif %}
   </li>
 </ul>

@@ -13,7 +13,7 @@ October 2021
 ============
 Wednesday, 20th
 ---------------
-- Added a new :doc:`Partners </reference/v2/clients-api/get-client>` section containing the
+- Added a new Partners section containing the
   :doc:`Get client </reference/v2/clients-api/get-client>` and the
   :doc:`List client </reference/v2/clients-api/list-clients>` endpoints.
 - The :doc:`Get partner status endpoint </reference/v2/organizations-api/get-partner>` was added to the Organizations
@@ -318,8 +318,8 @@ Thursday, 9th
 -------------
 - The ``self.href``, ``next.href`` and ``previous.href`` links now correctly contain all query parameters used when
   performing the request. For example, the ``year`` query parameter will now be included in the ``next`` and
-  ``previous`` links for the response of the :doc:`/reference/v2/invoices-api/list-invoices` if it was in the initial
-  request.
+  ``previous`` links for the response of the :doc:`List invoices endpoint </reference/v2/invoices-api/list-invoices>` if
+  it was in the initial request.
 - Values for ``_links.nnnn.href`` elements now correctly include the ``?testmode=true`` query parameter if this is
   necessary to be able to follow the link. This affects OAuth and Application Token authenticated requests only.
 
@@ -790,7 +790,7 @@ Tuesday, 31st
 
 Thursday, 19th
 --------------
-- The :doc:`Get Settlement </reference/v2/settlements-api/get-settlement>` endpoint now returns the ``invoiceId`` if the
+- The :doc:`Get settlement endpoint </reference/v2/settlements-api/get-settlement>` now returns the ``invoiceId`` if the
   settlement has been invoiced. The invoice is also available in the ``_link`` object.
 
 Wednesday, 11th
