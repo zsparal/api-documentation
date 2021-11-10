@@ -20,34 +20,29 @@ Card numbers for testing
 You can use these cards for testing, with any CVV and expiry date.
 
 .. table::
-   :header-alignment: left right right
-   :column-alignment: left right right
+   :header-alignment: left right
+   :column-alignment: left right
 
-   +------------------+------------------------------------+--------------------------------------------+
-   | Brand            | Triggers 3-D Secure authentication | Does not trigger 3-D Secure authentication |
-   +==================+====================================+============================================+
-   | American Express | 3782 822463 10005                  | 3456 789012 34564                          |
-   +------------------+------------------------------------+--------------------------------------------+
-   | Mastercard       | 2223 0000 1047 9399                | 5436 0310 3060 6378                        |
-   +------------------+------------------------------------+--------------------------------------------+
-   | VISA             | 4543 4740 0224 9996                | 4242 4242 4242 4242                        |
-   +------------------+------------------------------------+--------------------------------------------+
+   +------------------+------------------------------------+
+   | Brand            | Card number                        |
+   +==================+====================================+
+   | American Express | 3782 822463 10005                  |
+   +------------------+------------------------------------+
+   | Mastercard       | 2223 0000 1047 9399                |
+   +------------------+------------------------------------+
+   | VISA             | 4543 4740 0224 9996                |
+   +------------------+------------------------------------+
 
 Testing failures
 ----------------
 Of course testing only the happy path is not sufficient and you should
 :doc:`handle errors </components/handling-errors>` as well.
 
-This can be done by passing `magic amounts` when creating the payment. Depending on whether you want to trigger 3-D
-Secure authentication or not, this works in a different manner:
-
-- When you trigger 3-D Secure authentication for the test mode payment, you will have to redirect to the URL in the
-  ``_links.checkout`` property that is returned in the
-  :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` response. You should then choose ``Failed``
-  as the final payment status. As a result, the requested failure reason will be present in the response of the
-  :doc:`Get payment endpoint </reference/v2/payments-api/get-payment>`.
-- When you do not trigger 3-D Secure authentication, passing the magic amount will immediately result in an API error
-  that indicates the failure reason that was requested.
+This can be done by passing `magic amounts` when creating the payment. After redirecting to the URL in the
+``_links.checkout`` property that is returned in the
+:doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` response, you should choose ``Failed``
+as the final payment status. As a result, the requested failure reason will be present in the response of the
+:doc:`Get payment endpoint </reference/v2/payments-api/get-payment>`.
 
 Pass one of the following amounts to trigger a failure condition in test mode:
 

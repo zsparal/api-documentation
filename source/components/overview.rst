@@ -34,7 +34,7 @@ Follow these steps to implement Mollie Components in your checkout:
 #. From your back end, create a credit card payment or order with the ``cardToken`` using the
    :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` or
    :doc:`Create order endpoint </reference/v2/orders-api/create-order>` respectively.
-#. If required, redirect the shopper to the URL returned by our API for 3-D Secure authentication.
+#. Redirect the shopper to the URL returned by our API for 3-D Secure authentication.
 
 Mollie has created `example implementations <https://github.com/mollie/components-examples>`_ you can use to get
 started.
@@ -331,19 +331,10 @@ what to do in such cases.
 
 Redirect the shopper to the 3-D Secure authentication page
 ----------------------------------------------------------
-In most cases, your payment will not be completed immediately but will first require a 3-D Secure authentication by your
-customer. You should redirect your customer to the ``_links.checkout`` URL returned by the
+You should redirect your customer to the ``_links.checkout`` URL returned by the
 :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` or the
 :doc:`Create order endpoint </reference/v2/orders-api/create-order>`. Your customer can then authenticate themselves
 with the card issuer.
-
-.. code-block:: none
-   :linenos:
-
-   HTTP/1.1 303 See Other
-   Date: Mon, 27 Jul 2019 12:28:53 GMT
-   Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
-   Connection: Closed
 
 It is possible an error occurs during or after 3-D Secure authentication. See
 :doc:`Handling errors </components/handling-errors>` for more information on how to handle these cases.
