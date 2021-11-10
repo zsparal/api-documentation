@@ -14,6 +14,13 @@ Friday, 8th
 -----------
 - Added ``huistuincadeaukaart`` as gift card issuer.
 
+September 2021
+==============
+Thursday, 23rd
+--------------
+- Added ``authentication_required`` as possible ``failureReason`` in the
+  :doc:`Payments API</reference/v1/payments-api/get-payment>` for credit card payments.
+
 August 2021
 ===========
 Tuesday, 10th
