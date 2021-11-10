@@ -336,14 +336,6 @@ You should redirect your customer to the ``_links.checkout`` URL returned by the
 :doc:`Create order endpoint </reference/v2/orders-api/create-order>`. Your customer can then authenticate themselves
 with the card issuer.
 
-.. code-block:: none
-   :linenos:
-
-   HTTP/1.1 303 See Other
-   Date: Mon, 27 Jul 2019 12:28:53 GMT
-   Location: https://pay.mollie.com/authenticate/b47ef2ce1d3bea2ddadf3895080d1d4c
-   Connection: Closed
-
 It is possible an error occurs during or after 3-D Secure authentication. See
 :doc:`Handling errors </components/handling-errors>` for more information on how to handle these cases.
 
