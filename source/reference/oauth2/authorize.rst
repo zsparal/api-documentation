@@ -80,9 +80,9 @@ Parameters
    :condition: optional
 
    Allows you to specify if Mollie should show the login or the signup page, when the merchant is not logged in at
-   Mollie. Defaults to the login page.
+   Mollie. Defaults to the login page. Defaults to ``login``.
 
-   Possible values: ``signup``
+   Possible values: ``login`` ``signup``
 
 Response
 --------
