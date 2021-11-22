@@ -39,7 +39,7 @@ Embedding of related resources
 This endpoint allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
-* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` the capture were created for.
+* ``payment`` Include the :doc:`payment </reference/v2/payments-api/get-payment>` the capture was created for.
 
 Response
 --------
