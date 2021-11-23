@@ -247,10 +247,10 @@ Gift cards
    our support department. If only one issuer is activated on your account, you can omit this parameter.
 
    Possible values: ``beautycadeaukaart`` ``bloemencadeaukaart`` ``bloemplantgiftcard`` ``boekenbon`` ``decadeaukaart``
-   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart`` ``kluscadeau``
+   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart`` ``jewelcard`` ``kluscadeau``
    ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
    ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sodexosportculturepass`` ``sportenfitcadeau`` ``sustainablefashion``
-   ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+   ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``wijncadeaukaart`` ``yourgift``
 
 .. parameter:: voucherNumber
    :type: string

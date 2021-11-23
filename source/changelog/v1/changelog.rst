@@ -15,6 +15,7 @@ Tuesday, 23rd
 - The `/v1/settlements/next` and `/v1/settlements/open` endpoints are being shut down, since these endpoints were no
   longer being used. The documentation has been removed accordingly. The corresponding v2 endpoints will remain
   available.
+- Added the ``wijncadeaukaart`` and ``jewelcard`` as gift card issuers.
 
 October 2021
 ============
