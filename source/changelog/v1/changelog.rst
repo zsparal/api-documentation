@@ -8,6 +8,14 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+November 2021
+=============
+Tuesday, 23rd
+-------------
+- The `/v1/settlements/next` and `/v1/settlements/open` endpoints are being shut down, since these endpoints were no
+  longer being used. The documentation has been removed accordingly. The corresponding v2 endpoints will remain
+  available.
+
 October 2021
 ============
 Friday, 8th
