@@ -5,6 +5,10 @@ changes are documented here.
 
 November 2021
 =============
+Tuesday, 23rd
+-------------
+- Added the ``wijncadeaukaart`` and ``jewelcard`` as gift card issuers.
+
 Friday, 5th
 -----------
 - Added optional ``landing_page`` parameter to the :doc:`Authorize </reference/oauth2/authorize>` endpoint.

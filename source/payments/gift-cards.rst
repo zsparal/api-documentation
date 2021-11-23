@@ -17,6 +17,7 @@ brands are supported:
 * `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
 * `Good4fun <https://www.good4fun.nl/>`_
 * `Huis & Tuin Cadeau <https://www.huisentuincadeau.com/>`_
+* `Jewelcard <https://www.jewelcard.nl/>`_
 * `Klus Cadeau <https://www.kluscadeau.nl/>`_
 * `Nationale Bioscoopbon <https://www.bioscoopbon.nl/>`_
 * `Nationale EntertainmentCard <https://www.nationale-entertainmentcard.nl/>`_
@@ -34,6 +35,7 @@ brands are supported:
 * `VVV Dinercheque <https://www.vvvcadeaukaarten.nl/vvv-dinercheque>`_
 * `VVV Lekkerweg <https://www.vvvcadeaukaarten.nl/vvv-lekkerweg>`_
 * `Webshop Giftcard <https://www.webshopgiftcard.nl/>`_
+* `Wijn Cadeaukaart <https://www.wijn-cadeaukaart.nl/>`_
 * `YourGift <https://www.yourgift.nl/>`_
 
 If you need a different brand, please reach out to your account manager or our support department. We can also support

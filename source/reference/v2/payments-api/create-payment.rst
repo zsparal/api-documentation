@@ -347,10 +347,10 @@ Gift cards
    If you need a brand that is not in the list, contact our support department. We can also support closed-loop cards.
 
    Possible values: ``beautycadeaukaart`` ``bloemencadeaukaart`` ``bloemplantgiftcard`` ``boekenbon`` ``decadeaukaart``
-   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart`` ``kluscadeau``
+   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart`` ``jewelcard`` ``kluscadeau``
    ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
    ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sodexosportculturepass`` ``sportenfitcadeau`` ``sustainablefashion``
-   ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``yourgift``
+   ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``wijncadeaukaart`` ``yourgift``
 
 .. parameter:: voucherNumber
    :type: string
