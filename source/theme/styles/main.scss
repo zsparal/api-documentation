@@ -125,83 +125,6 @@ a.headerlink::before {
 }
 
 /**
- * Specific styles for currencies table
- */
-#supported-currencies table tr th,
-#supported-currencies table tr td {
-  text-align: left;
-}
-
-#supported-currencies tbody td:only-child {
-  padding-right: 0;
-}
-
-#supported-currencies .note {
-  margin-top: -20px;
-  margin-bottom: 15px;
-
-  @media (min-width: breakpoint('medium')) {
-    margin-top: -50px;
-    margin-bottom: 0;
-  }
-}
-
-@media (max-width: breakpoint('<medium')) {
-  #supported-currencies table {
-    display: block;
-  }
-
-  #supported-currencies thead {
-    position: absolute;
-    left: -999em;
-  }
-
-  #supported-currencies tr {
-    display: grid;
-    grid-template-columns: 1fr auto;
-  }
-
-  #supported-currencies td:nth-child(1) {
-    padding-top: 15px;
-    padding-bottom: 0;
-    font-weight: bold;
-    font-size: 16px;
-  }
-
-  #supported-currencies td:nth-child(2) {
-    padding-top: 15px;
-    text-align: right;
-  }
-
-  #supported-currencies td:nth-child(3) {
-    order: 2;
-  }
-
-  #supported-currencies td:nth-child(3)::before {
-    content: 'Decimals: ';
-  }
-
-  #supported-currencies td:nth-child(3),
-  #supported-currencies td:nth-child(4) {
-    padding-bottom: 15px;
-    border-top: 0;
-  }
-}
-
-/**
- * Specific styles for payment method expiry times table
- */
-#expiry-times-per-payment-method table tr th,
-#expiry-times-per-payment-method table tr td {
-  text-align: left;
-}
-
-#expiry-times-per-payment-method table ul {
-  list-style: none;
-  padding: 0;
-}
-
-/**
  * Typography
  */
 @import 'typography';
@@ -240,11 +163,13 @@ a.headerlink::before {
 @import 'components/mobile-navigation-button';
 @import 'components/note';
 @import 'components/parameters';
+@import 'components/payment-method-expiry-times';
+@import 'components/payment-method-switcher';
 @import 'components/sidebar';
 @import 'components/sub-navigation';
 @import 'components/sub-navigation-item';
+@import 'components/supported-currencies';
 @import 'components/type';
-@import 'components/payment-method-switcher';
 
 /**
  * Utilities
