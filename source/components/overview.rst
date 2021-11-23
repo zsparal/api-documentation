@@ -4,7 +4,7 @@ Mollie Components
 your own checkout, in a way that is fully :abbr:`PCI-DSS SAQ-A (Payment Card Industry Data Security Standard
 Self-Assessment Questionnaire A)` compliant.
 
-.. figure:: images/components-preview@2x.jpg
+.. image:: images/components-preview@2x.jpg
 
 At a high level, it works by using a Javascript API, dubbed :doc:`Mollie.js </reference/mollie-js/overview>`, to add
 fields to your checkout that your customer will use to enter their credit card details, such as their card number.
@@ -22,7 +22,7 @@ Implementation steps
 --------------------
 Follow these steps to implement Mollie Components in your checkout:
 
-.. figure:: images/components-flow@2x.png
+.. image:: images/components-flow@2x.png
 
 #. Add :doc:`Mollie.js </reference/mollie-js/overview>` to your checkout.
 #. Initialize the ``Mollie`` object.

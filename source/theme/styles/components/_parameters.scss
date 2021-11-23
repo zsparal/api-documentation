@@ -1,3 +1,5 @@
+@import 'variables';
+
 .rst-content dl.docutils dd {
   padding-bottom: 30px;
   padding-top: 10px;
@@ -247,5 +249,33 @@
   .parameter__collapse-button {
     font-size: 0;
     width: 0;
+  }
+}
+
+/*
+ * Dark mode
+ */
+@media (prefers-color-scheme: dark) {
+  .rst-content table.docutils > tbody > tr > td {
+    border-top-color: $grey-dark;
+  }
+
+  .parameter {
+    border-top-color: $grey-dark;
+  }
+
+  .parameter__type,
+  .parameter__condition {
+    color: $grey-dusty;
+  }
+
+  .parameter__collapse-button,
+  .parameter__children-button a {
+    color: shade($grey-medium, 25%);
+  }
+
+  .parameter__collapse-button:hover,
+  .parameter__children-button a:hover {
+    color: $grey-medium;
   }
 }

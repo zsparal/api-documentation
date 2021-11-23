@@ -12,6 +12,7 @@ Our full hosted checkout experience can be viewed on `our Hosted Checkout demo <
 Please also refer to the `Mollie Checkout product page <https://www.mollie.com/en/checkout>`_ on our website.
 
 .. figure:: images/mollie-checkout-example-a@2x.jpg
+   :align: center
 
    A fully customized hosted checkout from one of our merchants.
 
@@ -61,5 +62,6 @@ previously used on the same device.
 Please note customer consent is required to support one-click payments.
 
 .. figure:: images/mollie-checkout-example-b@2x.jpg
+   :align: center
 
    An example of the credit card selection screen shown to a returning customer.

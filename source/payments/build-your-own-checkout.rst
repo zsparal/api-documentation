@@ -16,6 +16,7 @@ The common checkout path
 The most common checkout path can be broken down into a handful of steps.
 
 .. image:: images/checkout-flow-common-with-details@2x.png
+   :class: boxed-in-dark-mode
 
 The steps are roughly as follows:
 
@@ -37,6 +38,7 @@ Embedding method selection
 A good first step towards a deeper checkout integration is to provide your own payment method selection.
 
 .. image:: images/checkout-flow-embedded-method-selection@2x.png
+   :class: boxed-in-dark-mode
 
 To accomplish this, first use the :doc:`List payment methods endpoint </reference/v2/methods-api/list-methods>` on the
 Methods API to retrieve the payment methods currently active on your account.
@@ -166,6 +168,7 @@ an overview of the typical flow for each of our payment methods, and how they ca
 Embedding credit card fields
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: images/checkout-flow-embedded-credit-card-fields@2x.png
+   :class: boxed-in-dark-mode
 
 For the credit card payment method, you can fully embed the credit card input fields while staying PCI-DSS-compliant
 using Mollie Components. Please refer to the guide on :doc:`Mollie Components </components/overview>` for more
@@ -176,6 +179,7 @@ information on how to integrate.
 Embedding issuer selection
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. image:: images/checkout-flow-embedded-ideal-issuer-selection@2x.png
+   :class: boxed-in-dark-mode
 
 For iDEAL, KBC/CBC, and gift cards, we offer a way to embed the issuer selection into the checkout flow. You can
 retrieve the available issuers for these payment methods using the ``issuers`` include in the

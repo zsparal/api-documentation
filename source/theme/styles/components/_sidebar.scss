@@ -1,3 +1,5 @@
+@import 'variables';
+
 .sidebar {
   color: #000;
   top: 0;
@@ -70,11 +72,11 @@
 
 .sidebar__item.current > a {
   font-weight: 600;
-  color: #0040ff;
+  color: $brand-primary;
 }
 
 .sidebar__item.current > a:hover {
-  color: #00e;
+  color: $brand-primary-hover;
 }
 
 .sidebar__group.current > ul {
@@ -87,11 +89,11 @@
 }
 
 .sidebar__group.current > a.current {
-  color: #0040ff;
+  color: $brand-primary;
 }
 
 .sidebar__group.current > a.current:hover {
-  color: #00e;
+  color: $brand-primary-hover;
 }
 
 .sidebar__changelog > ul > li > a,
@@ -106,4 +108,50 @@
 .sidebar__changelog > ul > li > ul > li > a:hover {
   color: #000;
   text-decoration: none;
+}
+
+/*
+ * Dark mode
+ */
+@media (prefers-color-scheme: dark) {
+  .sidebar {
+    background: $dark-mode-background-color;
+    color: $dark-mode-text-color;
+  }
+
+  .sidebar__item a {
+    color: #ccc;
+  }
+
+  .sidebar__item a:hover {
+    color: $dark-mode-text-color;
+  }
+
+  .sidebar__item.current > a {
+    color: $dark-mode-brand-primary;
+  }
+
+  .sidebar__item.current > a:hover {
+    color: $dark-mode-brand-primary-hover;
+  }
+
+  .sidebar__group.current > a {
+    color: $dark-mode-text-color;
+  }
+
+  .sidebar__group.current > a.current {
+    color: $dark-mode-brand-primary;
+  }
+
+  .sidebar__group.current > a.current:hover {
+    color: $dark-mode-brand-primary-hover;
+  }
+
+  .sidebar__changelog > ul > li > ul > li > a {
+    color: #ccc;
+  }
+
+  .sidebar__changelog > ul > li > ul > li > a:hover {
+    color: $dark-mode-text-color;
+  }
 }

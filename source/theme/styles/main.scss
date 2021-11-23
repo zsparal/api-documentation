@@ -38,6 +38,8 @@ html {
 }
 
 body {
+  background: $background-color;
+  color: $text-color;
   padding-top: 104px;
 }
 
@@ -124,6 +126,24 @@ a.headerlink::before {
   margin: -130px 0 0;
 }
 
+/*
+ * Dark mode
+ */
+@media (prefers-color-scheme: dark) {
+  body {
+    background: $dark-mode-background-color;
+    color: $dark-mode-text-color;
+  }
+
+  hr {
+    border-top-color: $grey-dark;
+  }
+
+  a {
+    color: $dark-mode-brand-primary;
+  }
+}
+
 /**
  * Typography
  */
@@ -155,7 +175,6 @@ a.headerlink::before {
 @import 'components/endpoint-card';
 @import 'components/code-example';
 @import 'components/figure';
-@import 'components/footer';
 @import 'components/github-link';
 @import 'components/link-dropdown';
 @import 'components/main';

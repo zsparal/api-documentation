@@ -5,7 +5,7 @@ with Pay" button as you deem fit. Apple provides `guidelines
 <https://developer.apple.com/design/human-interface-guidelines/apple-pay/overview/introduction/>`_ on how and where
 you should add the Apple Pay buttons.
 
-.. figure:: images/applepay-web@2x.png
+.. image:: images/applepay-web@2x.png
 
 Beside payments information, Apple Pay allows you to get the billing and shipping addresses from the shopper too. This
 enables a fast and frictionless checkout.

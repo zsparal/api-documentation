@@ -51,6 +51,7 @@ Custom implementation
 The QR code flow is largely similar to normal payment flow.
 
 .. image:: images/qr-flow@2x.png
+   :class: boxed-in-dark-mode
 
 Retrieving QR codes
 -------------------

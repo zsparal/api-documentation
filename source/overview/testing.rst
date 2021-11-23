@@ -16,8 +16,7 @@ checkout screen. Most test mode payment resources will feature a ``checkout`` UR
 allows you to walk through the payment process without spending actual money. You can try out different payment statuses
 and see whether your integration handles it correctly.
 
-.. figure:: images/testmode-checkout.png
-   :align: center
+.. image:: images/testmode-checkout.png
 
 For test mode :doc:`recurring payments </payments/recurring>`, the resource will not contain a ``checkout`` URL, because
 these payments are executed without any interaction of your customer. Instead, a ``changePaymentState`` URL is added,

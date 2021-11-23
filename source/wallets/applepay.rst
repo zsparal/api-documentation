@@ -22,7 +22,7 @@ Using the Mollie Checkout
 If you are using the Mollie Checkout and the :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>`
 without the ``method`` parameter, the Apple Pay button will be shown in the checkout during method selection:
 
-.. figure:: images/checkout-with-apple-pay@2x.jpg
+.. image:: images/checkout-with-apple-pay@2x.jpg
 
 Adding Apple Pay to the method selection
 ----------------------------------------

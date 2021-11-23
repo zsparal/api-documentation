@@ -79,3 +79,20 @@
   font-size: 14px;
   line-height: 1.6em;
 }
+
+/*
+ * Dark mode
+ */
+@media (prefers-color-scheme: dark) {
+  .rst-content .endpoint-card > a {
+    border-color: $grey-dark;
+  }
+
+  .rst-content .endpoint-card > a:hover {
+    background: tint($dark-mode-background-color, 2%);
+  }
+
+  .rst-content .endpoint-card__endpoint code.docutils {
+    color: $grey-medium-dark;
+  }
+}

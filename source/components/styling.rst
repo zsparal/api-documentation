@@ -5,7 +5,7 @@ Check out what is possible in our `Components Examples repository <https://githu
 
 How to style a component
 ------------------------
-.. figure:: images/components-layout@2x.png
+.. image:: images/components-layout@2x.png
 
 Most of the styling should be applied to the injected ``.mollie-component`` container. The
 ``<div class="mollie-component" />`` container lives completely in your own environment and thus will give the most
