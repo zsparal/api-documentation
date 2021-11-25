@@ -120,8 +120,8 @@ Parameters
    Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
    ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
-   .. note:: If you are looking to create payments with the Klarna Pay later, Klarna Slice it, or voucher payment
-      methods, please use :doc:`/reference/v2/orders-api/create-order` instead.
+   .. note:: If you are looking to create payments with the Klarna Pay now, Klarna Pay later, Klarna Slice it, or
+      voucher payment methods, please use :doc:`/reference/v2/orders-api/create-order` instead.
 
 .. parameter:: restrictPaymentMethodsToCountry
    :type: string
@@ -393,8 +393,8 @@ KBC/CBC Payment Button
 
    Possible values: ``kbc`` ``cbc``
 
-Klarna Pay later. / Slice it.
-"""""""""""""""""""""""""""""
+Klarna Pay now. / Pay later. / Slice it.
+""""""""""""""""""""""""""""""""""""""""
 .. note::
     Klarna payments can only be created via the :doc:`Orders API </reference/v2/orders-api/create-order>`.
 

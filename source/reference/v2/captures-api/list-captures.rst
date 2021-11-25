@@ -15,7 +15,7 @@ List captures
 Retrieve all captures for a certain payment.
 
 Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment
-that have this flow are *Klarna Pay later* and *Klarna Slice it*.
+that have this flow are *Klarna Pay now*, *Klarna Pay later* and *Klarna Slice it*.
 
 Parameters
 ----------

@@ -4,8 +4,8 @@ The Orders API allows you to create *payment intents* with order management func
 designed for order-based payment processing. It can be seen as an extension of the
 :doc:`Payments API </reference/v2/payments-api/overview>` for more specific use cases.
 
-Some payment methods require order details (and therefore the Orders API) to function, such as Klarna Pay later and
-Klarna Slice it.
+Some payment methods require order details (and therefore the Orders API) to function, such as Klarna Pay now,
+Klarna Pay later and Klarna Slice it.
 
 In its simplest form, processing an order requires three steps: setting up the order with the
 :doc:`Create order endpoint </reference/v2/orders-api/create-order>`, sending the customer to our

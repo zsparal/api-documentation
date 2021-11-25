@@ -6,8 +6,8 @@ or cancel it.
 
 In some scenarios, you may also capture a different amount than initially authorized.
 
-Mollie currently only supports captures for **Klarna Pay later** and **Klarna Slice it**, which are both only available
-via order-based payment processing. Essentially, you collect the authorization using the
+Mollie currently only supports captures for **Klarna Pay now**, **Klarna Pay later** and **Klarna Slice it**, which are
+only available via order-based payment processing. Essentially, you collect the authorization using the
 :doc:`Orders API </reference/v2/orders-api/overview>`, and you can capture specific order lines using the
 :doc:`Shipments API </reference/v2/shipments-api/overview>`. Each shipment implies a capture, which then also become
 available via the Captures API.
