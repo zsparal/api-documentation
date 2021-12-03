@@ -727,8 +727,9 @@ Tuesday, 2nd
   bank account to finish the payment.
 
 - Added the new payment status ``authorized`` for payments that still require a capture to receive the money. Currently,
-  this status is only used for payment methods `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_
-  and `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_. Because payments with these payment methods
+  this status is only used for payment methods `Klarna Pay now <https://www.mollie.com/en/payments/klarna-pay-now>`_,
+  `Klarna Pay later <https://www.mollie.com/payments/klarna-pay-later>`_ and
+  `Klarna Slice it <https://www.mollie.com/payments/klarna-slice-it>`_. Because payments with these payment methods
   can only be created with the :doc:`Orders API </reference/v2/orders-api/overview>`, there is no change required in
   existing implementations of the Payments API.
 

@@ -14,9 +14,6 @@ Create order refund
 
 When using the Orders API, refunds should be made for a specific order.
 
-When using *pay after delivery* payment methods such as *Klarna Pay later* and *Klarna Slice it*, your customer will
-receive a credit invoice with more information about the refunded products.
-
 If you want to refund arbitrary amounts, however, you can also use the
 :doc:`Create payment refund endpoint </reference/v2/refunds-api/create-payment-refund>` for Pay later and Slice it by
 creating a refund on the payment itself.

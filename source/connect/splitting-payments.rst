@@ -4,7 +4,7 @@ Splitting payments with Mollie Connect
           testing this functionality with us.
 
 .. warning:: The split payments feature is not available for third-party payments methods (gift cards, Paypal, etc.) or
-             captures (Klarna slice it, Klarna pay later, etc.)
+             captures (Klarna Pay now, Klarna Pay later, Klarna Slice it, etc.)
 
 With **Split payments** you can distribute and split payments between your platform and your connected merchant
 accounts.
@@ -200,4 +200,4 @@ as the payment has already been paid by the consumer**, by simply updating the p
        "releaseDate": "2026-01-01"
    }
 
-The release date can be up to two years from the day of the payment's creation. For test payments, this limit is 10 days.  
+The release date can be up to two years from the day of the payment's creation. For test payments, this limit is 10 days.

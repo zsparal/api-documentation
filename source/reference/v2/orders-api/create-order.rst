@@ -13,7 +13,7 @@ Create order
    :oauth: true
 
 Using the :doc:`Orders API </orders/overview>` is the preferred approach when integrating the Mollie
-API into e-commerce applications such as webshops. If you want to use *Klarna Pay later*, *Klarna Slice it*, *Klarna Pay now* or *Vouchers*, using the Orders API is mandatory.
+API into e-commerce applications such as webshops. If you want to use *Klarna Pay now*, *Klarna Pay later*, *Klarna Slice it* or *Vouchers*, using the Orders API is mandatory.
 
 Creating an Order will automatically create the required Payment to allow your customer to pay for the order.
 
@@ -443,8 +443,8 @@ Parameters
    The date the order should expire in ``YYYY-MM-DD`` format. The minimum date is tomorrow and the maximum date is 100
    days after tomorrow.
 
-   .. note:: It is not posible to use Klarna Slice it or Klarna Pay later as method when your expiry date is more than
-      28 days in the future, unless another maximum is agreed between the merchant and Klarna.
+   .. note:: It is not possible to use Klarna Pay now, Klarna Slice it or Klarna Pay later as method when your expiry
+      date is more than 28 days in the future, unless another maximum is agreed between the merchant and Klarna.
 
 .. parameter:: shopperCountryMustMatchBillingCountry
    :type: boolean

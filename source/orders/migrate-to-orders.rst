@@ -50,8 +50,8 @@ The ``billingAddress`` should contain the address of the person who will be bill
 +------------------------+--------------------------------------------+------------------------------------------------+
 | ``locale``             | Recommended in Payments API.               | Required for Orders API.                       |
 +------------------------+--------------------------------------------+------------------------------------------------+
-| ``method``             | Does not support *pay after delivery*      | Supports *Klarna Pay later* and *Klarna Slice  |
-|                        | payment methods.                           | it*.                                           |
+| ``method``             | Does not support payment methods that      | Supports *Klarna Pay now*, *Klarna Pay later*, |
+|                        | require order details.                     | *Klarna Slice it* and voucher payments.        |
 +------------------------+--------------------------------------------+------------------------------------------------+
 | ``metadata``           | *Identical between Payments API and Orders API.*                                            |
 +------------------------+--------------------------------------------+------------------------------------------------+

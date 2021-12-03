@@ -14,9 +14,9 @@ List settlement captures
 
 Retrieve all captures in a certain settlement.
 
-Captures are used for *pay after delivery* payment methods. The only payment methods at the moment that have this flow
-are *Klarna Pay later* and *Klarna Slice it*. Captures are created when (part of) an Order is shipped. The capture is
-then settled to the merchant.
+Captures are used for payments that have the *authorize-then-capture* flow. The only payment methods at the moment that
+have this flow are *Klarna Pay now*, *Klarna Pay later* and *Klarna Slice it*. Captures are created when (part of) an
+Order is shipped. The capture is then settled to the merchant.
 
 Parameters
 ----------
