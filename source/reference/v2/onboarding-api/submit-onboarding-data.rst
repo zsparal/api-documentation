@@ -41,27 +41,29 @@ Please note that even though all parameters are optional, at least one of them n
 
       .. parameter:: streetAndNumber
          :type: string
-         :condition: optional
+         :condition: required
 
-         The street name and house number of the organization.
+         The street name and house number of the organization. If an address is provided, this field is required.
 
       .. parameter:: postalCode
          :type: string
-         :condition: optional
+         :condition: conditional
 
-         The postal code of the organization.
+         The postal code of the organization. If an address is provided, this field is required for countries with a
+         postal code system.
 
       .. parameter:: city
          :type: string
-         :condition: optional
+         :condition: required
 
-         The city of the organization.
+         The city of the organization. If an address is provided, this field is required.
 
       .. parameter:: country
          :type: string
-         :condition: optional
+         :condition: required
 
          The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+         If an address is provided, this field is required.
 
    .. parameter:: registrationNumber
       :type: string

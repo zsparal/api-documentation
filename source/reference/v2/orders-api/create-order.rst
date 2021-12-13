@@ -272,7 +272,7 @@ Parameters
 
    .. parameter:: streetAndNumber
       :type: string
-      :condition: optional
+      :condition: required
 
    .. parameter:: streetAdditional
       :type: string
@@ -280,11 +280,13 @@ Parameters
 
    .. parameter:: postalCode
       :type: string
-      :condition: optional
+      :condition: conditional
+
+      This field is required if the provided ``country`` has a postal code system.
 
    .. parameter:: city
       :type: string
-      :condition: optional
+      :condition: required
 
    .. parameter:: region
       :type: string
@@ -292,7 +294,9 @@ Parameters
 
    .. parameter:: country
       :type: string
-      :condition: optional
+      :condition: required
+
+      The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 .. parameter:: shippingAddress
    :type: address object
@@ -300,8 +304,9 @@ Parameters
 
    The shipping address for the order.
 
-   Please refer to the documentation of the :ref:`address object <address-object>` for more information on which formats
-   are accepted.
+   This field is optional, but if it is provided, then the full name and address have to be in a valid format. Please
+   refer to the documentation of the :ref:`address object <address-object>` for more information on which formats are
+   accepted.
 
    .. parameter:: organizationName
       :type: string
@@ -343,7 +348,7 @@ Parameters
 
    .. parameter:: streetAndNumber
       :type: string
-      :condition: optional
+      :condition: required
 
    .. parameter:: streetAdditional
       :type: string
@@ -351,11 +356,13 @@ Parameters
 
    .. parameter:: postalCode
       :type: string
-      :condition: optional
+      :condition: conditional
+
+      This field is required if the provided ``country`` has a postal code system.
 
    .. parameter:: city
       :type: string
-      :condition: optional
+      :condition: required
 
    .. parameter:: region
       :type: string
@@ -363,7 +370,9 @@ Parameters
 
    .. parameter:: country
       :type: string
-      :condition: optional
+      :condition: required
+
+      The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
 .. parameter:: consumerDateOfBirth
    :type: date

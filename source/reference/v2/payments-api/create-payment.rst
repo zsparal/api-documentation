@@ -253,24 +253,24 @@ Credit card
    The card holder's address details. We advise to provide these details to improve the credit card fraud protection,
    and thus improve conversion.
 
-   Please refer to the documentation of the :ref:`address object <address-object>` for more information on which formats
-   are accepted.
+   If an address is provided, then the address has to be in a valid format. Please refer to the documentation of the
+   :ref:`address object <address-object>` for more information on which formats are accepted.
 
    .. parameter:: streetAndNumber
       :type: string
-      :condition: optional
+      :condition: required
 
       The card holder's street and street number.
 
    .. parameter:: postalCode
       :type: string
-      :condition: optional
+      :condition: conditional
 
-      The card holder's postal code.
+      The card holder's postal code. This field is required if the provided ``country`` has a postal code system.
 
    .. parameter:: city
       :type: string
-      :condition: optional
+      :condition: required
 
       The card holder's city.
 
@@ -282,7 +282,7 @@ Credit card
 
    .. parameter:: country
       :type: string
-      :condition: optional
+      :condition: required
 
       The card holder's country in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
 
@@ -300,24 +300,25 @@ Credit card
    The shipping address details. We advise to provide these details to improve the credit card fraud protection, and
    thus improve conversion.
 
-   Please refer to the documentation of the :ref:`address object <address-object>` for more information on which formats
-   are accepted.
+   If an address is provided, then the address has to be in a valid format. Please refer to the documentation of the
+   :ref:`address object <address-object>` for more information on which formats are accepted.
 
    .. parameter:: streetAndNumber
       :type: string
-      :condition: optional
+      :condition: required
 
       The street and street number of the shipping address.
 
    .. parameter:: postalCode
       :type: string
-      :condition: optional
+      :condition: conditional
 
-      The postal code of the shipping address.
+      The postal code of the shipping address. This field is required if the provided ``country`` has a postal code
+      system.
 
    .. parameter:: city
       :type: string
-      :condition: optional
+      :condition: required
 
       The city of the shipping address.
 
@@ -329,7 +330,7 @@ Credit card
 
    .. parameter:: country
       :type: string
-      :condition: optional
+      :condition: required
 
       The country of the shipping address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
       format.
@@ -347,10 +348,11 @@ Gift cards
    If you need a brand that is not in the list, contact our support department. We can also support closed-loop cards.
 
    Possible values: ``beautycadeaukaart`` ``bloemencadeaukaart`` ``bloemplantgiftcard`` ``boekenbon`` ``decadeaukaart``
-   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart`` ``jewelcard`` ``kluscadeau``
-   ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon`` ``nationaleentertainmentcard`` ``nationalegolfbon`` ``ohmygood``
-   ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau`` ``sodexosportculturepass`` ``sportenfitcadeau`` ``sustainablefashion``
-   ``travelcheq`` ``vvvgiftcard`` ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``wijncadeaukaart`` ``yourgift``
+   ``delokalecadeaukaart`` ``dinercadeau`` ``fashioncheque`` ``festivalcadeau`` ``good4fun`` ``huistuincadeaukaart``
+   ``jewelcard`` ``kluscadeau`` ``kunstencultuurcadeaukaart`` ``nationalebioscoopbon`` ``nationaleentertainmentcard``
+   ``nationalegolfbon`` ``ohmygood`` ``podiumcadeaukaart`` ``reiscadeau`` ``restaurantcadeau``
+   ``sodexosportculturepass`` ``sportenfitcadeau`` ``sustainablefashion`` ``travelcheq`` ``vvvgiftcard``
+   ``vvvdinercheque`` ``vvvlekkerweg`` ``webshopgiftcard`` ``wijncadeaukaart`` ``yourgift``
 
 .. parameter:: voucherNumber
    :type: string
@@ -467,38 +469,39 @@ PayPal
    The shipping address details. We advise to provide these details to improve PayPal's fraud protection, and thus
    improve conversion.
 
-   Please refer to the documentation of the :ref:`address object <address-object>` for more information on which formats
-   are accepted.
+   If an address is provided, then the address has to be in a valid format. Please refer to the documentation of the
+   :ref:`address object <address-object>` for more information on which formats are accepted.
 
    .. parameter:: givenName
       :type: string
-      :condition: optional
+      :condition: required
 
       The given name (first name) of the person. The maximum character length of ``givenName`` and ``familyName``
       combined is 128.
 
    .. parameter:: familyName
       :type: string
-      :condition: optional
+      :condition: required
 
       The family name (surname) of the person. The maximum character length of ``givenName`` and ``familyName`` combined
       is 128.
 
    .. parameter:: streetAndNumber
       :type: string
-      :condition: optional
+      :condition: required
 
       The street and street number of the shipping address. The maximum character length is 128.
 
    .. parameter:: postalCode
       :type: string
-      :condition: optional
+      :condition: conditional
 
-      The postal code of the shipping address. The maximum character length is 20.
+      The postal code of the shipping address. This field is required if the provided ``country`` has a postal code
+      system. The maximum character length is 20.
 
    .. parameter:: city
       :type: string
-      :condition: optional
+      :condition: required
 
       The city of the shipping address. The maximum character length is 100.
 
@@ -512,7 +515,7 @@ PayPal
 
    .. parameter:: country
       :type: string
-      :condition: optional
+      :condition: required
 
       The country of the shipping address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_
       format.

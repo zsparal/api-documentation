@@ -33,7 +33,7 @@ In v2 endpoints, an amount object is always represented as follows.
 
 Address object
 --------------
-In the v2 endpoints, an address object is always represented as follows.
+In the v2 endpoints, an address object includes at least the following fields.
 
 .. list-table::
    :widths: auto
@@ -60,73 +60,11 @@ In the v2 endpoints, an address object is always represented as follows.
      - The postal code of the address. Required for countries that use postal codes. May only be
        omitted for these country codes:
 
-       ``AE``
-       ``AN``
-       ``AO``
-       ``AW``
-       ``BF``
-       ``BI``
-       ``BJ``
-       ``BO``
-       ``BS``
-       ``BV``
-       ``BW``
-       ``BZ``
-       ``CD``
-       ``CF``
-       ``CG``
-       ``CI``
-       ``CK``
-       ``CM``
-       ``DJ``
-       ``DM``
-       ``ER``
-       ``FJ``
-       ``GA``
-       ``GD``
-       ``GH``
-       ``GM``
-       ``GN``
-       ``GQ``
-       ``GY``
-       ``HK``
-       ``JM``
-       ``KE``
-       ``KI``
-       ``KM``
-       ``KN``
-       ``KP``
-       ``LC``
-       ``ML``
-       ``MO``
-       ``MR``
-       ``MS``
-       ``MU``
-       ``MW``
-       ``NA``
-       ``NR``
-       ``NU``
-       ``PA``
-       ``QA``
-       ``RW``
-       ``SB``
-       ``SC``
-       ``SL``
-       ``SO``
-       ``SR``
-       ``ST``
-       ``SY``
-       ``TF``
-       ``TK``
-       ``TL``
-       ``TO``
-       ``TT``
-       ``TV``
-       ``UG``
-       ``VU``
-       ``YE``
-       ``ZM``
-       ``ZW``
+       ``AE`` ``AN`` ``AO`` ``AW`` ``BF`` ``BI`` ``BJ`` ``BO`` ``BS`` ``BV`` ``BW`` ``BZ`` ``CD`` ``CF`` ``CG`` ``CI``
+       ``CK`` ``CM`` ``DJ`` ``DM`` ``ER`` ``FJ`` ``GA`` ``GD`` ``GH`` ``GM`` ``GN`` ``GQ`` ``GY`` ``HK`` ``JM`` ``KE``
+       ``KI`` ``KM`` ``KN`` ``KP`` ``LC`` ``ML`` ``MO`` ``MR`` ``MS`` ``MU`` ``MW`` ``NA`` ``NR`` ``NU`` ``PA`` ``QA``
+       ``RW`` ``SB`` ``SC`` ``SL`` ``SO`` ``SR`` ``ST`` ``SY`` ``TF`` ``TK`` ``TL`` ``TO`` ``TT`` ``TV`` ``UG`` ``VU``
+       ``YE`` ``ZM`` ``ZW``
 
    * - ``city``
 
@@ -151,8 +89,8 @@ In the v2 endpoints, an address object is always represented as follows.
 
 When providing an address object as parameter to a request, the following conditions must be met:
 
-* If any of the fields is provided, all fields have to be provided with exception of the ``region`` field.
-* If only the ``region`` field is given, one should provide all the other fields as per the previous condition.
+* At least the ``streetAndNumber``, ``city``, and ``country`` fields should be provided to create a valid address.
+* The ``postalCode`` field is required for countries that have postal codes. See the list above.
 * For certain PayPal payments the ``region`` field is required. Please see the
   :ref:`Create payment documentation <paypal-method-details>` for more information.
 
