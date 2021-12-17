@@ -87,7 +87,7 @@ periodically through *subscriptions*.
           take care of this automatically in our :doc:`Checkout </payments/hosted-checkout>`. The following payment
           methods support a first payment and are thus allowed as a value for the ``method`` parameter of a first
           payment:
-          ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``kbc`` ``mybank``
+          ``applepay`` ``bancontact`` ``belfius`` ``creditcard`` ``eps`` ``giropay`` ``ideal`` ``kbc`` ``mybank``
           ``paypal`` ``sofort``
 
 .. note:: Created mandates are unique to your account and can not be transferred to other accounts.
