@@ -110,12 +110,12 @@ Example
 
       curl -X POST https://api.mollie.com/v2/payment-links \
          -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
-         -d "amount[currency]=EUR" \
-         -d "amount[value]=24.95" \
-         -d "description=Bicycle tires" \
-         -d "expiresAt=2021-06-06T11:00:00+00:00" \
-         -d "redirectUrl=https://webshop.example.org/thanks" \
-         -d "webhookUrl=https://webshop.example.org/payment-links/webhook/"
+         --data-urlencode "amount[currency]=EUR" \
+         --data-urlencode "amount[value]=24.95" \
+         --data-urlencode "description=Bicycle tires" \
+         --data-urlencode "expiresAt=2023-06-06T11:00:00+00:00" \
+         --data-urlencode "redirectUrl=https://webshop.example.org/thanks" \
+         --data-urlencode "webhookUrl=https://webshop.example.org/payment-links/webhook/"
 
    .. code-block:: php
       :linenos:
@@ -129,7 +129,7 @@ Example
           "value" => "24.95",
         ],
         "description" => "Bicycle tires",
-        "expiresAt" => "2021-06-06T11:00:00+00:00",
+        "expiresAt" => "2023-06-06T11:00:00+00:00",
         "redirectUrl' => "https://webshop.example.org/thanks",
         "webhookUrl" => "https://webshop.example.org/payment-links/webhook/",
       ]);
@@ -148,7 +148,7 @@ Example
                "value": "24.95"
          },
          "description": "Bicycle tires",
-         "expiresAt": "2021-06-06T11:00:00+00:00",
+         "expiresAt": "2023-06-06T11:00:00+00:00",
          "webhookUrl": "https://webshop.example.org/payment-links/webhook/",
          "redirectUrl": "https://webshop.example.org/thanks",
       })
@@ -169,7 +169,7 @@ Response
        "createdAt": "2021-03-20T09:13:37+00:00",
        "paidAt": null,
        "updatedAt": null,
-       "expiresAt": "2021-06-06T11:00:00+00:00",
+       "expiresAt": "2023-06-06T11:00:00+00:00",
        "amount": {
            "value": "24.95",
            "currency": "EUR"
