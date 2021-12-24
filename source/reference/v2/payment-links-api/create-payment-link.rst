@@ -130,7 +130,7 @@ Example
         ],
         "description" => "Bicycle tires",
         "expiresAt" => "2023-06-06T11:00:00+00:00",
-        "redirectUrl' => "https://webshop.example.org/thanks",
+        "redirectUrl" => "https://webshop.example.org/thanks",
         "webhookUrl" => "https://webshop.example.org/payment-links/webhook/",
       ]);
       $paymentLink->getCheckoutUrl();
