@@ -3,6 +3,13 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+January 2022
+=============
+Tuesday, 11th
+-------------
+- Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>` with the ``routingReversals``
+  optional parameter to the :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>`
+
 November 2021
 =============
 Tuesday, 23rd

@@ -67,10 +67,10 @@ If you are using :doc:`organization access tokens </overview/authentication>` or
 
 Mollie Connect parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-With Mollie Connect you can split payments that are processed through your app across multiple connected accounts. When
-creating refunds for those split payments, you can use the ``reverseRouting`` parameter to pull the split payment back
-to the platform balance. To learn more about creating refunds for split payments, please refer to the
-:doc:`Splitting payments guide </connect/splitting-payments>`.
+With Mollie Connect you can split payments that are processed through your app across multiple connected accounts.
+
+When creating **full** refunds for those split payments, you can use the ``reverseRouting`` parameter to pull the split
+payment back to the platform balance.
 
 .. parameter:: reverseRouting
    :type: boolean
@@ -80,6 +80,64 @@ to the platform balance. To learn more about creating refunds for split payments
    For a full reversal of the split that was specified during payment creation, simply set this parameter to ``true``.
    For example, if a €10,00 payment got split by sending €2,50 to the platform and €7,50 to the connected account, then
    setting this parameter to ``true`` will pull back the €7,50 from the connected account.
+
+
+When creating **partial** refunds for split payments, you should instead use the ``routingReversals`` array to set the
+amount that you want to pull back from the single routes.
+
+.. parameter:: routingReversals
+   :type: array
+   :condition: optional
+   :collapse: true
+
+   If a routing reversals array is supplied, it must contain one or more routing objects with the following parameters:
+
+   .. parameter:: amount
+      :type: amount object
+      :condition: conditional
+
+      The routing reversal object must indicate what portion of the originally routed amount is being reversed.
+
+      .. parameter:: currency
+         :type: string
+         :condition: required
+
+         An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. Currently only ``EUR`` payments can be
+         routed.
+
+      .. parameter:: value
+         :type: string
+         :condition: required
+
+         A string containing the exact amount of this portion of the routed amount in the given currency. Make
+         sure to send the right amount of decimals. Non-string values are not accepted.
+
+
+   .. parameter:: source
+      :type: object
+      :condition: conditional
+
+      The source of this portion of the route.
+
+      .. parameter:: type
+         :type: string
+         :condition: required
+
+         The type of source. Currently only the source type ``organization`` is supported.
+
+         Possible values: ``organization``
+
+      .. parameter:: organizationId
+         :type: string
+         :condition: required
+
+         Required for source type ``organization``. The ID of the connected organization the funds
+         should reversed from, for example ``org_12345``.
+
+         **Please note:** ``me`` or the ID of the current organization are not accepted as an ``organizationId``.
+
+To learn more about creating refunds for split payments, please refer to the
+:doc:`Refunds and chargebacks for split payments guide </connect/refunds-and-chargebacks>`.
 
 Response
 --------
