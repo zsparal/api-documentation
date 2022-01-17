@@ -5,10 +5,12 @@ changes are documented here.
 
 January 2022
 =============
-Tuesday, 11th
+Monday, 17th
 -------------
+- Added the support for more than one route to the :doc:`Create payment </reference/v2/payments-api/create-payment>`
+  endpoint.
 - Added the possibility to :doc:`Refund a split payment </connect/refunds-and-chargebacks>` with the ``routingReversals``
-  optional parameter to the :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>`
+  optional parameter to the :doc:`Create refund </reference/v2/refunds-api/create-payment-refund>` endpoint.
 
 November 2021
 =============

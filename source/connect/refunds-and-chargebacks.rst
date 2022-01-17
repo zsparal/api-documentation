@@ -101,12 +101,12 @@ funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
       -H "Authorization: Bearer access_vR6naacwfSpfaT5CUwNTdV5KsVPJTNjURkgBPdvW" \
       -d "amount[currency]=EUR" \
       -d "amount[value]=5.00" \
-      -d "routingReversals[0][source][type]= organization" \
-      -d "routingReversals[0][source][organizationId]= org_23456" \
+      -d "routingReversals[0][source][type]=organization" \
+      -d "routingReversals[0][source][organizationId]=org_23456" \
       -d "routingReversals[0][amount][value]=2.00" \
       -d "routingReversals[0][amount][currency]=EUR" \
-      -d "routingReversals[1][source][type]= organization" \
-      -d "routingReversals[1][source][organizationId]= org_78901" \
+      -d "routingReversals[1][source][type]=organization" \
+      -d "routingReversals[1][source][organizationId]=org_78901" \
       -d "routingReversals[1][amount][value]=3.00" \
       -d "routingReversals[1][amount][currency]=EUR"
 
