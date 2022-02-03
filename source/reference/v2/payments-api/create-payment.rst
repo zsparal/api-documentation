@@ -407,8 +407,7 @@ Klarna Pay now. / Pay later. / Slice it.
    For some industries, additional purchase information can be sent to Klarna to increase the authorization rate. You
    can submit your extra data in this field if you have agreed upon this with Klarna. This field should be an object
    containing any of the allowed keys and sub objects described at the `Klarna Developer Documentation
-   <https://developers.klarna.com/api/#payments-api__create-a-new-credit-sessionattachment__body>`_ under
-   ``attachment.body``.
+   <https://docs.klarna.com/klarna-payments/api/#tag/Attachment-Schema>`_ under ``attachment.body``.
 
    Please reach out to your account manager at Mollie to enable this feature with Klarna, and to agree on which fields
    you can send.
