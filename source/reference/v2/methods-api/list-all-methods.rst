@@ -95,6 +95,17 @@ Example
 
       methods = mollie_client.methods.all()
 
+   .. code-block:: ruby
+      :linenos:
+
+      require 'mollie-api-ruby'
+
+      Mollie::Client.configure do |config|
+        config.api_key = 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM'
+      end
+
+      methods = Mollie::Method.all_available
+
 Response
 --------
 ``200`` ``application/hal+json``
