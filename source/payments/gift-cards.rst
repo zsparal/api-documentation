@@ -13,6 +13,7 @@ brands are supported:
 * DE Cadeaukaart
 * De LOKALE Cadeaukaart
 * `Diner Cadeau <https://www.horecasamensterk.nl/>`_
+* `DoenKado Tickets <https://www.doenkado.nl/>`_
 * `fashioncheque <https://www.fashioncheque.com/>`_
 * `FestivalCadeau Giftcard <https://www.festivalcadeau.com/>`_
 * `Good4fun <https://www.good4fun.nl/>`_

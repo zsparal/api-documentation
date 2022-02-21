@@ -3,6 +3,12 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+February 2022
+=============
+Monday, 21st
+-------------
+- Added the ``doenkadotickets`` as gift card issuers.
+
 January 2022
 =============
 Monday, 17th
