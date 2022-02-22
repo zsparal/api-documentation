@@ -8,6 +8,12 @@ changes are documented here.
 
              For more information on the v2 API, refer to our :doc:`v2 migration guide </payments/migrating-v1-to-v2>`.
 
+February 2022
+=============
+Monday, 21st
+-------------
+- Added the ``doenkadotickets`` as gift card issuers.
+
 November 2021
 =============
 Tuesday, 23rd
