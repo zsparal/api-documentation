@@ -17,7 +17,8 @@ For more fine-grained control over the refund and chargeback flows, consider usi
 
 Refunding a split payment
 -------------------------
-When using :doc:`Split payments </connect/splitting-payments>`, your platform is liable for refunds and chargebacks.
+When using :doc:`Split payments </connect/splitting-payments>`, your Mollie account is the owner pf the payment
+and you are therefor responsible for initiating refunds.
 
 You can issue a refund for a split payment by :doc:`creating a refund </reference/v2/refunds-api/create-payment-refund>`
 on the original payment, like you would with any other payment. By default, the full refund will be deducted from the
@@ -40,7 +41,7 @@ sent to connected accounts ``org_23456`` and ``org_56789``.
    :linenos:
 
    curl -X POST https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
-       -H "Authorization: Bearer access_vR6naacwfSpfaT5CUwNTdV5KsVPJTNjURkgBPdvW" \
+       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "amount[currency]=EUR" \
        -d "amount[value]=10.00" \
        -d "reverseRouting=true"
@@ -98,7 +99,7 @@ funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
    :linenos:
 
    curl -X POST https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
-      -H "Authorization: Bearer access_vR6naacwfSpfaT5CUwNTdV5KsVPJTNjURkgBPdvW" \
+      -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
       -d "amount[currency]=EUR" \
       -d "amount[value]=5.00" \
       -d "routingReversals[0][source][type]=organization" \
@@ -148,3 +149,21 @@ funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
        ]
        "...": { }
    }
+
+Chargebacks of Split Payments
+----------------------------------
+
+Whenever one of your split payment gets charged back, your Mollie account will be charged the Mollie fees and the initial
+compensation to the consumer. Depending on the chargeback amount and on whether the payment was split across one or multiple 
+submerchants, you might be eligible to receive a compensation for the amount that was routed to the other accounts.
+
+Specifically, if the payment was split between you and only one other organization you will be automatically compensated for the
+amount that was routed to the submerchant, independently of the amount of the chargeback but limited to the originally routed amount. 
+
+If the payment was split across multiple submerchants, you will only receive compensations for each of the routes if the chargeback was for 
+the full amount of the original payment (or higher). If we receive a chargeback for a lower amount than the original payment, we will
+detract the amount from your balance and you will not receive any compensation for it since we can't know which route should be reversed.
+
+In case you and your submerchant(s) decide to object to the chargeback and can provide enough evidence for it to be reversed, any 
+amount that was compensated to your account from your submerchant's balances will be returned back to them as soon as we receive the money
+from the bank.
