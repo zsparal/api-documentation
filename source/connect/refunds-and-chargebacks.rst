@@ -17,7 +17,7 @@ For more fine-grained control over the refund and chargeback flows, consider usi
 
 Refunding a split payment
 -------------------------
-When using :doc:`Split payments </connect/splitting-payments>`, your Mollie account is the owner pf the payment
+When using :doc:`Split payments </connect/splitting-payments>`, your Mollie account is the owner of the payment
 and you are therefor responsible for initiating refunds.
 
 You can issue a refund for a split payment by :doc:`creating a refund </reference/v2/refunds-api/create-payment-refund>`
