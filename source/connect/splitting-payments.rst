@@ -211,7 +211,7 @@ as the payment has already been paid by the consumer**, by simply updating the p
 .. code-block:: bash
    :linenos:
 
-   curl -X POST https://api.mollie.com/v2/payments/tr_2qkhcMzypH/routes/rt_9dk4al1n \
+   curl -X PATCH https://api.mollie.com/v2/payments/tr_2qkhcMzypH/routes/rt_9dk4al1n \
        -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
        -d "releaseDate=2026-01-01"
 
