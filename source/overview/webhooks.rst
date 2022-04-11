@@ -78,6 +78,11 @@ about webhooks for payments.
 The :ref:`Recurring Payments guide <payments/recurring/subscription-webhooks>` has some additional information about
 webhooks for subscriptions.
 
+Payment Links API
+^^^^^^^^^^^^^^^^^
+The webhook URL specified when :doc:`creating a payment link </reference/v2/payment-links-api/create-payment-link>` is
+called every time the underlying payment's status changes. See the `Payments API`_ section for more on the conditions payment webhooks are called on.
+
 Retry schema
 ------------
 In response to Mollie calling your webhook, you only have to return the HTTP status ``200 OK``. Mollie then knows your
