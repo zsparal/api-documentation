@@ -420,46 +420,14 @@ PayPal
    :type: string
    :condition: optional
 
-   If a description like ``Order <orderNumber>`` is used and the first value after Order, separated by whitespaces,
-   contains at least some numbers, it will be passed to PayPal as the *invoice reference*.
-   This field is searchable in the PayPal merchant dashboard. Also note that the <orderNumber> should be unique
-   across all transactions in PayPal and should not contain symbols.
+   For PayPal, we will automatically try to determine the order number from the description string and pass it on to
+   PayPal as the *invoice reference*. This field is searchable in the PayPal merchant dashboard.
 
-   For example:
+   For example, in the string ``Best Service Order ABS123`` our system will assume "Order ABS123" to be the invoice
+   reference.
 
-   * ``Order Best Service ABS123`` does not match as the first value after Order "Best" does not contain any numbers.
-
-   * ``Best Service Order ABS123`` will match, so "Order ABS123" is sent to PayPal as invoice reference number.
-
-   * ``Order ABS123 Best Service`` will match and thus the keyword including the first value after it will be
-     sent to PayPal, which is in this example "Order ABS123".
-
-
-   Alternatively, we will recognize the following keywords:
-
-   * #
-   * Bestelling
-   * Bestelling ID
-   * Bestellung
-   * Bestelnummer
-   * Betaling
-   * Booking
-   * Cart
-   * factnr
-   * Factuur
-   * Invoice
-   * Order
-   * Order ref
-   * Order id
-   * Orderid
-   * Order number
-   * Ordernummer
-   * Ordine
-   * Payment
-   * Payment id
-   * Pedido
-   * Sipariş
-   * Zahlung
+   This functionality is a 'best effort' feature based on a list of common keywords like 'order', 'payment', 'invoice',
+   and common translations like 'Zahlung' and 'Pedido'.
 
 .. parameter:: shippingAddress
    :type: address object
