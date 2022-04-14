@@ -51,7 +51,7 @@ following statuses:
 
 Furthermore, the webhook will be called when:
 
-* A refund is performed on the payment
+* A refund is performed on the payment, and the refund reaches state ``refunded`` or ``failed``.
 * A chargeback is received on the payment.
 
 Read more about :doc:`payment status changes </payments/status-changes>`.
@@ -63,8 +63,8 @@ The :doc:`Orders API </reference/v2/orders-api/overview>` calls a webhook when a
 
 Furthermore, the webhook will be called when:
 
-* A shipment is created for the order
-* The order or part of the order is canceled
+* A shipment is created for the order.
+* The order or part of the order is canceled.
 * The order or part of the order is refunded.
 
 Read more about :doc:`order status changes </orders/status-changes>`.
