@@ -19,7 +19,7 @@ think that something can be improved please open a PR.
 
 All documentation should be written in US English.
 
-If you are a Mollie employee, please don't include any links to internal issue trackers or other internal applications
+If you are a Mollie employee, please [don't include](https://en.wikipedia.org/wiki/Operations_security) any links to internal issue trackers or other internal applications
 in your PR or issue description, API examples or commit messages.
 
 Note that PhpStorm comes with a reStructuredText plugin. You can enable it from the Plugins preferences pane. It enables
