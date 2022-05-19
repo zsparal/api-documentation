@@ -3,6 +3,12 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+June 2022
+=========
+????, ??
+--------
+- Added ``in3`` as new payment method, which is only supported by the Orders API. If you are interested in accepting in3 payments, you can enable the payment method via the Mollie Dashboard.
+
 March 2022
 =============
 Tuesday, 1st

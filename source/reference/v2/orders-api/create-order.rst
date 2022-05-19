@@ -425,8 +425,8 @@ Parameters
    methods from a specific country to your customer ``['bancontact', 'belfius']``.
 
    Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
-   ``giftcard`` ``giropay`` ``ideal`` ``kbc``  ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``mybank`` ``paypal``
-   ``paysafecard`` ``przelewy24`` ``sofort`` ``voucher``
+   ``giftcard`` ``giropay`` ``ideal`` ``in3`` ``kbc``  ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``mybank``
+   ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort`` ``voucher``
 
 .. parameter:: payment
    :type: object

@@ -85,7 +85,8 @@ Expiry times per payment method
 | - MyBank                      |                                   |
 | - Przelewy24                  |                                   |
 +-------------------------------+-----------------------------------+
-| - SOFORT Banking              | 2 hours                           |
+| - in3                         | 2 hours                           |
+| - SOFORT Banking              |                                   |
 +-------------------------------+-----------------------------------+
 | - PayPal                      | 3 hours                           |
 | - Vouchers                    |                                   |
