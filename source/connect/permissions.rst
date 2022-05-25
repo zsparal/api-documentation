@@ -100,3 +100,11 @@ Permissions can be requested by redirecting the resource owner to the
    * - | ``onboarding.write``
        | Onboarding API
      - Submit onboarding data for the merchant.
+
+   * - | ``payment-links.read``
+       | Payment links API
+     - View the merchant's payment links.
+
+   * - | ``payment-links.write``
+       | Payment links API
+     - Create payment links for the merchant.
