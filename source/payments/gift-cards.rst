@@ -28,7 +28,7 @@ brands are supported:
 * `Podium Cadeaukaart <https://www.podiumcadeaukaart.nl/>`_
 * Reiscadeau
 * `RestaurantCadeau <https://www.horecasamensterk.nl/>`_
-* `Sodexo Sport & Culture Pass <https://sodexo4you.be/nl/producten/sport-culture-pass>`_
+* `Sodexo Sport & Culture Pass <https://sportculture.sodexo.be/nl/>`_
 * `Sport & Fit Cadeau <https://www.sportenfitcadeau.nl/>`_
 * `Sustainable Fashion Gift Card <https://sustainablefashiongiftcard.nl/>`_
 * `Travelcheq <https://www.travelcheq.com/>`_
