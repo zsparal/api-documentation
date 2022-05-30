@@ -98,8 +98,8 @@ Parameters
    Possible values: ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps`` ``giftcard`` ``giropay``
    ``ideal`` ``kbc`` ``mistercash`` ``mybank`` ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
-   .. note:: If you are looking to create payments with the Klarna Pay now, Klarna Pay later, Klarna Slice it or Voucher
-             payment methods, please use the :doc:`Orders API </reference/v2/orders-api/overview>` instead.
+   .. note:: If you are looking to create payments with the Klarna Pay now, Klarna Pay later, Klarna Slice it, in3 or
+             Voucher payment methods, please use the :doc:`Orders API </reference/v2/orders-api/overview>` instead.
 
 .. parameter:: metadata
    :type: mixed

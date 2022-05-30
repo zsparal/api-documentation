@@ -12,8 +12,9 @@ Create order
    :organization_access_tokens: true
    :oauth: true
 
-Using the :doc:`Orders API </orders/overview>` is the preferred approach when integrating the Mollie
-API into e-commerce applications such as webshops. If you want to use *Klarna Pay now*, *Klarna Pay later*, *Klarna Slice it* or *Vouchers*, using the Orders API is mandatory.
+Using the :doc:`Orders API </orders/overview>` is the preferred approach when integrating the Mollie API into e-commerce
+applications such as webshops. If you want to use *Klarna Pay now*, *Klarna Pay later*, *Klarna Slice it*, *in3* or
+*Vouchers*, using the Orders API is mandatory.
 
 Creating an Order will automatically create the required Payment to allow your customer to pay for the order.
 
