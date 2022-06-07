@@ -90,10 +90,12 @@ Partial refund for a split payment
 
 If you wish to pull back the money that was sent to connected accounts within the creation of a partial refund (namely
 a refund of less of the amount of the original payment), you can do so by setting the ``routingReversals`` array in the
-request (see :doc:`create a refund </reference/v2/refunds-api/create-payment-refund>`).
+request (see :doc:`create a refund </reference/v2/refunds-api/create-payment-refund>`). The to be refunded amount that
+remains after rout reversal is deducted from the balance of your account.
 
 In the example below we will partially refund the €10,00 payment from earlier, and pull back €2,00 and €3,00 from the
-funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
+funds that were sent to connected accounts ``org_23456`` and ``org_56789``. The remaining €1,00 will be deducted from
+your account.
 
 .. code-block:: bash
    :linenos:
@@ -101,7 +103,7 @@ funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
    curl -X POST https://api.mollie.com/v2/payments/tr_7UhSN1zuXS/refunds \
       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM" \
       -d "amount[currency]=EUR" \
-      -d "amount[value]=5.00" \
+      -d "amount[value]=6.00" \
       -d "routingReversals[0][source][type]=organization" \
       -d "routingReversals[0][source][organizationId]=org_23456" \
       -d "routingReversals[0][amount][value]=2.00" \
@@ -122,7 +124,7 @@ funds that were sent to connected accounts ``org_23456`` and ``org_56789``.
        "id": "re_gj08ZdgmVx",
        "amount": {
            "currency": "EUR",
-           "value": "5.00"
+           "value": "6.00"
        },
        "status": "pending",
        "paymentId": "tr_7UhSN1zuXS",
