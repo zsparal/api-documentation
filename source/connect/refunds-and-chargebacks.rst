@@ -91,7 +91,7 @@ Partial refund for a split payment
 If you wish to pull back the money that was sent to connected accounts within the creation of a partial refund (namely
 a refund of less of the amount of the original payment), you can do so by setting the ``routingReversals`` array in the
 request (see :doc:`create a refund </reference/v2/refunds-api/create-payment-refund>`). The to be refunded amount that
-remains after rout reversal is deducted from the balance of your account.
+remains after route reversal is deducted from the balance of your account.
 
 In the example below we will partially refund the €10,00 payment from earlier, and pull back €2,00 and €3,00 from the
 funds that were sent to connected accounts ``org_23456`` and ``org_56789``. The remaining €1,00 will be deducted from
