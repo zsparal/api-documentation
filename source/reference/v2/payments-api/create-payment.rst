@@ -120,7 +120,7 @@ Parameters
    Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
    ``giftcard`` ``giropay`` ``ideal`` ``kbc`` ``mybank``  ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
-   .. note:: If you are looking to create payments with the Klarna Pay now, Klarna Pay later, Klarna Slice it, or
+   .. note:: If you are looking to create payments with the Klarna Pay now, Klarna Pay later, Klarna Slice it, in3 or
       voucher payment methods, please use :doc:`/reference/v2/orders-api/create-order` instead.
 
 .. parameter:: restrictPaymentMethodsToCountry
