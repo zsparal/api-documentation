@@ -99,7 +99,7 @@ redirects = {
     'oauth/permissions': to_url('/connect/permissions'),
     'oauth/splitting-payments': to_url('/connect/splitting-payments'),
     'payments/overview': to_url('/payments/accepting-payments'),
-    'reference/v1/settlements-api/get-open-settlement': to_url('/reference/v1/settlements-api/get-settlements'),
+    'reference/v1/settlements-api/get-open-settlement': to_url('/reference/v1/settlements-api/get-settlement'),
     'reference/v2/chargebacks-api/get-chargeback': to_url('/reference/v2/chargebacks-api/get-payment-chargeback'),
     'reference/v2/orders-api/create-order-refund': to_url('/reference/v2/refunds-api/create-order-refund'),
     'reference/v2/orders-api/list-order-refunds': to_url('/reference/v2/refunds-api/list-order-refunds'),
