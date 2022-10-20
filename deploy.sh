@@ -31,3 +31,17 @@ aws s3 cp build/html/_static s3://${AWS_BUCKET}/_static/ --recursive ${AWS_OPTIO
 # Upload static content to assets directory
 aws s3 cp build/html/_images s3://${AWS_BUCKET}/assets/_images/ --recursive ${AWS_OPTIONS}
 aws s3 cp build/html/_static s3://${AWS_BUCKET}/assets/_static/ --recursive ${AWS_OPTIONS}
+
+# Create function for security headers, redirects, etc.
+ETAG=$(
+    aws cloudfront create-function \
+        --name headers-function \
+        --function-config Comment="Headers function",Runtime="cloudfront-js-1.0" \
+        --function-code fileb://.lambda-functions/headers.js \
+        --query "ETag" \
+        --output text
+)
+
+aws cloudfront publish-function \
+      --name headers-function \
+      --if-match ${ETAG}
