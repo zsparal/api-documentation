@@ -2,6 +2,7 @@ Get balance report
 ==================
 .. api-name:: Balances API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: GET
@@ -24,244 +25,222 @@ Parameters
 Replace ``*balanceId*`` in the endpoint URL by the balance token, which can be retrieved by the
 :doc:`List balances </reference/v2/balances-api/list-balances>` endpoint.
 
-.. list-table::
-   :widths: auto
+.. parameter:: from
+    :type: date
 
-   * - ``from``
+    The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
+    Time. This means a report with for example ``from: 2020-01-01`` will include movements of
+    ``2020-01-01 0:00:00 CET`` and onwards.
 
-       .. type:: date
+.. parameter:: until
+    :type: date
 
-     - The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
-       Time. This means a report with for example ``from: 2020-01-01`` will include movements of
-       ``2020-01-01 0:00:00 CET`` and onwards.
+    The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
+    Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
+    ``2020-01-31 23:59:59 CET``.
 
-   * - ``until``
+.. parameter:: grouping
+    :type: string
+    :condition: optional
 
-       .. type:: date
+    You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
+    by status (e.g. pending, available), then by transaction type, and then by other sub-groupings where available
+    (e.g. payment method).
 
-     - The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
-       Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
-       ``2020-01-31 23:59:59 CET``.
+    With the ``transaction-categories`` format, transactions are grouped by transaction type, then by status, and
+    then again by other sub-groupings where available.
 
-   * - ``grouping``
-
-       .. type:: string
-          :required: false
-
-     - You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
-       by status (e.g. pending, available), then by transaction type, and then by other sub-groupings where available
-       (e.g. payment method).
-
-       With the ``transaction-categories`` format, transactions are grouped by transaction type, then by status, and
-       then again by other sub-groupings where available.
-
-       Possible values: ``status-balances`` ``transaction-categories``
+    Possible values: ``status-balances`` ``transaction-categories``
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+    :type: string
 
-   * - ``resource``
+    Indicates the response contains a balance report object. Will always contain ``balance-report`` for
+    this endpoint.
 
-       .. type:: string
+.. parameter:: balanceId
+    :type: string
 
-     - Indicates the response contains a balance report object. Will always contain ``balance-report`` for
-       this endpoint.
+    The ID of a :doc:`Balance </reference/v2/balances-api/get-balance>` this report is generated for.
 
-   * - ``balanceId``
+.. parameter:: timeZone
+    :type: string
 
-       .. type:: string
+    The time zone used for the ``from`` and ``until`` parameters. Currently only time zone ``Europe/Amsterdam`` is
+    supported.
 
-     - The ID of a :doc:`Balance </reference/v2/balances-api/get-balance>` this report is generated for.
+.. parameter:: from
+    :type: date
 
-   * - ``timeZone``
+    The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
+    Time. This means a report with for example ``from: 2020-01-01`` will include movements of
+    ``2020-01-01 0:00:00 CET`` and onwards.
 
-       .. type:: string
+.. parameter:: until
+    :type: date
 
-     - The time zone used for the ``from`` and ``until`` parameters. Currently only time zone ``Europe/Amsterdam`` is
-       supported.
+    The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
+    Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
+    ``2020-01-31 23:59:59 CET``.
 
-   * - ``from``
+.. parameter:: grouping
+    :type: string
 
-       .. type:: date
+    You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
+    by status (e.g. pending, available), then by direction of movement (e.g. moved from pending to available), then
+    by transaction type, and then by other sub-groupings where available (e.g. payment method).
 
-     - The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
-       Time. This means a report with for example ``from: 2020-01-01`` will include movements of
-       ``2020-01-01 0:00:00 CET`` and onwards.
+    With the ``transaction-categories`` format, transactions are grouped by transaction type, then by direction of
+    movement, and then again by other sub-groupings where available.
 
-   * - ``until``
+    Both reporting formats will always contain opening and closing amounts that correspond to the start and end dates
+    of the report.
 
-       .. type:: date
+    Possible values: ``status-balances`` ``transaction-categories``
 
-     - The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
-       Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
-       ``2020-01-31 23:59:59 CET``.
+.. parameter:: totals
+    :type: object
 
-   * - ``grouping``
+    If grouping ``status-balances`` is chosen, the ``totals`` object will be formatted roughly as follows:
 
-       .. type:: string
+    * ``pendingBalance``
 
-     - You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
-       by status (e.g. pending, available), then by direction of movement (e.g. moved from pending to available), then
-       by transaction type, and then by other sub-groupings where available (e.g. payment method).
+        * ``open``
 
-       With the ``transaction-categories`` format, transactions are grouped by transaction type, then by direction of
-       movement, and then again by other sub-groupings where available.
+        * ``amount``
 
-       Both reporting formats will always contain opening and closing amounts that correspond to the start and end dates
-       of the report.
+        * ``pending``
 
-       Possible values: ``status-balances`` ``transaction-categories``
+        * ``amount``
 
-   * - ``totals``
+        * ``subtotals``
 
-       .. type:: object
+            * ``payments``
 
-     - If grouping ``status-balances`` is chosen, the ``totals`` object will be formatted roughly as follows:
+            * ``count``
 
-       * ``pendingBalance``
+            * ``amount``
 
-         * ``open``
+            * ``subtotals``
 
-           * ``amount``
+                * etc.
 
-         * ``pending``
+        * ``movedToAvailable``
 
-           * ``amount``
+        * ``amount``
 
-           * ``subtotals``
+        * ``subtotals``
 
-             * ``payments``
+            * etc.
 
-               * ``count``
+        * ``close``
 
-               * ``amount``
+        * ``amount``
 
-               * ``subtotals``
+    * ``availableBalance``
 
-                 * etc.
+        * ``open``
 
-         * ``movedToAvailable``
+        * ``amount``
 
-           * ``amount``
+        * ``movedFromPending``
 
-           * ``subtotals``
+        * ``amount``
 
-             * etc.
+        * ``subtotals``
 
-         * ``close``
+            * etc.
 
-           * ``amount``
+        * ``immediatelyAvailable``
 
-       * ``availableBalance``
+        * ``amount``
 
-         * ``open``
+        * ``subtotals``
 
-           * ``amount``
+            * etc.
 
-         * ``movedFromPending``
+        * ``close``
 
-           * ``amount``
+        * ``amount``
 
-           * ``subtotals``
+    If grouping ``transaction-categories`` is chosen, the ``totals`` object will be formatted roughly as follows:
 
-             * etc.
+    * ``open``
 
-         * ``immediatelyAvailable``
+        * ``pending``
 
-           * ``amount``
+        * ``amount``
 
-           * ``subtotals``
+        * ``available``
 
-             * etc.
+        * ``amount``
 
-         * ``close``
+    * ``payments``
 
-           * ``amount``
+        * ``pending``
 
-       If grouping ``transaction-categories`` is chosen, the ``totals`` object will be formatted roughly as follows:
+        * ``count``
 
-       * ``open``
+        * ``amount``
 
-         * ``pending``
+        * ``subtotals``
 
-           * ``amount``
+            * etc.
 
-         * ``available``
+        * ``movedToAvailable``
 
-           * ``amount``
+        * etc.
 
-       * ``payments``
+        * ``immediatelyAvailable``
 
-         * ``pending``
+        * etc.
 
-           * ``count``
+    * ``refunds``
 
-           * ``amount``
+        * etc.
 
-           * ``subtotals``
+    * ``chargebacks``
 
-             * etc.
+        * etc.
 
-         * ``movedToAvailable``
+    * ``capital``
 
-           * etc.
+        * etc.
 
-         * ``immediatelyAvailable``
+    * ``transfers``
 
-           * etc.
+        * etc.
 
-       * ``refunds``
+    * ``fee-prepayments``
 
-         * etc.
+        * etc.
 
-       * ``chargebacks``
+    * ``corrections``
 
-         * etc.
+        * etc.
 
-       * ``capital``
+    * ``close``
 
-         * etc.
+        * etc.
 
-       * ``transfers``
+.. parameter:: _links
+    :type: object
 
-         * etc.
+    Links to help navigate through the API. Every URL object will contain an ``href`` and a ``type`` field.
 
-       * ``fee-prepayments``
+    .. parameter:: self
+        :type: URL object
 
-         * etc.
+        The URL to the current balance report.
 
-       * ``corrections``
+    .. parameter:: documentation
+        :type: URL object
 
-         * etc.
-
-       * ``close``
-
-         * etc.
-
-   * - ``_links``
-
-       .. type:: object
-
-     - Links to help navigate through the API. Every URL object will contain an ``href`` and a ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The URL to the current balance report.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the balance reporting endpoint documentation.
+        The URL to the balance reporting endpoint documentation.
 
 Example
 -------
@@ -280,7 +259,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "balance-report",

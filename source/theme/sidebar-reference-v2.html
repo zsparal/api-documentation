@@ -538,7 +538,7 @@
 <ul>
   {%- set current = pagename.startswith('reference/v2/balances-api/') -%}
   <li class="sidebar__item sidebar__group {%- if current %} current{% endif %}">
-    <a href="{{ pathto('reference/v2/balances-api/overview') }}">Balances API</a>
+    <a href="{{ pathto('reference/v2/balances-api/overview') }}">Balances API <span class="api-name__beta">BETA</span></a>
 
     {%- if current %}
     <ul>

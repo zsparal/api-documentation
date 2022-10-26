@@ -2,6 +2,7 @@ Get primary balance report
 ==========================
 .. api-name:: Balances API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: GET
@@ -22,69 +23,54 @@ This endpoint is an alias of the :doc:`Get balance report </reference/v2/balance
 
 Parameters
 ----------
-.. list-table::
-   :widths: auto
+.. parameter:: from
+    :type: date
 
-   * - ``from``
+    The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
+    Time. This means a report with for example ``from: 2020-01-01`` will include movements of
+    ``2020-01-01 0:00:00 CET`` and onwards.
 
-       .. type:: date
+.. parameter:: until
+    :type: date
 
-     - The start date of the report, in ``YYYY-MM-DD`` format. The from date is 'inclusive', and in Central European
-       Time. This means a report with for example ``from: 2020-01-01`` will include movements of
-       ``2020-01-01 0:00:00 CET`` and onwards.
+    The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
+    Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
+    ``2020-01-31 23:59:59 CET``.
 
-   * - ``until``
+.. parameter:: grouping
+    :type: string
+    :condition: optional
 
-       .. type:: date
+    You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
+    by status (e.g. pending, available), then by transaction type, and then by other sub-groupings where available
+    (e.g. payment method).
 
-     - The end date of the report, in ``YYYY-MM-DD`` format. The until date is 'exclusive', and in Central European
-       Time. This means a report with for example ``until: 2020-02-01`` will include movements up until
-       ``2020-01-31 23:59:59 CET``.
+    With the ``transaction-categories`` format, transactions are grouped by transaction type, then by status, and
+    then again by other sub-groupings where available.
 
-   * - ``grouping``
-
-       .. type:: string
-          :required: false
-
-     - You can retrieve reports in two different formats. With the ``status-balances`` format, transactions are grouped
-       by status (e.g. pending, available), then by transaction type, and then by other sub-groupings where available
-       (e.g. payment method).
-
-       With the ``transaction-categories`` format, transactions are grouped by transaction type, then by status, and
-       then again by other sub-groupings where available.
-
-       Possible values: ``status-balances`` ``transaction-categories``
+    Possible values: ``status-balances`` ``transaction-categories``
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
 For the full list of fields, see :doc:`Get balance report </reference/v2/balances-api/get-balance-report>`. Only
 ``_links`` is listed here.
 
-.. list-table::
-   :widths: auto
+.. parameter:: _links
+    :type: object
 
-   * - ``_links``
+    Links to help navigate through the API. Every URL object will contain an ``href`` and a ``type`` field.
 
-       .. type:: object
+    .. parameter:: self
+        :type: URL object
 
-     - Links to help navigate through the API. Every URL object will contain an ``href`` and a ``type`` field.
+        The URL to the current balance report.
 
-       .. list-table::
-          :widths: auto
+    .. parameter:: documentation
+        :type: URL object
 
-          * - ``self``
-
-              .. type:: URL object
-
-            - The URL to the current balance report.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the balance reporting endpoint documentation.
+        The URL to the balance reporting endpoint documentation.
 
 Example
 -------
@@ -103,7 +89,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
        "resource": "balance-report",

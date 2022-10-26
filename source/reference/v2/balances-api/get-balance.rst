@@ -2,6 +2,7 @@ Get balance
 ===========
 .. api-name:: Balances API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: GET
@@ -31,198 +32,157 @@ Replace ``balanceId`` in the endpoint URL by the balance ID, which can be retrie
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+.. parameter:: resource
+    :type: string
 
-   * - ``resource``
+    Indicates the response contains a balance object. Will always contain ``balance`` for this endpoint.
 
-       .. type:: string
+.. parameter:: id
+    :type: string
+    
+    The identifier uniquely referring to this balance. Mollie assigns this identifier at balance creation time. For
+    example ``bal_gVMhHKqSSRYJyPsuoPNFH``.
 
-     - Indicates the response contains a balance object. Will always contain ``balance`` for this endpoint.
+.. parameter:: createdAt
+    :type: datetime
 
-   * - ``id``
+    The balance's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-       .. type:: string
+.. parameter:: currency
+    :type: string
 
-     - The identifier uniquely referring to this balance. Mollie assigns this identifier at balance creation time. For
-       example ``bal_gVMhHKqSSRYJyPsuoPNFH``.
+    The balance's `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
 
-   * - ``createdAt``
+.. parameter:: status
+    :type: string
 
-       .. type:: datetime
+    The status of the balance.
 
-     - The balance's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+    Possible values:
 
-   * - ``currency``
+    * ``active`` The balance is operational and ready to be used.
+    * ``inactive`` In case the account is still being validated by our team or the balance has been blocked. Please
+      `contact our support department <https://www.mollie.com/en/contact/>`_ for more information.
 
-       .. type:: string
+.. parameter:: transferFrequency
+    :type: string
 
-     - The balance's `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code.
+    The frequency at which the available amount on the balance will be transferred away to the configured transfer
+    destination. See ``transferDestination``.
 
-   * - ``status``
+    Possible values:
 
-       .. type:: string
+    * ``daily`` Every business day.
+    * ``twice-a-week`` Every Tuesday and Friday.
+    * ``every-monday`` Every Monday.
+    * ``every-tuesday`` Every Tuesday.
+    * ``every-wednesday`` Every Wednesday.
+    * ``every-thursday`` Every Thursday.
+    * ``every-friday`` Every Friday.
+    * ``twice-a-month`` On the first and the fifteenth of the month.
+    * ``monthly`` On the first of the month.
+    * ``never`` Automatic balance transfers are paused for this balance.
 
-     - The status of the balance.
+    .. note:: If the transfer is for an external destination, and the transfer is created in a weekend or during a
+              bank holiday, the actual bank transfer will take place on the next business day.
 
-       Possible values:
+.. parameter:: transferThreshold
+    :type: amount object
 
-       * ``active`` The balance is operational and ready to be used.
-       * ``inactive`` In case the account is still being validated by our team or the balance has been blocked. Please
-         `contact our support department <https://www.mollie.com/en/contact/>`_ for more information.
+    The minimum amount configured for scheduled automatic balance transfers. As soon as the amount on the balance
+    exceeds this threshold, the complete balance will be paid out to the ``transferDestination`` according to the
+    configured ``transferFrequency``.
 
-   * - ``transferFrequency``
+    .. parameter:: currency
+      :type: string
 
-       .. type:: string
+      An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. Currently only ``EUR`` is
+      supported.
 
-     - The frequency at which the available amount on the balance will be transferred away to the configured transfer
-       destination. See ``transferDestination``.
+    .. parameter:: value
+      :type: string
 
-       Possible values:
+      A string containing the exact EUR threshold. Make sure to send the right amount of decimals. Non-string
+      values are not accepted.
 
-       * ``daily`` Every business day.
-       * ``twice-a-week`` Every Tuesday and Friday.
-       * ``every-monday`` Every Monday.
-       * ``every-tuesday`` Every Tuesday.
-       * ``every-wednesday`` Every Wednesday.
-       * ``every-thursday`` Every Thursday.
-       * ``every-friday`` Every Friday.
-       * ``twice-a-month`` On the first and the fifteenth of the month.
-       * ``monthly`` On the first of the month.
-       * ``never`` Automatic balance transfers are paused for this balance.
+.. parameter:: transferReference
+    :type: string
 
-       .. note:: If the transfer is for an external destination, and the transfer is created in a weekend or during a
-                 bank holiday, the actual bank transfer will take place on the next business day.
+    The transfer reference set to be included in all the transfer for this balance. Either a string or ``null``.
 
-   * - ``transferThreshold``
+.. parameter:: transferDestination
+    :type: object
 
-       .. type:: amount object
+    The destination where the available amount will be automatically transferred to according to the configured
+    ``transferFrequency``.
 
-     - The minimum amount configured for scheduled automatic balance transfers. As soon as the amount on the balance
-       exceeds this threshold, the complete balance will be paid out to the ``transferDestination`` according to the
-       configured ``transferFrequency``.
+    .. parameter:: type
+      :type: string
 
-       .. list-table::
-          :widths: auto
+      The default destination of automatic scheduled transfers. Currently only ``bank-account`` is supported.
 
-          * - ``currency``
+      Possible values:
 
-              .. type:: string
+      * ``bank-account`` Transfer the balance amount to an external bank account.
 
-            - An `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code. Currently only ``EUR`` is
-              supported.
+    .. parameter:: bankAccount
+      :type: string
 
-          * - ``value``
+      The configured bank account number of the beneficiary the balance amount is to be transferred to.
 
-              .. type:: string
+    .. parameter:: beneficiaryName
+      :type: string
 
-            - A string containing the exact EUR threshold. Make sure to send the right amount of decimals. Non-string
-              values are not accepted.
+      The full name of the beneficiary the balance amount is to be transferred to.
 
-   * - ``transferReference``
+.. parameter:: availableAmount
+    :type: amount object
 
-       .. type:: string
+    The amount directly available on the balance, e.g. ``{"currency":"EUR", "value":"100.00"}``.
 
-     - The transfer reference set to be included in all the transfer for this balance. Either a string or ``null``.
+    .. parameter:: currency
+      :type: string
 
-   * - ``transferDestination``
+      The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the available amount.
 
-       .. type:: object
+    .. parameter:: value
+      :type: string
 
-     - The destination where the available amount will be automatically transferred to according to the configured
-       ``transferFrequency``.
+      A string containing the exact available amount of the balance in the given currency.
 
-       .. list-table::
-          :widths: auto
+.. parameter:: pendingAmount
+    :type: amount object
 
-          * - ``type``
+    The total amount that is queued to be transferred to your balance. For example, a credit card payment can take a
+    few days to clear.
 
-              .. type:: string
+    .. parameter:: currency
+      :type: string
 
-            - The default destination of automatic scheduled transfers. Currently only ``bank-account`` is supported.
+      The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the pending amount.
 
-              Possible values:
+    .. parameter:: value
+      :type: string
 
-              * ``bank-account`` Transfer the balance amount to an external bank account.
+      A string containing the exact pending amount of the balance in the given currency.
 
-          * - ``bankAccount``
+.. parameter:: _links
+    :type: object
 
-              .. type:: string
+    An object with several URL objects relevant to the balance. Every URL object will contain an ``href`` and a
+    ``type`` field.
 
-            - The configured bank account number of the beneficiary the balance amount is to be transferred to.
+    .. parameter:: self
+      :type: URL object
 
-          * - ``beneficiaryName``
+      The API resource URL of the balance itself.
 
-              .. type:: string
+    .. parameter:: documentation
+      :type: URL object
 
-            - The full name of the beneficiary the balance amount is to be transferred to.
-
-   * - ``availableAmount``
-
-       .. type:: amount object
-
-     - The amount directly available on the balance, e.g. ``{"currency":"EUR", "value":"100.00"}``.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``currency``
-
-              .. type:: string
-
-            - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the available amount.
-
-          * - ``value``
-
-              .. type:: string
-
-            - A string containing the exact available amount of the balance in the given currency.
-
-   * - ``pendingAmount``
-
-       .. type:: amount object
-
-     - The total amount that is queued to be transferred to your balance. For example, a credit card payment can take a
-       few days to clear.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``currency``
-
-              .. type:: string
-
-            - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the pending amount.
-
-          * - ``value``
-
-              .. type:: string
-
-            - A string containing the exact pending amount of the balance in the given currency.
-
-   * - ``_links``
-
-       .. type:: object
-
-     - An object with several URL objects relevant to the balance. Every URL object will contain an ``href`` and a
-       ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The API resource URL of the balance itself.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the balance retrieval endpoint documentation.
+      The URL to the balance retrieval endpoint documentation.
 
 Example
 -------
@@ -241,7 +201,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
      "resource": "balance",

@@ -2,6 +2,7 @@ List balance transactions
 =========================
 .. api-name:: Balances API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: GET
@@ -20,198 +21,155 @@ Parameters
 Replace ``balanceId`` in the endpoint URL by the balance ID, which can be retrieved by the
 :doc:`List balances </reference/v2/balances-api/list-balances>` endpoint.
 
-.. list-table::
-   :widths: auto
+.. parameter:: from
+  :type: string
+  :condition: optional
 
-   * - ``from``
+  Offset the result set to the balance transactions with this ID. The balance transaction with this ID is included
+  in the result set as well.
 
-       .. type:: string
-          :required: false
+.. parameter:: limit
+  :type: integer
+  :condition: optional
 
-     - Offset the result set to the balance transactions with this ID. The balance transaction with this ID is included
-       in the result set as well.
-
-   * - ``limit``
-
-       .. type:: integer
-          :required: false
-
-     - The number of balance transactions to return (with a maximum of 250).
+  The number of balance transactions to return (with a maximum of 250).
 
 Response
 --------
-``200`` ``application/hal+json; charset=utf-8``
+``200`` ``application/hal+json``
 
-.. list-table::
-   :widths: auto
+   .. parameter:: count
+      :type: integer
 
-   * - ``count``
+      The number of transactions found in ``_embedded``, which is either the requested number (with a maximum of 250)
+      or the default number.
 
-       .. type:: integer
+   .. parameter:: _embedded
+      :type: object
 
-     - The number of transactions found in ``_embedded``, which is either the requested number (with a maximum of 250)
-       or the default number.
+      The object containing the queried data.
 
-   * - ``_embedded``
+      .. parameter:: resource
+          :type: string
 
-       .. type:: object
+          Indicates the response contains a balance transaction object. Will always contain ``balance_transaction``
+          for this endpoint.
 
-     - The object containing the queried data.
+      .. parameter:: id
+          :type: string
 
-       .. list-table::
-          :widths: auto
+          The identifier uniquely referring to this balance transaction. Mollie assigns this identifier at
+          transaction creation time. For example ``baltr_QM24QwzUWR4ev4Xfgyt29d``.
 
-          * - ``resource``
+      .. parameter:: type
+          :type: string
 
-              .. type:: string
+          The type of movement, for example ``payment`` or ``refund``. Values include the below examples, although
+          this list is not definitive.
 
-            - Indicates the response contains a balance transaction object. Will always contain ``balance_transaction``
-              for this endpoint.
+          Regular payment processing: ``payment`` ``capture`` ``unauthorized-direct-debit`` ``failed-payment``
 
-          * - ``id``
+          Refunds and chargebacks: ``refund`` ``returned-refund`` ``chargeback`` ``chargeback-reversal``
 
-              .. type:: string
+          Settlements: ``outgoing-transfer`` ``canceled-outgoing-transfer`` ``returned-transfer``
 
-            - The identifier uniquely referring to this balance transaction. Mollie assigns this identifier at
-              transaction creation time. For example ``baltr_QM24QwzUWR4ev4Xfgyt29d``.
+          Invoicing: ``invoice-compensation`` ``balance-correction``
 
-          * - ``type``
+          Mollie Connect: ``application-fee`` ``split-payment`` ``platform-payment-refund`` ``platform-payment-chargeback``
 
-              .. type:: string
+      .. parameter:: resultAmount
+          :type: amount object
 
-            - The type of movement, for example ``payment`` or ``refund``. Values include the below examples, although
-              this list is not definitive.
+          The final amount that was moved to or from the balance, e.g. ``{"currency":"EUR", "value":"100.00"}``. If
+          the transaction moves funds away from the balance, for example when it concerns a refund, the amount will
+          be negative.
 
-              Regular payment processing: ``payment`` ``capture`` ``unauthorized-direct-debit`` ``failed-payment``
 
-              Refunds and chargebacks: ``refund`` ``returned-refund`` ``chargeback`` ``chargeback-reversal``
+          .. parameter:: currency
+            :type: string
 
-              Settlements: ``outgoing-transfer`` ``canceled-outgoing-transfer`` ``returned-transfer``
+            The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the movement amount.
 
-              Invoicing: ``invoice-compensation`` ``balance-correction``
+          .. parameter:: value
+              :type: string
 
-              Mollie Connect: ``application-fee`` ``split-payment`` ``platform-payment-refund`` ``platform-payment-chargeback``
+              A string containing the exact movement amount in the given currency.
 
-          * - ``resultAmount``
+      .. parameter:: initialAmount
+          :type: amount object
 
-              .. type:: amount object
+          The amount that was to be moved to or from the balance, excluding deductions. If the transaction moves
+          funds away from the balance, for example when it concerns a refund, the amount will be negative.
 
-            - The final amount that was moved to or from the balance, e.g. ``{"currency":"EUR", "value":"100.00"}``. If
-              the transaction moves funds away from the balance, for example when it concerns a refund, the amount will
-              be negative.
+          .. parameter:: currency
+              :type: string
 
-              .. list-table::
-                 :widths: auto
+              The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the movement amount.
 
-                 * - ``currency``
+          .. parameter:: value
+              :type: string
 
-                     .. type:: string
+              A string containing the exact movement amount in the given currency.
 
-                   - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the movement amount.
+      .. parameter:: deductions
+          :type: amount object
+          :condition: optional
 
-                 * - ``value``
+          The total amount of deductions withheld from the movement. For example, if a €10,00 payment comes in with
+          a €0,29 fee, the ``deductions`` amount will be ``{"currency":"EUR", "value":"-0.29"}``.
 
-                      .. type:: string
+          When moving funds to a balance, we always round the deduction to a 'real' amount. Any differences between
+          these realtime rounded amounts and the final invoice will be compensated when the invoice is generated.
 
-                   - A string containing the exact movement amount in the given currency.
+          .. parameter:: currency
+            :type: string
 
-          * - ``initialAmount``
+            The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the deduction.
 
-              .. type:: amount object
+          .. parameter:: value
+            :type: string
 
-            - The amount that was to be moved to or from the balance, excluding deductions. If the transaction moves
-              funds away from the balance, for example when it concerns a refund, the amount will be negative.
+            A string containing the exact deduction in the given currency.
 
-              .. list-table::
-                 :widths: auto
+      .. parameter:: createdAt
+          :type: datetime
 
-                 * - ``currency``
+          The date and time of the movement, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-                     .. type:: string
+      .. parameter:: context
+          :type: object
 
-                   - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the movement amount.
+          Depending on the ``type`` of the balance transaction, we will try to give more context about the specific
+          event that triggered the movement. A few examples:
 
-                 * - ``value``
+          * For type ``payment``: ``{"paymentId": "tr_..."}``
+          * For type ``refund``: ``{"paymentId": "tr_...", "refundId": "re_..."}``
 
-                      .. type:: string
+   .. parameter:: _links
+      :type: object
 
-                   - A string containing the exact movement amount in the given currency.
+      Links to help navigate through the lists of balance transactions. Every URL object will contain an ``href`` and a
+      ``type`` field.
 
-          * - ``deductions``
+      .. parameter:: self
+          :type: URL object
 
-              .. type:: amount object
-                :required: false
+          The URL to the current set of balance transactions.
 
-            - The total amount of deductions withheld from the movement. For example, if a €10,00 payment comes in with
-              a €0,29 fee, the ``deductions`` amount will be ``{"currency":"EUR", "value":"-0.29"}``.
+      .. parameter:: previous
+          :type: URL object
 
-              When moving funds to a balance, we always round the deduction to a 'real' amount. Any differences between
-              these realtime rounded amounts and the final invoice will be compensated when the invoice is generated.
+          The previous set of balance transactions, if available.
 
-              .. list-table::
-                 :widths: auto
+      .. parameter:: next
+          :type: URL object
 
-                 * - ``currency``
+          The next set of balance transactions, if available.
 
-                     .. type:: string
+      .. parameter:: documentation
+          :type: URL object
 
-                   - The `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ currency code of the deduction.
-
-                 * - ``value``
-
-                     .. type:: string
-
-                   - A string containing the exact deduction in the given currency.
-
-          * - ``createdAt``
-
-              .. type:: datetime
-
-            - The date and time of the movement, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
-
-          * - ``context``
-
-              .. type:: object
-
-            - Depending on the ``type`` of the balance transaction, we will try to give more context about the specific
-              event that triggered the movement. A few examples:
-
-              * For type ``payment``: ``{"paymentId": "tr_..."}``
-              * For type ``refund``: ``{"paymentId": "tr_...", "refundId": "re_..."}``
-
-   * - ``_links``
-
-       .. type:: object
-
-     - Links to help navigate through the lists of balance transactions. Every URL object will contain an ``href`` and a
-       ``type`` field.
-
-       .. list-table::
-          :widths: auto
-
-          * - ``self``
-
-              .. type:: URL object
-
-            - The URL to the current set of balance transactions.
-
-          * - ``previous``
-
-              .. type:: URL object
-
-            - The previous set of balance transactions, if available.
-
-          * - ``next``
-
-              .. type:: URL object
-
-            - The next set of balance transactions, if available.
-
-          * - ``documentation``
-
-              .. type:: URL object
-
-            - The URL to the balance transactions list endpoint documentation.
+          The URL to the balance transactions list endpoint documentation.
 
 Example
 -------
@@ -230,7 +188,7 @@ Response
    :linenos:
 
    HTTP/1.1 200 OK
-   Content-Type: application/hal+json; charset=utf-8
+   Content-Type: application/hal+json
 
    {
      "count": 5,
