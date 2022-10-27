@@ -1,6 +1,9 @@
+Balance API
+===========
+
 .. raw:: html
    
-   <h1>Balance API <span class="api-name__beta">BETA</span></h1>
+   <span class="api-name__beta">BETA</span>
 
 Via the Balance API you can integrate your Mollie balance into your bookkeeping. 
 Balance reporting is time based, these APIs explain all mutations to the Mollie balance in a specific timeframe.
@@ -16,6 +19,7 @@ mutation (aggregates) per balance in a certain timeframe. All data is available 
 
 For more information please refer to 
 `knowledge base <https://help.mollie.com/hc/en-us/sections/360004882219-Accounting>`_.
+
 
 Endpoints
 ---------
