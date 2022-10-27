@@ -16,7 +16,7 @@ Get balance
 When processing payments with Mollie, we put all pending funds — minus Mollie fees — on a balance. Once you have linked
 a bank account to your Mollie account, we can pay out your balance towards this bank account.
 
-With the Balances API you can retrieve your current balance. The response includes three amounts:
+With the Balances API you can retrieve your current balance. The response includes two amounts:
 
 * The 'pending amount'. These are payments that have been marked as 'paid', but are not yet available for paying out.
 * The 'available amount'. This is the amount that you can get paid out to your bank account.
@@ -69,7 +69,7 @@ Response
 .. parameter:: transferFrequency
     :type: string
 
-    The frequency at which the available amount on the balance will be transferred away to the configured transfer
+    The frequency at which the available amount on the balance will be settled to the configured transfer
     destination. See ``transferDestination``.
 
     Possible values:
@@ -83,15 +83,14 @@ Response
     * ``every-friday`` Every Friday.
     * ``twice-a-month`` On the first and the fifteenth of the month.
     * ``monthly`` On the first of the month.
-    * ``never`` Automatic balance transfers are paused for this balance.
+    * ``never`` Automatic settlements are paused for this balance.
 
-    .. note:: If the transfer is for an external destination, and the transfer is created in a weekend or during a
-              bank holiday, the actual bank transfer will take place on the next business day.
+    .. note:: Settlements created during weekends or on bank holidays will take place on the next business day.
 
 .. parameter:: transferThreshold
     :type: amount object
 
-    The minimum amount configured for scheduled automatic balance transfers. As soon as the amount on the balance
+    The minimum amount configured for scheduled automatic settlements. As soon as the amount on the balance
     exceeds this threshold, the complete balance will be paid out to the ``transferDestination`` according to the
     configured ``transferFrequency``.
 

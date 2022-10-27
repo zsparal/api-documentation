@@ -84,7 +84,6 @@ Response
           the transaction moves funds away from the balance, for example when it concerns a refund, the amount will
           be negative.
 
-
           .. parameter:: currency
             :type: string
 
