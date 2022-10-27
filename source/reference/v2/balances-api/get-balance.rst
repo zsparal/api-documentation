@@ -223,7 +223,7 @@ Response
        "value": "5.00",
        "currency": "EUR"
      },
-    "transferReference": "Mollie payout",
+     "transferReference": "Mollie payout",
      "transferDestination": {
        "type": "bank-account",
        "beneficiaryName": "Jack Bauer",

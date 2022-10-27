@@ -236,10 +236,7 @@ Response
             "context": {
               "paymentId": "tr_7UhSN1zuXS"
             }
-          },
-          { },
-          { },
-          { }
+          }
        ]
      },
      "_links": {
