@@ -5,6 +5,11 @@ changes are documented here.
 
 October 2022
 ============
+
+Friday, 29th
+-------------
+- Added new ``Balances API`` docs.
+
 Monday, 24th
 -------------
 - Added the ``horseandgifts`` and ``shoesandsneakerscadeau`` as gift card issuer.
