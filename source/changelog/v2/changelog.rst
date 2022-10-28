@@ -8,7 +8,7 @@ October 2022
 
 Friday, 29th
 -------------
-- Added new ``Balance API`` docs.
+- Added new ``Balances API`` docs.
 
 Monday, 24th
 -------------
