@@ -109,7 +109,7 @@ Response
 .. parameter:: transferReference
     :type: string
 
-    The transfer reference set to be included in all the transfer for this balance. Either a string or ``null``.
+    The transfer reference set to be included in all the transfers for this balance. Either a string or ``null``.
 
 .. parameter:: transferDestination
     :type: object
