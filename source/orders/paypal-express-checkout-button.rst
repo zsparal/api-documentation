@@ -38,8 +38,8 @@ some small tweaks. You can use the following steps as a guideline for the basic 
                 all, your request will result in an HTTP status code ``422 Unprocessable Entity``.
 
 #. Redirect your customer to the ``checkout`` URL which you can find in the response of the Create Order
-   API. The customer will select the address where the product(s) needs to be sent to and complete the
-   payment.
+   API. The customer will select the address where the product(s) needs to be sent. Following this, the 
+   customer then completes the payment.
 
 #. Mollie will receive the address from PayPal and updates the order's ``shippingAddress`` only if there is no 
    ``shippingAddress`` set already. The consumer will  then be redirected back to your website while we call your webhook, 
