@@ -3,6 +3,17 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+October 2022
+============
+
+Friday, 29th
+-------------
+- Added new ``Balances API`` docs.
+
+Monday, 24th
+-------------
+- Added the ``horseandgifts`` and ``shoesandsneakerscadeau`` as gift card issuer.
+
 June 2022
 =========
 Monday, 20th
