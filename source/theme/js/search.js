@@ -7,12 +7,18 @@ const searchClient = algoliasearch('YRKIIH6LPA', '468c23035b867bacfdc2f454d7a912
 export default enhance('algolia-search', (element) => {
   autocomplete({
     container: element,
+    renderNoResults({ state, render }, root) {
+      render(`No results for "${state.query}".`, root);
+    },
     getSources() {
       return [
         {
           sourceId: 'docs',
           openOnFocus: false,
           getItemInputValue: ({ item }) => item.query,
+          getItemUrl({ item }) {
+            return item.permalink;
+          },
           getItems({ query }) {
             return getAlgoliaResults({
               searchClient,
