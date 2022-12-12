@@ -13,8 +13,8 @@ Create customer
    :oauth: true
 
 Creates a simple minimal representation of a customer in the Mollie API to use for the
-`Mollie Checkout <https://www.mollie.com/en/checkout>`_ and Recurring features. These customers will appear in your
-`Mollie Dashboard <https://www.mollie.com/dashboard/>`_ where you can manage their details, and also see their payments
+`Mollie Checkout <https://www.mollie.com/products/checkout>`_ and Recurring features. These customers will appear in your
+`Mollie Dashboard <https://www.mollie.com/dashboard>`_ where you can manage their details, and also see their payments
 and subscriptions.
 
 Parameters
@@ -121,12 +121,10 @@ Example
       const { createMollieClient } = require('@mollie/api-client');
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
-      (async () => {
-        const customer = await mollieClient.customers.create({
-          name: 'Customer A',
-          email: 'customer@example.org',
-        });
-      })();
+      const customer = await mollieClient.customers.create({
+        name: 'Customer A',
+        email: 'customer@example.org'
+      });
 
 Response
 ^^^^^^^^

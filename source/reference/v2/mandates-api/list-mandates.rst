@@ -137,9 +137,7 @@ Example
       const { createMollieClient } = require('@mollie/api-client');
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
-      (async () => {
-        const mandates = await mollieClient.customers_mandates.page({ customerId: 'cst_stTC2WHAuS' });
-      })();
+      const mandates = mollieClient.customerMandates.iterate({ customerId: 'cst_stTC2WHAuS' });
 
 Response
 ^^^^^^^^
@@ -177,7 +175,7 @@ Response
                            "type": "application/hal+json"
                        },
                        "documentation": {
-                           "href": "https://mollie.com/en/docs/reference/customers/create-mandate",
+                           "href": "https://docs.mollie.com/reference/v2/mandates-api/create-mandate",
                            "type": "text/html"
                        }
                    }

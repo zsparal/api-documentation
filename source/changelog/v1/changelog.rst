@@ -1,5 +1,8 @@
 Changelog
 ~~~~~~~~~
+.. api-name:: Mollie API
+   :version: 1
+
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v1 Mollie API. All
 changes are documented here.
 
@@ -277,7 +280,7 @@ Thursday, 21th
 
 Tuesday, 12th
 -------------
-- Added the new payment method `Przelewy24 <https://www.mollie.com/en/payments/przelewy24>`_ (``przelewy24``).
+- Added the new payment method `Przelewy24 <https://www.mollie.com/payments/przelewy24>`_ (``przelewy24``).
 
 February 2019
 =============
@@ -378,7 +381,7 @@ May 2018
 
 Wednesday, 9th
 --------------
-- Launched `Multicurrency <https://www.mollie.com/nl/features/multicurrency>`_  and the new v2 api.
+- Launched multicurrency payments, along with the new v2 API.
 
 Monday, 7th
 -----------

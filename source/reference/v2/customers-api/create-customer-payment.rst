@@ -15,7 +15,7 @@ Create customer payment
 Creates a payment for the customer.
 
 Linking customers to payments enables a number of
-`Mollie Checkout <https://www.mollie.com/en/checkout>`_ features, including:
+`Mollie Checkout <https://www.mollie.com/products/checkout>`_ features, including:
 
 * Keeping track of payment preferences for your customers.
 * Enabling your customers to charge a previously used credit card with a single click.
@@ -151,19 +151,17 @@ Example
       const { createMollieClient } = require('@mollie/api-client');
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
-      (async () => {
-        const payment = await mollieClient.customers_payments.create({
-          customerId: 'cst_8wmqcHMN4U',
-          amount: {
-            currency: 'EUR',
-            value: '10.00', // We enforce the correct number of decimals through strings
-          },
-          description: 'Order #12345',
-          sequenceType: 'first',
-          redirectUrl: 'https://webshop.example.org/order/12345/',
-          webhookUrl: 'https://webshop.example.org/payments/webhook/',
-        });
-      })();
+      const payment = await mollieClient.customerPayments.create({
+        customerId: 'cst_8wmqcHMN4U',
+        amount: {
+          currency: 'EUR',
+          value: '10.00'
+        },
+        description: 'Order #12345',
+        sequenceType: 'first',
+        redirectUrl: 'https://webshop.example.org/order/12345/',
+        webhookUrl: 'https://webshop.example.org/payments/webhook/'
+      });
 
 Response
 ^^^^^^^^
