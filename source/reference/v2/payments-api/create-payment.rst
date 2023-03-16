@@ -166,8 +166,8 @@ Parameters
 Parameters for recurring payments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Recurring payments are created through the Payments API by providing a ``sequenceType``. For the ``recurring`` sequence
-type, you have to provide either a ``customerId`` or ``mandateId`` to indicate which account or card you want to charge.
-See our guide on :doc:`Recurring </payments/recurring>` for more information.
+type, you have to provide a ``customerId`` to indicate which account you want to charge. You can charge a card by
+providing a ``mandateId``. See our guide on :doc:`Recurring </payments/recurring>` for more information.
 
 .. parameter:: sequenceType
    :type: string
@@ -189,24 +189,22 @@ See our guide on :doc:`Recurring </payments/recurring>` for more information.
 
 .. parameter:: customerId
    :type: string
-   :condition: conditional
+   :condition: required
    :collapse: true
 
    The ID of the :doc:`customer </reference/v2/customers-api/get-customer>` for whom the payment is being created. This
    is used primarily for :doc:`recurring payments </payments/recurring>`, but can also be used on regular payments to
    enable :doc:`single-click payments </payments/hosted-checkout>`.
 
-   Either this field or the ``mandateId`` field needs to be provided for payments with the ``recurring`` sequence type.
+   Tthis field needs to be provided for payments with the ``recurring`` sequence type.
 
 .. parameter:: mandateId
    :type: string
-   :condition: conditional
+   :condition: optional
    :collapse: true
 
    When creating recurring payments, the ID of a specific :doc:`mandate </reference/v2/mandates-api/get-mandate>` can be
    supplied to indicate which of the consumer's accounts should be credited.
-
-   Either this field or the ``customerId`` field needs to be provided for payments with the ``recurring`` sequence type.
 
 .. _payment-method-specific-parameters:
 
