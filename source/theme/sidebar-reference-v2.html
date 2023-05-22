@@ -128,6 +128,10 @@
     {%- if current %}
       <ul>
         {{ sidebar_item(
+        'reference/v2/captures-api/create-capture',
+        'Create capture'
+        ) }}
+        {{ sidebar_item(
         'reference/v2/captures-api/get-capture',
         'Get capture'
         ) }}
@@ -172,6 +176,25 @@
         {{ sidebar_item(
         'reference/v2/payment-links-api/list-payment-links',
         'List payment links'
+        ) }}
+      </ul>
+    {%- endif %}
+  </li>
+
+  {%- set current = pagename.startswith('reference/v2/terminals-api/') -%}
+  <li class="sidebar__item sidebar__group {%- if pagename.startswith('reference/v2/terminals-api/') %} current{% endif %}">
+    <a href="{{ pathto('reference/v2/terminals-api/overview') }}"
+       class="{% if pagename == 'reference/v2/terminals-api/overview' %}current{% endif %}">Terminals API <span class="api-name__beta">BETA</span></a>
+
+    {%- if pagename.startswith('reference/v2/terminals-api/') %}
+      <ul>
+        {{ sidebar_item(
+        'reference/v2/terminals-api/get-terminal',
+        'Get terminal'
+        ) }}
+        {{ sidebar_item(
+        'reference/v2/terminals-api/list-terminals',
+        'List terminals'
         ) }}
       </ul>
     {%- endif %}
