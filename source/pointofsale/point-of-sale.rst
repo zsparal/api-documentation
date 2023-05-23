@@ -17,23 +17,22 @@ test your integration without the need for a physical terminal, you can do so us
 
 Receiving your first terminal
 -----------------------------
-To get started, you can request one or more terminal devices either via the Mollie Dashboard or via your account
-manager.
+To get started, you can request one or more terminals either via the Mollie Dashboard or via your account manager.
 
-Your terminal device will have an alias and a 4-digit terminal passcode which will be provided to you.
-In addition to this, each device has a unique identifier called terminal ID. You can find more details about how
-the terminal ID is used in the :doc:`Create Payments v2 API</reference/v2/payments-api/create-payment>`.
+Your terminal will have an alias and a 4-digit passcode, which will be provided to you.
+In addition to this, each terminal has a unique identifier called 'terminal ID'. This ID will be used to create payments
+for the specific terminal. For more information, check the 'Accepting payments' section below.
 
-The terminal devices information can be retrieved via the :doc:`List terminals v2 API</reference/v2/terminals-api/list-terminals>`.
-After requesting a terminal device, its status will be ``pending``, followed by an ``active`` status once it is ready to accept
+The terminal information can be retrieved via the :doc:`List terminals v2 API</reference/v2/terminals-api/list-terminals>`.
+After requesting a terminal, its status will be ``pending``, followed by an ``active`` status once it is ready to accept
 payments.
 
-The terminal devices are linked to a specific payment profile. Larger merchants can thus create separate payment profiles
+Terminals are linked to a specific payment profile. Larger merchants can thus create separate payment profiles
 to group terminals according to their needs. For example, merchants may want to have a payment profile for each physical store.
 
 Setting up the terminal
 ^^^^^^^^^^^^^^^^^^^^^^^
-Once you receive the device, you can simply turn it on. The terminal guides you through an onboarding process which
+Once you receive the terminal, you can simply turn it on. The terminal guides you through an onboarding process which
 involves configuring network preferences. Make sure to see that the terminal status is "Ready to use".
 Then, tap the "Start" button and you can start accepting payments.
 
@@ -46,7 +45,7 @@ If you want to access the terminal menu again, tap three times on the Mollie scr
 
 Accepting payments
 ------------------
-Once your device is turned on and connected to the internet, you can start accepting payments.
+Once your terminal is turned on and connected to the internet, you can start accepting payments.
 
 Simply call the :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` like you are used to, but in
 this case provide ``pointofsale`` as the payment method, along with your terminal ID in the ``terminalId`` parameter.
@@ -65,7 +64,7 @@ For example:
        -d "method=pointofsale" \
        -d "terminalId=term_7MgL4wea46qkRcoTZjWEH"
 
-This will set up a €10,00 payment on the device. The device should display the transaction within seconds, and it will
+This will set up a €10,00 payment on the terminal. The device should display the transaction within seconds, and it will
 ask you to present a card.
 
 If you present a card and confirm the card PIN, the payment will be executed. If the payment succeeds, you will receive
@@ -87,4 +86,6 @@ payment up in the Mollie Dashboard or mobile app and press the 'refund' button t
 To perform a refund via our API, please refer to the
 :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>`.
 
-Chargebacks are less encountered for point-of-sale payments, but they work in a similar way as online card payments do.
+Chargebacks are less encountered for point-of-sale payments, as the card holder has to physically present the card during payment.
+Point-of-sale chargebacks work in a similar way as the online card payments do. For more information, check our
+`chargebacks article <https://help.mollie.com/hc/en-us/articles/115001470869>`_.
