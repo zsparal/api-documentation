@@ -20,10 +20,16 @@ Receiving your first terminal
 To get started, you can request one or more terminal devices either via the Mollie Dashboard or via your account
 manager.
 
-You will be asked to give each terminal an alias. In return you will receive a 4-digit terminal passcode and a terminal ID for each device, for
-example ``term_7MgL4wea46qkRcoTZjWEH``.
+Your terminal device will have an alias and a 4-digit terminal passcode which will be provided to you.
+In addition to this, each device has a unique identifier called terminal ID. You can find more details about how
+the terminal ID is used in the :doc:`Create Payments v2 API</reference/v2/payments-api/create-payment>`.
 
-These terminals will show up in the :doc:`List terminals endpoint </reference/v2/terminals-api/list-terminals>` already with status ``requested``.
+The terminal devices information can be retrieved via the :doc:`List terminals v2 API</reference/v2/terminals-api/list-terminals>`.
+After requesting a terminal device, its status will be ``pending``, followed by an ``active`` status once it is ready to accept
+payments.
+
+The terminal devices are linked to a specific payment profile. Larger merchants can thus create separate payment profiles
+to group terminals according to their needs. For example, merchants may want to have a payment profile for each physical store.
 
 Setting up the terminal
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -40,7 +46,7 @@ If you want to access the terminal menu again, tap three times on the Mollie scr
 
 Accepting payments
 ------------------
-Once your device is set up, you can start accepting payments.
+Once your device is turned on and connected to the internet, you can start accepting payments.
 
 Simply call the :doc:`Create payment endpoint </reference/v2/payments-api/create-payment>` like you are used to, but in
 this case provide ``pointofsale`` as the payment method, along with your terminal ID in the ``terminalId`` parameter.
@@ -63,7 +69,7 @@ This will set up a €10,00 payment on the device. The device should display the
 ask you to present a card.
 
 If you present a card and confirm the card PIN, the payment will be executed. If the payment succeeds, you will receive
-a webhook of the ``paid`` status and the funds will be moved to your balance the same way as for online card payments.
+a webhook about it and the funds will be moved to your balance the same way as for online card payments.
 
 To cancel the payment, simply press the cancel button on the device.
 
@@ -81,17 +87,4 @@ payment up in the Mollie Dashboard or mobile app and press the 'refund' button t
 To perform a refund via our API, please refer to the
 :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>`.
 
-In-person card payments carry a similar chargeback risk as online card payments do. If chargebacks come in, you will
-receive a notification from us. They will also show up in the Mollie Dashboard, and can be accessed via the API using
-the :doc:`List chargebacks endpoint </reference/v2/chargebacks-api/list-chargebacks>`.
-
-Grouping terminals
-------------------
-The Mollie API is for a large part built on the concept of a payment profile. Larger merchants typically manage multiple
-payment profiles: one for each domain name, for example. This allows them to have separate financial streams flow into a
-single Mollie account. Each payment profile has its own set of :doc:`credentials </overview/authentication>` to accept
-payments with.
-
-For in-person payments, terminal devices are linked to payment profiles as well. Larger merchants can thus create
-separate payment profiles to group terminals according to their needs. For example, merchants may want to have a payment
-profile for each physical store.
+Chargebacks are less encountered for point-of-sale payments, but they work in a similar way as online card payments do.
