@@ -11,6 +11,9 @@ If you process point-of-sale payments with Mollie, the Terminals API allows you 
 
 With the Terminals API, you can list all terminals connected to your organisation and profiles.
 
+For more information on accepting point-of-sale payments, please refer to the
+:doc:`point-of-sale guide </point-of-sale/overview>`.
+
 Endpoints
 ---------
 .. endpoint-card::
