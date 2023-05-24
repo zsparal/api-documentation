@@ -13,7 +13,8 @@ and terminals provided to you by Mollie. Please contact your account manager to 
 you.
 
 For advanced users who want to integrate point-of-sale payments themselves, here is how it works. If you are looking to
-test your integration without the need for a physical terminal, you can do so using :doc:`test mode </pointofsale/testing>`.
+test your integration without the need for a physical terminal, you can do so using
+ :doc:`test mode </point-of-sale/testing>`.
 
 Receiving your first terminal
 -----------------------------
@@ -23,12 +24,13 @@ Your terminal will have an alias and a 4-digit passcode, which will be provided 
 In addition to this, each terminal has a unique identifier called 'terminal ID'. This ID will be used to create payments
 for the specific terminal. For more information, check the 'Accepting payments' section below.
 
-The terminal information can be retrieved via the :doc:`List terminals v2 API</reference/v2/terminals-api/list-terminals>`.
-After requesting a terminal, its status will be ``pending``, followed by an ``active`` status once it is ready to accept
-payments.
+The terminal information can be retrieved via the
+:doc:`List terminals v2 API</reference/v2/terminals-api/list-terminals>`. After requesting a terminal, its status will
+be ``pending``, followed by an ``active`` status once it is ready to accept payments.
 
 Terminals are linked to a specific payment profile. Larger merchants can thus create separate payment profiles
-to group terminals according to their needs. For example, merchants may want to have a payment profile for each physical store.
+to group terminals according to their needs. For example, merchants may want to have a payment profile for each physical
+store.
 
 Setting up the terminal
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -86,6 +88,6 @@ payment up in the Mollie Dashboard or mobile app and press the 'refund' button t
 To perform a refund via our API, please refer to the
 :doc:`Create refund endpoint </reference/v2/refunds-api/create-payment-refund>`.
 
-Chargebacks are less encountered for point-of-sale payments, as the card holder has to physically present the card during payment.
-Point-of-sale chargebacks work in a similar way as the online card payments do. For more information, check our
-`chargebacks article <https://help.mollie.com/hc/en-us/articles/115001470869>`_.
+Chargebacks are less encountered for point-of-sale payments, as the card holder has to physically present the card
+during payment. Point-of-sale chargebacks work in a similar way as the online card payments do. For more information,
+check our `chargebacks article <https://help.mollie.com/hc/en-us/articles/115001470869>`_.
