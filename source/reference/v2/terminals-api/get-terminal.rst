@@ -1,4 +1,4 @@
-Get Terminal
+Get terminal
 ============
 .. api-name:: Terminals API
    :version: 2
@@ -13,7 +13,11 @@ Get Terminal
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single terminal object by its terminal ID. Please note that this endpoint is not publicly available yet.
+Retrieve a single terminal object by its terminal ID. This endpoint is not publicly available yet — please reach out to
+your account manager to sign up for early access.
+
+For more information on accepting point-of-sale payments, please refer to the
+:doc:`point-of-sale guide </point-of-sale/overview>`.
 
 Parameters
 ----------
@@ -43,9 +47,9 @@ Response
 .. parameter:: status
    :type: string
 
-   The status of the terminal, which is a read-only value determined by Mollie, according to the actions performed for that terminal.
-   Its values can be ``pending``, ``active``, ``inactive``. ``pending`` means the device has been linked to your account,
-   but has not yet been activated. ``active`` means that the terminal is active and can take payments.
+   The status of the terminal, which is a read-only value determined by Mollie, according to the actions performed for
+   that terminal. Its values can be ``pending``, ``active``, ``inactive``. ``pending`` means the device has been linked
+   to your account, but has not yet been activated. ``active`` means that the terminal is active and can take payments.
    ``inactive`` means that the terminal has been deactivated.
 
 .. parameter:: brand
@@ -71,7 +75,8 @@ Response
 .. parameter:: description
    :type: string
 
-   A short description of the terminal. The description will be visible in the Dashboard, but also on the device itself for identification purposes.
+   A short description of the terminal. The description will be visible in the Dashboard, but also on the device itself
+   for identification purposes.
 
 .. parameter:: createdAt
    :type: datetime

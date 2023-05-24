@@ -1,4 +1,4 @@
-List Terminals
+List terminals
 ==============
 .. api-name:: Terminals API
    :version: 2
@@ -13,7 +13,10 @@ List Terminals
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all terminals created for the current organization / profile, ordered from newest to oldest.
+Retrieve all point-of-sale terminal devices linked to your organization or profile, ordered from newest to oldest.
+
+For more information on accepting point-of-sale payments, please refer to the
+:doc:`point-of-sale guide </point-of-sale/overview>`.
 
 The results are paginated. See :doc:`pagination </overview/pagination>` for more information.
 
@@ -45,9 +48,8 @@ websites. See :doc:`Profiles API </reference/v1/profiles-api/create-profile>` fo
    :condition: optional
    :collapse: true
 
-   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all terminals
-   across all profiles.
-
+   The website profile's unique identifier, for example ``pfl_3RkSN1zuPE``. Omit this parameter to retrieve all
+   terminals across all profiles.
 
 .. parameter:: testmode
    :type: boolean
