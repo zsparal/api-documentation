@@ -427,6 +427,100 @@ Klarna Pay now. / Pay later. / Slice it.
    Reach out to your account manager at Mollie to enable this feature with Klarna, and to agree on which fields
    you can send.
 
+Billie
+""""""
+.. note::
+   Billie payments can only be created via the :doc:`Orders API </reference/v2/orders-api/create-order>`.
+
+.. parameter:: billingAddress
+   :type: address object
+   :condition: optional
+
+   Company address details. We advise to provide these details to improve the Billie's risk system.
+
+   If an address is provided, then the address has to be in a valid format. See the
+   :ref:`address object <address-object>` documentation for more information on which formats are accepted.
+
+   .. parameter:: organizationName
+      :type: string
+      :condition: required
+
+      The organization's name. It is mandatory for Billie orders.
+
+   .. parameter:: givenName
+      :type: string
+      :condition: required
+
+      The given name (first name) of the buyer.
+
+   .. parameter:: familyName
+      :type: string
+      :condition: required
+
+      The family name (surname) of the buyer.
+
+   .. parameter:: email
+      :type: string
+      :condition: required
+
+      The contact email address of the organization.
+
+   .. parameter:: streetAndNumber
+      :type: string
+      :condition: required
+
+   .. parameter:: streetAdditional
+      :type: string
+      :condition: optional
+
+   .. parameter:: postalCode
+      :type: string
+      :condition: conditional
+
+      This field is required if the provided ``country`` has a postal code system.
+
+   .. parameter:: city
+      :type: string
+      :condition: required
+
+   .. parameter:: region
+      :type: string
+      :condition: optional
+
+   .. parameter:: country
+      :type: string
+      :condition: required
+
+      The country of the address in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+
+.. parameter:: company
+   :type: object
+   :condition: optional
+
+   Billie is a B2B payment method, thus it requires some extra information to identify the business that is creating the order.
+   It is recommended to include these parameters as part of the create order request for a seamless flow, otherwise the
+   customer will be asked to fill the missing fields at the Billie's checkout page.
+
+   .. parameter:: registrationNumber
+      :type: string
+      :condition: optional
+
+      Organization's registration number.
+
+   .. parameter:: vatNumber
+      :type: string
+      :condition: optional
+
+      Organization's VAT number.
+
+   .. parameter:: entityType
+      :type: string
+      :condition: optional
+
+      Organization's entity type. Must be one of: ``limited-company``, ``public-limited-company``, ``entrepreneurial-company``,
+      ``limited-partnership-limited-company``, ``limited-partnership``, ``general-partnership``, ``registered-sole-trader``,
+      ``sole-trader``, ``civil-law-partnership``, ``public-institution``
+
 .. _paypal-method-details:
 
 PayPal
