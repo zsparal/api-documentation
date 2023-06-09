@@ -55,7 +55,7 @@ Response
    that the terminal gets, as soon as it's ordered from us and assigned to your account.
 
    ``active`` means that the terminal is fully configured and ready to accept payments. As soon as we configure the terminal
-   for you, it will be move into this state.
+   for you, it will be moved to this state.
 
    ``inactive`` means that the terminal has been deactivated, which can mean that you returned the device to us,
    or you requested to move it to another profile or organization.
@@ -63,13 +63,12 @@ Response
 .. parameter:: brand
    :type: string
 
-   The brand of the terminal. In most of the cases the value of this field will be "PAX".
+   The brand of the terminal. For example, 'PAX'.
 
 .. parameter:: model
    :type: string
 
-   The model of the terminal. The model can differ, in most of the case this field's value will be "A920",
-   but you can also have an "A35" terminal model.
+   The model of the terminal. For example for a PAX A920, this field's value will be 'A920'.
 
 .. parameter:: serialNumber
    :type: string
@@ -86,8 +85,9 @@ Response
 .. parameter:: description
    :type: string
 
-   A short description of the terminal. The description can be used as an identifier for the terminal. Currently, it is
-   set up when the terminal is configured and it will be visible in the dashboard, but also on the device itself.
+   A short description of the terminal. The description can be used as an identifier for the terminal.
+   Currently, the description is set when the terminal is initially configured.
+   It will be visible in the dashboard as well as on the device itself.
 
 .. parameter:: createdAt
    :type: datetime
