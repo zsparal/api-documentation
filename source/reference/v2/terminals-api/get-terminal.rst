@@ -87,7 +87,7 @@ Response
    :type: string
 
    A short description of the terminal. The description can be used as an identifier for the terminal. Currently, it is
-   setup when the terminal is configured and it can will be visible in the dashboard, but also on the device itself.
+   set up when the terminal is configured and it will be visible in the dashboard, but also on the device itself.
 
 .. parameter:: createdAt
    :type: datetime
