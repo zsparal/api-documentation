@@ -13,7 +13,8 @@ List terminals
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve all point-of-sale terminal devices linked to your organization or profile, ordered from newest to oldest.
+With this endpoint you can retrieve a list of terminals symbolizing the physical devices that you have received from us.
+In the list you can find all the terminals linked to your organization or profile, ordered from newest to oldest.
 
 For more information on accepting point-of-sale payments, please refer to the
 :doc:`point-of-sale guide </point-of-sale/overview>`.
@@ -204,7 +205,7 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/terminalss?limit=5",
+               "href": "https://api.mollie.com/v2/terminals?limit=5",
                "type": "application/hal+json"
            },
            "previous": null,

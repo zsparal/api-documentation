@@ -13,8 +13,9 @@ Get terminal
    :organization_access_tokens: true
    :oauth: true
 
-Retrieve a single terminal object by its terminal ID. This endpoint is not publicly available yet — please reach out to
-your account manager to sign up for early access.
+With this endpoint you can retrieve a single terminal object by its terminal ID. This terminal object symbolizes
+the physical device that you have received from us.
+This endpoint is not publicly available yet — please reach out to your account manager to sign up for early access.
 
 For more information on accepting point-of-sale payments, please refer to the
 :doc:`point-of-sale guide </point-of-sale/overview>`.
@@ -48,19 +49,27 @@ Response
    :type: string
 
    The status of the terminal, which is a read-only value determined by Mollie, according to the actions performed for
-   that terminal. Its values can be ``pending``, ``active``, ``inactive``. ``pending`` means the device has been linked
-   to your account, but has not yet been activated. ``active`` means that the terminal is active and can take payments.
-   ``inactive`` means that the terminal has been deactivated.
+   that terminal. Its values can be ``pending``, ``active``, ``inactive``.
+
+   ``pending`` means the device has been linked to your account, but has not yet been activated. This is the first state
+   that the terminal gets, as soon as it's ordered from us and assigned to your account.
+
+   ``active`` means that the terminal is fully configured and ready to accept payments. As soon as we configure the terminal
+   for you, it will be move into this state.
+
+   ``inactive`` means that the terminal has been deactivated, which can mean that you returned the device to us,
+   or you requested to move it to another profile or organization.
 
 .. parameter:: brand
    :type: string
 
-   The brand of the terminal.
+   The brand of the terminal. In most of the cases the value of this field will be "PAX".
 
 .. parameter:: model
    :type: string
 
-   The model of the terminal.
+   The model of the terminal. The model can differ, in most of the case this field's value will be "A920",
+   but you can also have an "A35" terminal model.
 
 .. parameter:: serialNumber
    :type: string
@@ -69,14 +78,16 @@ Response
 
 .. parameter:: currency
    :type: string
+   :condition: optional
 
    The currency which is set for the terminal, in `ISO 4217 <https://en.wikipedia.org/wiki/ISO_4217>`_ format.
+   Please take into consideration that currently our terminals are bound to a specific currency, chosen during setup.
 
 .. parameter:: description
    :type: string
 
-   A short description of the terminal. The description will be visible in the Dashboard, but also on the device itself
-   for identification purposes.
+   A short description of the terminal. The description can be used as an identifier for the terminal. Currently, it is
+   setup when the terminal is configured and it can will be visible in the dashboard, but also on the device itself.
 
 .. parameter:: createdAt
    :type: datetime

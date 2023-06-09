@@ -12,9 +12,10 @@ A Mollie point-of-sale setup will typically simply consist of cashier software p
 and terminals provided to you by Mollie. Please contact your account manager to discover the options that work best for
 you.
 
-For advanced users who want to integrate point-of-sale payments themselves, here is how it works. If you are looking to
-test your integration without the need for a physical terminal, you can do so using
-:doc:`test mode </point-of-sale/testing>`.
+For advanced users who want to integrate point-of-sale payments themselves, the guide below should help you get started.
+
+If you are looking to test the integration without the need for a physical terminal, you can find out how to do so in our
+:doc:`test mode </point-of-sale/testing>` guide.
 
 Receiving your first terminal
 -----------------------------
