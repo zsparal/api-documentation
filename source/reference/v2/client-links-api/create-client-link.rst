@@ -1,8 +1,11 @@
 Create client link
 ==================
-.. api-name:: Clients API
+.. api-name:: Client Links API
    :version: 2
    :beta: true
+
+.. note:: The Client Links API is currently in closed beta. Contact our partner management team if you are interested in
+   testing this functionality with us.
 
 .. endpoint::
    :method: POST
@@ -12,9 +15,6 @@ Create client link
    :api_keys: false
    :organization_access_tokens: true
    :oauth: false
-
-.. note:: This functionality is currently in closed beta. Contact our partner management team if you are interested in
-          testing this functionality with us.
 
 Link a new organization to your :doc:`OAuth application </connect/getting-started>`, in effect creating a new client.
 This is a two step process.

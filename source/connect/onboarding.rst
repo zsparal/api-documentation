@@ -67,7 +67,7 @@ Step 3: Create an organization for your customer
 ------------------------------------------------
 
 With the OAuth authorization flow implemented and the right permissions configured, you can start creating organizations
-for your customers using the :doc:`/reference/v2/clients-api/create-client-link` endpoint.
+for your customers using the :doc:`/reference/v2/client-links-api/create-client-link` endpoint.
 
 The Create client link endpoint will return a special link where you will have to redirect your customer to.
 
