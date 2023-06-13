@@ -6,6 +6,10 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+May 2023
+============
+- Previously, we allowed all merchants to refund an additional €25 on top of the original payment amount. We removed this functionality by default for all merchants as of May 29th, 2023. If you have a good use case for over-refunding, please reach out to Mollie Support so we can work with you on enabling this for your account.
+
 March 2023
 ============
 - Added the ``dagiftcard`` as gift card issuer.
