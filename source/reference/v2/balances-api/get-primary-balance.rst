@@ -2,7 +2,6 @@ Get primary balance
 ===================
 .. api-name:: Balances API
    :version: 2
-   :beta: true
 
 .. endpoint::
    :method: GET

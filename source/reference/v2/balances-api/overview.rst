@@ -1,10 +1,5 @@
 Balances API
 ============
-
-.. raw:: html
-
-   <span class="api-name__beta">BETA</span>
-
 The Balances API allows you to retrieve real-time as well as historical information about your Mollie balance.
 This may be useful to for example integrate Mollie into your bookkeeping, or for SaaS providers to enrich the experience they offer their Mollie users.
 With the Balances API, you can:
