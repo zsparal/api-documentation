@@ -17,7 +17,7 @@ Endpoints
    :name: Create client link
    :method: POST
    :url: /v2/client-links
-   :ref: /reference/v2/clients-api/create-client-link
+   :ref: /reference/v2/client-links-api/create-client-link
 
    Create a new client connected to your partner account.
 
