@@ -37,7 +37,7 @@ Replace ``orderId`` in the endpoint URL by the order's ID, for example ``ord_8wm
    will only show the methods specified in the array. For example, you can use this functionality to only show payment
    methods from a specific country to your customer ``["bancontact", "belfius"]``.
 
-   Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
+   Possible values: ``applepay`` ``bancontact`` ``banktransfer`` ``belfius`` ``billie`` ``creditcard`` ``directdebit`` ``eps``
    ``giftcard`` ``giropay`` ``ideal`` ``in3`` ``kbc``  ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``paypal``
    ``paysafecard`` ``przelewy24`` ``sofort``
 

@@ -227,7 +227,7 @@ Response
 
    Any amounts not settled by Mollie will not be reflected in this amount, e.g. PayPal or gift cards. If no amount is
    settled by Mollie the ``settlementAmount`` is omitted from the response.
-   
+
    Please note that this amount might be recalculated and changed when the status of the payment changes.
    We suggest using the :doc:`List balance transactions </reference/v2/balances-api/list-balance-transactions>`
    endpoint instead to get more accurate settlement amounts for your payments.
@@ -287,7 +287,7 @@ Response
 
    If the payment is only partially paid with a gift card, the method remains ``giftcard``.
 
-   Possible values: ``null`` ``bancontact`` ``banktransfer`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
+   Possible values: ``null`` ``bancontact`` ``banktransfer`` ``billie`` ``belfius`` ``creditcard`` ``directdebit`` ``eps``
    ``giftcard`` ``giropay`` ``ideal`` ``in3`` ``kbc`` ``klarnapaylater`` ``klarnapaynow`` ``klarnasliceit`` ``mybank``
    ``paypal`` ``paysafecard`` ``przelewy24`` ``sofort``
 
