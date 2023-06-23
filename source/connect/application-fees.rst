@@ -6,18 +6,20 @@ In this set-up the connected account pays their own Mollie payment fees, receive
 refunds and chargebacks. If you want to split a payment with another party (for instance if you are a marketplace), 
 we offer :doc:`Split payments </connect/splitting-payments>`.
 
-:: **Example use case**
-A ticketing platform wants to charge a fee per successful payment to each connected theatre. In this case, each theatre has an account
- with Mollie, and they have the ticketing platform’s OAuth app authorized to create payments on their behalf.
-The ticketing platform can add an application fee to each payment. When the payment is successful, the fee specified in the application 
-fee is automatically transferred from the theatre’s account to the platforms account. Note that the ticketing platform itself is 
-responsible for invoicing the theatres for the incurred Application fees, and for handling VAT.
+.. note::
+      A ticketing platform wants to charge a fee per successful payment to each connected theatre. In this case, each theatre has an account
+      with Mollie, and they have the ticketing platform’s OAuth app authorized to create payments on their behalf.
+
+      The ticketing platform can add an application fee to each payment. When the payment is successful, the fee specified in the application
+      fee is automatically transferred from the theatre’s account to the platforms account. 
+      
+      Note that the ticketing platform itself is responsible for invoicing the theatres for the incurred Application fees, and for handling VAT.
 
 Enabling application fees
 -------------------------
 In order to be able to charge application fees with your app, you must first register to become an app developer. This can be
- done from the `Dashboard <https://www.mollie.com/dashboard/developers/applications>`_. When you sign the developer agreement,
- application fees will automatically be available.
+done from the `Dashboard <https://www.mollie.com/dashboard/developers/applications>`_. When you sign the developer agreement,
+application fees will automatically be available.
 
 How to create an application fee
 --------------------------------
@@ -66,10 +68,10 @@ They are created by passing additional parameters to the
 
 Testing application fees
 ------------------------
-You can submit the applicationFee parameter in test mode. The application fee will be visible in the payment details
- in the dashboard of the transaction owner. However, the application fee is not added to the balance if the payment 
- was created in test mode. It is advisable to do test payments with application fees in a live environment to verify
- the correct implementation of application fees.
+You can submit the `applicationFee` parameter in test mode. The application fee will be visible in the payment details
+in the dashboard of the transaction owner. However, the application fee is not added to the balance if the payment 
+was created in test mode. It is advisable to do test payments with application fees in a live environment to verify
+the correct implementation of application fees.
 
 You cannot use application fees with the same organization on which you created the oAuth application. In order to test 
 or use application fees, you need to create another organization.
@@ -79,26 +81,25 @@ or use application fees, you need to create another organization.
 
 Maximum application fees
 ------------------------
-| *Payments API*
-| Any application fee has a maximum as sufficient funds need to be available to pay the payment fee. 
-| The maximum is related to the payment amount and the maximum can be calculated as following: 
-|
-| .. math::
-| 
-| Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
-|
-| Example calculation 
-| 
-| The connected account of the ticket platforms has a payment of 10 euro:
-| Max application fee = 10 - (1.21 x (0.29 + 0.05*10)) = 10 - 0.895 = 9.105
-|
-| The minimum amount is €0.01.
-|
-| *Orders API*
-|
-| The maximum application fee per payment is 10% of the total amount, up to a maximum of €2.00. If a higher maximum is
-| required for your business, you can request this via Mollie's `customer service <https://www.mollie.com/contact>`_ or
-| your account manager at Mollie.
+*Payments API*
+Any application fee has a maximum as sufficient funds need to be available to pay the payment fee. 
+The maximum is related to the payment amount and the maximum can be calculated as following: 
+
+.. note:: Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
+
+**Example calculation**
+
+The connected account of the ticket platforms has a payment of €10.-:
+
+Max application fee = €10 - (1.21 × (€0.29 + 0.05×€10)) = €10 - €0.895 = €9.105
+
+The minimum amount is €0.01.
+
+*Orders API*
+
+The maximum application fee per payment is 10% of the total amount, up to a maximum of €2.00. If a higher maximum is
+required for your business, you can request this via Mollie's `customer service <https://www.mollie.com/contact>`_ or
+your account manager at Mollie.
 
 Multicurrency
 -------------
@@ -106,4 +107,4 @@ Application fees are supported on all payments regardless of :doc:`currency </pa
 the application fee itself must always be created in your primary currency (i.e. the currency balance that you 
 have with Mollie.
 For example, assuming you’d charge roughly 10%, you must charge a €1.00 application fee on a US$10.00 payment if
- your primary balance is in euros. 
+your primary balance is in euros. 
