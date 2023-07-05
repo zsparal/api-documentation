@@ -14,8 +14,7 @@ Cancel order
 
 The order can only be canceled while:
 
-* the order doesn't have any open payments except for the methods ``banktransfer``, ``billie``, ``directdebit``, ``klarnapaylater``,
-  ``klarnapaynow``, and ``klarnasliceit``.
+* the order doesn't have any open payments.
 * the order's ``status`` field is either ``created``, ``authorized`` or ``shipping`` [#f1]_.
 
 #. In case of ``created``, all order lines will be canceled and the new order status will be ``canceled``.
