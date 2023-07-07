@@ -6,7 +6,9 @@ In this set-up the connected account pays their own Mollie payment fees, receive
 refunds and chargebacks. If you want to split a payment with another party (for instance if you are a marketplace), 
 we offer :doc:`Split payments </connect/splitting-payments>`.
 
-.. note::
+.. admonition::
+      **Example**
+
       A ticketing platform wants to charge a fee per successful payment to each connected theatre. In this case, each theatre has an account
       with Mollie, and they have the ticketing platform’s OAuth app authorized to create payments on their behalf.
 
@@ -85,13 +87,14 @@ Maximum application fees
 Any application fee has a maximum as sufficient funds need to be available to pay the payment fee. 
 The maximum is related to the payment amount and the maximum can be calculated as following: 
 
-.. note:: Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
+Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
 
-**Example calculation**
+.. admonition::
+   **Example Calculation**
 
-The connected account of the ticket platforms has a payment of €10.-:
+   The connected account of the ticket platforms has a payment of €10.-:
 
-Max application fee = €10 - (1.21 × (€0.29 + 0.05×€10)) = €10 - €0.895 = €9.105
+   Max application fee = €10 - (1.21 × (€0.29 + 0.05×€10)) = €10 - €0.895 = €9.105
 
 The minimum amount is €0.01.
 
