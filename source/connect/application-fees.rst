@@ -3,17 +3,17 @@ Receiving application fees
 An easy way to earn on a transaction is by charging an **Application fee** on any  incoming payments of a connected account.
 
 In this set-up the connected account pays their own Mollie payment fees, receives a Mollie invoice, and remains liable for potential 
-refunds and chargebacks. If you want to split a payment with another party (for instance if you are a marketplace), 
+refunds and chargebacks. If you want to split a payment with another party, for instance if you are a marketplace, 
 we offer :doc:`Split payments </connect/splitting-payments>`.
 
 .. admonition::
       **Example**
 
-      A ticketing platform wants to charge a fee per successful payment to each connected theatre. In this case, each theatre has an account
+      A ticketing platform wants to charge a fee per successful payment to each connected theatre. In this case, each theater has an account
       with Mollie, and they have the ticketing platform’s OAuth app authorized to create payments on their behalf.
 
       The ticketing platform can add an application fee to each payment. When the payment is successful, the fee specified in the application
-      fee is automatically transferred from the theatre’s account to the platforms account. 
+      fee is automatically transferred from the theater’s account to the platform's account. 
       
       Note that the ticketing platform itself is responsible for invoicing the theatres for the incurred Application fees, and for handling VAT.
 
@@ -70,9 +70,11 @@ They are created by passing additional parameters to the
 
 Testing application fees
 ------------------------
-You can submit the `applicationFee` parameter in test mode. The application fee will be visible in the payment details
-in the dashboard of the transaction owner. However, the application fee is not added to the balance if the payment 
-was created in test mode. It is advisable to do test payments with application fees in a live environment to verify
+You can submit the ``applicationFee`` parameter in test mode. 
+
+The application fee will be visible in the payment details in the dashboard of the transaction owner. 
+However, the application fee is not added to the balance if the payment was created in test mode. 
+It is advisable to do test payments with application fees in a live environment to verify
 the correct implementation of application fees.
 
 You cannot use application fees with the same organization on which you created the oAuth application. In order to test 
@@ -83,9 +85,15 @@ or use application fees, you need to create another organization.
 
 Maximum application fees
 ------------------------
+
 *Payments API*
-Any application fee has a maximum as sufficient funds need to be available to pay the payment fee. 
-The maximum is related to the payment amount and the maximum can be calculated as following: 
+
+Since Mollie usually also charges a fee on every payment, there is a limit to the maximum application fee amount.
+
+The Mollie fee charged will depend on which method the consumer selects. To keep things simple however, we reserve 
+€0,29 + 5% of the payment amount for us to be able to charge the Mollie fee, multiplied by 21% to cover Dutch VAT.
+
+This means the maximum can be calculated as follows:
 
 Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
 
