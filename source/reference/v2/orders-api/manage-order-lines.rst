@@ -135,7 +135,7 @@ its type and a ``data`` field that contains the operation's payload.
          The ``discountAmount`` must be a positive value, and is deducted from the
          ``(unitPrice × quantity)`` to calculate the ``totalAmount`` of an order line.
 
-         See :doc:Handling discounts </orders/handling-discounts> for more information.
+         See :doc:`Handling discounts </orders/handling-discounts>` for more information.
 
          .. parameter:: currency
             :type: string
@@ -220,7 +220,8 @@ its type and a ``data`` field that contains the operation's payload.
       :condition: required
 
       The data object that contains the order line's details for an ``add`` operation. The object should contain all
-      fields that are required to create a new order line, which is the same as when you :doc:create an order </reference/v2/orders-api/create-order>.
+      fields that are required to create a new order line, which is the same as when you
+      :doc:`create an order </reference/v2/orders-api/create-order>`.
 
       .. parameter:: type
          :type: string
@@ -232,10 +233,10 @@ its type and a ``data`` field that contains the operation's payload.
          or ``surcharge``.
 
          For more information about ``discount``, ``store_credit``, and ``gift_card types``, see
-         :doc:Handling discounts </orders/handling-discounts>.
+         :doc:`Handling discounts </orders/handling-discounts>`.
 
-         To sell digitally delivered goods through PayPal, request PayPal to ``enable this on your account``
-         <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>_.
+         To sell digitally delivered goods through PayPal, request PayPal to
+         `enable this on your account <https://developer.paypal.com/docs/classic/express-checkout/digital-goods/IntroducingExpressCheckoutDG/>`_.
 
       .. parameter:: category
          :type: string
@@ -307,7 +308,7 @@ its type and a ``data`` field that contains the operation's payload.
          The ``discountAmount`` must be a positive value, and is deducted from the ``(unitPrice × quantity)``
          to calculate the ``totalAmount`` of an order line.
 
-         See :doc:Handling discounts </orders/handling-discounts> for more information.
+         See :doc:`Handling discounts </orders/handling-discounts>` for more information.
 
          .. parameter:: currency
             :type: string
@@ -414,12 +415,13 @@ its type and a ``data`` field that contains the operation's payload.
          or canceled, the amounts already shipped or canceled, and the quantity that you want to cancel.
 
          If the ``amount`` is not specified in the request, Mollie automatically calculates the amount. In case it
-         can't calculate the amount automatically, Mollie returns an error that contains the ``extra.minimumAmount`` and ``extra.maximumAmount`` properties, enabling you to choose the applicable amount.
+         can't calculate the amount automatically, Mollie returns an error that contains the ``extra.minimumAmount`` and
+         ``extra.maximumAmount`` properties, enabling you to choose the applicable amount.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
-To use :doc:`organization access tokens </overview/authentication>` or to create an :doc:`OAuth app </connect/overview>`,
-enable test mode using the testmode parameter.
+To use :doc:`organization access tokens </overview/authentication>` or to create an
+:doc:`OAuth app </connect/overview>`, enable test mode using the testmode parameter.
 
 .. parameter:: testmode
    :type: boolean
