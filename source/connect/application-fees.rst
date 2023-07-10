@@ -91,18 +91,18 @@ Maximum application fees
 Since Mollie usually also charges a fee on every payment, there is a limit to the maximum application fee amount.
 
 The Mollie fee charged will depend on which method the consumer selects. To keep things simple however, we reserve 
-€0,29 + 5% of the payment amount for us to be able to charge the Mollie fee, multiplied by 21% to cover Dutch VAT.
+€0,35 + 6% of the payment amount for us to be able to charge the Mollie fee.
 
 This means the maximum can be calculated as follows:
 
-Max application fee = amount of the payment - 1.21 × (0.29 + (0.05 × the amount of the payment))
+Max application fee = amount of the payment - 0.35 + (0.06 × the amount of the payment)
 
 .. admonition::
    **Example Calculation**
 
    The connected account of the ticket platforms has a payment of €10.-:
 
-   Max application fee = €10 - (1.21 × (€0.29 + 0.05×€10)) = €10 - €0.895 = €9.105
+   Max application fee = €10 - (€0.35 + 0.06×€10) = €10 - €0.95 = €9.05
 
 The minimum amount is €0.01.
 
