@@ -487,6 +487,7 @@ Example
 
   .. code-block:: php
      :linenos:
+
      $mollie = new \Mollie\Api\MollieApiClient;
      $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
 
