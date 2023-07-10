@@ -765,8 +765,8 @@ With Mollie Connect you can charge fees on payments that are processed through y
    :condition: optional
    :collapse: true
 
-   .. note:: This functionality is currently in closed beta. Contact our partner management team if you are interested
-             in testing this functionality with us.
+   .. note:: Split Payments are not enabled by default. To enable them for your organization, reach out to our partner
+            management team.
 
    An optional routing configuration which enables you to route a successful payment, or part of the payment, to one or
    more connected accounts. Additionally, you can schedule (parts of) the payment to become available on the connected
