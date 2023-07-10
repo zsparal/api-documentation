@@ -485,56 +485,56 @@ Example
                 ]
             }'
 
-  .. code-block:: php
-     :linenos:
+   .. code-block:: php
+      :linenos:
 
-     <?php
-     $mollie = new \Mollie\Api\MollieApiClient;
-     $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
+      <?php
+      $mollie = new \Mollie\Api\MollieApiClient;
+      $mollie->setApiKey('test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM');
 
-     $addOrderLine = [
-         "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::ADD,
-         "data" => [
-             "type" => \Mollie\Api\Types\OrderLineType::TYPE_DIGITAL,
-             "name" => "Adding new orderline",
-             "quantity" => 2,
-             "sku" => "12345679",
-             "totalAmount" => [
-                 "currency" => "EUR",
-                 "value" => "30.00",
-             ],
-             "unitPrice" => [
-                 "currency" => "EUR",
-                 "value" => "15.00",
-             ],
-             "vatAmount" => [
-                 "currency" => "EUR",
-                 "value" => "0.00",
-             ],
-             "vatRate" => "0.00",
-         ],
-     ];
-     $updateOrderLine = [
-         "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::UPDATE,
-         "data" => [
-             "id" => "odl_1.1l9vx0",
-             "name" => "New order line name",
-         ],
-     ];
-     $cancelOrderLine = [
-         "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::CANCEL,
-         "data" => [
-             "id" => "odl_1.4hqjw6",
-         ],
-     ];
+      $addOrderLine = [
+          "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::ADD,
+          "data" => [
+              "type" => \Mollie\Api\Types\OrderLineType::TYPE_DIGITAL,
+              "name" => "Adding new orderline",
+              "quantity" => 2,
+              "sku" => "12345679",
+              "totalAmount" => [
+                  "currency" => "EUR",
+                  "value" => "30.00",
+              ],
+              "unitPrice" => [
+                  "currency" => "EUR",
+                  "value" => "15.00",
+              ],
+              "vatAmount" => [
+                  "currency" => "EUR",
+                  "value" => "0.00",
+              ],
+              "vatRate" => "0.00",
+          ],
+      ];
+      $updateOrderLine = [
+          "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::UPDATE,
+          "data" => [
+              "id" => "odl_1.1l9vx0",
+              "name" => "New order line name",
+          ],
+      ];
+      $cancelOrderLine = [
+          "operation" => \Mollie\Api\Types\OrderLineUpdateOperationType::CANCEL,
+          "data" => [
+              "id" => "odl_1.4hqjw6",
+          ],
+      ];
 
-     $operations = [
-         $addOrderLine,
-         $updateOrderLine,
-         $cancelOrderLine,
-     ];
+      $operations = [
+          $addOrderLine,
+          $updateOrderLine,
+          $cancelOrderLine,
+      ];
 
-     $order = $mollie->orderLines->updateMultiple('ord_pbjz8x', $operations);
+      $order = $mollie->orderLines->updateMultiple('ord_pbjz8x', $operations);
 
 Response
 ^^^^^^^^
