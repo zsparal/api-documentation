@@ -6,6 +6,10 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+July 2023
+=========
+- Changed the :doc:`/reference/v2/terminals-api/get-terminal` endpoint from `Coming Soon` to `Beta`.
+
 June 2023
 =========
 - Added Billie specific parameters to :ref:`payment-method-specific-parameters`.
