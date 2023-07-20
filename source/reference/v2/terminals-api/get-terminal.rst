@@ -2,7 +2,7 @@ Get terminal
 ============
 .. api-name:: Terminals API
    :version: 2
-   :coming-soon: true
+   :beta: true
 
 .. endpoint::
    :method: GET
