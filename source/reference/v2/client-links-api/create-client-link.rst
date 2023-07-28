@@ -4,8 +4,7 @@ Create client link
    :version: 2
    :beta: true
 
-.. note:: The Client Links API is currently in closed beta. Contact our partner management team if you are interested in
-   testing this functionality with us.
+.. note:: The Client Links API is in closed beta and only available to selected partners. Please contact your partner manager / partners@mollie.com if you want to implement this.
 
 .. endpoint::
    :method: POST
