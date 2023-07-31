@@ -99,13 +99,6 @@ Response
 
    The date and time the terminal was last updated, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
 
-.. parameter:: deactivatedAt
-   :type: datetime
-   :condition: optional
-
-   The date and time the terminal was deactivated, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. This
-   parameter is omitted if the terminal is not deactivated yet.
-
 .. parameter:: _links
    :type: object
 
@@ -188,8 +181,7 @@ Response
        "currency": "EUR",
        "description": "Terminal #12345",
        "createdAt": "2022-02-12T11:58:35.0Z",
-       "updatedAt": "2022-11-15T13:32:11+00:00",
-       "deactivatedAt": "2022-02-12T12:13:35.0Z",
+       "updatedAt": "2022-11-15T13:32:11.0Z",
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/terminals/term_7MgL4wea46qkRcoTZjWEH",

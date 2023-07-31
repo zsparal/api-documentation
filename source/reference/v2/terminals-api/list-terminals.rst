@@ -188,8 +188,7 @@ Response
                    "currency": "EUR",
                    "description": "Terminal #12345",
                    "createdAt": "2022-02-12T11:58:35.0Z",
-                   "updatedAt": "2022-11-15T13:32:11+00:00",
-                   "deactivatedAt": "2022-02-12T12:13:35.0Z",
+                   "updatedAt": "2022-11-15T13:32:11.0Z",
                    "_links": {
                        "self": {
                            "href": "https://api.mollie.com/v2/terminals/term_7MgL4wea46qkRcoTZjWEH",
