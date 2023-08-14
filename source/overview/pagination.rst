@@ -87,6 +87,25 @@ Request
           $previous_payments = $payments->previous();
       }
 
+  .. code-block:: python
+      :linenos:
+
+      from mollie.api.client import Client
+
+      mollie_client = Client()
+      mollie_client.set_api_key("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM")
+
+      # Get the first page
+      payments = mollie_client.payments.list()
+
+      # Get the next page
+      if payments.has_next():
+        next_payments = payments.get_next()
+
+      # Get the previous page
+      if payments.has_previous():
+        previous_payments = payments.get_previous()
+
 Response
 """"""""
 .. code-block:: none
