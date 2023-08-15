@@ -87,7 +87,7 @@ Request
           $previous_payments = $payments->previous();
       }
 
-  .. code-block:: python
+   .. code-block:: python
       :linenos:
 
       from mollie.api.client import Client
