@@ -398,6 +398,12 @@ Response
 
       The API resource URL of the order this payment was created for. Not present if not created for an order.
 
+   .. parameter:: terminal
+      :type: URL object
+      :condition: optional
+
+      The API resource URL of the terminal this payment was created for. Only present for a point of sale payment.
+
 Response parameters for recurring payments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 .. parameter:: sequenceType
@@ -922,6 +928,53 @@ paysafecard
       :type: string
 
       The consumer identification supplied when the payment was created.
+
+Point of sale
+"""""""""""""
+.. parameter:: details
+   :type: object
+   :collapse-children: false
+
+   An object with payment details.
+
+   .. parameter:: terminalId
+      :type: string
+
+      The identifier referring to the terminal this payment was created for. For example, ``term_utGtYu756h``.
+
+   .. parameter:: cardNumber
+      :type: string
+
+      Only available if the payment has been completed - The last four digits of the card number.
+
+   .. parameter:: cardFingerprint
+      :type: string
+
+      Only available if the payment has been completed - Unique alphanumeric representation of card, usable for
+      identifying returning customers.
+
+   .. parameter:: cardAudience
+      :type: string
+
+      Only available if the payment has been completed and if the data is available - The card's target audience.
+
+      Possible values: ``consumer`` ``business`` ``null``
+
+   .. parameter:: cardLabel
+      :type: string
+
+      Only available if the payment has been completed - The card's label. Note that not all labels can be processed
+      through Mollie.
+
+      Possible values: ``American Express`` ``Carta Si`` ``Carte Bleue`` ``Dankort`` ``Diners Club`` ``Discover``
+      ``JCB`` ``Laser`` ``Maestro`` ``Mastercard`` ``Unionpay`` ``Visa`` ``null``
+
+   .. parameter:: cardCountryCode
+      :type: string
+
+      Only available if the payment has been completed - The
+      `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ country code of the country the card was
+      issued in. For example: ``BE``.
 
 SEPA Direct Debit
 """""""""""""""""
