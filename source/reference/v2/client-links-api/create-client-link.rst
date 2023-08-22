@@ -199,7 +199,7 @@ Response
        "resource": "client-link",
        "_links": {
            "clientLink": {
-               "href": "https://my.mollie.com/dashboard/client-link/finalize/csr_vZCnNQsV2UtfXxYifWKWH",
+               "href": "https://my.mollie.com/dashboard/client-link/csr_vZCnNQsV2UtfXxYifWKWH",
                "type": "text/html"
            },
            "documentation": {
