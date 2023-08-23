@@ -6,6 +6,10 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+August 2023
+===========
+- Added Point of sale payment details.
+
 July 2023
 =========
 - Changed the :doc:`/reference/v2/terminals-api/get-terminal` endpoint from `Coming Soon` to `Beta`.
