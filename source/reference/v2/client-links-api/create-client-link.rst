@@ -154,7 +154,7 @@ Example
 .. code-block:: none
    :linenos:
 
-   https://my.mollie.com/dashboard/client-link/finalize/csr_vZCnNQsV2UtfXxYifWKWH?client_id=app_j9Pakf56Ajta6Y65AkdTtAv&state=decafbad&scope=onboarding.read+organization.read+payments.write+payments.read+profiles.write
+   https://my.mollie.com/dashboard/client-link/finalize/csr_vZCnNQsV2UtfXxYifWKWH?client_id=app_j9Pakf56Ajta6Y65AkdTtAv&state=decafbad&scope=onboarding.read+organizations.read+payments.write+payments.read+profiles.write
 
 In case of an invalid value, your customer will be redirected to the redirect URI set for your OAuth application with
 the ``error`` and ``error_description`` query parameters added.
@@ -199,7 +199,7 @@ Response
        "resource": "client-link",
        "_links": {
            "clientLink": {
-               "href": "https://my.mollie.com/dashboard/client-link/finalize/csr_vZCnNQsV2UtfXxYifWKWH",
+               "href": "https://my.mollie.com/dashboard/client-link/csr_vZCnNQsV2UtfXxYifWKWH",
                "type": "text/html"
            },
            "documentation": {
