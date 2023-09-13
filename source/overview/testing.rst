@@ -91,3 +91,5 @@ card numbers below to test different card brands.
    +------------------+-------------------------+-------------+------+
    | VISA             | ``4543 4740 0224 9996`` | Any         | Any  |
    +------------------+-------------------------+-------------+------+
+
+**Note:** The card brand above allows you to test the dynamic display of the card logo in the card number field. For the time being, when processed the test payment will default to Mastercard always.
