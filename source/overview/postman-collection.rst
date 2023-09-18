@@ -9,3 +9,6 @@ collection via the GitHub repository below.
 
 - `Get the Mollie Postman collection <https://github.com/mollie/postman-collection>`_
 - `Get Postman <https://postman.com>`_
+
+.. warning:: Never include confidential information such as passwords, authentication keys, or OAuth tokens in publicly
+             accessible Postman workspaces or collections.
