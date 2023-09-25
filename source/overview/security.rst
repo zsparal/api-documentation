@@ -37,5 +37,5 @@ security guarantees stay in effect.
 Reporting vulnerabilities
 -------------------------
 If you believe you have found a security issue in our product or service, please notify us as soon as possible by
-emailing us at `security@mollie.com <mailto:security@mollie.com>`_. For more information on this program, please refer
-to our `Responsible Disclosure Policy <https://www.mollie.com/responsible-disclosure>`_.
+emailing us at `responsible-disclosure@mollie.com <mailto:responsible-disclosure@mollie.com>`_. For more information on
+this program, please refer to our `Responsible Disclosure Policy <https://www.mollie.com/responsible-disclosure>`_.
