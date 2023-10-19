@@ -59,7 +59,7 @@ Request
       <?php
       $mollie = new \Mollie\Api\MollieApiClient();
       $mollie->setAccessToken("access_vR6naacwfSpfaT5CUwNTdV5KsVPJTNjURkgBPdvW");
-      $balance = $mollie->balances->getPrimary();
+      $balance = $mollie->balances->primary();
 
 Response
 ^^^^^^^^
