@@ -50,6 +50,7 @@ Embedding of related resources
 This endpoint also allows for embedding additional information by appending the following values via the ``embed``
 query string parameter.
 
+* ``captures`` Include all :doc:`captures </reference/v2/captures-api/get-capture>` created for the payment.
 * ``refunds`` Include all :doc:`refunds </reference/v2/refunds-api/get-payment-refund>` created for the payment.
 * ``chargebacks`` Include all :doc:`chargebacks </reference/v2/chargebacks-api/get-payment-chargeback>` issued for the
   payment.
@@ -476,6 +477,37 @@ Response parameters for recurring payments
       :condition: optional
 
       The API resource URL of the customer this payment belongs to. Not present if not linked to a customer.
+
+Response parameters for pre-authorized payments
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. parameter:: captureMode
+   :type: string
+   :condition: optional
+
+   Indicates whether the capture will be scheduled automatically or not. Set to ``manual`` for payments that can be
+   captured manually using the :doc:`Create capture </reference/v2/captures-api/create-capture>` endpoint.
+
+   Set to ``automatic`` by default, which indicates the payment will be captured automatically, without having to
+   separately request it.
+
+   Possible values: ``automatic`` ``manual``
+
+.. parameter:: captureDelay
+   :type: string
+   :condition: optional
+
+   Indicates the interval to wait before the payment is captured, for example ``8 hours`` or ``2 days``. The capture
+   delay will be added to the date and time the payment became authorized.
+
+   Possible values: ``... hours`` ``... days``
+
+.. parameter:: captureBefore
+   :type: datetime
+   :condition: optional
+
+   Indicates the datetime on which the merchant has to have captured the payment, before we can no longer guarantee a
+   successful capture, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format. This parameter is omitted if the
+   payment is not authorized (yet).
 
 Payment method-specific response parameters
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
