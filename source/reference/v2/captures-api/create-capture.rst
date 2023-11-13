@@ -1,5 +1,8 @@
 Create capture
 =====================
+.. customize-document-title::
+   :beta: true
+
 .. api-name:: Captures API
    :version: 2
 
