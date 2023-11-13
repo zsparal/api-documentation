@@ -205,6 +205,8 @@ providing a ``mandateId``. See our guide on :doc:`Recurring </payments/recurring
 
 Parameters for pre-authorized payments
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+.. note:: Pre-authorization is currently in beta.
+
 Pre-authorized payments are created through the Payments API by providing a ``captureMode``. With the ``manual`` capture
 mode, you decide when to capture the funds. See our guide on
 :doc:`Placing a hold for a payment </payments/place-a-hold-for-a-payment>` for more information.
