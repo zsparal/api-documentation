@@ -1,5 +1,5 @@
 Create capture
-=====================
+==============
 .. customize-document-title::
    :beta: true
 
