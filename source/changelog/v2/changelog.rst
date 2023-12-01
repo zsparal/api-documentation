@@ -6,6 +6,13 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
+November 2023
+=============
+- Added support for manual captures. See :doc:`placing a hold on a payment </payments/place-a-hold-for-a-payment>`
+- Added parameters for pre-authorizations on the :doc:`/reference/v2/payments-api/create-payment` endpoint
+- Added the :doc:`/reference/v2/captures-api/create-capture` endpoint
+- Added ``status`` and ``metadata`` to the :doc:`/reference/v2/captures-api/get-capture` endpoint
+
 August 2023
 ===========
 - Added Point of sale payment details.

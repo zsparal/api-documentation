@@ -67,6 +67,13 @@ Response
 
    The amount captured.
 
+.. parameter:: status
+   :type: string
+
+   The capture's status.
+
+   Possible values: ``pending`` ``succeeded`` ``failed``
+
 .. parameter:: settlementAmount
    :type: amount object
 
@@ -101,6 +108,13 @@ Response
    :type: datetime
 
    The capture's date and time of creation, in `ISO 8601 <https://en.wikipedia.org/wiki/ISO_8601>`_ format.
+
+.. parameter:: metadata
+   :type: mixed
+   :condition: optional
+
+   The optional metadata you provided upon capture creation. Metadata can for example 
+   be used to link an bookkeeping ID to a capture.
 
 .. parameter:: _links
    :type: object
@@ -205,6 +219,7 @@ Response
            "value": "1027.99",
            "currency": "EUR"
        },
+       "status": "succeeded",
        "settlementAmount": {
            "value": "1027.99",
            "currency": "EUR"
@@ -213,6 +228,9 @@ Response
        "shipmentId": "shp_3wmsgCJN4U",
        "settlementId": "stl_jDk30akdN",
        "createdAt": "2018-08-02T09:29:56+00:00",
+       "metadata": {
+           "bookkeeping_id": 12345
+       },
        "_links": {
            "self": {
                "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT",
