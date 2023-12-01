@@ -6,8 +6,10 @@ Changelog
 Occasionally, we will add new resources, new fields, or new possible values to existing fields to the v2 Mollie API. All
 changes are documented here.
 
-November 2023
+December 2023
 =============
+We are introducing a new beta capability for card payments. It is now possible to place a hold on a card and at a later time capture the funds. This can reduce the risk for chargebacks by only capturing when you are sure of the final payment amount.
+
 - Added support for manual captures. See :doc:`placing a hold on a payment </payments/place-a-hold-for-a-payment>`
 - Added parameters for pre-authorizations on the :doc:`/reference/v2/payments-api/create-payment` endpoint
 - Added the :doc:`/reference/v2/captures-api/create-capture` endpoint
