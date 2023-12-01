@@ -20,7 +20,7 @@ that have this flow are **Klarna Pay now**, **Klarna Pay later** and **Klarna Sl
 Parameters
 ----------
 Replace ``paymentId`` in the endpoint URL by the payment's ID, and replace ``id`` by the capture's ID. For example:
-``/v2/payments/tr_7UhSN1zuXS/captures/cpt_4qqhO89gsT``.
+``/v2/payments/tr_7UhSN1zuXS/captures/cpt_mNepDkEtco6ah3QNPUGYH``.
 
 Access token parameters
 ^^^^^^^^^^^^^^^^^^^^^^^
@@ -53,7 +53,7 @@ Response
 .. parameter:: id
    :type: string
 
-   The capture's unique identifier, for example ``cpt_4qqhO89gsT``.
+   The capture's unique identifier, for example ``cpt_mNepDkEtco6ah3QNPUGYH``.
 
 .. parameter:: mode
    :type: string
@@ -155,7 +155,7 @@ Example
    .. code-block:: bash
       :linenos:
 
-       curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT \
+       curl -X GET https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_mNepDkEtco6ah3QNPUGYH \
            -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
    .. code-block:: php
@@ -166,7 +166,7 @@ Example
       $mollie->setApiKey("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM");
 
       $payment = $mollie->payments->get("tr_WDqYK6vllg");
-      $capture = $payment->getCapture("cpt_4qqhO89gsT");
+      $capture = $payment->getCapture("cpt_mNepDkEtco6ah3QNPUGYH");
 
    .. code-block:: python
       :linenos:
@@ -177,7 +177,7 @@ Example
       mollie_client.set_api_key("test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM")
 
       payment = mollie_client.payments.get("tr_WDqYK6vllg")
-      capture = payment.captures.get("cpt_4qqhO89gsT")
+      capture = payment.captures.get("cpt_mNepDkEtco6ah3QNPUGYH")
 
    .. code-block:: ruby
       :linenos:
@@ -189,7 +189,7 @@ Example
       end
 
       capture = Mollie::Payment::Capture.get(
-        'cpt_4qqhO89gsT',
+        'cpt_mNepDkEtco6ah3QNPUGYH',
         payment_id: 'tr_WDqYK6vllg'
       )
 
@@ -199,7 +199,7 @@ Example
       const { createMollieClient } = require('@mollie/api-client');
       const mollieClient = createMollieClient({ apiKey: 'test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM' });
 
-      const capture = await mollieClient.paymentCaptures.get('cpt_4qqhO89gsT', {
+      const capture = await mollieClient.paymentCaptures.get('cpt_mNepDkEtco6ah3QNPUGYH', {
         paymentId: 'tr_WDqYK6vllg'
       });
 
@@ -213,7 +213,7 @@ Response
 
    {
        "resource": "capture",
-       "id": "cpt_4qqhO89gsT",
+       "id": "cpt_mNepDkEtco6ah3QNPUGYH",
        "mode": "live",
        "amount": {
            "value": "1027.99",
@@ -233,7 +233,7 @@ Response
        },
        "_links": {
            "self": {
-               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_4qqhO89gsT",
+               "href": "https://api.mollie.com/v2/payments/tr_WDqYK6vllg/captures/cpt_mNepDkEtco6ah3QNPUGYH",
                "type": "application/hal+json"
            },
            "payment": {
