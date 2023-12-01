@@ -61,7 +61,7 @@ a reduced amount. If you leave the amount field empty, Mollie will capture the f
       -d "amount[value]=10.00" \
       -d "description=Capture for order #12345"
 
-Captures have their own status. We will call your webhook the status changes.
+Captures have their own status. We will call your webhook when the status changes.
 
 *pending*
   The capture is created but is not yet processed.
@@ -86,13 +86,14 @@ Canceling an authorization can also be performed in the Mollie dashboard.
    curl -X DELETE https://api.mollie.com/v2/payments/tr_... \
       -H "Authorization: Bearer test_dHar4XY7LxsDOtmnkVtjNVWXLSlXsM"
 
-It's important to notice that Mollie will process your Cancel request but it's up to the Issuing bank if, and when, to
-process the cancel payment; there's no guarantee that the hold will be released or when it will be released. If you
-cancel the payment, the payment status will change to `canceled`.
+Mollie will do its best to process cancelation requests, but we cannot guarantee cancelation requests will succeed. 
+It is up to the issuing bank if and when the hold will be released.
+
+If the cancelation does succeed, the payment status will change to  `canceled`.
 
 Authorization expiration window
 -------------------------------
-An authorized payment is a guaranteed amount yet authorizations are generally not meant to remain open for longer than
+An authorized payment is a guaranteed amount, yet authorizations are generally not meant to remain open for longer than
 a number of days. The exact allowed authorization window depends on the type of card your consumer used — the different
 card schemes will have slightly different rules.
 
