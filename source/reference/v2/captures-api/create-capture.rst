@@ -1,9 +1,9 @@
 Create capture
 ==============
-.. note:: Creating captures via this API is currently in beta.
 
 .. api-name:: Captures API
    :version: 2
+   :beta: true
 
 .. endpoint::
    :method: POST
