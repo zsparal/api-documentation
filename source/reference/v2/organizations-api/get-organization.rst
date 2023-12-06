@@ -39,6 +39,11 @@ Response
 
    The name of the organization.
 
+.. parameter:: email
+   :type: string
+
+   The email address associated with the organization.
+
 .. parameter:: locale
    :type: string
 
