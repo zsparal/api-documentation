@@ -2,9 +2,6 @@ Create client link
 ==================
 .. api-name:: Client Links API
    :version: 2
-   :beta: true
-
-.. note:: The Client Links API is in closed beta and only available to selected partners. Please contact your partner manager / partners@mollie.com if you want to implement this.
 
 .. endpoint::
    :method: POST
@@ -15,36 +12,10 @@ Create client link
    :organization_access_tokens: true
    :oauth: false
 
-Link a new organization to your :doc:`OAuth application </connect/getting-started>`, in effect creating a new client.
-This is a two step process.
+Link a new or existing organization to your :doc:`OAuth application </connect/getting-started>`, in effect creating a new client. The response contains a ``clientLink`` 
+where you should redirect your customer.
 
-First, you must send your customer's details to this endpoint. You can provide data that will be pre-filled during
-onboarding.
-
-This endpoint's response will contain a special ``clientLink`` link where you are expected to redirect your customer.
-This is the second step.
-
-To the ``clientLink`` link, you must then add the OAuth details of your application, the ``client_id``, ``scope`` you
-want to request et cetera. These are the same parameters the :doc:`/reference/oauth2/authorize` endpoint takes. All
-accepted parameters are :ref:`listed below <clientlink-parameters>`.
-
-When you redirect your customer, an organization will be created, your OAuth application will be authorized
-automatically and your customer will be logged in to their (newly created) Mollie Dashboard.
-
-If the organization already exists, no new organization will be created. Instead the OAuth Authorize screen will be
-shown to your customer, allowing them to grant the requested authorizations for their existing organization to your
-OAuth application.
-
-Finally, your customer will be redirected back to you (to the ``redirect_uri`` you specified when creating your OAuth
-application). Then, the normal :doc:`OAuth Authorize flow </connect/getting-started>` where you exchange an `auth
-token` for an `app access token` can be followed.
-
-Once you have received the `app access token` for the organization, you can perform any other API calls on behalf of the
-(newly created) organization using OAuth.
-
-Your next step should probably be to create a Profile using the :doc:`/reference/v2/profiles-api/create-profile`
-endpoint and :doc:`enable the payment methods </reference/v2/profiles-api/enable-method>` you want your customer to
-use with Mollie.
+You can find more information on how to implement the Create Client Link API :doc:`here </connect/onboarding>`.
 
 Parameters
 ----------

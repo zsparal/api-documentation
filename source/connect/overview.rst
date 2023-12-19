@@ -1,51 +1,38 @@
 Mollie Connect
 ==============
-**Mollie Connect** is a set of APIs and tools that allows you to connect multiple Mollie accounts together. This toolkit
-can be used for varying purposes, including:
+**Mollie Connect** provides an optimal solution for setting up payments for platforms and marketplaces. The Connect product serves various purposes, including:
 
-* Automating or white-labeling the :doc:`Mollie onboarding <onboarding>` for your customers
-* Allowing your app to view your customer's Mollie data
-* Enabling your app to manage your customer's Mollie account
-* Allowing your app to create payments, orders and refunds on behalf of your customer
-* Charging fees on payments processed through your app
-* Routing and splitting payments between connected accounts
-* Receiving referral commissions for your customers' payment volumes
+* Allowing your App to manage your customer’s accounts and access their data. 
+* Automating and co-branding the :doc:`Mollie onboarding process <onboarding>` for your customers.
+* Enabling your app to create payments, orders, and refunds on behalf of your customer.
+* Monetizing payments by adding a surcharge or receiving a commission.
 
-Depending on the use case, accounts will be connected either through `OAuth <https://en.wikipedia.org/wiki/OAuth>`_ or,
-for platforms and resellers, automatically during onboarding.
-
-If you are not familiar with OAuth: it is an open standard that our API supports, which allows your app to access data
-from a connected account with their consent. This prevents having to manually exchange API keys. For example, with your
-user's consent, using OAuth you can call the Invoices API on behalf of your user to retrieve **their** Mollie invoice.
+All these use cases are facilitated through the use of OAuth. If you are unfamiliar with OAuth, it is an open standard supported 
+by our API that allows your app to access data from a connected account with the user's consent. This eliminates the need 
+for manual exchange of API keys. For example, you can utilize OAuth to call the Balances API on behalf of your user to retrieve 
+their open balance in real-time.
 
 Getting started
 ---------------
-In virtually all use cases you should start by learning a bit about how OAuth works at Mollie, and then registering an
-OAuth app. The following guide offers detailed instructions.
+Regardless of the use case, it is essential to start by understanding how OAuth functions at Mollie and then registering an OAuth app.
 
-:doc:`/connect/getting-started`
+OAuth is an open standard for access delegation, a prerequisite to benefit from the Mollie Connect product offering. For detailed 
+information on creating your OAuth app, refer to the :doc:`Getting started with Mollie Connect </connect/getting-started>` guide.
 
 Onboarding your customers
 -------------------------
-If your customers do not yet have a Mollie account, you can either:
+If your customers don’t have a Mollie account, you can:
 
-* Have them sign up by themselves, and have them install your app at a later point
-* Sign them up yourself and have them complete the onboarding in the Mollie Dashboard
-* Offer a complete white-label onboarding experience in your app, which includes creating organizations for them using
-  an API
+* Have them sign up individually and install your app later,
+* Create an account on their behalf and let them complete the onboarding in the Mollie Dashboard,
+* Offer a co-branded onboarding experience in your app, which includes creating organizations for them using an API.
 
-The following guide will dive into these last two use cases.
+The :doc:`Onboard your customers <onboarding>` guide covers the last two scenarios, utilizing the following Connect features:
 
-:doc:`/connect/onboarding`
-
-Accessing your customer's Mollie account
-----------------------------------------
-To access or manage the account of your customer, you need an OAuth app. Follow the
-:doc:`Getting started guide </connect/getting-started>` for instructions.
-
-Once you have set up the app, you can access virtually any Mollie API endpoint with the OAuth access token, as long as
-your user gave permission for your app to access their data. Refer to :doc:`/connect/permissions` for a full list of
-available permissions.
+* **Clients API**: A robust API endpoint to create Mollie accounts on behalf of your customer and prefill data points for a seamless onboarding experience.
+* **Organizations & Onboarding dashboards and APIs**: Monitor connected customer accounts and their onboarding status to optimally inform and support your customer base.
+* **Profiles API**: Create the customer's profile and activate payment methods to expedite onboarding and enhance your platform's operations.
+* **Co-branded onboarding**: A Mollie-hosted onboarding interface in your app's look and feel.
 
 Charging fees on payments processed through your app
 ----------------------------------------------------
