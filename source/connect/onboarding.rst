@@ -1,7 +1,7 @@
 Onboard your customers
 ================================
 
-If you've opted to use the Connect Onboarding toolkit as a Partner, this guide offers an overview of embedding your customer's 
+If you have opted to use the Connect Onboarding toolkit as a Partner, this guide offers an overview of embedding your customer's 
 onboarding process into your platform.
 
 Step 1: Create an OAuth application
@@ -32,7 +32,7 @@ Pre-fillable data includes:
   * Family Name
   * Email address
 
-* Organisation name
+* Organization name
 * Address
 * Registration number
 * VAT number
@@ -40,7 +40,7 @@ Pre-fillable data includes:
 .. image:: images/Connect-Onboarding-ClientLinks.png
    :class: boxed-in-dark-mode
 
-The call returns the ``clientLink`` to redirect the customer to the authorization screen (as above). If it’s a new customer, an organization will be created, the OAuth app 
+The call returns the ``clientLink`` to redirect the customer to the authorization screen (as above). If it is a new customer, an organization will be created, the OAuth app 
 authorized and your customer will be logged into their newly created Mollie Dashboard. 
 
 For existing organizations, the OAuth authorize screen will be shown. In both scenarios, the customer returns to the ``redirect_url`` of your OAuth application, and the regular
@@ -49,7 +49,7 @@ For existing organizations, the OAuth authorize screen will be shown. In both sc
 Step 3: Configuring your customer's profiles
 --------------------------------------------
 
-As your customer continues onboarding at Mollie, they'll configure one or more website profiles. Profiles represent merchant storefronts, allowing for multiple trade names 
+As your customer continues onboarding at Mollie, they will configure one or more website profiles. Profiles represent merchant storefronts, allowing for multiple trade names 
 or markets within one account. Payment methods and transactions are always associated with specific profiles.
 
 We recommend managing profiles on your customer's behalf through :doc:`Profiles API </reference/v2/profiles-api/overview>` to optimize the onboarding process:

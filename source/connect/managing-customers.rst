@@ -4,7 +4,7 @@ Managing your customers
 Mollie Connect assists you in monitoring and managing your customer's onboarding process through a set of dashboards, providing 
 both an overview of all your customers, as well as a detailed per-client view.
 
-.. note:: Note: Your app needs to request 'organizations.read' and 'onboarding.read' permissions to access data of your customers in 
+.. note:: Your app needs to request 'organizations.read' and 'onboarding.read' permissions to access data of your customers in 
     the dashboards.
 
 Partner or marketplace clients page  

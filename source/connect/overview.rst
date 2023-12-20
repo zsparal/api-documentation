@@ -21,7 +21,7 @@ information on creating your OAuth app, refer to the :doc:`Getting started with 
 
 Onboarding your customers
 -------------------------
-If your customers don’t have a Mollie account, you can:
+If your customers do not have a Mollie account, you can:
 
 * Have them sign up individually and install your app later,
 * Create an account on their behalf and let them complete the onboarding in the Mollie Dashboard,
