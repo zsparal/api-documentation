@@ -62,6 +62,16 @@ Response
 
    The phone number associated with the profile's trade name or brand.
 
+.. parameter:: description
+   :type: string
+
+   The products or services that the profile's website offers.
+
+.. parameter:: countriesOfActivity
+   :type: array
+
+   The list of countries where you expect that the majority of the profile's customers will live, in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+
 .. parameter:: businessCategory
    :type: string
 

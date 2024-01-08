@@ -46,6 +46,18 @@ Even though all parameters are optional, at least one of them needs to be provid
    The new phone number associated with the profile's trade name or brand. Must be in the
    `E.164 <https://en.wikipedia.org/wiki/E.164>`_ format. For example ``+31208202070``.
 
+.. parameter:: description
+   :type: string
+   :condition: optional
+
+   The products or services that the profile's website offers.
+
+.. parameter:: countriesOfActivity
+   :type: array
+   :condition: optional
+
+   The list of countries where you expect that the majority of the profile's customers will live, in `ISO 3166-1 alpha-2 <https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2>`_ format.
+
 .. parameter:: businessCategory
    :type: string
    :condition: optional
